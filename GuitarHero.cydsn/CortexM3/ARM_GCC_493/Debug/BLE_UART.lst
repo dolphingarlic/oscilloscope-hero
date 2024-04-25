@@ -1,0 +1,2725 @@
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"BLE_UART.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.BLE_UART_Init,"ax",%progbits
+  19              		.align	2
+  20              		.global	BLE_UART_Init
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	BLE_UART_Init, %function
+  24              	BLE_UART_Init:
+  25              	.LFB1:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\BLE_UART.c"
+   1:.\Generated_Source\PSoC5/BLE_UART.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/BLE_UART.c **** * File Name: BLE_UART.c
+   3:.\Generated_Source\PSoC5/BLE_UART.c **** * Version 2.50
+   4:.\Generated_Source\PSoC5/BLE_UART.c **** *
+   5:.\Generated_Source\PSoC5/BLE_UART.c **** * Description:
+   6:.\Generated_Source\PSoC5/BLE_UART.c **** *  This file provides all API functionality of the UART component
+   7:.\Generated_Source\PSoC5/BLE_UART.c **** *
+   8:.\Generated_Source\PSoC5/BLE_UART.c **** * Note:
+   9:.\Generated_Source\PSoC5/BLE_UART.c **** *
+  10:.\Generated_Source\PSoC5/BLE_UART.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC5/BLE_UART.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC5/BLE_UART.c **** * You may use this file only in accordance with the license, terms, conditions,
+  13:.\Generated_Source\PSoC5/BLE_UART.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  14:.\Generated_Source\PSoC5/BLE_UART.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC5/BLE_UART.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC5/BLE_UART.c **** 
+  17:.\Generated_Source\PSoC5/BLE_UART.c **** #include "BLE_UART.h"
+  18:.\Generated_Source\PSoC5/BLE_UART.c **** #if (BLE_UART_INTERNAL_CLOCK_USED)
+  19:.\Generated_Source\PSoC5/BLE_UART.c ****     #include "BLE_UART_IntClock.h"
+  20:.\Generated_Source\PSoC5/BLE_UART.c **** #endif /* End BLE_UART_INTERNAL_CLOCK_USED */
+  21:.\Generated_Source\PSoC5/BLE_UART.c **** 
+  22:.\Generated_Source\PSoC5/BLE_UART.c **** 
+  23:.\Generated_Source\PSoC5/BLE_UART.c **** /***************************************
+  24:.\Generated_Source\PSoC5/BLE_UART.c **** * Global data allocation
+  25:.\Generated_Source\PSoC5/BLE_UART.c **** ***************************************/
+  26:.\Generated_Source\PSoC5/BLE_UART.c **** 
+  27:.\Generated_Source\PSoC5/BLE_UART.c **** uint8 BLE_UART_initVar = 0u;
+  28:.\Generated_Source\PSoC5/BLE_UART.c **** 
+  29:.\Generated_Source\PSoC5/BLE_UART.c **** #if (BLE_UART_TX_INTERRUPT_ENABLED && BLE_UART_TX_ENABLED)
+  30:.\Generated_Source\PSoC5/BLE_UART.c ****     volatile uint8 BLE_UART_txBuffer[BLE_UART_TX_BUFFER_SIZE];
+  31:.\Generated_Source\PSoC5/BLE_UART.c ****     volatile uint8 BLE_UART_txBufferRead = 0u;
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/BLE_UART.c ****     uint8 BLE_UART_txBufferWrite = 0u;
+  33:.\Generated_Source\PSoC5/BLE_UART.c **** #endif /* (BLE_UART_TX_INTERRUPT_ENABLED && BLE_UART_TX_ENABLED) */
+  34:.\Generated_Source\PSoC5/BLE_UART.c **** 
+  35:.\Generated_Source\PSoC5/BLE_UART.c **** #if (BLE_UART_RX_INTERRUPT_ENABLED && (BLE_UART_RX_ENABLED || BLE_UART_HD_ENABLED))
+  36:.\Generated_Source\PSoC5/BLE_UART.c ****     uint8 BLE_UART_errorStatus = 0u;
+  37:.\Generated_Source\PSoC5/BLE_UART.c ****     volatile uint8 BLE_UART_rxBuffer[BLE_UART_RX_BUFFER_SIZE];
+  38:.\Generated_Source\PSoC5/BLE_UART.c ****     volatile uint8 BLE_UART_rxBufferRead  = 0u;
+  39:.\Generated_Source\PSoC5/BLE_UART.c ****     volatile uint8 BLE_UART_rxBufferWrite = 0u;
+  40:.\Generated_Source\PSoC5/BLE_UART.c ****     volatile uint8 BLE_UART_rxBufferLoopDetect = 0u;
+  41:.\Generated_Source\PSoC5/BLE_UART.c ****     volatile uint8 BLE_UART_rxBufferOverflow   = 0u;
+  42:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_RXHW_ADDRESS_ENABLED)
+  43:.\Generated_Source\PSoC5/BLE_UART.c ****         volatile uint8 BLE_UART_rxAddressMode = BLE_UART_RX_ADDRESS_MODE;
+  44:.\Generated_Source\PSoC5/BLE_UART.c ****         volatile uint8 BLE_UART_rxAddressDetected = 0u;
+  45:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_RXHW_ADDRESS_ENABLED) */
+  46:.\Generated_Source\PSoC5/BLE_UART.c **** #endif /* (BLE_UART_RX_INTERRUPT_ENABLED && (BLE_UART_RX_ENABLED || BLE_UART_HD_ENABLED)) */
+  47:.\Generated_Source\PSoC5/BLE_UART.c **** 
+  48:.\Generated_Source\PSoC5/BLE_UART.c **** 
+  49:.\Generated_Source\PSoC5/BLE_UART.c **** /*******************************************************************************
+  50:.\Generated_Source\PSoC5/BLE_UART.c **** * Function Name: BLE_UART_Start
+  51:.\Generated_Source\PSoC5/BLE_UART.c **** ********************************************************************************
+  52:.\Generated_Source\PSoC5/BLE_UART.c **** *
+  53:.\Generated_Source\PSoC5/BLE_UART.c **** * Summary:
+  54:.\Generated_Source\PSoC5/BLE_UART.c **** *  This is the preferred method to begin component operation.
+  55:.\Generated_Source\PSoC5/BLE_UART.c **** *  BLE_UART_Start() sets the initVar variable, calls the
+  56:.\Generated_Source\PSoC5/BLE_UART.c **** *  BLE_UART_Init() function, and then calls the
+  57:.\Generated_Source\PSoC5/BLE_UART.c **** *  BLE_UART_Enable() function.
+  58:.\Generated_Source\PSoC5/BLE_UART.c **** *
+  59:.\Generated_Source\PSoC5/BLE_UART.c **** * Parameters:
+  60:.\Generated_Source\PSoC5/BLE_UART.c **** *  None.
+  61:.\Generated_Source\PSoC5/BLE_UART.c **** *
+  62:.\Generated_Source\PSoC5/BLE_UART.c **** * Return:
+  63:.\Generated_Source\PSoC5/BLE_UART.c **** *  None.
+  64:.\Generated_Source\PSoC5/BLE_UART.c **** *
+  65:.\Generated_Source\PSoC5/BLE_UART.c **** * Global variables:
+  66:.\Generated_Source\PSoC5/BLE_UART.c **** *  The BLE_UART_intiVar variable is used to indicate initial
+  67:.\Generated_Source\PSoC5/BLE_UART.c **** *  configuration of this component. The variable is initialized to zero (0u)
+  68:.\Generated_Source\PSoC5/BLE_UART.c **** *  and set to one (1u) the first time BLE_UART_Start() is called. This
+  69:.\Generated_Source\PSoC5/BLE_UART.c **** *  allows for component initialization without re-initialization in all
+  70:.\Generated_Source\PSoC5/BLE_UART.c **** *  subsequent calls to the BLE_UART_Start() routine.
+  71:.\Generated_Source\PSoC5/BLE_UART.c **** *
+  72:.\Generated_Source\PSoC5/BLE_UART.c **** * Reentrant:
+  73:.\Generated_Source\PSoC5/BLE_UART.c **** *  No.
+  74:.\Generated_Source\PSoC5/BLE_UART.c **** *
+  75:.\Generated_Source\PSoC5/BLE_UART.c **** *******************************************************************************/
+  76:.\Generated_Source\PSoC5/BLE_UART.c **** void BLE_UART_Start(void) 
+  77:.\Generated_Source\PSoC5/BLE_UART.c **** {
+  78:.\Generated_Source\PSoC5/BLE_UART.c ****     /* If not initialized then initialize all required hardware and software */
+  79:.\Generated_Source\PSoC5/BLE_UART.c ****     if(BLE_UART_initVar == 0u)
+  80:.\Generated_Source\PSoC5/BLE_UART.c ****     {
+  81:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_Init();
+  82:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_initVar = 1u;
+  83:.\Generated_Source\PSoC5/BLE_UART.c ****     }
+  84:.\Generated_Source\PSoC5/BLE_UART.c **** 
+  85:.\Generated_Source\PSoC5/BLE_UART.c ****     BLE_UART_Enable();
+  86:.\Generated_Source\PSoC5/BLE_UART.c **** }
+  87:.\Generated_Source\PSoC5/BLE_UART.c **** 
+  88:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 3
+
+
+  89:.\Generated_Source\PSoC5/BLE_UART.c **** /*******************************************************************************
+  90:.\Generated_Source\PSoC5/BLE_UART.c **** * Function Name: BLE_UART_Init
+  91:.\Generated_Source\PSoC5/BLE_UART.c **** ********************************************************************************
+  92:.\Generated_Source\PSoC5/BLE_UART.c **** *
+  93:.\Generated_Source\PSoC5/BLE_UART.c **** * Summary:
+  94:.\Generated_Source\PSoC5/BLE_UART.c **** *  Initializes or restores the component according to the customizer Configure
+  95:.\Generated_Source\PSoC5/BLE_UART.c **** *  dialog settings. It is not necessary to call BLE_UART_Init() because
+  96:.\Generated_Source\PSoC5/BLE_UART.c **** *  the BLE_UART_Start() API calls this function and is the preferred
+  97:.\Generated_Source\PSoC5/BLE_UART.c **** *  method to begin component operation.
+  98:.\Generated_Source\PSoC5/BLE_UART.c **** *
+  99:.\Generated_Source\PSoC5/BLE_UART.c **** * Parameters:
+ 100:.\Generated_Source\PSoC5/BLE_UART.c **** *  None.
+ 101:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 102:.\Generated_Source\PSoC5/BLE_UART.c **** * Return:
+ 103:.\Generated_Source\PSoC5/BLE_UART.c **** *  None.
+ 104:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 105:.\Generated_Source\PSoC5/BLE_UART.c **** *******************************************************************************/
+ 106:.\Generated_Source\PSoC5/BLE_UART.c **** void BLE_UART_Init(void) 
+ 107:.\Generated_Source\PSoC5/BLE_UART.c **** {
+  27              		.loc 1 107 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+ 108:.\Generated_Source\PSoC5/BLE_UART.c ****     #if(BLE_UART_RX_ENABLED || BLE_UART_HD_ENABLED)
+ 109:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 110:.\Generated_Source\PSoC5/BLE_UART.c ****         #if (BLE_UART_RX_INTERRUPT_ENABLED)
+ 111:.\Generated_Source\PSoC5/BLE_UART.c ****             /* Set RX interrupt vector and priority */
+ 112:.\Generated_Source\PSoC5/BLE_UART.c ****             (void) CyIntSetVector(BLE_UART_RX_VECT_NUM, &BLE_UART_RXISR);
+ 113:.\Generated_Source\PSoC5/BLE_UART.c ****             CyIntSetPriority(BLE_UART_RX_VECT_NUM, BLE_UART_RX_PRIOR_NUM);
+ 114:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_errorStatus = 0u;
+ 115:.\Generated_Source\PSoC5/BLE_UART.c ****         #endif /* (BLE_UART_RX_INTERRUPT_ENABLED) */
+ 116:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 117:.\Generated_Source\PSoC5/BLE_UART.c ****         #if (BLE_UART_RXHW_ADDRESS_ENABLED)
+ 118:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_SetRxAddressMode(BLE_UART_RX_ADDRESS_MODE);
+ 119:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_SetRxAddress1(BLE_UART_RX_HW_ADDRESS1);
+ 120:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_SetRxAddress2(BLE_UART_RX_HW_ADDRESS2);
+ 121:.\Generated_Source\PSoC5/BLE_UART.c ****         #endif /* End BLE_UART_RXHW_ADDRESS_ENABLED */
+ 122:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 123:.\Generated_Source\PSoC5/BLE_UART.c ****         /* Init Count7 period */
+ 124:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_RXBITCTR_PERIOD_REG = BLE_UART_RXBITCTR_INIT;
+  32              		.loc 1 124 0
+  33 0000 7222     		movs	r2, #114
+  34 0002 034B     		ldr	r3, .L2
+  35 0004 1A70     		strb	r2, [r3]
+ 125:.\Generated_Source\PSoC5/BLE_UART.c ****         /* Configure the Initial RX interrupt mask */
+ 126:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_RXSTATUS_MASK_REG  = BLE_UART_INIT_RX_INTERRUPTS_MASK;
+  36              		.loc 1 126 0
+  37 0006 2022     		movs	r2, #32
+  38 0008 013B     		subs	r3, r3, #1
+  39 000a 1A70     		strb	r2, [r3]
+  40 000c 7047     		bx	lr
+  41              	.L3:
+  42 000e 00BF     		.align	2
+  43              	.L2:
+  44 0010 8E640040 		.word	1073767566
+  45              		.cfi_endproc
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 4
+
+
+  46              	.LFE1:
+  47              		.size	BLE_UART_Init, .-BLE_UART_Init
+  48              		.section	.text.BLE_UART_Enable,"ax",%progbits
+  49              		.align	2
+  50              		.global	BLE_UART_Enable
+  51              		.thumb
+  52              		.thumb_func
+  53              		.type	BLE_UART_Enable, %function
+  54              	BLE_UART_Enable:
+  55              	.LFB2:
+ 127:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* End BLE_UART_RX_ENABLED || BLE_UART_HD_ENABLED*/
+ 128:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 129:.\Generated_Source\PSoC5/BLE_UART.c ****     #if(BLE_UART_TX_ENABLED)
+ 130:.\Generated_Source\PSoC5/BLE_UART.c ****         #if (BLE_UART_TX_INTERRUPT_ENABLED)
+ 131:.\Generated_Source\PSoC5/BLE_UART.c ****             /* Set TX interrupt vector and priority */
+ 132:.\Generated_Source\PSoC5/BLE_UART.c ****             (void) CyIntSetVector(BLE_UART_TX_VECT_NUM, &BLE_UART_TXISR);
+ 133:.\Generated_Source\PSoC5/BLE_UART.c ****             CyIntSetPriority(BLE_UART_TX_VECT_NUM, BLE_UART_TX_PRIOR_NUM);
+ 134:.\Generated_Source\PSoC5/BLE_UART.c ****         #endif /* (BLE_UART_TX_INTERRUPT_ENABLED) */
+ 135:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 136:.\Generated_Source\PSoC5/BLE_UART.c ****         /* Write Counter Value for TX Bit Clk Generator*/
+ 137:.\Generated_Source\PSoC5/BLE_UART.c ****         #if (BLE_UART_TXCLKGEN_DP)
+ 138:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_TXBITCLKGEN_CTR_REG = BLE_UART_BIT_CENTER;
+ 139:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_TXBITCLKTX_COMPLETE_REG = ((BLE_UART_NUMBER_OF_DATA_BITS +
+ 140:.\Generated_Source\PSoC5/BLE_UART.c ****                         BLE_UART_NUMBER_OF_START_BIT) * BLE_UART_OVER_SAMPLE_COUNT) - 1u;
+ 141:.\Generated_Source\PSoC5/BLE_UART.c ****         #else
+ 142:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_TXBITCTR_PERIOD_REG = ((BLE_UART_NUMBER_OF_DATA_BITS +
+ 143:.\Generated_Source\PSoC5/BLE_UART.c ****                         BLE_UART_NUMBER_OF_START_BIT) * BLE_UART_OVER_SAMPLE_8) - 1u;
+ 144:.\Generated_Source\PSoC5/BLE_UART.c ****         #endif /* End BLE_UART_TXCLKGEN_DP */
+ 145:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 146:.\Generated_Source\PSoC5/BLE_UART.c ****         /* Configure the Initial TX interrupt mask */
+ 147:.\Generated_Source\PSoC5/BLE_UART.c ****         #if (BLE_UART_TX_INTERRUPT_ENABLED)
+ 148:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_TXSTATUS_MASK_REG = BLE_UART_TX_STS_FIFO_EMPTY;
+ 149:.\Generated_Source\PSoC5/BLE_UART.c ****         #else
+ 150:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_TXSTATUS_MASK_REG = BLE_UART_INIT_TX_INTERRUPTS_MASK;
+ 151:.\Generated_Source\PSoC5/BLE_UART.c ****         #endif /*End BLE_UART_TX_INTERRUPT_ENABLED*/
+ 152:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 153:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* End BLE_UART_TX_ENABLED */
+ 154:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 155:.\Generated_Source\PSoC5/BLE_UART.c ****     #if(BLE_UART_PARITY_TYPE_SW)  /* Write Parity to Control Register */
+ 156:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_WriteControlRegister( \
+ 157:.\Generated_Source\PSoC5/BLE_UART.c ****             (BLE_UART_ReadControlRegister() & (uint8)~BLE_UART_CTRL_PARITY_TYPE_MASK) | \
+ 158:.\Generated_Source\PSoC5/BLE_UART.c ****             (uint8)(BLE_UART_PARITY_TYPE << BLE_UART_CTRL_PARITY_TYPE0_SHIFT) );
+ 159:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* End BLE_UART_PARITY_TYPE_SW */
+ 160:.\Generated_Source\PSoC5/BLE_UART.c **** }
+ 161:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 162:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 163:.\Generated_Source\PSoC5/BLE_UART.c **** /*******************************************************************************
+ 164:.\Generated_Source\PSoC5/BLE_UART.c **** * Function Name: BLE_UART_Enable
+ 165:.\Generated_Source\PSoC5/BLE_UART.c **** ********************************************************************************
+ 166:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 167:.\Generated_Source\PSoC5/BLE_UART.c **** * Summary:
+ 168:.\Generated_Source\PSoC5/BLE_UART.c **** *  Activates the hardware and begins component operation. It is not necessary
+ 169:.\Generated_Source\PSoC5/BLE_UART.c **** *  to call BLE_UART_Enable() because the BLE_UART_Start() API
+ 170:.\Generated_Source\PSoC5/BLE_UART.c **** *  calls this function, which is the preferred method to begin component
+ 171:.\Generated_Source\PSoC5/BLE_UART.c **** *  operation.
+ 172:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 173:.\Generated_Source\PSoC5/BLE_UART.c **** * Parameters:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 5
+
+
+ 174:.\Generated_Source\PSoC5/BLE_UART.c **** *  None.
+ 175:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 176:.\Generated_Source\PSoC5/BLE_UART.c **** * Return:
+ 177:.\Generated_Source\PSoC5/BLE_UART.c **** *  None.
+ 178:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 179:.\Generated_Source\PSoC5/BLE_UART.c **** * Global Variables:
+ 180:.\Generated_Source\PSoC5/BLE_UART.c **** *  BLE_UART_rxAddressDetected - set to initial state (0).
+ 181:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 182:.\Generated_Source\PSoC5/BLE_UART.c **** *******************************************************************************/
+ 183:.\Generated_Source\PSoC5/BLE_UART.c **** void BLE_UART_Enable(void) 
+ 184:.\Generated_Source\PSoC5/BLE_UART.c **** {
+  56              		.loc 1 184 0
+  57              		.cfi_startproc
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60 0000 10B5     		push	{r4, lr}
+  61              		.cfi_def_cfa_offset 8
+  62              		.cfi_offset 4, -8
+  63              		.cfi_offset 14, -4
+ 185:.\Generated_Source\PSoC5/BLE_UART.c ****     uint8 enableInterrupts;
+ 186:.\Generated_Source\PSoC5/BLE_UART.c ****     enableInterrupts = CyEnterCriticalSection();
+  64              		.loc 1 186 0
+  65 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+  66              	.LVL0:
+  67 0006 0446     		mov	r4, r0
+  68              	.LVL1:
+ 187:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 188:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_RX_ENABLED || BLE_UART_HD_ENABLED)
+ 189:.\Generated_Source\PSoC5/BLE_UART.c ****         /* RX Counter (Count7) Enable */
+ 190:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_RXBITCTR_CONTROL_REG |= BLE_UART_CNTR_ENABLE;
+  69              		.loc 1 190 0
+  70 0008 074A     		ldr	r2, .L6
+  71 000a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  72 000c 43F02003 		orr	r3, r3, #32
+  73 0010 1370     		strb	r3, [r2]
+ 191:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 192:.\Generated_Source\PSoC5/BLE_UART.c ****         /* Enable the RX Interrupt */
+ 193:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_RXSTATUS_ACTL_REG  |= BLE_UART_INT_ENABLE;
+  74              		.loc 1 193 0
+  75 0012 013A     		subs	r2, r2, #1
+  76 0014 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  77 0016 43F01003 		orr	r3, r3, #16
+  78 001a 1370     		strb	r3, [r2]
+ 194:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 195:.\Generated_Source\PSoC5/BLE_UART.c ****         #if (BLE_UART_RX_INTERRUPT_ENABLED)
+ 196:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_EnableRxInt();
+ 197:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 198:.\Generated_Source\PSoC5/BLE_UART.c ****             #if (BLE_UART_RXHW_ADDRESS_ENABLED)
+ 199:.\Generated_Source\PSoC5/BLE_UART.c ****                 BLE_UART_rxAddressDetected = 0u;
+ 200:.\Generated_Source\PSoC5/BLE_UART.c ****             #endif /* (BLE_UART_RXHW_ADDRESS_ENABLED) */
+ 201:.\Generated_Source\PSoC5/BLE_UART.c ****         #endif /* (BLE_UART_RX_INTERRUPT_ENABLED) */
+ 202:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_RX_ENABLED || BLE_UART_HD_ENABLED) */
+ 203:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 204:.\Generated_Source\PSoC5/BLE_UART.c ****     #if(BLE_UART_TX_ENABLED)
+ 205:.\Generated_Source\PSoC5/BLE_UART.c ****         /* TX Counter (DP/Count7) Enable */
+ 206:.\Generated_Source\PSoC5/BLE_UART.c ****         #if(!BLE_UART_TXCLKGEN_DP)
+ 207:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_TXBITCTR_CONTROL_REG |= BLE_UART_CNTR_ENABLE;
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 6
+
+
+ 208:.\Generated_Source\PSoC5/BLE_UART.c ****         #endif /* End BLE_UART_TXCLKGEN_DP */
+ 209:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 210:.\Generated_Source\PSoC5/BLE_UART.c ****         /* Enable the TX Interrupt */
+ 211:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_TXSTATUS_ACTL_REG |= BLE_UART_INT_ENABLE;
+ 212:.\Generated_Source\PSoC5/BLE_UART.c ****         #if (BLE_UART_TX_INTERRUPT_ENABLED)
+ 213:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_ClearPendingTxInt(); /* Clear history of TX_NOT_EMPTY */
+ 214:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_EnableTxInt();
+ 215:.\Generated_Source\PSoC5/BLE_UART.c ****         #endif /* (BLE_UART_TX_INTERRUPT_ENABLED) */
+ 216:.\Generated_Source\PSoC5/BLE_UART.c ****      #endif /* (BLE_UART_TX_INTERRUPT_ENABLED) */
+ 217:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 218:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_INTERNAL_CLOCK_USED)
+ 219:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_IntClock_Start();  /* Enable the clock */
+  79              		.loc 1 219 0
+  80 001c FFF7FEFF 		bl	BLE_UART_IntClock_Start
+  81              	.LVL2:
+ 220:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_INTERNAL_CLOCK_USED) */
+ 221:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 222:.\Generated_Source\PSoC5/BLE_UART.c ****     CyExitCriticalSection(enableInterrupts);
+  82              		.loc 1 222 0
+  83 0020 2046     		mov	r0, r4
+  84 0022 FFF7FEFF 		bl	CyExitCriticalSection
+  85              	.LVL3:
+  86 0026 10BD     		pop	{r4, pc}
+  87              	.LVL4:
+  88              	.L7:
+  89              		.align	2
+  90              	.L6:
+  91 0028 9E640040 		.word	1073767582
+  92              		.cfi_endproc
+  93              	.LFE2:
+  94              		.size	BLE_UART_Enable, .-BLE_UART_Enable
+  95              		.section	.text.BLE_UART_Start,"ax",%progbits
+  96              		.align	2
+  97              		.global	BLE_UART_Start
+  98              		.thumb
+  99              		.thumb_func
+ 100              		.type	BLE_UART_Start, %function
+ 101              	BLE_UART_Start:
+ 102              	.LFB0:
+  77:.\Generated_Source\PSoC5/BLE_UART.c ****     /* If not initialized then initialize all required hardware and software */
+ 103              		.loc 1 77 0
+ 104              		.cfi_startproc
+ 105              		@ args = 0, pretend = 0, frame = 0
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107 0000 08B5     		push	{r3, lr}
+ 108              		.cfi_def_cfa_offset 8
+ 109              		.cfi_offset 3, -8
+ 110              		.cfi_offset 14, -4
+  79:.\Generated_Source\PSoC5/BLE_UART.c ****     {
+ 111              		.loc 1 79 0
+ 112 0002 054B     		ldr	r3, .L11
+ 113 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 114 0006 23B9     		cbnz	r3, .L9
+  81:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_initVar = 1u;
+ 115              		.loc 1 81 0
+ 116 0008 FFF7FEFF 		bl	BLE_UART_Init
+ 117              	.LVL5:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 7
+
+
+  82:.\Generated_Source\PSoC5/BLE_UART.c ****     }
+ 118              		.loc 1 82 0
+ 119 000c 0122     		movs	r2, #1
+ 120 000e 024B     		ldr	r3, .L11
+ 121 0010 1A70     		strb	r2, [r3]
+ 122              	.L9:
+  85:.\Generated_Source\PSoC5/BLE_UART.c **** }
+ 123              		.loc 1 85 0
+ 124 0012 FFF7FEFF 		bl	BLE_UART_Enable
+ 125              	.LVL6:
+ 126 0016 08BD     		pop	{r3, pc}
+ 127              	.L12:
+ 128              		.align	2
+ 129              	.L11:
+ 130 0018 00000000 		.word	.LANCHOR0
+ 131              		.cfi_endproc
+ 132              	.LFE0:
+ 133              		.size	BLE_UART_Start, .-BLE_UART_Start
+ 134              		.section	.text.BLE_UART_Stop,"ax",%progbits
+ 135              		.align	2
+ 136              		.global	BLE_UART_Stop
+ 137              		.thumb
+ 138              		.thumb_func
+ 139              		.type	BLE_UART_Stop, %function
+ 140              	BLE_UART_Stop:
+ 141              	.LFB3:
+ 223:.\Generated_Source\PSoC5/BLE_UART.c **** }
+ 224:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 225:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 226:.\Generated_Source\PSoC5/BLE_UART.c **** /*******************************************************************************
+ 227:.\Generated_Source\PSoC5/BLE_UART.c **** * Function Name: BLE_UART_Stop
+ 228:.\Generated_Source\PSoC5/BLE_UART.c **** ********************************************************************************
+ 229:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 230:.\Generated_Source\PSoC5/BLE_UART.c **** * Summary:
+ 231:.\Generated_Source\PSoC5/BLE_UART.c **** *  Disables the UART operation.
+ 232:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 233:.\Generated_Source\PSoC5/BLE_UART.c **** * Parameters:
+ 234:.\Generated_Source\PSoC5/BLE_UART.c **** *  None.
+ 235:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 236:.\Generated_Source\PSoC5/BLE_UART.c **** * Return:
+ 237:.\Generated_Source\PSoC5/BLE_UART.c **** *  None.
+ 238:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 239:.\Generated_Source\PSoC5/BLE_UART.c **** *******************************************************************************/
+ 240:.\Generated_Source\PSoC5/BLE_UART.c **** void BLE_UART_Stop(void) 
+ 241:.\Generated_Source\PSoC5/BLE_UART.c **** {
+ 142              		.loc 1 241 0
+ 143              		.cfi_startproc
+ 144              		@ args = 0, pretend = 0, frame = 0
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146 0000 10B5     		push	{r4, lr}
+ 147              		.cfi_def_cfa_offset 8
+ 148              		.cfi_offset 4, -8
+ 149              		.cfi_offset 14, -4
+ 242:.\Generated_Source\PSoC5/BLE_UART.c ****     uint8 enableInterrupts;
+ 243:.\Generated_Source\PSoC5/BLE_UART.c ****     enableInterrupts = CyEnterCriticalSection();
+ 150              		.loc 1 243 0
+ 151 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 8
+
+
+ 152              	.LVL7:
+ 153 0006 0446     		mov	r4, r0
+ 154              	.LVL8:
+ 244:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 245:.\Generated_Source\PSoC5/BLE_UART.c ****     /* Write Bit Counter Disable */
+ 246:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_RX_ENABLED || BLE_UART_HD_ENABLED)
+ 247:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_RXBITCTR_CONTROL_REG &= (uint8) ~BLE_UART_CNTR_ENABLE;
+ 155              		.loc 1 247 0
+ 156 0008 074A     		ldr	r2, .L15
+ 157 000a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 158 000c 03F0DF03 		and	r3, r3, #223
+ 159 0010 1370     		strb	r3, [r2]
+ 248:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_RX_ENABLED || BLE_UART_HD_ENABLED) */
+ 249:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 250:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_TX_ENABLED)
+ 251:.\Generated_Source\PSoC5/BLE_UART.c ****         #if(!BLE_UART_TXCLKGEN_DP)
+ 252:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_TXBITCTR_CONTROL_REG &= (uint8) ~BLE_UART_CNTR_ENABLE;
+ 253:.\Generated_Source\PSoC5/BLE_UART.c ****         #endif /* (!BLE_UART_TXCLKGEN_DP) */
+ 254:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_TX_ENABLED) */
+ 255:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 256:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_INTERNAL_CLOCK_USED)
+ 257:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_IntClock_Stop();   /* Disable the clock */
+ 160              		.loc 1 257 0
+ 161 0012 FFF7FEFF 		bl	BLE_UART_IntClock_Stop
+ 162              	.LVL9:
+ 258:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_INTERNAL_CLOCK_USED) */
+ 259:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 260:.\Generated_Source\PSoC5/BLE_UART.c ****     /* Disable internal interrupt component */
+ 261:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_RX_ENABLED || BLE_UART_HD_ENABLED)
+ 262:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_RXSTATUS_ACTL_REG  &= (uint8) ~BLE_UART_INT_ENABLE;
+ 163              		.loc 1 262 0
+ 164 0016 054A     		ldr	r2, .L15+4
+ 165 0018 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 166 001a 03F0EF03 		and	r3, r3, #239
+ 167 001e 1370     		strb	r3, [r2]
+ 263:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 264:.\Generated_Source\PSoC5/BLE_UART.c ****         #if (BLE_UART_RX_INTERRUPT_ENABLED)
+ 265:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_DisableRxInt();
+ 266:.\Generated_Source\PSoC5/BLE_UART.c ****         #endif /* (BLE_UART_RX_INTERRUPT_ENABLED) */
+ 267:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_RX_ENABLED || BLE_UART_HD_ENABLED) */
+ 268:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 269:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_TX_ENABLED)
+ 270:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_TXSTATUS_ACTL_REG &= (uint8) ~BLE_UART_INT_ENABLE;
+ 271:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 272:.\Generated_Source\PSoC5/BLE_UART.c ****         #if (BLE_UART_TX_INTERRUPT_ENABLED)
+ 273:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_DisableTxInt();
+ 274:.\Generated_Source\PSoC5/BLE_UART.c ****         #endif /* (BLE_UART_TX_INTERRUPT_ENABLED) */
+ 275:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_TX_ENABLED) */
+ 276:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 277:.\Generated_Source\PSoC5/BLE_UART.c ****     CyExitCriticalSection(enableInterrupts);
+ 168              		.loc 1 277 0
+ 169 0020 2046     		mov	r0, r4
+ 170 0022 FFF7FEFF 		bl	CyExitCriticalSection
+ 171              	.LVL10:
+ 172 0026 10BD     		pop	{r4, pc}
+ 173              	.LVL11:
+ 174              	.L16:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 9
+
+
+ 175              		.align	2
+ 176              	.L15:
+ 177 0028 9E640040 		.word	1073767582
+ 178 002c 9D640040 		.word	1073767581
+ 179              		.cfi_endproc
+ 180              	.LFE3:
+ 181              		.size	BLE_UART_Stop, .-BLE_UART_Stop
+ 182              		.section	.text.BLE_UART_ReadControlRegister,"ax",%progbits
+ 183              		.align	2
+ 184              		.global	BLE_UART_ReadControlRegister
+ 185              		.thumb
+ 186              		.thumb_func
+ 187              		.type	BLE_UART_ReadControlRegister, %function
+ 188              	BLE_UART_ReadControlRegister:
+ 189              	.LFB4:
+ 278:.\Generated_Source\PSoC5/BLE_UART.c **** }
+ 279:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 280:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 281:.\Generated_Source\PSoC5/BLE_UART.c **** /*******************************************************************************
+ 282:.\Generated_Source\PSoC5/BLE_UART.c **** * Function Name: BLE_UART_ReadControlRegister
+ 283:.\Generated_Source\PSoC5/BLE_UART.c **** ********************************************************************************
+ 284:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 285:.\Generated_Source\PSoC5/BLE_UART.c **** * Summary:
+ 286:.\Generated_Source\PSoC5/BLE_UART.c **** *  Returns the current value of the control register.
+ 287:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 288:.\Generated_Source\PSoC5/BLE_UART.c **** * Parameters:
+ 289:.\Generated_Source\PSoC5/BLE_UART.c **** *  None.
+ 290:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 291:.\Generated_Source\PSoC5/BLE_UART.c **** * Return:
+ 292:.\Generated_Source\PSoC5/BLE_UART.c **** *  Contents of the control register.
+ 293:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 294:.\Generated_Source\PSoC5/BLE_UART.c **** *******************************************************************************/
+ 295:.\Generated_Source\PSoC5/BLE_UART.c **** uint8 BLE_UART_ReadControlRegister(void) 
+ 296:.\Generated_Source\PSoC5/BLE_UART.c **** {
+ 190              		.loc 1 296 0
+ 191              		.cfi_startproc
+ 192              		@ args = 0, pretend = 0, frame = 0
+ 193              		@ frame_needed = 0, uses_anonymous_args = 0
+ 194              		@ link register save eliminated.
+ 297:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_CONTROL_REG_REMOVED)
+ 298:.\Generated_Source\PSoC5/BLE_UART.c ****         return(0u);
+ 299:.\Generated_Source\PSoC5/BLE_UART.c ****     #else
+ 300:.\Generated_Source\PSoC5/BLE_UART.c ****         return(BLE_UART_CONTROL_REG);
+ 301:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_CONTROL_REG_REMOVED) */
+ 302:.\Generated_Source\PSoC5/BLE_UART.c **** }
+ 195              		.loc 1 302 0
+ 196 0000 0020     		movs	r0, #0
+ 197 0002 7047     		bx	lr
+ 198              		.cfi_endproc
+ 199              	.LFE4:
+ 200              		.size	BLE_UART_ReadControlRegister, .-BLE_UART_ReadControlRegister
+ 201              		.section	.text.BLE_UART_WriteControlRegister,"ax",%progbits
+ 202              		.align	2
+ 203              		.global	BLE_UART_WriteControlRegister
+ 204              		.thumb
+ 205              		.thumb_func
+ 206              		.type	BLE_UART_WriteControlRegister, %function
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 10
+
+
+ 207              	BLE_UART_WriteControlRegister:
+ 208              	.LFB5:
+ 303:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 304:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 305:.\Generated_Source\PSoC5/BLE_UART.c **** /*******************************************************************************
+ 306:.\Generated_Source\PSoC5/BLE_UART.c **** * Function Name: BLE_UART_WriteControlRegister
+ 307:.\Generated_Source\PSoC5/BLE_UART.c **** ********************************************************************************
+ 308:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 309:.\Generated_Source\PSoC5/BLE_UART.c **** * Summary:
+ 310:.\Generated_Source\PSoC5/BLE_UART.c **** *  Writes an 8-bit value into the control register
+ 311:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 312:.\Generated_Source\PSoC5/BLE_UART.c **** * Parameters:
+ 313:.\Generated_Source\PSoC5/BLE_UART.c **** *  control:  control register value
+ 314:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 315:.\Generated_Source\PSoC5/BLE_UART.c **** * Return:
+ 316:.\Generated_Source\PSoC5/BLE_UART.c **** *  None.
+ 317:.\Generated_Source\PSoC5/BLE_UART.c **** *
+ 318:.\Generated_Source\PSoC5/BLE_UART.c **** *******************************************************************************/
+ 319:.\Generated_Source\PSoC5/BLE_UART.c **** void  BLE_UART_WriteControlRegister(uint8 control) 
+ 320:.\Generated_Source\PSoC5/BLE_UART.c **** {
+ 209              		.loc 1 320 0
+ 210              		.cfi_startproc
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213              		@ link register save eliminated.
+ 214              	.LVL12:
+ 215 0000 7047     		bx	lr
+ 216              		.cfi_endproc
+ 217              	.LFE5:
+ 218              		.size	BLE_UART_WriteControlRegister, .-BLE_UART_WriteControlRegister
+ 219 0002 00BF     		.section	.text.BLE_UART_SetRxInterruptMode,"ax",%progbits
+ 220              		.align	2
+ 221              		.global	BLE_UART_SetRxInterruptMode
+ 222              		.thumb
+ 223              		.thumb_func
+ 224              		.type	BLE_UART_SetRxInterruptMode, %function
+ 225              	BLE_UART_SetRxInterruptMode:
+ 226              	.LFB6:
+ 321:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_CONTROL_REG_REMOVED)
+ 322:.\Generated_Source\PSoC5/BLE_UART.c ****         if(0u != control)
+ 323:.\Generated_Source\PSoC5/BLE_UART.c ****         {
+ 324:.\Generated_Source\PSoC5/BLE_UART.c ****             /* Suppress compiler warning */
+ 325:.\Generated_Source\PSoC5/BLE_UART.c ****         }
+ 326:.\Generated_Source\PSoC5/BLE_UART.c ****     #else
+ 327:.\Generated_Source\PSoC5/BLE_UART.c ****        BLE_UART_CONTROL_REG = control;
+ 328:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_CONTROL_REG_REMOVED) */
+ 329:.\Generated_Source\PSoC5/BLE_UART.c **** }
+ 330:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 331:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 332:.\Generated_Source\PSoC5/BLE_UART.c **** #if(BLE_UART_RX_ENABLED || BLE_UART_HD_ENABLED)
+ 333:.\Generated_Source\PSoC5/BLE_UART.c ****     /*******************************************************************************
+ 334:.\Generated_Source\PSoC5/BLE_UART.c ****     * Function Name: BLE_UART_SetRxInterruptMode
+ 335:.\Generated_Source\PSoC5/BLE_UART.c ****     ********************************************************************************
+ 336:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 337:.\Generated_Source\PSoC5/BLE_UART.c ****     * Summary:
+ 338:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Configures the RX interrupt sources enabled.
+ 339:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 11
+
+
+ 340:.\Generated_Source\PSoC5/BLE_UART.c ****     * Parameters:
+ 341:.\Generated_Source\PSoC5/BLE_UART.c ****     *  IntSrc:  Bit field containing the RX interrupts to enable. Based on the 
+ 342:.\Generated_Source\PSoC5/BLE_UART.c ****     *  bit-field arrangement of the status register. This value must be a 
+ 343:.\Generated_Source\PSoC5/BLE_UART.c ****     *  combination of status register bit-masks shown below:
+ 344:.\Generated_Source\PSoC5/BLE_UART.c ****     *      BLE_UART_RX_STS_FIFO_NOTEMPTY    Interrupt on byte received.
+ 345:.\Generated_Source\PSoC5/BLE_UART.c ****     *      BLE_UART_RX_STS_PAR_ERROR        Interrupt on parity error.
+ 346:.\Generated_Source\PSoC5/BLE_UART.c ****     *      BLE_UART_RX_STS_STOP_ERROR       Interrupt on stop error.
+ 347:.\Generated_Source\PSoC5/BLE_UART.c ****     *      BLE_UART_RX_STS_BREAK            Interrupt on break.
+ 348:.\Generated_Source\PSoC5/BLE_UART.c ****     *      BLE_UART_RX_STS_OVERRUN          Interrupt on overrun error.
+ 349:.\Generated_Source\PSoC5/BLE_UART.c ****     *      BLE_UART_RX_STS_ADDR_MATCH       Interrupt on address match.
+ 350:.\Generated_Source\PSoC5/BLE_UART.c ****     *      BLE_UART_RX_STS_MRKSPC           Interrupt on address detect.
+ 351:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 352:.\Generated_Source\PSoC5/BLE_UART.c ****     * Return:
+ 353:.\Generated_Source\PSoC5/BLE_UART.c ****     *  None.
+ 354:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 355:.\Generated_Source\PSoC5/BLE_UART.c ****     * Theory:
+ 356:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Enables the output of specific status bits to the interrupt controller
+ 357:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 358:.\Generated_Source\PSoC5/BLE_UART.c ****     *******************************************************************************/
+ 359:.\Generated_Source\PSoC5/BLE_UART.c ****     void BLE_UART_SetRxInterruptMode(uint8 intSrc) 
+ 360:.\Generated_Source\PSoC5/BLE_UART.c ****     {
+ 227              		.loc 1 360 0
+ 228              		.cfi_startproc
+ 229              		@ args = 0, pretend = 0, frame = 0
+ 230              		@ frame_needed = 0, uses_anonymous_args = 0
+ 231              		@ link register save eliminated.
+ 232              	.LVL13:
+ 361:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_RXSTATUS_MASK_REG  = intSrc;
+ 233              		.loc 1 361 0
+ 234 0000 014B     		ldr	r3, .L20
+ 235 0002 1870     		strb	r0, [r3]
+ 236 0004 7047     		bx	lr
+ 237              	.L21:
+ 238 0006 00BF     		.align	2
+ 239              	.L20:
+ 240 0008 8D640040 		.word	1073767565
+ 241              		.cfi_endproc
+ 242              	.LFE6:
+ 243              		.size	BLE_UART_SetRxInterruptMode, .-BLE_UART_SetRxInterruptMode
+ 244              		.section	.text.BLE_UART_ReadRxData,"ax",%progbits
+ 245              		.align	2
+ 246              		.global	BLE_UART_ReadRxData
+ 247              		.thumb
+ 248              		.thumb_func
+ 249              		.type	BLE_UART_ReadRxData, %function
+ 250              	BLE_UART_ReadRxData:
+ 251              	.LFB7:
+ 362:.\Generated_Source\PSoC5/BLE_UART.c ****     }
+ 363:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 364:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 365:.\Generated_Source\PSoC5/BLE_UART.c ****     /*******************************************************************************
+ 366:.\Generated_Source\PSoC5/BLE_UART.c ****     * Function Name: BLE_UART_ReadRxData
+ 367:.\Generated_Source\PSoC5/BLE_UART.c ****     ********************************************************************************
+ 368:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 369:.\Generated_Source\PSoC5/BLE_UART.c ****     * Summary:
+ 370:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Returns the next byte of received data. This function returns data without
+ 371:.\Generated_Source\PSoC5/BLE_UART.c ****     *  checking the status. You must check the status separately.
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 12
+
+
+ 372:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 373:.\Generated_Source\PSoC5/BLE_UART.c ****     * Parameters:
+ 374:.\Generated_Source\PSoC5/BLE_UART.c ****     *  None.
+ 375:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 376:.\Generated_Source\PSoC5/BLE_UART.c ****     * Return:
+ 377:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Received data from RX register
+ 378:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 379:.\Generated_Source\PSoC5/BLE_UART.c ****     * Global Variables:
+ 380:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBuffer - RAM buffer pointer for save received data.
+ 381:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferWrite - cyclic index for write to rxBuffer,
+ 382:.\Generated_Source\PSoC5/BLE_UART.c ****     *     checked to identify new data.
+ 383:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferRead - cyclic index for read from rxBuffer,
+ 384:.\Generated_Source\PSoC5/BLE_UART.c ****     *     incremented after each byte has been read from buffer.
+ 385:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferLoopDetect - cleared if loop condition was detected
+ 386:.\Generated_Source\PSoC5/BLE_UART.c ****     *     in RX ISR.
+ 387:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 388:.\Generated_Source\PSoC5/BLE_UART.c ****     * Reentrant:
+ 389:.\Generated_Source\PSoC5/BLE_UART.c ****     *  No.
+ 390:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 391:.\Generated_Source\PSoC5/BLE_UART.c ****     *******************************************************************************/
+ 392:.\Generated_Source\PSoC5/BLE_UART.c ****     uint8 BLE_UART_ReadRxData(void) 
+ 393:.\Generated_Source\PSoC5/BLE_UART.c ****     {
+ 252              		.loc 1 393 0
+ 253              		.cfi_startproc
+ 254              		@ args = 0, pretend = 0, frame = 0
+ 255              		@ frame_needed = 0, uses_anonymous_args = 0
+ 256              		@ link register save eliminated.
+ 394:.\Generated_Source\PSoC5/BLE_UART.c ****         uint8 rxData;
+ 395:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 396:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_RX_INTERRUPT_ENABLED)
+ 397:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 398:.\Generated_Source\PSoC5/BLE_UART.c ****         uint8 locRxBufferRead;
+ 399:.\Generated_Source\PSoC5/BLE_UART.c ****         uint8 locRxBufferWrite;
+ 400:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 401:.\Generated_Source\PSoC5/BLE_UART.c ****         /* Protect variables that could change on interrupt */
+ 402:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_DisableRxInt();
+ 403:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 404:.\Generated_Source\PSoC5/BLE_UART.c ****         locRxBufferRead  = BLE_UART_rxBufferRead;
+ 405:.\Generated_Source\PSoC5/BLE_UART.c ****         locRxBufferWrite = BLE_UART_rxBufferWrite;
+ 406:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 407:.\Generated_Source\PSoC5/BLE_UART.c ****         if( (BLE_UART_rxBufferLoopDetect != 0u) || (locRxBufferRead != locRxBufferWrite) )
+ 408:.\Generated_Source\PSoC5/BLE_UART.c ****         {
+ 409:.\Generated_Source\PSoC5/BLE_UART.c ****             rxData = BLE_UART_rxBuffer[locRxBufferRead];
+ 410:.\Generated_Source\PSoC5/BLE_UART.c ****             locRxBufferRead++;
+ 411:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 412:.\Generated_Source\PSoC5/BLE_UART.c ****             if(locRxBufferRead >= BLE_UART_RX_BUFFER_SIZE)
+ 413:.\Generated_Source\PSoC5/BLE_UART.c ****             {
+ 414:.\Generated_Source\PSoC5/BLE_UART.c ****                 locRxBufferRead = 0u;
+ 415:.\Generated_Source\PSoC5/BLE_UART.c ****             }
+ 416:.\Generated_Source\PSoC5/BLE_UART.c ****             /* Update the real pointer */
+ 417:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_rxBufferRead = locRxBufferRead;
+ 418:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 419:.\Generated_Source\PSoC5/BLE_UART.c ****             if(BLE_UART_rxBufferLoopDetect != 0u)
+ 420:.\Generated_Source\PSoC5/BLE_UART.c ****             {
+ 421:.\Generated_Source\PSoC5/BLE_UART.c ****                 BLE_UART_rxBufferLoopDetect = 0u;
+ 422:.\Generated_Source\PSoC5/BLE_UART.c ****                 #if ((BLE_UART_RX_INTERRUPT_ENABLED) && (BLE_UART_FLOW_CONTROL != 0u))
+ 423:.\Generated_Source\PSoC5/BLE_UART.c ****                     /* When Hardware Flow Control selected - return RX mask */
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 13
+
+
+ 424:.\Generated_Source\PSoC5/BLE_UART.c ****                     #if( BLE_UART_HD_ENABLED )
+ 425:.\Generated_Source\PSoC5/BLE_UART.c ****                         if((BLE_UART_CONTROL_REG & BLE_UART_CTRL_HD_SEND) == 0u)
+ 426:.\Generated_Source\PSoC5/BLE_UART.c ****                         {   /* In Half duplex mode return RX mask only in RX
+ 427:.\Generated_Source\PSoC5/BLE_UART.c ****                             *  configuration set, otherwise
+ 428:.\Generated_Source\PSoC5/BLE_UART.c ****                             *  mask will be returned in LoadRxConfig() API.
+ 429:.\Generated_Source\PSoC5/BLE_UART.c ****                             */
+ 430:.\Generated_Source\PSoC5/BLE_UART.c ****                             BLE_UART_RXSTATUS_MASK_REG  |= BLE_UART_RX_STS_FIFO_NOTEMPTY;
+ 431:.\Generated_Source\PSoC5/BLE_UART.c ****                         }
+ 432:.\Generated_Source\PSoC5/BLE_UART.c ****                     #else
+ 433:.\Generated_Source\PSoC5/BLE_UART.c ****                         BLE_UART_RXSTATUS_MASK_REG  |= BLE_UART_RX_STS_FIFO_NOTEMPTY;
+ 434:.\Generated_Source\PSoC5/BLE_UART.c ****                     #endif /* end BLE_UART_HD_ENABLED */
+ 435:.\Generated_Source\PSoC5/BLE_UART.c ****                 #endif /* ((BLE_UART_RX_INTERRUPT_ENABLED) && (BLE_UART_FLOW_CONTROL != 0u)) */
+ 436:.\Generated_Source\PSoC5/BLE_UART.c ****             }
+ 437:.\Generated_Source\PSoC5/BLE_UART.c ****         }
+ 438:.\Generated_Source\PSoC5/BLE_UART.c ****         else
+ 439:.\Generated_Source\PSoC5/BLE_UART.c ****         {   /* Needs to check status for RX_STS_FIFO_NOTEMPTY bit */
+ 440:.\Generated_Source\PSoC5/BLE_UART.c ****             rxData = BLE_UART_RXDATA_REG;
+ 441:.\Generated_Source\PSoC5/BLE_UART.c ****         }
+ 442:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 443:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_EnableRxInt();
+ 444:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 445:.\Generated_Source\PSoC5/BLE_UART.c ****     #else
+ 446:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 447:.\Generated_Source\PSoC5/BLE_UART.c ****         /* Needs to check status for RX_STS_FIFO_NOTEMPTY bit */
+ 448:.\Generated_Source\PSoC5/BLE_UART.c ****         rxData = BLE_UART_RXDATA_REG;
+ 257              		.loc 1 448 0
+ 258 0000 014B     		ldr	r3, .L23
+ 259 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 260              	.LVL14:
+ 449:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 450:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_RX_INTERRUPT_ENABLED) */
+ 451:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 452:.\Generated_Source\PSoC5/BLE_UART.c ****         return(rxData);
+ 453:.\Generated_Source\PSoC5/BLE_UART.c ****     }
+ 261              		.loc 1 453 0
+ 262 0004 7047     		bx	lr
+ 263              	.L24:
+ 264 0006 00BF     		.align	2
+ 265              	.L23:
+ 266 0008 4D640040 		.word	1073767501
+ 267              		.cfi_endproc
+ 268              	.LFE7:
+ 269              		.size	BLE_UART_ReadRxData, .-BLE_UART_ReadRxData
+ 270              		.section	.text.BLE_UART_ReadRxStatus,"ax",%progbits
+ 271              		.align	2
+ 272              		.global	BLE_UART_ReadRxStatus
+ 273              		.thumb
+ 274              		.thumb_func
+ 275              		.type	BLE_UART_ReadRxStatus, %function
+ 276              	BLE_UART_ReadRxStatus:
+ 277              	.LFB8:
+ 454:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 455:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 456:.\Generated_Source\PSoC5/BLE_UART.c ****     /*******************************************************************************
+ 457:.\Generated_Source\PSoC5/BLE_UART.c ****     * Function Name: BLE_UART_ReadRxStatus
+ 458:.\Generated_Source\PSoC5/BLE_UART.c ****     ********************************************************************************
+ 459:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 14
+
+
+ 460:.\Generated_Source\PSoC5/BLE_UART.c ****     * Summary:
+ 461:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Returns the current state of the receiver status register and the software
+ 462:.\Generated_Source\PSoC5/BLE_UART.c ****     *  buffer overflow status.
+ 463:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 464:.\Generated_Source\PSoC5/BLE_UART.c ****     * Parameters:
+ 465:.\Generated_Source\PSoC5/BLE_UART.c ****     *  None.
+ 466:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 467:.\Generated_Source\PSoC5/BLE_UART.c ****     * Return:
+ 468:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Current state of the status register.
+ 469:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 470:.\Generated_Source\PSoC5/BLE_UART.c ****     * Side Effect:
+ 471:.\Generated_Source\PSoC5/BLE_UART.c ****     *  All status register bits are clear-on-read except
+ 472:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_RX_STS_FIFO_NOTEMPTY.
+ 473:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_RX_STS_FIFO_NOTEMPTY clears immediately after RX data
+ 474:.\Generated_Source\PSoC5/BLE_UART.c ****     *  register read.
+ 475:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 476:.\Generated_Source\PSoC5/BLE_UART.c ****     * Global Variables:
+ 477:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferOverflow - used to indicate overload condition.
+ 478:.\Generated_Source\PSoC5/BLE_UART.c ****     *   It set to one in RX interrupt when there isn't free space in
+ 479:.\Generated_Source\PSoC5/BLE_UART.c ****     *   BLE_UART_rxBufferRead to write new data. This condition returned
+ 480:.\Generated_Source\PSoC5/BLE_UART.c ****     *   and cleared to zero by this API as an
+ 481:.\Generated_Source\PSoC5/BLE_UART.c ****     *   BLE_UART_RX_STS_SOFT_BUFF_OVER bit along with RX Status register
+ 482:.\Generated_Source\PSoC5/BLE_UART.c ****     *   bits.
+ 483:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 484:.\Generated_Source\PSoC5/BLE_UART.c ****     *******************************************************************************/
+ 485:.\Generated_Source\PSoC5/BLE_UART.c ****     uint8 BLE_UART_ReadRxStatus(void) 
+ 486:.\Generated_Source\PSoC5/BLE_UART.c ****     {
+ 278              		.loc 1 486 0
+ 279              		.cfi_startproc
+ 280              		@ args = 0, pretend = 0, frame = 0
+ 281              		@ frame_needed = 0, uses_anonymous_args = 0
+ 282              		@ link register save eliminated.
+ 487:.\Generated_Source\PSoC5/BLE_UART.c ****         uint8 status;
+ 488:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 489:.\Generated_Source\PSoC5/BLE_UART.c ****         status = BLE_UART_RXSTATUS_REG & BLE_UART_RX_HW_MASK;
+ 283              		.loc 1 489 0
+ 284 0000 024B     		ldr	r3, .L26
+ 285 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 286              	.LVL15:
+ 490:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 491:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_RX_INTERRUPT_ENABLED)
+ 492:.\Generated_Source\PSoC5/BLE_UART.c ****         if(BLE_UART_rxBufferOverflow != 0u)
+ 493:.\Generated_Source\PSoC5/BLE_UART.c ****         {
+ 494:.\Generated_Source\PSoC5/BLE_UART.c ****             status |= BLE_UART_RX_STS_SOFT_BUFF_OVER;
+ 495:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_rxBufferOverflow = 0u;
+ 496:.\Generated_Source\PSoC5/BLE_UART.c ****         }
+ 497:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_RX_INTERRUPT_ENABLED) */
+ 498:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 499:.\Generated_Source\PSoC5/BLE_UART.c ****         return(status);
+ 500:.\Generated_Source\PSoC5/BLE_UART.c ****     }
+ 287              		.loc 1 500 0
+ 288 0004 00F07F00 		and	r0, r0, #127
+ 289              	.LVL16:
+ 290 0008 7047     		bx	lr
+ 291              	.L27:
+ 292 000a 00BF     		.align	2
+ 293              	.L26:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 15
+
+
+ 294 000c 6D640040 		.word	1073767533
+ 295              		.cfi_endproc
+ 296              	.LFE8:
+ 297              		.size	BLE_UART_ReadRxStatus, .-BLE_UART_ReadRxStatus
+ 298              		.section	.text.BLE_UART_GetChar,"ax",%progbits
+ 299              		.align	2
+ 300              		.global	BLE_UART_GetChar
+ 301              		.thumb
+ 302              		.thumb_func
+ 303              		.type	BLE_UART_GetChar, %function
+ 304              	BLE_UART_GetChar:
+ 305              	.LFB9:
+ 501:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 502:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 503:.\Generated_Source\PSoC5/BLE_UART.c ****     /*******************************************************************************
+ 504:.\Generated_Source\PSoC5/BLE_UART.c ****     * Function Name: BLE_UART_GetChar
+ 505:.\Generated_Source\PSoC5/BLE_UART.c ****     ********************************************************************************
+ 506:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 507:.\Generated_Source\PSoC5/BLE_UART.c ****     * Summary:
+ 508:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Returns the last received byte of data. BLE_UART_GetChar() is
+ 509:.\Generated_Source\PSoC5/BLE_UART.c ****     *  designed for ASCII characters and returns a uint8 where 1 to 255 are values
+ 510:.\Generated_Source\PSoC5/BLE_UART.c ****     *  for valid characters and 0 indicates an error occurred or no data is present.
+ 511:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 512:.\Generated_Source\PSoC5/BLE_UART.c ****     * Parameters:
+ 513:.\Generated_Source\PSoC5/BLE_UART.c ****     *  None.
+ 514:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 515:.\Generated_Source\PSoC5/BLE_UART.c ****     * Return:
+ 516:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Character read from UART RX buffer. ASCII characters from 1 to 255 are valid.
+ 517:.\Generated_Source\PSoC5/BLE_UART.c ****     *  A returned zero signifies an error condition or no data available.
+ 518:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 519:.\Generated_Source\PSoC5/BLE_UART.c ****     * Global Variables:
+ 520:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBuffer - RAM buffer pointer for save received data.
+ 521:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferWrite - cyclic index for write to rxBuffer,
+ 522:.\Generated_Source\PSoC5/BLE_UART.c ****     *     checked to identify new data.
+ 523:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferRead - cyclic index for read from rxBuffer,
+ 524:.\Generated_Source\PSoC5/BLE_UART.c ****     *     incremented after each byte has been read from buffer.
+ 525:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferLoopDetect - cleared if loop condition was detected
+ 526:.\Generated_Source\PSoC5/BLE_UART.c ****     *     in RX ISR.
+ 527:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 528:.\Generated_Source\PSoC5/BLE_UART.c ****     * Reentrant:
+ 529:.\Generated_Source\PSoC5/BLE_UART.c ****     *  No.
+ 530:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 531:.\Generated_Source\PSoC5/BLE_UART.c ****     *******************************************************************************/
+ 532:.\Generated_Source\PSoC5/BLE_UART.c ****     uint8 BLE_UART_GetChar(void) 
+ 533:.\Generated_Source\PSoC5/BLE_UART.c ****     {
+ 306              		.loc 1 533 0
+ 307              		.cfi_startproc
+ 308              		@ args = 0, pretend = 0, frame = 0
+ 309              		@ frame_needed = 0, uses_anonymous_args = 0
+ 310              		@ link register save eliminated.
+ 311              	.LVL17:
+ 534:.\Generated_Source\PSoC5/BLE_UART.c ****         uint8 rxData = 0u;
+ 535:.\Generated_Source\PSoC5/BLE_UART.c ****         uint8 rxStatus;
+ 536:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 537:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_RX_INTERRUPT_ENABLED)
+ 538:.\Generated_Source\PSoC5/BLE_UART.c ****         uint8 locRxBufferRead;
+ 539:.\Generated_Source\PSoC5/BLE_UART.c ****         uint8 locRxBufferWrite;
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 16
+
+
+ 540:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 541:.\Generated_Source\PSoC5/BLE_UART.c ****         /* Protect variables that could change on interrupt */
+ 542:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_DisableRxInt();
+ 543:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 544:.\Generated_Source\PSoC5/BLE_UART.c ****         locRxBufferRead  = BLE_UART_rxBufferRead;
+ 545:.\Generated_Source\PSoC5/BLE_UART.c ****         locRxBufferWrite = BLE_UART_rxBufferWrite;
+ 546:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 547:.\Generated_Source\PSoC5/BLE_UART.c ****         if( (BLE_UART_rxBufferLoopDetect != 0u) || (locRxBufferRead != locRxBufferWrite) )
+ 548:.\Generated_Source\PSoC5/BLE_UART.c ****         {
+ 549:.\Generated_Source\PSoC5/BLE_UART.c ****             rxData = BLE_UART_rxBuffer[locRxBufferRead];
+ 550:.\Generated_Source\PSoC5/BLE_UART.c ****             locRxBufferRead++;
+ 551:.\Generated_Source\PSoC5/BLE_UART.c ****             if(locRxBufferRead >= BLE_UART_RX_BUFFER_SIZE)
+ 552:.\Generated_Source\PSoC5/BLE_UART.c ****             {
+ 553:.\Generated_Source\PSoC5/BLE_UART.c ****                 locRxBufferRead = 0u;
+ 554:.\Generated_Source\PSoC5/BLE_UART.c ****             }
+ 555:.\Generated_Source\PSoC5/BLE_UART.c ****             /* Update the real pointer */
+ 556:.\Generated_Source\PSoC5/BLE_UART.c ****             BLE_UART_rxBufferRead = locRxBufferRead;
+ 557:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 558:.\Generated_Source\PSoC5/BLE_UART.c ****             if(BLE_UART_rxBufferLoopDetect != 0u)
+ 559:.\Generated_Source\PSoC5/BLE_UART.c ****             {
+ 560:.\Generated_Source\PSoC5/BLE_UART.c ****                 BLE_UART_rxBufferLoopDetect = 0u;
+ 561:.\Generated_Source\PSoC5/BLE_UART.c ****                 #if( (BLE_UART_RX_INTERRUPT_ENABLED) && (BLE_UART_FLOW_CONTROL != 0u) )
+ 562:.\Generated_Source\PSoC5/BLE_UART.c ****                     /* When Hardware Flow Control selected - return RX mask */
+ 563:.\Generated_Source\PSoC5/BLE_UART.c ****                     #if( BLE_UART_HD_ENABLED )
+ 564:.\Generated_Source\PSoC5/BLE_UART.c ****                         if((BLE_UART_CONTROL_REG & BLE_UART_CTRL_HD_SEND) == 0u)
+ 565:.\Generated_Source\PSoC5/BLE_UART.c ****                         {   /* In Half duplex mode return RX mask only if
+ 566:.\Generated_Source\PSoC5/BLE_UART.c ****                             *  RX configuration set, otherwise
+ 567:.\Generated_Source\PSoC5/BLE_UART.c ****                             *  mask will be returned in LoadRxConfig() API.
+ 568:.\Generated_Source\PSoC5/BLE_UART.c ****                             */
+ 569:.\Generated_Source\PSoC5/BLE_UART.c ****                             BLE_UART_RXSTATUS_MASK_REG |= BLE_UART_RX_STS_FIFO_NOTEMPTY;
+ 570:.\Generated_Source\PSoC5/BLE_UART.c ****                         }
+ 571:.\Generated_Source\PSoC5/BLE_UART.c ****                     #else
+ 572:.\Generated_Source\PSoC5/BLE_UART.c ****                         BLE_UART_RXSTATUS_MASK_REG |= BLE_UART_RX_STS_FIFO_NOTEMPTY;
+ 573:.\Generated_Source\PSoC5/BLE_UART.c ****                     #endif /* end BLE_UART_HD_ENABLED */
+ 574:.\Generated_Source\PSoC5/BLE_UART.c ****                 #endif /* BLE_UART_RX_INTERRUPT_ENABLED and Hardware flow control*/
+ 575:.\Generated_Source\PSoC5/BLE_UART.c ****             }
+ 576:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 577:.\Generated_Source\PSoC5/BLE_UART.c ****         }
+ 578:.\Generated_Source\PSoC5/BLE_UART.c ****         else
+ 579:.\Generated_Source\PSoC5/BLE_UART.c ****         {   rxStatus = BLE_UART_RXSTATUS_REG;
+ 580:.\Generated_Source\PSoC5/BLE_UART.c ****             if((rxStatus & BLE_UART_RX_STS_FIFO_NOTEMPTY) != 0u)
+ 581:.\Generated_Source\PSoC5/BLE_UART.c ****             {   /* Read received data from FIFO */
+ 582:.\Generated_Source\PSoC5/BLE_UART.c ****                 rxData = BLE_UART_RXDATA_REG;
+ 583:.\Generated_Source\PSoC5/BLE_UART.c ****                 /*Check status on error*/
+ 584:.\Generated_Source\PSoC5/BLE_UART.c ****                 if((rxStatus & (BLE_UART_RX_STS_BREAK | BLE_UART_RX_STS_PAR_ERROR |
+ 585:.\Generated_Source\PSoC5/BLE_UART.c ****                                 BLE_UART_RX_STS_STOP_ERROR | BLE_UART_RX_STS_OVERRUN)) != 0u)
+ 586:.\Generated_Source\PSoC5/BLE_UART.c ****                 {
+ 587:.\Generated_Source\PSoC5/BLE_UART.c ****                     rxData = 0u;
+ 588:.\Generated_Source\PSoC5/BLE_UART.c ****                 }
+ 589:.\Generated_Source\PSoC5/BLE_UART.c ****             }
+ 590:.\Generated_Source\PSoC5/BLE_UART.c ****         }
+ 591:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 592:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_EnableRxInt();
+ 593:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 594:.\Generated_Source\PSoC5/BLE_UART.c ****     #else
+ 595:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 596:.\Generated_Source\PSoC5/BLE_UART.c ****         rxStatus =BLE_UART_RXSTATUS_REG;
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 17
+
+
+ 312              		.loc 1 596 0
+ 313 0000 084B     		ldr	r3, .L32
+ 314 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 315 0004 DBB2     		uxtb	r3, r3
+ 316              	.LVL18:
+ 597:.\Generated_Source\PSoC5/BLE_UART.c ****         if((rxStatus & BLE_UART_RX_STS_FIFO_NOTEMPTY) != 0u)
+ 317              		.loc 1 597 0
+ 318 0006 13F0200F 		tst	r3, #32
+ 319 000a 06D0     		beq	.L30
+ 598:.\Generated_Source\PSoC5/BLE_UART.c ****         {
+ 599:.\Generated_Source\PSoC5/BLE_UART.c ****             /* Read received data from FIFO */
+ 600:.\Generated_Source\PSoC5/BLE_UART.c ****             rxData = BLE_UART_RXDATA_REG;
+ 320              		.loc 1 600 0
+ 321 000c 064A     		ldr	r2, .L32+4
+ 322 000e 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
+ 323 0010 C0B2     		uxtb	r0, r0
+ 324              	.LVL19:
+ 601:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 602:.\Generated_Source\PSoC5/BLE_UART.c ****             /*Check status on error*/
+ 603:.\Generated_Source\PSoC5/BLE_UART.c ****             if((rxStatus & (BLE_UART_RX_STS_BREAK | BLE_UART_RX_STS_PAR_ERROR |
+ 325              		.loc 1 603 0
+ 326 0012 13F01E0F 		tst	r3, #30
+ 327 0016 02D1     		bne	.L31
+ 328 0018 7047     		bx	lr
+ 329              	.LVL20:
+ 330              	.L30:
+ 534:.\Generated_Source\PSoC5/BLE_UART.c ****         uint8 rxStatus;
+ 331              		.loc 1 534 0
+ 332 001a 0020     		movs	r0, #0
+ 333 001c 7047     		bx	lr
+ 334              	.LVL21:
+ 335              	.L31:
+ 604:.\Generated_Source\PSoC5/BLE_UART.c ****                             BLE_UART_RX_STS_STOP_ERROR | BLE_UART_RX_STS_OVERRUN)) != 0u)
+ 605:.\Generated_Source\PSoC5/BLE_UART.c ****             {
+ 606:.\Generated_Source\PSoC5/BLE_UART.c ****                 rxData = 0u;
+ 336              		.loc 1 606 0
+ 337 001e 0020     		movs	r0, #0
+ 338              	.LVL22:
+ 607:.\Generated_Source\PSoC5/BLE_UART.c ****             }
+ 608:.\Generated_Source\PSoC5/BLE_UART.c ****         }
+ 609:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_RX_INTERRUPT_ENABLED) */
+ 610:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 611:.\Generated_Source\PSoC5/BLE_UART.c ****         return(rxData);
+ 612:.\Generated_Source\PSoC5/BLE_UART.c ****     }
+ 339              		.loc 1 612 0
+ 340 0020 7047     		bx	lr
+ 341              	.L33:
+ 342 0022 00BF     		.align	2
+ 343              	.L32:
+ 344 0024 6D640040 		.word	1073767533
+ 345 0028 4D640040 		.word	1073767501
+ 346              		.cfi_endproc
+ 347              	.LFE9:
+ 348              		.size	BLE_UART_GetChar, .-BLE_UART_GetChar
+ 349              		.section	.text.BLE_UART_GetByte,"ax",%progbits
+ 350              		.align	2
+ 351              		.global	BLE_UART_GetByte
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 18
+
+
+ 352              		.thumb
+ 353              		.thumb_func
+ 354              		.type	BLE_UART_GetByte, %function
+ 355              	BLE_UART_GetByte:
+ 356              	.LFB10:
+ 613:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 614:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 615:.\Generated_Source\PSoC5/BLE_UART.c ****     /*******************************************************************************
+ 616:.\Generated_Source\PSoC5/BLE_UART.c ****     * Function Name: BLE_UART_GetByte
+ 617:.\Generated_Source\PSoC5/BLE_UART.c ****     ********************************************************************************
+ 618:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 619:.\Generated_Source\PSoC5/BLE_UART.c ****     * Summary:
+ 620:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Reads UART RX buffer immediately, returns received character and error
+ 621:.\Generated_Source\PSoC5/BLE_UART.c ****     *  condition.
+ 622:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 623:.\Generated_Source\PSoC5/BLE_UART.c ****     * Parameters:
+ 624:.\Generated_Source\PSoC5/BLE_UART.c ****     *  None.
+ 625:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 626:.\Generated_Source\PSoC5/BLE_UART.c ****     * Return:
+ 627:.\Generated_Source\PSoC5/BLE_UART.c ****     *  MSB contains status and LSB contains UART RX data. If the MSB is nonzero,
+ 628:.\Generated_Source\PSoC5/BLE_UART.c ****     *  an error has occurred.
+ 629:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 630:.\Generated_Source\PSoC5/BLE_UART.c ****     * Reentrant:
+ 631:.\Generated_Source\PSoC5/BLE_UART.c ****     *  No.
+ 632:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 633:.\Generated_Source\PSoC5/BLE_UART.c ****     *******************************************************************************/
+ 634:.\Generated_Source\PSoC5/BLE_UART.c ****     uint16 BLE_UART_GetByte(void) 
+ 635:.\Generated_Source\PSoC5/BLE_UART.c ****     {
+ 357              		.loc 1 635 0
+ 358              		.cfi_startproc
+ 359              		@ args = 0, pretend = 0, frame = 0
+ 360              		@ frame_needed = 0, uses_anonymous_args = 0
+ 361 0000 10B5     		push	{r4, lr}
+ 362              		.cfi_def_cfa_offset 8
+ 363              		.cfi_offset 4, -8
+ 364              		.cfi_offset 14, -4
+ 636:.\Generated_Source\PSoC5/BLE_UART.c ****         
+ 637:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_RX_INTERRUPT_ENABLED)
+ 638:.\Generated_Source\PSoC5/BLE_UART.c ****         uint16 locErrorStatus;
+ 639:.\Generated_Source\PSoC5/BLE_UART.c ****         /* Protect variables that could change on interrupt */
+ 640:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_DisableRxInt();
+ 641:.\Generated_Source\PSoC5/BLE_UART.c ****         locErrorStatus = (uint16)BLE_UART_errorStatus;
+ 642:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_errorStatus = 0u;
+ 643:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_EnableRxInt();
+ 644:.\Generated_Source\PSoC5/BLE_UART.c ****         return ( (uint16)(locErrorStatus << 8u) | BLE_UART_ReadRxData() );
+ 645:.\Generated_Source\PSoC5/BLE_UART.c ****     #else
+ 646:.\Generated_Source\PSoC5/BLE_UART.c ****         return ( ((uint16)BLE_UART_ReadRxStatus() << 8u) | BLE_UART_ReadRxData() );
+ 365              		.loc 1 646 0
+ 366 0002 FFF7FEFF 		bl	BLE_UART_ReadRxStatus
+ 367              	.LVL23:
+ 368 0006 0402     		lsls	r4, r0, #8
+ 369 0008 FFF7FEFF 		bl	BLE_UART_ReadRxData
+ 370              	.LVL24:
+ 371 000c 2043     		orrs	r0, r0, r4
+ 647:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* BLE_UART_RX_INTERRUPT_ENABLED */
+ 648:.\Generated_Source\PSoC5/BLE_UART.c ****         
+ 649:.\Generated_Source\PSoC5/BLE_UART.c ****     }
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 19
+
+
+ 372              		.loc 1 649 0
+ 373 000e 80B2     		uxth	r0, r0
+ 374 0010 10BD     		pop	{r4, pc}
+ 375              		.cfi_endproc
+ 376              	.LFE10:
+ 377              		.size	BLE_UART_GetByte, .-BLE_UART_GetByte
+ 378 0012 00BF     		.section	.text.BLE_UART_GetRxBufferSize,"ax",%progbits
+ 379              		.align	2
+ 380              		.global	BLE_UART_GetRxBufferSize
+ 381              		.thumb
+ 382              		.thumb_func
+ 383              		.type	BLE_UART_GetRxBufferSize, %function
+ 384              	BLE_UART_GetRxBufferSize:
+ 385              	.LFB11:
+ 650:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 651:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 652:.\Generated_Source\PSoC5/BLE_UART.c ****     /*******************************************************************************
+ 653:.\Generated_Source\PSoC5/BLE_UART.c ****     * Function Name: BLE_UART_GetRxBufferSize
+ 654:.\Generated_Source\PSoC5/BLE_UART.c ****     ********************************************************************************
+ 655:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 656:.\Generated_Source\PSoC5/BLE_UART.c ****     * Summary:
+ 657:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Returns the number of received bytes available in the RX buffer.
+ 658:.\Generated_Source\PSoC5/BLE_UART.c ****     *  * RX software buffer is disabled (RX Buffer Size parameter is equal to 4): 
+ 659:.\Generated_Source\PSoC5/BLE_UART.c ****     *    returns 0 for empty RX FIFO or 1 for not empty RX FIFO.
+ 660:.\Generated_Source\PSoC5/BLE_UART.c ****     *  * RX software buffer is enabled: returns the number of bytes available in 
+ 661:.\Generated_Source\PSoC5/BLE_UART.c ****     *    the RX software buffer. Bytes available in the RX FIFO do not take to 
+ 662:.\Generated_Source\PSoC5/BLE_UART.c ****     *    account.
+ 663:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 664:.\Generated_Source\PSoC5/BLE_UART.c ****     * Parameters:
+ 665:.\Generated_Source\PSoC5/BLE_UART.c ****     *  None.
+ 666:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 667:.\Generated_Source\PSoC5/BLE_UART.c ****     * Return:
+ 668:.\Generated_Source\PSoC5/BLE_UART.c ****     *  uint8: Number of bytes in the RX buffer. 
+ 669:.\Generated_Source\PSoC5/BLE_UART.c ****     *    Return value type depends on RX Buffer Size parameter.
+ 670:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 671:.\Generated_Source\PSoC5/BLE_UART.c ****     * Global Variables:
+ 672:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferWrite - used to calculate left bytes.
+ 673:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferRead - used to calculate left bytes.
+ 674:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferLoopDetect - checked to decide left bytes amount.
+ 675:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 676:.\Generated_Source\PSoC5/BLE_UART.c ****     * Reentrant:
+ 677:.\Generated_Source\PSoC5/BLE_UART.c ****     *  No.
+ 678:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 679:.\Generated_Source\PSoC5/BLE_UART.c ****     * Theory:
+ 680:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Allows the user to find out how full the RX Buffer is.
+ 681:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 682:.\Generated_Source\PSoC5/BLE_UART.c ****     *******************************************************************************/
+ 683:.\Generated_Source\PSoC5/BLE_UART.c ****     uint8 BLE_UART_GetRxBufferSize(void)
+ 684:.\Generated_Source\PSoC5/BLE_UART.c ****                                                             
+ 685:.\Generated_Source\PSoC5/BLE_UART.c ****     {
+ 386              		.loc 1 685 0
+ 387              		.cfi_startproc
+ 388              		@ args = 0, pretend = 0, frame = 0
+ 389              		@ frame_needed = 0, uses_anonymous_args = 0
+ 390              		@ link register save eliminated.
+ 686:.\Generated_Source\PSoC5/BLE_UART.c ****         uint8 size;
+ 687:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 20
+
+
+ 688:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_RX_INTERRUPT_ENABLED)
+ 689:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 690:.\Generated_Source\PSoC5/BLE_UART.c ****         /* Protect variables that could change on interrupt */
+ 691:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_DisableRxInt();
+ 692:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 693:.\Generated_Source\PSoC5/BLE_UART.c ****         if(BLE_UART_rxBufferRead == BLE_UART_rxBufferWrite)
+ 694:.\Generated_Source\PSoC5/BLE_UART.c ****         {
+ 695:.\Generated_Source\PSoC5/BLE_UART.c ****             if(BLE_UART_rxBufferLoopDetect != 0u)
+ 696:.\Generated_Source\PSoC5/BLE_UART.c ****             {
+ 697:.\Generated_Source\PSoC5/BLE_UART.c ****                 size = BLE_UART_RX_BUFFER_SIZE;
+ 698:.\Generated_Source\PSoC5/BLE_UART.c ****             }
+ 699:.\Generated_Source\PSoC5/BLE_UART.c ****             else
+ 700:.\Generated_Source\PSoC5/BLE_UART.c ****             {
+ 701:.\Generated_Source\PSoC5/BLE_UART.c ****                 size = 0u;
+ 702:.\Generated_Source\PSoC5/BLE_UART.c ****             }
+ 703:.\Generated_Source\PSoC5/BLE_UART.c ****         }
+ 704:.\Generated_Source\PSoC5/BLE_UART.c ****         else if(BLE_UART_rxBufferRead < BLE_UART_rxBufferWrite)
+ 705:.\Generated_Source\PSoC5/BLE_UART.c ****         {
+ 706:.\Generated_Source\PSoC5/BLE_UART.c ****             size = (BLE_UART_rxBufferWrite - BLE_UART_rxBufferRead);
+ 707:.\Generated_Source\PSoC5/BLE_UART.c ****         }
+ 708:.\Generated_Source\PSoC5/BLE_UART.c ****         else
+ 709:.\Generated_Source\PSoC5/BLE_UART.c ****         {
+ 710:.\Generated_Source\PSoC5/BLE_UART.c ****             size = (BLE_UART_RX_BUFFER_SIZE - BLE_UART_rxBufferRead) + BLE_UART_rxBufferWrite;
+ 711:.\Generated_Source\PSoC5/BLE_UART.c ****         }
+ 712:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 713:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_EnableRxInt();
+ 714:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 715:.\Generated_Source\PSoC5/BLE_UART.c ****     #else
+ 716:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 717:.\Generated_Source\PSoC5/BLE_UART.c ****         /* We can only know if there is data in the fifo. */
+ 718:.\Generated_Source\PSoC5/BLE_UART.c ****         size = ((BLE_UART_RXSTATUS_REG & BLE_UART_RX_STS_FIFO_NOTEMPTY) != 0u) ? 1u : 0u;
+ 391              		.loc 1 718 0
+ 392 0000 044B     		ldr	r3, .L39
+ 393 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 394 0004 13F0200F 		tst	r3, #32
+ 395 0008 01D0     		beq	.L38
+ 396 000a 0120     		movs	r0, #1
+ 397 000c 7047     		bx	lr
+ 398              	.L38:
+ 399 000e 0020     		movs	r0, #0
+ 400              	.LVL25:
+ 719:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 720:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_RX_INTERRUPT_ENABLED) */
+ 721:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 722:.\Generated_Source\PSoC5/BLE_UART.c ****         return(size);
+ 723:.\Generated_Source\PSoC5/BLE_UART.c ****     }
+ 401              		.loc 1 723 0
+ 402 0010 7047     		bx	lr
+ 403              	.L40:
+ 404 0012 00BF     		.align	2
+ 405              	.L39:
+ 406 0014 6D640040 		.word	1073767533
+ 407              		.cfi_endproc
+ 408              	.LFE11:
+ 409              		.size	BLE_UART_GetRxBufferSize, .-BLE_UART_GetRxBufferSize
+ 410              		.section	.text.BLE_UART_ClearRxBuffer,"ax",%progbits
+ 411              		.align	2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 21
+
+
+ 412              		.global	BLE_UART_ClearRxBuffer
+ 413              		.thumb
+ 414              		.thumb_func
+ 415              		.type	BLE_UART_ClearRxBuffer, %function
+ 416              	BLE_UART_ClearRxBuffer:
+ 417              	.LFB12:
+ 724:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 725:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 726:.\Generated_Source\PSoC5/BLE_UART.c ****     /*******************************************************************************
+ 727:.\Generated_Source\PSoC5/BLE_UART.c ****     * Function Name: BLE_UART_ClearRxBuffer
+ 728:.\Generated_Source\PSoC5/BLE_UART.c ****     ********************************************************************************
+ 729:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 730:.\Generated_Source\PSoC5/BLE_UART.c ****     * Summary:
+ 731:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Clears the receiver memory buffer and hardware RX FIFO of all received data.
+ 732:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 733:.\Generated_Source\PSoC5/BLE_UART.c ****     * Parameters:
+ 734:.\Generated_Source\PSoC5/BLE_UART.c ****     *  None.
+ 735:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 736:.\Generated_Source\PSoC5/BLE_UART.c ****     * Return:
+ 737:.\Generated_Source\PSoC5/BLE_UART.c ****     *  None.
+ 738:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 739:.\Generated_Source\PSoC5/BLE_UART.c ****     * Global Variables:
+ 740:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferWrite - cleared to zero.
+ 741:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferRead - cleared to zero.
+ 742:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferLoopDetect - cleared to zero.
+ 743:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxBufferOverflow - cleared to zero.
+ 744:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 745:.\Generated_Source\PSoC5/BLE_UART.c ****     * Reentrant:
+ 746:.\Generated_Source\PSoC5/BLE_UART.c ****     *  No.
+ 747:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 748:.\Generated_Source\PSoC5/BLE_UART.c ****     * Theory:
+ 749:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Setting the pointers to zero makes the system believe there is no data to
+ 750:.\Generated_Source\PSoC5/BLE_UART.c ****     *  read and writing will resume at address 0 overwriting any data that may
+ 751:.\Generated_Source\PSoC5/BLE_UART.c ****     *  have remained in the RAM.
+ 752:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 753:.\Generated_Source\PSoC5/BLE_UART.c ****     * Side Effects:
+ 754:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Any received data not read from the RAM or FIFO buffer will be lost.
+ 755:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 756:.\Generated_Source\PSoC5/BLE_UART.c ****     *******************************************************************************/
+ 757:.\Generated_Source\PSoC5/BLE_UART.c ****     void BLE_UART_ClearRxBuffer(void) 
+ 758:.\Generated_Source\PSoC5/BLE_UART.c ****     {
+ 418              		.loc 1 758 0
+ 419              		.cfi_startproc
+ 420              		@ args = 0, pretend = 0, frame = 0
+ 421              		@ frame_needed = 0, uses_anonymous_args = 0
+ 422 0000 08B5     		push	{r3, lr}
+ 423              		.cfi_def_cfa_offset 8
+ 424              		.cfi_offset 3, -8
+ 425              		.cfi_offset 14, -4
+ 759:.\Generated_Source\PSoC5/BLE_UART.c ****         uint8 enableInterrupts;
+ 760:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 761:.\Generated_Source\PSoC5/BLE_UART.c ****         /* Clear the HW FIFO */
+ 762:.\Generated_Source\PSoC5/BLE_UART.c ****         enableInterrupts = CyEnterCriticalSection();
+ 426              		.loc 1 762 0
+ 427 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+ 428              	.LVL26:
+ 763:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_RXDATA_AUX_CTL_REG |= (uint8)  BLE_UART_RX_FIFO_CLR;
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 22
+
+
+ 429              		.loc 1 763 0
+ 430 0006 064B     		ldr	r3, .L43
+ 431 0008 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 432 000a 42F00102 		orr	r2, r2, #1
+ 433 000e 1A70     		strb	r2, [r3]
+ 764:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_RXDATA_AUX_CTL_REG &= (uint8) ~BLE_UART_RX_FIFO_CLR;
+ 434              		.loc 1 764 0
+ 435 0010 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 436 0012 02F0FE02 		and	r2, r2, #254
+ 437 0016 1A70     		strb	r2, [r3]
+ 765:.\Generated_Source\PSoC5/BLE_UART.c ****         CyExitCriticalSection(enableInterrupts);
+ 438              		.loc 1 765 0
+ 439 0018 FFF7FEFF 		bl	CyExitCriticalSection
+ 440              	.LVL27:
+ 441 001c 08BD     		pop	{r3, pc}
+ 442              	.L44:
+ 443 001e 00BF     		.align	2
+ 444              	.L43:
+ 445 0020 9D640040 		.word	1073767581
+ 446              		.cfi_endproc
+ 447              	.LFE12:
+ 448              		.size	BLE_UART_ClearRxBuffer, .-BLE_UART_ClearRxBuffer
+ 449              		.section	.text.BLE_UART_SetRxAddressMode,"ax",%progbits
+ 450              		.align	2
+ 451              		.global	BLE_UART_SetRxAddressMode
+ 452              		.thumb
+ 453              		.thumb_func
+ 454              		.type	BLE_UART_SetRxAddressMode, %function
+ 455              	BLE_UART_SetRxAddressMode:
+ 456              	.LFB13:
+ 766:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 767:.\Generated_Source\PSoC5/BLE_UART.c ****     #if (BLE_UART_RX_INTERRUPT_ENABLED)
+ 768:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 769:.\Generated_Source\PSoC5/BLE_UART.c ****         /* Protect variables that could change on interrupt. */
+ 770:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_DisableRxInt();
+ 771:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 772:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_rxBufferRead = 0u;
+ 773:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_rxBufferWrite = 0u;
+ 774:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_rxBufferLoopDetect = 0u;
+ 775:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_rxBufferOverflow = 0u;
+ 776:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 777:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_EnableRxInt();
+ 778:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 779:.\Generated_Source\PSoC5/BLE_UART.c ****     #endif /* (BLE_UART_RX_INTERRUPT_ENABLED) */
+ 780:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 781:.\Generated_Source\PSoC5/BLE_UART.c ****     }
+ 782:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 783:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 784:.\Generated_Source\PSoC5/BLE_UART.c ****     /*******************************************************************************
+ 785:.\Generated_Source\PSoC5/BLE_UART.c ****     * Function Name: BLE_UART_SetRxAddressMode
+ 786:.\Generated_Source\PSoC5/BLE_UART.c ****     ********************************************************************************
+ 787:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 788:.\Generated_Source\PSoC5/BLE_UART.c ****     * Summary:
+ 789:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Sets the software controlled Addressing mode used by the RX portion of the
+ 790:.\Generated_Source\PSoC5/BLE_UART.c ****     *  UART.
+ 791:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 792:.\Generated_Source\PSoC5/BLE_UART.c ****     * Parameters:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 23
+
+
+ 793:.\Generated_Source\PSoC5/BLE_UART.c ****     *  addressMode: Enumerated value indicating the mode of RX addressing
+ 794:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART__B_UART__AM_SW_BYTE_BYTE -  Software Byte-by-Byte address
+ 795:.\Generated_Source\PSoC5/BLE_UART.c ****     *                                               detection
+ 796:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART__B_UART__AM_SW_DETECT_TO_BUFFER - Software Detect to Buffer
+ 797:.\Generated_Source\PSoC5/BLE_UART.c ****     *                                               address detection
+ 798:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART__B_UART__AM_HW_BYTE_BY_BYTE - Hardware Byte-by-Byte address
+ 799:.\Generated_Source\PSoC5/BLE_UART.c ****     *                                               detection
+ 800:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART__B_UART__AM_HW_DETECT_TO_BUFFER - Hardware Detect to Buffer
+ 801:.\Generated_Source\PSoC5/BLE_UART.c ****     *                                               address detection
+ 802:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART__B_UART__AM_NONE - No address detection
+ 803:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 804:.\Generated_Source\PSoC5/BLE_UART.c ****     * Return:
+ 805:.\Generated_Source\PSoC5/BLE_UART.c ****     *  None.
+ 806:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 807:.\Generated_Source\PSoC5/BLE_UART.c ****     * Global Variables:
+ 808:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxAddressMode - the parameter stored in this variable for
+ 809:.\Generated_Source\PSoC5/BLE_UART.c ****     *   the farther usage in RX ISR.
+ 810:.\Generated_Source\PSoC5/BLE_UART.c ****     *  BLE_UART_rxAddressDetected - set to initial state (0).
+ 811:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 812:.\Generated_Source\PSoC5/BLE_UART.c ****     *******************************************************************************/
+ 813:.\Generated_Source\PSoC5/BLE_UART.c ****     void BLE_UART_SetRxAddressMode(uint8 addressMode)
+ 814:.\Generated_Source\PSoC5/BLE_UART.c ****                                                         
+ 815:.\Generated_Source\PSoC5/BLE_UART.c ****     {
+ 457              		.loc 1 815 0
+ 458              		.cfi_startproc
+ 459              		@ args = 0, pretend = 0, frame = 0
+ 460              		@ frame_needed = 0, uses_anonymous_args = 0
+ 461              		@ link register save eliminated.
+ 462              	.LVL28:
+ 463 0000 7047     		bx	lr
+ 464              		.cfi_endproc
+ 465              	.LFE13:
+ 466              		.size	BLE_UART_SetRxAddressMode, .-BLE_UART_SetRxAddressMode
+ 467 0002 00BF     		.section	.text.BLE_UART_SetRxAddress1,"ax",%progbits
+ 468              		.align	2
+ 469              		.global	BLE_UART_SetRxAddress1
+ 470              		.thumb
+ 471              		.thumb_func
+ 472              		.type	BLE_UART_SetRxAddress1, %function
+ 473              	BLE_UART_SetRxAddress1:
+ 474              	.LFB14:
+ 816:.\Generated_Source\PSoC5/BLE_UART.c ****         #if(BLE_UART_RXHW_ADDRESS_ENABLED)
+ 817:.\Generated_Source\PSoC5/BLE_UART.c ****             #if(BLE_UART_CONTROL_REG_REMOVED)
+ 818:.\Generated_Source\PSoC5/BLE_UART.c ****                 if(0u != addressMode)
+ 819:.\Generated_Source\PSoC5/BLE_UART.c ****                 {
+ 820:.\Generated_Source\PSoC5/BLE_UART.c ****                     /* Suppress compiler warning */
+ 821:.\Generated_Source\PSoC5/BLE_UART.c ****                 }
+ 822:.\Generated_Source\PSoC5/BLE_UART.c ****             #else /* BLE_UART_CONTROL_REG_REMOVED */
+ 823:.\Generated_Source\PSoC5/BLE_UART.c ****                 uint8 tmpCtrl;
+ 824:.\Generated_Source\PSoC5/BLE_UART.c ****                 tmpCtrl = BLE_UART_CONTROL_REG & (uint8)~BLE_UART_CTRL_RXADDR_MODE_MASK;
+ 825:.\Generated_Source\PSoC5/BLE_UART.c ****                 tmpCtrl |= (uint8)(addressMode << BLE_UART_CTRL_RXADDR_MODE0_SHIFT);
+ 826:.\Generated_Source\PSoC5/BLE_UART.c ****                 BLE_UART_CONTROL_REG = tmpCtrl;
+ 827:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 828:.\Generated_Source\PSoC5/BLE_UART.c ****                 #if(BLE_UART_RX_INTERRUPT_ENABLED && \
+ 829:.\Generated_Source\PSoC5/BLE_UART.c ****                    (BLE_UART_RXBUFFERSIZE > BLE_UART_FIFO_LENGTH) )
+ 830:.\Generated_Source\PSoC5/BLE_UART.c ****                     BLE_UART_rxAddressMode = addressMode;
+ 831:.\Generated_Source\PSoC5/BLE_UART.c ****                     BLE_UART_rxAddressDetected = 0u;
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 24
+
+
+ 832:.\Generated_Source\PSoC5/BLE_UART.c ****                 #endif /* End BLE_UART_RXBUFFERSIZE > BLE_UART_FIFO_LENGTH*/
+ 833:.\Generated_Source\PSoC5/BLE_UART.c ****             #endif /* End BLE_UART_CONTROL_REG_REMOVED */
+ 834:.\Generated_Source\PSoC5/BLE_UART.c ****         #else /* BLE_UART_RXHW_ADDRESS_ENABLED */
+ 835:.\Generated_Source\PSoC5/BLE_UART.c ****             if(0u != addressMode)
+ 836:.\Generated_Source\PSoC5/BLE_UART.c ****             {
+ 837:.\Generated_Source\PSoC5/BLE_UART.c ****                 /* Suppress compiler warning */
+ 838:.\Generated_Source\PSoC5/BLE_UART.c ****             }
+ 839:.\Generated_Source\PSoC5/BLE_UART.c ****         #endif /* End BLE_UART_RXHW_ADDRESS_ENABLED */
+ 840:.\Generated_Source\PSoC5/BLE_UART.c ****     }
+ 841:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 842:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 843:.\Generated_Source\PSoC5/BLE_UART.c ****     /*******************************************************************************
+ 844:.\Generated_Source\PSoC5/BLE_UART.c ****     * Function Name: BLE_UART_SetRxAddress1
+ 845:.\Generated_Source\PSoC5/BLE_UART.c ****     ********************************************************************************
+ 846:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 847:.\Generated_Source\PSoC5/BLE_UART.c ****     * Summary:
+ 848:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Sets the first of two hardware-detectable receiver addresses.
+ 849:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 850:.\Generated_Source\PSoC5/BLE_UART.c ****     * Parameters:
+ 851:.\Generated_Source\PSoC5/BLE_UART.c ****     *  address: Address #1 for hardware address detection.
+ 852:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 853:.\Generated_Source\PSoC5/BLE_UART.c ****     * Return:
+ 854:.\Generated_Source\PSoC5/BLE_UART.c ****     *  None.
+ 855:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 856:.\Generated_Source\PSoC5/BLE_UART.c ****     *******************************************************************************/
+ 857:.\Generated_Source\PSoC5/BLE_UART.c ****     void BLE_UART_SetRxAddress1(uint8 address) 
+ 858:.\Generated_Source\PSoC5/BLE_UART.c ****     {
+ 475              		.loc 1 858 0
+ 476              		.cfi_startproc
+ 477              		@ args = 0, pretend = 0, frame = 0
+ 478              		@ frame_needed = 0, uses_anonymous_args = 0
+ 479              		@ link register save eliminated.
+ 480              	.LVL29:
+ 859:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_RXADDRESS1_REG = address;
+ 481              		.loc 1 859 0
+ 482 0000 014B     		ldr	r3, .L47
+ 483 0002 1870     		strb	r0, [r3]
+ 484 0004 7047     		bx	lr
+ 485              	.L48:
+ 486 0006 00BF     		.align	2
+ 487              	.L47:
+ 488 0008 2D640040 		.word	1073767469
+ 489              		.cfi_endproc
+ 490              	.LFE14:
+ 491              		.size	BLE_UART_SetRxAddress1, .-BLE_UART_SetRxAddress1
+ 492              		.section	.text.BLE_UART_SetRxAddress2,"ax",%progbits
+ 493              		.align	2
+ 494              		.global	BLE_UART_SetRxAddress2
+ 495              		.thumb
+ 496              		.thumb_func
+ 497              		.type	BLE_UART_SetRxAddress2, %function
+ 498              	BLE_UART_SetRxAddress2:
+ 499              	.LFB15:
+ 860:.\Generated_Source\PSoC5/BLE_UART.c ****     }
+ 861:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 862:.\Generated_Source\PSoC5/BLE_UART.c **** 
+ 863:.\Generated_Source\PSoC5/BLE_UART.c ****     /*******************************************************************************
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 25
+
+
+ 864:.\Generated_Source\PSoC5/BLE_UART.c ****     * Function Name: BLE_UART_SetRxAddress2
+ 865:.\Generated_Source\PSoC5/BLE_UART.c ****     ********************************************************************************
+ 866:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 867:.\Generated_Source\PSoC5/BLE_UART.c ****     * Summary:
+ 868:.\Generated_Source\PSoC5/BLE_UART.c ****     *  Sets the second of two hardware-detectable receiver addresses.
+ 869:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 870:.\Generated_Source\PSoC5/BLE_UART.c ****     * Parameters:
+ 871:.\Generated_Source\PSoC5/BLE_UART.c ****     *  address: Address #2 for hardware address detection.
+ 872:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 873:.\Generated_Source\PSoC5/BLE_UART.c ****     * Return:
+ 874:.\Generated_Source\PSoC5/BLE_UART.c ****     *  None.
+ 875:.\Generated_Source\PSoC5/BLE_UART.c ****     *
+ 876:.\Generated_Source\PSoC5/BLE_UART.c ****     *******************************************************************************/
+ 877:.\Generated_Source\PSoC5/BLE_UART.c ****     void BLE_UART_SetRxAddress2(uint8 address) 
+ 878:.\Generated_Source\PSoC5/BLE_UART.c ****     {
+ 500              		.loc 1 878 0
+ 501              		.cfi_startproc
+ 502              		@ args = 0, pretend = 0, frame = 0
+ 503              		@ frame_needed = 0, uses_anonymous_args = 0
+ 504              		@ link register save eliminated.
+ 505              	.LVL30:
+ 879:.\Generated_Source\PSoC5/BLE_UART.c ****         BLE_UART_RXADDRESS2_REG = address;
+ 506              		.loc 1 879 0
+ 507 0000 014B     		ldr	r3, .L50
+ 508 0002 1870     		strb	r0, [r3]
+ 509 0004 7047     		bx	lr
+ 510              	.L51:
+ 511 0006 00BF     		.align	2
+ 512              	.L50:
+ 513 0008 3D640040 		.word	1073767485
+ 514              		.cfi_endproc
+ 515              	.LFE15:
+ 516              		.size	BLE_UART_SetRxAddress2, .-BLE_UART_SetRxAddress2
+ 517              		.global	BLE_UART_initVar
+ 518              		.bss
+ 519              		.set	.LANCHOR0,. + 0
+ 520              		.type	BLE_UART_initVar, %object
+ 521              		.size	BLE_UART_initVar, 1
+ 522              	BLE_UART_initVar:
+ 523 0000 00       		.space	1
+ 524              		.text
+ 525              	.Letext0:
+ 526              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 527              		.file 3 ".\\Generated_Source\\PSoC5\\BLE_UART_IntClock.h"
+ 528              		.file 4 ".\\Generated_Source\\PSoC5\\CyLib.h"
+ 529              		.section	.debug_info,"",%progbits
+ 530              	.Ldebug_info0:
+ 531 0000 A1030000 		.4byte	0x3a1
+ 532 0004 0400     		.2byte	0x4
+ 533 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 534 000a 04       		.byte	0x4
+ 535 000b 01       		.uleb128 0x1
+ 536 000c 6A000000 		.4byte	.LASF42
+ 537 0010 01       		.byte	0x1
+ 538 0011 BD020000 		.4byte	.LASF43
+ 539 0015 CF010000 		.4byte	.LASF44
+ 540 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 26
+
+
+ 541 001d 00000000 		.4byte	0
+ 542 0021 00000000 		.4byte	.Ldebug_line0
+ 543 0025 02       		.uleb128 0x2
+ 544 0026 01       		.byte	0x1
+ 545 0027 06       		.byte	0x6
+ 546 0028 91030000 		.4byte	.LASF0
+ 547 002c 02       		.uleb128 0x2
+ 548 002d 01       		.byte	0x1
+ 549 002e 08       		.byte	0x8
+ 550 002f 0F020000 		.4byte	.LASF1
+ 551 0033 02       		.uleb128 0x2
+ 552 0034 02       		.byte	0x2
+ 553 0035 05       		.byte	0x5
+ 554 0036 25030000 		.4byte	.LASF2
+ 555 003a 02       		.uleb128 0x2
+ 556 003b 02       		.byte	0x2
+ 557 003c 07       		.byte	0x7
+ 558 003d 03010000 		.4byte	.LASF3
+ 559 0041 02       		.uleb128 0x2
+ 560 0042 04       		.byte	0x4
+ 561 0043 05       		.byte	0x5
+ 562 0044 5A030000 		.4byte	.LASF4
+ 563 0048 02       		.uleb128 0x2
+ 564 0049 04       		.byte	0x4
+ 565 004a 07       		.byte	0x7
+ 566 004b 80010000 		.4byte	.LASF5
+ 567 004f 02       		.uleb128 0x2
+ 568 0050 08       		.byte	0x8
+ 569 0051 05       		.byte	0x5
+ 570 0052 12030000 		.4byte	.LASF6
+ 571 0056 02       		.uleb128 0x2
+ 572 0057 08       		.byte	0x8
+ 573 0058 07       		.byte	0x7
+ 574 0059 3B010000 		.4byte	.LASF7
+ 575 005d 03       		.uleb128 0x3
+ 576 005e 04       		.byte	0x4
+ 577 005f 05       		.byte	0x5
+ 578 0060 696E7400 		.ascii	"int\000"
+ 579 0064 02       		.uleb128 0x2
+ 580 0065 04       		.byte	0x4
+ 581 0066 07       		.byte	0x7
+ 582 0067 92020000 		.4byte	.LASF8
+ 583 006b 04       		.uleb128 0x4
+ 584 006c 92010000 		.4byte	.LASF9
+ 585 0070 02       		.byte	0x2
+ 586 0071 9201     		.2byte	0x192
+ 587 0073 2C000000 		.4byte	0x2c
+ 588 0077 04       		.uleb128 0x4
+ 589 0078 4C020000 		.4byte	.LASF10
+ 590 007c 02       		.byte	0x2
+ 591 007d 9301     		.2byte	0x193
+ 592 007f 3A000000 		.4byte	0x3a
+ 593 0083 02       		.uleb128 0x2
+ 594 0084 04       		.byte	0x4
+ 595 0085 04       		.byte	0x4
+ 596 0086 35010000 		.4byte	.LASF11
+ 597 008a 02       		.uleb128 0x2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 27
+
+
+ 598 008b 08       		.byte	0x8
+ 599 008c 04       		.byte	0x4
+ 600 008d 1D020000 		.4byte	.LASF12
+ 601 0091 02       		.uleb128 0x2
+ 602 0092 01       		.byte	0x1
+ 603 0093 08       		.byte	0x8
+ 604 0094 20030000 		.4byte	.LASF13
+ 605 0098 04       		.uleb128 0x4
+ 606 0099 7B010000 		.4byte	.LASF14
+ 607 009d 02       		.byte	0x2
+ 608 009e 3C02     		.2byte	0x23c
+ 609 00a0 A4000000 		.4byte	0xa4
+ 610 00a4 05       		.uleb128 0x5
+ 611 00a5 6B000000 		.4byte	0x6b
+ 612 00a9 02       		.uleb128 0x2
+ 613 00aa 08       		.byte	0x8
+ 614 00ab 04       		.byte	0x4
+ 615 00ac FD020000 		.4byte	.LASF15
+ 616 00b0 02       		.uleb128 0x2
+ 617 00b1 04       		.byte	0x4
+ 618 00b2 07       		.byte	0x7
+ 619 00b3 09030000 		.4byte	.LASF16
+ 620 00b7 06       		.uleb128 0x6
+ 621 00b8 2F000000 		.4byte	.LASF45
+ 622 00bc 01       		.byte	0x1
+ 623 00bd 6A       		.byte	0x6a
+ 624 00be 00000000 		.4byte	.LFB1
+ 625 00c2 14000000 		.4byte	.LFE1-.LFB1
+ 626 00c6 01       		.uleb128 0x1
+ 627 00c7 9C       		.byte	0x9c
+ 628 00c8 07       		.uleb128 0x7
+ 629 00c9 A0010000 		.4byte	.LASF17
+ 630 00cd 01       		.byte	0x1
+ 631 00ce B7       		.byte	0xb7
+ 632 00cf 00000000 		.4byte	.LFB2
+ 633 00d3 2C000000 		.4byte	.LFE2-.LFB2
+ 634 00d7 01       		.uleb128 0x1
+ 635 00d8 9C       		.byte	0x9c
+ 636 00d9 0F010000 		.4byte	0x10f
+ 637 00dd 08       		.uleb128 0x8
+ 638 00de BE010000 		.4byte	.LASF20
+ 639 00e2 01       		.byte	0x1
+ 640 00e3 B9       		.byte	0xb9
+ 641 00e4 6B000000 		.4byte	0x6b
+ 642 00e8 00000000 		.4byte	.LLST0
+ 643 00ec 09       		.uleb128 0x9
+ 644 00ed 06000000 		.4byte	.LVL0
+ 645 00f1 7A030000 		.4byte	0x37a
+ 646 00f5 09       		.uleb128 0x9
+ 647 00f6 20000000 		.4byte	.LVL2
+ 648 00fa 85030000 		.4byte	0x385
+ 649 00fe 0A       		.uleb128 0xa
+ 650 00ff 26000000 		.4byte	.LVL3
+ 651 0103 8C030000 		.4byte	0x38c
+ 652 0107 0B       		.uleb128 0xb
+ 653 0108 01       		.uleb128 0x1
+ 654 0109 50       		.byte	0x50
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 28
+
+
+ 655 010a 02       		.uleb128 0x2
+ 656 010b 74       		.byte	0x74
+ 657 010c 00       		.sleb128 0
+ 658 010d 00       		.byte	0
+ 659 010e 00       		.byte	0
+ 660 010f 07       		.uleb128 0x7
+ 661 0110 3D000000 		.4byte	.LASF18
+ 662 0114 01       		.byte	0x1
+ 663 0115 4C       		.byte	0x4c
+ 664 0116 00000000 		.4byte	.LFB0
+ 665 011a 1C000000 		.4byte	.LFE0-.LFB0
+ 666 011e 01       		.uleb128 0x1
+ 667 011f 9C       		.byte	0x9c
+ 668 0120 37010000 		.4byte	0x137
+ 669 0124 09       		.uleb128 0x9
+ 670 0125 0C000000 		.4byte	.LVL5
+ 671 0129 B7000000 		.4byte	0xb7
+ 672 012d 09       		.uleb128 0x9
+ 673 012e 16000000 		.4byte	.LVL6
+ 674 0132 C8000000 		.4byte	0xc8
+ 675 0136 00       		.byte	0
+ 676 0137 07       		.uleb128 0x7
+ 677 0138 B0010000 		.4byte	.LASF19
+ 678 013c 01       		.byte	0x1
+ 679 013d F0       		.byte	0xf0
+ 680 013e 00000000 		.4byte	.LFB3
+ 681 0142 30000000 		.4byte	.LFE3-.LFB3
+ 682 0146 01       		.uleb128 0x1
+ 683 0147 9C       		.byte	0x9c
+ 684 0148 7E010000 		.4byte	0x17e
+ 685 014c 08       		.uleb128 0x8
+ 686 014d BE010000 		.4byte	.LASF20
+ 687 0151 01       		.byte	0x1
+ 688 0152 F2       		.byte	0xf2
+ 689 0153 6B000000 		.4byte	0x6b
+ 690 0157 13000000 		.4byte	.LLST1
+ 691 015b 09       		.uleb128 0x9
+ 692 015c 06000000 		.4byte	.LVL7
+ 693 0160 7A030000 		.4byte	0x37a
+ 694 0164 09       		.uleb128 0x9
+ 695 0165 16000000 		.4byte	.LVL9
+ 696 0169 9D030000 		.4byte	0x39d
+ 697 016d 0A       		.uleb128 0xa
+ 698 016e 26000000 		.4byte	.LVL10
+ 699 0172 8C030000 		.4byte	0x38c
+ 700 0176 0B       		.uleb128 0xb
+ 701 0177 01       		.uleb128 0x1
+ 702 0178 50       		.byte	0x50
+ 703 0179 02       		.uleb128 0x2
+ 704 017a 74       		.byte	0x74
+ 705 017b 00       		.sleb128 0
+ 706 017c 00       		.byte	0
+ 707 017d 00       		.byte	0
+ 708 017e 0C       		.uleb128 0xc
+ 709 017f 5E010000 		.4byte	.LASF46
+ 710 0183 01       		.byte	0x1
+ 711 0184 2701     		.2byte	0x127
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 29
+
+
+ 712 0186 6B000000 		.4byte	0x6b
+ 713 018a 00000000 		.4byte	.LFB4
+ 714 018e 04000000 		.4byte	.LFE4-.LFB4
+ 715 0192 01       		.uleb128 0x1
+ 716 0193 9C       		.byte	0x9c
+ 717 0194 0D       		.uleb128 0xd
+ 718 0195 4C000000 		.4byte	.LASF21
+ 719 0199 01       		.byte	0x1
+ 720 019a 3F01     		.2byte	0x13f
+ 721 019c 00000000 		.4byte	.LFB5
+ 722 01a0 02000000 		.4byte	.LFE5-.LFB5
+ 723 01a4 01       		.uleb128 0x1
+ 724 01a5 9C       		.byte	0x9c
+ 725 01a6 B9010000 		.4byte	0x1b9
+ 726 01aa 0E       		.uleb128 0xe
+ 727 01ab 98010000 		.4byte	.LASF23
+ 728 01af 01       		.byte	0x1
+ 729 01b0 3F01     		.2byte	0x13f
+ 730 01b2 6B000000 		.4byte	0x6b
+ 731 01b6 01       		.uleb128 0x1
+ 732 01b7 50       		.byte	0x50
+ 733 01b8 00       		.byte	0
+ 734 01b9 0D       		.uleb128 0xd
+ 735 01ba E1020000 		.4byte	.LASF22
+ 736 01be 01       		.byte	0x1
+ 737 01bf 6701     		.2byte	0x167
+ 738 01c1 00000000 		.4byte	.LFB6
+ 739 01c5 0C000000 		.4byte	.LFE6-.LFB6
+ 740 01c9 01       		.uleb128 0x1
+ 741 01ca 9C       		.byte	0x9c
+ 742 01cb DE010000 		.4byte	0x1de
+ 743 01cf 0E       		.uleb128 0xe
+ 744 01d0 24020000 		.4byte	.LASF24
+ 745 01d4 01       		.byte	0x1
+ 746 01d5 6701     		.2byte	0x167
+ 747 01d7 6B000000 		.4byte	0x6b
+ 748 01db 01       		.uleb128 0x1
+ 749 01dc 50       		.byte	0x50
+ 750 01dd 00       		.byte	0
+ 751 01de 0F       		.uleb128 0xf
+ 752 01df 2F030000 		.4byte	.LASF26
+ 753 01e3 01       		.byte	0x1
+ 754 01e4 8801     		.2byte	0x188
+ 755 01e6 6B000000 		.4byte	0x6b
+ 756 01ea 00000000 		.4byte	.LFB7
+ 757 01ee 0C000000 		.4byte	.LFE7-.LFB7
+ 758 01f2 01       		.uleb128 0x1
+ 759 01f3 9C       		.byte	0x9c
+ 760 01f4 07020000 		.4byte	0x207
+ 761 01f8 10       		.uleb128 0x10
+ 762 01f9 2E010000 		.4byte	.LASF25
+ 763 01fd 01       		.byte	0x1
+ 764 01fe 8A01     		.2byte	0x18a
+ 765 0200 6B000000 		.4byte	0x6b
+ 766 0204 01       		.uleb128 0x1
+ 767 0205 50       		.byte	0x50
+ 768 0206 00       		.byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 30
+
+
+ 769 0207 0F       		.uleb128 0xf
+ 770 0208 19000000 		.4byte	.LASF27
+ 771 020c 01       		.byte	0x1
+ 772 020d E501     		.2byte	0x1e5
+ 773 020f 6B000000 		.4byte	0x6b
+ 774 0213 00000000 		.4byte	.LFB8
+ 775 0217 10000000 		.4byte	.LFE8-.LFB8
+ 776 021b 01       		.uleb128 0x1
+ 777 021c 9C       		.byte	0x9c
+ 778 021d 32020000 		.4byte	0x232
+ 779 0221 11       		.uleb128 0x11
+ 780 0222 27010000 		.4byte	.LASF28
+ 781 0226 01       		.byte	0x1
+ 782 0227 E701     		.2byte	0x1e7
+ 783 0229 6B000000 		.4byte	0x6b
+ 784 022d 26000000 		.4byte	.LLST2
+ 785 0231 00       		.byte	0
+ 786 0232 0F       		.uleb128 0xf
+ 787 0233 9D030000 		.4byte	.LASF29
+ 788 0237 01       		.byte	0x1
+ 789 0238 1402     		.2byte	0x214
+ 790 023a 6B000000 		.4byte	0x6b
+ 791 023e 00000000 		.4byte	.LFB9
+ 792 0242 2C000000 		.4byte	.LFE9-.LFB9
+ 793 0246 01       		.uleb128 0x1
+ 794 0247 9C       		.byte	0x9c
+ 795 0248 6B020000 		.4byte	0x26b
+ 796 024c 11       		.uleb128 0x11
+ 797 024d 2E010000 		.4byte	.LASF25
+ 798 0251 01       		.byte	0x1
+ 799 0252 1602     		.2byte	0x216
+ 800 0254 6B000000 		.4byte	0x6b
+ 801 0258 3E000000 		.4byte	.LLST3
+ 802 025c 10       		.uleb128 0x10
+ 803 025d 2B020000 		.4byte	.LASF30
+ 804 0261 01       		.byte	0x1
+ 805 0262 1702     		.2byte	0x217
+ 806 0264 6B000000 		.4byte	0x6b
+ 807 0268 01       		.uleb128 0x1
+ 808 0269 53       		.byte	0x53
+ 809 026a 00       		.byte	0
+ 810 026b 0F       		.uleb128 0xf
+ 811 026c 53020000 		.4byte	.LASF31
+ 812 0270 01       		.byte	0x1
+ 813 0271 7A02     		.2byte	0x27a
+ 814 0273 77000000 		.4byte	0x77
+ 815 0277 00000000 		.4byte	.LFB10
+ 816 027b 12000000 		.4byte	.LFE10-.LFB10
+ 817 027f 01       		.uleb128 0x1
+ 818 0280 9C       		.byte	0x9c
+ 819 0281 98020000 		.4byte	0x298
+ 820 0285 09       		.uleb128 0x9
+ 821 0286 06000000 		.4byte	.LVL23
+ 822 028a 07020000 		.4byte	0x207
+ 823 028e 09       		.uleb128 0x9
+ 824 028f 0C000000 		.4byte	.LVL24
+ 825 0293 DE010000 		.4byte	0x1de
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 31
+
+
+ 826 0297 00       		.byte	0
+ 827 0298 0F       		.uleb128 0xf
+ 828 0299 00000000 		.4byte	.LASF32
+ 829 029d 01       		.byte	0x1
+ 830 029e AB02     		.2byte	0x2ab
+ 831 02a0 6B000000 		.4byte	0x6b
+ 832 02a4 00000000 		.4byte	.LFB11
+ 833 02a8 18000000 		.4byte	.LFE11-.LFB11
+ 834 02ac 01       		.uleb128 0x1
+ 835 02ad 9C       		.byte	0x9c
+ 836 02ae C1020000 		.4byte	0x2c1
+ 837 02b2 10       		.uleb128 0x10
+ 838 02b3 AE030000 		.4byte	.LASF33
+ 839 02b7 01       		.byte	0x1
+ 840 02b8 AE02     		.2byte	0x2ae
+ 841 02ba 6B000000 		.4byte	0x6b
+ 842 02be 01       		.uleb128 0x1
+ 843 02bf 50       		.byte	0x50
+ 844 02c0 00       		.byte	0
+ 845 02c1 0D       		.uleb128 0xd
+ 846 02c2 7A030000 		.4byte	.LASF34
+ 847 02c6 01       		.byte	0x1
+ 848 02c7 F502     		.2byte	0x2f5
+ 849 02c9 00000000 		.4byte	.LFB12
+ 850 02cd 24000000 		.4byte	.LFE12-.LFB12
+ 851 02d1 01       		.uleb128 0x1
+ 852 02d2 9C       		.byte	0x9c
+ 853 02d3 FA020000 		.4byte	0x2fa
+ 854 02d7 11       		.uleb128 0x11
+ 855 02d8 BE010000 		.4byte	.LASF20
+ 856 02dc 01       		.byte	0x1
+ 857 02dd F702     		.2byte	0x2f7
+ 858 02df 6B000000 		.4byte	0x6b
+ 859 02e3 74000000 		.4byte	.LLST4
+ 860 02e7 09       		.uleb128 0x9
+ 861 02e8 06000000 		.4byte	.LVL26
+ 862 02ec 7A030000 		.4byte	0x37a
+ 863 02f0 09       		.uleb128 0x9
+ 864 02f1 1C000000 		.4byte	.LVL27
+ 865 02f5 8C030000 		.4byte	0x38c
+ 866 02f9 00       		.byte	0
+ 867 02fa 0D       		.uleb128 0xd
+ 868 02fb B3030000 		.4byte	.LASF35
+ 869 02ff 01       		.byte	0x1
+ 870 0300 2D03     		.2byte	0x32d
+ 871 0302 00000000 		.4byte	.LFB13
+ 872 0306 02000000 		.4byte	.LFE13-.LFB13
+ 873 030a 01       		.uleb128 0x1
+ 874 030b 9C       		.byte	0x9c
+ 875 030c 1F030000 		.4byte	0x31f
+ 876 0310 0E       		.uleb128 0xe
+ 877 0311 52010000 		.4byte	.LASF36
+ 878 0315 01       		.byte	0x1
+ 879 0316 2D03     		.2byte	0x32d
+ 880 0318 6B000000 		.4byte	0x6b
+ 881 031c 01       		.uleb128 0x1
+ 882 031d 50       		.byte	0x50
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 32
+
+
+ 883 031e 00       		.byte	0
+ 884 031f 0D       		.uleb128 0xd
+ 885 0320 43030000 		.4byte	.LASF37
+ 886 0324 01       		.byte	0x1
+ 887 0325 5903     		.2byte	0x359
+ 888 0327 00000000 		.4byte	.LFB14
+ 889 032b 0C000000 		.4byte	.LFE14-.LFB14
+ 890 032f 01       		.uleb128 0x1
+ 891 0330 9C       		.byte	0x9c
+ 892 0331 44030000 		.4byte	0x344
+ 893 0335 0E       		.uleb128 0xe
+ 894 0336 9F020000 		.4byte	.LASF38
+ 895 033a 01       		.byte	0x1
+ 896 033b 5903     		.2byte	0x359
+ 897 033d 6B000000 		.4byte	0x6b
+ 898 0341 01       		.uleb128 0x1
+ 899 0342 50       		.byte	0x50
+ 900 0343 00       		.byte	0
+ 901 0344 0D       		.uleb128 0xd
+ 902 0345 63030000 		.4byte	.LASF39
+ 903 0349 01       		.byte	0x1
+ 904 034a 6D03     		.2byte	0x36d
+ 905 034c 00000000 		.4byte	.LFB15
+ 906 0350 0C000000 		.4byte	.LFE15-.LFB15
+ 907 0354 01       		.uleb128 0x1
+ 908 0355 9C       		.byte	0x9c
+ 909 0356 69030000 		.4byte	0x369
+ 910 035a 0E       		.uleb128 0xe
+ 911 035b 9F020000 		.4byte	.LASF38
+ 912 035f 01       		.byte	0x1
+ 913 0360 6D03     		.2byte	0x36d
+ 914 0362 6B000000 		.4byte	0x6b
+ 915 0366 01       		.uleb128 0x1
+ 916 0367 50       		.byte	0x50
+ 917 0368 00       		.byte	0
+ 918 0369 12       		.uleb128 0x12
+ 919 036a 16010000 		.4byte	.LASF47
+ 920 036e 01       		.byte	0x1
+ 921 036f 1B       		.byte	0x1b
+ 922 0370 6B000000 		.4byte	0x6b
+ 923 0374 05       		.uleb128 0x5
+ 924 0375 03       		.byte	0x3
+ 925 0376 00000000 		.4byte	BLE_UART_initVar
+ 926 037a 13       		.uleb128 0x13
+ 927 037b 64020000 		.4byte	.LASF48
+ 928 037f 04       		.byte	0x4
+ 929 0380 7D       		.byte	0x7d
+ 930 0381 6B000000 		.4byte	0x6b
+ 931 0385 14       		.uleb128 0x14
+ 932 0386 34020000 		.4byte	.LASF40
+ 933 038a 03       		.byte	0x3
+ 934 038b 27       		.byte	0x27
+ 935 038c 15       		.uleb128 0x15
+ 936 038d A7020000 		.4byte	.LASF49
+ 937 0391 04       		.byte	0x4
+ 938 0392 7E       		.byte	0x7e
+ 939 0393 9D030000 		.4byte	0x39d
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 33
+
+
+ 940 0397 16       		.uleb128 0x16
+ 941 0398 6B000000 		.4byte	0x6b
+ 942 039c 00       		.byte	0
+ 943 039d 14       		.uleb128 0x14
+ 944 039e 7B020000 		.4byte	.LASF41
+ 945 03a2 03       		.byte	0x3
+ 946 03a3 28       		.byte	0x28
+ 947 03a4 00       		.byte	0
+ 948              		.section	.debug_abbrev,"",%progbits
+ 949              	.Ldebug_abbrev0:
+ 950 0000 01       		.uleb128 0x1
+ 951 0001 11       		.uleb128 0x11
+ 952 0002 01       		.byte	0x1
+ 953 0003 25       		.uleb128 0x25
+ 954 0004 0E       		.uleb128 0xe
+ 955 0005 13       		.uleb128 0x13
+ 956 0006 0B       		.uleb128 0xb
+ 957 0007 03       		.uleb128 0x3
+ 958 0008 0E       		.uleb128 0xe
+ 959 0009 1B       		.uleb128 0x1b
+ 960 000a 0E       		.uleb128 0xe
+ 961 000b 55       		.uleb128 0x55
+ 962 000c 17       		.uleb128 0x17
+ 963 000d 11       		.uleb128 0x11
+ 964 000e 01       		.uleb128 0x1
+ 965 000f 10       		.uleb128 0x10
+ 966 0010 17       		.uleb128 0x17
+ 967 0011 00       		.byte	0
+ 968 0012 00       		.byte	0
+ 969 0013 02       		.uleb128 0x2
+ 970 0014 24       		.uleb128 0x24
+ 971 0015 00       		.byte	0
+ 972 0016 0B       		.uleb128 0xb
+ 973 0017 0B       		.uleb128 0xb
+ 974 0018 3E       		.uleb128 0x3e
+ 975 0019 0B       		.uleb128 0xb
+ 976 001a 03       		.uleb128 0x3
+ 977 001b 0E       		.uleb128 0xe
+ 978 001c 00       		.byte	0
+ 979 001d 00       		.byte	0
+ 980 001e 03       		.uleb128 0x3
+ 981 001f 24       		.uleb128 0x24
+ 982 0020 00       		.byte	0
+ 983 0021 0B       		.uleb128 0xb
+ 984 0022 0B       		.uleb128 0xb
+ 985 0023 3E       		.uleb128 0x3e
+ 986 0024 0B       		.uleb128 0xb
+ 987 0025 03       		.uleb128 0x3
+ 988 0026 08       		.uleb128 0x8
+ 989 0027 00       		.byte	0
+ 990 0028 00       		.byte	0
+ 991 0029 04       		.uleb128 0x4
+ 992 002a 16       		.uleb128 0x16
+ 993 002b 00       		.byte	0
+ 994 002c 03       		.uleb128 0x3
+ 995 002d 0E       		.uleb128 0xe
+ 996 002e 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 34
+
+
+ 997 002f 0B       		.uleb128 0xb
+ 998 0030 3B       		.uleb128 0x3b
+ 999 0031 05       		.uleb128 0x5
+ 1000 0032 49       		.uleb128 0x49
+ 1001 0033 13       		.uleb128 0x13
+ 1002 0034 00       		.byte	0
+ 1003 0035 00       		.byte	0
+ 1004 0036 05       		.uleb128 0x5
+ 1005 0037 35       		.uleb128 0x35
+ 1006 0038 00       		.byte	0
+ 1007 0039 49       		.uleb128 0x49
+ 1008 003a 13       		.uleb128 0x13
+ 1009 003b 00       		.byte	0
+ 1010 003c 00       		.byte	0
+ 1011 003d 06       		.uleb128 0x6
+ 1012 003e 2E       		.uleb128 0x2e
+ 1013 003f 00       		.byte	0
+ 1014 0040 3F       		.uleb128 0x3f
+ 1015 0041 19       		.uleb128 0x19
+ 1016 0042 03       		.uleb128 0x3
+ 1017 0043 0E       		.uleb128 0xe
+ 1018 0044 3A       		.uleb128 0x3a
+ 1019 0045 0B       		.uleb128 0xb
+ 1020 0046 3B       		.uleb128 0x3b
+ 1021 0047 0B       		.uleb128 0xb
+ 1022 0048 27       		.uleb128 0x27
+ 1023 0049 19       		.uleb128 0x19
+ 1024 004a 11       		.uleb128 0x11
+ 1025 004b 01       		.uleb128 0x1
+ 1026 004c 12       		.uleb128 0x12
+ 1027 004d 06       		.uleb128 0x6
+ 1028 004e 40       		.uleb128 0x40
+ 1029 004f 18       		.uleb128 0x18
+ 1030 0050 9742     		.uleb128 0x2117
+ 1031 0052 19       		.uleb128 0x19
+ 1032 0053 00       		.byte	0
+ 1033 0054 00       		.byte	0
+ 1034 0055 07       		.uleb128 0x7
+ 1035 0056 2E       		.uleb128 0x2e
+ 1036 0057 01       		.byte	0x1
+ 1037 0058 3F       		.uleb128 0x3f
+ 1038 0059 19       		.uleb128 0x19
+ 1039 005a 03       		.uleb128 0x3
+ 1040 005b 0E       		.uleb128 0xe
+ 1041 005c 3A       		.uleb128 0x3a
+ 1042 005d 0B       		.uleb128 0xb
+ 1043 005e 3B       		.uleb128 0x3b
+ 1044 005f 0B       		.uleb128 0xb
+ 1045 0060 27       		.uleb128 0x27
+ 1046 0061 19       		.uleb128 0x19
+ 1047 0062 11       		.uleb128 0x11
+ 1048 0063 01       		.uleb128 0x1
+ 1049 0064 12       		.uleb128 0x12
+ 1050 0065 06       		.uleb128 0x6
+ 1051 0066 40       		.uleb128 0x40
+ 1052 0067 18       		.uleb128 0x18
+ 1053 0068 9742     		.uleb128 0x2117
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 35
+
+
+ 1054 006a 19       		.uleb128 0x19
+ 1055 006b 01       		.uleb128 0x1
+ 1056 006c 13       		.uleb128 0x13
+ 1057 006d 00       		.byte	0
+ 1058 006e 00       		.byte	0
+ 1059 006f 08       		.uleb128 0x8
+ 1060 0070 34       		.uleb128 0x34
+ 1061 0071 00       		.byte	0
+ 1062 0072 03       		.uleb128 0x3
+ 1063 0073 0E       		.uleb128 0xe
+ 1064 0074 3A       		.uleb128 0x3a
+ 1065 0075 0B       		.uleb128 0xb
+ 1066 0076 3B       		.uleb128 0x3b
+ 1067 0077 0B       		.uleb128 0xb
+ 1068 0078 49       		.uleb128 0x49
+ 1069 0079 13       		.uleb128 0x13
+ 1070 007a 02       		.uleb128 0x2
+ 1071 007b 17       		.uleb128 0x17
+ 1072 007c 00       		.byte	0
+ 1073 007d 00       		.byte	0
+ 1074 007e 09       		.uleb128 0x9
+ 1075 007f 898201   		.uleb128 0x4109
+ 1076 0082 00       		.byte	0
+ 1077 0083 11       		.uleb128 0x11
+ 1078 0084 01       		.uleb128 0x1
+ 1079 0085 31       		.uleb128 0x31
+ 1080 0086 13       		.uleb128 0x13
+ 1081 0087 00       		.byte	0
+ 1082 0088 00       		.byte	0
+ 1083 0089 0A       		.uleb128 0xa
+ 1084 008a 898201   		.uleb128 0x4109
+ 1085 008d 01       		.byte	0x1
+ 1086 008e 11       		.uleb128 0x11
+ 1087 008f 01       		.uleb128 0x1
+ 1088 0090 31       		.uleb128 0x31
+ 1089 0091 13       		.uleb128 0x13
+ 1090 0092 00       		.byte	0
+ 1091 0093 00       		.byte	0
+ 1092 0094 0B       		.uleb128 0xb
+ 1093 0095 8A8201   		.uleb128 0x410a
+ 1094 0098 00       		.byte	0
+ 1095 0099 02       		.uleb128 0x2
+ 1096 009a 18       		.uleb128 0x18
+ 1097 009b 9142     		.uleb128 0x2111
+ 1098 009d 18       		.uleb128 0x18
+ 1099 009e 00       		.byte	0
+ 1100 009f 00       		.byte	0
+ 1101 00a0 0C       		.uleb128 0xc
+ 1102 00a1 2E       		.uleb128 0x2e
+ 1103 00a2 00       		.byte	0
+ 1104 00a3 3F       		.uleb128 0x3f
+ 1105 00a4 19       		.uleb128 0x19
+ 1106 00a5 03       		.uleb128 0x3
+ 1107 00a6 0E       		.uleb128 0xe
+ 1108 00a7 3A       		.uleb128 0x3a
+ 1109 00a8 0B       		.uleb128 0xb
+ 1110 00a9 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 36
+
+
+ 1111 00aa 05       		.uleb128 0x5
+ 1112 00ab 27       		.uleb128 0x27
+ 1113 00ac 19       		.uleb128 0x19
+ 1114 00ad 49       		.uleb128 0x49
+ 1115 00ae 13       		.uleb128 0x13
+ 1116 00af 11       		.uleb128 0x11
+ 1117 00b0 01       		.uleb128 0x1
+ 1118 00b1 12       		.uleb128 0x12
+ 1119 00b2 06       		.uleb128 0x6
+ 1120 00b3 40       		.uleb128 0x40
+ 1121 00b4 18       		.uleb128 0x18
+ 1122 00b5 9742     		.uleb128 0x2117
+ 1123 00b7 19       		.uleb128 0x19
+ 1124 00b8 00       		.byte	0
+ 1125 00b9 00       		.byte	0
+ 1126 00ba 0D       		.uleb128 0xd
+ 1127 00bb 2E       		.uleb128 0x2e
+ 1128 00bc 01       		.byte	0x1
+ 1129 00bd 3F       		.uleb128 0x3f
+ 1130 00be 19       		.uleb128 0x19
+ 1131 00bf 03       		.uleb128 0x3
+ 1132 00c0 0E       		.uleb128 0xe
+ 1133 00c1 3A       		.uleb128 0x3a
+ 1134 00c2 0B       		.uleb128 0xb
+ 1135 00c3 3B       		.uleb128 0x3b
+ 1136 00c4 05       		.uleb128 0x5
+ 1137 00c5 27       		.uleb128 0x27
+ 1138 00c6 19       		.uleb128 0x19
+ 1139 00c7 11       		.uleb128 0x11
+ 1140 00c8 01       		.uleb128 0x1
+ 1141 00c9 12       		.uleb128 0x12
+ 1142 00ca 06       		.uleb128 0x6
+ 1143 00cb 40       		.uleb128 0x40
+ 1144 00cc 18       		.uleb128 0x18
+ 1145 00cd 9742     		.uleb128 0x2117
+ 1146 00cf 19       		.uleb128 0x19
+ 1147 00d0 01       		.uleb128 0x1
+ 1148 00d1 13       		.uleb128 0x13
+ 1149 00d2 00       		.byte	0
+ 1150 00d3 00       		.byte	0
+ 1151 00d4 0E       		.uleb128 0xe
+ 1152 00d5 05       		.uleb128 0x5
+ 1153 00d6 00       		.byte	0
+ 1154 00d7 03       		.uleb128 0x3
+ 1155 00d8 0E       		.uleb128 0xe
+ 1156 00d9 3A       		.uleb128 0x3a
+ 1157 00da 0B       		.uleb128 0xb
+ 1158 00db 3B       		.uleb128 0x3b
+ 1159 00dc 05       		.uleb128 0x5
+ 1160 00dd 49       		.uleb128 0x49
+ 1161 00de 13       		.uleb128 0x13
+ 1162 00df 02       		.uleb128 0x2
+ 1163 00e0 18       		.uleb128 0x18
+ 1164 00e1 00       		.byte	0
+ 1165 00e2 00       		.byte	0
+ 1166 00e3 0F       		.uleb128 0xf
+ 1167 00e4 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 37
+
+
+ 1168 00e5 01       		.byte	0x1
+ 1169 00e6 3F       		.uleb128 0x3f
+ 1170 00e7 19       		.uleb128 0x19
+ 1171 00e8 03       		.uleb128 0x3
+ 1172 00e9 0E       		.uleb128 0xe
+ 1173 00ea 3A       		.uleb128 0x3a
+ 1174 00eb 0B       		.uleb128 0xb
+ 1175 00ec 3B       		.uleb128 0x3b
+ 1176 00ed 05       		.uleb128 0x5
+ 1177 00ee 27       		.uleb128 0x27
+ 1178 00ef 19       		.uleb128 0x19
+ 1179 00f0 49       		.uleb128 0x49
+ 1180 00f1 13       		.uleb128 0x13
+ 1181 00f2 11       		.uleb128 0x11
+ 1182 00f3 01       		.uleb128 0x1
+ 1183 00f4 12       		.uleb128 0x12
+ 1184 00f5 06       		.uleb128 0x6
+ 1185 00f6 40       		.uleb128 0x40
+ 1186 00f7 18       		.uleb128 0x18
+ 1187 00f8 9742     		.uleb128 0x2117
+ 1188 00fa 19       		.uleb128 0x19
+ 1189 00fb 01       		.uleb128 0x1
+ 1190 00fc 13       		.uleb128 0x13
+ 1191 00fd 00       		.byte	0
+ 1192 00fe 00       		.byte	0
+ 1193 00ff 10       		.uleb128 0x10
+ 1194 0100 34       		.uleb128 0x34
+ 1195 0101 00       		.byte	0
+ 1196 0102 03       		.uleb128 0x3
+ 1197 0103 0E       		.uleb128 0xe
+ 1198 0104 3A       		.uleb128 0x3a
+ 1199 0105 0B       		.uleb128 0xb
+ 1200 0106 3B       		.uleb128 0x3b
+ 1201 0107 05       		.uleb128 0x5
+ 1202 0108 49       		.uleb128 0x49
+ 1203 0109 13       		.uleb128 0x13
+ 1204 010a 02       		.uleb128 0x2
+ 1205 010b 18       		.uleb128 0x18
+ 1206 010c 00       		.byte	0
+ 1207 010d 00       		.byte	0
+ 1208 010e 11       		.uleb128 0x11
+ 1209 010f 34       		.uleb128 0x34
+ 1210 0110 00       		.byte	0
+ 1211 0111 03       		.uleb128 0x3
+ 1212 0112 0E       		.uleb128 0xe
+ 1213 0113 3A       		.uleb128 0x3a
+ 1214 0114 0B       		.uleb128 0xb
+ 1215 0115 3B       		.uleb128 0x3b
+ 1216 0116 05       		.uleb128 0x5
+ 1217 0117 49       		.uleb128 0x49
+ 1218 0118 13       		.uleb128 0x13
+ 1219 0119 02       		.uleb128 0x2
+ 1220 011a 17       		.uleb128 0x17
+ 1221 011b 00       		.byte	0
+ 1222 011c 00       		.byte	0
+ 1223 011d 12       		.uleb128 0x12
+ 1224 011e 34       		.uleb128 0x34
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 38
+
+
+ 1225 011f 00       		.byte	0
+ 1226 0120 03       		.uleb128 0x3
+ 1227 0121 0E       		.uleb128 0xe
+ 1228 0122 3A       		.uleb128 0x3a
+ 1229 0123 0B       		.uleb128 0xb
+ 1230 0124 3B       		.uleb128 0x3b
+ 1231 0125 0B       		.uleb128 0xb
+ 1232 0126 49       		.uleb128 0x49
+ 1233 0127 13       		.uleb128 0x13
+ 1234 0128 3F       		.uleb128 0x3f
+ 1235 0129 19       		.uleb128 0x19
+ 1236 012a 02       		.uleb128 0x2
+ 1237 012b 18       		.uleb128 0x18
+ 1238 012c 00       		.byte	0
+ 1239 012d 00       		.byte	0
+ 1240 012e 13       		.uleb128 0x13
+ 1241 012f 2E       		.uleb128 0x2e
+ 1242 0130 00       		.byte	0
+ 1243 0131 3F       		.uleb128 0x3f
+ 1244 0132 19       		.uleb128 0x19
+ 1245 0133 03       		.uleb128 0x3
+ 1246 0134 0E       		.uleb128 0xe
+ 1247 0135 3A       		.uleb128 0x3a
+ 1248 0136 0B       		.uleb128 0xb
+ 1249 0137 3B       		.uleb128 0x3b
+ 1250 0138 0B       		.uleb128 0xb
+ 1251 0139 27       		.uleb128 0x27
+ 1252 013a 19       		.uleb128 0x19
+ 1253 013b 49       		.uleb128 0x49
+ 1254 013c 13       		.uleb128 0x13
+ 1255 013d 3C       		.uleb128 0x3c
+ 1256 013e 19       		.uleb128 0x19
+ 1257 013f 00       		.byte	0
+ 1258 0140 00       		.byte	0
+ 1259 0141 14       		.uleb128 0x14
+ 1260 0142 2E       		.uleb128 0x2e
+ 1261 0143 00       		.byte	0
+ 1262 0144 3F       		.uleb128 0x3f
+ 1263 0145 19       		.uleb128 0x19
+ 1264 0146 03       		.uleb128 0x3
+ 1265 0147 0E       		.uleb128 0xe
+ 1266 0148 3A       		.uleb128 0x3a
+ 1267 0149 0B       		.uleb128 0xb
+ 1268 014a 3B       		.uleb128 0x3b
+ 1269 014b 0B       		.uleb128 0xb
+ 1270 014c 27       		.uleb128 0x27
+ 1271 014d 19       		.uleb128 0x19
+ 1272 014e 3C       		.uleb128 0x3c
+ 1273 014f 19       		.uleb128 0x19
+ 1274 0150 00       		.byte	0
+ 1275 0151 00       		.byte	0
+ 1276 0152 15       		.uleb128 0x15
+ 1277 0153 2E       		.uleb128 0x2e
+ 1278 0154 01       		.byte	0x1
+ 1279 0155 3F       		.uleb128 0x3f
+ 1280 0156 19       		.uleb128 0x19
+ 1281 0157 03       		.uleb128 0x3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 39
+
+
+ 1282 0158 0E       		.uleb128 0xe
+ 1283 0159 3A       		.uleb128 0x3a
+ 1284 015a 0B       		.uleb128 0xb
+ 1285 015b 3B       		.uleb128 0x3b
+ 1286 015c 0B       		.uleb128 0xb
+ 1287 015d 27       		.uleb128 0x27
+ 1288 015e 19       		.uleb128 0x19
+ 1289 015f 3C       		.uleb128 0x3c
+ 1290 0160 19       		.uleb128 0x19
+ 1291 0161 01       		.uleb128 0x1
+ 1292 0162 13       		.uleb128 0x13
+ 1293 0163 00       		.byte	0
+ 1294 0164 00       		.byte	0
+ 1295 0165 16       		.uleb128 0x16
+ 1296 0166 05       		.uleb128 0x5
+ 1297 0167 00       		.byte	0
+ 1298 0168 49       		.uleb128 0x49
+ 1299 0169 13       		.uleb128 0x13
+ 1300 016a 00       		.byte	0
+ 1301 016b 00       		.byte	0
+ 1302 016c 00       		.byte	0
+ 1303              		.section	.debug_loc,"",%progbits
+ 1304              	.Ldebug_loc0:
+ 1305              	.LLST0:
+ 1306 0000 08000000 		.4byte	.LVL1
+ 1307 0004 28000000 		.4byte	.LVL4
+ 1308 0008 0100     		.2byte	0x1
+ 1309 000a 54       		.byte	0x54
+ 1310 000b 00000000 		.4byte	0
+ 1311 000f 00000000 		.4byte	0
+ 1312              	.LLST1:
+ 1313 0013 08000000 		.4byte	.LVL8
+ 1314 0017 28000000 		.4byte	.LVL11
+ 1315 001b 0100     		.2byte	0x1
+ 1316 001d 54       		.byte	0x54
+ 1317 001e 00000000 		.4byte	0
+ 1318 0022 00000000 		.4byte	0
+ 1319              	.LLST2:
+ 1320 0026 04000000 		.4byte	.LVL15
+ 1321 002a 08000000 		.4byte	.LVL16
+ 1322 002e 0600     		.2byte	0x6
+ 1323 0030 70       		.byte	0x70
+ 1324 0031 00       		.sleb128 0
+ 1325 0032 08       		.byte	0x8
+ 1326 0033 7F       		.byte	0x7f
+ 1327 0034 1A       		.byte	0x1a
+ 1328 0035 9F       		.byte	0x9f
+ 1329 0036 00000000 		.4byte	0
+ 1330 003a 00000000 		.4byte	0
+ 1331              	.LLST3:
+ 1332 003e 00000000 		.4byte	.LVL17
+ 1333 0042 12000000 		.4byte	.LVL19
+ 1334 0046 0200     		.2byte	0x2
+ 1335 0048 30       		.byte	0x30
+ 1336 0049 9F       		.byte	0x9f
+ 1337 004a 12000000 		.4byte	.LVL19
+ 1338 004e 1A000000 		.4byte	.LVL20
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 40
+
+
+ 1339 0052 0100     		.2byte	0x1
+ 1340 0054 50       		.byte	0x50
+ 1341 0055 1A000000 		.4byte	.LVL20
+ 1342 0059 1E000000 		.4byte	.LVL21
+ 1343 005d 0200     		.2byte	0x2
+ 1344 005f 30       		.byte	0x30
+ 1345 0060 9F       		.byte	0x9f
+ 1346 0061 1E000000 		.4byte	.LVL21
+ 1347 0065 2C000000 		.4byte	.LFE9
+ 1348 0069 0100     		.2byte	0x1
+ 1349 006b 50       		.byte	0x50
+ 1350 006c 00000000 		.4byte	0
+ 1351 0070 00000000 		.4byte	0
+ 1352              	.LLST4:
+ 1353 0074 06000000 		.4byte	.LVL26
+ 1354 0078 1B000000 		.4byte	.LVL27-1
+ 1355 007c 0100     		.2byte	0x1
+ 1356 007e 50       		.byte	0x50
+ 1357 007f 00000000 		.4byte	0
+ 1358 0083 00000000 		.4byte	0
+ 1359              		.section	.debug_aranges,"",%progbits
+ 1360 0000 94000000 		.4byte	0x94
+ 1361 0004 0200     		.2byte	0x2
+ 1362 0006 00000000 		.4byte	.Ldebug_info0
+ 1363 000a 04       		.byte	0x4
+ 1364 000b 00       		.byte	0
+ 1365 000c 0000     		.2byte	0
+ 1366 000e 0000     		.2byte	0
+ 1367 0010 00000000 		.4byte	.LFB1
+ 1368 0014 14000000 		.4byte	.LFE1-.LFB1
+ 1369 0018 00000000 		.4byte	.LFB2
+ 1370 001c 2C000000 		.4byte	.LFE2-.LFB2
+ 1371 0020 00000000 		.4byte	.LFB0
+ 1372 0024 1C000000 		.4byte	.LFE0-.LFB0
+ 1373 0028 00000000 		.4byte	.LFB3
+ 1374 002c 30000000 		.4byte	.LFE3-.LFB3
+ 1375 0030 00000000 		.4byte	.LFB4
+ 1376 0034 04000000 		.4byte	.LFE4-.LFB4
+ 1377 0038 00000000 		.4byte	.LFB5
+ 1378 003c 02000000 		.4byte	.LFE5-.LFB5
+ 1379 0040 00000000 		.4byte	.LFB6
+ 1380 0044 0C000000 		.4byte	.LFE6-.LFB6
+ 1381 0048 00000000 		.4byte	.LFB7
+ 1382 004c 0C000000 		.4byte	.LFE7-.LFB7
+ 1383 0050 00000000 		.4byte	.LFB8
+ 1384 0054 10000000 		.4byte	.LFE8-.LFB8
+ 1385 0058 00000000 		.4byte	.LFB9
+ 1386 005c 2C000000 		.4byte	.LFE9-.LFB9
+ 1387 0060 00000000 		.4byte	.LFB10
+ 1388 0064 12000000 		.4byte	.LFE10-.LFB10
+ 1389 0068 00000000 		.4byte	.LFB11
+ 1390 006c 18000000 		.4byte	.LFE11-.LFB11
+ 1391 0070 00000000 		.4byte	.LFB12
+ 1392 0074 24000000 		.4byte	.LFE12-.LFB12
+ 1393 0078 00000000 		.4byte	.LFB13
+ 1394 007c 02000000 		.4byte	.LFE13-.LFB13
+ 1395 0080 00000000 		.4byte	.LFB14
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 41
+
+
+ 1396 0084 0C000000 		.4byte	.LFE14-.LFB14
+ 1397 0088 00000000 		.4byte	.LFB15
+ 1398 008c 0C000000 		.4byte	.LFE15-.LFB15
+ 1399 0090 00000000 		.4byte	0
+ 1400 0094 00000000 		.4byte	0
+ 1401              		.section	.debug_ranges,"",%progbits
+ 1402              	.Ldebug_ranges0:
+ 1403 0000 00000000 		.4byte	.LFB1
+ 1404 0004 14000000 		.4byte	.LFE1
+ 1405 0008 00000000 		.4byte	.LFB2
+ 1406 000c 2C000000 		.4byte	.LFE2
+ 1407 0010 00000000 		.4byte	.LFB0
+ 1408 0014 1C000000 		.4byte	.LFE0
+ 1409 0018 00000000 		.4byte	.LFB3
+ 1410 001c 30000000 		.4byte	.LFE3
+ 1411 0020 00000000 		.4byte	.LFB4
+ 1412 0024 04000000 		.4byte	.LFE4
+ 1413 0028 00000000 		.4byte	.LFB5
+ 1414 002c 02000000 		.4byte	.LFE5
+ 1415 0030 00000000 		.4byte	.LFB6
+ 1416 0034 0C000000 		.4byte	.LFE6
+ 1417 0038 00000000 		.4byte	.LFB7
+ 1418 003c 0C000000 		.4byte	.LFE7
+ 1419 0040 00000000 		.4byte	.LFB8
+ 1420 0044 10000000 		.4byte	.LFE8
+ 1421 0048 00000000 		.4byte	.LFB9
+ 1422 004c 2C000000 		.4byte	.LFE9
+ 1423 0050 00000000 		.4byte	.LFB10
+ 1424 0054 12000000 		.4byte	.LFE10
+ 1425 0058 00000000 		.4byte	.LFB11
+ 1426 005c 18000000 		.4byte	.LFE11
+ 1427 0060 00000000 		.4byte	.LFB12
+ 1428 0064 24000000 		.4byte	.LFE12
+ 1429 0068 00000000 		.4byte	.LFB13
+ 1430 006c 02000000 		.4byte	.LFE13
+ 1431 0070 00000000 		.4byte	.LFB14
+ 1432 0074 0C000000 		.4byte	.LFE14
+ 1433 0078 00000000 		.4byte	.LFB15
+ 1434 007c 0C000000 		.4byte	.LFE15
+ 1435 0080 00000000 		.4byte	0
+ 1436 0084 00000000 		.4byte	0
+ 1437              		.section	.debug_line,"",%progbits
+ 1438              	.Ldebug_line0:
+ 1439 0000 AE010000 		.section	.debug_str,"MS",%progbits,1
+ 1439      02006900 
+ 1439      00000201 
+ 1439      FB0E0D00 
+ 1439      01010101 
+ 1440              	.LASF32:
+ 1441 0000 424C455F 		.ascii	"BLE_UART_GetRxBufferSize\000"
+ 1441      55415254 
+ 1441      5F476574 
+ 1441      52784275 
+ 1441      66666572 
+ 1442              	.LASF27:
+ 1443 0019 424C455F 		.ascii	"BLE_UART_ReadRxStatus\000"
+ 1443      55415254 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 42
+
+
+ 1443      5F526561 
+ 1443      64527853 
+ 1443      74617475 
+ 1444              	.LASF45:
+ 1445 002f 424C455F 		.ascii	"BLE_UART_Init\000"
+ 1445      55415254 
+ 1445      5F496E69 
+ 1445      7400
+ 1446              	.LASF18:
+ 1447 003d 424C455F 		.ascii	"BLE_UART_Start\000"
+ 1447      55415254 
+ 1447      5F537461 
+ 1447      727400
+ 1448              	.LASF21:
+ 1449 004c 424C455F 		.ascii	"BLE_UART_WriteControlRegister\000"
+ 1449      55415254 
+ 1449      5F577269 
+ 1449      7465436F 
+ 1449      6E74726F 
+ 1450              	.LASF42:
+ 1451 006a 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1451      4320342E 
+ 1451      392E3320 
+ 1451      32303135 
+ 1451      30333033 
+ 1452 009d 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1452      20726576 
+ 1452      6973696F 
+ 1452      6E203232 
+ 1452      31323230 
+ 1453 00d0 67202D73 		.ascii	"g -std=gnu11 -ffunction-sections -ffat-lto-objects\000"
+ 1453      74643D67 
+ 1453      6E753131 
+ 1453      202D6666 
+ 1453      756E6374 
+ 1454              	.LASF3:
+ 1455 0103 73686F72 		.ascii	"short unsigned int\000"
+ 1455      7420756E 
+ 1455      7369676E 
+ 1455      65642069 
+ 1455      6E7400
+ 1456              	.LASF47:
+ 1457 0116 424C455F 		.ascii	"BLE_UART_initVar\000"
+ 1457      55415254 
+ 1457      5F696E69 
+ 1457      74566172 
+ 1457      00
+ 1458              	.LASF28:
+ 1459 0127 73746174 		.ascii	"status\000"
+ 1459      757300
+ 1460              	.LASF25:
+ 1461 012e 72784461 		.ascii	"rxData\000"
+ 1461      746100
+ 1462              	.LASF11:
+ 1463 0135 666C6F61 		.ascii	"float\000"
+ 1463      7400
+ 1464              	.LASF7:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 43
+
+
+ 1465 013b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1465      206C6F6E 
+ 1465      6720756E 
+ 1465      7369676E 
+ 1465      65642069 
+ 1466              	.LASF36:
+ 1467 0152 61646472 		.ascii	"addressMode\000"
+ 1467      6573734D 
+ 1467      6F646500 
+ 1468              	.LASF46:
+ 1469 015e 424C455F 		.ascii	"BLE_UART_ReadControlRegister\000"
+ 1469      55415254 
+ 1469      5F526561 
+ 1469      64436F6E 
+ 1469      74726F6C 
+ 1470              	.LASF14:
+ 1471 017b 72656738 		.ascii	"reg8\000"
+ 1471      00
+ 1472              	.LASF5:
+ 1473 0180 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1473      20756E73 
+ 1473      69676E65 
+ 1473      6420696E 
+ 1473      7400
+ 1474              	.LASF9:
+ 1475 0192 75696E74 		.ascii	"uint8\000"
+ 1475      3800
+ 1476              	.LASF23:
+ 1477 0198 636F6E74 		.ascii	"control\000"
+ 1477      726F6C00 
+ 1478              	.LASF17:
+ 1479 01a0 424C455F 		.ascii	"BLE_UART_Enable\000"
+ 1479      55415254 
+ 1479      5F456E61 
+ 1479      626C6500 
+ 1480              	.LASF19:
+ 1481 01b0 424C455F 		.ascii	"BLE_UART_Stop\000"
+ 1481      55415254 
+ 1481      5F53746F 
+ 1481      7000
+ 1482              	.LASF20:
+ 1483 01be 656E6162 		.ascii	"enableInterrupts\000"
+ 1483      6C65496E 
+ 1483      74657272 
+ 1483      75707473 
+ 1483      00
+ 1484              	.LASF44:
+ 1485 01cf 433A5C55 		.ascii	"C:\\Users\\User\\Documents\\MIT 6.115\\finalproject"
+ 1485      73657273 
+ 1485      5C557365 
+ 1485      725C446F 
+ 1485      63756D65 
+ 1486 01fd 5C477569 		.ascii	"\\GuitarHero.cydsn\000"
+ 1486      74617248 
+ 1486      65726F2E 
+ 1486      63796473 
+ 1486      6E00
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 44
+
+
+ 1487              	.LASF1:
+ 1488 020f 756E7369 		.ascii	"unsigned char\000"
+ 1488      676E6564 
+ 1488      20636861 
+ 1488      7200
+ 1489              	.LASF12:
+ 1490 021d 646F7562 		.ascii	"double\000"
+ 1490      6C6500
+ 1491              	.LASF24:
+ 1492 0224 696E7453 		.ascii	"intSrc\000"
+ 1492      726300
+ 1493              	.LASF30:
+ 1494 022b 72785374 		.ascii	"rxStatus\000"
+ 1494      61747573 
+ 1494      00
+ 1495              	.LASF40:
+ 1496 0234 424C455F 		.ascii	"BLE_UART_IntClock_Start\000"
+ 1496      55415254 
+ 1496      5F496E74 
+ 1496      436C6F63 
+ 1496      6B5F5374 
+ 1497              	.LASF10:
+ 1498 024c 75696E74 		.ascii	"uint16\000"
+ 1498      313600
+ 1499              	.LASF31:
+ 1500 0253 424C455F 		.ascii	"BLE_UART_GetByte\000"
+ 1500      55415254 
+ 1500      5F476574 
+ 1500      42797465 
+ 1500      00
+ 1501              	.LASF48:
+ 1502 0264 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1502      74657243 
+ 1502      72697469 
+ 1502      63616C53 
+ 1502      65637469 
+ 1503              	.LASF41:
+ 1504 027b 424C455F 		.ascii	"BLE_UART_IntClock_Stop\000"
+ 1504      55415254 
+ 1504      5F496E74 
+ 1504      436C6F63 
+ 1504      6B5F5374 
+ 1505              	.LASF8:
+ 1506 0292 756E7369 		.ascii	"unsigned int\000"
+ 1506      676E6564 
+ 1506      20696E74 
+ 1506      00
+ 1507              	.LASF38:
+ 1508 029f 61646472 		.ascii	"address\000"
+ 1508      65737300 
+ 1509              	.LASF49:
+ 1510 02a7 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1510      69744372 
+ 1510      69746963 
+ 1510      616C5365 
+ 1510      6374696F 
+ 1511              	.LASF43:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 45
+
+
+ 1512 02bd 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\BLE_UART.c\000"
+ 1512      6E657261 
+ 1512      7465645F 
+ 1512      536F7572 
+ 1512      63655C50 
+ 1513              	.LASF22:
+ 1514 02e1 424C455F 		.ascii	"BLE_UART_SetRxInterruptMode\000"
+ 1514      55415254 
+ 1514      5F536574 
+ 1514      5278496E 
+ 1514      74657272 
+ 1515              	.LASF15:
+ 1516 02fd 6C6F6E67 		.ascii	"long double\000"
+ 1516      20646F75 
+ 1516      626C6500 
+ 1517              	.LASF16:
+ 1518 0309 73697A65 		.ascii	"sizetype\000"
+ 1518      74797065 
+ 1518      00
+ 1519              	.LASF6:
+ 1520 0312 6C6F6E67 		.ascii	"long long int\000"
+ 1520      206C6F6E 
+ 1520      6720696E 
+ 1520      7400
+ 1521              	.LASF13:
+ 1522 0320 63686172 		.ascii	"char\000"
+ 1522      00
+ 1523              	.LASF2:
+ 1524 0325 73686F72 		.ascii	"short int\000"
+ 1524      7420696E 
+ 1524      7400
+ 1525              	.LASF26:
+ 1526 032f 424C455F 		.ascii	"BLE_UART_ReadRxData\000"
+ 1526      55415254 
+ 1526      5F526561 
+ 1526      64527844 
+ 1526      61746100 
+ 1527              	.LASF37:
+ 1528 0343 424C455F 		.ascii	"BLE_UART_SetRxAddress1\000"
+ 1528      55415254 
+ 1528      5F536574 
+ 1528      52784164 
+ 1528      64726573 
+ 1529              	.LASF4:
+ 1530 035a 6C6F6E67 		.ascii	"long int\000"
+ 1530      20696E74 
+ 1530      00
+ 1531              	.LASF39:
+ 1532 0363 424C455F 		.ascii	"BLE_UART_SetRxAddress2\000"
+ 1532      55415254 
+ 1532      5F536574 
+ 1532      52784164 
+ 1532      64726573 
+ 1533              	.LASF34:
+ 1534 037a 424C455F 		.ascii	"BLE_UART_ClearRxBuffer\000"
+ 1534      55415254 
+ 1534      5F436C65 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccx0AvXj.s 			page 46
+
+
+ 1534      61725278 
+ 1534      42756666 
+ 1535              	.LASF0:
+ 1536 0391 7369676E 		.ascii	"signed char\000"
+ 1536      65642063 
+ 1536      68617200 
+ 1537              	.LASF29:
+ 1538 039d 424C455F 		.ascii	"BLE_UART_GetChar\000"
+ 1538      55415254 
+ 1538      5F476574 
+ 1538      43686172 
+ 1538      00
+ 1539              	.LASF33:
+ 1540 03ae 73697A65 		.ascii	"size\000"
+ 1540      00
+ 1541              	.LASF35:
+ 1542 03b3 424C455F 		.ascii	"BLE_UART_SetRxAddressMode\000"
+ 1542      55415254 
+ 1542      5F536574 
+ 1542      52784164 
+ 1542      64726573 
+ 1543              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
