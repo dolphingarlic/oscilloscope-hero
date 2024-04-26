@@ -26,14 +26,42 @@ Archive member included because of file (symbol)
                               .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o) (CyFlash_SetWaitCycles)
 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
                               .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o) (CySpcStart)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_cos.o)
+                              .\CortexM3\ARM_GCC_493\Debug\sprites.o (cos)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_sin.o)
+                              .\CortexM3\ARM_GCC_493\Debug\sprites.o (sin)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_rem_pio2.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_cos.o) (__ieee754_rem_pio2)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_cos.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_cos.o) (__kernel_cos)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_rem_pio2.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_rem_pio2.o) (__kernel_rem_pio2)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_sin.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_cos.o) (__kernel_sin)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_fabs.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_rem_pio2.o) (fabs)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_floor.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_rem_pio2.o) (floor)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_scalbn.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_rem_pio2.o) (scalbn)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_copysign.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_scalbn.o) (copysign)
 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubdf3.o)
-                              .\CortexM3\ARM_GCC_493\Debug\sprites.o (__aeabi_dadd)
+                              .\CortexM3\ARM_GCC_493\Debug\sprites.o (__aeabi_dsub)
 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivdf3.o)
                               .\CortexM3\ARM_GCC_493\Debug\sprites.o (__aeabi_dmul)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_cmpdf2.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_rem_pio2.o) (__aeabi_dcmpeq)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixdfsi.o)
+                              c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_rem_pio2.o) (__aeabi_d2iz)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixunsdfsi.o)
+                              .\CortexM3\ARM_GCC_493\Debug\sprites.o (__aeabi_d2uiz)
 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_truncdfsf2.o)
                               .\CortexM3\ARM_GCC_493\Debug\sprites.o (__aeabi_d2f)
+c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubsf3.o)
+                              .\CortexM3\ARM_GCC_493\Debug\sprites.o (__aeabi_i2f)
 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivsf3.o)
-                              .\CortexM3\ARM_GCC_493\Debug\sprites.o (__aeabi_fdiv)
+                              .\CortexM3\ARM_GCC_493\Debug\sprites.o (__aeabi_fmul)
 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixunssfsi.o)
                               .\CortexM3\ARM_GCC_493\Debug\sprites.o (__aeabi_f2uiz)
 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
@@ -58,7 +86,6 @@ new_flag            0x1               .\CortexM3\ARM_GCC_493\Debug\main.o
 points              0x800             .\CortexM3\ARM_GCC_493\Debug\main.o
 new_points          0x800             .\CortexM3\ARM_GCC_493\Debug\main.o
 n_points            0x4               .\CortexM3\ARM_GCC_493\Debug\main.o
-sprite_vertices     0x800             .\CortexM3\ARM_GCC_493\Debug\sprites.o
 dieTemperature      0x2               .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
 new_n_points        0x4               .\CortexM3\ARM_GCC_493\Debug\main.o
 
@@ -76,10 +103,9 @@ Discarded input sections
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\main.o
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\main.o
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\main.o
- .rodata        0x00000000        0x8 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .rodata        0x00000000        0x2 .\CortexM3\ARM_GCC_493\Debug\main.o
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\sprites.o
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\sprites.o
- .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\sprites.o
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
@@ -455,12 +481,50 @@ Discarded input sections
                 0x00000000       0x38 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
  .text.CySpcGetAlgorithm
                 0x00000000       0x28 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_cos.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_cos.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_cos.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_sin.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_sin.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_sin.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_rem_pio2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_rem_pio2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_rem_pio2.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_cos.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_cos.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_cos.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_rem_pio2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_rem_pio2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_rem_pio2.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_sin.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_sin.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_sin.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_fabs.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_fabs.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_fabs.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_floor.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_floor.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_floor.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_scalbn.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_scalbn.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_scalbn.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_copysign.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_copysign.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_copysign.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubdf3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubdf3.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivdf3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivdf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_cmpdf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_cmpdf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixdfsi.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixdfsi.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixunsdfsi.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixunsdfsi.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_truncdfsf2.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_truncdfsf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubsf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubsf3.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivsf3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivsf3.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixunssfsi.o)
@@ -563,7 +627,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 0x00000000                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00000000     0x18c6
+.text           0x00000000     0x315a
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -586,217 +650,282 @@ END GROUP
  .text.hw_init  0x00000094       0x3c .\CortexM3\ARM_GCC_493\Debug\main.o
                 0x00000094                hw_init
  .text.game_init
-                0x000000d0       0x44 .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x000000d0       0x74 .\CortexM3\ARM_GCC_493\Debug\main.o
                 0x000000d0                game_init
  .text.draw_points
-                0x00000114       0x34 .\CortexM3\ARM_GCC_493\Debug\main.o
-                0x00000114                draw_points
+                0x00000144       0x34 .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x00000144                draw_points
  .text.update_render
-                0x00000148       0x48 .\CortexM3\ARM_GCC_493\Debug\main.o
-                0x00000148                update_render
- .text.FPS_isr  0x00000190        0x8 .\CortexM3\ARM_GCC_493\Debug\main.o
-                0x00000190                FPS_isr
- .text.main     0x00000198       0x54 .\CortexM3\ARM_GCC_493\Debug\main.o
-                0x00000198                main
+                0x00000178       0x6c .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x00000178                update_render
+ .text.FPS_isr  0x000001e4        0x8 .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x000001e4                FPS_isr
+ .text.main     0x000001ec       0x54 .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x000001ec                main
  .text.make_fretboard
-                0x000001ec       0xe8 .\CortexM3\ARM_GCC_493\Debug\sprites.o
-                0x000001ec                make_fretboard
+                0x00000240       0xe8 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                0x00000240                make_fretboard
  .text.make_barline
-                0x000002d4       0x84 .\CortexM3\ARM_GCC_493\Debug\sprites.o
-                0x000002d4                make_barline
+                0x00000328       0x84 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                0x00000328                make_barline
+ .text.make_ellipse
+                0x000003ac      0x154 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                0x000003ac                make_ellipse
  .text.sprites_to_polyline
-                0x00000358       0x74 .\CortexM3\ARM_GCC_493\Debug\sprites.o
-                0x00000358                sprites_to_polyline
- *fill*         0x000003cc        0x4 
+                0x00000500       0x74 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                0x00000500                sprites_to_polyline
+ *fill*         0x00000574        0x4 
  .text.ortho_to_perspective
-                0x000003d0       0xc0 .\CortexM3\ARM_GCC_493\Debug\sprites.o
-                0x000003d0                ortho_to_perspective
+                0x00000578       0xc0 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                0x00000578                ortho_to_perspective
  .text.IntDefaultHandler
-                0x00000490        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x00000490                IntDefaultHandler
- .text.Start_c  0x00000494       0x4c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x00000494                Start_c
+                0x00000638        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000638                IntDefaultHandler
+ .text.Start_c  0x0000063c       0x4c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x0000063c                Start_c
  .text.initialize_psoc
-                0x000004e0       0x74 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x000004e0                initialize_psoc
+                0x00000688       0x74 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000688                initialize_psoc
  .text.CyClockStartupError
-                0x00000554        0x4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x000006fc        0x4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .text.cfg_write_bytes32
-                0x00000558       0x34 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x00000700       0x34 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .text.AnalogSetDefault
-                0x0000058c       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x00000734       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .text.CYMEMZERO
-                0x000005d4        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x0000077c        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .text.ClockSetup
-                0x000005e0       0xc4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x00000788       0xc4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .text.CYCONFIGCPY
-                0x000006a4        0x8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x0000084c        0x8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .text.cyfitter_cfg
-                0x000006ac       0xec .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
-                0x000006ac                cyfitter_cfg
+                0x00000854       0xec .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x00000854                cyfitter_cfg
  .text.x_DAC_Enable
-                0x00000798       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x00000798                x_DAC_Enable
+                0x00000940       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x00000940                x_DAC_Enable
  .text.x_DAC_SetSpeed
-                0x000007b4       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x000007b4                x_DAC_SetSpeed
+                0x0000095c       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x0000095c                x_DAC_SetSpeed
  .text.x_DAC_SetValue
-                0x000007d0        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x000007d0                x_DAC_SetValue
+                0x00000978        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x00000978                x_DAC_SetValue
  .text.x_DAC_DacTrim
-                0x000007dc       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x000007dc                x_DAC_DacTrim
+                0x00000984       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x00000984                x_DAC_DacTrim
  .text.x_DAC_SetRange
-                0x00000800       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x00000800                x_DAC_SetRange
+                0x000009a8       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x000009a8                x_DAC_SetRange
  .text.x_DAC_Init
-                0x00000820       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x00000820                x_DAC_Init
+                0x000009c8       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x000009c8                x_DAC_Init
  .text.x_DAC_Start
-                0x00000840       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x00000840                x_DAC_Start
+                0x000009e8       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x000009e8                x_DAC_Start
  .text.y_DAC_Enable
-                0x00000864       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x00000864                y_DAC_Enable
+                0x00000a0c       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x00000a0c                y_DAC_Enable
  .text.y_DAC_SetSpeed
-                0x00000880       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x00000880                y_DAC_SetSpeed
+                0x00000a28       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x00000a28                y_DAC_SetSpeed
  .text.y_DAC_SetValue
-                0x0000089c        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x0000089c                y_DAC_SetValue
+                0x00000a44        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x00000a44                y_DAC_SetValue
  .text.y_DAC_DacTrim
-                0x000008a8       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x000008a8                y_DAC_DacTrim
+                0x00000a50       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x00000a50                y_DAC_DacTrim
  .text.y_DAC_SetRange
-                0x000008cc       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x000008cc                y_DAC_SetRange
+                0x00000a74       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x00000a74                y_DAC_SetRange
  .text.y_DAC_Init
-                0x000008ec       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x000008ec                y_DAC_Init
+                0x00000a94       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x00000a94                y_DAC_Init
  .text.y_DAC_Start
-                0x0000090c       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x0000090c                y_DAC_Start
- .text          0x00000930       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
-                0x00000930                CyDelayCycles
-                0x00000940                CyEnterCriticalSection
-                0x00000948                CyExitCriticalSection
- .text.CyDelay  0x00000950       0x2c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
-                0x00000950                CyDelay
+                0x00000ab4       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x00000ab4                y_DAC_Start
+ .text          0x00000ad8       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
+                0x00000ad8                CyDelayCycles
+                0x00000ae8                CyEnterCriticalSection
+                0x00000af0                CyExitCriticalSection
+ .text.CyDelay  0x00000af8       0x2c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+                0x00000af8                CyDelay
  .text.CyDelayUs
-                0x0000097c       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
-                0x0000097c                CyDelayUs
+                0x00000b24       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+                0x00000b24                CyDelayUs
  .text.FPS_isr_SetVector
-                0x00000990        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
-                0x00000990                FPS_isr_SetVector
+                0x00000b38        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+                0x00000b38                FPS_isr_SetVector
  .text.FPS_isr_SetPriority
-                0x0000099c       0x10 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
-                0x0000099c                FPS_isr_SetPriority
+                0x00000b44       0x10 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+                0x00000b44                FPS_isr_SetPriority
  .text.FPS_isr_Enable
-                0x000009ac        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
-                0x000009ac                FPS_isr_Enable
+                0x00000b54        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+                0x00000b54                FPS_isr_Enable
  .text.FPS_isr_Disable
-                0x000009b8        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
-                0x000009b8                FPS_isr_Disable
+                0x00000b60        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+                0x00000b60                FPS_isr_Disable
  .text.FPS_isr_StartEx
-                0x000009c4       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
-                0x000009c4                FPS_isr_StartEx
+                0x00000b6c       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+                0x00000b6c                FPS_isr_StartEx
  .text.BLE_UART_Init
-                0x000009e0       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
-                0x000009e0                BLE_UART_Init
+                0x00000b88       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+                0x00000b88                BLE_UART_Init
  .text.BLE_UART_Enable
-                0x000009f4       0x2c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
-                0x000009f4                BLE_UART_Enable
+                0x00000b9c       0x2c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+                0x00000b9c                BLE_UART_Enable
  .text.BLE_UART_Start
-                0x00000a20       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
-                0x00000a20                BLE_UART_Start
+                0x00000bc8       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+                0x00000bc8                BLE_UART_Start
  .text.BLE_UART_GetChar
-                0x00000a3c       0x2c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
-                0x00000a3c                BLE_UART_GetChar
+                0x00000be4       0x2c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+                0x00000be4                BLE_UART_GetChar
  .text.BLE_Rx_isr_SetVector
-                0x00000a68        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
-                0x00000a68                BLE_Rx_isr_SetVector
+                0x00000c10        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+                0x00000c10                BLE_Rx_isr_SetVector
  .text.BLE_Rx_isr_SetPriority
-                0x00000a74       0x10 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
-                0x00000a74                BLE_Rx_isr_SetPriority
+                0x00000c1c       0x10 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+                0x00000c1c                BLE_Rx_isr_SetPriority
  .text.BLE_Rx_isr_Enable
-                0x00000a84        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
-                0x00000a84                BLE_Rx_isr_Enable
+                0x00000c2c        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+                0x00000c2c                BLE_Rx_isr_Enable
  .text.BLE_Rx_isr_Disable
-                0x00000a90        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
-                0x00000a90                BLE_Rx_isr_Disable
+                0x00000c38        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+                0x00000c38                BLE_Rx_isr_Disable
  .text.BLE_Rx_isr_StartEx
-                0x00000a9c       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
-                0x00000a9c                BLE_Rx_isr_StartEx
+                0x00000c44       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+                0x00000c44                BLE_Rx_isr_StartEx
  .text.LCD_WrCntrlNib
-                0x00000ab8       0x34 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000c60       0x34 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
  .text.LCD_WrDatNib
-                0x00000aec       0x44 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000c94       0x44 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
  .text.LCD_IsReady
-                0x00000b30       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000b30                LCD_IsReady
+                0x00000cd8       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000cd8                LCD_IsReady
  .text.LCD_WriteData
-                0x00000c14       0x18 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000c14                LCD_WriteData
+                0x00000dbc       0x18 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000dbc                LCD_WriteData
  .text.LCD_PutChar
-                0x00000c2c        0x8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000c2c                LCD_PutChar
+                0x00000dd4        0x8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000dd4                LCD_PutChar
  .text.LCD_WriteControl
-                0x00000c34       0x18 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000c34                LCD_WriteControl
+                0x00000ddc       0x18 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000ddc                LCD_WriteControl
  .text.LCD_Init
-                0x00000c4c       0x6c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000c4c                LCD_Init
+                0x00000df4       0x6c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000df4                LCD_Init
  .text.LCD_Enable
-                0x00000cb8       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000cb8                LCD_Enable
+                0x00000e60       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000e60                LCD_Enable
  .text.LCD_Start
-                0x00000ccc       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000ccc                LCD_Start
+                0x00000e74       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000e74                LCD_Start
  .text.LCD_Position
-                0x00000ce8       0x3c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000ce8                LCD_Position
+                0x00000e90       0x3c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000e90                LCD_Position
  .text.BLE_UART_IntClock_Start
-                0x00000d24       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
-                0x00000d24                BLE_UART_IntClock_Start
- .text          0x00000d40      0x370 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubdf3.o)
-                0x00000d40                __aeabi_drsub
-                0x00000d48                __aeabi_dsub
-                0x00000d48                __subdf3
-                0x00000d4c                __aeabi_dadd
-                0x00000d4c                __adddf3
-                0x00000fc4                __floatunsidf
-                0x00000fc4                __aeabi_ui2d
-                0x00000fe4                __floatsidf
-                0x00000fe4                __aeabi_i2d
-                0x00001008                __aeabi_f2d
-                0x00001008                __extendsfdf2
-                0x00001044                __floatundidf
-                0x00001044                __aeabi_ul2d
-                0x00001054                __floatdidf
-                0x00001054                __aeabi_l2d
- .text          0x000010b0      0x424 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivdf3.o)
-                0x000010b0                __aeabi_dmul
-                0x000010b0                __muldf3
-                0x00001304                __divdf3
-                0x00001304                __aeabi_ddiv
- .text          0x000014d4       0xa0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_truncdfsf2.o)
-                0x000014d4                __truncdfsf2
-                0x000014d4                __aeabi_d2f
- .text          0x00001574      0x2a0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivsf3.o)
-                0x00001574                __mulsf3
-                0x00001574                __aeabi_fmul
-                0x000016dc                __aeabi_fdiv
-                0x000016dc                __divsf3
- .text          0x00001814       0x40 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixunssfsi.o)
-                0x00001814                __fixunssfsi
-                0x00001814                __aeabi_f2uiz
+                0x00000ecc       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+                0x00000ecc                BLE_UART_IntClock_Start
+ .text.cos      0x00000ee8       0x90 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_cos.o)
+                0x00000ee8                cos
+ .text.sin      0x00000f78       0x94 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_sin.o)
+                0x00000f78                sin
+ *fill*         0x0000100c        0x4 
+ .text.__ieee754_rem_pio2
+                0x00001010      0x428 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_rem_pio2.o)
+                0x00001010                __ieee754_rem_pio2
+ .text.__kernel_cos
+                0x00001438      0x248 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_cos.o)
+                0x00001438                __kernel_cos
+ .text.__kernel_rem_pio2
+                0x00001680      0x808 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_rem_pio2.o)
+                0x00001680                __kernel_rem_pio2
+ .text.__kernel_sin
+                0x00001e88      0x170 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_sin.o)
+                0x00001e88                __kernel_sin
+ .text.fabs     0x00001ff8        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_fabs.o)
+                0x00001ff8                fabs
+ .text.floor    0x00002000      0x118 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_floor.o)
+                0x00002000                floor
+ .text.scalbn   0x00002118       0xf0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_scalbn.o)
+                0x00002118                scalbn
+ .text.copysign
+                0x00002208       0x10 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_copysign.o)
+                0x00002208                copysign
+ .text          0x00002218      0x370 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubdf3.o)
+                0x00002218                __aeabi_drsub
+                0x00002220                __aeabi_dsub
+                0x00002220                __subdf3
+                0x00002224                __aeabi_dadd
+                0x00002224                __adddf3
+                0x0000249c                __floatunsidf
+                0x0000249c                __aeabi_ui2d
+                0x000024bc                __floatsidf
+                0x000024bc                __aeabi_i2d
+                0x000024e0                __aeabi_f2d
+                0x000024e0                __extendsfdf2
+                0x0000251c                __floatundidf
+                0x0000251c                __aeabi_ul2d
+                0x0000252c                __floatdidf
+                0x0000252c                __aeabi_l2d
+ .text          0x00002588      0x424 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivdf3.o)
+                0x00002588                __aeabi_dmul
+                0x00002588                __muldf3
+                0x000027dc                __divdf3
+                0x000027dc                __aeabi_ddiv
+ .text          0x000029ac      0x110 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_cmpdf2.o)
+                0x000029ac                __gtdf2
+                0x000029ac                __gedf2
+                0x000029b4                __ltdf2
+                0x000029b4                __ledf2
+                0x000029bc                __nedf2
+                0x000029bc                __eqdf2
+                0x000029bc                __cmpdf2
+                0x00002a38                __aeabi_cdrcmple
+                0x00002a48                __aeabi_cdcmpeq
+                0x00002a48                __aeabi_cdcmple
+                0x00002a58                __aeabi_dcmpeq
+                0x00002a6c                __aeabi_dcmplt
+                0x00002a80                __aeabi_dcmple
+                0x00002a94                __aeabi_dcmpge
+                0x00002aa8                __aeabi_dcmpgt
+ .text          0x00002abc       0x50 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixdfsi.o)
+                0x00002abc                __aeabi_d2iz
+                0x00002abc                __fixdfsi
+ .text          0x00002b0c       0x40 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixunsdfsi.o)
+                0x00002b0c                __aeabi_d2uiz
+                0x00002b0c                __fixunsdfsi
+ .text          0x00002b4c       0xa0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_truncdfsf2.o)
+                0x00002b4c                __truncdfsf2
+                0x00002b4c                __aeabi_d2f
+ .text          0x00002bec      0x21c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubsf3.o)
+                0x00002bec                __aeabi_frsub
+                0x00002bf4                __subsf3
+                0x00002bf4                __aeabi_fsub
+                0x00002bf8                __aeabi_fadd
+                0x00002bf8                __addsf3
+                0x00002d58                __aeabi_ui2f
+                0x00002d58                __floatunsisf
+                0x00002d60                __aeabi_i2f
+                0x00002d60                __floatsisf
+                0x00002d7c                __aeabi_ul2f
+                0x00002d7c                __floatundisf
+                0x00002d8c                __aeabi_l2f
+                0x00002d8c                __floatdisf
+ .text          0x00002e08      0x2a0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivsf3.o)
+                0x00002e08                __mulsf3
+                0x00002e08                __aeabi_fmul
+                0x00002f70                __aeabi_fdiv
+                0x00002f70                __divsf3
+ .text          0x000030a8       0x40 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixunssfsi.o)
+                0x000030a8                __fixunssfsi
+                0x000030a8                __aeabi_f2uiz
  .text.__libc_init_array
-                0x00001854       0x4c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
-                0x00001854                __libc_init_array
- .text.memcpy   0x000018a0       0x16 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
-                0x000018a0                memcpy
- .text.memset   0x000018b6       0x10 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
-                0x000018b6                memset
+                0x000030e8       0x4c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x000030e8                __libc_init_array
+ .text.memcpy   0x00003134       0x16 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+                0x00003134                memcpy
+ .text.memset   0x0000314a       0x10 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x0000314a                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
@@ -809,78 +938,86 @@ END GROUP
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x000018c8        0x0
+.v4_bx          0x0000315c        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x000018c8        0x0
+.iplt           0x0000315c        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x000018c8        0x4
+.eh_frame       0x0000315c        0x4
  *(.eh_frame)
- .eh_frame      0x000018c8        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
- .eh_frame      0x000018c8        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
-                0x000018cc                PROVIDE (__exidx_start, .)
+ .eh_frame      0x0000315c        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .eh_frame      0x0000315c        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+                0x00003160                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000018cc                __exidx_end = .
+                0x00003160                __exidx_end = .
 
-.rodata         0x000018cc       0x74
+.rodata         0x00003160      0x250
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x000018cc       0x3c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
-                0x00001908                . = ALIGN (0x4)
+ .rodata        0x00003160        0x4 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .rodata        0x00003164       0x3c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .rodata.npio2_hw
+                0x000031a0       0x80 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_rem_pio2.o)
+ .rodata.two_over_pi
+                0x00003220      0x108 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_rem_pio2.o)
+ .rodata.init_jk
+                0x00003328       0x10 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_rem_pio2.o)
+ .rodata.PIo2   0x00003338       0x40 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_rem_pio2.o)
+                0x00003378                . = ALIGN (0x4)
  *(.init)
- .init          0x00001908        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
-                0x00001908                _init
- .init          0x0000190c        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
-                0x00001914                . = ALIGN (0x4)
-                0x00001914                __preinit_array_start = .
+ .init          0x00003378        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x00003378                _init
+ .init          0x0000337c        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x00003384                . = ALIGN (0x4)
+                0x00003384                __preinit_array_start = .
  *(.preinit_array)
-                0x00001914                __preinit_array_end = .
-                0x00001914                . = ALIGN (0x4)
-                0x00001914                __init_array_start = .
+                0x00003384                __preinit_array_end = .
+                0x00003384                . = ALIGN (0x4)
+                0x00003384                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00001914        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
- .init_array    0x00001918        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x0000191c                __init_array_end = .
-                0x0000191c                . = ALIGN (0x4)
+ .init_array    0x00003384        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .init_array    0x00003388        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x0000338c                __init_array_end = .
+                0x0000338c                . = ALIGN (0x4)
  *(.fini)
- .fini          0x0000191c        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
-                0x0000191c                _fini
- .fini          0x00001920        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
-                0x00001928                . = ALIGN (0x4)
-                0x00001928                __fini_array_start = .
+ .fini          0x0000338c        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x0000338c                _fini
+ .fini          0x00003390        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x00003398                . = ALIGN (0x4)
+                0x00003398                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00001928        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .fini_array    0x00003398        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x0000192c                __fini_array_end = .
-                0x0000192c                . = ALIGN (0x4)
+                0x0000339c                __fini_array_end = .
+                0x0000339c                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x0000192c                . = ALIGN (0x4)
+                0x0000339c                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x0000192c                . = ALIGN (0x4)
-                0x0000192c                __cy_regions = .
-                0x0000192c        0x4 LONG 0x1940 __cy_region_init_ram
-                0x00001930        0x4 LONG 0x1fff8108 __cy_region_start_data
-                0x00001934        0x4 LONG 0x18 __cy_region_init_size_ram
-                0x00001938        0x4 LONG 0x1a38 __cy_region_zero_size_ram
-                0x0000193c                __cy_regions_end = .
-                0x00001940                . = ALIGN (0x8)
- *fill*         0x0000193c        0x4 
-                0x00001940                _etext = .
+                0x0000339c                . = ALIGN (0x4)
+                0x0000339c                __cy_regions = .
+                0x0000339c        0x4 LONG 0x33b0 __cy_region_init_ram
+                0x000033a0        0x4 LONG 0x1fff8108 __cy_region_start_data
+                0x000033a4        0x4 LONG 0x18 __cy_region_init_size_ram
+                0x000033a8        0x4 LONG 0x1a38 __cy_region_zero_size_ram
+                0x000033ac                __cy_regions_end = .
+                0x000033b0                . = ALIGN (0x8)
+ *fill*         0x000033ac        0x4 
+                0x000033b0                _etext = .
 
 .cy_checksum_exclude
-                0x00001940        0x0
+                0x000033b0        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x1fff8000      0x100
@@ -895,7 +1032,7 @@ END GROUP
  .noinit        0x1fff8104        0x1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
                 0x1fff8104                CyResetStatus
 
-.data           0x1fff8108       0x18 load address 0x00001940
+.data           0x1fff8108       0x18 load address 0x000033b0
                 0x1fff8108                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff8108        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
@@ -914,35 +1051,34 @@ END GROUP
  *(.ram)
                 0x1fff8120                _edata = .
 
-.igot.plt       0x1fff8120        0x0 load address 0x00001958
+.igot.plt       0x1fff8120        0x0 load address 0x000033c8
  .igot.plt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
-.bss            0x1fff8120     0x1a38 load address 0x00001958
+.bss            0x1fff8120     0x1a38 load address 0x000033c8
                 0x1fff8120                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
  .bss           0x1fff8120       0x1c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
- .bss           0x1fff813c        0x1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x1fff813c                x_DAC_initVar
- .bss           0x1fff813d        0x1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x1fff813d                y_DAC_initVar
- .bss           0x1fff813e        0x1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
-                0x1fff813e                BLE_UART_initVar
- .bss           0x1fff813f        0x2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x1fff813f                LCD_enableState
-                0x1fff8140                LCD_initVar
+ .bss           0x1fff813c      0x800 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .bss           0x1fff893c        0x1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x1fff893c                x_DAC_initVar
+ .bss           0x1fff893d        0x1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x1fff893d                y_DAC_initVar
+ .bss           0x1fff893e        0x1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+                0x1fff893e                BLE_UART_initVar
+ .bss           0x1fff893f        0x2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x1fff893f                LCD_enableState
+                0x1fff8940                LCD_initVar
  *(COMMON)
- *fill*         0x1fff8141        0x3 
- COMMON         0x1fff8144     0x1210 .\CortexM3\ARM_GCC_493\Debug\main.o
-                0x1fff8144                n_sprites
-                0x1fff8148                sprites
-                0x1fff8348                new_flag
-                0x1fff834c                points
-                0x1fff8b4c                new_points
-                0x1fff934c                n_points
-                0x1fff9350                new_n_points
- COMMON         0x1fff9354      0x800 .\CortexM3\ARM_GCC_493\Debug\sprites.o
-                0x1fff9354                sprite_vertices
+ *fill*         0x1fff8941        0x3 
+ COMMON         0x1fff8944     0x1210 .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x1fff8944                n_sprites
+                0x1fff8948                sprites
+                0x1fff8b48                new_flag
+                0x1fff8b4c                points
+                0x1fff934c                new_points
+                0x1fff9b4c                n_points
+                0x1fff9b50                new_n_points
                 0x1fff9b58                . = ALIGN (0x8)
  *fill*         0x1fff9b54        0x4 
  *(.ram.b)
@@ -950,11 +1086,11 @@ END GROUP
                 0x1fff9b58                __end = .
                 0x1fff9b58                PROVIDE (end, .)
                 0x1fff9b58                PROVIDE (__bss_end__, .)
-                0x00001940                __cy_region_init_ram = LOADADDR (.data)
+                0x000033b0                __cy_region_init_ram = LOADADDR (.data)
                 0x00000018                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x00001a38                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x1fff9b58       0x80 load address 0x00001958
+.heap           0x1fff9b58       0x80 load address 0x000033c8
                 0x1fff9b58                . = _end
                 0x1fff9bd8                . = (. + 0x80)
  *fill*         0x1fff9b58       0x80 
@@ -1005,7 +1141,7 @@ END GROUP
  .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
                 0x90500000                cy_metadata
 
-.rel.dyn        0x00001958        0x0 load address 0x9050000c
+.rel.dyn        0x000033c8        0x0 load address 0x9050000c
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
 .stab
@@ -1026,202 +1162,212 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x8d8
+.debug_aranges  0x00000000      0x8e0
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x50 .\CortexM3\ARM_GCC_493\Debug\main.o
  .debug_aranges
-                0x00000050       0x38 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                0x00000050       0x40 .\CortexM3\ARM_GCC_493\Debug\sprites.o
  .debug_aranges
-                0x00000088       0x18 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                0x00000090       0x18 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
  .debug_aranges
-                0x000000a0       0x48 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x000000a8       0x48 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
  .debug_aranges
-                0x000000e8       0x58 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x000000f0       0x58 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .debug_aranges
-                0x00000140       0x58 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x00000148       0x58 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
  .debug_aranges
-                0x00000198       0x58 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x000001a0       0x58 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
  .debug_aranges
-                0x000001f0       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
+                0x000001f8       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
  .debug_aranges
-                0x00000210      0x298 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+                0x00000218      0x298 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
  .debug_aranges
-                0x000004a8       0x98 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+                0x000004b0       0x98 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
  .debug_aranges
-                0x00000540       0x80 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+                0x00000548       0x80 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
  .debug_aranges
-                0x000005c0       0x98 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+                0x000005c8       0x98 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
  .debug_aranges
-                0x00000658       0x80 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+                0x00000660       0x80 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
  .debug_aranges
-                0x000006d8       0x98 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x000006e0       0x98 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
  .debug_aranges
-                0x00000770       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+                0x00000778       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
  .debug_aranges
-                0x000007e0       0x80 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+                0x000007e8       0x80 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
  .debug_aranges
-                0x00000860       0x78 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+                0x00000868       0x78 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x525f
+.debug_info     0x00000000     0x53b6
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x541 .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_info    0x00000541      0x35a .\CortexM3\ARM_GCC_493\Debug\sprites.o
- .debug_info    0x0000089b      0x13b .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
- .debug_info    0x000009d6      0x3a6 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_info    0x00000d7c      0x4da .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
- .debug_info    0x00001256      0x1de .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
- .debug_info    0x00001434      0x1de .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
- .debug_info    0x00001612       0x90 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
- .debug_info    0x000016a2     0x1376 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
- .debug_info    0x00002a18      0xa5e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
- .debug_info    0x00003476      0x2d2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
- .debug_info    0x00003748      0x3a5 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
- .debug_info    0x00003aed      0x2d2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
- .debug_info    0x00003dbf      0x71d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
- .debug_info    0x000044dc      0x283 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
- .debug_info    0x0000475f      0x60f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
- .debug_info    0x00004d6e      0x4f1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_info    0x00000000      0x578 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_info    0x00000578      0x47a .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .debug_info    0x000009f2      0x13b .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_info    0x00000b2d      0x3a6 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_info    0x00000ed3      0x4da .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_info    0x000013ad      0x1de .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_info    0x0000158b      0x1de .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_info    0x00001769       0x90 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
+ .debug_info    0x000017f9     0x1376 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_info    0x00002b6f      0xa5e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_info    0x000035cd      0x2d2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_info    0x0000389f      0x3a5 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_info    0x00003c44      0x2d2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_info    0x00003f16      0x71d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_info    0x00004633      0x283 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_info    0x000048b6      0x60f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_info    0x00004ec5      0x4f1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
 
-.debug_abbrev   0x00000000     0x18c3
+.debug_abbrev   0x00000000     0x1933
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x1df .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_abbrev  0x000001df      0x14b .\CortexM3\ARM_GCC_493\Debug\sprites.o
- .debug_abbrev  0x0000032a       0x66 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
- .debug_abbrev  0x00000390      0x200 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_abbrev  0x00000590      0x203 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
- .debug_abbrev  0x00000793       0xf7 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
- .debug_abbrev  0x0000088a       0xf7 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
- .debug_abbrev  0x00000981       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
- .debug_abbrev  0x00000995      0x296 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
- .debug_abbrev  0x00000c2b      0x1ed .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
- .debug_abbrev  0x00000e18      0x173 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
- .debug_abbrev  0x00000f8b      0x16d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
- .debug_abbrev  0x000010f8      0x173 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
- .debug_abbrev  0x0000126b      0x171 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
- .debug_abbrev  0x000013dc      0x139 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
- .debug_abbrev  0x00001515      0x1ed .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
- .debug_abbrev  0x00001702      0x1c1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_abbrev  0x00000000      0x1ce .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_abbrev  0x000001ce      0x1cc .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .debug_abbrev  0x0000039a       0x66 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_abbrev  0x00000400      0x200 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_abbrev  0x00000600      0x203 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_abbrev  0x00000803       0xf7 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_abbrev  0x000008fa       0xf7 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_abbrev  0x000009f1       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00000a05      0x296 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_abbrev  0x00000c9b      0x1ed .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_abbrev  0x00000e88      0x173 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_abbrev  0x00000ffb      0x16d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_abbrev  0x00001168      0x173 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_abbrev  0x000012db      0x171 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_abbrev  0x0000144c      0x139 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_abbrev  0x00001585      0x1ed .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_abbrev  0x00001772      0x1c1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
 
-.debug_line     0x00000000     0x2256
+.debug_line     0x00000000     0x2333
  *(.debug_line)
- .debug_line    0x00000000      0x27e .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_line    0x0000027e      0x1cb .\CortexM3\ARM_GCC_493\Debug\sprites.o
- .debug_line    0x00000449       0x53 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
- .debug_line    0x0000049c      0x249 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_line    0x000006e5      0x1e5 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
- .debug_line    0x000008ca       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
- .debug_line    0x000009ae       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
- .debug_line    0x00000a92       0x68 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
- .debug_line    0x00000afa      0x806 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
- .debug_line    0x00001300      0x366 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
- .debug_line    0x00001666      0x14d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
- .debug_line    0x000017b3      0x1b2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
- .debug_line    0x00001965      0x150 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
- .debug_line    0x00001ab5      0x1de .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
- .debug_line    0x00001c93      0x199 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
- .debug_line    0x00001e2c      0x1ec .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
- .debug_line    0x00002018      0x23e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_line    0x00000000      0x286 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_line    0x00000286      0x2a0 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .debug_line    0x00000526       0x53 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_line    0x00000579      0x249 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_line    0x000007c2      0x1e5 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_line    0x000009a7       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_line    0x00000a8b       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_line    0x00000b6f       0x68 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
+ .debug_line    0x00000bd7      0x806 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_line    0x000013dd      0x366 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_line    0x00001743      0x14d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_line    0x00001890      0x1b2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_line    0x00001a42      0x150 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_line    0x00001b92      0x1de .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_line    0x00001d70      0x199 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_line    0x00001f09      0x1ec .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_line    0x000020f5      0x23e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
 
-.debug_frame    0x00000000     0x176c
+.debug_frame    0x00000000     0x19ec
  *(.debug_frame)
- .debug_frame   0x00000000       0xe4 .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_frame   0x000000e4       0xc8 .\CortexM3\ARM_GCC_493\Debug\sprites.o
- .debug_frame   0x000001ac       0xac .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_frame   0x00000258       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
- .debug_frame   0x0000033c       0xb4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
- .debug_frame   0x000003f0       0xb4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
- .debug_frame   0x000004a4      0x728 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
- .debug_frame   0x00000bcc      0x1f8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
- .debug_frame   0x00000dc4      0x104 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
- .debug_frame   0x00000ec8      0x14c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
- .debug_frame   0x00001014      0x104 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
- .debug_frame   0x00001118      0x1e4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
- .debug_frame   0x000012fc       0xe0 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
- .debug_frame   0x000013dc      0x174 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
- .debug_frame   0x00001550      0x160 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
- .debug_frame   0x000016b0       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
- .debug_frame   0x000016d0       0x28 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
- .debug_frame   0x000016f8       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
- .debug_frame   0x00001724       0x28 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
- .debug_frame   0x0000174c       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000000       0xe8 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_frame   0x000000e8      0x100 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .debug_frame   0x000001e8       0xac .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_frame   0x00000294       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_frame   0x00000378       0xb4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_frame   0x0000042c       0xb4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_frame   0x000004e0      0x728 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_frame   0x00000c08      0x1f8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_frame   0x00000e00      0x104 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_frame   0x00000f04      0x14c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_frame   0x00001050      0x104 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_frame   0x00001154      0x1e4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_frame   0x00001338       0xe0 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_frame   0x00001418      0x174 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_frame   0x0000158c      0x160 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_frame   0x000016ec       0x38 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_cos.o)
+ .debug_frame   0x00001724       0x38 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_sin.o)
+ .debug_frame   0x0000175c       0x48 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_rem_pio2.o)
+ .debug_frame   0x000017a4       0x4c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_cos.o)
+ .debug_frame   0x000017f0       0x54 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_rem_pio2.o)
+ .debug_frame   0x00001844       0x48 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_sin.o)
+ .debug_frame   0x0000188c       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_fabs.o)
+ .debug_frame   0x000018ac       0x34 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_floor.o)
+ .debug_frame   0x000018e0       0x30 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_scalbn.o)
+ .debug_frame   0x00001910       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_copysign.o)
+ .debug_frame   0x00001930       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x00001950       0x28 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x00001978       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x000019a4       0x28 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .debug_frame   0x000019cc       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x1c1c
+.debug_str      0x00000000     0x1c43
  *(.debug_str)
- .debug_str     0x00000000      0x31d .\CortexM3\ARM_GCC_493\Debug\main.o
-                                0x386 (size before relaxing)
- .debug_str     0x0000031d       0x48 .\CortexM3\ARM_GCC_493\Debug\sprites.o
-                                0x243 (size before relaxing)
- .debug_str     0x00000365       0x77 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_str     0x00000000      0x32a .\CortexM3\ARM_GCC_493\Debug\main.o
+                                0x393 (size before relaxing)
+ .debug_str     0x0000032a       0x62 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                                0x276 (size before relaxing)
+ .debug_str     0x0000038c       0x77 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
                                 0x1f5 (size before relaxing)
- .debug_str     0x000003dc      0x15a .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_str     0x00000403      0x15a .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
                                 0x315 (size before relaxing)
- .debug_str     0x00000536      0x14f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_str     0x0000055d      0x14f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
                                 0x31a (size before relaxing)
- .debug_str     0x00000685       0x8f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_str     0x000006ac       0x8f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
                                 0x22a (size before relaxing)
- .debug_str     0x00000714       0x7e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_str     0x0000073b       0x7e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
                                 0x22a (size before relaxing)
- .debug_str     0x00000792      0x82f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_str     0x000007b9      0x82f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
                                 0xa3a (size before relaxing)
- .debug_str     0x00000fc1      0x35b .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_str     0x00000fe8      0x35b .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
                                 0x732 (size before relaxing)
- .debug_str     0x0000131c       0xf4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_str     0x00001343       0xf4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
                                 0x2cd (size before relaxing)
- .debug_str     0x00001410      0x1c8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_str     0x00001437      0x1c8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
                                 0x3cd (size before relaxing)
- .debug_str     0x000015d8      0x11b .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_str     0x000015ff      0x11b .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
                                 0x2f7 (size before relaxing)
- .debug_str     0x000016f3      0x130 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_str     0x0000171a      0x130 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
                                 0x336 (size before relaxing)
- .debug_str     0x00001823      0x1ad .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_str     0x0000184a      0x1ad .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
                                 0x371 (size before relaxing)
- .debug_str     0x000019d0      0x19e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_str     0x000019f7      0x19e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
                                 0x3ac (size before relaxing)
- .debug_str     0x00001b6e       0xae .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_str     0x00001b95       0xae .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
                                 0x335 (size before relaxing)
 
-.debug_loc      0x00000000     0x242e
+.debug_loc      0x00000000     0x254e
  *(.debug_loc)
  .debug_loc     0x00000000       0x51 .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_loc     0x00000051      0x469 .\CortexM3\ARM_GCC_493\Debug\sprites.o
- .debug_loc     0x000004ba      0x144 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_loc     0x000005fe      0x1d7 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
- .debug_loc     0x000007d5       0x79 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
- .debug_loc     0x0000084e       0x79 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
- .debug_loc     0x000008c7      0xa11 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
- .debug_loc     0x000012d8      0x1e4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
- .debug_loc     0x000014bc       0x56 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
- .debug_loc     0x00001512       0x87 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
- .debug_loc     0x00001599       0x56 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
- .debug_loc     0x000015ef      0x3c6 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
- .debug_loc     0x000019b5      0x12c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
- .debug_loc     0x00001ae1      0x300 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
- .debug_loc     0x00001de1      0x64d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_loc     0x00000051      0x589 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .debug_loc     0x000005da      0x144 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_loc     0x0000071e      0x1d7 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_loc     0x000008f5       0x79 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_loc     0x0000096e       0x79 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_loc     0x000009e7      0xa11 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_loc     0x000013f8      0x1e4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_loc     0x000015dc       0x56 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_loc     0x00001632       0x87 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_loc     0x000016b9       0x56 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_loc     0x0000170f      0x3c6 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_loc     0x00001ad5      0x12c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_loc     0x00001c01      0x300 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_loc     0x00001f01      0x64d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
 
 .debug_macinfo
  *(.debug_macinfo)
 
-.debug_ranges   0x00000000      0x828
+.debug_ranges   0x00000000      0x848
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x40 .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_ranges  0x00000040       0xa0 .\CortexM3\ARM_GCC_493\Debug\sprites.o
- .debug_ranges  0x000000e0       0x38 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_ranges  0x00000118       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
- .debug_ranges  0x00000160       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
- .debug_ranges  0x000001a8       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
- .debug_ranges  0x000001f0      0x288 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
- .debug_ranges  0x00000478       0x88 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
- .debug_ranges  0x00000500       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
- .debug_ranges  0x00000570       0x88 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
- .debug_ranges  0x000005f8       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
- .debug_ranges  0x00000668       0x88 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
- .debug_ranges  0x000006f0       0x60 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
- .debug_ranges  0x00000750       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
- .debug_ranges  0x000007c0       0x68 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_ranges  0x00000040       0xc0 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .debug_ranges  0x00000100       0x38 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_ranges  0x00000138       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_ranges  0x00000180       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_ranges  0x000001c8       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_ranges  0x00000210      0x288 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_ranges  0x00000498       0x88 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_ranges  0x00000520       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_ranges  0x00000590       0x88 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_ranges  0x00000618       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_ranges  0x00000688       0x88 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_ranges  0x00000710       0x60 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_ranges  0x00000770       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_ranges  0x000007e0       0x68 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
 
 .comment        0x00000000       0x70
  .comment       0x00000000       0x70 .\CortexM3\ARM_GCC_493\Debug\main.o
@@ -1301,31 +1447,59 @@ END GROUP
  .ARM.attributes
                 0x00000383       0x33 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
  .ARM.attributes
-                0x000003b6       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubdf3.o)
+                0x000003b6       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_cos.o)
  .ARM.attributes
-                0x000003d3       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivdf3.o)
+                0x000003e3       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_sin.o)
  .ARM.attributes
-                0x000003f0       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_truncdfsf2.o)
+                0x00000410       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_rem_pio2.o)
  .ARM.attributes
-                0x0000040d       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivsf3.o)
+                0x0000043d       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_cos.o)
  .ARM.attributes
-                0x0000042a       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixunssfsi.o)
+                0x0000046a       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_rem_pio2.o)
  .ARM.attributes
-                0x00000447       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x00000497       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-k_sin.o)
  .ARM.attributes
-                0x00000474       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+                0x000004c4       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_fabs.o)
  .ARM.attributes
-                0x000004a1       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x000004f1       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_floor.o)
  .ARM.attributes
-                0x000004ce       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x0000051e       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_scalbn.o)
  .ARM.attributes
-                0x000004fb       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+                0x0000054b       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_copysign.o)
  .ARM.attributes
-                0x00000528       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x00000578       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
-                0x00000555       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+                0x00000595       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivdf3.o)
  .ARM.attributes
-                0x00000582       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x000005b2       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_cmpdf2.o)
+ .ARM.attributes
+                0x000005cf       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixdfsi.o)
+ .ARM.attributes
+                0x000005ec       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixunsdfsi.o)
+ .ARM.attributes
+                0x00000609       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_truncdfsf2.o)
+ .ARM.attributes
+                0x00000626       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubsf3.o)
+ .ARM.attributes
+                0x00000643       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivsf3.o)
+ .ARM.attributes
+                0x00000660       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixunssfsi.o)
+ .ARM.attributes
+                0x0000067d       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .ARM.attributes
+                0x000006aa       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x000006d7       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000704       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000731       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x0000075e       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x0000078b       0x2d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+ .ARM.attributes
+                0x000007b8       0x1d c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
 
 /DISCARD/
  *(.note.GNU-stack)

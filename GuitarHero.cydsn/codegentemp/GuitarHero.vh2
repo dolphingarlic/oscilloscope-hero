@@ -2,7 +2,7 @@
 --	Conversion of GuitarHero.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Fri Apr 26 11:09:30 2024
+--	Fri Apr 26 11:59:26 2024
 --
 
 USE cypress.cypress.all;

@@ -14,8 +14,7 @@
 #include <sprites.h>
 
 // Global constants
-const uint16 DAC_SETTLE_TIME_US = 3;
-const float PI = 3.14159265358979323846;
+const uint16 DAC_SETTLE_TIME_US = 5;
 
 // Sprites
 int n_sprites;
@@ -56,7 +55,8 @@ void hw_init() {
 void game_init() {
     n_sprites = 0;
     sprites[n_sprites++] = make_fretboard(0);
-    sprites[n_sprites++] = make_barline(sprites[0].n, UINT8_MAX);
+    sprites[n_sprites++] = make_barline(sprites[0].n, UINT8_MAX / 2);
+    sprites[n_sprites++] = make_ellipse(sprites[0].n + sprites[1].n, 0, UINT8_MAX, 0);
 }
 
 /*
@@ -76,8 +76,16 @@ void draw_points() {
  */
 void update_render() {
     // Move the barline I guess
-    sprites[1].y -= 3;
-    if (sprites[1].y < 0) sprites[1].y = UINT8_MAX;
+    sprites[1].y -= 1;
+    if (sprites[1].y < -15) sprites[1].y = UINT8_MAX;
+    // Move the ellipse too
+    sprites[2].y -= 1;
+    if (sprites[2].y < -15) {
+        sprites[2].y = UINT8_MAX;
+        sprites[2].x += 50;
+        if (sprites[2].x > 250)
+            sprites[2].x = 5;
+    }
     
     // Convert to polyline
     new_n_points = sprites_to_polyline(n_sprites, sprites, new_points);

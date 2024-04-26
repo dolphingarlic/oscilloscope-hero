@@ -11,8 +11,11 @@
  */
 
 #include <sprites.h>
+#include <math.h>
 
-struct Point sprite_vertices[1<<10];
+static const float PI = 3.14159265358979323846;
+
+static struct Point sprite_vertices[1<<10];
 
 /*
  * Creates the boundaries of the fretboard
@@ -82,6 +85,44 @@ struct Sprite make_barline(int offset, int y) {
     return (struct Sprite) {
         .n = n, .x = 0, .y = y,
         .vertices = sprite_vertices + offset
+    };
+}
+
+/*
+ * Creates an ellipse in the specified track and location
+ */
+struct Sprite make_ellipse(int offset, uint8 track, int y, uint8 filled) {
+    const int resolution = 16;
+    const float width = 22.5, height = 7.5;
+    int n = 0;
+
+    // Top half
+    for (int i = 0; i < resolution; i++) {
+        sprite_vertices[offset + n++] = (struct Point) {
+            .x = (uint8)(width * (cos(i * PI / resolution) + 1)),
+            .y = (uint8)(height * (sin(i * PI / resolution) + 1))
+        };
+    }
+    // Bottom half
+    for (int i = 0; i < resolution; i++) {
+        sprite_vertices[offset + n++] = (struct Point) {
+            .x = (uint8)(width * (cos(-i * PI / resolution) + 1)),
+            .y = (uint8)(height * (-sin(i * PI / resolution) + 1))
+        };
+    }
+    // Complete the polygon
+    sprite_vertices[offset + n++] = (struct Point) {
+        .x = (uint8)(2 * width),
+        .y = (uint8)(height)
+    };
+    
+    if (filled == 1) {
+        // TODO: interleave the top and bottom halves
+    }
+    
+    return (struct Sprite) {
+        .n = n, .x = 50 * track + 5, .y = y,
+        .vertices = sprite_vertices + offset,
     };
 }
 
