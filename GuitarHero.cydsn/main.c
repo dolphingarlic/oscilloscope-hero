@@ -11,17 +11,23 @@
  */
 #include <project.h>
 #include <math.h>
+#include <stdlib.h>
 #include <sprite_utils.h>
 
 // Global constants
 const uint16 DAC_SETTLE_TIME_US = 3;
 const float PI = 3.14159265358979323846;
 
+// Sprites
+int n_sprites;
+struct Sprite *sprites[1<<5];
+
 // Global rendering variables
-int n;
-uint8 x[1<<12], y[1<<12];
+int n_points;
+struct Point points[1<<12];
 uint8 new_flag;
-uint8 new_x[1<<12], new_y[1<<12];
+int new_n_points;
+struct Point new_points[1<<12];
 
 // Declare custom ISRs
 CY_ISR_PROTO(FPS_isr);
@@ -46,13 +52,21 @@ void hw_init() {
 }
 
 /*
+ * Start a new game of Guitar Hero
+ */
+void game_init() {
+    n_sprites = 0;
+    sprites[n_sprites++] = make_fretboard();
+}
+
+/*
  * Given a list of points, draws a polygon connecting them
  * on the oscilloscope using the DAC
  */
 void draw_points() {   
-    for (int i = 0; i < n ; i++) {
-        x_DAC_SetValue(x[i]);
-        y_DAC_SetValue(y[i]);
+    for (int i = 0; i < n_points; i++) {
+        x_DAC_SetValue(points[i].x);
+        y_DAC_SetValue(points[i].y);
         CyDelayUs(DAC_SETTLE_TIME_US); // Wait for DAC to settle
     }
 }
@@ -60,29 +74,23 @@ void draw_points() {
 /*
  * Updates the list of points to render
  */
-int circle_idx = 0;
 void update_points() {
-    // Reset everything
-    n = 0;
-    // Fretboard
-    make_fretboard(&n, new_x, new_y);
-    // Move the circle
-    circle_idx++;
-    if (circle_idx == 60) circle_idx = 0;
-    for (int i = 0; i <= 64; i++) {
-        new_x[n] = (uint8)(32 * (cos(i * 2 * PI / 64) + cos(circle_idx * 2 * PI / 60)) + 128);
-        new_y[n] = (uint8)(32 * (sin(i * 2 * PI / 64) + sin(circle_idx * 2 * PI / 60)) + 128);
-        n++;
-    }
+    // TODO: create a moving ellipse
+    
+    // Convert to polyline
+    new_n_points = 0;
+    sprites_to_polyline(n_sprites, sprites, &new_n_points, new_points);
+    // Convert to perspective
+    ortho_to_perspective(new_n_points, new_points);
     // Signal that a new frame is ready
     new_flag = 1;
 }
 
 /*
- * Run the game at 60 FPS
+ * Run the game at 20 FPS
  */
 CY_ISR(FPS_isr) {
-    update_points();
+    // update_points();
 }
 
 CY_ISR(BLE_Rx_isr) {
@@ -94,14 +102,17 @@ int main() {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
     hw_init();
-    update_points();
+    game_init();
+    // FIXME: for some reason, this function works fine when called once...
+    for (int i = 0; i < 2; i++)
+        update_points();
 
     for (;;) {
+        // "Latch" the new points
         if (new_flag == 1) {
-            for (int i = 0; i < n; i++) {
-                x[i] = new_x[i];
-                y[i] = new_y[i];
-            }
+            n_points = new_n_points;
+            for (int i = 0; i < n_points; i++)
+                points[i] = new_points[i];
             new_flag = 0;
         }
 
