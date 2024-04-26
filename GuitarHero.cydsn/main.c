@@ -11,8 +11,7 @@
  */
 #include <project.h>
 #include <math.h>
-#include <stdlib.h>
-#include <sprite_utils.h>
+#include <sprites.h>
 
 // Global constants
 const uint16 DAC_SETTLE_TIME_US = 3;
@@ -20,14 +19,14 @@ const float PI = 3.14159265358979323846;
 
 // Sprites
 int n_sprites;
-struct Sprite *sprites[1<<5];
+struct Sprite sprites[1<<5];
 
 // Global rendering variables
 int n_points;
-struct Point points[1<<12];
+struct Point points[1<<10];
 uint8 new_flag;
 int new_n_points;
-struct Point new_points[1<<12];
+struct Point new_points[1<<10];
 
 // Declare custom ISRs
 CY_ISR_PROTO(FPS_isr);
@@ -78,8 +77,7 @@ void update_points() {
     // TODO: create a moving ellipse
     
     // Convert to polyline
-    new_n_points = 0;
-    sprites_to_polyline(n_sprites, sprites, &new_n_points, new_points);
+    new_n_points = sprites_to_polyline(n_sprites, sprites, new_points);
     // Convert to perspective
     ortho_to_perspective(new_n_points, new_points);
     // Signal that a new frame is ready
@@ -90,7 +88,7 @@ void update_points() {
  * Run the game at 20 FPS
  */
 CY_ISR(FPS_isr) {
-    // update_points();
+    update_points();
 }
 
 CY_ISR(BLE_Rx_isr) {
@@ -103,9 +101,6 @@ int main() {
 
     hw_init();
     game_init();
-    // FIXME: for some reason, this function works fine when called once...
-    for (int i = 0; i < 2; i++)
-        update_points();
 
     for (;;) {
         // "Latch" the new points

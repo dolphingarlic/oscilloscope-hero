@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="finalproject\GuitarHero\Header Files\sprite_utils.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="finalproject\GuitarHero\TopDesign">
 <ExpandedNodeIds>
 <v>finalproject</v>
 <v>finalproject\GuitarHero</v>
@@ -21,10 +21,10 @@
 <v>finalproject\GuitarHero\GuitarHero.cydwr</v>
 <v>finalproject\GuitarHero\Header Files</v>
 <v>finalproject\GuitarHero\Header Files\cyapicallbacks.h</v>
-<v>finalproject\GuitarHero\Header Files\sprite_utils.h</v>
+<v>finalproject\GuitarHero\Header Files\sprites.h</v>
 <v>finalproject\GuitarHero\Source Files</v>
 <v>finalproject\GuitarHero\Source Files\main.c</v>
-<v>finalproject\GuitarHero\Source Files\sprite_utils.c</v>
+<v>finalproject\GuitarHero\Source Files\sprites.c</v>
 <v>finalproject\GuitarHero\Generated_Source</v>
 <v>finalproject\GuitarHero\Generated_Source\PSoC5</v>
 <v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_Rx_isr</v>
@@ -118,13 +118,16 @@
 <v>finalproject\GuitarHero\Generated_Source\PSoC5\project.h</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
+<v>finalproject</v>
+<v>finalproject\GuitarHero</v>
+<v>finalproject\GuitarHero\TopDesign</v>
 <v>finalproject\GuitarHero\GuitarHero.cydwr</v>
 <v>finalproject\GuitarHero\Header Files</v>
 <v>finalproject\GuitarHero\Header Files\cyapicallbacks.h</v>
-<v>finalproject\GuitarHero\Header Files\sprite_utils.h</v>
+<v>finalproject\GuitarHero\Header Files\sprites.h</v>
 <v>finalproject\GuitarHero\Source Files</v>
 <v>finalproject\GuitarHero\Source Files\main.c</v>
-<v>finalproject\GuitarHero\Source Files\sprite_utils.c</v>
+<v>finalproject\GuitarHero\Source Files\sprites.c</v>
 <v>finalproject\GuitarHero\Generated_Source</v>
 <v>finalproject\GuitarHero\Generated_Source\PSoC5</v>
 <v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_Rx_isr</v>
@@ -163,9 +166,6 @@
 <v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\cyPm.c</v>
 <v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\cyPm.h</v>
 <v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\CySpc.c</v>
-<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\CySpc.h</v>
-<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\cytypes.h</v>
-<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\cyutils.c</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -212,7 +212,7 @@
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_LCDPort.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_PM.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\sprite_utils.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\sprites.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_DAC.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_DAC_PM.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_out.lst</v>
@@ -255,7 +255,7 @@
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_LCDPort.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_PM.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\sprite_utils.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\sprites.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_DAC.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_DAC_PM.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_out.lst</v>
@@ -320,6 +320,7 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
+<name v=".\GuitarHero.cydsn\sprite_utils.c" />
 <name v=".\GuitarHero.cydsn\sprite_utils.h" />
 <name v=".\GuitarHero.cydsn\main.c" />
 </OpenDocs>

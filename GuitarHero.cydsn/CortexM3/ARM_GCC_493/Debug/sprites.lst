@@ -1,0 +1,1733 @@
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"sprites.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.make_fretboard,"ax",%progbits
+  19              		.align	2
+  20              		.global	make_fretboard
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	make_fretboard, %function
+  24              	make_fretboard:
+  25              	.LFB0:
+  26              		.file 1 ".\\sprites.c"
+   1:.\sprites.c   **** /* ========================================
+   2:.\sprites.c   ****  *
+   3:.\sprites.c   ****  * Copyright Andi Qu, 2024
+   4:.\sprites.c   ****  * All Rights Reserved
+   5:.\sprites.c   ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\sprites.c   ****  *
+   7:.\sprites.c   ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\sprites.c   ****  * WHICH IS THE PROPERTY OF ANDI QU.
+   9:.\sprites.c   ****  *
+  10:.\sprites.c   ****  * ========================================
+  11:.\sprites.c   ****  */
+  12:.\sprites.c   **** 
+  13:.\sprites.c   **** #include <sprites.h>
+  14:.\sprites.c   **** 
+  15:.\sprites.c   **** struct Point sprite_vertices[1<<10];
+  16:.\sprites.c   **** 
+  17:.\sprites.c   **** /*
+  18:.\sprites.c   ****  * Creates a set of points to denote the boundaries of the fretboard
+  19:.\sprites.c   ****  */
+  20:.\sprites.c   **** struct Sprite make_fretboard() {
+  27              		.loc 1 20 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              	.LVL0:
+  33 0000 70B4     		push	{r4, r5, r6}
+  34              		.cfi_def_cfa_offset 12
+  35              		.cfi_offset 4, -12
+  36              		.cfi_offset 5, -8
+  37              		.cfi_offset 6, -4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 2
+
+
+  38              	.LVL1:
+  39              	.LBB2:
+  21:.\sprites.c   ****     const int resolution = 16;
+  22:.\sprites.c   ****     int n = 0;
+  23:.\sprites.c   **** 
+  24:.\sprites.c   ****     // Bottom edge
+  25:.\sprites.c   ****     for (int i = 0; i < resolution; i++) {
+  40              		.loc 1 25 0
+  41 0002 0022     		movs	r2, #0
+  42              	.LBE2:
+  22:.\sprites.c   **** 
+  43              		.loc 1 22 0
+  44 0004 1346     		mov	r3, r2
+  45              	.LBB3:
+  46              		.loc 1 25 0
+  47 0006 11E0     		b	.L2
+  48              	.LVL2:
+  49              	.L4:
+  26:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+  50              		.loc 1 26 0 discriminator 3
+  51 0008 5D1C     		adds	r5, r3, #1
+  52              	.LVL3:
+  27:.\sprites.c   ****             .x = UINT8_MAX * i / resolution,
+  53              		.loc 1 27 0 discriminator 3
+  54 000a C2EB0224 		rsb	r4, r2, r2, lsl #8
+  55 000e 2146     		mov	r1, r4
+  56 0010 002C     		cmp	r4, #0
+  57 0012 01DA     		bge	.L3
+  58 0014 04F10F01 		add	r1, r4, #15
+  59              	.L3:
+  60 0018 0C11     		asrs	r4, r1, #4
+  26:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+  61              		.loc 1 26 0 discriminator 3
+  62 001a 2E49     		ldr	r1, .L15
+  63 001c 01F81340 		strb	r4, [r1, r3, lsl #1]
+  64 0020 01EB4303 		add	r3, r1, r3, lsl #1
+  65 0024 0021     		movs	r1, #0
+  66 0026 5970     		strb	r1, [r3, #1]
+  25:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+  67              		.loc 1 25 0 discriminator 3
+  68 0028 0132     		adds	r2, r2, #1
+  69              	.LVL4:
+  26:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+  70              		.loc 1 26 0 discriminator 3
+  71 002a 2B46     		mov	r3, r5
+  72              	.LVL5:
+  73              	.L2:
+  25:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+  74              		.loc 1 25 0 discriminator 1
+  75 002c 0F2A     		cmp	r2, #15
+  76 002e EBDD     		ble	.L4
+  77 0030 0022     		movs	r2, #0
+  78              	.LVL6:
+  79 0032 11E0     		b	.L5
+  80              	.LVL7:
+  81              	.L7:
+  82              	.LBE3:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 3
+
+
+  83              	.LBB4:
+  28:.\sprites.c   ****             .y = 0
+  29:.\sprites.c   ****         };
+  30:.\sprites.c   ****     }
+  31:.\sprites.c   ****     // Right edge
+  32:.\sprites.c   ****     for (int i = 0; i < resolution; i++) {
+  33:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+  84              		.loc 1 33 0 discriminator 3
+  85 0034 5D1C     		adds	r5, r3, #1
+  86              	.LVL8:
+  34:.\sprites.c   ****             .x = UINT8_MAX,
+  35:.\sprites.c   ****             .y = UINT8_MAX * i / resolution
+  87              		.loc 1 35 0 discriminator 3
+  88 0036 C2EB0224 		rsb	r4, r2, r2, lsl #8
+  89 003a 2146     		mov	r1, r4
+  90 003c 002C     		cmp	r4, #0
+  91 003e 01DA     		bge	.L6
+  92 0040 04F10F01 		add	r1, r4, #15
+  93              	.L6:
+  94 0044 0C11     		asrs	r4, r1, #4
+  33:.\sprites.c   ****             .x = UINT8_MAX,
+  95              		.loc 1 33 0 discriminator 3
+  96 0046 2349     		ldr	r1, .L15
+  97 0048 FF26     		movs	r6, #255
+  98 004a 01F81360 		strb	r6, [r1, r3, lsl #1]
+  99 004e 01EB4303 		add	r3, r1, r3, lsl #1
+ 100 0052 5C70     		strb	r4, [r3, #1]
+  32:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+ 101              		.loc 1 32 0 discriminator 3
+ 102 0054 0132     		adds	r2, r2, #1
+ 103              	.LVL9:
+  33:.\sprites.c   ****             .x = UINT8_MAX,
+ 104              		.loc 1 33 0 discriminator 3
+ 105 0056 2B46     		mov	r3, r5
+ 106              	.LVL10:
+ 107              	.L5:
+  32:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+ 108              		.loc 1 32 0 discriminator 1
+ 109 0058 0F2A     		cmp	r2, #15
+ 110 005a EBDD     		ble	.L7
+ 111 005c 0022     		movs	r2, #0
+ 112              	.LVL11:
+ 113 005e 12E0     		b	.L8
+ 114              	.LVL12:
+ 115              	.L10:
+ 116              	.LBE4:
+ 117              	.LBB5:
+  36:.\sprites.c   ****         };
+  37:.\sprites.c   ****     }
+  38:.\sprites.c   ****     // Top edge
+  39:.\sprites.c   ****     for (int i = 0; i < resolution; i++) {
+  40:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+ 118              		.loc 1 40 0 discriminator 3
+ 119 0060 5D1C     		adds	r5, r3, #1
+ 120              	.LVL13:
+  41:.\sprites.c   ****             .x = UINT8_MAX - UINT8_MAX * i / resolution,
+ 121              		.loc 1 41 0 discriminator 3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 4
+
+
+ 122 0062 C2EB0221 		rsb	r1, r2, r2, lsl #8
+ 123 0066 0C46     		mov	r4, r1
+ 124 0068 0029     		cmp	r1, #0
+ 125 006a 01DA     		bge	.L9
+ 126 006c 01F10F04 		add	r4, r1, #15
+ 127              	.L9:
+  40:.\sprites.c   ****             .x = UINT8_MAX - UINT8_MAX * i / resolution,
+ 128              		.loc 1 40 0 discriminator 3
+ 129 0070 1849     		ldr	r1, .L15
+ 130 0072 6FEA2414 		mvn	r4, r4, asr #4
+ 131 0076 01F81340 		strb	r4, [r1, r3, lsl #1]
+ 132 007a 01EB4303 		add	r3, r1, r3, lsl #1
+ 133 007e FF21     		movs	r1, #255
+ 134 0080 5970     		strb	r1, [r3, #1]
+  39:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+ 135              		.loc 1 39 0 discriminator 3
+ 136 0082 0132     		adds	r2, r2, #1
+ 137              	.LVL14:
+  40:.\sprites.c   ****             .x = UINT8_MAX - UINT8_MAX * i / resolution,
+ 138              		.loc 1 40 0 discriminator 3
+ 139 0084 2B46     		mov	r3, r5
+ 140              	.LVL15:
+ 141              	.L8:
+  39:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+ 142              		.loc 1 39 0 discriminator 1
+ 143 0086 0F2A     		cmp	r2, #15
+ 144 0088 EADD     		ble	.L10
+ 145 008a 0022     		movs	r2, #0
+ 146              	.LVL16:
+ 147 008c 12E0     		b	.L11
+ 148              	.LVL17:
+ 149              	.L13:
+ 150              	.LBE5:
+ 151              	.LBB6:
+  42:.\sprites.c   ****             .y = UINT8_MAX
+  43:.\sprites.c   ****         };
+  44:.\sprites.c   ****     }
+  45:.\sprites.c   ****     // Left edge
+  46:.\sprites.c   ****     for (int i = 0; i < resolution; i++) {
+  47:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+ 152              		.loc 1 47 0 discriminator 3
+ 153 008e 5D1C     		adds	r5, r3, #1
+ 154              	.LVL18:
+  48:.\sprites.c   ****             .x = 0,
+  49:.\sprites.c   ****             .y = UINT8_MAX - UINT8_MAX * i / resolution
+ 155              		.loc 1 49 0 discriminator 3
+ 156 0090 C2EB0221 		rsb	r1, r2, r2, lsl #8
+ 157 0094 0C46     		mov	r4, r1
+ 158 0096 0029     		cmp	r1, #0
+ 159 0098 01DA     		bge	.L12
+ 160 009a 01F10F04 		add	r4, r1, #15
+ 161              	.L12:
+  47:.\sprites.c   ****             .x = 0,
+ 162              		.loc 1 47 0 discriminator 3
+ 163 009e 0D49     		ldr	r1, .L15
+ 164 00a0 0026     		movs	r6, #0
+ 165 00a2 01F81360 		strb	r6, [r1, r3, lsl #1]
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 5
+
+
+ 166 00a6 01EB4303 		add	r3, r1, r3, lsl #1
+ 167 00aa 6FEA2414 		mvn	r4, r4, asr #4
+ 168 00ae 5C70     		strb	r4, [r3, #1]
+  46:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+ 169              		.loc 1 46 0 discriminator 3
+ 170 00b0 0132     		adds	r2, r2, #1
+ 171              	.LVL19:
+  47:.\sprites.c   ****             .x = 0,
+ 172              		.loc 1 47 0 discriminator 3
+ 173 00b2 2B46     		mov	r3, r5
+ 174              	.LVL20:
+ 175              	.L11:
+  46:.\sprites.c   ****         sprite_vertices[n++] = (struct Point) {
+ 176              		.loc 1 46 0 discriminator 1
+ 177 00b4 0F2A     		cmp	r2, #15
+ 178 00b6 EADD     		ble	.L13
+ 179              	.LBE6:
+  50:.\sprites.c   ****         };
+  51:.\sprites.c   ****     }
+  52:.\sprites.c   ****     // Complete the polygon
+  53:.\sprites.c   ****     sprite_vertices[n++] = (struct Point) { .x = 0, .y = 0 };
+ 180              		.loc 1 53 0
+ 181 00b8 5C1C     		adds	r4, r3, #1
+ 182              	.LVL21:
+ 183 00ba 0649     		ldr	r1, .L15
+ 184 00bc 0022     		movs	r2, #0
+ 185              	.LVL22:
+ 186 00be 01F81320 		strb	r2, [r1, r3, lsl #1]
+ 187 00c2 01EB4303 		add	r3, r1, r3, lsl #1
+ 188 00c6 5A70     		strb	r2, [r3, #1]
+  54:.\sprites.c   **** 
+  55:.\sprites.c   ****     return (struct Sprite) {
+ 189              		.loc 1 55 0
+ 190 00c8 0460     		str	r4, [r0]
+ 191 00ca 0271     		strb	r2, [r0, #4]
+ 192 00cc 4271     		strb	r2, [r0, #5]
+ 193 00ce 8160     		str	r1, [r0, #8]
+  56:.\sprites.c   ****         .position = (struct Point) { .x = 0, .y = 0 },
+  57:.\sprites.c   ****         .n = n,
+  58:.\sprites.c   ****         .vertices = sprite_vertices
+  59:.\sprites.c   ****     };
+  60:.\sprites.c   **** }
+ 194              		.loc 1 60 0
+ 195 00d0 70BC     		pop	{r4, r5, r6}
+ 196              		.cfi_restore 6
+ 197              		.cfi_restore 5
+ 198              		.cfi_restore 4
+ 199              		.cfi_def_cfa_offset 0
+ 200              	.LVL23:
+ 201 00d2 7047     		bx	lr
+ 202              	.L16:
+ 203              		.align	2
+ 204              	.L15:
+ 205 00d4 00000000 		.word	sprite_vertices
+ 206              		.cfi_endproc
+ 207              	.LFE0:
+ 208              		.size	make_fretboard, .-make_fretboard
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 6
+
+
+ 209              		.section	.text.sprites_to_polyline,"ax",%progbits
+ 210              		.align	2
+ 211              		.global	sprites_to_polyline
+ 212              		.thumb
+ 213              		.thumb_func
+ 214              		.type	sprites_to_polyline, %function
+ 215              	sprites_to_polyline:
+ 216              	.LFB1:
+  61:.\sprites.c   **** 
+  62:.\sprites.c   **** /*
+  63:.\sprites.c   ****  * Converts a list of sprites into a polyline that the scope can render.
+  64:.\sprites.c   ****  */
+  65:.\sprites.c   **** int sprites_to_polyline(int n_sprites, struct Sprite *sprites, struct Point *points) {
+ 217              		.loc 1 65 0
+ 218              		.cfi_startproc
+ 219              		@ args = 0, pretend = 0, frame = 0
+ 220              		@ frame_needed = 0, uses_anonymous_args = 0
+ 221              		@ link register save eliminated.
+ 222              	.LVL24:
+ 223 0000 F0B4     		push	{r4, r5, r6, r7}
+ 224              		.cfi_def_cfa_offset 16
+ 225              		.cfi_offset 4, -16
+ 226              		.cfi_offset 5, -12
+ 227              		.cfi_offset 6, -8
+ 228              		.cfi_offset 7, -4
+ 229 0002 0746     		mov	r7, r0
+ 230              	.LVL25:
+ 231              	.LBB7:
+  66:.\sprites.c   ****     // For now, naively convert to points
+  67:.\sprites.c   ****     int n_points = 0;
+  68:.\sprites.c   ****     for (int i = 0; i < n_sprites; i++) {
+ 232              		.loc 1 68 0
+ 233 0004 0025     		movs	r5, #0
+ 234              	.LBE7:
+  67:.\sprites.c   ****     for (int i = 0; i < n_sprites; i++) {
+ 235              		.loc 1 67 0
+ 236 0006 2846     		mov	r0, r5
+ 237              	.LVL26:
+ 238              	.LBB10:
+ 239              		.loc 1 68 0
+ 240 0008 10E0     		b	.L18
+ 241              	.LVL27:
+ 242              	.L19:
+ 243              	.LBB8:
+  69:.\sprites.c   ****         for (int j = 0; j < sprites[i].n; j++) {
+  70:.\sprites.c   ****             // TODO: incorporate position
+  71:.\sprites.c   ****             points[n_points++] = sprites[i].vertices[j];
+ 244              		.loc 1 71 0 discriminator 3
+ 245 000a B368     		ldr	r3, [r6, #8]
+ 246 000c 33F81430 		ldrh	r3, [r3, r4, lsl #1]	@ unaligned
+ 247 0010 22F81030 		strh	r3, [r2, r0, lsl #1]	@ unaligned
+  69:.\sprites.c   ****         for (int j = 0; j < sprites[i].n; j++) {
+ 248              		.loc 1 69 0 discriminator 3
+ 249 0014 0134     		adds	r4, r4, #1
+ 250              	.LVL28:
+ 251              		.loc 1 71 0 discriminator 3
+ 252 0016 0130     		adds	r0, r0, #1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 7
+
+
+ 253              	.LVL29:
+ 254 0018 00E0     		b	.L20
+ 255              	.LVL30:
+ 256              	.L21:
+ 257              	.LBE8:
+ 258 001a 0024     		movs	r4, #0
+ 259              	.L20:
+ 260              	.LVL31:
+ 261              	.LBB9:
+  69:.\sprites.c   ****         for (int j = 0; j < sprites[i].n; j++) {
+ 262              		.loc 1 69 0 discriminator 1
+ 263 001c 05EB4503 		add	r3, r5, r5, lsl #1
+ 264 0020 9B00     		lsls	r3, r3, #2
+ 265 0022 CE18     		adds	r6, r1, r3
+ 266 0024 CB58     		ldr	r3, [r1, r3]
+ 267 0026 A342     		cmp	r3, r4
+ 268 0028 EFDC     		bgt	.L19
+ 269              	.LBE9:
+  68:.\sprites.c   ****         for (int j = 0; j < sprites[i].n; j++) {
+ 270              		.loc 1 68 0 discriminator 2
+ 271 002a 0135     		adds	r5, r5, #1
+ 272              	.LVL32:
+ 273              	.L18:
+  68:.\sprites.c   ****         for (int j = 0; j < sprites[i].n; j++) {
+ 274              		.loc 1 68 0 is_stmt 0 discriminator 1
+ 275 002c BD42     		cmp	r5, r7
+ 276 002e F4DB     		blt	.L21
+ 277              	.LBE10:
+  72:.\sprites.c   ****         }
+  73:.\sprites.c   ****     }
+  74:.\sprites.c   ****     return n_points;
+  75:.\sprites.c   **** }
+ 278              		.loc 1 75 0 is_stmt 1
+ 279 0030 F0BC     		pop	{r4, r5, r6, r7}
+ 280              		.cfi_restore 7
+ 281              		.cfi_restore 6
+ 282              		.cfi_restore 5
+ 283              		.cfi_restore 4
+ 284              		.cfi_def_cfa_offset 0
+ 285              	.LVL33:
+ 286 0032 7047     		bx	lr
+ 287              		.cfi_endproc
+ 288              	.LFE1:
+ 289              		.size	sprites_to_polyline, .-sprites_to_polyline
+ 290              		.global	__aeabi_i2d
+ 291              		.global	__aeabi_dmul
+ 292              		.global	__aeabi_dadd
+ 293              		.global	__aeabi_d2f
+ 294              		.global	__aeabi_fdiv
+ 295              		.global	__aeabi_f2uiz
+ 296              		.section	.text.ortho_to_perspective,"ax",%progbits
+ 297              		.align	2
+ 298              		.global	ortho_to_perspective
+ 299              		.thumb
+ 300              		.thumb_func
+ 301              		.type	ortho_to_perspective, %function
+ 302              	ortho_to_perspective:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 8
+
+
+ 303              	.LFB2:
+  76:.\sprites.c   **** 
+  77:.\sprites.c   **** /*
+  78:.\sprites.c   ****  * Mutates a list of points from an orthographic view to a perspective view.
+  79:.\sprites.c   ****  *
+  80:.\sprites.c   ****  * Matrix coefficients calculated using OpenCV by taking the perspective transform
+  81:.\sprites.c   ****  * [(0, 0), (0, 255), (255, 255), (255, 0)] -> [(0, 0), (100, 255), (155, 255), (255, 0)]
+  82:.\sprites.c   ****  * which yields
+  83:.\sprites.c   ****  * [1   1.81818182  0
+  84:.\sprites.c   ****  *  0   4.63636364  0
+  85:.\sprites.c   ****  *  0   0.01426025  1]
+  86:.\sprites.c   ****  */
+  87:.\sprites.c   **** void ortho_to_perspective(int n_points, struct Point *points) {
+ 304              		.loc 1 87 0
+ 305              		.cfi_startproc
+ 306              		@ args = 0, pretend = 0, frame = 8
+ 307              		@ frame_needed = 0, uses_anonymous_args = 0
+ 308              	.LVL34:
+ 309 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 310              		.cfi_def_cfa_offset 36
+ 311              		.cfi_offset 4, -36
+ 312              		.cfi_offset 5, -32
+ 313              		.cfi_offset 6, -28
+ 314              		.cfi_offset 7, -24
+ 315              		.cfi_offset 8, -20
+ 316              		.cfi_offset 9, -16
+ 317              		.cfi_offset 10, -12
+ 318              		.cfi_offset 11, -8
+ 319              		.cfi_offset 14, -4
+ 320 0004 83B0     		sub	sp, sp, #12
+ 321              		.cfi_def_cfa_offset 48
+ 322 0006 8246     		mov	r10, r0
+ 323 0008 0D46     		mov	r5, r1
+ 324              	.LVL35:
+ 325              	.LBB11:
+  88:.\sprites.c   ****     for (int i = 0; i < n_points; i++) {
+ 326              		.loc 1 88 0
+ 327 000a 0024     		movs	r4, #0
+ 328 000c 43E0     		b	.L24
+ 329              	.LVL36:
+ 330              	.L25:
+ 331              	.LBB12:
+  89:.\sprites.c   ****         float scaled_x = points[i].x + 1.81818182 * points[i].y;
+ 332              		.loc 1 89 0 discriminator 3
+ 333 000e 05EB4408 		add	r8, r5, r4, lsl #1
+ 334 0012 15F81490 		ldrb	r9, [r5, r4, lsl #1]	@ zero_extendqisi2
+ 335 0016 98F80100 		ldrb	r0, [r8, #1]	@ zero_extendqisi2
+ 336 001a FFF7FEFF 		bl	__aeabi_i2d
+ 337              	.LVL37:
+ 338 001e 0646     		mov	r6, r0
+ 339 0020 0F46     		mov	r7, r1
+ 340 0022 1FA3     		adr	r3, .L27
+ 341 0024 D3E90023 		ldrd	r2, [r3]
+ 342 0028 FFF7FEFF 		bl	__aeabi_dmul
+ 343              	.LVL38:
+ 344 002c CDE90001 		strd	r0, [sp]
+ 345 0030 4846     		mov	r0, r9
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 9
+
+
+ 346 0032 FFF7FEFF 		bl	__aeabi_i2d
+ 347              	.LVL39:
+ 348 0036 DDE90023 		ldrd	r2, [sp]
+ 349 003a FFF7FEFF 		bl	__aeabi_dadd
+ 350              	.LVL40:
+ 351 003e FFF7FEFF 		bl	__aeabi_d2f
+ 352              	.LVL41:
+ 353 0042 8346     		mov	fp, r0
+ 354              	.LVL42:
+  90:.\sprites.c   ****         float scaled_y = 4.63636364 * points[i].y;
+ 355              		.loc 1 90 0 discriminator 3
+ 356 0044 3046     		mov	r0, r6
+ 357              	.LVL43:
+ 358 0046 3946     		mov	r1, r7
+ 359 0048 17A3     		adr	r3, .L27+8
+ 360 004a D3E90023 		ldrd	r2, [r3]
+ 361 004e FFF7FEFF 		bl	__aeabi_dmul
+ 362              	.LVL44:
+ 363 0052 FFF7FEFF 		bl	__aeabi_d2f
+ 364              	.LVL45:
+ 365 0056 8146     		mov	r9, r0
+ 366              	.LVL46:
+  91:.\sprites.c   ****         float scaling = 1 + 0.01426025 * points[i].y;
+ 367              		.loc 1 91 0 discriminator 3
+ 368 0058 3046     		mov	r0, r6
+ 369              	.LVL47:
+ 370 005a 3946     		mov	r1, r7
+ 371 005c 14A3     		adr	r3, .L27+16
+ 372 005e D3E90023 		ldrd	r2, [r3]
+ 373 0062 FFF7FEFF 		bl	__aeabi_dmul
+ 374              	.LVL48:
+ 375 0066 0022     		movs	r2, #0
+ 376 0068 134B     		ldr	r3, .L27+24
+ 377 006a FFF7FEFF 		bl	__aeabi_dadd
+ 378              	.LVL49:
+ 379 006e FFF7FEFF 		bl	__aeabi_d2f
+ 380              	.LVL50:
+ 381 0072 0646     		mov	r6, r0
+ 382              	.LVL51:
+  92:.\sprites.c   ****         points[i].x = (uint8)(scaled_x / scaling);
+ 383              		.loc 1 92 0 discriminator 3
+ 384 0074 5846     		mov	r0, fp
+ 385              	.LVL52:
+ 386 0076 3146     		mov	r1, r6
+ 387 0078 FFF7FEFF 		bl	__aeabi_fdiv
+ 388              	.LVL53:
+ 389 007c FFF7FEFF 		bl	__aeabi_f2uiz
+ 390              	.LVL54:
+ 391 0080 05F81400 		strb	r0, [r5, r4, lsl #1]
+  93:.\sprites.c   ****         points[i].y = (uint8)(scaled_y / scaling);
+ 392              		.loc 1 93 0 discriminator 3
+ 393 0084 4846     		mov	r0, r9
+ 394 0086 3146     		mov	r1, r6
+ 395 0088 FFF7FEFF 		bl	__aeabi_fdiv
+ 396              	.LVL55:
+ 397 008c FFF7FEFF 		bl	__aeabi_f2uiz
+ 398              	.LVL56:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 10
+
+
+ 399 0090 88F80100 		strb	r0, [r8, #1]
+ 400              	.LBE12:
+  88:.\sprites.c   ****         float scaled_x = points[i].x + 1.81818182 * points[i].y;
+ 401              		.loc 1 88 0 discriminator 3
+ 402 0094 0134     		adds	r4, r4, #1
+ 403              	.LVL57:
+ 404              	.L24:
+  88:.\sprites.c   ****         float scaled_x = points[i].x + 1.81818182 * points[i].y;
+ 405              		.loc 1 88 0 is_stmt 0 discriminator 1
+ 406 0096 5445     		cmp	r4, r10
+ 407 0098 B9DB     		blt	.L25
+ 408              	.LBE11:
+  94:.\sprites.c   ****     }
+  95:.\sprites.c   **** }
+ 409              		.loc 1 95 0 is_stmt 1
+ 410 009a 03B0     		add	sp, sp, #12
+ 411              		.cfi_def_cfa_offset 36
+ 412              		@ sp needed
+ 413 009c BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 414              	.LVL58:
+ 415              	.L28:
+ 416              		.align	3
+ 417              	.L27:
+ 418 00a0 E24EF1D1 		.word	-772714782
+ 419 00a4 4517FD3F 		.word	1073551173
+ 420 00a8 71A7F8E8 		.word	-386357391
+ 421 00ac A28B1240 		.word	1074957218
+ 422 00b0 0FF10F5B 		.word	1527771407
+ 423 00b4 7A348D3F 		.word	1066218618
+ 424 00b8 0000F03F 		.word	1072693248
+ 425              		.cfi_endproc
+ 426              	.LFE2:
+ 427              		.size	ortho_to_perspective, .-ortho_to_perspective
+ 428              		.comm	sprite_vertices,2048,4
+ 429 00bc AFF30080 		.text
+ 430              	.Letext0:
+ 431              		.file 2 "./sprites.h"
+ 432              		.file 3 "Generated_Source\\PSoC5/cytypes.h"
+ 433              		.section	.debug_info,"",%progbits
+ 434              	.Ldebug_info0:
+ 435 0000 A4020000 		.4byte	0x2a4
+ 436 0004 0400     		.2byte	0x4
+ 437 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 438 000a 04       		.byte	0x4
+ 439 000b 01       		.uleb128 0x1
+ 440 000c 8B010000 		.4byte	.LASF27
+ 441 0010 01       		.byte	0x1
+ 442 0011 77000000 		.4byte	.LASF28
+ 443 0015 00000000 		.4byte	.LASF29
+ 444 0019 48000000 		.4byte	.Ldebug_ranges0+0x48
+ 445 001d 00000000 		.4byte	0
+ 446 0021 00000000 		.4byte	.Ldebug_line0
+ 447 0025 02       		.uleb128 0x2
+ 448 0026 01       		.byte	0x1
+ 449 0027 06       		.byte	0x6
+ 450 0028 EF000000 		.4byte	.LASF0
+ 451 002c 02       		.uleb128 0x2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 11
+
+
+ 452 002d 01       		.byte	0x1
+ 453 002e 08       		.byte	0x8
+ 454 002f D1000000 		.4byte	.LASF1
+ 455 0033 02       		.uleb128 0x2
+ 456 0034 02       		.byte	0x2
+ 457 0035 05       		.byte	0x5
+ 458 0036 5B000000 		.4byte	.LASF2
+ 459 003a 02       		.uleb128 0x2
+ 460 003b 02       		.byte	0x2
+ 461 003c 07       		.byte	0x7
+ 462 003d 2F010000 		.4byte	.LASF3
+ 463 0041 02       		.uleb128 0x2
+ 464 0042 04       		.byte	0x4
+ 465 0043 05       		.byte	0x5
+ 466 0044 AC000000 		.4byte	.LASF4
+ 467 0048 02       		.uleb128 0x2
+ 468 0049 04       		.byte	0x4
+ 469 004a 07       		.byte	0x7
+ 470 004b 52010000 		.4byte	.LASF5
+ 471 004f 02       		.uleb128 0x2
+ 472 0050 08       		.byte	0x8
+ 473 0051 05       		.byte	0x5
+ 474 0052 9E000000 		.4byte	.LASF6
+ 475 0056 02       		.uleb128 0x2
+ 476 0057 08       		.byte	0x8
+ 477 0058 07       		.byte	0x7
+ 478 0059 05010000 		.4byte	.LASF7
+ 479 005d 03       		.uleb128 0x3
+ 480 005e 04       		.byte	0x4
+ 481 005f 05       		.byte	0x5
+ 482 0060 696E7400 		.ascii	"int\000"
+ 483 0064 02       		.uleb128 0x2
+ 484 0065 04       		.byte	0x4
+ 485 0066 07       		.byte	0x7
+ 486 0067 22010000 		.4byte	.LASF8
+ 487 006b 04       		.uleb128 0x4
+ 488 006c 92000000 		.4byte	.LASF30
+ 489 0070 03       		.byte	0x3
+ 490 0071 9201     		.2byte	0x192
+ 491 0073 2C000000 		.4byte	0x2c
+ 492 0077 02       		.uleb128 0x2
+ 493 0078 04       		.byte	0x4
+ 494 0079 04       		.byte	0x4
+ 495 007a 98000000 		.4byte	.LASF9
+ 496 007e 02       		.uleb128 0x2
+ 497 007f 08       		.byte	0x8
+ 498 0080 04       		.byte	0x4
+ 499 0081 64010000 		.4byte	.LASF10
+ 500 0085 02       		.uleb128 0x2
+ 501 0086 01       		.byte	0x1
+ 502 0087 08       		.byte	0x8
+ 503 0088 42010000 		.4byte	.LASF11
+ 504 008c 05       		.uleb128 0x5
+ 505 008d 1C010000 		.4byte	.LASF12
+ 506 0091 02       		.byte	0x2
+ 507 0092 02       		.byte	0x2
+ 508 0093 0F       		.byte	0xf
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 12
+
+
+ 509 0094 AD000000 		.4byte	0xad
+ 510 0098 06       		.uleb128 0x6
+ 511 0099 7800     		.ascii	"x\000"
+ 512 009b 02       		.byte	0x2
+ 513 009c 10       		.byte	0x10
+ 514 009d 6B000000 		.4byte	0x6b
+ 515 00a1 00       		.byte	0
+ 516 00a2 06       		.uleb128 0x6
+ 517 00a3 7900     		.ascii	"y\000"
+ 518 00a5 02       		.byte	0x2
+ 519 00a6 11       		.byte	0x11
+ 520 00a7 6B000000 		.4byte	0x6b
+ 521 00ab 01       		.byte	0x1
+ 522 00ac 00       		.byte	0
+ 523 00ad 05       		.uleb128 0x5
+ 524 00ae 6B010000 		.4byte	.LASF13
+ 525 00b2 0C       		.byte	0xc
+ 526 00b3 02       		.byte	0x2
+ 527 00b4 14       		.byte	0x14
+ 528 00b5 DC000000 		.4byte	0xdc
+ 529 00b9 06       		.uleb128 0x6
+ 530 00ba 6E00     		.ascii	"n\000"
+ 531 00bc 02       		.byte	0x2
+ 532 00bd 15       		.byte	0x15
+ 533 00be 5D000000 		.4byte	0x5d
+ 534 00c2 00       		.byte	0
+ 535 00c3 07       		.uleb128 0x7
+ 536 00c4 82010000 		.4byte	.LASF14
+ 537 00c8 02       		.byte	0x2
+ 538 00c9 16       		.byte	0x16
+ 539 00ca 8C000000 		.4byte	0x8c
+ 540 00ce 04       		.byte	0x4
+ 541 00cf 07       		.uleb128 0x7
+ 542 00d0 65000000 		.4byte	.LASF15
+ 543 00d4 02       		.byte	0x2
+ 544 00d5 17       		.byte	0x17
+ 545 00d6 DC000000 		.4byte	0xdc
+ 546 00da 08       		.byte	0x8
+ 547 00db 00       		.byte	0
+ 548 00dc 08       		.uleb128 0x8
+ 549 00dd 04       		.byte	0x4
+ 550 00de 8C000000 		.4byte	0x8c
+ 551 00e2 09       		.uleb128 0x9
+ 552 00e3 83000000 		.4byte	.LASF21
+ 553 00e7 01       		.byte	0x1
+ 554 00e8 14       		.byte	0x14
+ 555 00e9 AD000000 		.4byte	0xad
+ 556 00ed 00000000 		.4byte	.LFB0
+ 557 00f1 D8000000 		.4byte	.LFE0-.LFB0
+ 558 00f5 01       		.uleb128 0x1
+ 559 00f6 9C       		.byte	0x9c
+ 560 00f7 79010000 		.4byte	0x179
+ 561 00fb 0A       		.uleb128 0xa
+ 562 00fc 47010000 		.4byte	.LASF16
+ 563 0100 01       		.byte	0x1
+ 564 0101 15       		.byte	0x15
+ 565 0102 79010000 		.4byte	0x179
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 13
+
+
+ 566 0106 10       		.byte	0x10
+ 567 0107 0B       		.uleb128 0xb
+ 568 0108 6E00     		.ascii	"n\000"
+ 569 010a 01       		.byte	0x1
+ 570 010b 16       		.byte	0x16
+ 571 010c 5D000000 		.4byte	0x5d
+ 572 0110 00000000 		.4byte	.LLST0
+ 573 0114 0C       		.uleb128 0xc
+ 574 0115 00000000 		.4byte	.Ldebug_ranges0+0
+ 575 0119 2B010000 		.4byte	0x12b
+ 576 011d 0B       		.uleb128 0xb
+ 577 011e 6900     		.ascii	"i\000"
+ 578 0120 01       		.byte	0x1
+ 579 0121 19       		.byte	0x19
+ 580 0122 5D000000 		.4byte	0x5d
+ 581 0126 8E000000 		.4byte	.LLST1
+ 582 012a 00       		.byte	0
+ 583 012b 0D       		.uleb128 0xd
+ 584 012c 34000000 		.4byte	.LBB4
+ 585 0130 2C000000 		.4byte	.LBE4-.LBB4
+ 586 0134 46010000 		.4byte	0x146
+ 587 0138 0B       		.uleb128 0xb
+ 588 0139 6900     		.ascii	"i\000"
+ 589 013b 01       		.byte	0x1
+ 590 013c 20       		.byte	0x20
+ 591 013d 5D000000 		.4byte	0x5d
+ 592 0141 AD000000 		.4byte	.LLST2
+ 593 0145 00       		.byte	0
+ 594 0146 0D       		.uleb128 0xd
+ 595 0147 60000000 		.4byte	.LBB5
+ 596 014b 2E000000 		.4byte	.LBE5-.LBB5
+ 597 014f 61010000 		.4byte	0x161
+ 598 0153 0B       		.uleb128 0xb
+ 599 0154 6900     		.ascii	"i\000"
+ 600 0156 01       		.byte	0x1
+ 601 0157 27       		.byte	0x27
+ 602 0158 5D000000 		.4byte	0x5d
+ 603 015c C0000000 		.4byte	.LLST3
+ 604 0160 00       		.byte	0
+ 605 0161 0E       		.uleb128 0xe
+ 606 0162 8E000000 		.4byte	.LBB6
+ 607 0166 2A000000 		.4byte	.LBE6-.LBB6
+ 608 016a 0B       		.uleb128 0xb
+ 609 016b 6900     		.ascii	"i\000"
+ 610 016d 01       		.byte	0x1
+ 611 016e 2E       		.byte	0x2e
+ 612 016f 5D000000 		.4byte	0x5d
+ 613 0173 D3000000 		.4byte	.LLST4
+ 614 0177 00       		.byte	0
+ 615 0178 00       		.byte	0
+ 616 0179 0F       		.uleb128 0xf
+ 617 017a 5D000000 		.4byte	0x5d
+ 618 017e 10       		.uleb128 0x10
+ 619 017f 24020000 		.4byte	.LASF31
+ 620 0183 01       		.byte	0x1
+ 621 0184 41       		.byte	0x41
+ 622 0185 5D000000 		.4byte	0x5d
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 14
+
+
+ 623 0189 00000000 		.4byte	.LFB1
+ 624 018d 34000000 		.4byte	.LFE1-.LFB1
+ 625 0191 01       		.uleb128 0x1
+ 626 0192 9C       		.byte	0x9c
+ 627 0193 F6010000 		.4byte	0x1f6
+ 628 0197 11       		.uleb128 0x11
+ 629 0198 FB000000 		.4byte	.LASF17
+ 630 019c 01       		.byte	0x1
+ 631 019d 41       		.byte	0x41
+ 632 019e 5D000000 		.4byte	0x5d
+ 633 01a2 E6000000 		.4byte	.LLST5
+ 634 01a6 12       		.uleb128 0x12
+ 635 01a7 72010000 		.4byte	.LASF18
+ 636 01ab 01       		.byte	0x1
+ 637 01ac 41       		.byte	0x41
+ 638 01ad F6010000 		.4byte	0x1f6
+ 639 01b1 01       		.uleb128 0x1
+ 640 01b2 51       		.byte	0x51
+ 641 01b3 12       		.uleb128 0x12
+ 642 01b4 B5000000 		.4byte	.LASF19
+ 643 01b8 01       		.byte	0x1
+ 644 01b9 41       		.byte	0x41
+ 645 01ba DC000000 		.4byte	0xdc
+ 646 01be 01       		.uleb128 0x1
+ 647 01bf 52       		.byte	0x52
+ 648 01c0 13       		.uleb128 0x13
+ 649 01c1 52000000 		.4byte	.LASF20
+ 650 01c5 01       		.byte	0x1
+ 651 01c6 43       		.byte	0x43
+ 652 01c7 5D000000 		.4byte	0x5d
+ 653 01cb 12010000 		.4byte	.LLST6
+ 654 01cf 14       		.uleb128 0x14
+ 655 01d0 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 656 01d4 0B       		.uleb128 0xb
+ 657 01d5 6900     		.ascii	"i\000"
+ 658 01d7 01       		.byte	0x1
+ 659 01d8 44       		.byte	0x44
+ 660 01d9 5D000000 		.4byte	0x5d
+ 661 01dd 3E010000 		.4byte	.LLST7
+ 662 01e1 14       		.uleb128 0x14
+ 663 01e2 30000000 		.4byte	.Ldebug_ranges0+0x30
+ 664 01e6 0B       		.uleb128 0xb
+ 665 01e7 6A00     		.ascii	"j\000"
+ 666 01e9 01       		.byte	0x1
+ 667 01ea 45       		.byte	0x45
+ 668 01eb 5D000000 		.4byte	0x5d
+ 669 01ef 5D010000 		.4byte	.LLST8
+ 670 01f3 00       		.byte	0
+ 671 01f4 00       		.byte	0
+ 672 01f5 00       		.byte	0
+ 673 01f6 08       		.uleb128 0x8
+ 674 01f7 04       		.byte	0x4
+ 675 01f8 AD000000 		.4byte	0xad
+ 676 01fc 15       		.uleb128 0x15
+ 677 01fd BC000000 		.4byte	.LASF22
+ 678 0201 01       		.byte	0x1
+ 679 0202 57       		.byte	0x57
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 15
+
+
+ 680 0203 00000000 		.4byte	.LFB2
+ 681 0207 BC000000 		.4byte	.LFE2-.LFB2
+ 682 020b 01       		.uleb128 0x1
+ 683 020c 9C       		.byte	0x9c
+ 684 020d 7E020000 		.4byte	0x27e
+ 685 0211 11       		.uleb128 0x11
+ 686 0212 52000000 		.4byte	.LASF20
+ 687 0216 01       		.byte	0x1
+ 688 0217 57       		.byte	0x57
+ 689 0218 5D000000 		.4byte	0x5d
+ 690 021c 7B010000 		.4byte	.LLST9
+ 691 0220 11       		.uleb128 0x11
+ 692 0221 B5000000 		.4byte	.LASF19
+ 693 0225 01       		.byte	0x1
+ 694 0226 57       		.byte	0x57
+ 695 0227 DC000000 		.4byte	0xdc
+ 696 022b A7010000 		.4byte	.LLST10
+ 697 022f 0E       		.uleb128 0xe
+ 698 0230 0A000000 		.4byte	.LBB11
+ 699 0234 90000000 		.4byte	.LBE11-.LBB11
+ 700 0238 0B       		.uleb128 0xb
+ 701 0239 6900     		.ascii	"i\000"
+ 702 023b 01       		.byte	0x1
+ 703 023c 58       		.byte	0x58
+ 704 023d 5D000000 		.4byte	0x5d
+ 705 0241 D3010000 		.4byte	.LLST11
+ 706 0245 0E       		.uleb128 0xe
+ 707 0246 0E000000 		.4byte	.LBB12
+ 708 024a 86000000 		.4byte	.LBE12-.LBB12
+ 709 024e 13       		.uleb128 0x13
+ 710 024f 40000000 		.4byte	.LASF23
+ 711 0253 01       		.byte	0x1
+ 712 0254 59       		.byte	0x59
+ 713 0255 77000000 		.4byte	0x77
+ 714 0259 F2010000 		.4byte	.LLST12
+ 715 025d 13       		.uleb128 0x13
+ 716 025e 49000000 		.4byte	.LASF24
+ 717 0262 01       		.byte	0x1
+ 718 0263 5A       		.byte	0x5a
+ 719 0264 77000000 		.4byte	0x77
+ 720 0268 10020000 		.4byte	.LLST13
+ 721 026c 13       		.uleb128 0x13
+ 722 026d 7A010000 		.4byte	.LASF25
+ 723 0271 01       		.byte	0x1
+ 724 0272 5B       		.byte	0x5b
+ 725 0273 77000000 		.4byte	0x77
+ 726 0277 2E020000 		.4byte	.LLST14
+ 727 027b 00       		.byte	0
+ 728 027c 00       		.byte	0
+ 729 027d 00       		.byte	0
+ 730 027e 16       		.uleb128 0x16
+ 731 027f 8C000000 		.4byte	0x8c
+ 732 0283 8F020000 		.4byte	0x28f
+ 733 0287 17       		.uleb128 0x17
+ 734 0288 8F020000 		.4byte	0x28f
+ 735 028c FF03     		.2byte	0x3ff
+ 736 028e 00       		.byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 16
+
+
+ 737 028f 02       		.uleb128 0x2
+ 738 0290 04       		.byte	0x4
+ 739 0291 07       		.byte	0x7
+ 740 0292 6E000000 		.4byte	.LASF26
+ 741 0296 18       		.uleb128 0x18
+ 742 0297 DF000000 		.4byte	.LASF32
+ 743 029b 01       		.byte	0x1
+ 744 029c 0F       		.byte	0xf
+ 745 029d 7E020000 		.4byte	0x27e
+ 746 02a1 05       		.uleb128 0x5
+ 747 02a2 03       		.byte	0x3
+ 748 02a3 00000000 		.4byte	sprite_vertices
+ 749 02a7 00       		.byte	0
+ 750              		.section	.debug_abbrev,"",%progbits
+ 751              	.Ldebug_abbrev0:
+ 752 0000 01       		.uleb128 0x1
+ 753 0001 11       		.uleb128 0x11
+ 754 0002 01       		.byte	0x1
+ 755 0003 25       		.uleb128 0x25
+ 756 0004 0E       		.uleb128 0xe
+ 757 0005 13       		.uleb128 0x13
+ 758 0006 0B       		.uleb128 0xb
+ 759 0007 03       		.uleb128 0x3
+ 760 0008 0E       		.uleb128 0xe
+ 761 0009 1B       		.uleb128 0x1b
+ 762 000a 0E       		.uleb128 0xe
+ 763 000b 55       		.uleb128 0x55
+ 764 000c 17       		.uleb128 0x17
+ 765 000d 11       		.uleb128 0x11
+ 766 000e 01       		.uleb128 0x1
+ 767 000f 10       		.uleb128 0x10
+ 768 0010 17       		.uleb128 0x17
+ 769 0011 00       		.byte	0
+ 770 0012 00       		.byte	0
+ 771 0013 02       		.uleb128 0x2
+ 772 0014 24       		.uleb128 0x24
+ 773 0015 00       		.byte	0
+ 774 0016 0B       		.uleb128 0xb
+ 775 0017 0B       		.uleb128 0xb
+ 776 0018 3E       		.uleb128 0x3e
+ 777 0019 0B       		.uleb128 0xb
+ 778 001a 03       		.uleb128 0x3
+ 779 001b 0E       		.uleb128 0xe
+ 780 001c 00       		.byte	0
+ 781 001d 00       		.byte	0
+ 782 001e 03       		.uleb128 0x3
+ 783 001f 24       		.uleb128 0x24
+ 784 0020 00       		.byte	0
+ 785 0021 0B       		.uleb128 0xb
+ 786 0022 0B       		.uleb128 0xb
+ 787 0023 3E       		.uleb128 0x3e
+ 788 0024 0B       		.uleb128 0xb
+ 789 0025 03       		.uleb128 0x3
+ 790 0026 08       		.uleb128 0x8
+ 791 0027 00       		.byte	0
+ 792 0028 00       		.byte	0
+ 793 0029 04       		.uleb128 0x4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 17
+
+
+ 794 002a 16       		.uleb128 0x16
+ 795 002b 00       		.byte	0
+ 796 002c 03       		.uleb128 0x3
+ 797 002d 0E       		.uleb128 0xe
+ 798 002e 3A       		.uleb128 0x3a
+ 799 002f 0B       		.uleb128 0xb
+ 800 0030 3B       		.uleb128 0x3b
+ 801 0031 05       		.uleb128 0x5
+ 802 0032 49       		.uleb128 0x49
+ 803 0033 13       		.uleb128 0x13
+ 804 0034 00       		.byte	0
+ 805 0035 00       		.byte	0
+ 806 0036 05       		.uleb128 0x5
+ 807 0037 13       		.uleb128 0x13
+ 808 0038 01       		.byte	0x1
+ 809 0039 03       		.uleb128 0x3
+ 810 003a 0E       		.uleb128 0xe
+ 811 003b 0B       		.uleb128 0xb
+ 812 003c 0B       		.uleb128 0xb
+ 813 003d 3A       		.uleb128 0x3a
+ 814 003e 0B       		.uleb128 0xb
+ 815 003f 3B       		.uleb128 0x3b
+ 816 0040 0B       		.uleb128 0xb
+ 817 0041 01       		.uleb128 0x1
+ 818 0042 13       		.uleb128 0x13
+ 819 0043 00       		.byte	0
+ 820 0044 00       		.byte	0
+ 821 0045 06       		.uleb128 0x6
+ 822 0046 0D       		.uleb128 0xd
+ 823 0047 00       		.byte	0
+ 824 0048 03       		.uleb128 0x3
+ 825 0049 08       		.uleb128 0x8
+ 826 004a 3A       		.uleb128 0x3a
+ 827 004b 0B       		.uleb128 0xb
+ 828 004c 3B       		.uleb128 0x3b
+ 829 004d 0B       		.uleb128 0xb
+ 830 004e 49       		.uleb128 0x49
+ 831 004f 13       		.uleb128 0x13
+ 832 0050 38       		.uleb128 0x38
+ 833 0051 0B       		.uleb128 0xb
+ 834 0052 00       		.byte	0
+ 835 0053 00       		.byte	0
+ 836 0054 07       		.uleb128 0x7
+ 837 0055 0D       		.uleb128 0xd
+ 838 0056 00       		.byte	0
+ 839 0057 03       		.uleb128 0x3
+ 840 0058 0E       		.uleb128 0xe
+ 841 0059 3A       		.uleb128 0x3a
+ 842 005a 0B       		.uleb128 0xb
+ 843 005b 3B       		.uleb128 0x3b
+ 844 005c 0B       		.uleb128 0xb
+ 845 005d 49       		.uleb128 0x49
+ 846 005e 13       		.uleb128 0x13
+ 847 005f 38       		.uleb128 0x38
+ 848 0060 0B       		.uleb128 0xb
+ 849 0061 00       		.byte	0
+ 850 0062 00       		.byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 18
+
+
+ 851 0063 08       		.uleb128 0x8
+ 852 0064 0F       		.uleb128 0xf
+ 853 0065 00       		.byte	0
+ 854 0066 0B       		.uleb128 0xb
+ 855 0067 0B       		.uleb128 0xb
+ 856 0068 49       		.uleb128 0x49
+ 857 0069 13       		.uleb128 0x13
+ 858 006a 00       		.byte	0
+ 859 006b 00       		.byte	0
+ 860 006c 09       		.uleb128 0x9
+ 861 006d 2E       		.uleb128 0x2e
+ 862 006e 01       		.byte	0x1
+ 863 006f 3F       		.uleb128 0x3f
+ 864 0070 19       		.uleb128 0x19
+ 865 0071 03       		.uleb128 0x3
+ 866 0072 0E       		.uleb128 0xe
+ 867 0073 3A       		.uleb128 0x3a
+ 868 0074 0B       		.uleb128 0xb
+ 869 0075 3B       		.uleb128 0x3b
+ 870 0076 0B       		.uleb128 0xb
+ 871 0077 49       		.uleb128 0x49
+ 872 0078 13       		.uleb128 0x13
+ 873 0079 11       		.uleb128 0x11
+ 874 007a 01       		.uleb128 0x1
+ 875 007b 12       		.uleb128 0x12
+ 876 007c 06       		.uleb128 0x6
+ 877 007d 40       		.uleb128 0x40
+ 878 007e 18       		.uleb128 0x18
+ 879 007f 9742     		.uleb128 0x2117
+ 880 0081 19       		.uleb128 0x19
+ 881 0082 01       		.uleb128 0x1
+ 882 0083 13       		.uleb128 0x13
+ 883 0084 00       		.byte	0
+ 884 0085 00       		.byte	0
+ 885 0086 0A       		.uleb128 0xa
+ 886 0087 34       		.uleb128 0x34
+ 887 0088 00       		.byte	0
+ 888 0089 03       		.uleb128 0x3
+ 889 008a 0E       		.uleb128 0xe
+ 890 008b 3A       		.uleb128 0x3a
+ 891 008c 0B       		.uleb128 0xb
+ 892 008d 3B       		.uleb128 0x3b
+ 893 008e 0B       		.uleb128 0xb
+ 894 008f 49       		.uleb128 0x49
+ 895 0090 13       		.uleb128 0x13
+ 896 0091 1C       		.uleb128 0x1c
+ 897 0092 0B       		.uleb128 0xb
+ 898 0093 00       		.byte	0
+ 899 0094 00       		.byte	0
+ 900 0095 0B       		.uleb128 0xb
+ 901 0096 34       		.uleb128 0x34
+ 902 0097 00       		.byte	0
+ 903 0098 03       		.uleb128 0x3
+ 904 0099 08       		.uleb128 0x8
+ 905 009a 3A       		.uleb128 0x3a
+ 906 009b 0B       		.uleb128 0xb
+ 907 009c 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 19
+
+
+ 908 009d 0B       		.uleb128 0xb
+ 909 009e 49       		.uleb128 0x49
+ 910 009f 13       		.uleb128 0x13
+ 911 00a0 02       		.uleb128 0x2
+ 912 00a1 17       		.uleb128 0x17
+ 913 00a2 00       		.byte	0
+ 914 00a3 00       		.byte	0
+ 915 00a4 0C       		.uleb128 0xc
+ 916 00a5 0B       		.uleb128 0xb
+ 917 00a6 01       		.byte	0x1
+ 918 00a7 55       		.uleb128 0x55
+ 919 00a8 17       		.uleb128 0x17
+ 920 00a9 01       		.uleb128 0x1
+ 921 00aa 13       		.uleb128 0x13
+ 922 00ab 00       		.byte	0
+ 923 00ac 00       		.byte	0
+ 924 00ad 0D       		.uleb128 0xd
+ 925 00ae 0B       		.uleb128 0xb
+ 926 00af 01       		.byte	0x1
+ 927 00b0 11       		.uleb128 0x11
+ 928 00b1 01       		.uleb128 0x1
+ 929 00b2 12       		.uleb128 0x12
+ 930 00b3 06       		.uleb128 0x6
+ 931 00b4 01       		.uleb128 0x1
+ 932 00b5 13       		.uleb128 0x13
+ 933 00b6 00       		.byte	0
+ 934 00b7 00       		.byte	0
+ 935 00b8 0E       		.uleb128 0xe
+ 936 00b9 0B       		.uleb128 0xb
+ 937 00ba 01       		.byte	0x1
+ 938 00bb 11       		.uleb128 0x11
+ 939 00bc 01       		.uleb128 0x1
+ 940 00bd 12       		.uleb128 0x12
+ 941 00be 06       		.uleb128 0x6
+ 942 00bf 00       		.byte	0
+ 943 00c0 00       		.byte	0
+ 944 00c1 0F       		.uleb128 0xf
+ 945 00c2 26       		.uleb128 0x26
+ 946 00c3 00       		.byte	0
+ 947 00c4 49       		.uleb128 0x49
+ 948 00c5 13       		.uleb128 0x13
+ 949 00c6 00       		.byte	0
+ 950 00c7 00       		.byte	0
+ 951 00c8 10       		.uleb128 0x10
+ 952 00c9 2E       		.uleb128 0x2e
+ 953 00ca 01       		.byte	0x1
+ 954 00cb 3F       		.uleb128 0x3f
+ 955 00cc 19       		.uleb128 0x19
+ 956 00cd 03       		.uleb128 0x3
+ 957 00ce 0E       		.uleb128 0xe
+ 958 00cf 3A       		.uleb128 0x3a
+ 959 00d0 0B       		.uleb128 0xb
+ 960 00d1 3B       		.uleb128 0x3b
+ 961 00d2 0B       		.uleb128 0xb
+ 962 00d3 27       		.uleb128 0x27
+ 963 00d4 19       		.uleb128 0x19
+ 964 00d5 49       		.uleb128 0x49
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 20
+
+
+ 965 00d6 13       		.uleb128 0x13
+ 966 00d7 11       		.uleb128 0x11
+ 967 00d8 01       		.uleb128 0x1
+ 968 00d9 12       		.uleb128 0x12
+ 969 00da 06       		.uleb128 0x6
+ 970 00db 40       		.uleb128 0x40
+ 971 00dc 18       		.uleb128 0x18
+ 972 00dd 9742     		.uleb128 0x2117
+ 973 00df 19       		.uleb128 0x19
+ 974 00e0 01       		.uleb128 0x1
+ 975 00e1 13       		.uleb128 0x13
+ 976 00e2 00       		.byte	0
+ 977 00e3 00       		.byte	0
+ 978 00e4 11       		.uleb128 0x11
+ 979 00e5 05       		.uleb128 0x5
+ 980 00e6 00       		.byte	0
+ 981 00e7 03       		.uleb128 0x3
+ 982 00e8 0E       		.uleb128 0xe
+ 983 00e9 3A       		.uleb128 0x3a
+ 984 00ea 0B       		.uleb128 0xb
+ 985 00eb 3B       		.uleb128 0x3b
+ 986 00ec 0B       		.uleb128 0xb
+ 987 00ed 49       		.uleb128 0x49
+ 988 00ee 13       		.uleb128 0x13
+ 989 00ef 02       		.uleb128 0x2
+ 990 00f0 17       		.uleb128 0x17
+ 991 00f1 00       		.byte	0
+ 992 00f2 00       		.byte	0
+ 993 00f3 12       		.uleb128 0x12
+ 994 00f4 05       		.uleb128 0x5
+ 995 00f5 00       		.byte	0
+ 996 00f6 03       		.uleb128 0x3
+ 997 00f7 0E       		.uleb128 0xe
+ 998 00f8 3A       		.uleb128 0x3a
+ 999 00f9 0B       		.uleb128 0xb
+ 1000 00fa 3B       		.uleb128 0x3b
+ 1001 00fb 0B       		.uleb128 0xb
+ 1002 00fc 49       		.uleb128 0x49
+ 1003 00fd 13       		.uleb128 0x13
+ 1004 00fe 02       		.uleb128 0x2
+ 1005 00ff 18       		.uleb128 0x18
+ 1006 0100 00       		.byte	0
+ 1007 0101 00       		.byte	0
+ 1008 0102 13       		.uleb128 0x13
+ 1009 0103 34       		.uleb128 0x34
+ 1010 0104 00       		.byte	0
+ 1011 0105 03       		.uleb128 0x3
+ 1012 0106 0E       		.uleb128 0xe
+ 1013 0107 3A       		.uleb128 0x3a
+ 1014 0108 0B       		.uleb128 0xb
+ 1015 0109 3B       		.uleb128 0x3b
+ 1016 010a 0B       		.uleb128 0xb
+ 1017 010b 49       		.uleb128 0x49
+ 1018 010c 13       		.uleb128 0x13
+ 1019 010d 02       		.uleb128 0x2
+ 1020 010e 17       		.uleb128 0x17
+ 1021 010f 00       		.byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 21
+
+
+ 1022 0110 00       		.byte	0
+ 1023 0111 14       		.uleb128 0x14
+ 1024 0112 0B       		.uleb128 0xb
+ 1025 0113 01       		.byte	0x1
+ 1026 0114 55       		.uleb128 0x55
+ 1027 0115 17       		.uleb128 0x17
+ 1028 0116 00       		.byte	0
+ 1029 0117 00       		.byte	0
+ 1030 0118 15       		.uleb128 0x15
+ 1031 0119 2E       		.uleb128 0x2e
+ 1032 011a 01       		.byte	0x1
+ 1033 011b 3F       		.uleb128 0x3f
+ 1034 011c 19       		.uleb128 0x19
+ 1035 011d 03       		.uleb128 0x3
+ 1036 011e 0E       		.uleb128 0xe
+ 1037 011f 3A       		.uleb128 0x3a
+ 1038 0120 0B       		.uleb128 0xb
+ 1039 0121 3B       		.uleb128 0x3b
+ 1040 0122 0B       		.uleb128 0xb
+ 1041 0123 27       		.uleb128 0x27
+ 1042 0124 19       		.uleb128 0x19
+ 1043 0125 11       		.uleb128 0x11
+ 1044 0126 01       		.uleb128 0x1
+ 1045 0127 12       		.uleb128 0x12
+ 1046 0128 06       		.uleb128 0x6
+ 1047 0129 40       		.uleb128 0x40
+ 1048 012a 18       		.uleb128 0x18
+ 1049 012b 9642     		.uleb128 0x2116
+ 1050 012d 19       		.uleb128 0x19
+ 1051 012e 01       		.uleb128 0x1
+ 1052 012f 13       		.uleb128 0x13
+ 1053 0130 00       		.byte	0
+ 1054 0131 00       		.byte	0
+ 1055 0132 16       		.uleb128 0x16
+ 1056 0133 01       		.uleb128 0x1
+ 1057 0134 01       		.byte	0x1
+ 1058 0135 49       		.uleb128 0x49
+ 1059 0136 13       		.uleb128 0x13
+ 1060 0137 01       		.uleb128 0x1
+ 1061 0138 13       		.uleb128 0x13
+ 1062 0139 00       		.byte	0
+ 1063 013a 00       		.byte	0
+ 1064 013b 17       		.uleb128 0x17
+ 1065 013c 21       		.uleb128 0x21
+ 1066 013d 00       		.byte	0
+ 1067 013e 49       		.uleb128 0x49
+ 1068 013f 13       		.uleb128 0x13
+ 1069 0140 2F       		.uleb128 0x2f
+ 1070 0141 05       		.uleb128 0x5
+ 1071 0142 00       		.byte	0
+ 1072 0143 00       		.byte	0
+ 1073 0144 18       		.uleb128 0x18
+ 1074 0145 34       		.uleb128 0x34
+ 1075 0146 00       		.byte	0
+ 1076 0147 03       		.uleb128 0x3
+ 1077 0148 0E       		.uleb128 0xe
+ 1078 0149 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 22
+
+
+ 1079 014a 0B       		.uleb128 0xb
+ 1080 014b 3B       		.uleb128 0x3b
+ 1081 014c 0B       		.uleb128 0xb
+ 1082 014d 49       		.uleb128 0x49
+ 1083 014e 13       		.uleb128 0x13
+ 1084 014f 3F       		.uleb128 0x3f
+ 1085 0150 19       		.uleb128 0x19
+ 1086 0151 02       		.uleb128 0x2
+ 1087 0152 18       		.uleb128 0x18
+ 1088 0153 00       		.byte	0
+ 1089 0154 00       		.byte	0
+ 1090 0155 00       		.byte	0
+ 1091              		.section	.debug_loc,"",%progbits
+ 1092              	.Ldebug_loc0:
+ 1093              	.LLST0:
+ 1094 0000 02000000 		.4byte	.LVL1
+ 1095 0004 08000000 		.4byte	.LVL2
+ 1096 0008 0200     		.2byte	0x2
+ 1097 000a 30       		.byte	0x30
+ 1098 000b 9F       		.byte	0x9f
+ 1099 000c 08000000 		.4byte	.LVL2
+ 1100 0010 0A000000 		.4byte	.LVL3
+ 1101 0014 0100     		.2byte	0x1
+ 1102 0016 53       		.byte	0x53
+ 1103 0017 0A000000 		.4byte	.LVL3
+ 1104 001b 2C000000 		.4byte	.LVL5
+ 1105 001f 0100     		.2byte	0x1
+ 1106 0021 55       		.byte	0x55
+ 1107 0022 2C000000 		.4byte	.LVL5
+ 1108 0026 36000000 		.4byte	.LVL8
+ 1109 002a 0100     		.2byte	0x1
+ 1110 002c 53       		.byte	0x53
+ 1111 002d 36000000 		.4byte	.LVL8
+ 1112 0031 58000000 		.4byte	.LVL10
+ 1113 0035 0100     		.2byte	0x1
+ 1114 0037 55       		.byte	0x55
+ 1115 0038 58000000 		.4byte	.LVL10
+ 1116 003c 62000000 		.4byte	.LVL13
+ 1117 0040 0100     		.2byte	0x1
+ 1118 0042 53       		.byte	0x53
+ 1119 0043 62000000 		.4byte	.LVL13
+ 1120 0047 86000000 		.4byte	.LVL15
+ 1121 004b 0100     		.2byte	0x1
+ 1122 004d 55       		.byte	0x55
+ 1123 004e 86000000 		.4byte	.LVL15
+ 1124 0052 90000000 		.4byte	.LVL18
+ 1125 0056 0100     		.2byte	0x1
+ 1126 0058 53       		.byte	0x53
+ 1127 0059 90000000 		.4byte	.LVL18
+ 1128 005d B4000000 		.4byte	.LVL20
+ 1129 0061 0100     		.2byte	0x1
+ 1130 0063 55       		.byte	0x55
+ 1131 0064 B4000000 		.4byte	.LVL20
+ 1132 0068 BA000000 		.4byte	.LVL21
+ 1133 006c 0100     		.2byte	0x1
+ 1134 006e 53       		.byte	0x53
+ 1135 006f BA000000 		.4byte	.LVL21
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 23
+
+
+ 1136 0073 D2000000 		.4byte	.LVL23
+ 1137 0077 0100     		.2byte	0x1
+ 1138 0079 54       		.byte	0x54
+ 1139 007a D2000000 		.4byte	.LVL23
+ 1140 007e D8000000 		.4byte	.LFE0
+ 1141 0082 0200     		.2byte	0x2
+ 1142 0084 70       		.byte	0x70
+ 1143 0085 00       		.sleb128 0
+ 1144 0086 00000000 		.4byte	0
+ 1145 008a 00000000 		.4byte	0
+ 1146              	.LLST1:
+ 1147 008e 02000000 		.4byte	.LVL1
+ 1148 0092 08000000 		.4byte	.LVL2
+ 1149 0096 0200     		.2byte	0x2
+ 1150 0098 30       		.byte	0x30
+ 1151 0099 9F       		.byte	0x9f
+ 1152 009a 08000000 		.4byte	.LVL2
+ 1153 009e 32000000 		.4byte	.LVL6
+ 1154 00a2 0100     		.2byte	0x1
+ 1155 00a4 52       		.byte	0x52
+ 1156 00a5 00000000 		.4byte	0
+ 1157 00a9 00000000 		.4byte	0
+ 1158              	.LLST2:
+ 1159 00ad 34000000 		.4byte	.LVL7
+ 1160 00b1 5E000000 		.4byte	.LVL11
+ 1161 00b5 0100     		.2byte	0x1
+ 1162 00b7 52       		.byte	0x52
+ 1163 00b8 00000000 		.4byte	0
+ 1164 00bc 00000000 		.4byte	0
+ 1165              	.LLST3:
+ 1166 00c0 60000000 		.4byte	.LVL12
+ 1167 00c4 8C000000 		.4byte	.LVL16
+ 1168 00c8 0100     		.2byte	0x1
+ 1169 00ca 52       		.byte	0x52
+ 1170 00cb 00000000 		.4byte	0
+ 1171 00cf 00000000 		.4byte	0
+ 1172              	.LLST4:
+ 1173 00d3 8E000000 		.4byte	.LVL17
+ 1174 00d7 BE000000 		.4byte	.LVL22
+ 1175 00db 0100     		.2byte	0x1
+ 1176 00dd 52       		.byte	0x52
+ 1177 00de 00000000 		.4byte	0
+ 1178 00e2 00000000 		.4byte	0
+ 1179              	.LLST5:
+ 1180 00e6 00000000 		.4byte	.LVL24
+ 1181 00ea 08000000 		.4byte	.LVL26
+ 1182 00ee 0100     		.2byte	0x1
+ 1183 00f0 50       		.byte	0x50
+ 1184 00f1 08000000 		.4byte	.LVL26
+ 1185 00f5 32000000 		.4byte	.LVL33
+ 1186 00f9 0100     		.2byte	0x1
+ 1187 00fb 57       		.byte	0x57
+ 1188 00fc 32000000 		.4byte	.LVL33
+ 1189 0100 34000000 		.4byte	.LFE1
+ 1190 0104 0400     		.2byte	0x4
+ 1191 0106 F3       		.byte	0xf3
+ 1192 0107 01       		.uleb128 0x1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 24
+
+
+ 1193 0108 50       		.byte	0x50
+ 1194 0109 9F       		.byte	0x9f
+ 1195 010a 00000000 		.4byte	0
+ 1196 010e 00000000 		.4byte	0
+ 1197              	.LLST6:
+ 1198 0112 04000000 		.4byte	.LVL25
+ 1199 0116 0A000000 		.4byte	.LVL27
+ 1200 011a 0200     		.2byte	0x2
+ 1201 011c 30       		.byte	0x30
+ 1202 011d 9F       		.byte	0x9f
+ 1203 011e 0A000000 		.4byte	.LVL27
+ 1204 0122 18000000 		.4byte	.LVL29
+ 1205 0126 0300     		.2byte	0x3
+ 1206 0128 70       		.byte	0x70
+ 1207 0129 01       		.sleb128 1
+ 1208 012a 9F       		.byte	0x9f
+ 1209 012b 18000000 		.4byte	.LVL29
+ 1210 012f 34000000 		.4byte	.LFE1
+ 1211 0133 0100     		.2byte	0x1
+ 1212 0135 50       		.byte	0x50
+ 1213 0136 00000000 		.4byte	0
+ 1214 013a 00000000 		.4byte	0
+ 1215              	.LLST7:
+ 1216 013e 04000000 		.4byte	.LVL25
+ 1217 0142 0A000000 		.4byte	.LVL27
+ 1218 0146 0200     		.2byte	0x2
+ 1219 0148 30       		.byte	0x30
+ 1220 0149 9F       		.byte	0x9f
+ 1221 014a 0A000000 		.4byte	.LVL27
+ 1222 014e 32000000 		.4byte	.LVL33
+ 1223 0152 0100     		.2byte	0x1
+ 1224 0154 55       		.byte	0x55
+ 1225 0155 00000000 		.4byte	0
+ 1226 0159 00000000 		.4byte	0
+ 1227              	.LLST8:
+ 1228 015d 0A000000 		.4byte	.LVL27
+ 1229 0161 1A000000 		.4byte	.LVL30
+ 1230 0165 0100     		.2byte	0x1
+ 1231 0167 54       		.byte	0x54
+ 1232 0168 1C000000 		.4byte	.LVL31
+ 1233 016c 2C000000 		.4byte	.LVL32
+ 1234 0170 0100     		.2byte	0x1
+ 1235 0172 54       		.byte	0x54
+ 1236 0173 00000000 		.4byte	0
+ 1237 0177 00000000 		.4byte	0
+ 1238              	.LLST9:
+ 1239 017b 00000000 		.4byte	.LVL34
+ 1240 017f 0E000000 		.4byte	.LVL36
+ 1241 0183 0100     		.2byte	0x1
+ 1242 0185 50       		.byte	0x50
+ 1243 0186 0E000000 		.4byte	.LVL36
+ 1244 018a A0000000 		.4byte	.LVL58
+ 1245 018e 0100     		.2byte	0x1
+ 1246 0190 5A       		.byte	0x5a
+ 1247 0191 A0000000 		.4byte	.LVL58
+ 1248 0195 BC000000 		.4byte	.LFE2
+ 1249 0199 0400     		.2byte	0x4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 25
+
+
+ 1250 019b F3       		.byte	0xf3
+ 1251 019c 01       		.uleb128 0x1
+ 1252 019d 50       		.byte	0x50
+ 1253 019e 9F       		.byte	0x9f
+ 1254 019f 00000000 		.4byte	0
+ 1255 01a3 00000000 		.4byte	0
+ 1256              	.LLST10:
+ 1257 01a7 00000000 		.4byte	.LVL34
+ 1258 01ab 0E000000 		.4byte	.LVL36
+ 1259 01af 0100     		.2byte	0x1
+ 1260 01b1 51       		.byte	0x51
+ 1261 01b2 0E000000 		.4byte	.LVL36
+ 1262 01b6 A0000000 		.4byte	.LVL58
+ 1263 01ba 0100     		.2byte	0x1
+ 1264 01bc 55       		.byte	0x55
+ 1265 01bd A0000000 		.4byte	.LVL58
+ 1266 01c1 BC000000 		.4byte	.LFE2
+ 1267 01c5 0400     		.2byte	0x4
+ 1268 01c7 F3       		.byte	0xf3
+ 1269 01c8 01       		.uleb128 0x1
+ 1270 01c9 51       		.byte	0x51
+ 1271 01ca 9F       		.byte	0x9f
+ 1272 01cb 00000000 		.4byte	0
+ 1273 01cf 00000000 		.4byte	0
+ 1274              	.LLST11:
+ 1275 01d3 0A000000 		.4byte	.LVL35
+ 1276 01d7 0E000000 		.4byte	.LVL36
+ 1277 01db 0200     		.2byte	0x2
+ 1278 01dd 30       		.byte	0x30
+ 1279 01de 9F       		.byte	0x9f
+ 1280 01df 0E000000 		.4byte	.LVL36
+ 1281 01e3 A0000000 		.4byte	.LVL58
+ 1282 01e7 0100     		.2byte	0x1
+ 1283 01e9 54       		.byte	0x54
+ 1284 01ea 00000000 		.4byte	0
+ 1285 01ee 00000000 		.4byte	0
+ 1286              	.LLST12:
+ 1287 01f2 44000000 		.4byte	.LVL42
+ 1288 01f6 46000000 		.4byte	.LVL43
+ 1289 01fa 0100     		.2byte	0x1
+ 1290 01fc 50       		.byte	0x50
+ 1291 01fd 46000000 		.4byte	.LVL43
+ 1292 0201 96000000 		.4byte	.LVL57
+ 1293 0205 0100     		.2byte	0x1
+ 1294 0207 5B       		.byte	0x5b
+ 1295 0208 00000000 		.4byte	0
+ 1296 020c 00000000 		.4byte	0
+ 1297              	.LLST13:
+ 1298 0210 58000000 		.4byte	.LVL46
+ 1299 0214 5A000000 		.4byte	.LVL47
+ 1300 0218 0100     		.2byte	0x1
+ 1301 021a 50       		.byte	0x50
+ 1302 021b 5A000000 		.4byte	.LVL47
+ 1303 021f 96000000 		.4byte	.LVL57
+ 1304 0223 0100     		.2byte	0x1
+ 1305 0225 59       		.byte	0x59
+ 1306 0226 00000000 		.4byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 26
+
+
+ 1307 022a 00000000 		.4byte	0
+ 1308              	.LLST14:
+ 1309 022e 74000000 		.4byte	.LVL51
+ 1310 0232 76000000 		.4byte	.LVL52
+ 1311 0236 0100     		.2byte	0x1
+ 1312 0238 50       		.byte	0x50
+ 1313 0239 76000000 		.4byte	.LVL52
+ 1314 023d 96000000 		.4byte	.LVL57
+ 1315 0241 0100     		.2byte	0x1
+ 1316 0243 56       		.byte	0x56
+ 1317 0244 00000000 		.4byte	0
+ 1318 0248 00000000 		.4byte	0
+ 1319              		.section	.debug_aranges,"",%progbits
+ 1320 0000 2C000000 		.4byte	0x2c
+ 1321 0004 0200     		.2byte	0x2
+ 1322 0006 00000000 		.4byte	.Ldebug_info0
+ 1323 000a 04       		.byte	0x4
+ 1324 000b 00       		.byte	0
+ 1325 000c 0000     		.2byte	0
+ 1326 000e 0000     		.2byte	0
+ 1327 0010 00000000 		.4byte	.LFB0
+ 1328 0014 D8000000 		.4byte	.LFE0-.LFB0
+ 1329 0018 00000000 		.4byte	.LFB1
+ 1330 001c 34000000 		.4byte	.LFE1-.LFB1
+ 1331 0020 00000000 		.4byte	.LFB2
+ 1332 0024 BC000000 		.4byte	.LFE2-.LFB2
+ 1333 0028 00000000 		.4byte	0
+ 1334 002c 00000000 		.4byte	0
+ 1335              		.section	.debug_ranges,"",%progbits
+ 1336              	.Ldebug_ranges0:
+ 1337 0000 02000000 		.4byte	.LBB2
+ 1338 0004 04000000 		.4byte	.LBE2
+ 1339 0008 06000000 		.4byte	.LBB3
+ 1340 000c 34000000 		.4byte	.LBE3
+ 1341 0010 00000000 		.4byte	0
+ 1342 0014 00000000 		.4byte	0
+ 1343 0018 04000000 		.4byte	.LBB7
+ 1344 001c 06000000 		.4byte	.LBE7
+ 1345 0020 08000000 		.4byte	.LBB10
+ 1346 0024 30000000 		.4byte	.LBE10
+ 1347 0028 00000000 		.4byte	0
+ 1348 002c 00000000 		.4byte	0
+ 1349 0030 0A000000 		.4byte	.LBB8
+ 1350 0034 1A000000 		.4byte	.LBE8
+ 1351 0038 1C000000 		.4byte	.LBB9
+ 1352 003c 2A000000 		.4byte	.LBE9
+ 1353 0040 00000000 		.4byte	0
+ 1354 0044 00000000 		.4byte	0
+ 1355 0048 00000000 		.4byte	.LFB0
+ 1356 004c D8000000 		.4byte	.LFE0
+ 1357 0050 00000000 		.4byte	.LFB1
+ 1358 0054 34000000 		.4byte	.LFE1
+ 1359 0058 00000000 		.4byte	.LFB2
+ 1360 005c BC000000 		.4byte	.LFE2
+ 1361 0060 00000000 		.4byte	0
+ 1362 0064 00000000 		.4byte	0
+ 1363              		.section	.debug_line,"",%progbits
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 27
+
+
+ 1364              	.Ldebug_line0:
+ 1365 0000 53010000 		.section	.debug_str,"MS",%progbits,1
+ 1365      02005500 
+ 1365      00000201 
+ 1365      FB0E0D00 
+ 1365      01010101 
+ 1366              	.LASF29:
+ 1367 0000 433A5C55 		.ascii	"C:\\Users\\User\\Documents\\MIT 6.115\\finalproject"
+ 1367      73657273 
+ 1367      5C557365 
+ 1367      725C446F 
+ 1367      63756D65 
+ 1368 002e 5C477569 		.ascii	"\\GuitarHero.cydsn\000"
+ 1368      74617248 
+ 1368      65726F2E 
+ 1368      63796473 
+ 1368      6E00
+ 1369              	.LASF23:
+ 1370 0040 7363616C 		.ascii	"scaled_x\000"
+ 1370      65645F78 
+ 1370      00
+ 1371              	.LASF24:
+ 1372 0049 7363616C 		.ascii	"scaled_y\000"
+ 1372      65645F79 
+ 1372      00
+ 1373              	.LASF20:
+ 1374 0052 6E5F706F 		.ascii	"n_points\000"
+ 1374      696E7473 
+ 1374      00
+ 1375              	.LASF2:
+ 1376 005b 73686F72 		.ascii	"short int\000"
+ 1376      7420696E 
+ 1376      7400
+ 1377              	.LASF15:
+ 1378 0065 76657274 		.ascii	"vertices\000"
+ 1378      69636573 
+ 1378      00
+ 1379              	.LASF26:
+ 1380 006e 73697A65 		.ascii	"sizetype\000"
+ 1380      74797065 
+ 1380      00
+ 1381              	.LASF28:
+ 1382 0077 2E5C7370 		.ascii	".\\sprites.c\000"
+ 1382      72697465 
+ 1382      732E6300 
+ 1383              	.LASF21:
+ 1384 0083 6D616B65 		.ascii	"make_fretboard\000"
+ 1384      5F667265 
+ 1384      74626F61 
+ 1384      726400
+ 1385              	.LASF30:
+ 1386 0092 75696E74 		.ascii	"uint8\000"
+ 1386      3800
+ 1387              	.LASF9:
+ 1388 0098 666C6F61 		.ascii	"float\000"
+ 1388      7400
+ 1389              	.LASF6:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 28
+
+
+ 1390 009e 6C6F6E67 		.ascii	"long long int\000"
+ 1390      206C6F6E 
+ 1390      6720696E 
+ 1390      7400
+ 1391              	.LASF4:
+ 1392 00ac 6C6F6E67 		.ascii	"long int\000"
+ 1392      20696E74 
+ 1392      00
+ 1393              	.LASF19:
+ 1394 00b5 706F696E 		.ascii	"points\000"
+ 1394      747300
+ 1395              	.LASF22:
+ 1396 00bc 6F727468 		.ascii	"ortho_to_perspective\000"
+ 1396      6F5F746F 
+ 1396      5F706572 
+ 1396      73706563 
+ 1396      74697665 
+ 1397              	.LASF1:
+ 1398 00d1 756E7369 		.ascii	"unsigned char\000"
+ 1398      676E6564 
+ 1398      20636861 
+ 1398      7200
+ 1399              	.LASF32:
+ 1400 00df 73707269 		.ascii	"sprite_vertices\000"
+ 1400      74655F76 
+ 1400      65727469 
+ 1400      63657300 
+ 1401              	.LASF0:
+ 1402 00ef 7369676E 		.ascii	"signed char\000"
+ 1402      65642063 
+ 1402      68617200 
+ 1403              	.LASF17:
+ 1404 00fb 6E5F7370 		.ascii	"n_sprites\000"
+ 1404      72697465 
+ 1404      7300
+ 1405              	.LASF7:
+ 1406 0105 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1406      206C6F6E 
+ 1406      6720756E 
+ 1406      7369676E 
+ 1406      65642069 
+ 1407              	.LASF12:
+ 1408 011c 506F696E 		.ascii	"Point\000"
+ 1408      7400
+ 1409              	.LASF8:
+ 1410 0122 756E7369 		.ascii	"unsigned int\000"
+ 1410      676E6564 
+ 1410      20696E74 
+ 1410      00
+ 1411              	.LASF3:
+ 1412 012f 73686F72 		.ascii	"short unsigned int\000"
+ 1412      7420756E 
+ 1412      7369676E 
+ 1412      65642069 
+ 1412      6E7400
+ 1413              	.LASF11:
+ 1414 0142 63686172 		.ascii	"char\000"
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccrs1CBh.s 			page 29
+
+
+ 1414      00
+ 1415              	.LASF16:
+ 1416 0147 7265736F 		.ascii	"resolution\000"
+ 1416      6C757469 
+ 1416      6F6E00
+ 1417              	.LASF5:
+ 1418 0152 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1418      20756E73 
+ 1418      69676E65 
+ 1418      6420696E 
+ 1418      7400
+ 1419              	.LASF10:
+ 1420 0164 646F7562 		.ascii	"double\000"
+ 1420      6C6500
+ 1421              	.LASF13:
+ 1422 016b 53707269 		.ascii	"Sprite\000"
+ 1422      746500
+ 1423              	.LASF18:
+ 1424 0172 73707269 		.ascii	"sprites\000"
+ 1424      74657300 
+ 1425              	.LASF25:
+ 1426 017a 7363616C 		.ascii	"scaling\000"
+ 1426      696E6700 
+ 1427              	.LASF14:
+ 1428 0182 706F7369 		.ascii	"position\000"
+ 1428      74696F6E 
+ 1428      00
+ 1429              	.LASF27:
+ 1430 018b 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1430      4320342E 
+ 1430      392E3320 
+ 1430      32303135 
+ 1430      30333033 
+ 1431 01be 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1431      20726576 
+ 1431      6973696F 
+ 1431      6E203232 
+ 1431      31323230 
+ 1432 01f1 67202D73 		.ascii	"g -std=gnu11 -ffunction-sections -ffat-lto-objects\000"
+ 1432      74643D67 
+ 1432      6E753131 
+ 1432      202D6666 
+ 1432      756E6374 
+ 1433              	.LASF31:
+ 1434 0224 73707269 		.ascii	"sprites_to_polyline\000"
+ 1434      7465735F 
+ 1434      746F5F70 
+ 1434      6F6C796C 
+ 1434      696E6500 
+ 1435              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
