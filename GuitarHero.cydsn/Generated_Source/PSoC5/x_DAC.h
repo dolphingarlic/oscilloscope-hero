@@ -84,7 +84,7 @@ void x_DAC_Wakeup(void)          ;
  /* Default DAC range */
 #define x_DAC_DEFAULT_RANGE    4u
  /* Default DAC speed */
-#define x_DAC_DEFAULT_SPEED    0u
+#define x_DAC_DEFAULT_SPEED    2u
  /* Default Control */
 #define x_DAC_DEFAULT_CNTL      0x00u
 /* Default Strobe mode */

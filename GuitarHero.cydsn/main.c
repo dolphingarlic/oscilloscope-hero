@@ -55,7 +55,8 @@ void hw_init() {
  */
 void game_init() {
     n_sprites = 0;
-    sprites[n_sprites++] = make_fretboard();
+    sprites[n_sprites++] = make_fretboard(0);
+    sprites[n_sprites++] = make_barline(sprites[0].n, UINT8_MAX);
 }
 
 /*
@@ -73,8 +74,10 @@ void draw_points() {
 /*
  * Updates the list of points to render
  */
-void update_points() {
-    // TODO: create a moving ellipse
+void update_render() {
+    // Move the barline I guess
+    sprites[1].y -= 3;
+    if (sprites[1].y < 0) sprites[1].y = UINT8_MAX;
     
     // Convert to polyline
     new_n_points = sprites_to_polyline(n_sprites, sprites, new_points);
@@ -88,7 +91,7 @@ void update_points() {
  * Run the game at 20 FPS
  */
 CY_ISR(FPS_isr) {
-    update_points();
+    update_render();
 }
 
 CY_ISR(BLE_Rx_isr) {

@@ -1,5 +1,5 @@
-C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\GuitarHero.cyprj|eb7e21a6-0b00-4e40-be3a-47c8e726d92c
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|1048fa37-bf6e-4fb5-a9a8-22c282c9740d
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|fd547fbf-756a-4e75-801d-9ed8f1be96ea
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|e4a944a1-2450-4178-8504-270f31277154
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|35641e49-daee-46d6-948f-846a2c88de02
+C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\GuitarHero.cyprj|696c65b8-2204-4a97-8012-ac7700a658c2
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|a7dc86ba-c574-4d68-a721-8aac793ea7ac
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|d9a7c84b-be1c-4a67-b6aa-b9ac3d56cf3c
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|f38392c7-44e5-4ea5-bf3f-2dade87b5f1f
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|2922827e-6e6e-4087-aa72-e783f8efa2b1

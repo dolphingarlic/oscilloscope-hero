@@ -53,7 +53,7 @@ Allocating common symbols
 Common symbol       size              file
 
 n_sprites           0x4               .\CortexM3\ARM_GCC_493\Debug\main.o
-sprites             0x180             .\CortexM3\ARM_GCC_493\Debug\main.o
+sprites             0x200             .\CortexM3\ARM_GCC_493\Debug\main.o
 new_flag            0x1               .\CortexM3\ARM_GCC_493\Debug\main.o
 points              0x800             .\CortexM3\ARM_GCC_493\Debug\main.o
 new_points          0x800             .\CortexM3\ARM_GCC_493\Debug\main.o
@@ -548,7 +548,7 @@ END GROUP
                 0x00000040                CY_METADATA_SIZE = 0x40
                 0x00000000                CY_APPL_LOADABLE = 0x0
                 0x00000000                CY_CHECKSUM_EXCLUDE_SIZE = ALIGN (0x0, CY_FLASH_ROW_SIZE)
-                0x1fff9ad8                PROVIDE (__cy_heap_start, _end)
+                0x1fff9b58                PROVIDE (__cy_heap_start, _end)
                 0x00000001                PROVIDE (__cy_region_num, ((__cy_regions_end - __cy_regions) / 0x10))
                 0x20008000                PROVIDE (__cy_stack, (ORIGIN (ram) + 0x10000))
                 0x20007800                PROVIDE (__cy_heap_end, (__cy_stack - 0x800))
@@ -563,7 +563,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 0x00000000                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00000000     0x17c6
+.text           0x00000000     0x18c6
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -586,214 +586,217 @@ END GROUP
  .text.hw_init  0x00000094       0x3c .\CortexM3\ARM_GCC_493\Debug\main.o
                 0x00000094                hw_init
  .text.game_init
-                0x000000d0       0x28 .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x000000d0       0x44 .\CortexM3\ARM_GCC_493\Debug\main.o
                 0x000000d0                game_init
  .text.draw_points
-                0x000000f8       0x34 .\CortexM3\ARM_GCC_493\Debug\main.o
-                0x000000f8                draw_points
- .text.update_points
-                0x0000012c       0x38 .\CortexM3\ARM_GCC_493\Debug\main.o
-                0x0000012c                update_points
- .text.FPS_isr  0x00000164        0x8 .\CortexM3\ARM_GCC_493\Debug\main.o
-                0x00000164                FPS_isr
- .text.main     0x0000016c       0x54 .\CortexM3\ARM_GCC_493\Debug\main.o
-                0x0000016c                main
+                0x00000114       0x34 .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x00000114                draw_points
+ .text.update_render
+                0x00000148       0x48 .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x00000148                update_render
+ .text.FPS_isr  0x00000190        0x8 .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x00000190                FPS_isr
+ .text.main     0x00000198       0x54 .\CortexM3\ARM_GCC_493\Debug\main.o
+                0x00000198                main
  .text.make_fretboard
-                0x000001c0       0xd8 .\CortexM3\ARM_GCC_493\Debug\sprites.o
-                0x000001c0                make_fretboard
+                0x000001ec       0xe8 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                0x000001ec                make_fretboard
+ .text.make_barline
+                0x000002d4       0x84 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                0x000002d4                make_barline
  .text.sprites_to_polyline
-                0x00000298       0x34 .\CortexM3\ARM_GCC_493\Debug\sprites.o
-                0x00000298                sprites_to_polyline
- *fill*         0x000002cc        0x4 
+                0x00000358       0x74 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                0x00000358                sprites_to_polyline
+ *fill*         0x000003cc        0x4 
  .text.ortho_to_perspective
-                0x000002d0       0xc0 .\CortexM3\ARM_GCC_493\Debug\sprites.o
-                0x000002d0                ortho_to_perspective
+                0x000003d0       0xc0 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                0x000003d0                ortho_to_perspective
  .text.IntDefaultHandler
-                0x00000390        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x00000390                IntDefaultHandler
- .text.Start_c  0x00000394       0x4c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x00000394                Start_c
+                0x00000490        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000490                IntDefaultHandler
+ .text.Start_c  0x00000494       0x4c .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00000494                Start_c
  .text.initialize_psoc
-                0x000003e0       0x74 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x000003e0                initialize_psoc
+                0x000004e0       0x74 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x000004e0                initialize_psoc
  .text.CyClockStartupError
-                0x00000454        0x4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x00000554        0x4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .text.cfg_write_bytes32
-                0x00000458       0x34 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x00000558       0x34 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .text.AnalogSetDefault
-                0x0000048c       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x0000058c       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .text.CYMEMZERO
-                0x000004d4        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x000005d4        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .text.ClockSetup
-                0x000004e0       0xc4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x000005e0       0xc4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .text.CYCONFIGCPY
-                0x000005a4        0x8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x000006a4        0x8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .text.cyfitter_cfg
-                0x000005ac       0xec .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
-                0x000005ac                cyfitter_cfg
+                0x000006ac       0xec .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x000006ac                cyfitter_cfg
  .text.x_DAC_Enable
-                0x00000698       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x00000698                x_DAC_Enable
+                0x00000798       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x00000798                x_DAC_Enable
  .text.x_DAC_SetSpeed
-                0x000006b4       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x000006b4                x_DAC_SetSpeed
+                0x000007b4       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x000007b4                x_DAC_SetSpeed
  .text.x_DAC_SetValue
-                0x000006d0        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x000006d0                x_DAC_SetValue
+                0x000007d0        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x000007d0                x_DAC_SetValue
  .text.x_DAC_DacTrim
-                0x000006dc       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x000006dc                x_DAC_DacTrim
+                0x000007dc       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x000007dc                x_DAC_DacTrim
  .text.x_DAC_SetRange
-                0x00000700       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x00000700                x_DAC_SetRange
+                0x00000800       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x00000800                x_DAC_SetRange
  .text.x_DAC_Init
-                0x00000720       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x00000720                x_DAC_Init
+                0x00000820       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x00000820                x_DAC_Init
  .text.x_DAC_Start
-                0x00000740       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
-                0x00000740                x_DAC_Start
+                0x00000840       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x00000840                x_DAC_Start
  .text.y_DAC_Enable
-                0x00000764       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x00000764                y_DAC_Enable
+                0x00000864       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x00000864                y_DAC_Enable
  .text.y_DAC_SetSpeed
-                0x00000780       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x00000780                y_DAC_SetSpeed
+                0x00000880       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x00000880                y_DAC_SetSpeed
  .text.y_DAC_SetValue
-                0x0000079c        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x0000079c                y_DAC_SetValue
+                0x0000089c        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x0000089c                y_DAC_SetValue
  .text.y_DAC_DacTrim
-                0x000007a8       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x000007a8                y_DAC_DacTrim
+                0x000008a8       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x000008a8                y_DAC_DacTrim
  .text.y_DAC_SetRange
-                0x000007cc       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x000007cc                y_DAC_SetRange
+                0x000008cc       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x000008cc                y_DAC_SetRange
  .text.y_DAC_Init
-                0x000007ec       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x000007ec                y_DAC_Init
+                0x000008ec       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x000008ec                y_DAC_Init
  .text.y_DAC_Start
-                0x0000080c       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
-                0x0000080c                y_DAC_Start
- .text          0x00000830       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
-                0x00000830                CyDelayCycles
-                0x00000840                CyEnterCriticalSection
-                0x00000848                CyExitCriticalSection
- .text.CyDelay  0x00000850       0x2c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
-                0x00000850                CyDelay
+                0x0000090c       0x24 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x0000090c                y_DAC_Start
+ .text          0x00000930       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
+                0x00000930                CyDelayCycles
+                0x00000940                CyEnterCriticalSection
+                0x00000948                CyExitCriticalSection
+ .text.CyDelay  0x00000950       0x2c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+                0x00000950                CyDelay
  .text.CyDelayUs
-                0x0000087c       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
-                0x0000087c                CyDelayUs
+                0x0000097c       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+                0x0000097c                CyDelayUs
  .text.FPS_isr_SetVector
-                0x00000890        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
-                0x00000890                FPS_isr_SetVector
+                0x00000990        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+                0x00000990                FPS_isr_SetVector
  .text.FPS_isr_SetPriority
-                0x0000089c       0x10 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
-                0x0000089c                FPS_isr_SetPriority
+                0x0000099c       0x10 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+                0x0000099c                FPS_isr_SetPriority
  .text.FPS_isr_Enable
-                0x000008ac        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
-                0x000008ac                FPS_isr_Enable
+                0x000009ac        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+                0x000009ac                FPS_isr_Enable
  .text.FPS_isr_Disable
-                0x000008b8        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
-                0x000008b8                FPS_isr_Disable
+                0x000009b8        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+                0x000009b8                FPS_isr_Disable
  .text.FPS_isr_StartEx
-                0x000008c4       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
-                0x000008c4                FPS_isr_StartEx
+                0x000009c4       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+                0x000009c4                FPS_isr_StartEx
  .text.BLE_UART_Init
-                0x000008e0       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
-                0x000008e0                BLE_UART_Init
+                0x000009e0       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+                0x000009e0                BLE_UART_Init
  .text.BLE_UART_Enable
-                0x000008f4       0x2c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
-                0x000008f4                BLE_UART_Enable
+                0x000009f4       0x2c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+                0x000009f4                BLE_UART_Enable
  .text.BLE_UART_Start
-                0x00000920       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
-                0x00000920                BLE_UART_Start
+                0x00000a20       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+                0x00000a20                BLE_UART_Start
  .text.BLE_UART_GetChar
-                0x0000093c       0x2c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
-                0x0000093c                BLE_UART_GetChar
+                0x00000a3c       0x2c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+                0x00000a3c                BLE_UART_GetChar
  .text.BLE_Rx_isr_SetVector
-                0x00000968        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
-                0x00000968                BLE_Rx_isr_SetVector
+                0x00000a68        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+                0x00000a68                BLE_Rx_isr_SetVector
  .text.BLE_Rx_isr_SetPriority
-                0x00000974       0x10 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
-                0x00000974                BLE_Rx_isr_SetPriority
+                0x00000a74       0x10 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+                0x00000a74                BLE_Rx_isr_SetPriority
  .text.BLE_Rx_isr_Enable
-                0x00000984        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
-                0x00000984                BLE_Rx_isr_Enable
+                0x00000a84        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+                0x00000a84                BLE_Rx_isr_Enable
  .text.BLE_Rx_isr_Disable
-                0x00000990        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
-                0x00000990                BLE_Rx_isr_Disable
+                0x00000a90        0xc .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+                0x00000a90                BLE_Rx_isr_Disable
  .text.BLE_Rx_isr_StartEx
-                0x0000099c       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
-                0x0000099c                BLE_Rx_isr_StartEx
+                0x00000a9c       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+                0x00000a9c                BLE_Rx_isr_StartEx
  .text.LCD_WrCntrlNib
-                0x000009b8       0x34 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000ab8       0x34 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
  .text.LCD_WrDatNib
-                0x000009ec       0x44 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000aec       0x44 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
  .text.LCD_IsReady
-                0x00000a30       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000a30                LCD_IsReady
+                0x00000b30       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000b30                LCD_IsReady
  .text.LCD_WriteData
-                0x00000b14       0x18 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000b14                LCD_WriteData
+                0x00000c14       0x18 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000c14                LCD_WriteData
  .text.LCD_PutChar
-                0x00000b2c        0x8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000b2c                LCD_PutChar
+                0x00000c2c        0x8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000c2c                LCD_PutChar
  .text.LCD_WriteControl
-                0x00000b34       0x18 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000b34                LCD_WriteControl
+                0x00000c34       0x18 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000c34                LCD_WriteControl
  .text.LCD_Init
-                0x00000b4c       0x6c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000b4c                LCD_Init
+                0x00000c4c       0x6c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000c4c                LCD_Init
  .text.LCD_Enable
-                0x00000bb8       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000bb8                LCD_Enable
+                0x00000cb8       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000cb8                LCD_Enable
  .text.LCD_Start
-                0x00000bcc       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000bcc                LCD_Start
+                0x00000ccc       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000ccc                LCD_Start
  .text.LCD_Position
-                0x00000be8       0x3c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
-                0x00000be8                LCD_Position
+                0x00000ce8       0x3c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x00000ce8                LCD_Position
  .text.BLE_UART_IntClock_Start
-                0x00000c24       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
-                0x00000c24                BLE_UART_IntClock_Start
- .text          0x00000c40      0x370 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubdf3.o)
-                0x00000c40                __aeabi_drsub
-                0x00000c48                __aeabi_dsub
-                0x00000c48                __subdf3
-                0x00000c4c                __aeabi_dadd
-                0x00000c4c                __adddf3
-                0x00000ec4                __floatunsidf
-                0x00000ec4                __aeabi_ui2d
-                0x00000ee4                __floatsidf
-                0x00000ee4                __aeabi_i2d
-                0x00000f08                __aeabi_f2d
-                0x00000f08                __extendsfdf2
-                0x00000f44                __floatundidf
-                0x00000f44                __aeabi_ul2d
-                0x00000f54                __floatdidf
-                0x00000f54                __aeabi_l2d
- .text          0x00000fb0      0x424 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivdf3.o)
-                0x00000fb0                __aeabi_dmul
-                0x00000fb0                __muldf3
-                0x00001204                __divdf3
-                0x00001204                __aeabi_ddiv
- .text          0x000013d4       0xa0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_truncdfsf2.o)
-                0x000013d4                __truncdfsf2
-                0x000013d4                __aeabi_d2f
- .text          0x00001474      0x2a0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivsf3.o)
-                0x00001474                __mulsf3
-                0x00001474                __aeabi_fmul
-                0x000015dc                __aeabi_fdiv
-                0x000015dc                __divsf3
- .text          0x00001714       0x40 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixunssfsi.o)
-                0x00001714                __fixunssfsi
-                0x00001714                __aeabi_f2uiz
+                0x00000d24       0x1c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+                0x00000d24                BLE_UART_IntClock_Start
+ .text          0x00000d40      0x370 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_addsubdf3.o)
+                0x00000d40                __aeabi_drsub
+                0x00000d48                __aeabi_dsub
+                0x00000d48                __subdf3
+                0x00000d4c                __aeabi_dadd
+                0x00000d4c                __adddf3
+                0x00000fc4                __floatunsidf
+                0x00000fc4                __aeabi_ui2d
+                0x00000fe4                __floatsidf
+                0x00000fe4                __aeabi_i2d
+                0x00001008                __aeabi_f2d
+                0x00001008                __extendsfdf2
+                0x00001044                __floatundidf
+                0x00001044                __aeabi_ul2d
+                0x00001054                __floatdidf
+                0x00001054                __aeabi_l2d
+ .text          0x000010b0      0x424 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivdf3.o)
+                0x000010b0                __aeabi_dmul
+                0x000010b0                __muldf3
+                0x00001304                __divdf3
+                0x00001304                __aeabi_ddiv
+ .text          0x000014d4       0xa0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_truncdfsf2.o)
+                0x000014d4                __truncdfsf2
+                0x000014d4                __aeabi_d2f
+ .text          0x00001574      0x2a0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_muldivsf3.o)
+                0x00001574                __mulsf3
+                0x00001574                __aeabi_fmul
+                0x000016dc                __aeabi_fdiv
+                0x000016dc                __divsf3
+ .text          0x00001814       0x40 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_arm_fixunssfsi.o)
+                0x00001814                __fixunssfsi
+                0x00001814                __aeabi_f2uiz
  .text.__libc_init_array
-                0x00001754       0x4c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
-                0x00001754                __libc_init_array
- .text.memcpy   0x000017a0       0x16 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
-                0x000017a0                memcpy
- .text.memset   0x000017b6       0x10 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
-                0x000017b6                memset
+                0x00001854       0x4c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x00001854                __libc_init_array
+ .text.memcpy   0x000018a0       0x16 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+                0x000018a0                memcpy
+ .text.memset   0x000018b6       0x10 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x000018b6                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
@@ -806,78 +809,78 @@ END GROUP
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x000017c8        0x0
+.v4_bx          0x000018c8        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x000017c8        0x0
+.iplt           0x000018c8        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x000017c8        0x4
+.eh_frame       0x000018c8        0x4
  *(.eh_frame)
- .eh_frame      0x000017c8        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
- .eh_frame      0x000017c8        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
-                0x000017cc                PROVIDE (__exidx_start, .)
+ .eh_frame      0x000018c8        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .eh_frame      0x000018c8        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+                0x000018cc                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000017cc                __exidx_end = .
+                0x000018cc                __exidx_end = .
 
-.rodata         0x000017cc       0x74
+.rodata         0x000018cc       0x74
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x000017cc       0x3c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
-                0x00001808                . = ALIGN (0x4)
+ .rodata        0x000018cc       0x3c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x00001908                . = ALIGN (0x4)
  *(.init)
- .init          0x00001808        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
-                0x00001808                _init
- .init          0x0000180c        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
-                0x00001814                . = ALIGN (0x4)
-                0x00001814                __preinit_array_start = .
+ .init          0x00001908        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x00001908                _init
+ .init          0x0000190c        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x00001914                . = ALIGN (0x4)
+                0x00001914                __preinit_array_start = .
  *(.preinit_array)
-                0x00001814                __preinit_array_end = .
-                0x00001814                . = ALIGN (0x4)
-                0x00001814                __init_array_start = .
+                0x00001914                __preinit_array_end = .
+                0x00001914                . = ALIGN (0x4)
+                0x00001914                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00001814        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
- .init_array    0x00001818        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x0000181c                __init_array_end = .
-                0x0000181c                . = ALIGN (0x4)
+ .init_array    0x00001914        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .init_array    0x00001918        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x0000191c                __init_array_end = .
+                0x0000191c                . = ALIGN (0x4)
  *(.fini)
- .fini          0x0000181c        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
-                0x0000181c                _fini
- .fini          0x00001820        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
-                0x00001828                . = ALIGN (0x4)
-                0x00001828                __fini_array_start = .
+ .fini          0x0000191c        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x0000191c                _fini
+ .fini          0x00001920        0x8 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x00001928                . = ALIGN (0x4)
+                0x00001928                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00001828        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .fini_array    0x00001928        0x4 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x0000182c                __fini_array_end = .
-                0x0000182c                . = ALIGN (0x4)
+                0x0000192c                __fini_array_end = .
+                0x0000192c                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x0000182c                . = ALIGN (0x4)
+                0x0000192c                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x0000182c                . = ALIGN (0x4)
-                0x0000182c                __cy_regions = .
-                0x0000182c        0x4 LONG 0x1840 __cy_region_init_ram
-                0x00001830        0x4 LONG 0x1fff8108 __cy_region_start_data
-                0x00001834        0x4 LONG 0x18 __cy_region_init_size_ram
-                0x00001838        0x4 LONG 0x19b8 __cy_region_zero_size_ram
-                0x0000183c                __cy_regions_end = .
-                0x00001840                . = ALIGN (0x8)
- *fill*         0x0000183c        0x4 
-                0x00001840                _etext = .
+                0x0000192c                . = ALIGN (0x4)
+                0x0000192c                __cy_regions = .
+                0x0000192c        0x4 LONG 0x1940 __cy_region_init_ram
+                0x00001930        0x4 LONG 0x1fff8108 __cy_region_start_data
+                0x00001934        0x4 LONG 0x18 __cy_region_init_size_ram
+                0x00001938        0x4 LONG 0x1a38 __cy_region_zero_size_ram
+                0x0000193c                __cy_regions_end = .
+                0x00001940                . = ALIGN (0x8)
+ *fill*         0x0000193c        0x4 
+                0x00001940                _etext = .
 
 .cy_checksum_exclude
-                0x00001840        0x0
+                0x00001940        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x1fff8000      0x100
@@ -892,7 +895,7 @@ END GROUP
  .noinit        0x1fff8104        0x1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
                 0x1fff8104                CyResetStatus
 
-.data           0x1fff8108       0x18 load address 0x00001840
+.data           0x1fff8108       0x18 load address 0x00001940
                 0x1fff8108                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff8108        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
@@ -911,10 +914,10 @@ END GROUP
  *(.ram)
                 0x1fff8120                _edata = .
 
-.igot.plt       0x1fff8120        0x0 load address 0x00001858
+.igot.plt       0x1fff8120        0x0 load address 0x00001958
  .igot.plt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
-.bss            0x1fff8120     0x19b8 load address 0x00001858
+.bss            0x1fff8120     0x1a38 load address 0x00001958
                 0x1fff8120                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -930,32 +933,32 @@ END GROUP
                 0x1fff8140                LCD_initVar
  *(COMMON)
  *fill*         0x1fff8141        0x3 
- COMMON         0x1fff8144     0x1190 .\CortexM3\ARM_GCC_493\Debug\main.o
+ COMMON         0x1fff8144     0x1210 .\CortexM3\ARM_GCC_493\Debug\main.o
                 0x1fff8144                n_sprites
                 0x1fff8148                sprites
-                0x1fff82c8                new_flag
-                0x1fff82cc                points
-                0x1fff8acc                new_points
-                0x1fff92cc                n_points
-                0x1fff92d0                new_n_points
- COMMON         0x1fff92d4      0x800 .\CortexM3\ARM_GCC_493\Debug\sprites.o
-                0x1fff92d4                sprite_vertices
-                0x1fff9ad8                . = ALIGN (0x8)
- *fill*         0x1fff9ad4        0x4 
+                0x1fff8348                new_flag
+                0x1fff834c                points
+                0x1fff8b4c                new_points
+                0x1fff934c                n_points
+                0x1fff9350                new_n_points
+ COMMON         0x1fff9354      0x800 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                0x1fff9354                sprite_vertices
+                0x1fff9b58                . = ALIGN (0x8)
+ *fill*         0x1fff9b54        0x4 
  *(.ram.b)
-                0x1fff9ad8                _end = .
-                0x1fff9ad8                __end = .
-                0x1fff9ad8                PROVIDE (end, .)
-                0x1fff9ad8                PROVIDE (__bss_end__, .)
-                0x00001840                __cy_region_init_ram = LOADADDR (.data)
+                0x1fff9b58                _end = .
+                0x1fff9b58                __end = .
+                0x1fff9b58                PROVIDE (end, .)
+                0x1fff9b58                PROVIDE (__bss_end__, .)
+                0x00001940                __cy_region_init_ram = LOADADDR (.data)
                 0x00000018                __cy_region_init_size_ram = (_edata - ADDR (.data))
-                0x000019b8                __cy_region_zero_size_ram = (_end - _edata)
+                0x00001a38                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x1fff9ad8       0x80 load address 0x00001858
-                0x1fff9ad8                . = _end
-                0x1fff9b58                . = (. + 0x80)
- *fill*         0x1fff9ad8       0x80 
-                0x1fff9b58                __cy_heap_limit = .
+.heap           0x1fff9b58       0x80 load address 0x00001958
+                0x1fff9b58                . = _end
+                0x1fff9bd8                . = (. + 0x80)
+ *fill*         0x1fff9b58       0x80 
+                0x1fff9bd8                __cy_heap_limit = .
 
 .stack          0x20007800      0x800
                 0x20007800                __cy_stack_limit = .
@@ -1002,7 +1005,7 @@ END GROUP
  .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
                 0x90500000                cy_metadata
 
-.rel.dyn        0x00001858        0x0 load address 0x9050000c
+.rel.dyn        0x00001958        0x0 load address 0x9050000c
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
 .stab
@@ -1023,202 +1026,202 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x8d0
+.debug_aranges  0x00000000      0x8d8
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x50 .\CortexM3\ARM_GCC_493\Debug\main.o
  .debug_aranges
-                0x00000050       0x30 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                0x00000050       0x38 .\CortexM3\ARM_GCC_493\Debug\sprites.o
  .debug_aranges
-                0x00000080       0x18 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+                0x00000088       0x18 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
  .debug_aranges
-                0x00000098       0x48 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x000000a0       0x48 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
  .debug_aranges
-                0x000000e0       0x58 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+                0x000000e8       0x58 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
  .debug_aranges
-                0x00000138       0x58 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+                0x00000140       0x58 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
  .debug_aranges
-                0x00000190       0x58 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+                0x00000198       0x58 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
  .debug_aranges
-                0x000001e8       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
+                0x000001f0       0x20 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
  .debug_aranges
-                0x00000208      0x298 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+                0x00000210      0x298 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
  .debug_aranges
-                0x000004a0       0x98 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+                0x000004a8       0x98 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
  .debug_aranges
-                0x00000538       0x80 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+                0x00000540       0x80 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
  .debug_aranges
-                0x000005b8       0x98 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+                0x000005c0       0x98 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
  .debug_aranges
-                0x00000650       0x80 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+                0x00000658       0x80 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
  .debug_aranges
-                0x000006d0       0x98 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+                0x000006d8       0x98 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
  .debug_aranges
-                0x00000768       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+                0x00000770       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
  .debug_aranges
-                0x000007d8       0x80 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+                0x000007e0       0x80 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
  .debug_aranges
-                0x00000858       0x78 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+                0x00000860       0x78 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x516a
+.debug_info     0x00000000     0x525f
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x4fc .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_info    0x000004fc      0x2a8 .\CortexM3\ARM_GCC_493\Debug\sprites.o
- .debug_info    0x000007a4      0x13b .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
- .debug_info    0x000008df      0x3a6 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_info    0x00000c85      0x4da .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
- .debug_info    0x0000115f      0x1df .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
- .debug_info    0x0000133e      0x1df .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
- .debug_info    0x0000151d       0x90 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
- .debug_info    0x000015ad     0x1376 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
- .debug_info    0x00002923      0xa5e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
- .debug_info    0x00003381      0x2d2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
- .debug_info    0x00003653      0x3a5 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
- .debug_info    0x000039f8      0x2d2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
- .debug_info    0x00003cca      0x71d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
- .debug_info    0x000043e7      0x283 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
- .debug_info    0x0000466a      0x60f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
- .debug_info    0x00004c79      0x4f1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_info    0x00000000      0x541 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_info    0x00000541      0x35a .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .debug_info    0x0000089b      0x13b .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_info    0x000009d6      0x3a6 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_info    0x00000d7c      0x4da .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_info    0x00001256      0x1de .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_info    0x00001434      0x1de .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_info    0x00001612       0x90 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
+ .debug_info    0x000016a2     0x1376 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_info    0x00002a18      0xa5e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_info    0x00003476      0x2d2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_info    0x00003748      0x3a5 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_info    0x00003aed      0x2d2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_info    0x00003dbf      0x71d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_info    0x000044dc      0x283 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_info    0x0000475f      0x60f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_info    0x00004d6e      0x4f1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
 
-.debug_abbrev   0x00000000     0x18e6
+.debug_abbrev   0x00000000     0x18c3
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x1f7 .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_abbrev  0x000001f7      0x156 .\CortexM3\ARM_GCC_493\Debug\sprites.o
- .debug_abbrev  0x0000034d       0x66 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
- .debug_abbrev  0x000003b3      0x200 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_abbrev  0x000005b3      0x203 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
- .debug_abbrev  0x000007b6       0xf7 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
- .debug_abbrev  0x000008ad       0xf7 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
- .debug_abbrev  0x000009a4       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
- .debug_abbrev  0x000009b8      0x296 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
- .debug_abbrev  0x00000c4e      0x1ed .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
- .debug_abbrev  0x00000e3b      0x173 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
- .debug_abbrev  0x00000fae      0x16d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
- .debug_abbrev  0x0000111b      0x173 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
- .debug_abbrev  0x0000128e      0x171 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
- .debug_abbrev  0x000013ff      0x139 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
- .debug_abbrev  0x00001538      0x1ed .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
- .debug_abbrev  0x00001725      0x1c1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_abbrev  0x00000000      0x1df .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_abbrev  0x000001df      0x14b .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .debug_abbrev  0x0000032a       0x66 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_abbrev  0x00000390      0x200 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_abbrev  0x00000590      0x203 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_abbrev  0x00000793       0xf7 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_abbrev  0x0000088a       0xf7 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_abbrev  0x00000981       0x14 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00000995      0x296 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_abbrev  0x00000c2b      0x1ed .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_abbrev  0x00000e18      0x173 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_abbrev  0x00000f8b      0x16d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_abbrev  0x000010f8      0x173 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_abbrev  0x0000126b      0x171 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_abbrev  0x000013dc      0x139 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_abbrev  0x00001515      0x1ed .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_abbrev  0x00001702      0x1c1 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
 
-.debug_line     0x00000000     0x21d7
+.debug_line     0x00000000     0x2256
  *(.debug_line)
- .debug_line    0x00000000      0x273 .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_line    0x00000273      0x157 .\CortexM3\ARM_GCC_493\Debug\sprites.o
- .debug_line    0x000003ca       0x53 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
- .debug_line    0x0000041d      0x249 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_line    0x00000666      0x1e5 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
- .debug_line    0x0000084b       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
- .debug_line    0x0000092f       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
- .debug_line    0x00000a13       0x68 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
- .debug_line    0x00000a7b      0x806 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
- .debug_line    0x00001281      0x366 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
- .debug_line    0x000015e7      0x14d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
- .debug_line    0x00001734      0x1b2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
- .debug_line    0x000018e6      0x150 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
- .debug_line    0x00001a36      0x1de .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
- .debug_line    0x00001c14      0x199 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
- .debug_line    0x00001dad      0x1ec .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
- .debug_line    0x00001f99      0x23e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_line    0x00000000      0x27e .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_line    0x0000027e      0x1cb .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .debug_line    0x00000449       0x53 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_line    0x0000049c      0x249 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_line    0x000006e5      0x1e5 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_line    0x000008ca       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_line    0x000009ae       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_line    0x00000a92       0x68 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyBootAsmGnu.o)
+ .debug_line    0x00000afa      0x806 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_line    0x00001300      0x366 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_line    0x00001666      0x14d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_line    0x000017b3      0x1b2 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_line    0x00001965      0x150 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_line    0x00001ab5      0x1de .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_line    0x00001c93      0x199 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_line    0x00001e2c      0x1ec .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_line    0x00002018      0x23e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
 
-.debug_frame    0x00000000     0x173c
+.debug_frame    0x00000000     0x176c
  *(.debug_frame)
- .debug_frame   0x00000000       0xe0 .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_frame   0x000000e0       0x9c .\CortexM3\ARM_GCC_493\Debug\sprites.o
- .debug_frame   0x0000017c       0xac .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_frame   0x00000228       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
- .debug_frame   0x0000030c       0xb4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
- .debug_frame   0x000003c0       0xb4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
- .debug_frame   0x00000474      0x728 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
- .debug_frame   0x00000b9c      0x1f8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
- .debug_frame   0x00000d94      0x104 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
- .debug_frame   0x00000e98      0x14c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
- .debug_frame   0x00000fe4      0x104 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
- .debug_frame   0x000010e8      0x1e4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
- .debug_frame   0x000012cc       0xe0 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
- .debug_frame   0x000013ac      0x174 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
- .debug_frame   0x00001520      0x160 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
- .debug_frame   0x00001680       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
- .debug_frame   0x000016a0       0x28 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
- .debug_frame   0x000016c8       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
- .debug_frame   0x000016f4       0x28 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
- .debug_frame   0x0000171c       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000000       0xe4 .\CortexM3\ARM_GCC_493\Debug\main.o
+ .debug_frame   0x000000e4       0xc8 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .debug_frame   0x000001ac       0xac .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_frame   0x00000258       0xe4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_frame   0x0000033c       0xb4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_frame   0x000003f0       0xb4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_frame   0x000004a4      0x728 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_frame   0x00000bcc      0x1f8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_frame   0x00000dc4      0x104 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_frame   0x00000ec8      0x14c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_frame   0x00001014      0x104 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_frame   0x00001118      0x1e4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_frame   0x000012fc       0xe0 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_frame   0x000013dc      0x174 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_frame   0x00001550      0x160 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_frame   0x000016b0       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x000016d0       0x28 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x000016f8       0x2c c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x00001724       0x28 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+ .debug_frame   0x0000174c       0x20 c:/program files (x86)/cypress/psoc creator/3.3/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x1c18
+.debug_str      0x00000000     0x1c1c
  *(.debug_str)
- .debug_str     0x00000000      0x319 .\CortexM3\ARM_GCC_493\Debug\main.o
-                                0x382 (size before relaxing)
- .debug_str     0x00000319       0x41 .\CortexM3\ARM_GCC_493\Debug\sprites.o
-                                0x238 (size before relaxing)
- .debug_str     0x0000035a       0x77 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .debug_str     0x00000000      0x31d .\CortexM3\ARM_GCC_493\Debug\main.o
+                                0x386 (size before relaxing)
+ .debug_str     0x0000031d       0x48 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+                                0x243 (size before relaxing)
+ .debug_str     0x00000365       0x77 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
                                 0x1f5 (size before relaxing)
- .debug_str     0x000003d1      0x15a .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_str     0x000003dc      0x15a .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
                                 0x315 (size before relaxing)
- .debug_str     0x0000052b      0x156 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_str     0x00000536      0x14f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
                                 0x31a (size before relaxing)
- .debug_str     0x00000681       0x8f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_str     0x00000685       0x8f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
                                 0x22a (size before relaxing)
- .debug_str     0x00000710       0x7e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_str     0x00000714       0x7e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
                                 0x22a (size before relaxing)
- .debug_str     0x0000078e      0x82f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_str     0x00000792      0x82f .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
                                 0xa3a (size before relaxing)
- .debug_str     0x00000fbd      0x35b .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_str     0x00000fc1      0x35b .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
                                 0x732 (size before relaxing)
- .debug_str     0x00001318       0xf4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_str     0x0000131c       0xf4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
                                 0x2cd (size before relaxing)
- .debug_str     0x0000140c      0x1c8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_str     0x00001410      0x1c8 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
                                 0x3cd (size before relaxing)
- .debug_str     0x000015d4      0x11b .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_str     0x000015d8      0x11b .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
                                 0x2f7 (size before relaxing)
- .debug_str     0x000016ef      0x130 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_str     0x000016f3      0x130 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
                                 0x336 (size before relaxing)
- .debug_str     0x0000181f      0x1ad .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_str     0x00001823      0x1ad .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
                                 0x371 (size before relaxing)
- .debug_str     0x000019cc      0x19e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_str     0x000019d0      0x19e .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
                                 0x3ac (size before relaxing)
- .debug_str     0x00001b6a       0xae .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_str     0x00001b6e       0xae .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
                                 0x335 (size before relaxing)
 
-.debug_loc      0x00000000     0x2211
+.debug_loc      0x00000000     0x242e
  *(.debug_loc)
  .debug_loc     0x00000000       0x51 .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_loc     0x00000051      0x24c .\CortexM3\ARM_GCC_493\Debug\sprites.o
- .debug_loc     0x0000029d      0x144 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_loc     0x000003e1      0x1d7 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
- .debug_loc     0x000005b8       0x79 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
- .debug_loc     0x00000631       0x79 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
- .debug_loc     0x000006aa      0xa11 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
- .debug_loc     0x000010bb      0x1e4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
- .debug_loc     0x0000129f       0x56 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
- .debug_loc     0x000012f5       0x87 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
- .debug_loc     0x0000137c       0x56 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
- .debug_loc     0x000013d2      0x3c6 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
- .debug_loc     0x00001798      0x12c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
- .debug_loc     0x000018c4      0x300 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
- .debug_loc     0x00001bc4      0x64d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_loc     0x00000051      0x469 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .debug_loc     0x000004ba      0x144 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_loc     0x000005fe      0x1d7 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_loc     0x000007d5       0x79 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_loc     0x0000084e       0x79 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_loc     0x000008c7      0xa11 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_loc     0x000012d8      0x1e4 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_loc     0x000014bc       0x56 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_loc     0x00001512       0x87 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_loc     0x00001599       0x56 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_loc     0x000015ef      0x3c6 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_loc     0x000019b5      0x12c .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_loc     0x00001ae1      0x300 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_loc     0x00001de1      0x64d .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
 
 .debug_macinfo
  *(.debug_macinfo)
 
-.debug_ranges   0x00000000      0x7f0
+.debug_ranges   0x00000000      0x828
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x40 .\CortexM3\ARM_GCC_493\Debug\main.o
- .debug_ranges  0x00000040       0x68 .\CortexM3\ARM_GCC_493\Debug\sprites.o
- .debug_ranges  0x000000a8       0x38 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_ranges  0x000000e0       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
- .debug_ranges  0x00000128       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
- .debug_ranges  0x00000170       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
- .debug_ranges  0x000001b8      0x288 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
- .debug_ranges  0x00000440       0x88 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
- .debug_ranges  0x000004c8       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
- .debug_ranges  0x00000538       0x88 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
- .debug_ranges  0x000005c0       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
- .debug_ranges  0x00000630       0x88 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
- .debug_ranges  0x000006b8       0x60 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
- .debug_ranges  0x00000718       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
- .debug_ranges  0x00000788       0x68 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
+ .debug_ranges  0x00000040       0xa0 .\CortexM3\ARM_GCC_493\Debug\sprites.o
+ .debug_ranges  0x000000e0       0x38 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+ .debug_ranges  0x00000118       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyfitter_cfg.o)
+ .debug_ranges  0x00000160       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(x_DAC.o)
+ .debug_ranges  0x000001a8       0x48 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(y_DAC.o)
+ .debug_ranges  0x000001f0      0x288 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyLib.o)
+ .debug_ranges  0x00000478       0x88 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(cyPm.o)
+ .debug_ranges  0x00000500       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(FPS_isr.o)
+ .debug_ranges  0x00000570       0x88 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART.o)
+ .debug_ranges  0x000005f8       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_Rx_isr.o)
+ .debug_ranges  0x00000668       0x88 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(LCD.o)
+ .debug_ranges  0x000006f0       0x60 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(BLE_UART_IntClock.o)
+ .debug_ranges  0x00000750       0x70 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CyFlash.o)
+ .debug_ranges  0x000007c0       0x68 .\CortexM3\ARM_GCC_493\Debug\GuitarHero.a(CySpc.o)
 
 .comment        0x00000000       0x70
  .comment       0x00000000       0x70 .\CortexM3\ARM_GCC_493\Debug\main.o

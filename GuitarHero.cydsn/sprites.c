@@ -15,47 +15,73 @@
 struct Point sprite_vertices[1<<10];
 
 /*
- * Creates a set of points to denote the boundaries of the fretboard
+ * Creates the boundaries of the fretboard
  */
-struct Sprite make_fretboard() {
+struct Sprite make_fretboard(int offset) {
     const int resolution = 16;
     int n = 0;
 
     // Bottom edge
     for (int i = 0; i < resolution; i++) {
-        sprite_vertices[n++] = (struct Point) {
+        sprite_vertices[offset + n++] = (struct Point) {
             .x = UINT8_MAX * i / resolution,
             .y = 0
         };
     }
     // Right edge
     for (int i = 0; i < resolution; i++) {
-        sprite_vertices[n++] = (struct Point) {
+        sprite_vertices[offset + n++] = (struct Point) {
             .x = UINT8_MAX,
             .y = UINT8_MAX * i / resolution
         };
     }
     // Top edge
     for (int i = 0; i < resolution; i++) {
-        sprite_vertices[n++] = (struct Point) {
+        sprite_vertices[offset + n++] = (struct Point) {
             .x = UINT8_MAX - UINT8_MAX * i / resolution,
             .y = UINT8_MAX
         };
     }
     // Left edge
     for (int i = 0; i < resolution; i++) {
-        sprite_vertices[n++] = (struct Point) {
+        sprite_vertices[offset + n++] = (struct Point) {
             .x = 0,
             .y = UINT8_MAX - UINT8_MAX * i / resolution
         };
     }
     // Complete the polygon
-    sprite_vertices[n++] = (struct Point) { .x = 0, .y = 0 };
+    sprite_vertices[offset + n++] = (struct Point) { .x = 0, .y = 0 };
 
     return (struct Sprite) {
-        .position = (struct Point) { .x = 0, .y = 0 },
-        .n = n,
-        .vertices = sprite_vertices
+        .n = n, .x = 0, .y = 0,
+        .vertices = sprite_vertices + offset
+    };
+}
+
+/*
+ * Creates a barline at the specified y offset
+ */
+struct Sprite make_barline(int offset, int y) {
+    const int resolution = 8;
+    int n = 0;
+    
+    for (int i = 0; i < resolution; i++) {
+        sprite_vertices[offset + n++] = (struct Point) {
+            .x = UINT8_MAX * i / resolution,
+            .y = 0
+        };
+    }
+    for (int i = 0; i < resolution; i++) {
+        sprite_vertices[offset + n++] = (struct Point) {
+            .x = UINT8_MAX - UINT8_MAX * i / resolution,
+            .y = 0
+        };
+    }
+    sprite_vertices[offset + n++] = (struct Point) { .x = 0, .y = 0 };
+    
+    return (struct Sprite) {
+        .n = n, .x = 0, .y = y,
+        .vertices = sprite_vertices + offset
     };
 }
 
@@ -66,9 +92,15 @@ int sprites_to_polyline(int n_sprites, struct Sprite *sprites, struct Point *poi
     // For now, naively convert to points
     int n_points = 0;
     for (int i = 0; i < n_sprites; i++) {
+        // TODO: precompute whether to even show the sprite
         for (int j = 0; j < sprites[i].n; j++) {
-            // TODO: incorporate position
-            points[n_points++] = sprites[i].vertices[j];
+            int x = sprites[i].vertices[j].x + sprites[i].x;
+            int y = sprites[i].vertices[j].y + sprites[i].y;
+            // Clip if overflow (i.e. out of bounds)
+            points[n_points++] = (struct Point) {
+                .x = (uint8)(x < 0 ? 0 : x > UINT8_MAX ? UINT8_MAX : x),
+                .y = (uint8)(y < 0 ? 0 : y > UINT8_MAX ? UINT8_MAX : y)
+            };
         }
     }
     return n_points;

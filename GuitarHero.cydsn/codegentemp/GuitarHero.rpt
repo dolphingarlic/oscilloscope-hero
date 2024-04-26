@@ -8,7 +8,7 @@ ADD: pft.M0028: warning: Clock Warning: (FPS_Clock's accuracy range '20  Hz -50%
  * C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\TopDesign\TopDesign.cysch (Instance:FPS_Clock)
 
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 1s.063ms
+Elaboration phase: Elapsed time ==> 0s.984ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
 HDL generation phase: Elapsed time ==> 0s.030ms
@@ -45,7 +45,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Fri Apr 26 00:22:40 2024
+Fri Apr 26 11:09:30 2024
 
 
 ======================================================================
@@ -55,7 +55,7 @@ Options  :    -yv2 -q10 GuitarHero.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Fri Apr 26 00:22:40 2024
+Fri Apr 26 11:09:30 2024
 
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
@@ -100,7 +100,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Fri Apr 26 00:22:40 2024
+Fri Apr 26 11:09:30 2024
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -134,7 +134,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Fri Apr 26 00:22:41 2024
+Fri Apr 26 11:09:30 2024
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -545,10 +545,10 @@ CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\wa
 Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
 Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya "-.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\GuitarHero.cyprj" -dcpsoc3 GuitarHero.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 1s.203ms
+Warp synthesis phase: Elapsed time ==> 1s.187ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V3.3.0.9604, Family: PSoC3, Started at: Friday, 26 April 2024 00:22:41
+cyp3fit: V3.3.0.9604, Family: PSoC3, Started at: Friday, 26 April 2024 11:09:30
 Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -d CY8C5868AXI-LP035 GuitarHero.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
@@ -1479,7 +1479,7 @@ IO_1@[IOP=(4)][IoId=(1)] : y_out(0) (fixed)
 VIDAC[2]@[FFB(VIDAC,2)] : \x_DAC:viDAC8\
 VIDAC[3]@[FFB(VIDAC,3)] : \y_DAC:viDAC8\
 
-Analog Placement phase: Elapsed time ==> 0s.468ms
+Analog Placement phase: Elapsed time ==> 0s.469ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
 Analog Routing phase: Elapsed time ==> 0s.000ms
@@ -1529,7 +1529,7 @@ Dump of CyP35AnalogRoutingResultsDB
 IsVddaHalfUsedForComp = False
 IsVddaHalfUsedForSar0 = False
 IsVddaHalfUsedForSar1 = False
-Analog Code Generation phase: Elapsed time ==> 0s.281ms
+Analog Code Generation phase: Elapsed time ==> 0s.265ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
@@ -1564,7 +1564,7 @@ PLD Packing: Elapsed time ==> 0s.000ms
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.000ms
+Partitioning: Elapsed time ==> 0s.015ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Simulated Annealing">
 Annealing: Elapsed time ==> 0s.000ms
@@ -2519,15 +2519,15 @@ Port | Pin | Fixed |      Type |       Drive Mode |             Name | Connectio
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.015ms
-Digital Placement phase: Elapsed time ==> 0s.796ms
+Digital component placer commit/Report: Elapsed time ==> 0s.000ms
+Digital Placement phase: Elapsed time ==> 0s.781ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 Routing successful.
 Digital Routing phase: Elapsed time ==> 1s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream and API generation">
-Bitstream and API generation phase: Elapsed time ==> 0s.124ms
+Bitstream and API generation phase: Elapsed time ==> 0s.140ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream verification">
 Bitstream verification phase: Elapsed time ==> 0s.031ms
@@ -2540,7 +2540,7 @@ Static timing analysis phase: Elapsed time ==> 0s.218ms
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.109ms
+Design database save phase: Elapsed time ==> 0s.125ms
 </CYPRESSTAG>
 cydsfit: Elapsed time ==> 3s.125ms
 </CYPRESSTAG>

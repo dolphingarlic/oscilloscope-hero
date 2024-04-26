@@ -18,16 +18,15 @@ struct Point {
 };
 
 struct Sprite {
-    int n;
-    struct Point position;
+    int n, x, y;
     struct Point *vertices;
 };
 
-struct Sprite make_fretboard();
+struct Sprite make_fretboard(int offset);
 
-struct Sprite make_barline();
+struct Sprite make_barline(int offset, int y);
 
-struct Sprite make_ellipse(struct Point position, uint8 width, uint8 height, uint8 filled);
+struct Sprite make_ellipse(int offset, uint8 track, int y, uint8 filled);
 
 int sprites_to_polyline(int n_sprites, struct Sprite *sprites, struct Point *points);
 
