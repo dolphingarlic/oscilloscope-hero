@@ -1,0 +1,1813 @@
+Loading plugins phase: Elapsed time ==> 0s.156ms
+Initializing data phase: Elapsed time ==> 0s.000ms
+<CYPRESSTAG name="CyDsfit arguments...">
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\User\Documents\MIT 6.115\finalproject\controller\controller.cydsn\controller.cyprj -d CY8C5888LTI-LP097 -s C:\Users\User\Documents\MIT 6.115\finalproject\controller\controller.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
+<CYPRESSTAG name="Design elaboration results...">
+</CYPRESSTAG>
+Elaboration phase: Elapsed time ==> 0s.968ms
+<CYPRESSTAG name="HDL generation results...">
+</CYPRESSTAG>
+HDL generation phase: Elapsed time ==> 0s.031ms
+<CYPRESSTAG name="Synthesis results...">
+
+     | | | | | | |
+   _________________
+  -|               |-
+  -|               |-
+  -|               |-
+  -|    CYPRESS    |-
+  -|               |-
+  -|               |-   Warp Verilog Synthesis Compiler: Version 6.3 IR 41
+  -|               |-   Copyright (C) 1991-2001 Cypress Semiconductor
+   |_______________|
+     | | | | | | |
+
+======================================================================
+Compiling:  controller.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\controller\controller.cydsn\controller.cyprj -dcpsoc3 controller.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  controller.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\controller\controller.cydsn\controller.cyprj -dcpsoc3 controller.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  controller.v
+Program  :   vlogfe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\controller\controller.cydsn\controller.cyprj -dcpsoc3 -verilog controller.v
+======================================================================
+
+vlogfe V6.3 IR 41:  Verilog parser
+Sat Apr 27 13:08:50 2024
+
+
+======================================================================
+Compiling:  controller.v
+Program  :   vpp
+Options  :    -yv2 -q10 controller.v
+======================================================================
+
+vpp V6.3 IR 41:  Verilog Pre-Processor
+Sat Apr 27 13:08:50 2024
+
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\Debouncer_v1_0\Debouncer_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'
+
+vpp:  No errors.
+
+Library 'work' => directory 'lcpsoc3'
+General_symbol_table
+General_symbol_table
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Using control file 'controller.ctl'.
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v (line 1113, col 55):  Note: Substituting module 'add_vv_vv' for '+'.
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v (line 1122, col 48):  Note: Substituting module 'cmp_vv_vv' for '<'.
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v (line 1122, col 77):  Note: Substituting module 'cmp_vv_vv' for '<'.
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v (line 1389, col 59):  Note: Substituting module 'cmp_vv_vv' for '<'.
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v (line 1424, col 61):  Note: Substituting module 'cmp_vv_vv' for '/='.
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v (line 1547, col 106):  Note: Substituting module 'cmp_vv_vv' for '<'.
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v (line 1603, col 68):  Note: Substituting module 'cmp_vv_vv' for '<'.
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v (line 1604, col 68):  Note: Substituting module 'cmp_vv_vv' for '<'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+
+vlogfe:  No errors.
+
+
+======================================================================
+Compiling:  controller.v
+Program  :   tovif
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\controller\controller.cydsn\controller.cyprj -dcpsoc3 -verilog controller.v
+======================================================================
+
+tovif V6.3 IR 41:  High-level synthesis
+Sat Apr 27 13:08:50 2024
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\User\Documents\MIT 6.115\finalproject\controller\controller.cydsn\codegentemp\controller.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Users\User\Documents\MIT 6.115\finalproject\controller\controller.cydsn\codegentemp\controller.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\Debouncer_v1_0\Debouncer_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+
+tovif:  No errors.
+
+
+======================================================================
+Compiling:  controller.v
+Program  :   topld
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\controller\controller.cydsn\controller.cyprj -dcpsoc3 -verilog controller.v
+======================================================================
+
+topld V6.3 IR 41:  Synthesis and optimization
+Sat Apr 27 13:08:51 2024
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\User\Documents\MIT 6.115\finalproject\controller\controller.cydsn\codegentemp\controller.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Users\User\Documents\MIT 6.115\finalproject\controller\controller.cydsn\codegentemp\controller.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\Debouncer_v1_0\Debouncer_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
+
+----------------------------------------------------------
+Detecting unused logic.
+----------------------------------------------------------
+    User names
+	\BLE_UART:BUART:HalfDuplexSend\
+	\BLE_UART:BUART:FinalAddrMode_2\
+	\BLE_UART:BUART:FinalAddrMode_1\
+	\BLE_UART:BUART:FinalAddrMode_0\
+	\BLE_UART:BUART:reset_sr\
+	Net_105
+	Net_106
+	Net_124
+
+
+Deleted 8 User equations/components.
+Deleted 0 Synthesized equations/components.
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+Aliasing one to tmpOE__Btn_1_net_0
+Aliasing tmpOE__Strum_net_0 to tmpOE__Btn_1_net_0
+Aliasing tmpOE__Btn_5_net_0 to tmpOE__Btn_1_net_0
+Aliasing tmpOE__Btn_4_net_0 to tmpOE__Btn_1_net_0
+Aliasing tmpOE__Btn_3_net_0 to tmpOE__Btn_1_net_0
+Aliasing tmpOE__Btn_2_net_0 to tmpOE__Btn_1_net_0
+Aliasing Net_77 to zero
+Aliasing \BLE_UART:BUART:tx_hd_send_break\ to zero
+Aliasing \BLE_UART:BUART:FinalParityType_1\ to zero
+Aliasing \BLE_UART:BUART:FinalParityType_0\ to zero
+Aliasing \BLE_UART:BUART:tx_ctrl_mark\ to zero
+Aliasing \BLE_UART:BUART:tx_status_6\ to zero
+Aliasing \BLE_UART:BUART:tx_status_5\ to zero
+Aliasing \BLE_UART:BUART:tx_status_4\ to zero
+Aliasing tmpOE__BLE_Tx_net_0 to tmpOE__Btn_1_net_0
+Aliasing Net_102D to zero
+Aliasing Net_125D to zero
+Aliasing Net_126D to zero
+Removing Lhs of wire one[7] = tmpOE__Btn_1_net_0[1]
+Removing Lhs of wire tmpOE__Strum_net_0[10] = tmpOE__Btn_1_net_0[1]
+Removing Lhs of wire tmpOE__Btn_5_net_0[17] = tmpOE__Btn_1_net_0[1]
+Removing Lhs of wire tmpOE__Btn_4_net_0[24] = tmpOE__Btn_1_net_0[1]
+Removing Lhs of wire tmpOE__Btn_3_net_0[31] = tmpOE__Btn_1_net_0[1]
+Removing Lhs of wire tmpOE__Btn_2_net_0[38] = tmpOE__Btn_1_net_0[1]
+Removing Lhs of wire \BLE_UART:Net_61\[54] = \BLE_UART:Net_9\[53]
+Removing Lhs of wire Net_77[58] = zero[2]
+Removing Lhs of wire \BLE_UART:BUART:tx_hd_send_break\[59] = zero[2]
+Removing Lhs of wire \BLE_UART:BUART:FinalParityType_1\[61] = zero[2]
+Removing Lhs of wire \BLE_UART:BUART:FinalParityType_0\[62] = zero[2]
+Removing Lhs of wire \BLE_UART:BUART:tx_ctrl_mark\[66] = zero[2]
+Removing Rhs of wire \BLE_UART:BUART:tx_bitclk_enable_pre\[77] = \BLE_UART:BUART:tx_bitclk_dp\[113]
+Removing Lhs of wire \BLE_UART:BUART:tx_counter_tc\[123] = \BLE_UART:BUART:tx_counter_dp\[114]
+Removing Lhs of wire \BLE_UART:BUART:tx_status_6\[124] = zero[2]
+Removing Lhs of wire \BLE_UART:BUART:tx_status_5\[125] = zero[2]
+Removing Lhs of wire \BLE_UART:BUART:tx_status_4\[126] = zero[2]
+Removing Lhs of wire \BLE_UART:BUART:tx_status_1\[128] = \BLE_UART:BUART:tx_fifo_empty\[91]
+Removing Lhs of wire \BLE_UART:BUART:tx_status_3\[130] = \BLE_UART:BUART:tx_fifo_notfull\[90]
+Removing Lhs of wire tmpOE__BLE_Tx_net_0[138] = tmpOE__Btn_1_net_0[1]
+Removing Lhs of wire \BLE_UART:BUART:reset_reg\\D\[154] = zero[2]
+Removing Lhs of wire Net_102D[159] = zero[2]
+Removing Lhs of wire \Strum_Debouncer:DEBOUNCER[0]:d_sync_0\\D\[164] = Net_117[11]
+Removing Lhs of wire \Strum_Debouncer:DEBOUNCER[0]:d_sync_1\\D\[165] = \Strum_Debouncer:DEBOUNCER[0]:d_sync_0\[146]
+Removing Lhs of wire Net_125D[167] = zero[2]
+Removing Lhs of wire Net_126D[168] = zero[2]
+
+------------------------------------------------------
+Aliased 0 equations, 26 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+Substituting virtuals - pass 1:
+
+Note:  Expanding virtual equation for 'zero' (cost = 0):
+zero <=  ('0') ;
+
+
+Substituting virtuals - pass 2:
+
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 1 signals.
+	Turned 0 signals into soft nodes.
+	Maximum default expansion cost was set at 3.
+----------------------------------------------------------
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+Removing Lhs of wire \BLE_UART:BUART:tx_ctrl_mark_last\\D\[161] = \BLE_UART:BUART:tx_ctrl_mark_last\[134]
+
+------------------------------------------------------
+Aliased 0 equations, 1 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+Eliminating unused logic - pass 1:
+
+
+Eliminating unused logic - pass 2:
+
+
+Substituting virtuals - pass 1:
+
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 0 signals.
+	Turned 0 signals into soft nodes.
+	Maximum default expansion cost was set at 3.
+----------------------------------------------------------
+
+topld:  No errors.
+
+CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp
+Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
+Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya "-.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\controller\controller.cydsn\controller.cyprj" -dcpsoc3 controller.v -verilog
+</CYPRESSTAG>
+Warp synthesis phase: Elapsed time ==> 1s.171ms
+<CYPRESSTAG name="Fitter results...">
+<CYPRESSTAG name="Fitter startup details...">
+cyp3fit: V3.3.0.9604, Family: PSoC3, Started at: Saturday, 27 April 2024 13:08:51
+Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\controller\controller.cydsn\controller.cyprj -d CY8C5888LTI-LP097 controller.v -verilog
+</CYPRESSTAG>
+<CYPRESSTAG name="Design parsing">
+Design parsing phase: Elapsed time ==> 0s.015ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Tech mapping">
+<CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
+    Converted constant MacroCell: \BLE_UART:BUART:reset_reg\ from registered to combinatorial
+    Converted constant MacroCell: Net_102 from registered to combinatorial
+    Converted constant MacroCell: Net_125 from registered to combinatorial
+    Converted constant MacroCell: Net_126 from registered to combinatorial
+<CYPRESSTAG name="Global Clock Selection" icon="FILE_RPT_TECHM">
+    Digital Clock 0: Automatic-assigning  clock 'BLE_UART_IntClock'. Fanout=1, Signal=\BLE_UART:Net_9\
+    Digital Clock 1: Automatic-assigning  clock 'Debouncer_Clock'. Fanout=1, Signal=Net_123
+</CYPRESSTAG>
+
+Removing unused cells resulting from optimization
+Done removing unused cells.
+<CYPRESSTAG name="UDB Clock/Enable Remapping Results">
+    UDB Clk/Enable \BLE_UART:BUART:ClkSync\: with output requested to be synchronous
+        ClockIn: BLE_UART_IntClock was determined to be a global clock that is synchronous to BUS_CLK
+        EnableIn: Constant 1 was determined to be synchronous to ClockIn
+        ClockOut: BLE_UART_IntClock, EnableOut: Constant 1
+    UDB Clk/Enable \Strum_Debouncer:ClkSync\: with output requested to be synchronous
+        ClockIn: Debouncer_Clock was determined to be a global clock that is synchronous to BUS_CLK
+        EnableIn: Constant 1 was determined to be synchronous to ClockIn
+        ClockOut: Debouncer_Clock, EnableOut: Constant 1
+</CYPRESSTAG>
+
+Removing unused cells resulting from optimization
+Done removing unused cells.
+<CYPRESSTAG name="Duplicate Macrocell detection">
+</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Duplicate Macrocell detection">
+
+Removing duplicate macrocells
+    Removing \BLE_UART:BUART:tx_parity_bit\, Duplicate of \BLE_UART:BUART:tx_ctrl_mark_last\ 
+    MacroCell: Name=\BLE_UART:BUART:tx_parity_bit\, Mode=(T-Register)
+        Total # of inputs        : 0
+        Total # of product terms : 0
+        List of special equations: 
+            Clock  = (\BLE_UART:Net_9\) => Global
+            Clock Enable: True
+        Main Equation            : 0 pterms
+        (
+            0
+        );
+        Output = \BLE_UART:BUART:tx_parity_bit\ (fanout=0)
+
+    Removing \BLE_UART:BUART:tx_mark\, Duplicate of \BLE_UART:BUART:tx_ctrl_mark_last\ 
+    MacroCell: Name=\BLE_UART:BUART:tx_mark\, Mode=(T-Register)
+        Total # of inputs        : 0
+        Total # of product terms : 0
+        List of special equations: 
+            Clock  = (\BLE_UART:Net_9\) => Global
+            Clock Enable: True
+        Main Equation            : 0 pterms
+        (
+            0
+        );
+        Output = \BLE_UART:BUART:tx_mark\ (fanout=0)
+
+
+Removing unused cells resulting from optimization
+Done removing unused cells.
+End removing duplicate macrocells: used 1 pass
+</CYPRESSTAG>
+<CYPRESSTAG name="Design Equations" icon="FILE_RPT_EQUATION">
+
+------------------------------------------------------------
+Design Equations
+------------------------------------------------------------
+    <CYPRESSTAG name="Pin listing">
+
+    ------------------------------------------------------------
+    Pin listing
+    ------------------------------------------------------------
+
+    Pin : Name = Btn_1(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: RES_PULL_DOWN
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => Btn_1(0)__PA ,
+            annotation => Net_27 ,
+            pad => Btn_1(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Strum(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: RES_PULL_DOWN
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL, ROUTABLE
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => Strum(0)__PA ,
+            fb => Net_117 ,
+            annotation => Net_19 ,
+            pad => Strum(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Btn_5(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: RES_PULL_DOWN
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => Btn_5(0)__PA ,
+            annotation => Net_33 ,
+            pad => Btn_5(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Btn_4(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: RES_PULL_DOWN
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => Btn_4(0)__PA ,
+            annotation => Net_31 ,
+            pad => Btn_4(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Btn_3(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: RES_PULL_DOWN
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => Btn_3(0)__PA ,
+            annotation => Net_29 ,
+            pad => Btn_3(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Btn_2(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: RES_PULL_DOWN
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => Btn_2(0)__PA ,
+            annotation => Net_25 ,
+            pad => Btn_2(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = BLE_Tx(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL, ROUTABLE
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => BLE_Tx(0)__PA ,
+            input => Net_49 ,
+            pad => BLE_Tx(0)_PAD );
+        Properties:
+        {
+        }
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Macrocell listing" icon="FILE_RPT_EQUATION">
+
+    ------------------------------------------------------------
+    Macrocell listing
+    ------------------------------------------------------------
+
+    MacroCell: Name=Net_49, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\BLE_UART:BUART:txn\
+        );
+        Output = Net_49 (fanout=1)
+
+    MacroCell: Name=\BLE_UART:BUART:counter_load_not\, Mode=(Combinatorial)
+        Total # of inputs        : 4
+        Total # of product terms : 2
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        !(
+              !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\
+            + !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              !\BLE_UART:BUART:tx_state_2\
+        );
+        Output = \BLE_UART:BUART:counter_load_not\ (fanout=1)
+
+    MacroCell: Name=\BLE_UART:BUART:tx_status_0\, Mode=(Combinatorial)
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\ * 
+              \BLE_UART:BUART:tx_fifo_empty\ * \BLE_UART:BUART:tx_state_2\
+        );
+        Output = \BLE_UART:BUART:tx_status_0\ (fanout=1)
+
+    MacroCell: Name=\BLE_UART:BUART:tx_status_2\, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\BLE_UART:BUART:tx_fifo_notfull\
+        );
+        Output = \BLE_UART:BUART:tx_status_2\ (fanout=1)
+
+    MacroCell: Name=\BLE_UART:BUART:txn\, Mode=(D-Register)
+        Total # of inputs        : 7
+        Total # of product terms : 5
+        List of special equations: 
+            Clock  = (\BLE_UART:Net_9\) => Global
+            Clock Enable: True
+        Main Equation            : 5 pterms
+        (
+              \BLE_UART:BUART:txn\ * \BLE_UART:BUART:tx_state_1\ * 
+              !\BLE_UART:BUART:tx_bitclk\
+            + \BLE_UART:BUART:txn\ * \BLE_UART:BUART:tx_state_2\
+            + !\BLE_UART:BUART:tx_state_1\ * \BLE_UART:BUART:tx_state_0\ * 
+              !\BLE_UART:BUART:tx_shift_out\ * !\BLE_UART:BUART:tx_state_2\
+            + !\BLE_UART:BUART:tx_state_1\ * \BLE_UART:BUART:tx_state_0\ * 
+              !\BLE_UART:BUART:tx_state_2\ * !\BLE_UART:BUART:tx_bitclk\
+            + \BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              !\BLE_UART:BUART:tx_shift_out\ * !\BLE_UART:BUART:tx_state_2\ * 
+              !\BLE_UART:BUART:tx_counter_dp\ * \BLE_UART:BUART:tx_bitclk\
+        );
+        Output = \BLE_UART:BUART:txn\ (fanout=2)
+
+    MacroCell: Name=\BLE_UART:BUART:tx_state_1\, Mode=(T-Register)
+        Total # of inputs        : 6
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\BLE_UART:Net_9\) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              \BLE_UART:BUART:tx_state_1\ * \BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\ * 
+              \BLE_UART:BUART:tx_state_2\
+            + \BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_2\ * 
+              \BLE_UART:BUART:tx_counter_dp\ * \BLE_UART:BUART:tx_bitclk\
+            + \BLE_UART:BUART:tx_state_0\ * !\BLE_UART:BUART:tx_state_2\ * 
+              \BLE_UART:BUART:tx_bitclk\
+        );
+        Output = \BLE_UART:BUART:tx_state_1\ (fanout=8)
+
+    MacroCell: Name=\BLE_UART:BUART:tx_state_0\, Mode=(T-Register)
+        Total # of inputs        : 6
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (\BLE_UART:Net_9\) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\ * 
+              !\BLE_UART:BUART:tx_fifo_empty\
+            + !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              !\BLE_UART:BUART:tx_fifo_empty\ * !\BLE_UART:BUART:tx_state_2\
+            + \BLE_UART:BUART:tx_state_1\ * \BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\ * 
+              \BLE_UART:BUART:tx_fifo_empty\ * \BLE_UART:BUART:tx_state_2\
+            + \BLE_UART:BUART:tx_state_0\ * !\BLE_UART:BUART:tx_state_2\ * 
+              \BLE_UART:BUART:tx_bitclk\
+        );
+        Output = \BLE_UART:BUART:tx_state_0\ (fanout=8)
+
+    MacroCell: Name=\BLE_UART:BUART:tx_state_2\, Mode=(T-Register)
+        Total # of inputs        : 6
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (\BLE_UART:Net_9\) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\ * 
+              \BLE_UART:BUART:tx_state_2\
+            + \BLE_UART:BUART:tx_state_1\ * \BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\ * 
+              \BLE_UART:BUART:tx_state_2\
+            + \BLE_UART:BUART:tx_state_1\ * \BLE_UART:BUART:tx_state_0\ * 
+              !\BLE_UART:BUART:tx_state_2\ * \BLE_UART:BUART:tx_bitclk\
+            + \BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_2\ * 
+              \BLE_UART:BUART:tx_counter_dp\ * \BLE_UART:BUART:tx_bitclk\
+        );
+        Output = \BLE_UART:BUART:tx_state_2\ (fanout=7)
+
+    MacroCell: Name=\BLE_UART:BUART:tx_bitclk\, Mode=(D-Register)
+        Total # of inputs        : 4
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (\BLE_UART:Net_9\) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        !(
+              !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_state_2\
+            + !\BLE_UART:BUART:tx_bitclk_enable_pre\
+        );
+        Output = \BLE_UART:BUART:tx_bitclk\ (fanout=4)
+
+    MacroCell: Name=\Strum_Debouncer:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_123) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              Net_117
+        );
+        Output = \Strum_Debouncer:DEBOUNCER[0]:d_sync_0\ (fanout=2)
+
+    MacroCell: Name=\Strum_Debouncer:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_123) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Strum_Debouncer:DEBOUNCER[0]:d_sync_0\
+        );
+        Output = \Strum_Debouncer:DEBOUNCER[0]:d_sync_1\ (fanout=1)
+
+    MacroCell: Name=Net_127, Mode=(D-Register)
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_123) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Strum_Debouncer:DEBOUNCER[0]:d_sync_0\ * 
+              !\Strum_Debouncer:DEBOUNCER[0]:d_sync_1\
+        );
+        Output = Net_127 (fanout=1)
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Datapath listing">
+
+    ------------------------------------------------------------
+    Datapath listing
+    ------------------------------------------------------------
+
+    datapathcell: Name =\BLE_UART:BUART:sTX:TxShifter:u0\
+        PORT MAP (
+            clock => \BLE_UART:Net_9\ ,
+            cs_addr_2 => \BLE_UART:BUART:tx_state_1\ ,
+            cs_addr_1 => \BLE_UART:BUART:tx_state_0\ ,
+            cs_addr_0 => \BLE_UART:BUART:tx_bitclk_enable_pre\ ,
+            so_comb => \BLE_UART:BUART:tx_shift_out\ ,
+            f0_bus_stat_comb => \BLE_UART:BUART:tx_fifo_notfull\ ,
+            f0_blk_stat_comb => \BLE_UART:BUART:tx_fifo_empty\ );
+        Properties:
+        {
+            a0_init = "00000000"
+            a1_init = "00000000"
+            ce0_sync = 1
+            ce1_sync = 1
+            cl0_sync = 1
+            cl1_sync = 1
+            cmsb_sync = 1
+            co_msb_sync = 1
+            cy_dpconfig = "0000000000000000000000000000000000000000000000000000000011000000000000000000000000000010010000000000000000000000000000000000000011111111000000001111111111111111000000000000000001000100111100000000000000001100"
+            d0_init = "00000000"
+            d1_init = "00000000"
+            f0_blk_sync = 1
+            f0_bus_sync = 1
+            f1_blk_sync = 1
+            f1_bus_sync = 1
+            ff0_sync = 1
+            ff1_sync = 1
+            ov_msb_sync = 1
+            so_sync = 1
+            z0_sync = 1
+            z1_sync = 1
+        }
+        Clock Polarity: Active High
+        Clock Enable: True
+
+    datapathcell: Name =\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\
+        PORT MAP (
+            clock => \BLE_UART:Net_9\ ,
+            cs_addr_0 => \BLE_UART:BUART:counter_load_not\ ,
+            ce0_reg => \BLE_UART:BUART:tx_bitclk_enable_pre\ ,
+            ce1_reg => \BLE_UART:BUART:tx_counter_dp\ );
+        Properties:
+        {
+            a0_init = "00000000"
+            a1_init = "00000000"
+            ce0_sync = 1
+            ce1_sync = 1
+            cl0_sync = 1
+            cl1_sync = 1
+            cmsb_sync = 1
+            co_msb_sync = 1
+            cy_dpconfig = "1010100001000000001000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111000000001111111100000111001000000100000000000101111100000000000000001000"
+            d0_init = "00000000"
+            d1_init = "00000000"
+            f0_blk_sync = 1
+            f0_bus_sync = 1
+            f1_blk_sync = 1
+            f1_bus_sync = 1
+            ff0_sync = 1
+            ff1_sync = 1
+            ov_msb_sync = 1
+            so_sync = 1
+            z0_sync = 1
+            z1_sync = 1
+        }
+        Clock Polarity: Active High
+        Clock Enable: True
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Status register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="StatusI register listing">
+
+    ------------------------------------------------------------
+    StatusI register listing
+    ------------------------------------------------------------
+
+    statusicell: Name =\BLE_UART:BUART:sTX:TxSts\
+        PORT MAP (
+            clock => \BLE_UART:Net_9\ ,
+            status_3 => \BLE_UART:BUART:tx_fifo_notfull\ ,
+            status_2 => \BLE_UART:BUART:tx_status_2\ ,
+            status_1 => \BLE_UART:BUART:tx_fifo_empty\ ,
+            status_0 => \BLE_UART:BUART:tx_status_0\ );
+        Properties:
+        {
+            cy_force_order = 1
+            cy_int_mask = "1111111"
+            cy_md_select = "0000001"
+        }
+        Clock Polarity: Active High
+        Clock Enable: True
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Sync listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Control register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Count7 listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="DRQ listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Interrupt listing">
+
+    ------------------------------------------------------------
+    Interrupt listing
+    ------------------------------------------------------------
+
+    interrupt: Name =Strum_isr
+        PORT MAP (
+            interrupt => Net_127 );
+        Properties:
+        {
+            int_type = "00"
+        }
+    </CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Technology mapping summary" expanded>
+
+------------------------------------------------------------
+Technology mapping summary
+------------------------------------------------------------
+
+Resource Type                 : Used : Free :  Max :  % Used
+============================================================
+Digital Clocks                :    2 :    6 :    8 : 25.00 %
+Analog Clocks                 :    0 :    4 :    4 :  0.00 %
+CapSense Buffers              :    0 :    2 :    2 :  0.00 %
+Digital Filter Block          :    0 :    1 :    1 :  0.00 %
+Interrupts                    :    1 :   31 :   32 :  3.13 %
+IO                            :   10 :   38 :   48 : 20.83 %
+Segment LCD                   :    0 :    1 :    1 :  0.00 %
+CAN 2.0b                      :    0 :    1 :    1 :  0.00 %
+I2C                           :    0 :    1 :    1 :  0.00 %
+USB                           :    0 :    1 :    1 :  0.00 %
+DMA Channels                  :    0 :   24 :   24 :  0.00 %
+Timer                         :    0 :    4 :    4 :  0.00 %
+UDB                           :      :      :      :        
+  Macrocells                  :   12 :  180 :  192 :  6.25 %
+  Unique P-terms              :   23 :  361 :  384 :  5.99 %
+  Total P-terms               :   26 :      :      :        
+  Datapath Cells              :    2 :   22 :   24 :  8.33 %
+  Status Cells                :    1 :   23 :   24 :  4.17 %
+    StatusI Registers         :    1 :      :      :        
+  Control Cells               :    0 :   24 :   24 :  0.00 %
+Opamp                         :    0 :    4 :    4 :  0.00 %
+Comparator                    :    0 :    4 :    4 :  0.00 %
+Delta-Sigma ADC               :    0 :    1 :    1 :  0.00 %
+LPF                           :    0 :    2 :    2 :  0.00 %
+SAR ADC                       :    0 :    2 :    2 :  0.00 %
+Analog (SC/CT) Blocks         :    0 :    4 :    4 :  0.00 %
+DAC                           :      :      :      :        
+  VIDAC                       :    0 :    4 :    4 :  0.00 %
+</CYPRESSTAG>
+Technology Mapping: Elapsed time ==> 0s.015ms
+Tech mapping phase: Elapsed time ==> 0s.062ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Placement">
+Initial Analog Placement Results:
+IO_0@[IOP=(15)][IoId=(0)] : BLE_Tx(0) (fixed)
+IO_3@[IOP=(0)][IoId=(3)] : Btn_1(0) (fixed)
+IO_4@[IOP=(0)][IoId=(4)] : Btn_2(0) (fixed)
+IO_5@[IOP=(0)][IoId=(5)] : Btn_3(0) (fixed)
+IO_6@[IOP=(0)][IoId=(6)] : Btn_4(0) (fixed)
+IO_7@[IOP=(0)][IoId=(7)] : Btn_5(0) (fixed)
+IO_0@[IOP=(0)][IoId=(0)] : Strum(0) (fixed)
+Analog Placement phase: Elapsed time ==> 0s.046ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Routing">
+Analog Routing phase: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Code Generation">
+============ Analog Final Answer Routes ============
+Dump of CyAnalogRoutingResultsDB
+Map of net to items {
+}
+Map of item to net {
+}
+Mux Info {
+}
+Dump of CyP35AnalogRoutingResultsDB
+IsVddaHalfUsedForComp = False
+IsVddaHalfUsedForSar0 = False
+IsVddaHalfUsedForSar1 = False
+Analog Code Generation phase: Elapsed time ==> 0s.281ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Placement">
+<CYPRESSTAG name="Detailed placement messages">
+I2076: Total run-time: 0.5 sec.
+
+</CYPRESSTAG>
+<CYPRESSTAG name="PLD Packing">
+<CYPRESSTAG name="PLD Packing Summary" expanded>
+
+------------------------------------------------------------
+PLD Packing Summary
+------------------------------------------------------------
+            Resource Type : Used : Free :  Max :  % Used
+    ====================================================
+                     PLDs :    4 :   44 :   48 :   8.33%
+
+<CYPRESSTAG name="PLD Statistics">
+
+        PLD Resource Type :     Average/LAB
+    =======================================
+                   Inputs :            6.00
+                   Pterms :            6.25
+               Macrocells :            3.00
+</CYPRESSTAG>
+<CYPRESSTAG name="Packed PLD Contents">
+Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
+</CYPRESSTAG>
+PLD Packing: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Partitioning">
+<CYPRESSTAG name="Initial Partitioning Summary">
+Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+<CYPRESSTAG name="Final Partitioning Summary">
+Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+Partitioning: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Simulated Annealing">
+Annealing: Elapsed time ==> 0s.000ms
+<CYPRESSTAG name="Simulated Annealing Results">
+The seed used for moves was 114161200.
+Inital cost was 48, final cost is 48 (0.00% improvement).</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Final Placement Summary">
+
+------------------------------------------------------------
+Final Placement Summary
+------------------------------------------------------------
+
+       Resource Type :      Count : Avg Inputs : Avg Outputs
+    ========================================================
+                 UDB :          2 :       9.50 :       6.00
+<CYPRESSTAG name="Final Placement Details">
+<CYPRESSTAG name="Component Details">
+
+------------------------------------------------------------
+Component Placement Details
+------------------------------------------------------------
+UDB [UDB=(0,0)] is empty.
+UDB [UDB=(0,1)] is empty.
+UDB [UDB=(0,2)] is empty.
+UDB [UDB=(0,3)] is empty.
+UDB [UDB=(0,4)] is empty.
+UDB [UDB=(0,5)] is empty.
+UDB [UDB=(1,0)] is empty.
+UDB [UDB=(1,1)] is empty.
+UDB [UDB=(1,2)] is empty.
+UDB [UDB=(1,3)] is empty.
+UDB [UDB=(1,4)] is empty.
+UDB [UDB=(1,5)] is empty.
+UDB [UDB=(2,0)] is empty.
+UDB [UDB=(2,1)] contents:
+LAB@[UDB=(2,1)][LB=0] #macrocells=4, #inputs=8, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\BLE_UART:BUART:tx_state_0\, Mode=(T-Register) @ [UDB=(2,1)][LB=0][MC=0]
+        Total # of inputs        : 6
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (\BLE_UART:Net_9\) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\ * 
+              !\BLE_UART:BUART:tx_fifo_empty\
+            + !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              !\BLE_UART:BUART:tx_fifo_empty\ * !\BLE_UART:BUART:tx_state_2\
+            + \BLE_UART:BUART:tx_state_1\ * \BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\ * 
+              \BLE_UART:BUART:tx_fifo_empty\ * \BLE_UART:BUART:tx_state_2\
+            + \BLE_UART:BUART:tx_state_0\ * !\BLE_UART:BUART:tx_state_2\ * 
+              \BLE_UART:BUART:tx_bitclk\
+        );
+        Output = \BLE_UART:BUART:tx_state_0\ (fanout=8)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=\BLE_UART:BUART:tx_status_0\, Mode=(Combinatorial) @ [UDB=(2,1)][LB=0][MC=1]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\ * 
+              \BLE_UART:BUART:tx_fifo_empty\ * \BLE_UART:BUART:tx_state_2\
+        );
+        Output = \BLE_UART:BUART:tx_status_0\ (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=\BLE_UART:BUART:tx_state_1\, Mode=(T-Register) @ [UDB=(2,1)][LB=0][MC=2]
+        Total # of inputs        : 6
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\BLE_UART:Net_9\) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              \BLE_UART:BUART:tx_state_1\ * \BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\ * 
+              \BLE_UART:BUART:tx_state_2\
+            + \BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_2\ * 
+              \BLE_UART:BUART:tx_counter_dp\ * \BLE_UART:BUART:tx_bitclk\
+            + \BLE_UART:BUART:tx_state_0\ * !\BLE_UART:BUART:tx_state_2\ * 
+              \BLE_UART:BUART:tx_bitclk\
+        );
+        Output = \BLE_UART:BUART:tx_state_1\ (fanout=8)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]:     MacroCell: Name=\BLE_UART:BUART:tx_status_2\, Mode=(Combinatorial) @ [UDB=(2,1)][LB=0][MC=3]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\BLE_UART:BUART:tx_fifo_notfull\
+        );
+        Output = \BLE_UART:BUART:tx_status_2\ (fanout=1)
+        Properties               : 
+        {
+        }
+}
+
+LAB@[UDB=(2,1)][LB=1] #macrocells=2, #inputs=7, #pterms=6
+{
+    [McSlotId=0]:     MacroCell: Name=\BLE_UART:BUART:txn\, Mode=(D-Register) @ [UDB=(2,1)][LB=1][MC=0]
+        Total # of inputs        : 7
+        Total # of product terms : 5
+        List of special equations: 
+            Clock  = (\BLE_UART:Net_9\) => Global
+            Clock Enable: True
+        Main Equation            : 5 pterms
+        (
+              \BLE_UART:BUART:txn\ * \BLE_UART:BUART:tx_state_1\ * 
+              !\BLE_UART:BUART:tx_bitclk\
+            + \BLE_UART:BUART:txn\ * \BLE_UART:BUART:tx_state_2\
+            + !\BLE_UART:BUART:tx_state_1\ * \BLE_UART:BUART:tx_state_0\ * 
+              !\BLE_UART:BUART:tx_shift_out\ * !\BLE_UART:BUART:tx_state_2\
+            + !\BLE_UART:BUART:tx_state_1\ * \BLE_UART:BUART:tx_state_0\ * 
+              !\BLE_UART:BUART:tx_state_2\ * !\BLE_UART:BUART:tx_bitclk\
+            + \BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              !\BLE_UART:BUART:tx_shift_out\ * !\BLE_UART:BUART:tx_state_2\ * 
+              !\BLE_UART:BUART:tx_counter_dp\ * \BLE_UART:BUART:tx_bitclk\
+        );
+        Output = \BLE_UART:BUART:txn\ (fanout=2)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=Net_49, Mode=(Combinatorial) @ [UDB=(2,1)][LB=1][MC=1]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\BLE_UART:BUART:txn\
+        );
+        Output = Net_49 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+datapathcell: Name =\BLE_UART:BUART:sTX:TxShifter:u0\
+    PORT MAP (
+        clock => \BLE_UART:Net_9\ ,
+        cs_addr_2 => \BLE_UART:BUART:tx_state_1\ ,
+        cs_addr_1 => \BLE_UART:BUART:tx_state_0\ ,
+        cs_addr_0 => \BLE_UART:BUART:tx_bitclk_enable_pre\ ,
+        so_comb => \BLE_UART:BUART:tx_shift_out\ ,
+        f0_bus_stat_comb => \BLE_UART:BUART:tx_fifo_notfull\ ,
+        f0_blk_stat_comb => \BLE_UART:BUART:tx_fifo_empty\ );
+    Properties:
+    {
+        a0_init = "00000000"
+        a1_init = "00000000"
+        ce0_sync = 1
+        ce1_sync = 1
+        cl0_sync = 1
+        cl1_sync = 1
+        cmsb_sync = 1
+        co_msb_sync = 1
+        cy_dpconfig = "0000000000000000000000000000000000000000000000000000000011000000000000000000000000000010010000000000000000000000000000000000000011111111000000001111111111111111000000000000000001000100111100000000000000001100"
+        d0_init = "00000000"
+        d1_init = "00000000"
+        f0_blk_sync = 1
+        f0_bus_sync = 1
+        f1_blk_sync = 1
+        f1_bus_sync = 1
+        ff0_sync = 1
+        ff1_sync = 1
+        ov_msb_sync = 1
+        so_sync = 1
+        z0_sync = 1
+        z1_sync = 1
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+statusicell: Name =\BLE_UART:BUART:sTX:TxSts\
+    PORT MAP (
+        clock => \BLE_UART:Net_9\ ,
+        status_3 => \BLE_UART:BUART:tx_fifo_notfull\ ,
+        status_2 => \BLE_UART:BUART:tx_status_2\ ,
+        status_1 => \BLE_UART:BUART:tx_fifo_empty\ ,
+        status_0 => \BLE_UART:BUART:tx_status_0\ );
+    Properties:
+    {
+        cy_force_order = 1
+        cy_int_mask = "1111111"
+        cy_md_select = "0000001"
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+UDB [UDB=(2,2)] is empty.
+UDB [UDB=(2,3)] is empty.
+UDB [UDB=(2,4)] is empty.
+UDB [UDB=(2,5)] is empty.
+UDB [UDB=(3,0)] is empty.
+UDB [UDB=(3,1)] contents:
+LAB@[UDB=(3,1)][LB=0] #macrocells=3, #inputs=3, #pterms=3
+{
+    [McSlotId=0]:     MacroCell: Name=Net_127, Mode=(D-Register) @ [UDB=(3,1)][LB=0][MC=0]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_123) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Strum_Debouncer:DEBOUNCER[0]:d_sync_0\ * 
+              !\Strum_Debouncer:DEBOUNCER[0]:d_sync_1\
+        );
+        Output = Net_127 (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=\Strum_Debouncer:DEBOUNCER[0]:d_sync_1\, Mode=(D-Register) @ [UDB=(3,1)][LB=0][MC=1]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_123) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Strum_Debouncer:DEBOUNCER[0]:d_sync_0\
+        );
+        Output = \Strum_Debouncer:DEBOUNCER[0]:d_sync_1\ (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=\Strum_Debouncer:DEBOUNCER[0]:d_sync_0\, Mode=(D-Register) @ [UDB=(3,1)][LB=0][MC=2]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_123) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              Net_117
+        );
+        Output = \Strum_Debouncer:DEBOUNCER[0]:d_sync_0\ (fanout=2)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(3,1)][LB=1] #macrocells=3, #inputs=6, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\BLE_UART:BUART:tx_state_2\, Mode=(T-Register) @ [UDB=(3,1)][LB=1][MC=0]
+        Total # of inputs        : 6
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (\BLE_UART:Net_9\) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\ * 
+              \BLE_UART:BUART:tx_state_2\
+            + \BLE_UART:BUART:tx_state_1\ * \BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\ * 
+              \BLE_UART:BUART:tx_state_2\
+            + \BLE_UART:BUART:tx_state_1\ * \BLE_UART:BUART:tx_state_0\ * 
+              !\BLE_UART:BUART:tx_state_2\ * \BLE_UART:BUART:tx_bitclk\
+            + \BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_2\ * 
+              \BLE_UART:BUART:tx_counter_dp\ * \BLE_UART:BUART:tx_bitclk\
+        );
+        Output = \BLE_UART:BUART:tx_state_2\ (fanout=7)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]:     MacroCell: Name=\BLE_UART:BUART:counter_load_not\, Mode=(Combinatorial) @ [UDB=(3,1)][LB=1][MC=1]
+        Total # of inputs        : 4
+        Total # of product terms : 2
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        !(
+              !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_bitclk_enable_pre\
+            + !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              !\BLE_UART:BUART:tx_state_2\
+        );
+        Output = \BLE_UART:BUART:counter_load_not\ (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=2]:     MacroCell: Name=\BLE_UART:BUART:tx_bitclk\, Mode=(D-Register) @ [UDB=(3,1)][LB=1][MC=2]
+        Total # of inputs        : 4
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (\BLE_UART:Net_9\) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        !(
+              !\BLE_UART:BUART:tx_state_1\ * !\BLE_UART:BUART:tx_state_0\ * 
+              \BLE_UART:BUART:tx_state_2\
+            + !\BLE_UART:BUART:tx_bitclk_enable_pre\
+        );
+        Output = \BLE_UART:BUART:tx_bitclk\ (fanout=4)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=3]: (empty)
+}
+
+datapathcell: Name =\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\
+    PORT MAP (
+        clock => \BLE_UART:Net_9\ ,
+        cs_addr_0 => \BLE_UART:BUART:counter_load_not\ ,
+        ce0_reg => \BLE_UART:BUART:tx_bitclk_enable_pre\ ,
+        ce1_reg => \BLE_UART:BUART:tx_counter_dp\ );
+    Properties:
+    {
+        a0_init = "00000000"
+        a1_init = "00000000"
+        ce0_sync = 1
+        ce1_sync = 1
+        cl0_sync = 1
+        cl1_sync = 1
+        cmsb_sync = 1
+        co_msb_sync = 1
+        cy_dpconfig = "1010100001000000001000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111000000001111111100000111001000000100000000000101111100000000000000001000"
+        d0_init = "00000000"
+        d1_init = "00000000"
+        f0_blk_sync = 1
+        f0_bus_sync = 1
+        f1_blk_sync = 1
+        f1_bus_sync = 1
+        ff0_sync = 1
+        ff1_sync = 1
+        ov_msb_sync = 1
+        so_sync = 1
+        z0_sync = 1
+        z1_sync = 1
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+UDB [UDB=(3,2)] is empty.
+UDB [UDB=(3,3)] is empty.
+UDB [UDB=(3,4)] is empty.
+UDB [UDB=(3,5)] is empty.
+Intr container @ [IntrContainer=(0)]: 
+  Intr@ [IntrContainer=(0)][IntrId=(0)] 
+    interrupt: Name =Strum_isr
+        PORT MAP (
+            interrupt => Net_127 );
+        Properties:
+        {
+            int_type = "00"
+        }
+Drq container @ [DrqContainer=(0)]: empty
+Port 0 contains the following IO cells:
+[IoId=0]: 
+Pin : Name = Strum(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: RES_PULL_DOWN
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL, ROUTABLE
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => Strum(0)__PA ,
+        fb => Net_117 ,
+        annotation => Net_19 ,
+        pad => Strum(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=3]: 
+Pin : Name = Btn_1(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: RES_PULL_DOWN
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => Btn_1(0)__PA ,
+        annotation => Net_27 ,
+        pad => Btn_1(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=4]: 
+Pin : Name = Btn_2(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: RES_PULL_DOWN
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => Btn_2(0)__PA ,
+        annotation => Net_25 ,
+        pad => Btn_2(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=5]: 
+Pin : Name = Btn_3(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: RES_PULL_DOWN
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => Btn_3(0)__PA ,
+        annotation => Net_29 ,
+        pad => Btn_3(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=6]: 
+Pin : Name = Btn_4(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: RES_PULL_DOWN
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => Btn_4(0)__PA ,
+        annotation => Net_31 ,
+        pad => Btn_4(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=7]: 
+Pin : Name = Btn_5(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: RES_PULL_DOWN
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => Btn_5(0)__PA ,
+        annotation => Net_33 ,
+        pad => Btn_5(0)_PAD );
+    Properties:
+    {
+    }
+
+Port 1 is empty
+Port 2 is empty
+Port 3 is empty
+Port 12 is empty
+Port 15 contains the following IO cells:
+[IoId=0]: 
+Pin : Name = BLE_Tx(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL, ROUTABLE
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => BLE_Tx(0)__PA ,
+        input => Net_49 ,
+        pad => BLE_Tx(0)_PAD );
+    Properties:
+    {
+    }
+
+CAN 2.0b group 0: empty
+Cache group 0: empty
+CapSense group 0: empty
+Clock group 0: 
+    Clock Block @ F(Clock,0): 
+    clockblockcell: Name =ClockBlock
+        PORT MAP (
+            imo => ClockBlock_IMO ,
+            pllout => ClockBlock_PLL_OUT ,
+            ilo => ClockBlock_ILO ,
+            clk_100k => ClockBlock_100k ,
+            clk_1k => ClockBlock_1k ,
+            clk_32k => ClockBlock_32k ,
+            xtal => ClockBlock_XTAL ,
+            clk_32k_xtal => ClockBlock_XTAL_32KHZ ,
+            clk_sync => ClockBlock_MASTER_CLK ,
+            clk_bus_glb => ClockBlock_BUS_CLK ,
+            clk_bus => ClockBlock_BUS_CLK_local ,
+            dclk_glb_0 => \BLE_UART:Net_9\ ,
+            dclk_0 => \BLE_UART:Net_9_local\ ,
+            dclk_glb_1 => Net_123 ,
+            dclk_1 => Net_123_local );
+        Properties:
+        {
+        }
+Comparator group 0: empty
+Digital Filter Block group 0: empty
+Delta-Sigma ADC group 0: empty
+Decimator group 0: empty
+EMIF group 0: empty
+I2C group 0: empty
+Segment LCD group 0: empty
+LVD group 0: empty
+PM group 0: empty
+Analog (SC/CT) Blocks group 0: empty
+SPC group 0: empty
+Timer group 0: empty
+USB group 0: empty
+VIDAC group 0: empty
+Opamp group 0: empty
+CapSense Buffers group 0: empty
+Vref group 0: empty
+LPF group 0: empty
+SAR ADC group 0: empty
+</CYPRESSTAG>
+<CYPRESSTAG name="Port Configuration Details">
+
+------------------------------------------------------------
+Port Configuration report
+------------------------------------------------------------
+     |     |       | Interrupt |                  |           | 
+Port | Pin | Fixed |      Type |       Drive Mode |      Name | Connections
+-----+-----+-------+-----------+------------------+-----------+------------
+   0 |   0 |     * |      NONE |    RES_PULL_DOWN |  Strum(0) | FB(Net_117)
+     |   3 |     * |      NONE |    RES_PULL_DOWN |  Btn_1(0) | 
+     |   4 |     * |      NONE |    RES_PULL_DOWN |  Btn_2(0) | 
+     |   5 |     * |      NONE |    RES_PULL_DOWN |  Btn_3(0) | 
+     |   6 |     * |      NONE |    RES_PULL_DOWN |  Btn_4(0) | 
+     |   7 |     * |      NONE |    RES_PULL_DOWN |  Btn_5(0) | 
+-----+-----+-------+-----------+------------------+-----------+------------
+  15 |   0 |     * |      NONE |         CMOS_OUT | BLE_Tx(0) | In(Net_49)
+---------------------------------------------------------------------------
+</CYPRESSTAG>
+</CYPRESSTAG>
+</CYPRESSTAG>
+Digital component placer commit/Report: Elapsed time ==> 0s.000ms
+Digital Placement phase: Elapsed time ==> 0s.785ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Routing">
+Routing successful.
+Digital Routing phase: Elapsed time ==> 0s.951ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream and API generation">
+Bitstream and API generation phase: Elapsed time ==> 0s.125ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream verification">
+Bitstream verification phase: Elapsed time ==> 0s.015ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Static timing analysis">
+Timing report is in controller_timing.html.
+Static timing analysis phase: Elapsed time ==> 0s.243ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Data reporting">
+Data reporting phase: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Database update...">
+Design database save phase: Elapsed time ==> 0s.131ms
+</CYPRESSTAG>
+cydsfit: Elapsed time ==> 2s.662ms
+</CYPRESSTAG>
+Fitter phase: Elapsed time ==> 2s.694ms
+API generation phase: Elapsed time ==> 0s.750ms
+Dependency generation phase: Elapsed time ==> 0s.000ms
+Cleanup phase: Elapsed time ==> 0s.000ms

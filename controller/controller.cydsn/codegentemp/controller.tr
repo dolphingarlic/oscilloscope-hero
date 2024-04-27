@@ -1,0 +1,1771 @@
+##################################################################### 
+                    Table of Contents
+===================================================================== 
+	1::Clock Frequency Summary
+	2::Clock Relationship Summary
+	3::Datasheet Report
+		3.1::Setup to Clock
+		3.2::Clock to Out
+		3.3::Pad to Pad
+	4::Path Details for Clock Frequency Summary
+		4.1::Critical Path Report for BLE_UART_IntClock
+		4.2::Critical Path Report for Debouncer_Clock
+	5::Path Details for Clock Relationship Summary
+		5.1::Critical Path Report for (BLE_UART_IntClock:R vs. BLE_UART_IntClock:R)
+		5.2::Critical Path Report for (Debouncer_Clock:R vs. Debouncer_Clock:R)
+===================================================================== 
+                    End of Table of Contents
+##################################################################### 
+
+##################################################################### 
+                    1::Clock Frequency Summary
+===================================================================== 
+Number of clocks: 7
+Clock: BLE_UART_IntClock  | Frequency: 59.17 MHz   | Target: 0.08 MHz   | 
+Clock: CyBUS_CLK          | N/A                    | Target: 24.00 MHz  | 
+Clock: CyILO              | N/A                    | Target: 0.00 MHz   | 
+Clock: CyIMO              | N/A                    | Target: 3.00 MHz   | 
+Clock: CyMASTER_CLK       | N/A                    | Target: 24.00 MHz  | 
+Clock: CyPLL_OUT          | N/A                    | Target: 24.00 MHz  | 
+Clock: Debouncer_Clock    | Frequency: 141.28 MHz  | Target: 0.00 MHz   | 
+
+ =====================================================================
+                    End of Clock Frequency Summary
+ #####################################################################
+
+
+ #####################################################################
+                    2::Clock Relationship Summary
+ =====================================================================
+
+Launch Clock       Capture Clock      Constraint(R-R)  Slack(R-R)   Constraint(R-F)  Slack(R-F)  Constraint(F-F)  Slack(F-F)  Constraint(F-R)  Slack(F-R)  
+-----------------  -----------------  ---------------  -----------  ---------------  ----------  ---------------  ----------  ---------------  ----------  
+BLE_UART_IntClock  BLE_UART_IntClock  1.30417e+007     13024767     N/A              N/A         N/A              N/A         N/A              N/A         
+Debouncer_Clock    Debouncer_Clock    1e+010           -2147483648  N/A              N/A         N/A              N/A         N/A              N/A         
+
+ =====================================================================
+                    End of Clock Relationship Summary
+ #####################################################################
+
+
+ #####################################################################
+                    3::Datasheet Report
+
+All values are in Picoseconds
+ =====================================================================
+
+3.1::Setup to Clock                     
+-------------------                     
+
+Port Name     Setup to Clk  Clock Name:Phase   
+------------  ------------  -----------------  
+Strum(0)_PAD  18174         Debouncer_Clock:R  
+
+
+                       3.2::Clock to Out
+                       -----------------
+
+Port Name      Clock to Out  Clock Name:Phase     
+-------------  ------------  -------------------  
+BLE_Tx(0)_PAD  27334         BLE_UART_IntClock:R  
+
+
+                         3.3::Pad to Pad
+                         ---------------
+
+Port Name (Source)  Port Name (Destination)  Delay  
+------------------  -----------------------  -----  
+
+===================================================================== 
+                    End of Datasheet Report
+##################################################################### 
+##################################################################### 
+                    4::Path Details for Clock Frequency Summary
+===================================================================== 
+4.1::Critical Path Report for BLE_UART_IntClock
+***********************************************
+Clock: BLE_UART_IntClock
+Frequency: 59.17 MHz | Target: 0.08 MHz
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_1\/q
+Path End       : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/cs_addr_0
+Capture Clock  : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock
+Path slack     : 13024767p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -6190
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13035477
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       10710
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           10710
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+Data path
+pin name                                           model name     delay     AT     slack  edge  Fanout
+-------------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_1\/q                      macrocell6      1250   1250  13024767  RISE       1
+\BLE_UART:BUART:counter_load_not\/main_0           macrocell2      3820   5070  13024767  RISE       1
+\BLE_UART:BUART:counter_load_not\/q                macrocell2      3350   8420  13024767  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/cs_addr_0  datapathcell2   2289  10710  13024767  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock              datapathcell2       0      0  RISE       1
+
+
+===================================================================== 
+4.2::Critical Path Report for Debouncer_Clock
+*********************************************
+Clock: Debouncer_Clock
+Frequency: 141.28 MHz | Target: 0.00 MHz
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \Strum_Debouncer:DEBOUNCER[0]:d_sync_1\/q
+Path End       : Net_127/main_1
+Capture Clock  : Net_127/clock_0
+Path slack     : 9999992922p
+
+Capture Clock Arrival Time                                               0
++ Clock path delay                                                       0
++ Cycle adjust (Debouncer_Clock:R#1 vs. Debouncer_Clock:R#2)   10000000000
+- Setup time                                                         -3510
+------------------------------------------------------------   ----------- 
+End-of-path required time (ps)                                  9999996490
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3568
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3568
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_1                                      clockblockcell      0      0  RISE       1
+\Strum_Debouncer:DEBOUNCER[0]:d_sync_1\/clock_0            macrocell11         0      0  RISE       1
+
+Data path
+pin name                                   model name   delay     AT       slack  edge  Fanout
+-----------------------------------------  -----------  -----  -----  ----------  ----  ------
+\Strum_Debouncer:DEBOUNCER[0]:d_sync_1\/q  macrocell11   1250   1250  9999992922  RISE       1
+Net_127/main_1                             macrocell12   2318   3568  9999992922  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_1                                      clockblockcell      0      0  RISE       1
+Net_127/clock_0                                            macrocell12         0      0  RISE       1
+
+
+
+===================================================================== 
+                    End of Path Details for Clock Frequency Summary
+##################################################################### 
+
+
+##################################################################### 
+                    5::Path Details for Clock Relationship Summary
+===================================================================== 
+
+5.1::Critical Path Report for (BLE_UART_IntClock:R vs. BLE_UART_IntClock:R)
+***************************************************************************
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_1\/q
+Path End       : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/cs_addr_0
+Capture Clock  : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock
+Path slack     : 13024767p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -6190
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13035477
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       10710
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           10710
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+Data path
+pin name                                           model name     delay     AT     slack  edge  Fanout
+-------------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_1\/q                      macrocell6      1250   1250  13024767  RISE       1
+\BLE_UART:BUART:counter_load_not\/main_0           macrocell2      3820   5070  13024767  RISE       1
+\BLE_UART:BUART:counter_load_not\/q                macrocell2      3350   8420  13024767  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/cs_addr_0  datapathcell2   2289  10710  13024767  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock              datapathcell2       0      0  RISE       1
+
+
+5.2::Critical Path Report for (Debouncer_Clock:R vs. Debouncer_Clock:R)
+***********************************************************************
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \Strum_Debouncer:DEBOUNCER[0]:d_sync_1\/q
+Path End       : Net_127/main_1
+Capture Clock  : Net_127/clock_0
+Path slack     : 9999992922p
+
+Capture Clock Arrival Time                                               0
++ Clock path delay                                                       0
++ Cycle adjust (Debouncer_Clock:R#1 vs. Debouncer_Clock:R#2)   10000000000
+- Setup time                                                         -3510
+------------------------------------------------------------   ----------- 
+End-of-path required time (ps)                                  9999996490
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3568
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3568
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_1                                      clockblockcell      0      0  RISE       1
+\Strum_Debouncer:DEBOUNCER[0]:d_sync_1\/clock_0            macrocell11         0      0  RISE       1
+
+Data path
+pin name                                   model name   delay     AT       slack  edge  Fanout
+-----------------------------------------  -----------  -----  -----  ----------  ----  ------
+\Strum_Debouncer:DEBOUNCER[0]:d_sync_1\/q  macrocell11   1250   1250  9999992922  RISE       1
+Net_127/main_1                             macrocell12   2318   3568  9999992922  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_1                                      clockblockcell      0      0  RISE       1
+Net_127/clock_0                                            macrocell12         0      0  RISE       1
+
+
+
+===================================================================== 
+                    End of Path Details for Clock Relationship Summary
+##################################################################### 
+
+##################################################################### 
+                    Detailed Report for all timing paths 
+===================================================================== 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_1\/q
+Path End       : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/cs_addr_0
+Capture Clock  : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock
+Path slack     : 13024767p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -6190
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13035477
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       10710
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           10710
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+Data path
+pin name                                           model name     delay     AT     slack  edge  Fanout
+-------------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_1\/q                      macrocell6      1250   1250  13024767  RISE       1
+\BLE_UART:BUART:counter_load_not\/main_0           macrocell2      3820   5070  13024767  RISE       1
+\BLE_UART:BUART:counter_load_not\/q                macrocell2      3350   8420  13024767  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/cs_addr_0  datapathcell2   2289  10710  13024767  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock              datapathcell2       0      0  RISE       1
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:sTX:TxShifter:u0\/f0_blk_stat_comb
+Path End       : \BLE_UART:BUART:sTX:TxSts\/status_0
+Capture Clock  : \BLE_UART:BUART:sTX:TxSts\/clock
+Path slack     : 13028259p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                           -500
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13041167
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       12908
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           12908
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:TxShifter:u0\/clock                    datapathcell1       0      0  RISE       1
+
+Data path
+pin name                                            model name     delay     AT     slack  edge  Fanout
+--------------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:sTX:TxShifter:u0\/f0_blk_stat_comb  datapathcell1   3580   3580  13028259  RISE       1
+\BLE_UART:BUART:tx_status_0\/main_3                 macrocell3      3664   7244  13028259  RISE       1
+\BLE_UART:BUART:tx_status_0\/q                      macrocell3      3350  10594  13028259  RISE       1
+\BLE_UART:BUART:sTX:TxSts\/status_0                 statusicell1    2314  12908  13028259  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:TxSts\/clock                           statusicell1        0      0  RISE       1
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_1\/q
+Path End       : \BLE_UART:BUART:sTX:TxShifter:u0\/cs_addr_2
+Capture Clock  : \BLE_UART:BUART:sTX:TxShifter:u0\/clock
+Path slack     : 13029595p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -6010
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13035657
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       6062
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           6062
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+Data path
+pin name                                     model name     delay     AT     slack  edge  Fanout
+-------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_1\/q                macrocell6      1250   1250  13024767  RISE       1
+\BLE_UART:BUART:sTX:TxShifter:u0\/cs_addr_2  datapathcell1   4812   6062  13029595  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:TxShifter:u0\/clock                    datapathcell1       0      0  RISE       1
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:sTX:TxShifter:u0\/f0_blk_stat_comb
+Path End       : \BLE_UART:BUART:tx_state_0\/main_3
+Capture Clock  : \BLE_UART:BUART:tx_state_0\/clock_0
+Path slack     : 13030913p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       7244
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           7244
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:TxShifter:u0\/clock                    datapathcell1       0      0  RISE       1
+
+Data path
+pin name                                            model name     delay     AT     slack  edge  Fanout
+--------------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:sTX:TxShifter:u0\/f0_blk_stat_comb  datapathcell1   3580   3580  13028259  RISE       1
+\BLE_UART:BUART:tx_state_0\/main_3                  macrocell7      3664   7244  13030913  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_0\/clock_0                        macrocell7          0      0  RISE       1
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_0\/q
+Path End       : \BLE_UART:BUART:sTX:TxShifter:u0\/cs_addr_1
+Capture Clock  : \BLE_UART:BUART:sTX:TxShifter:u0\/clock
+Path slack     : 13031036p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -6010
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13035657
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4621
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4621
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_0\/clock_0                        macrocell7          0      0  RISE       1
+
+Data path
+pin name                                     model name     delay     AT     slack  edge  Fanout
+-------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_0\/q                macrocell7      1250   1250  13025491  RISE       1
+\BLE_UART:BUART:sTX:TxShifter:u0\/cs_addr_1  datapathcell1   3371   4621  13031036  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:TxShifter:u0\/clock                    datapathcell1       0      0  RISE       1
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:sTX:TxShifter:u0\/so_comb
+Path End       : \BLE_UART:BUART:txn\/main_3
+Capture Clock  : \BLE_UART:BUART:txn\/clock_0
+Path slack     : 13031497p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       6660
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           6660
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:TxShifter:u0\/clock                    datapathcell1       0      0  RISE       1
+
+Data path
+pin name                                   model name     delay     AT     slack  edge  Fanout
+-----------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:sTX:TxShifter:u0\/so_comb  datapathcell1   4370   4370  13031497  RISE       1
+\BLE_UART:BUART:txn\/main_3                macrocell5      2290   6660  13031497  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:txn\/clock_0                               macrocell5          0      0  RISE       1
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_1\/q
+Path End       : \BLE_UART:BUART:tx_state_1\/main_0
+Capture Clock  : \BLE_UART:BUART:tx_state_1\/clock_0
+Path slack     : 13032664p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5492
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5492
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+Data path
+pin name                            model name   delay     AT     slack  edge  Fanout
+----------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_1\/q       macrocell6    1250   1250  13024767  RISE       1
+\BLE_UART:BUART:tx_state_1\/main_0  macrocell6    4242   5492  13032664  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_1\/q
+Path End       : \BLE_UART:BUART:tx_state_0\/main_0
+Capture Clock  : \BLE_UART:BUART:tx_state_0\/clock_0
+Path slack     : 13032664p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5492
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5492
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+Data path
+pin name                            model name   delay     AT     slack  edge  Fanout
+----------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_1\/q       macrocell6    1250   1250  13024767  RISE       1
+\BLE_UART:BUART:tx_state_0\/main_0  macrocell7    4242   5492  13032664  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_0\/clock_0                        macrocell7          0      0  RISE       1
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_1\/q
+Path End       : \BLE_UART:BUART:txn\/main_1
+Capture Clock  : \BLE_UART:BUART:txn\/clock_0
+Path slack     : 13033084p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5073
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5073
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+Data path
+pin name                       model name   delay     AT     slack  edge  Fanout
+-----------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_1\/q  macrocell6    1250   1250  13024767  RISE       1
+\BLE_UART:BUART:txn\/main_1    macrocell5    3823   5073  13033084  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:txn\/clock_0                               macrocell5          0      0  RISE       1
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_1\/q
+Path End       : \BLE_UART:BUART:tx_state_2\/main_0
+Capture Clock  : \BLE_UART:BUART:tx_state_2\/clock_0
+Path slack     : 13033086p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5070
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5070
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+Data path
+pin name                            model name   delay     AT     slack  edge  Fanout
+----------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_1\/q       macrocell6    1250   1250  13024767  RISE       1
+\BLE_UART:BUART:tx_state_2\/main_0  macrocell8    3820   5070  13033086  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_2\/clock_0                        macrocell8          0      0  RISE       1
+
+
+
+++++ Path 11 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_1\/q
+Path End       : \BLE_UART:BUART:tx_bitclk\/main_0
+Capture Clock  : \BLE_UART:BUART:tx_bitclk\/clock_0
+Path slack     : 13033086p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       5070
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           5070
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+Data path
+pin name                           model name   delay     AT     slack  edge  Fanout
+---------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_1\/q      macrocell6    1250   1250  13024767  RISE       1
+\BLE_UART:BUART:tx_bitclk\/main_0  macrocell9    3820   5070  13033086  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_bitclk\/clock_0                         macrocell9          0      0  RISE       1
+
+
+
+++++ Path 12 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce0_reg
+Path End       : \BLE_UART:BUART:sTX:TxShifter:u0\/cs_addr_0
+Capture Clock  : \BLE_UART:BUART:sTX:TxShifter:u0\/clock
+Path slack     : 13033176p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -6010
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13035657
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       2480
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           2480
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock              datapathcell2       0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT     slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce0_reg  datapathcell2    190    190  13026877  RISE       1
+\BLE_UART:BUART:sTX:TxShifter:u0\/cs_addr_0      datapathcell1   2290   2480  13033176  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:TxShifter:u0\/clock                    datapathcell1       0      0  RISE       1
+
+
+
+++++ Path 13 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_0\/q
+Path End       : \BLE_UART:BUART:txn\/main_2
+Capture Clock  : \BLE_UART:BUART:txn\/clock_0
+Path slack     : 13033539p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4617
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4617
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_0\/clock_0                        macrocell7          0      0  RISE       1
+
+Data path
+pin name                       model name   delay     AT     slack  edge  Fanout
+-----------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_0\/q  macrocell7    1250   1250  13025491  RISE       1
+\BLE_UART:BUART:txn\/main_2    macrocell5    3367   4617  13033539  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:txn\/clock_0                               macrocell5          0      0  RISE       1
+
+
+
+++++ Path 14 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_0\/q
+Path End       : \BLE_UART:BUART:tx_state_1\/main_1
+Capture Clock  : \BLE_UART:BUART:tx_state_1\/clock_0
+Path slack     : 13033552p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4605
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4605
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_0\/clock_0                        macrocell7          0      0  RISE       1
+
+Data path
+pin name                            model name   delay     AT     slack  edge  Fanout
+----------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_0\/q       macrocell7    1250   1250  13025491  RISE       1
+\BLE_UART:BUART:tx_state_1\/main_1  macrocell6    3355   4605  13033552  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+
+
+++++ Path 15 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_0\/q
+Path End       : \BLE_UART:BUART:tx_state_0\/main_1
+Capture Clock  : \BLE_UART:BUART:tx_state_0\/clock_0
+Path slack     : 13033552p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4605
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4605
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_0\/clock_0                        macrocell7          0      0  RISE       1
+
+Data path
+pin name                            model name   delay     AT     slack  edge  Fanout
+----------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_0\/q       macrocell7    1250   1250  13025491  RISE       1
+\BLE_UART:BUART:tx_state_0\/main_1  macrocell7    3355   4605  13033552  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_0\/clock_0                        macrocell7          0      0  RISE       1
+
+
+
+++++ Path 16 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_0\/q
+Path End       : \BLE_UART:BUART:tx_state_2\/main_1
+Capture Clock  : \BLE_UART:BUART:tx_state_2\/clock_0
+Path slack     : 13033810p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4347
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4347
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_0\/clock_0                        macrocell7          0      0  RISE       1
+
+Data path
+pin name                            model name   delay     AT     slack  edge  Fanout
+----------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_0\/q       macrocell7    1250   1250  13025491  RISE       1
+\BLE_UART:BUART:tx_state_2\/main_1  macrocell8    3097   4347  13033810  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_2\/clock_0                        macrocell8          0      0  RISE       1
+
+
+
+++++ Path 17 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_0\/q
+Path End       : \BLE_UART:BUART:tx_bitclk\/main_1
+Capture Clock  : \BLE_UART:BUART:tx_bitclk\/clock_0
+Path slack     : 13033810p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4347
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4347
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_0\/clock_0                        macrocell7          0      0  RISE       1
+
+Data path
+pin name                           model name   delay     AT     slack  edge  Fanout
+---------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_0\/q      macrocell7    1250   1250  13025491  RISE       1
+\BLE_UART:BUART:tx_bitclk\/main_1  macrocell9    3097   4347  13033810  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_bitclk\/clock_0                         macrocell9          0      0  RISE       1
+
+
+
+++++ Path 18 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_bitclk\/q
+Path End       : \BLE_UART:BUART:tx_state_1\/main_5
+Capture Clock  : \BLE_UART:BUART:tx_state_1\/clock_0
+Path slack     : 13033831p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4325
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4325
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_bitclk\/clock_0                         macrocell9          0      0  RISE       1
+
+Data path
+pin name                            model name   delay     AT     slack  edge  Fanout
+----------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_bitclk\/q        macrocell9    1250   1250  13033831  RISE       1
+\BLE_UART:BUART:tx_state_1\/main_5  macrocell6    3075   4325  13033831  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+
+
+++++ Path 19 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_bitclk\/q
+Path End       : \BLE_UART:BUART:tx_state_0\/main_5
+Capture Clock  : \BLE_UART:BUART:tx_state_0\/clock_0
+Path slack     : 13033831p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4325
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4325
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_bitclk\/clock_0                         macrocell9          0      0  RISE       1
+
+Data path
+pin name                            model name   delay     AT     slack  edge  Fanout
+----------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_bitclk\/q        macrocell9    1250   1250  13033831  RISE       1
+\BLE_UART:BUART:tx_state_0\/main_5  macrocell7    3075   4325  13033831  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_0\/clock_0                        macrocell7          0      0  RISE       1
+
+
+
+++++ Path 20 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_bitclk\/q
+Path End       : \BLE_UART:BUART:txn\/main_6
+Capture Clock  : \BLE_UART:BUART:txn\/clock_0
+Path slack     : 13033834p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4323
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4323
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_bitclk\/clock_0                         macrocell9          0      0  RISE       1
+
+Data path
+pin name                      model name   delay     AT     slack  edge  Fanout
+----------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_bitclk\/q  macrocell9    1250   1250  13033831  RISE       1
+\BLE_UART:BUART:txn\/main_6   macrocell5    3073   4323  13033834  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:txn\/clock_0                               macrocell5          0      0  RISE       1
+
+
+
+++++ Path 21 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_2\/q
+Path End       : \BLE_UART:BUART:tx_state_1\/main_3
+Capture Clock  : \BLE_UART:BUART:tx_state_1\/clock_0
+Path slack     : 13033845p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4311
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4311
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_2\/clock_0                        macrocell8          0      0  RISE       1
+
+Data path
+pin name                            model name   delay     AT     slack  edge  Fanout
+----------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_2\/q       macrocell8    1250   1250  13025529  RISE       1
+\BLE_UART:BUART:tx_state_1\/main_3  macrocell6    3061   4311  13033845  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+
+
+++++ Path 22 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_2\/q
+Path End       : \BLE_UART:BUART:tx_state_0\/main_4
+Capture Clock  : \BLE_UART:BUART:tx_state_0\/clock_0
+Path slack     : 13033845p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4311
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4311
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_2\/clock_0                        macrocell8          0      0  RISE       1
+
+Data path
+pin name                            model name   delay     AT     slack  edge  Fanout
+----------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_2\/q       macrocell8    1250   1250  13025529  RISE       1
+\BLE_UART:BUART:tx_state_0\/main_4  macrocell7    3061   4311  13033845  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_0\/clock_0                        macrocell7          0      0  RISE       1
+
+
+
+++++ Path 23 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_2\/q
+Path End       : \BLE_UART:BUART:tx_state_2\/main_3
+Capture Clock  : \BLE_UART:BUART:tx_state_2\/clock_0
+Path slack     : 13033848p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4308
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4308
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_2\/clock_0                        macrocell8          0      0  RISE       1
+
+Data path
+pin name                            model name   delay     AT     slack  edge  Fanout
+----------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_2\/q       macrocell8    1250   1250  13025529  RISE       1
+\BLE_UART:BUART:tx_state_2\/main_3  macrocell8    3058   4308  13033848  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_2\/clock_0                        macrocell8          0      0  RISE       1
+
+
+
+++++ Path 24 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_2\/q
+Path End       : \BLE_UART:BUART:tx_bitclk\/main_3
+Capture Clock  : \BLE_UART:BUART:tx_bitclk\/clock_0
+Path slack     : 13033848p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4308
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4308
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_2\/clock_0                        macrocell8          0      0  RISE       1
+
+Data path
+pin name                           model name   delay     AT     slack  edge  Fanout
+---------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_2\/q      macrocell8    1250   1250  13025529  RISE       1
+\BLE_UART:BUART:tx_bitclk\/main_3  macrocell9    3058   4308  13033848  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_bitclk\/clock_0                         macrocell9          0      0  RISE       1
+
+
+
+++++ Path 25 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_state_2\/q
+Path End       : \BLE_UART:BUART:txn\/main_4
+Capture Clock  : \BLE_UART:BUART:txn\/clock_0
+Path slack     : 13033971p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4186
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4186
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_2\/clock_0                        macrocell8          0      0  RISE       1
+
+Data path
+pin name                       model name   delay     AT     slack  edge  Fanout
+-----------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_state_2\/q  macrocell8    1250   1250  13025529  RISE       1
+\BLE_UART:BUART:txn\/main_4    macrocell5    2936   4186  13033971  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:txn\/clock_0                               macrocell5          0      0  RISE       1
+
+
+
+++++ Path 26 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:tx_bitclk\/q
+Path End       : \BLE_UART:BUART:tx_state_2\/main_5
+Capture Clock  : \BLE_UART:BUART:tx_state_2\/clock_0
+Path slack     : 13033977p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       4179
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           4179
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_bitclk\/clock_0                         macrocell9          0      0  RISE       1
+
+Data path
+pin name                            model name   delay     AT     slack  edge  Fanout
+----------------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:tx_bitclk\/q        macrocell9    1250   1250  13033831  RISE       1
+\BLE_UART:BUART:tx_state_2\/main_5  macrocell8    2929   4179  13033977  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_2\/clock_0                        macrocell8          0      0  RISE       1
+
+
+
+++++ Path 27 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:txn\/q
+Path End       : \BLE_UART:BUART:txn\/main_0
+Capture Clock  : \BLE_UART:BUART:txn\/clock_0
+Path slack     : 13034612p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3545
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3545
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:txn\/clock_0                               macrocell5          0      0  RISE       1
+
+Data path
+pin name                     model name   delay     AT     slack  edge  Fanout
+---------------------------  -----------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:txn\/q       macrocell5    1250   1250  13034612  RISE       1
+\BLE_UART:BUART:txn\/main_0  macrocell5    2295   3545  13034612  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:txn\/clock_0                               macrocell5          0      0  RISE       1
+
+
+
+++++ Path 28 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce1_reg
+Path End       : \BLE_UART:BUART:txn\/main_5
+Capture Clock  : \BLE_UART:BUART:txn\/clock_0
+Path slack     : 13034885p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3272
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3272
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock              datapathcell2       0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT     slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce1_reg  datapathcell2    190    190  13034885  RISE       1
+\BLE_UART:BUART:txn\/main_5                      macrocell5      3082   3272  13034885  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:txn\/clock_0                               macrocell5          0      0  RISE       1
+
+
+
+++++ Path 29 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce1_reg
+Path End       : \BLE_UART:BUART:tx_state_2\/main_4
+Capture Clock  : \BLE_UART:BUART:tx_state_2\/clock_0
+Path slack     : 13034888p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3268
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3268
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock              datapathcell2       0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT     slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce1_reg  datapathcell2    190    190  13034885  RISE       1
+\BLE_UART:BUART:tx_state_2\/main_4               macrocell8      3078   3268  13034888  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_2\/clock_0                        macrocell8          0      0  RISE       1
+
+
+
+++++ Path 30 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce1_reg
+Path End       : \BLE_UART:BUART:tx_state_1\/main_4
+Capture Clock  : \BLE_UART:BUART:tx_state_1\/clock_0
+Path slack     : 13035004p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3152
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3152
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock              datapathcell2       0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT     slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce1_reg  datapathcell2    190    190  13034885  RISE       1
+\BLE_UART:BUART:tx_state_1\/main_4               macrocell6      2962   3152  13035004  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+
+
+++++ Path 31 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce0_reg
+Path End       : \BLE_UART:BUART:tx_state_1\/main_2
+Capture Clock  : \BLE_UART:BUART:tx_state_1\/clock_0
+Path slack     : 13035163p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       2994
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           2994
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock              datapathcell2       0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT     slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce0_reg  datapathcell2    190    190  13026877  RISE       1
+\BLE_UART:BUART:tx_state_1\/main_2               macrocell6      2804   2994  13035163  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_1\/clock_0                        macrocell6          0      0  RISE       1
+
+
+
+++++ Path 32 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce0_reg
+Path End       : \BLE_UART:BUART:tx_state_0\/main_2
+Capture Clock  : \BLE_UART:BUART:tx_state_0\/clock_0
+Path slack     : 13035163p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       2994
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           2994
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock              datapathcell2       0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT     slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce0_reg  datapathcell2    190    190  13026877  RISE       1
+\BLE_UART:BUART:tx_state_0\/main_2               macrocell7      2804   2994  13035163  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_0\/clock_0                        macrocell7          0      0  RISE       1
+
+
+
+++++ Path 33 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce0_reg
+Path End       : \BLE_UART:BUART:tx_state_2\/main_2
+Capture Clock  : \BLE_UART:BUART:tx_state_2\/clock_0
+Path slack     : 13035196p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       2961
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           2961
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock              datapathcell2       0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT     slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce0_reg  datapathcell2    190    190  13026877  RISE       1
+\BLE_UART:BUART:tx_state_2\/main_2               macrocell8      2771   2961  13035196  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_state_2\/clock_0                        macrocell8          0      0  RISE       1
+
+
+
+++++ Path 34 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce0_reg
+Path End       : \BLE_UART:BUART:tx_bitclk\/main_2
+Capture Clock  : \BLE_UART:BUART:tx_bitclk\/clock_0
+Path slack     : 13035196p
+
+Capture Clock Arrival Time                                                0
++ Clock path delay                                                        0
++ Cycle adjust (BLE_UART_IntClock:R#1 vs. BLE_UART_IntClock:R#2)   13041667
+- Setup time                                                          -3510
+----------------------------------------------------------------   -------- 
+End-of-path required time (ps)                                     13038157
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       2961
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           2961
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/clock              datapathcell2       0      0  RISE       1
+
+Data path
+pin name                                         model name     delay     AT     slack  edge  Fanout
+-----------------------------------------------  -------------  -----  -----  --------  ----  ------
+\BLE_UART:BUART:sTX:sCLOCK:TxBitClkGen\/ce0_reg  datapathcell2    190    190  13026877  RISE       1
+\BLE_UART:BUART:tx_bitclk\/main_2                macrocell9      2771   2961  13035196  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
+\BLE_UART:BUART:tx_bitclk\/clock_0                         macrocell9          0      0  RISE       1
+
+
+
+++++ Path 35 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \Strum_Debouncer:DEBOUNCER[0]:d_sync_1\/q
+Path End       : Net_127/main_1
+Capture Clock  : Net_127/clock_0
+Path slack     : 9999992922p
+
+Capture Clock Arrival Time                                               0
++ Clock path delay                                                       0
++ Cycle adjust (Debouncer_Clock:R#1 vs. Debouncer_Clock:R#2)   10000000000
+- Setup time                                                         -3510
+------------------------------------------------------------   ----------- 
+End-of-path required time (ps)                                  9999996490
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3568
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3568
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_1                                      clockblockcell      0      0  RISE       1
+\Strum_Debouncer:DEBOUNCER[0]:d_sync_1\/clock_0            macrocell11         0      0  RISE       1
+
+Data path
+pin name                                   model name   delay     AT       slack  edge  Fanout
+-----------------------------------------  -----------  -----  -----  ----------  ----  ------
+\Strum_Debouncer:DEBOUNCER[0]:d_sync_1\/q  macrocell11   1250   1250  9999992922  RISE       1
+Net_127/main_1                             macrocell12   2318   3568  9999992922  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_1                                      clockblockcell      0      0  RISE       1
+Net_127/clock_0                                            macrocell12         0      0  RISE       1
+
+
+
+++++ Path 36 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \Strum_Debouncer:DEBOUNCER[0]:d_sync_0\/q
+Path End       : \Strum_Debouncer:DEBOUNCER[0]:d_sync_1\/main_0
+Capture Clock  : \Strum_Debouncer:DEBOUNCER[0]:d_sync_1\/clock_0
+Path slack     : 9999992945p
+
+Capture Clock Arrival Time                                               0
++ Clock path delay                                                       0
++ Cycle adjust (Debouncer_Clock:R#1 vs. Debouncer_Clock:R#2)   10000000000
+- Setup time                                                         -3510
+------------------------------------------------------------   ----------- 
+End-of-path required time (ps)                                  9999996490
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3545
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3545
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_1                                      clockblockcell      0      0  RISE       1
+\Strum_Debouncer:DEBOUNCER[0]:d_sync_0\/clock_0            macrocell10         0      0  RISE       1
+
+Data path
+pin name                                        model name   delay     AT       slack  edge  Fanout
+----------------------------------------------  -----------  -----  -----  ----------  ----  ------
+\Strum_Debouncer:DEBOUNCER[0]:d_sync_0\/q       macrocell10   1250   1250  9999992945  RISE       1
+\Strum_Debouncer:DEBOUNCER[0]:d_sync_1\/main_0  macrocell11   2295   3545  9999992945  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_1                                      clockblockcell      0      0  RISE       1
+\Strum_Debouncer:DEBOUNCER[0]:d_sync_1\/clock_0            macrocell11         0      0  RISE       1
+
+
+
+++++ Path 37 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \Strum_Debouncer:DEBOUNCER[0]:d_sync_0\/q
+Path End       : Net_127/main_0
+Capture Clock  : Net_127/clock_0
+Path slack     : 9999992945p
+
+Capture Clock Arrival Time                                               0
++ Clock path delay                                                       0
++ Cycle adjust (Debouncer_Clock:R#1 vs. Debouncer_Clock:R#2)   10000000000
+- Setup time                                                         -3510
+------------------------------------------------------------   ----------- 
+End-of-path required time (ps)                                  9999996490
+
+Launch Clock Arrival Time                      0
++ Clock path delay                         0
++ Data path delay                       3545
+-------------------------------------   ---- 
+End-of-path arrival time (ps)           3545
+ 
+Launch Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_1                                      clockblockcell      0      0  RISE       1
+\Strum_Debouncer:DEBOUNCER[0]:d_sync_0\/clock_0            macrocell10         0      0  RISE       1
+
+Data path
+pin name                                   model name   delay     AT       slack  edge  Fanout
+-----------------------------------------  -----------  -----  -----  ----------  ----  ------
+\Strum_Debouncer:DEBOUNCER[0]:d_sync_0\/q  macrocell10   1250   1250  9999992945  RISE       1
+Net_127/main_0                             macrocell12   2295   3545  9999992945  RISE       1
+
+Capture Clock Path
+pin name                                                   model name      delay     AT  edge  Fanout
+---------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/dclk_glb_1                                      clockblockcell      0      0  RISE       1
+Net_127/clock_0                                            macrocell12         0      0  RISE       1
+
+
+===================================================================== 
+                    End of Detailed Report for all timing paths 
+##################################################################### 
+
+##################################################################### 
+                    End of Timing Report 
+##################################################################### 
+
