@@ -17,16 +17,25 @@ struct Point {
     uint8 y;
 };
 
+enum SpriteType {
+    FRETBOARD,
+    BARLINE,
+    OPEN_ELLIPSE,
+    FILLED_ELLIPSE
+};
+
 struct Sprite {
     int n, x, y;
     struct Point *vertices;
 };
 
-struct Sprite make_fretboard(int offset);
+void init_sprites();
 
-struct Sprite make_barline(int offset, int y);
+struct Sprite make_fretboard();
 
-struct Sprite make_ellipse(int offset, uint8 track, int y, uint8 filled);
+struct Sprite make_barline(int y);
+
+struct Sprite make_ellipse(uint8 track, int y, uint8 filled);
 
 int sprites_to_polyline(int n_sprites, struct Sprite *sprites, struct Point *points);
 

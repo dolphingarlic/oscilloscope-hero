@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="finalproject\GuitarHero\Generated_Source">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="finalproject\GuitarHero\Header Files\game_manager.h">
 <ExpandedNodeIds>
 <v>finalproject</v>
 <v>finalproject\GuitarHero</v>
@@ -21,8 +21,10 @@
 <v>finalproject\GuitarHero\GuitarHero.cydwr</v>
 <v>finalproject\GuitarHero\Header Files</v>
 <v>finalproject\GuitarHero\Header Files\cyapicallbacks.h</v>
+<v>finalproject\GuitarHero\Header Files\game_manager.h</v>
 <v>finalproject\GuitarHero\Header Files\sprites.h</v>
 <v>finalproject\GuitarHero\Source Files</v>
+<v>finalproject\GuitarHero\Source Files\game_manager.c</v>
 <v>finalproject\GuitarHero\Source Files\main.c</v>
 <v>finalproject\GuitarHero\Source Files\sprites.c</v>
 <v>finalproject\GuitarHero\Generated_Source\PSoC5</v>
@@ -123,8 +125,10 @@
 <v>finalproject\GuitarHero\GuitarHero.cydwr</v>
 <v>finalproject\GuitarHero\Header Files</v>
 <v>finalproject\GuitarHero\Header Files\cyapicallbacks.h</v>
+<v>finalproject\GuitarHero\Header Files\game_manager.h</v>
 <v>finalproject\GuitarHero\Header Files\sprites.h</v>
 <v>finalproject\GuitarHero\Source Files</v>
+<v>finalproject\GuitarHero\Source Files\game_manager.c</v>
 <v>finalproject\GuitarHero\Source Files\main.c</v>
 <v>finalproject\GuitarHero\Source Files\sprites.c</v>
 <v>finalproject\GuitarHero\Generated_Source</v>
@@ -170,6 +174,7 @@
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_Clock.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_isr.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\game_manager.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_LCDPort.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_PM.lst</v>
@@ -213,6 +218,7 @@
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_Clock.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_isr.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\game_manager.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_LCDPort.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_PM.lst</v>

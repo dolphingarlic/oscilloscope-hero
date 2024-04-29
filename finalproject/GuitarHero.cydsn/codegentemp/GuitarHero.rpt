@@ -1,17 +1,17 @@
-Loading plugins phase: Elapsed time ==> 0s.156ms
+Loading plugins phase: Elapsed time ==> 1s.828ms
 Initializing data phase: Elapsed time ==> 0s.000ms
 <CYPRESSTAG name="CyDsfit arguments...">
-cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -d CY8C5868AXI-LP035 -s C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -d CY8C5868AXI-LP035 -s C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
 ADD: pft.M0028: warning: Clock Warning: (FPS_Clock's accuracy range '20  Hz -50% +100%, (10  Hz - 40  Hz)' is not within the specified tolerance range '20  Hz +/- 5%, (19  Hz - 21  Hz)'.).
- * C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\GuitarHero.cydwr (FPS_Clock)
- * C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\TopDesign\TopDesign.cysch (Instance:FPS_Clock)
+ * C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\GuitarHero.cydwr (FPS_Clock)
+ * C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\TopDesign\TopDesign.cysch (Instance:FPS_Clock)
 
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 0s.984ms
+Elaboration phase: Elapsed time ==> 5s.406ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.031ms
+HDL generation phase: Elapsed time ==> 0s.030ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -29,23 +29,23 @@ HDL generation phase: Elapsed time ==> 0s.031ms
 ======================================================================
 Compiling:  GuitarHero.v
 Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -dcpsoc3 GuitarHero.v -verilog
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -dcpsoc3 GuitarHero.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  GuitarHero.v
 Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -dcpsoc3 GuitarHero.v -verilog
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -dcpsoc3 GuitarHero.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  GuitarHero.v
 Program  :   vlogfe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -dcpsoc3 -verilog GuitarHero.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -dcpsoc3 -verilog GuitarHero.v
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Fri Apr 26 11:59:26 2024
+Sun Apr 28 14:04:28 2024
 
 
 ======================================================================
@@ -55,7 +55,7 @@ Options  :    -yv2 -q10 GuitarHero.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Fri Apr 26 11:59:26 2024
+Sun Apr 28 14:04:29 2024
 
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
@@ -96,11 +96,11 @@ vlogfe:  No errors.
 ======================================================================
 Compiling:  GuitarHero.v
 Program  :   tovif
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -dcpsoc3 -verilog GuitarHero.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -dcpsoc3 -verilog GuitarHero.v
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Fri Apr 26 11:59:26 2024
+Sun Apr 28 14:04:29 2024
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -111,9 +111,9 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\codegentemp\GuitarHero.ctl'.
+Linking 'C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\GuitarHero.ctl'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
-Linking 'C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\codegentemp\GuitarHero.v'.
+Linking 'C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\GuitarHero.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'.
@@ -130,11 +130,11 @@ tovif:  No errors.
 ======================================================================
 Compiling:  GuitarHero.v
 Program  :   topld
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -dcpsoc3 -verilog GuitarHero.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -dcpsoc3 -verilog GuitarHero.v
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Fri Apr 26 11:59:26 2024
+Sun Apr 28 14:04:29 2024
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -145,9 +145,9 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\codegentemp\GuitarHero.ctl'.
+Linking 'C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\GuitarHero.ctl'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
-Linking 'C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\codegentemp\GuitarHero.v'.
+Linking 'C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\GuitarHero.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.v'.
@@ -543,16 +543,16 @@ topld:  No errors.
 
 CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp
 Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
-Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya "-.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\GuitarHero.cyprj" -dcpsoc3 GuitarHero.v -verilog
+Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya "-.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\GuitarHero.cyprj" -dcpsoc3 GuitarHero.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 0s.375ms
+Warp synthesis phase: Elapsed time ==> 1s.199ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V3.3.0.9604, Family: PSoC3, Started at: Friday, 26 April 2024 11:59:26
-Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -d CY8C5868AXI-LP035 GuitarHero.v -verilog
+cyp3fit: V3.3.0.9604, Family: PSoC3, Started at: Sunday, 28 April 2024 14:04:29
+Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\GuitarHero.cyprj -d CY8C5868AXI-LP035 GuitarHero.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.015ms
+Design parsing phase: Elapsed time ==> 0s.011ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -1445,7 +1445,7 @@ Analog (SC/CT) Blocks         :    0 :    4 :    4 :  0.00 %
 DAC                           :      :      :      :        
   VIDAC                       :    2 :    2 :    4 : 50.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.031ms
+Technology Mapping: Elapsed time ==> 0s.032ms
 Tech mapping phase: Elapsed time ==> 0s.078ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
@@ -1479,7 +1479,7 @@ IO_1@[IOP=(4)][IoId=(1)] : y_out(0) (fixed)
 VIDAC[2]@[FFB(VIDAC,2)] : \x_DAC:viDAC8\
 VIDAC[3]@[FFB(VIDAC,3)] : \y_DAC:viDAC8\
 
-Analog Placement phase: Elapsed time ==> 0s.453ms
+Analog Placement phase: Elapsed time ==> 0s.468ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
 Analog Routing phase: Elapsed time ==> 0s.000ms
@@ -1529,11 +1529,11 @@ Dump of CyP35AnalogRoutingResultsDB
 IsVddaHalfUsedForComp = False
 IsVddaHalfUsedForSar0 = False
 IsVddaHalfUsedForSar1 = False
-Analog Code Generation phase: Elapsed time ==> 0s.280ms
+Analog Code Generation phase: Elapsed time ==> 0s.281ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
-I2076: Total run-time: 0.4 sec.
+I2076: Total run-time: 0.5 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -2520,31 +2520,31 @@ Port | Pin | Fixed |      Type |       Drive Mode |             Name | Connectio
 </CYPRESSTAG>
 </CYPRESSTAG>
 Digital component placer commit/Report: Elapsed time ==> 0s.000ms
-Digital Placement phase: Elapsed time ==> 0s.562ms
+Digital Placement phase: Elapsed time ==> 0s.781ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 Routing successful.
-Digital Routing phase: Elapsed time ==> 0s.968ms
+Digital Routing phase: Elapsed time ==> 1s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream and API generation">
-Bitstream and API generation phase: Elapsed time ==> 0s.123ms
+Bitstream and API generation phase: Elapsed time ==> 0s.140ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream verification">
-Bitstream verification phase: Elapsed time ==> 0s.031ms
+Bitstream verification phase: Elapsed time ==> 0s.015ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Timing report is in GuitarHero_timing.html.
-Static timing analysis phase: Elapsed time ==> 0s.171ms
+Static timing analysis phase: Elapsed time ==> 0s.218ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.125ms
+Design database save phase: Elapsed time ==> 0s.109ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 2s.826ms
+cydsfit: Elapsed time ==> 3s.137ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 2s.857ms
-API generation phase: Elapsed time ==> 0s.531ms
-Dependency generation phase: Elapsed time ==> 0s.000ms
+Fitter phase: Elapsed time ==> 3s.152ms
+API generation phase: Elapsed time ==> 0s.875ms
+Dependency generation phase: Elapsed time ==> 0s.015ms
 Cleanup phase: Elapsed time ==> 0s.000ms
