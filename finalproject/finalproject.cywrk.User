@@ -196,44 +196,6 @@
 <VisibleNodeIds>
 <v>finalproject</v>
 <v>finalproject\GuitarHero</v>
-<v>finalproject\GuitarHero\CortexM3</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_Rx_isr.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_BOOT.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_INT.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_IntClock.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_PM.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_Clock.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_isr.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\game_manager.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_LCDPort.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_PM.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\sprites.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_DAC.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_DAC_PM.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_out.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\y_DAC.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\y_DAC_PM.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\y_out.lst</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\GuitarHero.elf</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\GuitarHero.hex</v>
-<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\GuitarHero.map</v>
-<v>finalproject\GuitarHero\GuitarHero.gpdsc</v>
 <v>finalproject\GuitarHero\GuitarHero.rpt</v>
 <v>finalproject\GuitarHero\GuitarHero_timing.html</v>
 </VisibleNodeIds>

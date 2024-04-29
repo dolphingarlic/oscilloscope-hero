@@ -18,6 +18,7 @@ const uint16 DAC_SETTLE_TIME_US = 2;
 
 // Sprites
 int n_sprites;
+uint8 indicator_countdown[5];
 struct Sprite sprites[1<<5];
 
 // Global rendering variables
@@ -78,7 +79,16 @@ void draw_points() {
 /*
  * Updates the list of points to render
  */
-void update_render() {    
+void update_render() {
+    // Decrement feedback counter 
+    for (int i = 0; i < 5; i++) {
+        if (indicator_countdown[i]) {
+            sprites[i + 1] = make_ellipse(i, 5, 1);
+            indicator_countdown[i]--;
+        } else {
+            sprites[i + 1] = make_ellipse(i, 5, 0);
+        }
+    }
     // Convert to polyline
     new_n_points = sprites_to_polyline(n_sprites, sprites, new_points);
     // Convert to perspective
@@ -96,6 +106,15 @@ CY_ISR(FPS_isr) {
 
 CY_ISR(BLE_Rx_isr) {
     uint8 c = BLE_UART_GetChar();
+    uint8 mask = c - 0x30;
+    // Reject out-of-bounds inputs
+    if (mask > 31) return;
+    // Fill the affected tracks for 5 frames
+    for (int i = 0; i < 5; i++) {
+        if (mask & (1 << i))
+            indicator_countdown[i] = 5;
+    }
+    // TODO: Calculate scoring
     LCD_PutChar(c);
 }
 
