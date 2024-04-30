@@ -15,7 +15,7 @@
 
 static const float PI = 3.14159265358979323846;
 
-static struct Point sprite_vertices[4][256];
+static struct Point sprite_vertices[4][128];
 static int sprite_n[4];
 
 /*
@@ -24,7 +24,7 @@ static int sprite_n[4];
 void init_sprites() {
     // Fretboard
     {
-        const int resolution = 32;
+        const int resolution = 16;
         int n = 0;
         // Bottom edge
         for (int i = 0; i < resolution; i++) {
@@ -37,11 +37,11 @@ void init_sprites() {
         for (int i = 0; i < resolution; i++) {
             sprite_vertices[FRETBOARD][n++] = (struct Point) {
                 .x = UINT8_MAX,
-                .y = UINT8_MAX * i / resolution
+                .y = UINT8_MAX * i * i / resolution / resolution
             };
         }
         // Top edge
-        for (int i = 0; i < resolution; i++) {
+        for (int i = 0; i < resolution; i += 2) {
             sprite_vertices[FRETBOARD][n++] = (struct Point) {
                 .x = UINT8_MAX - UINT8_MAX * i / resolution,
                 .y = UINT8_MAX
@@ -51,7 +51,7 @@ void init_sprites() {
         for (int i = 0; i < resolution; i++) {
             sprite_vertices[FRETBOARD][n++] = (struct Point) {
                 .x = 0,
-                .y = UINT8_MAX - UINT8_MAX * i / resolution
+                .y = UINT8_MAX - UINT8_MAX * sqrt(i) / sqrt(resolution)
             };
         }
         // Complete the polygon
@@ -81,7 +81,7 @@ void init_sprites() {
     
     // Ellipses
     {
-        const int resolution = 16;
+        const int resolution = 10;
         const int width = 20, height = 5;
         int n = 0;
         

@@ -25,7 +25,7 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="GuitarHero" Path="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn" Version="5.40" Type="Normal">
+  <Project Name="GuitarHero" Path="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn" Version="5.40" Type="Normal">
     <CMSIS_SVD_File>GuitarHero.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
@@ -34,8 +34,8 @@
       <LinkerFile Toolchain="ARM IAR Generic">.\Generated_Source\PSoC5\Cm3Iar.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
-      <Folder BuildType="BUILD" Path="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn">
+      <Folder BuildType="BUILD" Path="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn">
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn">
           <File BuildType="BUILD" Toolchain="">.\main.c</File>
           <File BuildType="BUILD" Toolchain="">.\sprites.c</File>
           <File BuildType="BUILD" Toolchain="">.\game_manager.c</File>
@@ -44,8 +44,8 @@
           <File BuildType="BUILD" Toolchain="">.\game_manager.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\Generated_Source\PSoC5">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\Generated_Source\PSoC5">
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn">
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cyfitter_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cyfitter_cfg.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\cymetadata.c</File>
@@ -125,56 +125,56 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\LCD_LCDPort.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\Export\ARM_GCC_Generic">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\Export\ARM_GCC_Generic">
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn">
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">.\Export\ARM_GCC_Generic\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\Export\ARM_MDK_Generic">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\Export\ARM_MDK_Generic">
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn">
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">.\Export\ARM_MDK_Generic\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\Export\ARM_IAR_Generic">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\Export\ARM_IAR_Generic">
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn">
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">.\Export\ARM_IAR_Generic\CyComponentLibrary.a</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn" />
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_441">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn" />
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn" />
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_952">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn" />
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn" />
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn" />
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0p">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn" />
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM3">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn" />
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM4">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn" />
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM7">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn" />
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\Generated_Source\PSoC3">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn" />
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\Generated_Source\PSoC4">
-        <Files Root="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn" />
+        <Files Root="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn" />
       </Folder>
     </Folders>
   </Project>

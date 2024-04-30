@@ -14,7 +14,7 @@
 #include <sprites.h>
 
 // Global constants
-const uint16 DAC_SETTLE_TIME_US = 2;
+const uint16 DAC_SETTLE_TIME_US = 0;
 
 // Sprites
 int n_sprites;

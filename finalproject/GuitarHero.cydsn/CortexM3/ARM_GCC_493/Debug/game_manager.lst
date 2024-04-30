@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccAMTeAJ.s 			page 1
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccK0MUSY.s 			page 1
 
 
    1              		.syntax unified
@@ -39,20 +39,20 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccAMTeAJ.s 			page 1
   25      202D6666 
   25      756E6374 
   26              	.LASF1:
-  27 0099 433A5C55 		.ascii	"C:\\Users\\User\\Documents\\MIT 6.115\\finalproject"
-  27      73657273 
-  27      5C557365 
-  27      725C446F 
-  27      63756D65 
-  28 00c7 5C66696E 		.ascii	"\\finalproject\\GuitarHero.cydsn\000"
-  28      616C7072 
-  28      6F6A6563 
-  28      745C4775 
-  28      69746172 
-  29              	.LASF2:
-  30 00e6 2E5C6761 		.ascii	".\\game_manager.c\000"
-  30      6D655F6D 
-  30      616E6167 
-  30      65722E63 
-  30      00
+  27 0099 2E5C6761 		.ascii	".\\game_manager.c\000"
+  27      6D655F6D 
+  27      616E6167 
+  27      65722E63 
+  27      00
+  28              	.LASF2:
+  29 00aa 433A5C55 		.ascii	"C:\\Users\\student\\Desktop\\finalproject\\finalpro"
+  29      73657273 
+  29      5C737475 
+  29      64656E74 
+  29      5C446573 
+  30 00d8 6A656374 		.ascii	"ject\\GuitarHero.cydsn\000"
+  30      5C477569 
+  30      74617248 
+  30      65726F2E 
+  30      63796473 
   31              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

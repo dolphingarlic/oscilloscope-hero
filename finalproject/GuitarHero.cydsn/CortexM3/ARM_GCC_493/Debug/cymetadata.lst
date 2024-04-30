@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
   55 001b 40       		.byte	64
   56 001c 03       		.byte	3
   57 001d 40       		.byte	64
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 2
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 2
 
 
   58 001e 01       		.byte	1
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  112 0054 90       		.byte	-112
  113 0055 04       		.byte	4
  114 0056 92       		.byte	-110
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 3
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 3
 
 
  115 0057 11       		.byte	17
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  169 008d 03       		.byte	3
  170 008e C2       		.byte	-62
  171 008f 05       		.byte	5
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 4
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 4
 
 
  172 0090 C4       		.byte	-60
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  226 00c6 01       		.byte	1
  227 00c7 28       		.byte	40
  228 00c8 0A       		.byte	10
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 5
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 5
 
 
  229 00c9 04       		.byte	4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  283 00ff 40       		.byte	64
  284 0100 90       		.byte	-112
  285 0101 28       		.byte	40
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 6
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 6
 
 
  286 0102 92       		.byte	-110
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  340 0138 0C       		.byte	12
  341 0139 1F       		.byte	31
  342 013a 0E       		.byte	14
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 7
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 7
 
 
  343 013b 20       		.byte	32
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  397 0171 20       		.byte	32
  398 0172 3A       		.byte	58
  399 0173 A0       		.byte	-96
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 8
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 8
 
 
  400 0174 3B       		.byte	59
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  454 01aa 0A       		.byte	10
  455 01ab 80       		.byte	-128
  456 01ac 0B       		.byte	11
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 9
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 9
 
 
  457 01ad 10       		.byte	16
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  511 01e3 04       		.byte	4
  512 01e4 6B       		.byte	107
  513 01e5 0A       		.byte	10
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 10
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 10
 
 
  514 01e6 70       		.byte	112
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  568 021c C8       		.byte	-56
  569 021d 40       		.byte	64
  570 021e 00       		.byte	0
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 11
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 11
 
 
  571 021f 01       		.byte	1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  625 0002 2E       		.byte	46
  626 0003 12       		.byte	18
  627 0004 30       		.byte	48
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 12
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 12
 
 
  628 0005 69       		.byte	105
@@ -692,12 +692,12 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  652 000c 00000000 		.4byte	.LASF18
  653 0010 01       		.byte	0x1
  654 0011 99000000 		.4byte	.LASF19
- 655 0015 04010000 		.4byte	.LASF20
+ 655 0015 B5010000 		.4byte	.LASF20
  656 0019 00000000 		.4byte	.Ldebug_line0
  657 001d 02       		.uleb128 0x2
  658 001e 01       		.byte	0x1
  659 001f 06       		.byte	0x6
- 660 0020 E9010000 		.4byte	.LASF0
+ 660 0020 A9010000 		.4byte	.LASF0
  661 0024 02       		.uleb128 0x2
  662 0025 01       		.byte	0x1
  663 0026 08       		.byte	0x8
@@ -705,7 +705,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  665 002b 02       		.uleb128 0x2
  666 002c 02       		.byte	0x2
  667 002d 05       		.byte	0x5
- 668 002e D0010000 		.4byte	.LASF2
+ 668 002e 90010000 		.4byte	.LASF2
  669 0032 02       		.uleb128 0x2
  670 0033 02       		.byte	0x2
  671 0034 07       		.byte	0x7
@@ -713,22 +713,22 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  673 0039 02       		.uleb128 0x2
  674 003a 04       		.byte	0x4
  675 003b 05       		.byte	0x5
- 676 003c E0010000 		.4byte	.LASF4
+ 676 003c A0010000 		.4byte	.LASF4
  677 0040 02       		.uleb128 0x2
  678 0041 04       		.byte	0x4
  679 0042 07       		.byte	0x7
  680 0043 DF000000 		.4byte	.LASF5
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 13
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 13
 
 
  681 0047 02       		.uleb128 0x2
  682 0048 08       		.byte	0x8
  683 0049 05       		.byte	0x5
- 684 004a BD010000 		.4byte	.LASF6
+ 684 004a 7D010000 		.4byte	.LASF6
  685 004e 02       		.uleb128 0x2
  686 004f 08       		.byte	0x8
  687 0050 07       		.byte	0x7
- 688 0051 7A010000 		.4byte	.LASF7
+ 688 0051 3A010000 		.4byte	.LASF7
  689 0055 03       		.uleb128 0x3
  690 0056 04       		.byte	0x4
  691 0057 05       		.byte	0x5
@@ -736,9 +736,9 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  693 005c 02       		.uleb128 0x2
  694 005d 04       		.byte	0x4
  695 005e 07       		.byte	0x7
- 696 005f 6D010000 		.4byte	.LASF8
+ 696 005f 2D010000 		.4byte	.LASF8
  697 0063 04       		.uleb128 0x4
- 698 0064 DA010000 		.4byte	.LASF21
+ 698 0064 9A010000 		.4byte	.LASF21
  699 0068 02       		.byte	0x2
  700 0069 9201     		.2byte	0x192
  701 006b 24000000 		.4byte	0x24
@@ -749,11 +749,11 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  706 0076 02       		.uleb128 0x2
  707 0077 08       		.byte	0x8
  708 0078 04       		.byte	0x4
- 709 0079 44010000 		.4byte	.LASF10
+ 709 0079 04010000 		.4byte	.LASF10
  710 007d 02       		.uleb128 0x2
  711 007e 01       		.byte	0x1
  712 007f 08       		.byte	0x8
- 713 0080 CB010000 		.4byte	.LASF11
+ 713 0080 8B010000 		.4byte	.LASF11
  714 0084 05       		.uleb128 0x5
  715 0085 63000000 		.4byte	0x63
  716 0089 95000000 		.4byte	0x95
@@ -764,9 +764,9 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  721 0095 02       		.uleb128 0x2
  722 0096 04       		.byte	0x4
  723 0097 07       		.byte	0x7
- 724 0098 B4010000 		.4byte	.LASF12
+ 724 0098 74010000 		.4byte	.LASF12
  725 009c 07       		.uleb128 0x7
- 726 009d 5B010000 		.4byte	.LASF13
+ 726 009d 1B010000 		.4byte	.LASF13
  727 00a1 01       		.byte	0x1
  728 00a2 1F       		.byte	0x1f
  729 00a3 AD000000 		.4byte	0xad
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  735 00b2 05       		.uleb128 0x5
  736 00b3 63000000 		.4byte	0x63
  737 00b7 C2000000 		.4byte	0xc2
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 14
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 14
 
 
  738 00bb 09       		.uleb128 0x9
@@ -786,7 +786,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  740 00c0 03       		.byte	0x3
  741 00c1 00       		.byte	0
  742 00c2 07       		.uleb128 0x7
- 743 00c3 4B010000 		.4byte	.LASF14
+ 743 00c3 0B010000 		.4byte	.LASF14
  744 00c7 01       		.byte	0x1
  745 00c8 74       		.byte	0x74
  746 00c9 D3000000 		.4byte	0xd3
@@ -796,7 +796,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  750 00d3 08       		.uleb128 0x8
  751 00d4 B2000000 		.4byte	0xb2
  752 00d8 07       		.uleb128 0x7
- 753 00d9 A6010000 		.4byte	.LASF15
+ 753 00d9 66010000 		.4byte	.LASF15
  754 00dd 01       		.byte	0x1
  755 00de 82       		.byte	0x82
  756 00df E9000000 		.4byte	0xe9
@@ -813,7 +813,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  767 00fc FF       		.byte	0xff
  768 00fd 00       		.byte	0
  769 00fe 07       		.uleb128 0x7
- 770 00ff 91010000 		.4byte	.LASF16
+ 770 00ff 51010000 		.4byte	.LASF16
  771 0103 01       		.byte	0x1
  772 0104 90       		.byte	0x90
  773 0105 0F010000 		.4byte	0x10f
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  792 0130 03       		.byte	0x3
  793 0131 00000000 		.4byte	cy_metadata
  794 0135 08       		.uleb128 0x8
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 15
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 15
 
 
  795 0136 14010000 		.4byte	0x114
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  849 0032 05       		.uleb128 0x5
  850 0033 01       		.uleb128 0x1
  851 0034 01       		.byte	0x1
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 16
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 16
 
 
  852 0035 49       		.uleb128 0x49
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  906 000b 00       		.byte	0
  907 000c 0000     		.2byte	0
  908 000e 0000     		.2byte	0
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 17
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 17
 
 
  909 0010 00000000 		.4byte	0
@@ -1016,84 +1016,84 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 1
  929      7369676E 
  929      65642069 
  929      6E7400
- 930              	.LASF20:
- 931 0104 433A5C55 		.ascii	"C:\\Users\\User\\Documents\\MIT 6.115\\finalproject"
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 18
+ 930              	.LASF10:
+ 931 0104 646F7562 		.ascii	"double\000"
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 18
 
 
- 931      73657273 
- 931      5C557365 
- 931      725C446F 
- 931      63756D65 
- 932 0132 5C477569 		.ascii	"\\GuitarHero.cydsn\000"
- 932      74617248 
- 932      65726F2E 
- 932      63796473 
- 932      6E00
- 933              	.LASF10:
- 934 0144 646F7562 		.ascii	"double\000"
- 934      6C6500
- 935              	.LASF14:
- 936 014b 63795F6D 		.ascii	"cy_meta_custnvl\000"
- 936      6574615F 
- 936      63757374 
- 936      6E766C00 
- 937              	.LASF13:
- 938 015b 63795F6D 		.ascii	"cy_meta_configecc\000"
- 938      6574615F 
- 938      636F6E66 
- 938      69676563 
- 938      6300
- 939              	.LASF8:
- 940 016d 756E7369 		.ascii	"unsigned int\000"
- 940      676E6564 
- 940      20696E74 
- 940      00
- 941              	.LASF7:
- 942 017a 6C6F6E67 		.ascii	"long long unsigned int\000"
- 942      206C6F6E 
- 942      6720756E 
- 942      7369676E 
- 942      65642069 
- 943              	.LASF16:
- 944 0191 63795F6D 		.ascii	"cy_meta_flashprotect\000"
- 944      6574615F 
- 944      666C6173 
- 944      6870726F 
- 944      74656374 
- 945              	.LASF15:
- 946 01a6 63795F6D 		.ascii	"cy_meta_wonvl\000"
- 946      6574615F 
- 946      776F6E76 
- 946      6C00
- 947              	.LASF12:
- 948 01b4 73697A65 		.ascii	"sizetype\000"
- 948      74797065 
- 948      00
- 949              	.LASF6:
- 950 01bd 6C6F6E67 		.ascii	"long long int\000"
- 950      206C6F6E 
- 950      6720696E 
- 950      7400
- 951              	.LASF11:
- 952 01cb 63686172 		.ascii	"char\000"
- 952      00
-ARM GAS  C:\Users\User\AppData\Local\Temp\cckAauha.s 			page 19
+ 931      6C6500
+ 932              	.LASF14:
+ 933 010b 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 933      6574615F 
+ 933      63757374 
+ 933      6E766C00 
+ 934              	.LASF13:
+ 935 011b 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 935      6574615F 
+ 935      636F6E66 
+ 935      69676563 
+ 935      6300
+ 936              	.LASF8:
+ 937 012d 756E7369 		.ascii	"unsigned int\000"
+ 937      676E6564 
+ 937      20696E74 
+ 937      00
+ 938              	.LASF7:
+ 939 013a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 939      206C6F6E 
+ 939      6720756E 
+ 939      7369676E 
+ 939      65642069 
+ 940              	.LASF16:
+ 941 0151 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 941      6574615F 
+ 941      666C6173 
+ 941      6870726F 
+ 941      74656374 
+ 942              	.LASF15:
+ 943 0166 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 943      6574615F 
+ 943      776F6E76 
+ 943      6C00
+ 944              	.LASF12:
+ 945 0174 73697A65 		.ascii	"sizetype\000"
+ 945      74797065 
+ 945      00
+ 946              	.LASF6:
+ 947 017d 6C6F6E67 		.ascii	"long long int\000"
+ 947      206C6F6E 
+ 947      6720696E 
+ 947      7400
+ 948              	.LASF11:
+ 949 018b 63686172 		.ascii	"char\000"
+ 949      00
+ 950              	.LASF2:
+ 951 0190 73686F72 		.ascii	"short int\000"
+ 951      7420696E 
+ 951      7400
+ 952              	.LASF21:
+ 953 019a 75696E74 		.ascii	"uint8\000"
+ 953      3800
+ 954              	.LASF4:
+ 955 01a0 6C6F6E67 		.ascii	"long int\000"
+ 955      20696E74 
+ 955      00
+ARM GAS  C:\Users\student\AppData\Local\Temp\ccNCOjke.s 			page 19
 
 
- 953              	.LASF2:
- 954 01d0 73686F72 		.ascii	"short int\000"
- 954      7420696E 
- 954      7400
- 955              	.LASF21:
- 956 01da 75696E74 		.ascii	"uint8\000"
- 956      3800
- 957              	.LASF4:
- 958 01e0 6C6F6E67 		.ascii	"long int\000"
- 958      20696E74 
- 958      00
- 959              	.LASF0:
- 960 01e9 7369676E 		.ascii	"signed char\000"
- 960      65642063 
- 960      68617200 
+ 956              	.LASF0:
+ 957 01a9 7369676E 		.ascii	"signed char\000"
+ 957      65642063 
+ 957      68617200 
+ 958              	.LASF20:
+ 959 01b5 433A5C55 		.ascii	"C:\\Users\\student\\Desktop\\finalproject\\finalpro"
+ 959      73657273 
+ 959      5C737475 
+ 959      64656E74 
+ 959      5C446573 
+ 960 01e3 6A656374 		.ascii	"ject\\GuitarHero.cydsn\000"
+ 960      5C477569 
+ 960      74617248 
+ 960      65726F2E 
+ 960      63796473 
  961              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

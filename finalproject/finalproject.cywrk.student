@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="finalproject\GuitarHero\TopDesign">
+<ExpandedNodeIds>
+<v>finalproject</v>
+<v>finalproject\GuitarHero</v>
+<v>finalproject\GuitarHero\TopDesign</v>
+<v>finalproject\GuitarHero\GuitarHero.cydwr</v>
+<v>finalproject\GuitarHero\Header Files</v>
+<v>finalproject\GuitarHero\Header Files\cyapicallbacks.h</v>
+<v>finalproject\GuitarHero\Header Files\game_manager.h</v>
+<v>finalproject\GuitarHero\Header Files\sprites.h</v>
+<v>finalproject\GuitarHero\Source Files</v>
+<v>finalproject\GuitarHero\Source Files\game_manager.c</v>
+<v>finalproject\GuitarHero\Source Files\main.c</v>
+<v>finalproject\GuitarHero\Source Files\sprites.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_Rx_isr</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_Rx_isr\BLE_Rx_isr.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_Rx_isr\BLE_Rx_isr.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_UART</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_UART\BLE_UART.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_UART\BLE_UART.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_UART\BLE_UART_BOOT.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_UART\BLE_UART_INT.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_UART\BLE_UART_PM.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_UART_IntClock</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_UART_IntClock\BLE_UART_IntClock.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\BLE_UART_IntClock\BLE_UART_IntClock.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\cmsis_armcc.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\cmsis_gcc.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\core_cmFunc.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\core_cmInstr.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\CyBootAsmGnu.s</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\CyBootAsmIar.s</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\CyBootAsmRv.s</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\CyDmac.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\CyDmac.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\CyFlash.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\CyFlash.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\CyLib.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\CyLib.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\cypins.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\cyPm.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\cyPm.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\CySpc.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\CySpc.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\cytypes.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cy_boot\cyutils.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_Clock</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_Clock\FPS_Clock.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_Clock\FPS_Clock.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_isr</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_isr\FPS_isr.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_isr\FPS_isr.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\LCD</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\LCD\LCD.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\LCD\LCD.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\LCD\LCD_PM.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\LCD_LCDPort</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\LCD_LCDPort\LCD_LCDPort.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\LCD_LCDPort\LCD_LCDPort.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\LCD_LCDPort\LCD_LCDPort_aliases.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\x_DAC</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\x_DAC\x_DAC.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\x_DAC\x_DAC.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\x_DAC\x_DAC_PM.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\x_out</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\x_out\x_out.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\x_out\x_out.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\x_out\x_out_aliases.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\y_DAC</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\y_DAC\y_DAC.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\y_DAC\y_DAC.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\y_DAC\y_DAC_PM.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\y_out</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\y_out\y_out.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\y_out\y_out.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\y_out\y_out_aliases.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cycodeshareexport.ld</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cycodeshareimport.ld</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cycodeshareimport.scat</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cydevice.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cydevice_trm.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cydevicegnu.inc</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cydeviceiar.inc</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cydeviceiar_trm.inc</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cydevicerv.inc</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cydevicerv_trm.inc</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cydisabledsheets.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cyfitter.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cyfitter_cfg.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cyfitter_cfg.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cyfittergnu.inc</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cyfitteriar.inc</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cyfitterrv.inc</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\cymetadata.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\project.h</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>finalproject</v>
+<v>finalproject\GuitarHero</v>
+<v>finalproject\GuitarHero\TopDesign</v>
+<v>finalproject\GuitarHero\GuitarHero.cydwr</v>
+<v>finalproject\GuitarHero\Header Files</v>
+<v>finalproject\GuitarHero\Header Files\cyapicallbacks.h</v>
+<v>finalproject\GuitarHero\Header Files\game_manager.h</v>
+<v>finalproject\GuitarHero\Header Files\sprites.h</v>
+<v>finalproject\GuitarHero\Source Files</v>
+<v>finalproject\GuitarHero\Source Files\game_manager.c</v>
+<v>finalproject\GuitarHero\Source Files\main.c</v>
+<v>finalproject\GuitarHero\Source Files\sprites.c</v>
+<v>finalproject\GuitarHero\Generated_Source</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>finalproject</v>
+<v>finalproject\GuitarHero</v>
+<v>finalproject\GuitarHero\TopDesign</v>
+<v>finalproject\GuitarHero\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>finalproject</v>
+<v>finalproject\GuitarHero</v>
+<v>finalproject\GuitarHero\TopDesign</v>
+<v>finalproject\GuitarHero\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>finalproject</v>
+<v>finalproject\GuitarHero</v>
+<v>finalproject\GuitarHero\CortexM3</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_Rx_isr.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_BOOT.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_INT.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_IntClock.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_Clock.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_isr.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\game_manager.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\sprites.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_DAC.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_DAC_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_out.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\y_DAC.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\y_DAC_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\y_out.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\GuitarHero.elf</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\GuitarHero.hex</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\GuitarHero.map</v>
+<v>finalproject\GuitarHero\GuitarHero.gpdsc</v>
+<v>finalproject\GuitarHero\GuitarHero.rpt</v>
+<v>finalproject\GuitarHero\GuitarHero_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>finalproject</v>
+<v>finalproject\GuitarHero</v>
+<v>finalproject\GuitarHero\CortexM3</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_Rx_isr.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_BOOT.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_INT.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_IntClock.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_Clock.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_isr.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\game_manager.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\sprites.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_DAC.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_DAC_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\x_out.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\y_DAC.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\y_DAC_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\y_out.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\GuitarHero.elf</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\GuitarHero.hex</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\GuitarHero.map</v>
+<v>finalproject\GuitarHero\GuitarHero.gpdsc</v>
+<v>finalproject\GuitarHero\GuitarHero.rpt</v>
+<v>finalproject\GuitarHero\GuitarHero_timing.html</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>finalproject</v>
+<v>finalproject\GuitarHero</v>
+<v>finalproject\GuitarHero\PSoC 5 Architecture TRM</v>
+<v>finalproject\GuitarHero\CY8C58LP Family Datasheet</v>
+<v>finalproject\GuitarHero\System Reference Guides</v>
+<v>finalproject\GuitarHero\System Reference Guides\cy_boot_v5_40</v>
+<v>finalproject\GuitarHero\CharLCD_v2_20.pdf</v>
+<v>finalproject\GuitarHero\cy_clock_v2_20.pdf</v>
+<v>finalproject\GuitarHero\cy_constant_v1_0.pdf</v>
+<v>finalproject\GuitarHero\cy_isr_v1_70</v>
+<v>finalproject\GuitarHero\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>finalproject\GuitarHero\cy_pins_v2_20</v>
+<v>finalproject\GuitarHero\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>finalproject\GuitarHero\UART_v2_50.pdf</v>
+<v>finalproject\GuitarHero\VDAC8_v1_90</v>
+<v>finalproject\GuitarHero\VDAC8_v1_90\VDAC8_v1_90.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>finalproject</v>
+<v>finalproject\GuitarHero</v>
+<v>finalproject\GuitarHero\PSoC 5 Architecture TRM</v>
+<v>finalproject\GuitarHero\CY8C58LP Family Datasheet</v>
+<v>finalproject\GuitarHero\System Reference Guides</v>
+<v>finalproject\GuitarHero\System Reference Guides\cy_boot_v5_40</v>
+<v>finalproject\GuitarHero\CharLCD_v2_20.pdf</v>
+<v>finalproject\GuitarHero\cy_clock_v2_20.pdf</v>
+<v>finalproject\GuitarHero\cy_constant_v1_0.pdf</v>
+<v>finalproject\GuitarHero\cy_isr_v1_70</v>
+<v>finalproject\GuitarHero\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>finalproject\GuitarHero\cy_pins_v2_20</v>
+<v>finalproject\GuitarHero\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>finalproject\GuitarHero\UART_v2_50.pdf</v>
+<v>finalproject\GuitarHero\VDAC8_v1_90</v>
+<v>finalproject\GuitarHero\VDAC8_v1_90\VDAC8_v1_90.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\GuitarHero.cydsn\main.c" />
+<name v=".\GuitarHero.cydsn\sprites.c" />
+<name v=".\GuitarHero.cydsn\TopDesign\TopDesign.cysch" />
+</OpenDocs>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
