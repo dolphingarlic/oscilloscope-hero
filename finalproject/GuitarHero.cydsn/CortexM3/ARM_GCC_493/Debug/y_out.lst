@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
   29:.\Generated_Source\PSoC5/y_out.c **** * \brief Writes the value to the physical port (data output register), masking
   30:.\Generated_Source\PSoC5/y_out.c **** *  and shifting the bits appropriately. 
   31:.\Generated_Source\PSoC5/y_out.c **** *
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/y_out.c **** * The data output register controls the signal applied to the physical pin in 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
   52              		.section	.text.y_out_SetDriveMode,"ax",%progbits
   53              		.align	2
   54              		.global	y_out_SetDriveMode
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 3
 
 
   55              		.thumb
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
   77              	.L5:
   78 0014 21500040 		.word	1073762337
   79              		.cfi_endproc
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 4
 
 
   80              	.LFE1:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
  110              		.global	y_out_ReadDataReg
  111              		.thumb
  112              		.thumb_func
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 5
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 5
 
 
  113              		.type	y_out_ReadDataReg, %function
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
  139 0000 1B010000 		.4byte	0x11b
  140 0004 0400     		.2byte	0x4
  141 0006 00000000 		.4byte	.Ldebug_abbrev0
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 6
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 6
 
 
  142 000a 04       		.byte	0x4
@@ -306,7 +306,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
  144 000c 1D000000 		.4byte	.LASF20
  145 0010 01       		.byte	0x1
  146 0011 BC000000 		.4byte	.LASF21
- 147 0015 7D010000 		.4byte	.LASF22
+ 147 0015 9B010000 		.4byte	.LASF22
  148 0019 00000000 		.4byte	.Ldebug_ranges0+0
  149 001d 00000000 		.4byte	0
  150 0021 00000000 		.4byte	.Ldebug_line0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
  196 0077 02       		.uleb128 0x2
  197 0078 04       		.byte	0x4
  198 0079 04       		.byte	0x4
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 7
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 7
 
 
  199 007a B6000000 		.4byte	.LASF9
@@ -401,7 +401,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
  236 00cd 53       		.byte	0x53
  237 00ce 00       		.byte	0
  238 00cf 06       		.uleb128 0x6
- 239 00d0 CC010000 		.4byte	.LASF15
+ 239 00d0 88010000 		.4byte	.LASF15
  240 00d4 01       		.byte	0x1
  241 00d5 5A       		.byte	0x5a
  242 00d6 00000000 		.4byte	.LFB1
@@ -417,8 +417,8 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
  252 00ef 21000000 		.4byte	.LLST1
  253 00f3 00       		.byte	0
  254 00f4 09       		.uleb128 0x9
- 255 00f5 C1010000 		.4byte	.LASF18
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 8
+ 255 00f5 7D010000 		.4byte	.LASF18
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 8
 
 
  256 00f9 01       		.byte	0x1
@@ -429,7 +429,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
  261 0107 01       		.uleb128 0x1
  262 0108 9C       		.byte	0x9c
  263 0109 09       		.uleb128 0x9
- 264 010a DF010000 		.4byte	.LASF19
+ 264 010a E8010000 		.4byte	.LASF19
  265 010e 01       		.byte	0x1
  266 010f 8D       		.byte	0x8d
  267 0110 6B000000 		.4byte	0x6b
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
  310 0023 3E       		.uleb128 0x3e
  311 0024 0B       		.uleb128 0xb
  312 0025 03       		.uleb128 0x3
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 9
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 9
 
 
  313 0026 08       		.uleb128 0x8
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
  367 005d 0B       		.uleb128 0xb
  368 005e 3B       		.uleb128 0x3b
  369 005f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 10
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 10
 
 
  370 0060 49       		.uleb128 0x49
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
  424 000b 0A000000 		.4byte	.LVL2
  425 000f 18000000 		.4byte	.LFE0
  426 0013 0400     		.2byte	0x4
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 11
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 11
 
 
  427 0015 F3       		.byte	0xf3
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
  479      00000201 
  479      FB0E0D00 
  479      01010101 
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 12
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 12
 
 
  480              	.LASF14:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
  501      65642069 
  501      6E7400
  502              	.LASF10:
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 13
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 13
 
 
  503 0115 646F7562 		.ascii	"double\000"
@@ -760,32 +760,32 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 1
  521 0171 7369676E 		.ascii	"signed char\000"
  521      65642063 
  521      68617200 
- 522              	.LASF22:
- 523 017d 433A5C55 		.ascii	"C:\\Users\\student\\Desktop\\finalproject\\finalpro"
- 523      73657273 
- 523      5C737475 
- 523      64656E74 
- 523      5C446573 
- 524 01ab 6A656374 		.ascii	"ject\\GuitarHero.cydsn\000"
- 524      5C477569 
- 524      74617248 
- 524      65726F2E 
- 524      63796473 
- 525              	.LASF18:
- 526 01c1 795F6F75 		.ascii	"y_out_Read\000"
- 526      745F5265 
- 526      616400
- 527              	.LASF15:
- 528 01cc 795F6F75 		.ascii	"y_out_SetDriveMode\000"
- 528      745F5365 
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccNi8Dyx.s 			page 14
+ 522              	.LASF18:
+ 523 017d 795F6F75 		.ascii	"y_out_Read\000"
+ 523      745F5265 
+ 523      616400
+ 524              	.LASF15:
+ 525 0188 795F6F75 		.ascii	"y_out_SetDriveMode\000"
+ 525      745F5365 
+ 525      74447269 
+ 525      76654D6F 
+ 525      646500
+ 526              	.LASF22:
+ 527 019b 433A5C55 		.ascii	"C:\\Users\\User\\Documents\\MIT 6.115\\finalproject"
+ 527      73657273 
+ 527      5C557365 
+ 527      725C446F 
+ 527      63756D65 
+ 528 01c9 5C66696E 		.ascii	"\\finalproject\\GuitarHero.cydsn\000"
+ 528      616C7072 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccYRezi6.s 			page 14
 
 
- 528      74447269 
- 528      76654D6F 
- 528      646500
+ 528      6F6A6563 
+ 528      745C4775 
+ 528      69746172 
  529              	.LASF19:
- 530 01df 795F6F75 		.ascii	"y_out_ReadDataReg\000"
+ 530 01e8 795F6F75 		.ascii	"y_out_ReadDataReg\000"
  530      745F5265 
  530      61644461 
  530      74615265 

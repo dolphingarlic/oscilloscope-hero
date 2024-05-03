@@ -1,84 +1,84 @@
 <?xml version="1.0" encoding="us-ascii"?>
 
-<fileSet version="1" anchorPath="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp" xsi:schemaLocation="http://cypress.com/xsd/cypathdictionary cypathdictionary.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cypathdictionary">
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyfitter_cfg.h" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyfitter_cfg.c" value="ARM_C_FILE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\config.hex" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\protect.hex" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\eeprom.hex" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cymetadata.c" value="ARM_C_FILE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydevice.h" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydevicegnu.inc" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydevicerv.inc" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydeviceiar.inc" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydevice_trm.h" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydevicegnu_trm.inc" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydevicerv_trm.inc" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydeviceiar_trm.inc" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyfittergnu.inc" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyfitterrv.inc" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyfitteriar.inc" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyfitter.h" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydisabledsheets.h" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\x_out_aliases.h" value="NONE;x_out" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\x_out.c" value="ARM_C_FILE;x_out" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\x_out.h" value="NONE;x_out" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\x_DAC.c" value="ARM_C_FILE;x_DAC" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\x_DAC.h" value="NONE;x_DAC" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\x_DAC_PM.c" value="ARM_C_FILE;x_DAC" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_out_aliases.h" value="NONE;y_out" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_out.c" value="ARM_C_FILE;y_out" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_out.h" value="NONE;y_out" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_DAC.c" value="ARM_C_FILE;y_DAC" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_DAC.h" value="NONE;y_DAC" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_DAC_PM.c" value="ARM_C_FILE;y_DAC" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_Clock.c" value="ARM_C_FILE;FPS_Clock" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_Clock.h" value="NONE;FPS_Clock" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_isr.c" value="ARM_C_FILE;FPS_isr" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_isr.h" value="NONE;FPS_isr" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART.c" value="ARM_C_FILE;BLE_UART" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART.h" value="NONE;BLE_UART" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_PM.c" value="ARM_C_FILE;BLE_UART" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_INT.c" value="ARM_C_FILE;BLE_UART" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_BOOT.c" value="ARM_C_FILE;BLE_UART" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_Rx_isr.c" value="ARM_C_FILE;BLE_Rx_isr" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_Rx_isr.h" value="NONE;BLE_Rx_isr" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD.c" value="ARM_C_FILE;LCD" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD.h" value="NONE;LCD" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD_PM.c" value="ARM_C_FILE;LCD" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_IntClock.c" value="ARM_C_FILE;BLE_UART_IntClock" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_IntClock.h" value="NONE;BLE_UART_IntClock" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD_LCDPort_aliases.h" value="NONE;LCD_LCDPort" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD_LCDPort.c" value="ARM_C_FILE;LCD_LCDPort" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD_LCDPort.h" value="NONE;LCD_LCDPort" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cycodeshareimport.ld" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cycodeshareexport.ld" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cycodeshareimport.scat" value="NONE;" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cm3gcc.ld" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Cm3RealView.scat" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Cm3Start.c" value="ARM_C_FILE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\core_cm3.h" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\core_cm3_psoc5.h" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyBootAsmGnu.s" value="GNU_ARM_ASM_FILE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyBootAsmRv.s" value="REALVIEW_ARM_ASM_FILE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyDmac.c" value="ARM_C_FILE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyDmac.h" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyFlash.c" value="ARM_C_FILE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyFlash.h" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyLib.c" value="ARM_C_FILE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyLib.h" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cypins.h" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyPm.c" value="ARM_C_FILE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyPm.h" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CySpc.c" value="ARM_C_FILE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CySpc.h" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cytypes.h" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyutils.c" value="ARM_C_FILE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\core_cmFunc.h" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\core_cmInstr.h" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Cm3Iar.icf" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyBootAsmIar.s" value="IAR_ASM_FILE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cmsis_armcc.h" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cmsis_gcc.h" value="NONE;cy_boot" />
-  <file name="C:\Users\student\Desktop\finalproject\finalproject\GuitarHero.cydsn\codegentemp\project.h" value="NONE;" />
+<fileSet version="1" anchorPath="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp" xsi:schemaLocation="http://cypress.com/xsd/cypathdictionary cypathdictionary.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cypathdictionary">
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyfitter_cfg.h" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyfitter_cfg.c" value="ARM_C_FILE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\config.hex" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\protect.hex" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\eeprom.hex" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cymetadata.c" value="ARM_C_FILE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydevice.h" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydevicegnu.inc" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydevicerv.inc" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydeviceiar.inc" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydevice_trm.h" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydevicegnu_trm.inc" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydevicerv_trm.inc" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydeviceiar_trm.inc" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyfittergnu.inc" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyfitterrv.inc" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyfitteriar.inc" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyfitter.h" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cydisabledsheets.h" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\x_out_aliases.h" value="NONE;x_out" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\x_out.c" value="ARM_C_FILE;x_out" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\x_out.h" value="NONE;x_out" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\x_DAC.c" value="ARM_C_FILE;x_DAC" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\x_DAC.h" value="NONE;x_DAC" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\x_DAC_PM.c" value="ARM_C_FILE;x_DAC" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_out_aliases.h" value="NONE;y_out" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_out.c" value="ARM_C_FILE;y_out" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_out.h" value="NONE;y_out" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_DAC.c" value="ARM_C_FILE;y_DAC" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_DAC.h" value="NONE;y_DAC" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_DAC_PM.c" value="ARM_C_FILE;y_DAC" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_Clock.c" value="ARM_C_FILE;FPS_Clock" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_Clock.h" value="NONE;FPS_Clock" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_isr.c" value="ARM_C_FILE;FPS_isr" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_isr.h" value="NONE;FPS_isr" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART.c" value="ARM_C_FILE;BLE_UART" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART.h" value="NONE;BLE_UART" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_PM.c" value="ARM_C_FILE;BLE_UART" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_INT.c" value="ARM_C_FILE;BLE_UART" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_BOOT.c" value="ARM_C_FILE;BLE_UART" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_Rx_isr.c" value="ARM_C_FILE;BLE_Rx_isr" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_Rx_isr.h" value="NONE;BLE_Rx_isr" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD.c" value="ARM_C_FILE;LCD" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD.h" value="NONE;LCD" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD_PM.c" value="ARM_C_FILE;LCD" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_IntClock.c" value="ARM_C_FILE;BLE_UART_IntClock" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_IntClock.h" value="NONE;BLE_UART_IntClock" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD_LCDPort_aliases.h" value="NONE;LCD_LCDPort" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD_LCDPort.c" value="ARM_C_FILE;LCD_LCDPort" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD_LCDPort.h" value="NONE;LCD_LCDPort" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cycodeshareimport.ld" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cycodeshareexport.ld" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cycodeshareimport.scat" value="NONE;" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cm3gcc.ld" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Cm3RealView.scat" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Cm3Start.c" value="ARM_C_FILE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\core_cm3.h" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\core_cm3_psoc5.h" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyBootAsmGnu.s" value="GNU_ARM_ASM_FILE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyBootAsmRv.s" value="REALVIEW_ARM_ASM_FILE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyDmac.c" value="ARM_C_FILE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyDmac.h" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyFlash.c" value="ARM_C_FILE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyFlash.h" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyLib.c" value="ARM_C_FILE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyLib.h" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cypins.h" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyPm.c" value="ARM_C_FILE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyPm.h" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CySpc.c" value="ARM_C_FILE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CySpc.h" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cytypes.h" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cyutils.c" value="ARM_C_FILE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\core_cmFunc.h" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\core_cmInstr.h" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Cm3Iar.icf" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\CyBootAsmIar.s" value="IAR_ASM_FILE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cmsis_armcc.h" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cmsis_gcc.h" value="NONE;cy_boot" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\project.h" value="NONE;" />
 </fileSet>

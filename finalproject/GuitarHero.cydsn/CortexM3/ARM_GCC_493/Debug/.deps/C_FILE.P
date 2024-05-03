@@ -1,76 +1,16 @@
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/CortexM3/ARM_GCC_493/Debug/main.o : C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/BLE_Rx_isr.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/BLE_UART.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/BLE_UART_IntClock.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/CyDmac.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/CyFlash.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/CyLib.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/CySpc.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/FPS_Clock.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/FPS_isr.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/LCD.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/LCD_LCDPort.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/LCD_LCDPort_aliases.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cmsis_armcc.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cmsis_gcc.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/core_cm3.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/core_cmFunc.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/core_cmInstr.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cyPm.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevice.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydisabledsheets.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cypins.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cytypes.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/project.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/x_DAC.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/x_out.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/x_out_aliases.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/y_DAC.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/y_out.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/y_out_aliases.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/main.c C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/sprites.h 
+C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/CortexM3/ARM_GCC_493/Debug/game_manager.o : C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevice.h C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cytypes.h C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/game_manager.c C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/game_manager.h C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/sprites.h 
 
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/BLE_Rx_isr.h : 
+C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevice.h : 
 
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/BLE_UART.h : 
+C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
 
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/BLE_UART_IntClock.h : 
+C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cyfitter.h : 
 
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/CyDmac.h : 
+C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cytypes.h : 
 
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/game_manager.c : 
 
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/CyLib.h : 
+C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/game_manager.h : 
 
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/CySpc.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/FPS_Clock.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/FPS_isr.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/LCD.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/LCD_LCDPort.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/LCD_LCDPort_aliases.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/core_cm3.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/core_cmFunc.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/core_cmInstr.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cyPm.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevice.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cyfitter.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cypins.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cytypes.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/project.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/x_DAC.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/x_out.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/x_out_aliases.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/y_DAC.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/y_out.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/y_out_aliases.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/main.c : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/sprites.h : 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/CortexM3/ARM_GCC_493/Debug/sprites.o : C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevice.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cytypes.h C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/sprites.c C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/sprites.h 
-
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/sprites.c : 
+C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/sprites.h : 
 

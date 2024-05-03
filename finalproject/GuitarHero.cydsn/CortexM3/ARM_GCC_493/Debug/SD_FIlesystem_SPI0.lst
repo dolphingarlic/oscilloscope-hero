@@ -1,0 +1,3508 @@
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"SD_FIlesystem_SPI0.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.SD_FIlesystem_SPI0_Enable,"ax",%progbits
+  19              		.align	2
+  20              		.global	SD_FIlesystem_SPI0_Enable
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	SD_FIlesystem_SPI0_Enable, %function
+  24              	SD_FIlesystem_SPI0_Enable:
+  25              	.LFB1:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\SD_FIlesystem_SPI0.c"
+   1:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * File Name: SD_FIlesystem_SPI0.c
+   3:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Version 2.40
+   4:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+   5:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Description:
+   6:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  This file provides all API functionality of the SPI Master component.
+   7:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+   8:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Note:
+   9:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+  10:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+  11:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+  18:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** #include "SD_FIlesystem_SPI0_PVT.h"
+  19:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+  20:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** #if(SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED)
+  21:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     volatile uint8 SD_FIlesystem_SPI0_txBuffer[SD_FIlesystem_SPI0_TX_BUFFER_SIZE] = {0u};
+  22:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     volatile uint8 SD_FIlesystem_SPI0_txBufferFull;
+  23:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     volatile uint8 SD_FIlesystem_SPI0_txBufferRead;
+  24:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     volatile uint8 SD_FIlesystem_SPI0_txBufferWrite;
+  25:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** #endif /* (SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED) */
+  26:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+  27:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** #if(SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED)
+  28:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     volatile uint8 SD_FIlesystem_SPI0_rxBuffer[SD_FIlesystem_SPI0_RX_BUFFER_SIZE] = {0u};
+  29:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     volatile uint8 SD_FIlesystem_SPI0_rxBufferFull;
+  30:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     volatile uint8 SD_FIlesystem_SPI0_rxBufferRead;
+  31:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     volatile uint8 SD_FIlesystem_SPI0_rxBufferWrite;
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** #endif /* (SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED) */
+  33:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+  34:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** uint8 SD_FIlesystem_SPI0_initVar = 0u;
+  35:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+  36:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** volatile uint8 SD_FIlesystem_SPI0_swStatusTx;
+  37:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** volatile uint8 SD_FIlesystem_SPI0_swStatusRx;
+  38:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+  39:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+  40:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+  41:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_Init
+  42:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+  43:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+  44:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+  45:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Inits/Restores default SPIM configuration provided with customizer.
+  46:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+  47:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+  48:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+  49:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+  50:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+  51:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+  52:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+  53:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Side Effects:
+  54:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  When this function is called it initializes all of the necessary parameters
+  55:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  for execution. i.e. setting the initial interrupt mask, configuring the
+  56:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  interrupt service routine, configuring the bit-counter parameters and
+  57:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  clearing the FIFO and Status Register.
+  58:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+  59:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Reentrant:
+  60:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  No.
+  61:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+  62:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+  63:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_Init(void) 
+  64:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+  65:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     /* Initialize the Bit counter */
+  66:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_COUNTER_PERIOD_REG = SD_FIlesystem_SPI0_BITCTR_INIT;
+  67:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+  68:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     /* Init TX ISR  */
+  69:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(0u != SD_FIlesystem_SPI0_INTERNAL_TX_INT_ENABLED)
+  70:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         CyIntDisable         (SD_FIlesystem_SPI0_TX_ISR_NUMBER);
+  71:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         CyIntSetPriority     (SD_FIlesystem_SPI0_TX_ISR_NUMBER,  SD_FIlesystem_SPI0_TX_ISR_PRIORITY
+  72:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         (void) CyIntSetVector(SD_FIlesystem_SPI0_TX_ISR_NUMBER, &SD_FIlesystem_SPI0_TX_ISR);
+  73:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (0u != SD_FIlesystem_SPI0_INTERNAL_TX_INT_ENABLED) */
+  74:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+  75:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     /* Init RX ISR  */
+  76:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(0u != SD_FIlesystem_SPI0_INTERNAL_RX_INT_ENABLED)
+  77:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         CyIntDisable         (SD_FIlesystem_SPI0_RX_ISR_NUMBER);
+  78:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         CyIntSetPriority     (SD_FIlesystem_SPI0_RX_ISR_NUMBER,  SD_FIlesystem_SPI0_RX_ISR_PRIORITY
+  79:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         (void) CyIntSetVector(SD_FIlesystem_SPI0_RX_ISR_NUMBER, &SD_FIlesystem_SPI0_RX_ISR);
+  80:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (0u != SD_FIlesystem_SPI0_INTERNAL_RX_INT_ENABLED) */
+  81:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+  82:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     /* Clear any stray data from the RX and TX FIFO */
+  83:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_ClearFIFO();
+  84:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+  85:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED)
+  86:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_rxBufferFull  = 0u;
+  87:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_rxBufferRead  = 0u;
+  88:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_rxBufferWrite = 0u;
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 3
+
+
+  89:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED) */
+  90:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+  91:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED)
+  92:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_txBufferFull  = 0u;
+  93:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_txBufferRead  = 0u;
+  94:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_txBufferWrite = 0u;
+  95:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED) */
+  96:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+  97:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     (void) SD_FIlesystem_SPI0_ReadTxStatus(); /* Clear Tx status and swStatusTx */
+  98:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     (void) SD_FIlesystem_SPI0_ReadRxStatus(); /* Clear Rx status and swStatusRx */
+  99:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 100:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     /* Configure TX and RX interrupt mask */
+ 101:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_TX_STATUS_MASK_REG = SD_FIlesystem_SPI0_TX_INIT_INTERRUPTS_MASK;
+ 102:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_RX_STATUS_MASK_REG = SD_FIlesystem_SPI0_RX_INIT_INTERRUPTS_MASK;
+ 103:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 104:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 105:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 106:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 107:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_Enable
+ 108:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 109:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 110:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 111:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Enable SPIM component.
+ 112:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 113:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 114:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 115:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 116:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 117:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 118:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 119:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 120:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_Enable(void) 
+ 121:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+  27              		.loc 1 121 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 08B5     		push	{r3, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 3, -8
+  34              		.cfi_offset 14, -4
+ 122:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     uint8 enableInterrupts;
+ 123:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 124:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     enableInterrupts = CyEnterCriticalSection();
+  35              		.loc 1 124 0
+  36 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+  37              	.LVL0:
+ 125:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_COUNTER_CONTROL_REG |= SD_FIlesystem_SPI0_CNTR_ENABLE;
+  38              		.loc 1 125 0
+  39 0006 094A     		ldr	r2, .L3
+  40 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  41 000a 43F02003 		orr	r3, r3, #32
+  42 000e 1370     		strb	r3, [r2]
+ 126:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_TX_STATUS_ACTL_REG  |= SD_FIlesystem_SPI0_INT_ENABLE;
+  43              		.loc 1 126 0
+  44 0010 02F20312 		addw	r2, r2, #259
+  45 0014 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 4
+
+
+  46 0016 43F01003 		orr	r3, r3, #16
+  47 001a 1370     		strb	r3, [r2]
+ 127:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_RX_STATUS_ACTL_REG  |= SD_FIlesystem_SPI0_INT_ENABLE;
+  48              		.loc 1 127 0
+  49 001c 013A     		subs	r2, r2, #1
+  50 001e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  51 0020 43F01003 		orr	r3, r3, #16
+  52 0024 1370     		strb	r3, [r2]
+ 128:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     CyExitCriticalSection(enableInterrupts);
+  53              		.loc 1 128 0
+  54 0026 FFF7FEFF 		bl	CyExitCriticalSection
+  55              	.LVL1:
+  56 002a 08BD     		pop	{r3, pc}
+  57              	.L4:
+  58              		.align	2
+  59              	.L3:
+  60 002c 94640040 		.word	1073767572
+  61              		.cfi_endproc
+  62              	.LFE1:
+  63              		.size	SD_FIlesystem_SPI0_Enable, .-SD_FIlesystem_SPI0_Enable
+  64              		.section	.text.SD_FIlesystem_SPI0_Stop,"ax",%progbits
+  65              		.align	2
+  66              		.global	SD_FIlesystem_SPI0_Stop
+  67              		.thumb
+  68              		.thumb_func
+  69              		.type	SD_FIlesystem_SPI0_Stop, %function
+  70              	SD_FIlesystem_SPI0_Stop:
+  71              	.LFB3:
+ 129:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 130:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(0u != SD_FIlesystem_SPI0_INTERNAL_CLOCK)
+ 131:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_IntClock_Enable();
+ 132:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (0u != SD_FIlesystem_SPI0_INTERNAL_CLOCK) */
+ 133:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 134:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_EnableTxInt();
+ 135:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_EnableRxInt();
+ 136:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 137:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 138:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 139:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 140:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_Start
+ 141:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 142:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 143:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 144:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Initialize and Enable the SPI Master component.
+ 145:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 146:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 147:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 148:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 149:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 150:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 151:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 152:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Global variables:
+ 153:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_initVar - used to check initial configuration, modified on
+ 154:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  first function call.
+ 155:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 156:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 157:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Enable the clock input to enable operation.
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 5
+
+
+ 158:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 159:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Reentrant:
+ 160:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  No.
+ 161:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 162:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 163:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_Start(void) 
+ 164:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 165:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     if(0u == SD_FIlesystem_SPI0_initVar)
+ 166:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     {
+ 167:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_Init();
+ 168:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_initVar = 1u;
+ 169:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     }
+ 170:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 171:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_Enable();
+ 172:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 173:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 174:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 175:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 176:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_Stop
+ 177:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 178:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 179:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 180:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Disable the SPI Master component.
+ 181:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 182:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 183:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 184:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 185:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 186:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 187:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 188:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 189:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Disable the clock input to enable operation.
+ 190:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 191:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 192:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_Stop(void) 
+ 193:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+  72              		.loc 1 193 0
+  73              		.cfi_startproc
+  74              		@ args = 0, pretend = 0, frame = 0
+  75              		@ frame_needed = 0, uses_anonymous_args = 0
+  76 0000 08B5     		push	{r3, lr}
+  77              		.cfi_def_cfa_offset 8
+  78              		.cfi_offset 3, -8
+  79              		.cfi_offset 14, -4
+ 194:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     uint8 enableInterrupts;
+ 195:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 196:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     enableInterrupts = CyEnterCriticalSection();
+  80              		.loc 1 196 0
+  81 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+  82              	.LVL2:
+ 197:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_TX_STATUS_ACTL_REG &= ((uint8) ~SD_FIlesystem_SPI0_INT_ENABLE);
+  83              		.loc 1 197 0
+  84 0006 064A     		ldr	r2, .L7
+  85 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  86 000a 03F0EF03 		and	r3, r3, #239
+  87 000e 1370     		strb	r3, [r2]
+ 198:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_RX_STATUS_ACTL_REG &= ((uint8) ~SD_FIlesystem_SPI0_INT_ENABLE);
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 6
+
+
+  88              		.loc 1 198 0
+  89 0010 013A     		subs	r2, r2, #1
+  90 0012 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  91 0014 03F0EF03 		and	r3, r3, #239
+  92 0018 1370     		strb	r3, [r2]
+ 199:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     CyExitCriticalSection(enableInterrupts);
+  93              		.loc 1 199 0
+  94 001a FFF7FEFF 		bl	CyExitCriticalSection
+  95              	.LVL3:
+  96 001e 08BD     		pop	{r3, pc}
+  97              	.L8:
+  98              		.align	2
+  99              	.L7:
+ 100 0020 97650040 		.word	1073767831
+ 101              		.cfi_endproc
+ 102              	.LFE3:
+ 103              		.size	SD_FIlesystem_SPI0_Stop, .-SD_FIlesystem_SPI0_Stop
+ 104              		.section	.text.SD_FIlesystem_SPI0_EnableTxInt,"ax",%progbits
+ 105              		.align	2
+ 106              		.global	SD_FIlesystem_SPI0_EnableTxInt
+ 107              		.thumb
+ 108              		.thumb_func
+ 109              		.type	SD_FIlesystem_SPI0_EnableTxInt, %function
+ 110              	SD_FIlesystem_SPI0_EnableTxInt:
+ 111              	.LFB4:
+ 200:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 201:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(0u != SD_FIlesystem_SPI0_INTERNAL_CLOCK)
+ 202:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_IntClock_Disable();
+ 203:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (0u != SD_FIlesystem_SPI0_INTERNAL_CLOCK) */
+ 204:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 205:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_DisableTxInt();
+ 206:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_DisableRxInt();
+ 207:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 208:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 209:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 210:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 211:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_EnableTxInt
+ 212:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 213:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 214:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 215:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Enable internal Tx interrupt generation.
+ 216:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 217:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 218:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 219:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 220:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 221:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 222:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 223:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 224:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Enable the internal Tx interrupt output -or- the interrupt component itself.
+ 225:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 226:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 227:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_EnableTxInt(void) 
+ 228:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 112              		.loc 1 228 0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 7
+
+
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116              		@ link register save eliminated.
+ 117 0000 7047     		bx	lr
+ 118              		.cfi_endproc
+ 119              	.LFE4:
+ 120              		.size	SD_FIlesystem_SPI0_EnableTxInt, .-SD_FIlesystem_SPI0_EnableTxInt
+ 121 0002 00BF     		.section	.text.SD_FIlesystem_SPI0_EnableRxInt,"ax",%progbits
+ 122              		.align	2
+ 123              		.global	SD_FIlesystem_SPI0_EnableRxInt
+ 124              		.thumb
+ 125              		.thumb_func
+ 126              		.type	SD_FIlesystem_SPI0_EnableRxInt, %function
+ 127              	SD_FIlesystem_SPI0_EnableRxInt:
+ 128              	.LFB5:
+ 229:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(0u != SD_FIlesystem_SPI0_INTERNAL_TX_INT_ENABLED)
+ 230:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         CyIntEnable(SD_FIlesystem_SPI0_TX_ISR_NUMBER);
+ 231:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (0u != SD_FIlesystem_SPI0_INTERNAL_TX_INT_ENABLED) */
+ 232:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 233:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 234:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 235:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 236:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_EnableRxInt
+ 237:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 238:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 239:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 240:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Enable internal Rx interrupt generation.
+ 241:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 242:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 243:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 244:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 245:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 246:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 247:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 248:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 249:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Enable the internal Rx interrupt output -or- the interrupt component itself.
+ 250:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 251:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 252:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_EnableRxInt(void) 
+ 253:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 129              		.loc 1 253 0
+ 130              		.cfi_startproc
+ 131              		@ args = 0, pretend = 0, frame = 0
+ 132              		@ frame_needed = 0, uses_anonymous_args = 0
+ 133              		@ link register save eliminated.
+ 134 0000 7047     		bx	lr
+ 135              		.cfi_endproc
+ 136              	.LFE5:
+ 137              		.size	SD_FIlesystem_SPI0_EnableRxInt, .-SD_FIlesystem_SPI0_EnableRxInt
+ 138 0002 00BF     		.section	.text.SD_FIlesystem_SPI0_DisableTxInt,"ax",%progbits
+ 139              		.align	2
+ 140              		.global	SD_FIlesystem_SPI0_DisableTxInt
+ 141              		.thumb
+ 142              		.thumb_func
+ 143              		.type	SD_FIlesystem_SPI0_DisableTxInt, %function
+ 144              	SD_FIlesystem_SPI0_DisableTxInt:
+ 145              	.LFB6:
+ 254:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(0u != SD_FIlesystem_SPI0_INTERNAL_RX_INT_ENABLED)
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 8
+
+
+ 255:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         CyIntEnable(SD_FIlesystem_SPI0_RX_ISR_NUMBER);
+ 256:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (0u != SD_FIlesystem_SPI0_INTERNAL_RX_INT_ENABLED) */
+ 257:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 258:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 259:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 260:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 261:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_DisableTxInt
+ 262:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 263:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 264:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 265:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Disable internal Tx interrupt generation.
+ 266:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 267:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 268:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 269:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 270:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 271:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 272:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 273:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 274:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Disable the internal Tx interrupt output -or- the interrupt component itself.
+ 275:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 276:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 277:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_DisableTxInt(void) 
+ 278:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 146              		.loc 1 278 0
+ 147              		.cfi_startproc
+ 148              		@ args = 0, pretend = 0, frame = 0
+ 149              		@ frame_needed = 0, uses_anonymous_args = 0
+ 150              		@ link register save eliminated.
+ 151 0000 7047     		bx	lr
+ 152              		.cfi_endproc
+ 153              	.LFE6:
+ 154              		.size	SD_FIlesystem_SPI0_DisableTxInt, .-SD_FIlesystem_SPI0_DisableTxInt
+ 155 0002 00BF     		.section	.text.SD_FIlesystem_SPI0_DisableRxInt,"ax",%progbits
+ 156              		.align	2
+ 157              		.global	SD_FIlesystem_SPI0_DisableRxInt
+ 158              		.thumb
+ 159              		.thumb_func
+ 160              		.type	SD_FIlesystem_SPI0_DisableRxInt, %function
+ 161              	SD_FIlesystem_SPI0_DisableRxInt:
+ 162              	.LFB7:
+ 279:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(0u != SD_FIlesystem_SPI0_INTERNAL_TX_INT_ENABLED)
+ 280:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         CyIntDisable(SD_FIlesystem_SPI0_TX_ISR_NUMBER);
+ 281:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (0u != SD_FIlesystem_SPI0_INTERNAL_TX_INT_ENABLED) */
+ 282:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 283:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 284:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 285:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 286:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_DisableRxInt
+ 287:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 288:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 289:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 290:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Disable internal Rx interrupt generation.
+ 291:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 292:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 293:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 294:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 9
+
+
+ 295:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 296:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 297:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 298:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 299:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Disable the internal Rx interrupt output -or- the interrupt component itself.
+ 300:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 301:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 302:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_DisableRxInt(void) 
+ 303:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 163              		.loc 1 303 0
+ 164              		.cfi_startproc
+ 165              		@ args = 0, pretend = 0, frame = 0
+ 166              		@ frame_needed = 0, uses_anonymous_args = 0
+ 167              		@ link register save eliminated.
+ 168 0000 7047     		bx	lr
+ 169              		.cfi_endproc
+ 170              	.LFE7:
+ 171              		.size	SD_FIlesystem_SPI0_DisableRxInt, .-SD_FIlesystem_SPI0_DisableRxInt
+ 172 0002 00BF     		.section	.text.SD_FIlesystem_SPI0_SetTxInterruptMode,"ax",%progbits
+ 173              		.align	2
+ 174              		.global	SD_FIlesystem_SPI0_SetTxInterruptMode
+ 175              		.thumb
+ 176              		.thumb_func
+ 177              		.type	SD_FIlesystem_SPI0_SetTxInterruptMode, %function
+ 178              	SD_FIlesystem_SPI0_SetTxInterruptMode:
+ 179              	.LFB8:
+ 304:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(0u != SD_FIlesystem_SPI0_INTERNAL_RX_INT_ENABLED)
+ 305:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         CyIntDisable(SD_FIlesystem_SPI0_RX_ISR_NUMBER);
+ 306:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (0u != SD_FIlesystem_SPI0_INTERNAL_RX_INT_ENABLED) */
+ 307:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 308:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 309:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 310:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 311:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_SetTxInterruptMode
+ 312:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 313:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 314:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 315:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Configure which status bits trigger an interrupt event.
+ 316:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 317:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 318:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  intSrc: An or'd combination of the desired status bit masks (defined in the
+ 319:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  header file).
+ 320:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 321:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 322:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 323:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 324:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 325:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Enables the output of specific status bits to the interrupt controller.
+ 326:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 327:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 328:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_SetTxInterruptMode(uint8 intSrc) 
+ 329:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 180              		.loc 1 329 0
+ 181              		.cfi_startproc
+ 182              		@ args = 0, pretend = 0, frame = 0
+ 183              		@ frame_needed = 0, uses_anonymous_args = 0
+ 184              		@ link register save eliminated.
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 10
+
+
+ 185              	.LVL4:
+ 330:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_TX_STATUS_MASK_REG = intSrc;
+ 186              		.loc 1 330 0
+ 187 0000 014B     		ldr	r3, .L14
+ 188 0002 1870     		strb	r0, [r3]
+ 189 0004 7047     		bx	lr
+ 190              	.L15:
+ 191 0006 00BF     		.align	2
+ 192              	.L14:
+ 193 0008 87650040 		.word	1073767815
+ 194              		.cfi_endproc
+ 195              	.LFE8:
+ 196              		.size	SD_FIlesystem_SPI0_SetTxInterruptMode, .-SD_FIlesystem_SPI0_SetTxInterruptMode
+ 197              		.section	.text.SD_FIlesystem_SPI0_SetRxInterruptMode,"ax",%progbits
+ 198              		.align	2
+ 199              		.global	SD_FIlesystem_SPI0_SetRxInterruptMode
+ 200              		.thumb
+ 201              		.thumb_func
+ 202              		.type	SD_FIlesystem_SPI0_SetRxInterruptMode, %function
+ 203              	SD_FIlesystem_SPI0_SetRxInterruptMode:
+ 204              	.LFB9:
+ 331:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 332:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 333:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 334:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 335:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_SetRxInterruptMode
+ 336:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 337:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 338:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 339:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Configure which status bits trigger an interrupt event.
+ 340:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 341:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 342:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  intSrc: An or'd combination of the desired status bit masks (defined in the
+ 343:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  header file).
+ 344:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 345:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 346:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 347:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 348:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 349:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Enables the output of specific status bits to the interrupt controller.
+ 350:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 351:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 352:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_SetRxInterruptMode(uint8 intSrc) 
+ 353:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 205              		.loc 1 353 0
+ 206              		.cfi_startproc
+ 207              		@ args = 0, pretend = 0, frame = 0
+ 208              		@ frame_needed = 0, uses_anonymous_args = 0
+ 209              		@ link register save eliminated.
+ 210              	.LVL5:
+ 354:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_RX_STATUS_MASK_REG  = intSrc;
+ 211              		.loc 1 354 0
+ 212 0000 014B     		ldr	r3, .L17
+ 213 0002 1870     		strb	r0, [r3]
+ 214 0004 7047     		bx	lr
+ 215              	.L18:
+ 216 0006 00BF     		.align	2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 11
+
+
+ 217              	.L17:
+ 218 0008 86650040 		.word	1073767814
+ 219              		.cfi_endproc
+ 220              	.LFE9:
+ 221              		.size	SD_FIlesystem_SPI0_SetRxInterruptMode, .-SD_FIlesystem_SPI0_SetRxInterruptMode
+ 222              		.section	.text.SD_FIlesystem_SPI0_ReadTxStatus,"ax",%progbits
+ 223              		.align	2
+ 224              		.global	SD_FIlesystem_SPI0_ReadTxStatus
+ 225              		.thumb
+ 226              		.thumb_func
+ 227              		.type	SD_FIlesystem_SPI0_ReadTxStatus, %function
+ 228              	SD_FIlesystem_SPI0_ReadTxStatus:
+ 229              	.LFB10:
+ 355:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 356:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 357:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 358:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 359:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_ReadTxStatus
+ 360:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 361:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 362:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 363:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Read the Tx status register for the component.
+ 364:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 365:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 366:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 367:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 368:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 369:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Contents of the Tx status register.
+ 370:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 371:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Global variables:
+ 372:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_swStatusTx - used to store in software status register,
+ 373:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  modified every function call - resets to zero.
+ 374:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 375:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 376:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Allows the user and the API to read the Tx status register for error
+ 377:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  detection and flow control.
+ 378:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 379:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Side Effects:
+ 380:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Clear Tx status register of the component.
+ 381:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 382:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Reentrant:
+ 383:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  No.
+ 384:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 385:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 386:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** uint8 SD_FIlesystem_SPI0_ReadTxStatus(void) 
+ 387:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 230              		.loc 1 387 0
+ 231              		.cfi_startproc
+ 232              		@ args = 0, pretend = 0, frame = 0
+ 233              		@ frame_needed = 0, uses_anonymous_args = 0
+ 234              		@ link register save eliminated.
+ 388:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     uint8 tmpStatus;
+ 389:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 390:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED)
+ 391:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* Disable TX interrupt to protect global veriables */
+ 392:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_DisableTxInt();
+ 393:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 12
+
+
+ 394:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         tmpStatus = SD_FIlesystem_SPI0_GET_STATUS_TX(SD_FIlesystem_SPI0_swStatusTx);
+ 395:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_swStatusTx = 0u;
+ 396:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 397:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_EnableTxInt();
+ 398:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 399:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #else
+ 400:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 401:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         tmpStatus = SD_FIlesystem_SPI0_TX_STATUS_REG;
+ 235              		.loc 1 401 0
+ 236 0000 014B     		ldr	r3, .L20
+ 237 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 238              	.LVL6:
+ 402:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 403:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED) */
+ 404:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 405:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     return(tmpStatus);
+ 406:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 239              		.loc 1 406 0
+ 240 0004 7047     		bx	lr
+ 241              	.L21:
+ 242 0006 00BF     		.align	2
+ 243              	.L20:
+ 244 0008 67650040 		.word	1073767783
+ 245              		.cfi_endproc
+ 246              	.LFE10:
+ 247              		.size	SD_FIlesystem_SPI0_ReadTxStatus, .-SD_FIlesystem_SPI0_ReadTxStatus
+ 248              		.section	.text.SD_FIlesystem_SPI0_ReadRxStatus,"ax",%progbits
+ 249              		.align	2
+ 250              		.global	SD_FIlesystem_SPI0_ReadRxStatus
+ 251              		.thumb
+ 252              		.thumb_func
+ 253              		.type	SD_FIlesystem_SPI0_ReadRxStatus, %function
+ 254              	SD_FIlesystem_SPI0_ReadRxStatus:
+ 255              	.LFB11:
+ 407:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 408:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 409:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 410:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_ReadRxStatus
+ 411:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 412:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 413:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 414:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Read the Rx status register for the component.
+ 415:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 416:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 417:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 418:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 419:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 420:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Contents of the Rx status register.
+ 421:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 422:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Global variables:
+ 423:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_swStatusRx - used to store in software Rx status register,
+ 424:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  modified every function call - resets to zero.
+ 425:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 426:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 427:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Allows the user and the API to read the Rx status register for error
+ 428:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  detection and flow control.
+ 429:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 13
+
+
+ 430:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Side Effects:
+ 431:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Clear Rx status register of the component.
+ 432:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 433:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Reentrant:
+ 434:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  No.
+ 435:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 436:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 437:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** uint8 SD_FIlesystem_SPI0_ReadRxStatus(void) 
+ 438:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 256              		.loc 1 438 0
+ 257              		.cfi_startproc
+ 258              		@ args = 0, pretend = 0, frame = 0
+ 259              		@ frame_needed = 0, uses_anonymous_args = 0
+ 260              		@ link register save eliminated.
+ 439:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     uint8 tmpStatus;
+ 440:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 441:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED)
+ 442:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* Disable RX interrupt to protect global veriables */
+ 443:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_DisableRxInt();
+ 444:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 445:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         tmpStatus = SD_FIlesystem_SPI0_GET_STATUS_RX(SD_FIlesystem_SPI0_swStatusRx);
+ 446:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_swStatusRx = 0u;
+ 447:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 448:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_EnableRxInt();
+ 449:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 450:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #else
+ 451:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 452:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         tmpStatus = SD_FIlesystem_SPI0_RX_STATUS_REG;
+ 261              		.loc 1 452 0
+ 262 0000 014B     		ldr	r3, .L23
+ 263 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 264              	.LVL7:
+ 453:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 454:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED) */
+ 455:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 456:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     return(tmpStatus);
+ 457:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 265              		.loc 1 457 0
+ 266 0004 7047     		bx	lr
+ 267              	.L24:
+ 268 0006 00BF     		.align	2
+ 269              	.L23:
+ 270 0008 66650040 		.word	1073767782
+ 271              		.cfi_endproc
+ 272              	.LFE11:
+ 273              		.size	SD_FIlesystem_SPI0_ReadRxStatus, .-SD_FIlesystem_SPI0_ReadRxStatus
+ 274              		.section	.text.SD_FIlesystem_SPI0_WriteTxData,"ax",%progbits
+ 275              		.align	2
+ 276              		.global	SD_FIlesystem_SPI0_WriteTxData
+ 277              		.thumb
+ 278              		.thumb_func
+ 279              		.type	SD_FIlesystem_SPI0_WriteTxData, %function
+ 280              	SD_FIlesystem_SPI0_WriteTxData:
+ 281              	.LFB12:
+ 458:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 459:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 460:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 14
+
+
+ 461:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_WriteTxData
+ 462:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 463:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 464:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 465:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Write a byte of data to be sent across the SPI.
+ 466:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 467:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 468:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  txDataByte: The data value to send across the SPI.
+ 469:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 470:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 471:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 472:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 473:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Global variables:
+ 474:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_txBufferWrite - used for the account of the bytes which
+ 475:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  have been written down in the TX software buffer, modified every function
+ 476:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  call if TX Software Buffer is used.
+ 477:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_txBufferRead - used for the account of the bytes which
+ 478:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  have been read from the TX software buffer.
+ 479:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_txBuffer[SD_FIlesystem_SPI0_TX_BUFFER_SIZE] - used to store
+ 480:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  data to sending, modified every function call if TX Software Buffer is used.
+ 481:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 482:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 483:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Allows the user to transmit any byte of data in a single transfer.
+ 484:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 485:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Side Effects:
+ 486:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  If this function is called again before the previous byte is finished then
+ 487:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  the next byte will be appended to the transfer with no time between
+ 488:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  the byte transfers. Clear Tx status register of the component.
+ 489:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 490:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Reentrant:
+ 491:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  No.
+ 492:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 493:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 494:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_WriteTxData(uint8 txData) 
+ 495:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 282              		.loc 1 495 0
+ 283              		.cfi_startproc
+ 284              		@ args = 0, pretend = 0, frame = 0
+ 285              		@ frame_needed = 0, uses_anonymous_args = 0
+ 286              		@ link register save eliminated.
+ 287              	.LVL8:
+ 288              	.L26:
+ 496:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED)
+ 497:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 498:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         uint8 tempStatus;
+ 499:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         uint8 tmpTxBufferRead;
+ 500:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 501:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* Block if TX buffer is FULL: don't overwrite */
+ 502:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         do
+ 503:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ 504:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             tmpTxBufferRead = SD_FIlesystem_SPI0_txBufferRead;
+ 505:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             if(0u == tmpTxBufferRead)
+ 506:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             {
+ 507:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                 tmpTxBufferRead = (SD_FIlesystem_SPI0_TX_BUFFER_SIZE - 1u);
+ 508:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             }
+ 509:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             else
+ 510:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             {
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 15
+
+
+ 511:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                 tmpTxBufferRead--;
+ 512:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             }
+ 513:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 514:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }while(tmpTxBufferRead == SD_FIlesystem_SPI0_txBufferWrite);
+ 515:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 516:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* Disable TX interrupt to protect global veriables */
+ 517:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_DisableTxInt();
+ 518:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 519:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         tempStatus = SD_FIlesystem_SPI0_GET_STATUS_TX(SD_FIlesystem_SPI0_swStatusTx);
+ 520:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_swStatusTx = tempStatus;
+ 521:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 522:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 523:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         if((SD_FIlesystem_SPI0_txBufferRead == SD_FIlesystem_SPI0_txBufferWrite) &&
+ 524:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****            (0u != (SD_FIlesystem_SPI0_swStatusTx & SD_FIlesystem_SPI0_STS_TX_FIFO_NOT_FULL)))
+ 525:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ 526:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             /* Add directly to the TX FIFO */
+ 527:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             CY_SET_REG8(SD_FIlesystem_SPI0_TXDATA_PTR, txData);
+ 528:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 529:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         else
+ 530:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ 531:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             /* Add to the TX software buffer */
+ 532:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             SD_FIlesystem_SPI0_txBufferWrite++;
+ 533:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             if(SD_FIlesystem_SPI0_txBufferWrite >= SD_FIlesystem_SPI0_TX_BUFFER_SIZE)
+ 534:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             {
+ 535:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                 SD_FIlesystem_SPI0_txBufferWrite = 0u;
+ 536:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             }
+ 537:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 538:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             if(SD_FIlesystem_SPI0_txBufferWrite == SD_FIlesystem_SPI0_txBufferRead)
+ 539:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             {
+ 540:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                 SD_FIlesystem_SPI0_txBufferRead++;
+ 541:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                 if(SD_FIlesystem_SPI0_txBufferRead >= SD_FIlesystem_SPI0_TX_BUFFER_SIZE)
+ 542:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                 {
+ 543:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                     SD_FIlesystem_SPI0_txBufferRead = 0u;
+ 544:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                 }
+ 545:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                 SD_FIlesystem_SPI0_txBufferFull = 1u;
+ 546:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             }
+ 547:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 548:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             SD_FIlesystem_SPI0_txBuffer[SD_FIlesystem_SPI0_txBufferWrite] = txData;
+ 549:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 550:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             SD_FIlesystem_SPI0_TX_STATUS_MASK_REG |= SD_FIlesystem_SPI0_STS_TX_FIFO_NOT_FULL;
+ 551:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 552:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 553:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_EnableTxInt();
+ 554:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 555:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #else
+ 556:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 557:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         while(0u == (SD_FIlesystem_SPI0_TX_STATUS_REG & SD_FIlesystem_SPI0_STS_TX_FIFO_NOT_FULL))
+ 289              		.loc 1 557 0 discriminator 1
+ 290 0000 034B     		ldr	r3, .L27
+ 291 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 292 0004 13F0040F 		tst	r3, #4
+ 293 0008 FAD0     		beq	.L26
+ 558:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ 559:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             ; /* Wait for room in FIFO */
+ 560:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 561:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 562:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* Put byte in TX FIFO */
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 16
+
+
+ 563:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         CY_SET_REG8(SD_FIlesystem_SPI0_TXDATA_PTR, txData);
+ 294              		.loc 1 563 0
+ 295 000a 024B     		ldr	r3, .L27+4
+ 296 000c 1870     		strb	r0, [r3]
+ 297 000e 7047     		bx	lr
+ 298              	.L28:
+ 299              		.align	2
+ 300              	.L27:
+ 301 0010 67650040 		.word	1073767783
+ 302 0014 45640040 		.word	1073767493
+ 303              		.cfi_endproc
+ 304              	.LFE12:
+ 305              		.size	SD_FIlesystem_SPI0_WriteTxData, .-SD_FIlesystem_SPI0_WriteTxData
+ 306              		.section	.text.SD_FIlesystem_SPI0_ReadRxData,"ax",%progbits
+ 307              		.align	2
+ 308              		.global	SD_FIlesystem_SPI0_ReadRxData
+ 309              		.thumb
+ 310              		.thumb_func
+ 311              		.type	SD_FIlesystem_SPI0_ReadRxData, %function
+ 312              	SD_FIlesystem_SPI0_ReadRxData:
+ 313              	.LFB13:
+ 564:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 565:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED) */
+ 566:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 567:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 568:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 569:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 570:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_ReadRxData
+ 571:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 572:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 573:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 574:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Read the next byte of data received across the SPI.
+ 575:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 576:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 577:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 578:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 579:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 580:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  The next byte of data read from the FIFO.
+ 581:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 582:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Global variables:
+ 583:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_rxBufferWrite - used for the account of the bytes which
+ 584:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  have been written down in the RX software buffer.
+ 585:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_rxBufferRead - used for the account of the bytes which
+ 586:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  have been read from the RX software buffer, modified every function
+ 587:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  call if RX Software Buffer is used.
+ 588:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_rxBuffer[SD_FIlesystem_SPI0_RX_BUFFER_SIZE] - used to store
+ 589:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  received data.
+ 590:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 591:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 592:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Allows the user to read a byte of data received.
+ 593:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 594:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Side Effects:
+ 595:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Will return invalid data if the FIFO is empty. The user should Call
+ 596:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  GetRxBufferSize() and if it returns a non-zero value then it is safe to call
+ 597:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  ReadByte() function.
+ 598:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 599:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Reentrant:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 17
+
+
+ 600:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  No.
+ 601:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 602:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 603:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** uint8 SD_FIlesystem_SPI0_ReadRxData(void) 
+ 604:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 314              		.loc 1 604 0
+ 315              		.cfi_startproc
+ 316              		@ args = 0, pretend = 0, frame = 0
+ 317              		@ frame_needed = 0, uses_anonymous_args = 0
+ 318              		@ link register save eliminated.
+ 605:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     uint8 rxData;
+ 606:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 607:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED)
+ 608:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 609:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* Disable RX interrupt to protect global veriables */
+ 610:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_DisableRxInt();
+ 611:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 612:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         if(SD_FIlesystem_SPI0_rxBufferRead != SD_FIlesystem_SPI0_rxBufferWrite)
+ 613:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ 614:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             if(0u == SD_FIlesystem_SPI0_rxBufferFull)
+ 615:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             {
+ 616:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                 SD_FIlesystem_SPI0_rxBufferRead++;
+ 617:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                 if(SD_FIlesystem_SPI0_rxBufferRead >= SD_FIlesystem_SPI0_RX_BUFFER_SIZE)
+ 618:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                 {
+ 619:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                     SD_FIlesystem_SPI0_rxBufferRead = 0u;
+ 620:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                 }
+ 621:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             }
+ 622:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             else
+ 623:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             {
+ 624:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                 SD_FIlesystem_SPI0_rxBufferFull = 0u;
+ 625:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             }
+ 626:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 627:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 628:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         rxData = SD_FIlesystem_SPI0_rxBuffer[SD_FIlesystem_SPI0_rxBufferRead];
+ 629:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 630:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_EnableRxInt();
+ 631:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 632:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #else
+ 633:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 634:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         rxData = CY_GET_REG8(SD_FIlesystem_SPI0_RXDATA_PTR);
+ 319              		.loc 1 634 0
+ 320 0000 014B     		ldr	r3, .L30
+ 321 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 322              	.LVL9:
+ 635:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 636:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED) */
+ 637:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 638:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     return(rxData);
+ 639:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 323              		.loc 1 639 0
+ 324 0004 7047     		bx	lr
+ 325              	.L31:
+ 326 0006 00BF     		.align	2
+ 327              	.L30:
+ 328 0008 55640040 		.word	1073767509
+ 329              		.cfi_endproc
+ 330              	.LFE13:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 18
+
+
+ 331              		.size	SD_FIlesystem_SPI0_ReadRxData, .-SD_FIlesystem_SPI0_ReadRxData
+ 332              		.section	.text.SD_FIlesystem_SPI0_GetRxBufferSize,"ax",%progbits
+ 333              		.align	2
+ 334              		.global	SD_FIlesystem_SPI0_GetRxBufferSize
+ 335              		.thumb
+ 336              		.thumb_func
+ 337              		.type	SD_FIlesystem_SPI0_GetRxBufferSize, %function
+ 338              	SD_FIlesystem_SPI0_GetRxBufferSize:
+ 339              	.LFB14:
+ 640:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 641:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 642:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 643:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_GetRxBufferSize
+ 644:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 645:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 646:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 647:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Returns the number of bytes/words of data currently held in the RX buffer.
+ 648:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  If RX Software Buffer not used then function return 0 if FIFO empty or 1 if
+ 649:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  FIFO not empty. In another case function return size of RX Software Buffer.
+ 650:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 651:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 652:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 653:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 654:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 655:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Integer count of the number of bytes/words in the RX buffer.
+ 656:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 657:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Global variables:
+ 658:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_rxBufferWrite - used for the account of the bytes which
+ 659:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  have been written down in the RX software buffer.
+ 660:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_rxBufferRead - used for the account of the bytes which
+ 661:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  have been read from the RX software buffer.
+ 662:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 663:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Side Effects:
+ 664:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Clear status register of the component.
+ 665:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 666:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 667:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** uint8 SD_FIlesystem_SPI0_GetRxBufferSize(void) 
+ 668:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 340              		.loc 1 668 0
+ 341              		.cfi_startproc
+ 342              		@ args = 0, pretend = 0, frame = 0
+ 343              		@ frame_needed = 0, uses_anonymous_args = 0
+ 344              		@ link register save eliminated.
+ 669:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     uint8 size;
+ 670:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 671:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED)
+ 672:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 673:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* Disable RX interrupt to protect global veriables */
+ 674:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_DisableRxInt();
+ 675:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 676:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         if(SD_FIlesystem_SPI0_rxBufferRead == SD_FIlesystem_SPI0_rxBufferWrite)
+ 677:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ 678:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             size = 0u;
+ 679:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 680:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         else if(SD_FIlesystem_SPI0_rxBufferRead < SD_FIlesystem_SPI0_rxBufferWrite)
+ 681:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ 682:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             size = (SD_FIlesystem_SPI0_rxBufferWrite - SD_FIlesystem_SPI0_rxBufferRead);
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 19
+
+
+ 683:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 684:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         else
+ 685:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ 686:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             size = (SD_FIlesystem_SPI0_RX_BUFFER_SIZE - SD_FIlesystem_SPI0_rxBufferRead) + SD_FIles
+ 687:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 688:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 689:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_EnableRxInt();
+ 690:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 691:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #else
+ 692:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 693:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* We can only know if there is data in the RX FIFO */
+ 694:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         size = (0u != (SD_FIlesystem_SPI0_RX_STATUS_REG & SD_FIlesystem_SPI0_STS_RX_FIFO_NOT_EMPTY)
+ 345              		.loc 1 694 0
+ 346 0000 044B     		ldr	r3, .L35
+ 347 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 348 0004 13F0200F 		tst	r3, #32
+ 349 0008 01D0     		beq	.L34
+ 350 000a 0120     		movs	r0, #1
+ 351 000c 7047     		bx	lr
+ 352              	.L34:
+ 353 000e 0020     		movs	r0, #0
+ 354              	.LVL10:
+ 695:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 696:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED) */
+ 697:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 698:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     return(size);
+ 699:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 355              		.loc 1 699 0
+ 356 0010 7047     		bx	lr
+ 357              	.L36:
+ 358 0012 00BF     		.align	2
+ 359              	.L35:
+ 360 0014 66650040 		.word	1073767782
+ 361              		.cfi_endproc
+ 362              	.LFE14:
+ 363              		.size	SD_FIlesystem_SPI0_GetRxBufferSize, .-SD_FIlesystem_SPI0_GetRxBufferSize
+ 364              		.section	.text.SD_FIlesystem_SPI0_GetTxBufferSize,"ax",%progbits
+ 365              		.align	2
+ 366              		.global	SD_FIlesystem_SPI0_GetTxBufferSize
+ 367              		.thumb
+ 368              		.thumb_func
+ 369              		.type	SD_FIlesystem_SPI0_GetTxBufferSize, %function
+ 370              	SD_FIlesystem_SPI0_GetTxBufferSize:
+ 371              	.LFB15:
+ 700:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 701:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 702:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 703:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_GetTxBufferSize
+ 704:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 705:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 706:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 707:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Returns the number of bytes/words of data currently held in the TX buffer.
+ 708:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  If TX Software Buffer not used then function return 0 - if FIFO empty, 1 - if
+ 709:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  FIFO not full, 4 - if FIFO full. In another case function return size of TX
+ 710:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Software Buffer.
+ 711:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 712:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 20
+
+
+ 713:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 714:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 715:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 716:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Integer count of the number of bytes/words in the TX buffer.
+ 717:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 718:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Global variables:
+ 719:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_txBufferWrite - used for the account of the bytes which
+ 720:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  have been written down in the TX software buffer.
+ 721:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_txBufferRead - used for the account of the bytes which
+ 722:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  have been read from the TX software buffer.
+ 723:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 724:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Side Effects:
+ 725:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Clear status register of the component.
+ 726:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 727:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 728:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** uint8  SD_FIlesystem_SPI0_GetTxBufferSize(void) 
+ 729:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 372              		.loc 1 729 0
+ 373              		.cfi_startproc
+ 374              		@ args = 0, pretend = 0, frame = 0
+ 375              		@ frame_needed = 0, uses_anonymous_args = 0
+ 376              		@ link register save eliminated.
+ 730:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     uint8 size;
+ 731:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 732:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED)
+ 733:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* Disable TX interrupt to protect global veriables */
+ 734:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_DisableTxInt();
+ 735:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 736:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         if(SD_FIlesystem_SPI0_txBufferRead == SD_FIlesystem_SPI0_txBufferWrite)
+ 737:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ 738:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             size = 0u;
+ 739:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 740:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         else if(SD_FIlesystem_SPI0_txBufferRead < SD_FIlesystem_SPI0_txBufferWrite)
+ 741:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ 742:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             size = (SD_FIlesystem_SPI0_txBufferWrite - SD_FIlesystem_SPI0_txBufferRead);
+ 743:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 744:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         else
+ 745:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ 746:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             size = (SD_FIlesystem_SPI0_TX_BUFFER_SIZE - SD_FIlesystem_SPI0_txBufferRead) + SD_FIles
+ 747:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 748:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 749:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_EnableTxInt();
+ 750:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 751:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #else
+ 752:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 753:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         size = SD_FIlesystem_SPI0_TX_STATUS_REG;
+ 377              		.loc 1 753 0
+ 378 0000 074B     		ldr	r3, .L41
+ 379 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 380 0004 DBB2     		uxtb	r3, r3
+ 381              	.LVL11:
+ 754:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 755:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         if(0u != (size & SD_FIlesystem_SPI0_STS_TX_FIFO_EMPTY))
+ 382              		.loc 1 755 0
+ 383 0006 13F0020F 		tst	r3, #2
+ 384 000a 04D1     		bne	.L39
+ 756:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 21
+
+
+ 757:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             size = 0u;
+ 758:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 759:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         else if(0u != (size & SD_FIlesystem_SPI0_STS_TX_FIFO_NOT_FULL))
+ 385              		.loc 1 759 0
+ 386 000c 13F0040F 		tst	r3, #4
+ 387 0010 03D0     		beq	.L40
+ 760:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ 761:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             size = 1u;
+ 388              		.loc 1 761 0
+ 389 0012 0120     		movs	r0, #1
+ 390 0014 7047     		bx	lr
+ 391              	.L39:
+ 757:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 392              		.loc 1 757 0
+ 393 0016 0020     		movs	r0, #0
+ 394 0018 7047     		bx	lr
+ 395              	.L40:
+ 762:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 763:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         else
+ 764:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         {
+ 765:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****             size = SD_FIlesystem_SPI0_FIFO_SIZE;
+ 396              		.loc 1 765 0
+ 397 001a 0420     		movs	r0, #4
+ 398              	.LVL12:
+ 766:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         }
+ 767:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 768:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED) */
+ 769:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 770:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     return(size);
+ 771:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 399              		.loc 1 771 0
+ 400 001c 7047     		bx	lr
+ 401              	.L42:
+ 402 001e 00BF     		.align	2
+ 403              	.L41:
+ 404 0020 67650040 		.word	1073767783
+ 405              		.cfi_endproc
+ 406              	.LFE15:
+ 407              		.size	SD_FIlesystem_SPI0_GetTxBufferSize, .-SD_FIlesystem_SPI0_GetTxBufferSize
+ 408              		.section	.text.SD_FIlesystem_SPI0_ClearRxBuffer,"ax",%progbits
+ 409              		.align	2
+ 410              		.global	SD_FIlesystem_SPI0_ClearRxBuffer
+ 411              		.thumb
+ 412              		.thumb_func
+ 413              		.type	SD_FIlesystem_SPI0_ClearRxBuffer, %function
+ 414              	SD_FIlesystem_SPI0_ClearRxBuffer:
+ 415              	.LFB16:
+ 772:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 773:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 774:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 775:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_ClearRxBuffer
+ 776:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 777:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 778:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 779:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Clear the RX RAM buffer by setting the read and write pointers both to zero.
+ 780:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 781:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 22
+
+
+ 782:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 783:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 784:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 785:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 786:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 787:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Global variables:
+ 788:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_rxBufferWrite - used for the account of the bytes which
+ 789:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  have been written down in the RX software buffer, modified every function
+ 790:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  call - resets to zero.
+ 791:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_rxBufferRead - used for the account of the bytes which
+ 792:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  have been read from the RX software buffer, modified every function call -
+ 793:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  resets to zero.
+ 794:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 795:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 796:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Setting the pointers to zero makes the system believe there is no data to
+ 797:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  read and writing will resume at address 0 overwriting any data that may have
+ 798:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  remained in the RAM.
+ 799:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 800:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Side Effects:
+ 801:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Any received data not read from the RAM buffer will be lost when overwritten.
+ 802:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 803:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Reentrant:
+ 804:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  No.
+ 805:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 806:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 807:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_ClearRxBuffer(void) 
+ 808:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 416              		.loc 1 808 0
+ 417              		.cfi_startproc
+ 418              		@ args = 0, pretend = 0, frame = 0
+ 419              		@ frame_needed = 0, uses_anonymous_args = 0
+ 420              		@ link register save eliminated.
+ 809:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     /* Clear Hardware RX FIFO */
+ 810:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     while(0u !=(SD_FIlesystem_SPI0_RX_STATUS_REG & SD_FIlesystem_SPI0_STS_RX_FIFO_NOT_EMPTY))
+ 421              		.loc 1 810 0
+ 422 0000 01E0     		b	.L44
+ 423              	.L45:
+ 811:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     {
+ 812:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         (void) CY_GET_REG8(SD_FIlesystem_SPI0_RXDATA_PTR);
+ 424              		.loc 1 812 0
+ 425 0002 044B     		ldr	r3, .L46
+ 426 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 427              	.L44:
+ 810:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     {
+ 428              		.loc 1 810 0
+ 429 0006 044B     		ldr	r3, .L46+4
+ 430 0008 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 431 000a 13F0200F 		tst	r3, #32
+ 432 000e F8D1     		bne	.L45
+ 813:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     }
+ 814:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 815:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED)
+ 816:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* Disable RX interrupt to protect global veriables */
+ 817:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_DisableRxInt();
+ 818:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 819:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_rxBufferFull  = 0u;
+ 820:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_rxBufferRead  = 0u;
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 23
+
+
+ 821:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_rxBufferWrite = 0u;
+ 822:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 823:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_EnableRxInt();
+ 824:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED) */
+ 825:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 433              		.loc 1 825 0
+ 434 0010 7047     		bx	lr
+ 435              	.L47:
+ 436 0012 00BF     		.align	2
+ 437              	.L46:
+ 438 0014 55640040 		.word	1073767509
+ 439 0018 66650040 		.word	1073767782
+ 440              		.cfi_endproc
+ 441              	.LFE16:
+ 442              		.size	SD_FIlesystem_SPI0_ClearRxBuffer, .-SD_FIlesystem_SPI0_ClearRxBuffer
+ 443              		.section	.text.SD_FIlesystem_SPI0_ClearTxBuffer,"ax",%progbits
+ 444              		.align	2
+ 445              		.global	SD_FIlesystem_SPI0_ClearTxBuffer
+ 446              		.thumb
+ 447              		.thumb_func
+ 448              		.type	SD_FIlesystem_SPI0_ClearTxBuffer, %function
+ 449              	SD_FIlesystem_SPI0_ClearTxBuffer:
+ 450              	.LFB17:
+ 826:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 827:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 828:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 829:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_ClearTxBuffer
+ 830:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 831:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 832:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 833:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Clear the TX RAM buffer by setting the read and write pointers both to zero.
+ 834:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 835:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 836:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 837:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 838:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 839:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 840:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 841:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Global variables:
+ 842:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_txBufferWrite - used for the account of the bytes which
+ 843:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  have been written down in the TX software buffer, modified every function
+ 844:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  call - resets to zero.
+ 845:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_txBufferRead - used for the account of the bytes which
+ 846:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  have been read from the TX software buffer, modified every function call -
+ 847:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  resets to zero.
+ 848:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 849:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+ 850:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Setting the pointers to zero makes the system believe there is no data to
+ 851:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  read and writing will resume at address 0 overwriting any data that may have
+ 852:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  remained in the RAM.
+ 853:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 854:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Side Effects:
+ 855:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Any data not yet transmitted from the RAM buffer will be lost when
+ 856:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  overwritten.
+ 857:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 858:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Reentrant:
+ 859:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  No.
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 24
+
+
+ 860:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 861:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 862:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_ClearTxBuffer(void) 
+ 863:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 451              		.loc 1 863 0
+ 452              		.cfi_startproc
+ 453              		@ args = 0, pretend = 0, frame = 0
+ 454              		@ frame_needed = 0, uses_anonymous_args = 0
+ 455 0000 08B5     		push	{r3, lr}
+ 456              		.cfi_def_cfa_offset 8
+ 457              		.cfi_offset 3, -8
+ 458              		.cfi_offset 14, -4
+ 864:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     uint8 enableInterrupts;
+ 865:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 866:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     enableInterrupts = CyEnterCriticalSection();
+ 459              		.loc 1 866 0
+ 460 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+ 461              	.LVL13:
+ 867:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     /* Clear TX FIFO */
+ 868:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_AUX_CONTROL_DP0_REG |= ((uint8)  SD_FIlesystem_SPI0_TX_FIFO_CLR);
+ 462              		.loc 1 868 0
+ 463 0006 064B     		ldr	r3, .L50
+ 464 0008 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 465 000a 42F00102 		orr	r2, r2, #1
+ 466 000e 1A70     		strb	r2, [r3]
+ 869:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_AUX_CONTROL_DP0_REG &= ((uint8) ~SD_FIlesystem_SPI0_TX_FIFO_CLR);
+ 467              		.loc 1 869 0
+ 468 0010 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 469 0012 02F0FE02 		and	r2, r2, #254
+ 470 0016 1A70     		strb	r2, [r3]
+ 870:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 871:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(SD_FIlesystem_SPI0_USE_SECOND_DATAPATH)
+ 872:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* Clear TX FIFO for 2nd Datapath */
+ 873:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_AUX_CONTROL_DP1_REG |= ((uint8)  SD_FIlesystem_SPI0_TX_FIFO_CLR);
+ 874:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_AUX_CONTROL_DP1_REG &= ((uint8) ~SD_FIlesystem_SPI0_TX_FIFO_CLR);
+ 875:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (SD_FIlesystem_SPI0_USE_SECOND_DATAPATH) */
+ 876:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     CyExitCriticalSection(enableInterrupts);
+ 471              		.loc 1 876 0
+ 472 0018 FFF7FEFF 		bl	CyExitCriticalSection
+ 473              	.LVL14:
+ 474 001c 08BD     		pop	{r3, pc}
+ 475              	.L51:
+ 476 001e 00BF     		.align	2
+ 477              	.L50:
+ 478 0020 95640040 		.word	1073767573
+ 479              		.cfi_endproc
+ 480              	.LFE17:
+ 481              		.size	SD_FIlesystem_SPI0_ClearTxBuffer, .-SD_FIlesystem_SPI0_ClearTxBuffer
+ 482              		.section	.text.SD_FIlesystem_SPI0_PutArray,"ax",%progbits
+ 483              		.align	2
+ 484              		.global	SD_FIlesystem_SPI0_PutArray
+ 485              		.thumb
+ 486              		.thumb_func
+ 487              		.type	SD_FIlesystem_SPI0_PutArray, %function
+ 488              	SD_FIlesystem_SPI0_PutArray:
+ 489              	.LFB18:
+ 877:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 25
+
+
+ 878:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED)
+ 879:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* Disable TX interrupt to protect global veriables */
+ 880:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_DisableTxInt();
+ 881:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 882:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_txBufferFull  = 0u;
+ 883:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_txBufferRead  = 0u;
+ 884:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_txBufferWrite = 0u;
+ 885:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 886:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* Buffer is EMPTY: disable TX FIFO NOT FULL interrupt */
+ 887:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_TX_STATUS_MASK_REG &= ((uint8) ~SD_FIlesystem_SPI0_STS_TX_FIFO_NOT_FULL)
+ 888:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 889:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_EnableTxInt();
+ 890:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED) */
+ 891:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 892:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 893:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 894:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** #if(0u != SD_FIlesystem_SPI0_BIDIRECTIONAL_MODE)
+ 895:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     /*******************************************************************************
+ 896:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     * Function Name: SD_FIlesystem_SPI0_TxEnable
+ 897:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     ********************************************************************************
+ 898:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *
+ 899:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     * Summary:
+ 900:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *  If the SPI master is configured to use a single bi-directional pin then this
+ 901:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *  will set the bi-directional pin to transmit.
+ 902:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *
+ 903:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     * Parameters:
+ 904:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *  None.
+ 905:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *
+ 906:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     * Return:
+ 907:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *  None.
+ 908:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *
+ 909:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *******************************************************************************/
+ 910:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     void SD_FIlesystem_SPI0_TxEnable(void) 
+ 911:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     {
+ 912:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_CONTROL_REG |= SD_FIlesystem_SPI0_CTRL_TX_SIGNAL_EN;
+ 913:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     }
+ 914:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 915:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 916:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     /*******************************************************************************
+ 917:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     * Function Name: SD_FIlesystem_SPI0_TxDisable
+ 918:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     ********************************************************************************
+ 919:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *
+ 920:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     * Summary:
+ 921:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *  If the SPI master is configured to use a single bi-directional pin then this
+ 922:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *  will set the bi-directional pin to receive.
+ 923:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *
+ 924:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     * Parameters:
+ 925:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *  None.
+ 926:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *
+ 927:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     * Return:
+ 928:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *  None.
+ 929:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *
+ 930:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     *******************************************************************************/
+ 931:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     void SD_FIlesystem_SPI0_TxDisable(void) 
+ 932:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     {
+ 933:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_CONTROL_REG &= ((uint8) ~SD_FIlesystem_SPI0_CTRL_TX_SIGNAL_EN);
+ 934:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     }
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 26
+
+
+ 935:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 936:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** #endif /* (0u != SD_FIlesystem_SPI0_BIDIRECTIONAL_MODE) */
+ 937:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 938:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 939:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 940:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_PutArray
+ 941:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 942:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 943:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 944:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Write available data from ROM/RAM to the TX buffer while space is available
+ 945:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  in the TX buffer. Keep trying until all data is passed to the TX buffer.
+ 946:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 947:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 948:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  *buffer: Pointer to the location in RAM containing the data to send
+ 949:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  byteCount: The number of bytes to move to the transmit buffer.
+ 950:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 951:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 952:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 953:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 954:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Side Effects:
+ 955:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Will stay in this routine until all data has been sent.  May get locked in
+ 956:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  this loop if data is not being initiated by the master if there is not
+ 957:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  enough room in the TX FIFO.
+ 958:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 959:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Reentrant:
+ 960:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  No.
+ 961:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 962:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 963:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_PutArray(const uint8 buffer[], uint8 byteCount)
+ 964:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****                                                                           
+ 965:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 490              		.loc 1 965 0
+ 491              		.cfi_startproc
+ 492              		@ args = 0, pretend = 0, frame = 0
+ 493              		@ frame_needed = 0, uses_anonymous_args = 0
+ 494              	.LVL15:
+ 495 0000 70B5     		push	{r4, r5, r6, lr}
+ 496              		.cfi_def_cfa_offset 16
+ 497              		.cfi_offset 4, -16
+ 498              		.cfi_offset 5, -12
+ 499              		.cfi_offset 6, -8
+ 500              		.cfi_offset 14, -4
+ 501 0002 0646     		mov	r6, r0
+ 502 0004 0C46     		mov	r4, r1
+ 503              	.LVL16:
+ 966:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     uint8 bufIndex;
+ 967:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 968:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     bufIndex = 0u;
+ 504              		.loc 1 968 0
+ 505 0006 0025     		movs	r5, #0
+ 969:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 970:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     while(byteCount > 0u)
+ 506              		.loc 1 970 0
+ 507 0008 06E0     		b	.L53
+ 508              	.LVL17:
+ 509              	.L54:
+ 971:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     {
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 27
+
+
+ 972:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_WriteTxData(buffer[bufIndex]);
+ 510              		.loc 1 972 0
+ 511 000a 705D     		ldrb	r0, [r6, r5]	@ zero_extendqisi2
+ 512 000c FFF7FEFF 		bl	SD_FIlesystem_SPI0_WriteTxData
+ 513              	.LVL18:
+ 973:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         bufIndex++;
+ 514              		.loc 1 973 0
+ 515 0010 0135     		adds	r5, r5, #1
+ 516              	.LVL19:
+ 517 0012 EDB2     		uxtb	r5, r5
+ 518              	.LVL20:
+ 974:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         byteCount--;
+ 519              		.loc 1 974 0
+ 520 0014 013C     		subs	r4, r4, #1
+ 521              	.LVL21:
+ 522 0016 E4B2     		uxtb	r4, r4
+ 523              	.LVL22:
+ 524              	.L53:
+ 970:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     {
+ 525              		.loc 1 970 0
+ 526 0018 002C     		cmp	r4, #0
+ 527 001a F6D1     		bne	.L54
+ 975:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     }
+ 976:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 528              		.loc 1 976 0
+ 529 001c 70BD     		pop	{r4, r5, r6, pc}
+ 530              		.cfi_endproc
+ 531              	.LFE18:
+ 532              		.size	SD_FIlesystem_SPI0_PutArray, .-SD_FIlesystem_SPI0_PutArray
+ 533 001e 00BF     		.section	.text.SD_FIlesystem_SPI0_ClearFIFO,"ax",%progbits
+ 534              		.align	2
+ 535              		.global	SD_FIlesystem_SPI0_ClearFIFO
+ 536              		.thumb
+ 537              		.thumb_func
+ 538              		.type	SD_FIlesystem_SPI0_ClearFIFO, %function
+ 539              	SD_FIlesystem_SPI0_ClearFIFO:
+ 540              	.LFB19:
+ 977:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 978:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 979:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+ 980:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_ClearFIFO
+ 981:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+ 982:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 983:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+ 984:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Clear the RX and TX FIFO's of all data for a fresh start.
+ 985:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 986:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+ 987:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 988:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 989:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+ 990:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ 991:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 992:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Side Effects:
+ 993:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Clear status register of the component.
+ 994:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+ 995:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ 996:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_ClearFIFO(void) 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 28
+
+
+ 997:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 541              		.loc 1 997 0
+ 542              		.cfi_startproc
+ 543              		@ args = 0, pretend = 0, frame = 0
+ 544              		@ frame_needed = 0, uses_anonymous_args = 0
+ 545 0000 08B5     		push	{r3, lr}
+ 546              		.cfi_def_cfa_offset 8
+ 547              		.cfi_offset 3, -8
+ 548              		.cfi_offset 14, -4
+ 998:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     uint8 enableInterrupts;
+ 999:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1000:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     /* Clear Hardware RX FIFO */
+1001:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     while(0u !=(SD_FIlesystem_SPI0_RX_STATUS_REG & SD_FIlesystem_SPI0_STS_RX_FIFO_NOT_EMPTY))
+ 549              		.loc 1 1001 0
+ 550 0002 01E0     		b	.L57
+ 551              	.L58:
+1002:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     {
+1003:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         (void) CY_GET_REG8(SD_FIlesystem_SPI0_RXDATA_PTR);
+ 552              		.loc 1 1003 0
+ 553 0004 0A4B     		ldr	r3, .L60
+ 554 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 555              	.L57:
+1001:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     {
+ 556              		.loc 1 1001 0
+ 557 0008 0A4B     		ldr	r3, .L60+4
+ 558 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 559 000c 13F0200F 		tst	r3, #32
+ 560 0010 F8D1     		bne	.L58
+1004:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     }
+1005:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1006:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     enableInterrupts = CyEnterCriticalSection();
+ 561              		.loc 1 1006 0
+ 562 0012 FFF7FEFF 		bl	CyEnterCriticalSection
+ 563              	.LVL23:
+1007:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     /* Clear TX FIFO */
+1008:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_AUX_CONTROL_DP0_REG |= ((uint8)  SD_FIlesystem_SPI0_TX_FIFO_CLR);
+ 564              		.loc 1 1008 0
+ 565 0016 084B     		ldr	r3, .L60+8
+ 566 0018 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 567 001a 42F00102 		orr	r2, r2, #1
+ 568 001e 1A70     		strb	r2, [r3]
+1009:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_AUX_CONTROL_DP0_REG &= ((uint8) ~SD_FIlesystem_SPI0_TX_FIFO_CLR);
+ 569              		.loc 1 1009 0
+ 570 0020 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 571 0022 02F0FE02 		and	r2, r2, #254
+ 572 0026 1A70     		strb	r2, [r3]
+1010:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1011:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(SD_FIlesystem_SPI0_USE_SECOND_DATAPATH)
+1012:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         /* Clear TX FIFO for 2nd Datapath */
+1013:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_AUX_CONTROL_DP1_REG |= ((uint8)  SD_FIlesystem_SPI0_TX_FIFO_CLR);
+1014:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_AUX_CONTROL_DP1_REG &= ((uint8) ~SD_FIlesystem_SPI0_TX_FIFO_CLR);
+1015:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (SD_FIlesystem_SPI0_USE_SECOND_DATAPATH) */
+1016:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     CyExitCriticalSection(enableInterrupts);
+ 573              		.loc 1 1016 0
+ 574 0028 FFF7FEFF 		bl	CyExitCriticalSection
+ 575              	.LVL24:
+ 576 002c 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 29
+
+
+ 577              	.L61:
+ 578 002e 00BF     		.align	2
+ 579              	.L60:
+ 580 0030 55640040 		.word	1073767509
+ 581 0034 66650040 		.word	1073767782
+ 582 0038 95640040 		.word	1073767573
+ 583              		.cfi_endproc
+ 584              	.LFE19:
+ 585              		.size	SD_FIlesystem_SPI0_ClearFIFO, .-SD_FIlesystem_SPI0_ClearFIFO
+ 586              		.section	.text.SD_FIlesystem_SPI0_Init,"ax",%progbits
+ 587              		.align	2
+ 588              		.global	SD_FIlesystem_SPI0_Init
+ 589              		.thumb
+ 590              		.thumb_func
+ 591              		.type	SD_FIlesystem_SPI0_Init, %function
+ 592              	SD_FIlesystem_SPI0_Init:
+ 593              	.LFB0:
+  64:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     /* Initialize the Bit counter */
+ 594              		.loc 1 64 0
+ 595              		.cfi_startproc
+ 596              		@ args = 0, pretend = 0, frame = 0
+ 597              		@ frame_needed = 0, uses_anonymous_args = 0
+ 598 0000 08B5     		push	{r3, lr}
+ 599              		.cfi_def_cfa_offset 8
+ 600              		.cfi_offset 3, -8
+ 601              		.cfi_offset 14, -4
+  66:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 602              		.loc 1 66 0
+ 603 0002 0F22     		movs	r2, #15
+ 604 0004 064B     		ldr	r3, .L64
+ 605 0006 1A70     		strb	r2, [r3]
+  83:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 606              		.loc 1 83 0
+ 607 0008 FFF7FEFF 		bl	SD_FIlesystem_SPI0_ClearFIFO
+ 608              	.LVL25:
+  97:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     (void) SD_FIlesystem_SPI0_ReadRxStatus(); /* Clear Rx status and swStatusRx */
+ 609              		.loc 1 97 0
+ 610 000c FFF7FEFF 		bl	SD_FIlesystem_SPI0_ReadTxStatus
+ 611              	.LVL26:
+  98:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+ 612              		.loc 1 98 0
+ 613 0010 FFF7FEFF 		bl	SD_FIlesystem_SPI0_ReadRxStatus
+ 614              	.LVL27:
+ 101:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_RX_STATUS_MASK_REG = SD_FIlesystem_SPI0_RX_INIT_INTERRUPTS_MASK;
+ 615              		.loc 1 101 0
+ 616 0014 0023     		movs	r3, #0
+ 617 0016 034A     		ldr	r2, .L64+4
+ 618 0018 1370     		strb	r3, [r2]
+ 102:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 619              		.loc 1 102 0
+ 620 001a 013A     		subs	r2, r2, #1
+ 621 001c 1370     		strb	r3, [r2]
+ 622 001e 08BD     		pop	{r3, pc}
+ 623              	.L65:
+ 624              		.align	2
+ 625              	.L64:
+ 626 0020 84640040 		.word	1073767556
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 30
+
+
+ 627 0024 87650040 		.word	1073767815
+ 628              		.cfi_endproc
+ 629              	.LFE0:
+ 630              		.size	SD_FIlesystem_SPI0_Init, .-SD_FIlesystem_SPI0_Init
+ 631              		.section	.text.SD_FIlesystem_SPI0_Start,"ax",%progbits
+ 632              		.align	2
+ 633              		.global	SD_FIlesystem_SPI0_Start
+ 634              		.thumb
+ 635              		.thumb_func
+ 636              		.type	SD_FIlesystem_SPI0_Start, %function
+ 637              	SD_FIlesystem_SPI0_Start:
+ 638              	.LFB2:
+ 164:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     if(0u == SD_FIlesystem_SPI0_initVar)
+ 639              		.loc 1 164 0
+ 640              		.cfi_startproc
+ 641              		@ args = 0, pretend = 0, frame = 0
+ 642              		@ frame_needed = 0, uses_anonymous_args = 0
+ 643 0000 08B5     		push	{r3, lr}
+ 644              		.cfi_def_cfa_offset 8
+ 645              		.cfi_offset 3, -8
+ 646              		.cfi_offset 14, -4
+ 165:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     {
+ 647              		.loc 1 165 0
+ 648 0002 054B     		ldr	r3, .L69
+ 649 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 650 0006 23B9     		cbnz	r3, .L67
+ 167:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_initVar = 1u;
+ 651              		.loc 1 167 0
+ 652 0008 FFF7FEFF 		bl	SD_FIlesystem_SPI0_Init
+ 653              	.LVL28:
+ 168:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     }
+ 654              		.loc 1 168 0
+ 655 000c 0122     		movs	r2, #1
+ 656 000e 024B     		ldr	r3, .L69
+ 657 0010 1A70     		strb	r2, [r3]
+ 658              	.L67:
+ 171:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 659              		.loc 1 171 0
+ 660 0012 FFF7FEFF 		bl	SD_FIlesystem_SPI0_Enable
+ 661              	.LVL29:
+ 662 0016 08BD     		pop	{r3, pc}
+ 663              	.L70:
+ 664              		.align	2
+ 665              	.L69:
+ 666 0018 00000000 		.word	.LANCHOR0
+ 667              		.cfi_endproc
+ 668              	.LFE2:
+ 669              		.size	SD_FIlesystem_SPI0_Start, .-SD_FIlesystem_SPI0_Start
+ 670              		.section	.text.SD_FIlesystem_SPI0_EnableInt,"ax",%progbits
+ 671              		.align	2
+ 672              		.global	SD_FIlesystem_SPI0_EnableInt
+ 673              		.thumb
+ 674              		.thumb_func
+ 675              		.type	SD_FIlesystem_SPI0_EnableInt, %function
+ 676              	SD_FIlesystem_SPI0_EnableInt:
+ 677              	.LFB20:
+1017:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 31
+
+
+1018:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1019:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1020:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /* Following functions are for version Compatibility, they are obsolete.
+1021:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Please do not use it in new projects.
+1022:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** */
+1023:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1024:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1025:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+1026:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_EnableInt
+1027:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+1028:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1029:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+1030:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Enable internal interrupt generation.
+1031:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1032:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+1033:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+1034:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1035:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+1036:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+1037:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1038:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+1039:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Enable the internal interrupt output -or- the interrupt component itself.
+1040:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1041:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+1042:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_EnableInt(void) 
+1043:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 678              		.loc 1 1043 0
+ 679              		.cfi_startproc
+ 680              		@ args = 0, pretend = 0, frame = 0
+ 681              		@ frame_needed = 0, uses_anonymous_args = 0
+ 682              		@ link register save eliminated.
+ 683 0000 7047     		bx	lr
+ 684              		.cfi_endproc
+ 685              	.LFE20:
+ 686              		.size	SD_FIlesystem_SPI0_EnableInt, .-SD_FIlesystem_SPI0_EnableInt
+ 687 0002 00BF     		.section	.text.SD_FIlesystem_SPI0_DisableInt,"ax",%progbits
+ 688              		.align	2
+ 689              		.global	SD_FIlesystem_SPI0_DisableInt
+ 690              		.thumb
+ 691              		.thumb_func
+ 692              		.type	SD_FIlesystem_SPI0_DisableInt, %function
+ 693              	SD_FIlesystem_SPI0_DisableInt:
+ 694              	.LFB21:
+1044:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_EnableRxInt();
+1045:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_EnableTxInt();
+1046:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+1047:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1048:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1049:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+1050:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_DisableInt
+1051:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+1052:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1053:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+1054:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Disable internal interrupt generation.
+1055:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1056:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+1057:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 32
+
+
+1058:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1059:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+1060:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+1061:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1062:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+1063:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Disable the internal interrupt output -or- the interrupt component itself.
+1064:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1065:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+1066:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_DisableInt(void) 
+1067:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 695              		.loc 1 1067 0
+ 696              		.cfi_startproc
+ 697              		@ args = 0, pretend = 0, frame = 0
+ 698              		@ frame_needed = 0, uses_anonymous_args = 0
+ 699              		@ link register save eliminated.
+ 700 0000 7047     		bx	lr
+ 701              		.cfi_endproc
+ 702              	.LFE21:
+ 703              		.size	SD_FIlesystem_SPI0_DisableInt, .-SD_FIlesystem_SPI0_DisableInt
+ 704 0002 00BF     		.section	.text.SD_FIlesystem_SPI0_SetInterruptMode,"ax",%progbits
+ 705              		.align	2
+ 706              		.global	SD_FIlesystem_SPI0_SetInterruptMode
+ 707              		.thumb
+ 708              		.thumb_func
+ 709              		.type	SD_FIlesystem_SPI0_SetInterruptMode, %function
+ 710              	SD_FIlesystem_SPI0_SetInterruptMode:
+ 711              	.LFB22:
+1068:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_DisableTxInt();
+1069:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_DisableRxInt();
+1070:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+1071:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1072:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1073:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+1074:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_SetInterruptMode
+1075:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+1076:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1077:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+1078:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Configure which status bits trigger an interrupt event.
+1079:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1080:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+1081:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  intSrc: An or'd combination of the desired status bit masks (defined in the
+1082:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  header file).
+1083:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1084:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+1085:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+1086:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1087:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+1088:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Enables the output of specific status bits to the interrupt controller.
+1089:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1090:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+1091:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** void SD_FIlesystem_SPI0_SetInterruptMode(uint8 intSrc) 
+1092:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 712              		.loc 1 1092 0
+ 713              		.cfi_startproc
+ 714              		@ args = 0, pretend = 0, frame = 0
+ 715              		@ frame_needed = 0, uses_anonymous_args = 0
+ 716              		@ link register save eliminated.
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 33
+
+
+ 717              	.LVL30:
+1093:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_TX_STATUS_MASK_REG  = (intSrc & ((uint8) ~SD_FIlesystem_SPI0_STS_SPI_IDLE));
+ 718              		.loc 1 1093 0
+ 719 0000 00F0EF02 		and	r2, r0, #239
+ 720 0004 024B     		ldr	r3, .L74
+ 721 0006 1A70     		strb	r2, [r3]
+1094:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     SD_FIlesystem_SPI0_RX_STATUS_MASK_REG  =  intSrc;
+ 722              		.loc 1 1094 0
+ 723 0008 013B     		subs	r3, r3, #1
+ 724 000a 1870     		strb	r0, [r3]
+ 725 000c 7047     		bx	lr
+ 726              	.L75:
+ 727 000e 00BF     		.align	2
+ 728              	.L74:
+ 729 0010 87650040 		.word	1073767815
+ 730              		.cfi_endproc
+ 731              	.LFE22:
+ 732              		.size	SD_FIlesystem_SPI0_SetInterruptMode, .-SD_FIlesystem_SPI0_SetInterruptMode
+ 733              		.section	.text.SD_FIlesystem_SPI0_ReadStatus,"ax",%progbits
+ 734              		.align	2
+ 735              		.global	SD_FIlesystem_SPI0_ReadStatus
+ 736              		.thumb
+ 737              		.thumb_func
+ 738              		.type	SD_FIlesystem_SPI0_ReadStatus, %function
+ 739              	SD_FIlesystem_SPI0_ReadStatus:
+ 740              	.LFB23:
+1095:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+1096:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1097:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1098:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** /*******************************************************************************
+1099:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Function Name: SD_FIlesystem_SPI0_ReadStatus
+1100:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** ********************************************************************************
+1101:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1102:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Summary:
+1103:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Read the status register for the component.
+1104:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1105:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Parameters:
+1106:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  None.
+1107:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1108:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Return:
+1109:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Contents of the status register.
+1110:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1111:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Global variables:
+1112:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  SD_FIlesystem_SPI0_swStatus - used to store in software status register,
+1113:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  modified every function call - resets to zero.
+1114:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1115:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Theory:
+1116:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Allows the user and the API to read the status register for error detection
+1117:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  and flow control.
+1118:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1119:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Side Effects:
+1120:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  Clear status register of the component.
+1121:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1122:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** * Reentrant:
+1123:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *  No.
+1124:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *
+1125:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** *******************************************************************************/
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 34
+
+
+1126:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** uint8 SD_FIlesystem_SPI0_ReadStatus(void) 
+1127:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** {
+ 741              		.loc 1 1127 0
+ 742              		.cfi_startproc
+ 743              		@ args = 0, pretend = 0, frame = 0
+ 744              		@ frame_needed = 0, uses_anonymous_args = 0
+ 745              		@ link register save eliminated.
+1128:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     uint8 tmpStatus;
+1129:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1130:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #if(SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED || SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED)
+1131:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1132:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_DisableInt();
+1133:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1134:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         tmpStatus  = SD_FIlesystem_SPI0_GET_STATUS_RX(SD_FIlesystem_SPI0_swStatusRx);
+1135:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         tmpStatus |= SD_FIlesystem_SPI0_GET_STATUS_TX(SD_FIlesystem_SPI0_swStatusTx);
+1136:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         tmpStatus &= ((uint8) ~SD_FIlesystem_SPI0_STS_SPI_IDLE);
+1137:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1138:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_swStatusTx = 0u;
+1139:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_swStatusRx = 0u;
+1140:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1141:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         SD_FIlesystem_SPI0_EnableInt();
+1142:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1143:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #else
+1144:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1145:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         tmpStatus  = SD_FIlesystem_SPI0_RX_STATUS_REG;
+ 746              		.loc 1 1145 0
+ 747 0000 034B     		ldr	r3, .L77
+ 748 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 749              	.LVL31:
+1146:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         tmpStatus |= SD_FIlesystem_SPI0_TX_STATUS_REG;
+ 750              		.loc 1 1146 0
+ 751 0004 034A     		ldr	r2, .L77+4
+ 752 0006 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
+ 753 0008 1843     		orrs	r0, r0, r3
+ 754              	.LVL32:
+1147:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****         tmpStatus &= ((uint8) ~SD_FIlesystem_SPI0_STS_SPI_IDLE);
+1148:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1149:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     #endif /* (SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED || SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENA
+1150:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** 
+1151:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c ****     return(tmpStatus);
+1152:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0.c **** }
+ 755              		.loc 1 1152 0
+ 756 000a 00F0EF00 		and	r0, r0, #239
+ 757              	.LVL33:
+ 758 000e 7047     		bx	lr
+ 759              	.L78:
+ 760              		.align	2
+ 761              	.L77:
+ 762 0010 66650040 		.word	1073767782
+ 763 0014 67650040 		.word	1073767783
+ 764              		.cfi_endproc
+ 765              	.LFE23:
+ 766              		.size	SD_FIlesystem_SPI0_ReadStatus, .-SD_FIlesystem_SPI0_ReadStatus
+ 767              		.comm	SD_FIlesystem_SPI0_swStatusRx,1,1
+ 768              		.comm	SD_FIlesystem_SPI0_swStatusTx,1,1
+ 769              		.global	SD_FIlesystem_SPI0_initVar
+ 770              		.bss
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 35
+
+
+ 771              		.set	.LANCHOR0,. + 0
+ 772              		.type	SD_FIlesystem_SPI0_initVar, %object
+ 773              		.size	SD_FIlesystem_SPI0_initVar, 1
+ 774              	SD_FIlesystem_SPI0_initVar:
+ 775 0000 00       		.space	1
+ 776              		.text
+ 777              	.Letext0:
+ 778              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 779              		.file 3 ".\\Generated_Source\\PSoC5\\CyLib.h"
+ 780              		.section	.debug_info,"",%progbits
+ 781              	.Ldebug_info0:
+ 782 0000 91040000 		.4byte	0x491
+ 783 0004 0400     		.2byte	0x4
+ 784 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 785 000a 04       		.byte	0x4
+ 786 000b 01       		.uleb128 0x1
+ 787 000c 8F000000 		.4byte	.LASF52
+ 788 0010 01       		.byte	0x1
+ 789 0011 40040000 		.4byte	.LASF53
+ 790 0015 15050000 		.4byte	.LASF54
+ 791 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 792 001d 00000000 		.4byte	0
+ 793 0021 00000000 		.4byte	.Ldebug_line0
+ 794 0025 02       		.uleb128 0x2
+ 795 0026 01       		.byte	0x1
+ 796 0027 06       		.byte	0x6
+ 797 0028 EC040000 		.4byte	.LASF0
+ 798 002c 02       		.uleb128 0x2
+ 799 002d 01       		.byte	0x1
+ 800 002e 08       		.byte	0x8
+ 801 002f C9020000 		.4byte	.LASF1
+ 802 0033 02       		.uleb128 0x2
+ 803 0034 02       		.byte	0x2
+ 804 0035 05       		.byte	0x5
+ 805 0036 FC020000 		.4byte	.LASF2
+ 806 003a 02       		.uleb128 0x2
+ 807 003b 02       		.byte	0x2
+ 808 003c 07       		.byte	0x7
+ 809 003d 41010000 		.4byte	.LASF3
+ 810 0041 02       		.uleb128 0x2
+ 811 0042 04       		.byte	0x4
+ 812 0043 05       		.byte	0x5
+ 813 0044 CD040000 		.4byte	.LASF4
+ 814 0048 02       		.uleb128 0x2
+ 815 0049 04       		.byte	0x4
+ 816 004a 07       		.byte	0x7
+ 817 004b 5E020000 		.4byte	.LASF5
+ 818 004f 02       		.uleb128 0x2
+ 819 0050 08       		.byte	0x8
+ 820 0051 05       		.byte	0x5
+ 821 0052 F3030000 		.4byte	.LASF6
+ 822 0056 02       		.uleb128 0x2
+ 823 0057 08       		.byte	0x8
+ 824 0058 07       		.byte	0x7
+ 825 0059 E1010000 		.4byte	.LASF7
+ 826 005d 03       		.uleb128 0x3
+ 827 005e 04       		.byte	0x4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 36
+
+
+ 828 005f 05       		.byte	0x5
+ 829 0060 696E7400 		.ascii	"int\000"
+ 830 0064 02       		.uleb128 0x2
+ 831 0065 04       		.byte	0x4
+ 832 0066 07       		.byte	0x7
+ 833 0067 59030000 		.4byte	.LASF8
+ 834 006b 04       		.uleb128 0x4
+ 835 006c 70020000 		.4byte	.LASF12
+ 836 0070 02       		.byte	0x2
+ 837 0071 9201     		.2byte	0x192
+ 838 0073 2C000000 		.4byte	0x2c
+ 839 0077 02       		.uleb128 0x2
+ 840 0078 04       		.byte	0x4
+ 841 0079 04       		.byte	0x4
+ 842 007a DB010000 		.4byte	.LASF9
+ 843 007e 02       		.uleb128 0x2
+ 844 007f 08       		.byte	0x8
+ 845 0080 04       		.byte	0x4
+ 846 0081 D7020000 		.4byte	.LASF10
+ 847 0085 02       		.uleb128 0x2
+ 848 0086 01       		.byte	0x1
+ 849 0087 08       		.byte	0x8
+ 850 0088 1F000000 		.4byte	.LASF11
+ 851 008c 04       		.uleb128 0x4
+ 852 008d C5030000 		.4byte	.LASF13
+ 853 0091 02       		.byte	0x2
+ 854 0092 3C02     		.2byte	0x23c
+ 855 0094 98000000 		.4byte	0x98
+ 856 0098 05       		.uleb128 0x5
+ 857 0099 6B000000 		.4byte	0x6b
+ 858 009d 02       		.uleb128 0x2
+ 859 009e 08       		.byte	0x8
+ 860 009f 04       		.byte	0x4
+ 861 00a0 E0040000 		.4byte	.LASF14
+ 862 00a4 02       		.uleb128 0x2
+ 863 00a5 04       		.byte	0x4
+ 864 00a6 07       		.byte	0x7
+ 865 00a7 EA030000 		.4byte	.LASF15
+ 866 00ab 06       		.uleb128 0x6
+ 867 00ac 8D040000 		.4byte	.LASF16
+ 868 00b0 01       		.byte	0x1
+ 869 00b1 78       		.byte	0x78
+ 870 00b2 00000000 		.4byte	.LFB1
+ 871 00b6 30000000 		.4byte	.LFE1-.LFB1
+ 872 00ba 01       		.uleb128 0x1
+ 873 00bb 9C       		.byte	0x9c
+ 874 00bc E2000000 		.4byte	0xe2
+ 875 00c0 07       		.uleb128 0x7
+ 876 00c1 B8020000 		.4byte	.LASF18
+ 877 00c5 01       		.byte	0x1
+ 878 00c6 7A       		.byte	0x7a
+ 879 00c7 6B000000 		.4byte	0x6b
+ 880 00cb 00000000 		.4byte	.LLST0
+ 881 00cf 08       		.uleb128 0x8
+ 882 00d0 06000000 		.4byte	.LVL0
+ 883 00d4 7C040000 		.4byte	0x47c
+ 884 00d8 08       		.uleb128 0x8
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 37
+
+
+ 885 00d9 2A000000 		.4byte	.LVL1
+ 886 00dd 87040000 		.4byte	0x487
+ 887 00e1 00       		.byte	0
+ 888 00e2 06       		.uleb128 0x6
+ 889 00e3 01040000 		.4byte	.LASF17
+ 890 00e7 01       		.byte	0x1
+ 891 00e8 C0       		.byte	0xc0
+ 892 00e9 00000000 		.4byte	.LFB3
+ 893 00ed 24000000 		.4byte	.LFE3-.LFB3
+ 894 00f1 01       		.uleb128 0x1
+ 895 00f2 9C       		.byte	0x9c
+ 896 00f3 19010000 		.4byte	0x119
+ 897 00f7 07       		.uleb128 0x7
+ 898 00f8 B8020000 		.4byte	.LASF18
+ 899 00fc 01       		.byte	0x1
+ 900 00fd C2       		.byte	0xc2
+ 901 00fe 6B000000 		.4byte	0x6b
+ 902 0102 13000000 		.4byte	.LLST1
+ 903 0106 08       		.uleb128 0x8
+ 904 0107 06000000 		.4byte	.LVL2
+ 905 010b 7C040000 		.4byte	0x47c
+ 906 010f 08       		.uleb128 0x8
+ 907 0110 1E000000 		.4byte	.LVL3
+ 908 0114 87040000 		.4byte	0x487
+ 909 0118 00       		.byte	0
+ 910 0119 09       		.uleb128 0x9
+ 911 011a A6030000 		.4byte	.LASF19
+ 912 011e 01       		.byte	0x1
+ 913 011f E3       		.byte	0xe3
+ 914 0120 00000000 		.4byte	.LFB4
+ 915 0124 02000000 		.4byte	.LFE4-.LFB4
+ 916 0128 01       		.uleb128 0x1
+ 917 0129 9C       		.byte	0x9c
+ 918 012a 09       		.uleb128 0x9
+ 919 012b 6E040000 		.4byte	.LASF20
+ 920 012f 01       		.byte	0x1
+ 921 0130 FC       		.byte	0xfc
+ 922 0131 00000000 		.4byte	.LFB5
+ 923 0135 02000000 		.4byte	.LFE5-.LFB5
+ 924 0139 01       		.uleb128 0x1
+ 925 013a 9C       		.byte	0x9c
+ 926 013b 0A       		.uleb128 0xa
+ 927 013c 6F000000 		.4byte	.LASF21
+ 928 0140 01       		.byte	0x1
+ 929 0141 1501     		.2byte	0x115
+ 930 0143 00000000 		.4byte	.LFB6
+ 931 0147 02000000 		.4byte	.LFE6-.LFB6
+ 932 014b 01       		.uleb128 0x1
+ 933 014c 9C       		.byte	0x9c
+ 934 014d 0A       		.uleb128 0xa
+ 935 014e 76020000 		.4byte	.LASF22
+ 936 0152 01       		.byte	0x1
+ 937 0153 2E01     		.2byte	0x12e
+ 938 0155 00000000 		.4byte	.LFB7
+ 939 0159 02000000 		.4byte	.LFE7-.LFB7
+ 940 015d 01       		.uleb128 0x1
+ 941 015e 9C       		.byte	0x9c
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 38
+
+
+ 942 015f 0B       		.uleb128 0xb
+ 943 0160 A7040000 		.4byte	.LASF23
+ 944 0164 01       		.byte	0x1
+ 945 0165 4801     		.2byte	0x148
+ 946 0167 00000000 		.4byte	.LFB8
+ 947 016b 0C000000 		.4byte	.LFE8-.LFB8
+ 948 016f 01       		.uleb128 0x1
+ 949 0170 9C       		.byte	0x9c
+ 950 0171 84010000 		.4byte	0x184
+ 951 0175 0C       		.uleb128 0xc
+ 952 0176 94010000 		.4byte	.LASF25
+ 953 017a 01       		.byte	0x1
+ 954 017b 4801     		.2byte	0x148
+ 955 017d 6B000000 		.4byte	0x6b
+ 956 0181 01       		.uleb128 0x1
+ 957 0182 50       		.byte	0x50
+ 958 0183 00       		.byte	0
+ 959 0184 0B       		.uleb128 0xb
+ 960 0185 24000000 		.4byte	.LASF24
+ 961 0189 01       		.byte	0x1
+ 962 018a 6001     		.2byte	0x160
+ 963 018c 00000000 		.4byte	.LFB9
+ 964 0190 0C000000 		.4byte	.LFE9-.LFB9
+ 965 0194 01       		.uleb128 0x1
+ 966 0195 9C       		.byte	0x9c
+ 967 0196 A9010000 		.4byte	0x1a9
+ 968 019a 0C       		.uleb128 0xc
+ 969 019b 94010000 		.4byte	.LASF25
+ 970 019f 01       		.byte	0x1
+ 971 01a0 6001     		.2byte	0x160
+ 972 01a2 6B000000 		.4byte	0x6b
+ 973 01a6 01       		.uleb128 0x1
+ 974 01a7 50       		.byte	0x50
+ 975 01a8 00       		.byte	0
+ 976 01a9 0D       		.uleb128 0xd
+ 977 01aa CA030000 		.4byte	.LASF27
+ 978 01ae 01       		.byte	0x1
+ 979 01af 8201     		.2byte	0x182
+ 980 01b1 6B000000 		.4byte	0x6b
+ 981 01b5 00000000 		.4byte	.LFB10
+ 982 01b9 0C000000 		.4byte	.LFE10-.LFB10
+ 983 01bd 01       		.uleb128 0x1
+ 984 01be 9C       		.byte	0x9c
+ 985 01bf D2010000 		.4byte	0x1d2
+ 986 01c3 0E       		.uleb128 0xe
+ 987 01c4 D6040000 		.4byte	.LASF26
+ 988 01c8 01       		.byte	0x1
+ 989 01c9 8401     		.2byte	0x184
+ 990 01cb 6B000000 		.4byte	0x6b
+ 991 01cf 01       		.uleb128 0x1
+ 992 01d0 50       		.byte	0x50
+ 993 01d1 00       		.byte	0
+ 994 01d2 0D       		.uleb128 0xd
+ 995 01d3 20040000 		.4byte	.LASF28
+ 996 01d7 01       		.byte	0x1
+ 997 01d8 B501     		.2byte	0x1b5
+ 998 01da 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 39
+
+
+ 999 01de 00000000 		.4byte	.LFB11
+ 1000 01e2 0C000000 		.4byte	.LFE11-.LFB11
+ 1001 01e6 01       		.uleb128 0x1
+ 1002 01e7 9C       		.byte	0x9c
+ 1003 01e8 FB010000 		.4byte	0x1fb
+ 1004 01ec 0E       		.uleb128 0xe
+ 1005 01ed D6040000 		.4byte	.LASF26
+ 1006 01f1 01       		.byte	0x1
+ 1007 01f2 B701     		.2byte	0x1b7
+ 1008 01f4 6B000000 		.4byte	0x6b
+ 1009 01f8 01       		.uleb128 0x1
+ 1010 01f9 50       		.byte	0x50
+ 1011 01fa 00       		.byte	0
+ 1012 01fb 0B       		.uleb128 0xb
+ 1013 01fc 00000000 		.4byte	.LASF29
+ 1014 0200 01       		.byte	0x1
+ 1015 0201 EE01     		.2byte	0x1ee
+ 1016 0203 00000000 		.4byte	.LFB12
+ 1017 0207 18000000 		.4byte	.LFE12-.LFB12
+ 1018 020b 01       		.uleb128 0x1
+ 1019 020c 9C       		.byte	0x9c
+ 1020 020d 20020000 		.4byte	0x220
+ 1021 0211 0C       		.uleb128 0xc
+ 1022 0212 19040000 		.4byte	.LASF30
+ 1023 0216 01       		.byte	0x1
+ 1024 0217 EE01     		.2byte	0x1ee
+ 1025 0219 6B000000 		.4byte	0x6b
+ 1026 021d 01       		.uleb128 0x1
+ 1027 021e 50       		.byte	0x50
+ 1028 021f 00       		.byte	0
+ 1029 0220 0D       		.uleb128 0xd
+ 1030 0221 24030000 		.4byte	.LASF31
+ 1031 0225 01       		.byte	0x1
+ 1032 0226 5B02     		.2byte	0x25b
+ 1033 0228 6B000000 		.4byte	0x6b
+ 1034 022c 00000000 		.4byte	.LFB13
+ 1035 0230 0C000000 		.4byte	.LFE13-.LFB13
+ 1036 0234 01       		.uleb128 0x1
+ 1037 0235 9C       		.byte	0x9c
+ 1038 0236 49020000 		.4byte	0x249
+ 1039 023a 0E       		.uleb128 0xe
+ 1040 023b D4010000 		.4byte	.LASF32
+ 1041 023f 01       		.byte	0x1
+ 1042 0240 5D02     		.2byte	0x25d
+ 1043 0242 6B000000 		.4byte	0x6b
+ 1044 0246 01       		.uleb128 0x1
+ 1045 0247 50       		.byte	0x50
+ 1046 0248 00       		.byte	0
+ 1047 0249 0D       		.uleb128 0xd
+ 1048 024a 54010000 		.4byte	.LASF33
+ 1049 024e 01       		.byte	0x1
+ 1050 024f 9B02     		.2byte	0x29b
+ 1051 0251 6B000000 		.4byte	0x6b
+ 1052 0255 00000000 		.4byte	.LFB14
+ 1053 0259 18000000 		.4byte	.LFE14-.LFB14
+ 1054 025d 01       		.uleb128 0x1
+ 1055 025e 9C       		.byte	0x9c
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 40
+
+
+ 1056 025f 72020000 		.4byte	0x272
+ 1057 0263 0E       		.uleb128 0xe
+ 1058 0264 19020000 		.4byte	.LASF34
+ 1059 0268 01       		.byte	0x1
+ 1060 0269 9D02     		.2byte	0x29d
+ 1061 026b 6B000000 		.4byte	0x6b
+ 1062 026f 01       		.uleb128 0x1
+ 1063 0270 50       		.byte	0x50
+ 1064 0271 00       		.byte	0
+ 1065 0272 0D       		.uleb128 0xd
+ 1066 0273 62050000 		.4byte	.LASF35
+ 1067 0277 01       		.byte	0x1
+ 1068 0278 D802     		.2byte	0x2d8
+ 1069 027a 6B000000 		.4byte	0x6b
+ 1070 027e 00000000 		.4byte	.LFB15
+ 1071 0282 24000000 		.4byte	.LFE15-.LFB15
+ 1072 0286 01       		.uleb128 0x1
+ 1073 0287 9C       		.byte	0x9c
+ 1074 0288 9D020000 		.4byte	0x29d
+ 1075 028c 0F       		.uleb128 0xf
+ 1076 028d 19020000 		.4byte	.LASF34
+ 1077 0291 01       		.byte	0x1
+ 1078 0292 DA02     		.2byte	0x2da
+ 1079 0294 6B000000 		.4byte	0x6b
+ 1080 0298 26000000 		.4byte	.LLST2
+ 1081 029c 00       		.byte	0
+ 1082 029d 0A       		.uleb128 0xa
+ 1083 029e 7C030000 		.4byte	.LASF36
+ 1084 02a2 01       		.byte	0x1
+ 1085 02a3 2703     		.2byte	0x327
+ 1086 02a5 00000000 		.4byte	.LFB16
+ 1087 02a9 1C000000 		.4byte	.LFE16-.LFB16
+ 1088 02ad 01       		.uleb128 0x1
+ 1089 02ae 9C       		.byte	0x9c
+ 1090 02af 0B       		.uleb128 0xb
+ 1091 02b0 F8010000 		.4byte	.LASF37
+ 1092 02b4 01       		.byte	0x1
+ 1093 02b5 5E03     		.2byte	0x35e
+ 1094 02b7 00000000 		.4byte	.LFB17
+ 1095 02bb 24000000 		.4byte	.LFE17-.LFB17
+ 1096 02bf 01       		.uleb128 0x1
+ 1097 02c0 9C       		.byte	0x9c
+ 1098 02c1 E8020000 		.4byte	0x2e8
+ 1099 02c5 0F       		.uleb128 0xf
+ 1100 02c6 B8020000 		.4byte	.LASF18
+ 1101 02ca 01       		.byte	0x1
+ 1102 02cb 6003     		.2byte	0x360
+ 1103 02cd 6B000000 		.4byte	0x6b
+ 1104 02d1 44000000 		.4byte	.LLST3
+ 1105 02d5 08       		.uleb128 0x8
+ 1106 02d6 06000000 		.4byte	.LVL13
+ 1107 02da 7C040000 		.4byte	0x47c
+ 1108 02de 08       		.uleb128 0x8
+ 1109 02df 1C000000 		.4byte	.LVL14
+ 1110 02e3 87040000 		.4byte	0x487
+ 1111 02e7 00       		.byte	0
+ 1112 02e8 0B       		.uleb128 0xb
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 41
+
+
+ 1113 02e9 42020000 		.4byte	.LASF38
+ 1114 02ed 01       		.byte	0x1
+ 1115 02ee C303     		.2byte	0x3c3
+ 1116 02f0 00000000 		.4byte	.LFB18
+ 1117 02f4 1E000000 		.4byte	.LFE18-.LFB18
+ 1118 02f8 01       		.uleb128 0x1
+ 1119 02f9 9C       		.byte	0x9c
+ 1120 02fa 38030000 		.4byte	0x338
+ 1121 02fe 10       		.uleb128 0x10
+ 1122 02ff 68000000 		.4byte	.LASF39
+ 1123 0303 01       		.byte	0x1
+ 1124 0304 C303     		.2byte	0x3c3
+ 1125 0306 38030000 		.4byte	0x338
+ 1126 030a 57000000 		.4byte	.LLST4
+ 1127 030e 10       		.uleb128 0x10
+ 1128 030f AE020000 		.4byte	.LASF40
+ 1129 0313 01       		.byte	0x1
+ 1130 0314 C303     		.2byte	0x3c3
+ 1131 0316 6B000000 		.4byte	0x6b
+ 1132 031a 75000000 		.4byte	.LLST5
+ 1133 031e 0F       		.uleb128 0xf
+ 1134 031f 9D030000 		.4byte	.LASF41
+ 1135 0323 01       		.byte	0x1
+ 1136 0324 C603     		.2byte	0x3c6
+ 1137 0326 6B000000 		.4byte	0x6b
+ 1138 032a 9E000000 		.4byte	.LLST6
+ 1139 032e 08       		.uleb128 0x8
+ 1140 032f 10000000 		.4byte	.LVL18
+ 1141 0333 FB010000 		.4byte	0x1fb
+ 1142 0337 00       		.byte	0
+ 1143 0338 11       		.uleb128 0x11
+ 1144 0339 04       		.byte	0x4
+ 1145 033a 3E030000 		.4byte	0x33e
+ 1146 033e 12       		.uleb128 0x12
+ 1147 033f 6B000000 		.4byte	0x6b
+ 1148 0343 0B       		.uleb128 0xb
+ 1149 0344 77010000 		.4byte	.LASF42
+ 1150 0348 01       		.byte	0x1
+ 1151 0349 E403     		.2byte	0x3e4
+ 1152 034b 00000000 		.4byte	.LFB19
+ 1153 034f 3C000000 		.4byte	.LFE19-.LFB19
+ 1154 0353 01       		.uleb128 0x1
+ 1155 0354 9C       		.byte	0x9c
+ 1156 0355 7C030000 		.4byte	0x37c
+ 1157 0359 0F       		.uleb128 0xf
+ 1158 035a B8020000 		.4byte	.LASF18
+ 1159 035e 01       		.byte	0x1
+ 1160 035f E603     		.2byte	0x3e6
+ 1161 0361 6B000000 		.4byte	0x6b
+ 1162 0365 C8000000 		.4byte	.LLST7
+ 1163 0369 08       		.uleb128 0x8
+ 1164 036a 16000000 		.4byte	.LVL23
+ 1165 036e 7C040000 		.4byte	0x47c
+ 1166 0372 08       		.uleb128 0x8
+ 1167 0373 2C000000 		.4byte	.LVL24
+ 1168 0377 87040000 		.4byte	0x487
+ 1169 037b 00       		.byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 42
+
+
+ 1170 037c 06       		.uleb128 0x6
+ 1171 037d 96020000 		.4byte	.LASF43
+ 1172 0381 01       		.byte	0x1
+ 1173 0382 3F       		.byte	0x3f
+ 1174 0383 00000000 		.4byte	.LFB0
+ 1175 0387 28000000 		.4byte	.LFE0-.LFB0
+ 1176 038b 01       		.uleb128 0x1
+ 1177 038c 9C       		.byte	0x9c
+ 1178 038d AD030000 		.4byte	0x3ad
+ 1179 0391 08       		.uleb128 0x8
+ 1180 0392 0C000000 		.4byte	.LVL25
+ 1181 0396 43030000 		.4byte	0x343
+ 1182 039a 08       		.uleb128 0x8
+ 1183 039b 10000000 		.4byte	.LVL26
+ 1184 039f A9010000 		.4byte	0x1a9
+ 1185 03a3 08       		.uleb128 0x8
+ 1186 03a4 14000000 		.4byte	.LVL27
+ 1187 03a8 D2010000 		.4byte	0x1d2
+ 1188 03ac 00       		.byte	0
+ 1189 03ad 06       		.uleb128 0x6
+ 1190 03ae 28010000 		.4byte	.LASF44
+ 1191 03b2 01       		.byte	0x1
+ 1192 03b3 A3       		.byte	0xa3
+ 1193 03b4 00000000 		.4byte	.LFB2
+ 1194 03b8 1C000000 		.4byte	.LFE2-.LFB2
+ 1195 03bc 01       		.uleb128 0x1
+ 1196 03bd 9C       		.byte	0x9c
+ 1197 03be D5030000 		.4byte	0x3d5
+ 1198 03c2 08       		.uleb128 0x8
+ 1199 03c3 0C000000 		.4byte	.LVL28
+ 1200 03c7 7C030000 		.4byte	0x37c
+ 1201 03cb 08       		.uleb128 0x8
+ 1202 03cc 16000000 		.4byte	.LVL29
+ 1203 03d0 AB000000 		.4byte	0xab
+ 1204 03d4 00       		.byte	0
+ 1205 03d5 0A       		.uleb128 0xa
+ 1206 03d6 F8040000 		.4byte	.LASF45
+ 1207 03da 01       		.byte	0x1
+ 1208 03db 1204     		.2byte	0x412
+ 1209 03dd 00000000 		.4byte	.LFB20
+ 1210 03e1 02000000 		.4byte	.LFE20-.LFB20
+ 1211 03e5 01       		.uleb128 0x1
+ 1212 03e6 9C       		.byte	0x9c
+ 1213 03e7 0A       		.uleb128 0xa
+ 1214 03e8 4A000000 		.4byte	.LASF46
+ 1215 03ec 01       		.byte	0x1
+ 1216 03ed 2A04     		.2byte	0x42a
+ 1217 03ef 00000000 		.4byte	.LFB21
+ 1218 03f3 02000000 		.4byte	.LFE21-.LFB21
+ 1219 03f7 01       		.uleb128 0x1
+ 1220 03f8 9C       		.byte	0x9c
+ 1221 03f9 0B       		.uleb128 0xb
+ 1222 03fa 1E020000 		.4byte	.LASF47
+ 1223 03fe 01       		.byte	0x1
+ 1224 03ff 4304     		.2byte	0x443
+ 1225 0401 00000000 		.4byte	.LFB22
+ 1226 0405 14000000 		.4byte	.LFE22-.LFB22
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 43
+
+
+ 1227 0409 01       		.uleb128 0x1
+ 1228 040a 9C       		.byte	0x9c
+ 1229 040b 1E040000 		.4byte	0x41e
+ 1230 040f 0C       		.uleb128 0xc
+ 1231 0410 94010000 		.4byte	.LASF25
+ 1232 0414 01       		.byte	0x1
+ 1233 0415 4304     		.2byte	0x443
+ 1234 0417 6B000000 		.4byte	0x6b
+ 1235 041b 01       		.uleb128 0x1
+ 1236 041c 50       		.byte	0x50
+ 1237 041d 00       		.byte	0
+ 1238 041e 0D       		.uleb128 0xd
+ 1239 041f 9B010000 		.4byte	.LASF48
+ 1240 0423 01       		.byte	0x1
+ 1241 0424 6604     		.2byte	0x466
+ 1242 0426 6B000000 		.4byte	0x6b
+ 1243 042a 00000000 		.4byte	.LFB23
+ 1244 042e 18000000 		.4byte	.LFE23-.LFB23
+ 1245 0432 01       		.uleb128 0x1
+ 1246 0433 9C       		.byte	0x9c
+ 1247 0434 49040000 		.4byte	0x449
+ 1248 0438 0F       		.uleb128 0xf
+ 1249 0439 D6040000 		.4byte	.LASF26
+ 1250 043d 01       		.byte	0x1
+ 1251 043e 6804     		.2byte	0x468
+ 1252 0440 6B000000 		.4byte	0x6b
+ 1253 0444 DB000000 		.4byte	.LLST8
+ 1254 0448 00       		.byte	0
+ 1255 0449 13       		.uleb128 0x13
+ 1256 044a B9010000 		.4byte	.LASF49
+ 1257 044e 01       		.byte	0x1
+ 1258 044f 22       		.byte	0x22
+ 1259 0450 6B000000 		.4byte	0x6b
+ 1260 0454 05       		.uleb128 0x5
+ 1261 0455 03       		.byte	0x3
+ 1262 0456 00000000 		.4byte	SD_FIlesystem_SPI0_initVar
+ 1263 045a 13       		.uleb128 0x13
+ 1264 045b 06030000 		.4byte	.LASF50
+ 1265 045f 01       		.byte	0x1
+ 1266 0460 24       		.byte	0x24
+ 1267 0461 98000000 		.4byte	0x98
+ 1268 0465 05       		.uleb128 0x5
+ 1269 0466 03       		.byte	0x3
+ 1270 0467 00000000 		.4byte	SD_FIlesystem_SPI0_swStatusTx
+ 1271 046b 13       		.uleb128 0x13
+ 1272 046c DE020000 		.4byte	.LASF51
+ 1273 0470 01       		.byte	0x1
+ 1274 0471 25       		.byte	0x25
+ 1275 0472 98000000 		.4byte	0x98
+ 1276 0476 05       		.uleb128 0x5
+ 1277 0477 03       		.byte	0x3
+ 1278 0478 00000000 		.4byte	SD_FIlesystem_SPI0_swStatusRx
+ 1279 047c 14       		.uleb128 0x14
+ 1280 047d 42030000 		.4byte	.LASF55
+ 1281 0481 03       		.byte	0x3
+ 1282 0482 7D       		.byte	0x7d
+ 1283 0483 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 44
+
+
+ 1284 0487 15       		.uleb128 0x15
+ 1285 0488 66030000 		.4byte	.LASF56
+ 1286 048c 03       		.byte	0x3
+ 1287 048d 7E       		.byte	0x7e
+ 1288 048e 16       		.uleb128 0x16
+ 1289 048f 6B000000 		.4byte	0x6b
+ 1290 0493 00       		.byte	0
+ 1291 0494 00       		.byte	0
+ 1292              		.section	.debug_abbrev,"",%progbits
+ 1293              	.Ldebug_abbrev0:
+ 1294 0000 01       		.uleb128 0x1
+ 1295 0001 11       		.uleb128 0x11
+ 1296 0002 01       		.byte	0x1
+ 1297 0003 25       		.uleb128 0x25
+ 1298 0004 0E       		.uleb128 0xe
+ 1299 0005 13       		.uleb128 0x13
+ 1300 0006 0B       		.uleb128 0xb
+ 1301 0007 03       		.uleb128 0x3
+ 1302 0008 0E       		.uleb128 0xe
+ 1303 0009 1B       		.uleb128 0x1b
+ 1304 000a 0E       		.uleb128 0xe
+ 1305 000b 55       		.uleb128 0x55
+ 1306 000c 17       		.uleb128 0x17
+ 1307 000d 11       		.uleb128 0x11
+ 1308 000e 01       		.uleb128 0x1
+ 1309 000f 10       		.uleb128 0x10
+ 1310 0010 17       		.uleb128 0x17
+ 1311 0011 00       		.byte	0
+ 1312 0012 00       		.byte	0
+ 1313 0013 02       		.uleb128 0x2
+ 1314 0014 24       		.uleb128 0x24
+ 1315 0015 00       		.byte	0
+ 1316 0016 0B       		.uleb128 0xb
+ 1317 0017 0B       		.uleb128 0xb
+ 1318 0018 3E       		.uleb128 0x3e
+ 1319 0019 0B       		.uleb128 0xb
+ 1320 001a 03       		.uleb128 0x3
+ 1321 001b 0E       		.uleb128 0xe
+ 1322 001c 00       		.byte	0
+ 1323 001d 00       		.byte	0
+ 1324 001e 03       		.uleb128 0x3
+ 1325 001f 24       		.uleb128 0x24
+ 1326 0020 00       		.byte	0
+ 1327 0021 0B       		.uleb128 0xb
+ 1328 0022 0B       		.uleb128 0xb
+ 1329 0023 3E       		.uleb128 0x3e
+ 1330 0024 0B       		.uleb128 0xb
+ 1331 0025 03       		.uleb128 0x3
+ 1332 0026 08       		.uleb128 0x8
+ 1333 0027 00       		.byte	0
+ 1334 0028 00       		.byte	0
+ 1335 0029 04       		.uleb128 0x4
+ 1336 002a 16       		.uleb128 0x16
+ 1337 002b 00       		.byte	0
+ 1338 002c 03       		.uleb128 0x3
+ 1339 002d 0E       		.uleb128 0xe
+ 1340 002e 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 45
+
+
+ 1341 002f 0B       		.uleb128 0xb
+ 1342 0030 3B       		.uleb128 0x3b
+ 1343 0031 05       		.uleb128 0x5
+ 1344 0032 49       		.uleb128 0x49
+ 1345 0033 13       		.uleb128 0x13
+ 1346 0034 00       		.byte	0
+ 1347 0035 00       		.byte	0
+ 1348 0036 05       		.uleb128 0x5
+ 1349 0037 35       		.uleb128 0x35
+ 1350 0038 00       		.byte	0
+ 1351 0039 49       		.uleb128 0x49
+ 1352 003a 13       		.uleb128 0x13
+ 1353 003b 00       		.byte	0
+ 1354 003c 00       		.byte	0
+ 1355 003d 06       		.uleb128 0x6
+ 1356 003e 2E       		.uleb128 0x2e
+ 1357 003f 01       		.byte	0x1
+ 1358 0040 3F       		.uleb128 0x3f
+ 1359 0041 19       		.uleb128 0x19
+ 1360 0042 03       		.uleb128 0x3
+ 1361 0043 0E       		.uleb128 0xe
+ 1362 0044 3A       		.uleb128 0x3a
+ 1363 0045 0B       		.uleb128 0xb
+ 1364 0046 3B       		.uleb128 0x3b
+ 1365 0047 0B       		.uleb128 0xb
+ 1366 0048 27       		.uleb128 0x27
+ 1367 0049 19       		.uleb128 0x19
+ 1368 004a 11       		.uleb128 0x11
+ 1369 004b 01       		.uleb128 0x1
+ 1370 004c 12       		.uleb128 0x12
+ 1371 004d 06       		.uleb128 0x6
+ 1372 004e 40       		.uleb128 0x40
+ 1373 004f 18       		.uleb128 0x18
+ 1374 0050 9742     		.uleb128 0x2117
+ 1375 0052 19       		.uleb128 0x19
+ 1376 0053 01       		.uleb128 0x1
+ 1377 0054 13       		.uleb128 0x13
+ 1378 0055 00       		.byte	0
+ 1379 0056 00       		.byte	0
+ 1380 0057 07       		.uleb128 0x7
+ 1381 0058 34       		.uleb128 0x34
+ 1382 0059 00       		.byte	0
+ 1383 005a 03       		.uleb128 0x3
+ 1384 005b 0E       		.uleb128 0xe
+ 1385 005c 3A       		.uleb128 0x3a
+ 1386 005d 0B       		.uleb128 0xb
+ 1387 005e 3B       		.uleb128 0x3b
+ 1388 005f 0B       		.uleb128 0xb
+ 1389 0060 49       		.uleb128 0x49
+ 1390 0061 13       		.uleb128 0x13
+ 1391 0062 02       		.uleb128 0x2
+ 1392 0063 17       		.uleb128 0x17
+ 1393 0064 00       		.byte	0
+ 1394 0065 00       		.byte	0
+ 1395 0066 08       		.uleb128 0x8
+ 1396 0067 898201   		.uleb128 0x4109
+ 1397 006a 00       		.byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 46
+
+
+ 1398 006b 11       		.uleb128 0x11
+ 1399 006c 01       		.uleb128 0x1
+ 1400 006d 31       		.uleb128 0x31
+ 1401 006e 13       		.uleb128 0x13
+ 1402 006f 00       		.byte	0
+ 1403 0070 00       		.byte	0
+ 1404 0071 09       		.uleb128 0x9
+ 1405 0072 2E       		.uleb128 0x2e
+ 1406 0073 00       		.byte	0
+ 1407 0074 3F       		.uleb128 0x3f
+ 1408 0075 19       		.uleb128 0x19
+ 1409 0076 03       		.uleb128 0x3
+ 1410 0077 0E       		.uleb128 0xe
+ 1411 0078 3A       		.uleb128 0x3a
+ 1412 0079 0B       		.uleb128 0xb
+ 1413 007a 3B       		.uleb128 0x3b
+ 1414 007b 0B       		.uleb128 0xb
+ 1415 007c 27       		.uleb128 0x27
+ 1416 007d 19       		.uleb128 0x19
+ 1417 007e 11       		.uleb128 0x11
+ 1418 007f 01       		.uleb128 0x1
+ 1419 0080 12       		.uleb128 0x12
+ 1420 0081 06       		.uleb128 0x6
+ 1421 0082 40       		.uleb128 0x40
+ 1422 0083 18       		.uleb128 0x18
+ 1423 0084 9742     		.uleb128 0x2117
+ 1424 0086 19       		.uleb128 0x19
+ 1425 0087 00       		.byte	0
+ 1426 0088 00       		.byte	0
+ 1427 0089 0A       		.uleb128 0xa
+ 1428 008a 2E       		.uleb128 0x2e
+ 1429 008b 00       		.byte	0
+ 1430 008c 3F       		.uleb128 0x3f
+ 1431 008d 19       		.uleb128 0x19
+ 1432 008e 03       		.uleb128 0x3
+ 1433 008f 0E       		.uleb128 0xe
+ 1434 0090 3A       		.uleb128 0x3a
+ 1435 0091 0B       		.uleb128 0xb
+ 1436 0092 3B       		.uleb128 0x3b
+ 1437 0093 05       		.uleb128 0x5
+ 1438 0094 27       		.uleb128 0x27
+ 1439 0095 19       		.uleb128 0x19
+ 1440 0096 11       		.uleb128 0x11
+ 1441 0097 01       		.uleb128 0x1
+ 1442 0098 12       		.uleb128 0x12
+ 1443 0099 06       		.uleb128 0x6
+ 1444 009a 40       		.uleb128 0x40
+ 1445 009b 18       		.uleb128 0x18
+ 1446 009c 9742     		.uleb128 0x2117
+ 1447 009e 19       		.uleb128 0x19
+ 1448 009f 00       		.byte	0
+ 1449 00a0 00       		.byte	0
+ 1450 00a1 0B       		.uleb128 0xb
+ 1451 00a2 2E       		.uleb128 0x2e
+ 1452 00a3 01       		.byte	0x1
+ 1453 00a4 3F       		.uleb128 0x3f
+ 1454 00a5 19       		.uleb128 0x19
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 47
+
+
+ 1455 00a6 03       		.uleb128 0x3
+ 1456 00a7 0E       		.uleb128 0xe
+ 1457 00a8 3A       		.uleb128 0x3a
+ 1458 00a9 0B       		.uleb128 0xb
+ 1459 00aa 3B       		.uleb128 0x3b
+ 1460 00ab 05       		.uleb128 0x5
+ 1461 00ac 27       		.uleb128 0x27
+ 1462 00ad 19       		.uleb128 0x19
+ 1463 00ae 11       		.uleb128 0x11
+ 1464 00af 01       		.uleb128 0x1
+ 1465 00b0 12       		.uleb128 0x12
+ 1466 00b1 06       		.uleb128 0x6
+ 1467 00b2 40       		.uleb128 0x40
+ 1468 00b3 18       		.uleb128 0x18
+ 1469 00b4 9742     		.uleb128 0x2117
+ 1470 00b6 19       		.uleb128 0x19
+ 1471 00b7 01       		.uleb128 0x1
+ 1472 00b8 13       		.uleb128 0x13
+ 1473 00b9 00       		.byte	0
+ 1474 00ba 00       		.byte	0
+ 1475 00bb 0C       		.uleb128 0xc
+ 1476 00bc 05       		.uleb128 0x5
+ 1477 00bd 00       		.byte	0
+ 1478 00be 03       		.uleb128 0x3
+ 1479 00bf 0E       		.uleb128 0xe
+ 1480 00c0 3A       		.uleb128 0x3a
+ 1481 00c1 0B       		.uleb128 0xb
+ 1482 00c2 3B       		.uleb128 0x3b
+ 1483 00c3 05       		.uleb128 0x5
+ 1484 00c4 49       		.uleb128 0x49
+ 1485 00c5 13       		.uleb128 0x13
+ 1486 00c6 02       		.uleb128 0x2
+ 1487 00c7 18       		.uleb128 0x18
+ 1488 00c8 00       		.byte	0
+ 1489 00c9 00       		.byte	0
+ 1490 00ca 0D       		.uleb128 0xd
+ 1491 00cb 2E       		.uleb128 0x2e
+ 1492 00cc 01       		.byte	0x1
+ 1493 00cd 3F       		.uleb128 0x3f
+ 1494 00ce 19       		.uleb128 0x19
+ 1495 00cf 03       		.uleb128 0x3
+ 1496 00d0 0E       		.uleb128 0xe
+ 1497 00d1 3A       		.uleb128 0x3a
+ 1498 00d2 0B       		.uleb128 0xb
+ 1499 00d3 3B       		.uleb128 0x3b
+ 1500 00d4 05       		.uleb128 0x5
+ 1501 00d5 27       		.uleb128 0x27
+ 1502 00d6 19       		.uleb128 0x19
+ 1503 00d7 49       		.uleb128 0x49
+ 1504 00d8 13       		.uleb128 0x13
+ 1505 00d9 11       		.uleb128 0x11
+ 1506 00da 01       		.uleb128 0x1
+ 1507 00db 12       		.uleb128 0x12
+ 1508 00dc 06       		.uleb128 0x6
+ 1509 00dd 40       		.uleb128 0x40
+ 1510 00de 18       		.uleb128 0x18
+ 1511 00df 9742     		.uleb128 0x2117
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 48
+
+
+ 1512 00e1 19       		.uleb128 0x19
+ 1513 00e2 01       		.uleb128 0x1
+ 1514 00e3 13       		.uleb128 0x13
+ 1515 00e4 00       		.byte	0
+ 1516 00e5 00       		.byte	0
+ 1517 00e6 0E       		.uleb128 0xe
+ 1518 00e7 34       		.uleb128 0x34
+ 1519 00e8 00       		.byte	0
+ 1520 00e9 03       		.uleb128 0x3
+ 1521 00ea 0E       		.uleb128 0xe
+ 1522 00eb 3A       		.uleb128 0x3a
+ 1523 00ec 0B       		.uleb128 0xb
+ 1524 00ed 3B       		.uleb128 0x3b
+ 1525 00ee 05       		.uleb128 0x5
+ 1526 00ef 49       		.uleb128 0x49
+ 1527 00f0 13       		.uleb128 0x13
+ 1528 00f1 02       		.uleb128 0x2
+ 1529 00f2 18       		.uleb128 0x18
+ 1530 00f3 00       		.byte	0
+ 1531 00f4 00       		.byte	0
+ 1532 00f5 0F       		.uleb128 0xf
+ 1533 00f6 34       		.uleb128 0x34
+ 1534 00f7 00       		.byte	0
+ 1535 00f8 03       		.uleb128 0x3
+ 1536 00f9 0E       		.uleb128 0xe
+ 1537 00fa 3A       		.uleb128 0x3a
+ 1538 00fb 0B       		.uleb128 0xb
+ 1539 00fc 3B       		.uleb128 0x3b
+ 1540 00fd 05       		.uleb128 0x5
+ 1541 00fe 49       		.uleb128 0x49
+ 1542 00ff 13       		.uleb128 0x13
+ 1543 0100 02       		.uleb128 0x2
+ 1544 0101 17       		.uleb128 0x17
+ 1545 0102 00       		.byte	0
+ 1546 0103 00       		.byte	0
+ 1547 0104 10       		.uleb128 0x10
+ 1548 0105 05       		.uleb128 0x5
+ 1549 0106 00       		.byte	0
+ 1550 0107 03       		.uleb128 0x3
+ 1551 0108 0E       		.uleb128 0xe
+ 1552 0109 3A       		.uleb128 0x3a
+ 1553 010a 0B       		.uleb128 0xb
+ 1554 010b 3B       		.uleb128 0x3b
+ 1555 010c 05       		.uleb128 0x5
+ 1556 010d 49       		.uleb128 0x49
+ 1557 010e 13       		.uleb128 0x13
+ 1558 010f 02       		.uleb128 0x2
+ 1559 0110 17       		.uleb128 0x17
+ 1560 0111 00       		.byte	0
+ 1561 0112 00       		.byte	0
+ 1562 0113 11       		.uleb128 0x11
+ 1563 0114 0F       		.uleb128 0xf
+ 1564 0115 00       		.byte	0
+ 1565 0116 0B       		.uleb128 0xb
+ 1566 0117 0B       		.uleb128 0xb
+ 1567 0118 49       		.uleb128 0x49
+ 1568 0119 13       		.uleb128 0x13
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 49
+
+
+ 1569 011a 00       		.byte	0
+ 1570 011b 00       		.byte	0
+ 1571 011c 12       		.uleb128 0x12
+ 1572 011d 26       		.uleb128 0x26
+ 1573 011e 00       		.byte	0
+ 1574 011f 49       		.uleb128 0x49
+ 1575 0120 13       		.uleb128 0x13
+ 1576 0121 00       		.byte	0
+ 1577 0122 00       		.byte	0
+ 1578 0123 13       		.uleb128 0x13
+ 1579 0124 34       		.uleb128 0x34
+ 1580 0125 00       		.byte	0
+ 1581 0126 03       		.uleb128 0x3
+ 1582 0127 0E       		.uleb128 0xe
+ 1583 0128 3A       		.uleb128 0x3a
+ 1584 0129 0B       		.uleb128 0xb
+ 1585 012a 3B       		.uleb128 0x3b
+ 1586 012b 0B       		.uleb128 0xb
+ 1587 012c 49       		.uleb128 0x49
+ 1588 012d 13       		.uleb128 0x13
+ 1589 012e 3F       		.uleb128 0x3f
+ 1590 012f 19       		.uleb128 0x19
+ 1591 0130 02       		.uleb128 0x2
+ 1592 0131 18       		.uleb128 0x18
+ 1593 0132 00       		.byte	0
+ 1594 0133 00       		.byte	0
+ 1595 0134 14       		.uleb128 0x14
+ 1596 0135 2E       		.uleb128 0x2e
+ 1597 0136 00       		.byte	0
+ 1598 0137 3F       		.uleb128 0x3f
+ 1599 0138 19       		.uleb128 0x19
+ 1600 0139 03       		.uleb128 0x3
+ 1601 013a 0E       		.uleb128 0xe
+ 1602 013b 3A       		.uleb128 0x3a
+ 1603 013c 0B       		.uleb128 0xb
+ 1604 013d 3B       		.uleb128 0x3b
+ 1605 013e 0B       		.uleb128 0xb
+ 1606 013f 27       		.uleb128 0x27
+ 1607 0140 19       		.uleb128 0x19
+ 1608 0141 49       		.uleb128 0x49
+ 1609 0142 13       		.uleb128 0x13
+ 1610 0143 3C       		.uleb128 0x3c
+ 1611 0144 19       		.uleb128 0x19
+ 1612 0145 00       		.byte	0
+ 1613 0146 00       		.byte	0
+ 1614 0147 15       		.uleb128 0x15
+ 1615 0148 2E       		.uleb128 0x2e
+ 1616 0149 01       		.byte	0x1
+ 1617 014a 3F       		.uleb128 0x3f
+ 1618 014b 19       		.uleb128 0x19
+ 1619 014c 03       		.uleb128 0x3
+ 1620 014d 0E       		.uleb128 0xe
+ 1621 014e 3A       		.uleb128 0x3a
+ 1622 014f 0B       		.uleb128 0xb
+ 1623 0150 3B       		.uleb128 0x3b
+ 1624 0151 0B       		.uleb128 0xb
+ 1625 0152 27       		.uleb128 0x27
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 50
+
+
+ 1626 0153 19       		.uleb128 0x19
+ 1627 0154 3C       		.uleb128 0x3c
+ 1628 0155 19       		.uleb128 0x19
+ 1629 0156 00       		.byte	0
+ 1630 0157 00       		.byte	0
+ 1631 0158 16       		.uleb128 0x16
+ 1632 0159 05       		.uleb128 0x5
+ 1633 015a 00       		.byte	0
+ 1634 015b 49       		.uleb128 0x49
+ 1635 015c 13       		.uleb128 0x13
+ 1636 015d 00       		.byte	0
+ 1637 015e 00       		.byte	0
+ 1638 015f 00       		.byte	0
+ 1639              		.section	.debug_loc,"",%progbits
+ 1640              	.Ldebug_loc0:
+ 1641              	.LLST0:
+ 1642 0000 06000000 		.4byte	.LVL0
+ 1643 0004 29000000 		.4byte	.LVL1-1
+ 1644 0008 0100     		.2byte	0x1
+ 1645 000a 50       		.byte	0x50
+ 1646 000b 00000000 		.4byte	0
+ 1647 000f 00000000 		.4byte	0
+ 1648              	.LLST1:
+ 1649 0013 06000000 		.4byte	.LVL2
+ 1650 0017 1D000000 		.4byte	.LVL3-1
+ 1651 001b 0100     		.2byte	0x1
+ 1652 001d 50       		.byte	0x50
+ 1653 001e 00000000 		.4byte	0
+ 1654 0022 00000000 		.4byte	0
+ 1655              	.LLST2:
+ 1656 0026 06000000 		.4byte	.LVL11
+ 1657 002a 1C000000 		.4byte	.LVL12
+ 1658 002e 0100     		.2byte	0x1
+ 1659 0030 53       		.byte	0x53
+ 1660 0031 1C000000 		.4byte	.LVL12
+ 1661 0035 24000000 		.4byte	.LFE15
+ 1662 0039 0100     		.2byte	0x1
+ 1663 003b 50       		.byte	0x50
+ 1664 003c 00000000 		.4byte	0
+ 1665 0040 00000000 		.4byte	0
+ 1666              	.LLST3:
+ 1667 0044 06000000 		.4byte	.LVL13
+ 1668 0048 1B000000 		.4byte	.LVL14-1
+ 1669 004c 0100     		.2byte	0x1
+ 1670 004e 50       		.byte	0x50
+ 1671 004f 00000000 		.4byte	0
+ 1672 0053 00000000 		.4byte	0
+ 1673              	.LLST4:
+ 1674 0057 00000000 		.4byte	.LVL15
+ 1675 005b 0A000000 		.4byte	.LVL17
+ 1676 005f 0100     		.2byte	0x1
+ 1677 0061 50       		.byte	0x50
+ 1678 0062 0A000000 		.4byte	.LVL17
+ 1679 0066 1E000000 		.4byte	.LFE18
+ 1680 006a 0100     		.2byte	0x1
+ 1681 006c 56       		.byte	0x56
+ 1682 006d 00000000 		.4byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 51
+
+
+ 1683 0071 00000000 		.4byte	0
+ 1684              	.LLST5:
+ 1685 0075 00000000 		.4byte	.LVL15
+ 1686 0079 0A000000 		.4byte	.LVL17
+ 1687 007d 0100     		.2byte	0x1
+ 1688 007f 51       		.byte	0x51
+ 1689 0080 0A000000 		.4byte	.LVL17
+ 1690 0084 16000000 		.4byte	.LVL21
+ 1691 0088 0100     		.2byte	0x1
+ 1692 008a 54       		.byte	0x54
+ 1693 008b 18000000 		.4byte	.LVL22
+ 1694 008f 1E000000 		.4byte	.LFE18
+ 1695 0093 0100     		.2byte	0x1
+ 1696 0095 54       		.byte	0x54
+ 1697 0096 00000000 		.4byte	0
+ 1698 009a 00000000 		.4byte	0
+ 1699              	.LLST6:
+ 1700 009e 06000000 		.4byte	.LVL16
+ 1701 00a2 0A000000 		.4byte	.LVL17
+ 1702 00a6 0200     		.2byte	0x2
+ 1703 00a8 30       		.byte	0x30
+ 1704 00a9 9F       		.byte	0x9f
+ 1705 00aa 0A000000 		.4byte	.LVL17
+ 1706 00ae 12000000 		.4byte	.LVL19
+ 1707 00b2 0100     		.2byte	0x1
+ 1708 00b4 55       		.byte	0x55
+ 1709 00b5 14000000 		.4byte	.LVL20
+ 1710 00b9 1E000000 		.4byte	.LFE18
+ 1711 00bd 0100     		.2byte	0x1
+ 1712 00bf 55       		.byte	0x55
+ 1713 00c0 00000000 		.4byte	0
+ 1714 00c4 00000000 		.4byte	0
+ 1715              	.LLST7:
+ 1716 00c8 16000000 		.4byte	.LVL23
+ 1717 00cc 2B000000 		.4byte	.LVL24-1
+ 1718 00d0 0100     		.2byte	0x1
+ 1719 00d2 50       		.byte	0x50
+ 1720 00d3 00000000 		.4byte	0
+ 1721 00d7 00000000 		.4byte	0
+ 1722              	.LLST8:
+ 1723 00db 04000000 		.4byte	.LVL31
+ 1724 00df 0A000000 		.4byte	.LVL32
+ 1725 00e3 0100     		.2byte	0x1
+ 1726 00e5 53       		.byte	0x53
+ 1727 00e6 0A000000 		.4byte	.LVL32
+ 1728 00ea 0E000000 		.4byte	.LVL33
+ 1729 00ee 0600     		.2byte	0x6
+ 1730 00f0 70       		.byte	0x70
+ 1731 00f1 00       		.sleb128 0
+ 1732 00f2 08       		.byte	0x8
+ 1733 00f3 EF       		.byte	0xef
+ 1734 00f4 1A       		.byte	0x1a
+ 1735 00f5 9F       		.byte	0x9f
+ 1736 00f6 00000000 		.4byte	0
+ 1737 00fa 00000000 		.4byte	0
+ 1738              		.section	.debug_aranges,"",%progbits
+ 1739 0000 D4000000 		.4byte	0xd4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 52
+
+
+ 1740 0004 0200     		.2byte	0x2
+ 1741 0006 00000000 		.4byte	.Ldebug_info0
+ 1742 000a 04       		.byte	0x4
+ 1743 000b 00       		.byte	0
+ 1744 000c 0000     		.2byte	0
+ 1745 000e 0000     		.2byte	0
+ 1746 0010 00000000 		.4byte	.LFB1
+ 1747 0014 30000000 		.4byte	.LFE1-.LFB1
+ 1748 0018 00000000 		.4byte	.LFB3
+ 1749 001c 24000000 		.4byte	.LFE3-.LFB3
+ 1750 0020 00000000 		.4byte	.LFB4
+ 1751 0024 02000000 		.4byte	.LFE4-.LFB4
+ 1752 0028 00000000 		.4byte	.LFB5
+ 1753 002c 02000000 		.4byte	.LFE5-.LFB5
+ 1754 0030 00000000 		.4byte	.LFB6
+ 1755 0034 02000000 		.4byte	.LFE6-.LFB6
+ 1756 0038 00000000 		.4byte	.LFB7
+ 1757 003c 02000000 		.4byte	.LFE7-.LFB7
+ 1758 0040 00000000 		.4byte	.LFB8
+ 1759 0044 0C000000 		.4byte	.LFE8-.LFB8
+ 1760 0048 00000000 		.4byte	.LFB9
+ 1761 004c 0C000000 		.4byte	.LFE9-.LFB9
+ 1762 0050 00000000 		.4byte	.LFB10
+ 1763 0054 0C000000 		.4byte	.LFE10-.LFB10
+ 1764 0058 00000000 		.4byte	.LFB11
+ 1765 005c 0C000000 		.4byte	.LFE11-.LFB11
+ 1766 0060 00000000 		.4byte	.LFB12
+ 1767 0064 18000000 		.4byte	.LFE12-.LFB12
+ 1768 0068 00000000 		.4byte	.LFB13
+ 1769 006c 0C000000 		.4byte	.LFE13-.LFB13
+ 1770 0070 00000000 		.4byte	.LFB14
+ 1771 0074 18000000 		.4byte	.LFE14-.LFB14
+ 1772 0078 00000000 		.4byte	.LFB15
+ 1773 007c 24000000 		.4byte	.LFE15-.LFB15
+ 1774 0080 00000000 		.4byte	.LFB16
+ 1775 0084 1C000000 		.4byte	.LFE16-.LFB16
+ 1776 0088 00000000 		.4byte	.LFB17
+ 1777 008c 24000000 		.4byte	.LFE17-.LFB17
+ 1778 0090 00000000 		.4byte	.LFB18
+ 1779 0094 1E000000 		.4byte	.LFE18-.LFB18
+ 1780 0098 00000000 		.4byte	.LFB19
+ 1781 009c 3C000000 		.4byte	.LFE19-.LFB19
+ 1782 00a0 00000000 		.4byte	.LFB0
+ 1783 00a4 28000000 		.4byte	.LFE0-.LFB0
+ 1784 00a8 00000000 		.4byte	.LFB2
+ 1785 00ac 1C000000 		.4byte	.LFE2-.LFB2
+ 1786 00b0 00000000 		.4byte	.LFB20
+ 1787 00b4 02000000 		.4byte	.LFE20-.LFB20
+ 1788 00b8 00000000 		.4byte	.LFB21
+ 1789 00bc 02000000 		.4byte	.LFE21-.LFB21
+ 1790 00c0 00000000 		.4byte	.LFB22
+ 1791 00c4 14000000 		.4byte	.LFE22-.LFB22
+ 1792 00c8 00000000 		.4byte	.LFB23
+ 1793 00cc 18000000 		.4byte	.LFE23-.LFB23
+ 1794 00d0 00000000 		.4byte	0
+ 1795 00d4 00000000 		.4byte	0
+ 1796              		.section	.debug_ranges,"",%progbits
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 53
+
+
+ 1797              	.Ldebug_ranges0:
+ 1798 0000 00000000 		.4byte	.LFB1
+ 1799 0004 30000000 		.4byte	.LFE1
+ 1800 0008 00000000 		.4byte	.LFB3
+ 1801 000c 24000000 		.4byte	.LFE3
+ 1802 0010 00000000 		.4byte	.LFB4
+ 1803 0014 02000000 		.4byte	.LFE4
+ 1804 0018 00000000 		.4byte	.LFB5
+ 1805 001c 02000000 		.4byte	.LFE5
+ 1806 0020 00000000 		.4byte	.LFB6
+ 1807 0024 02000000 		.4byte	.LFE6
+ 1808 0028 00000000 		.4byte	.LFB7
+ 1809 002c 02000000 		.4byte	.LFE7
+ 1810 0030 00000000 		.4byte	.LFB8
+ 1811 0034 0C000000 		.4byte	.LFE8
+ 1812 0038 00000000 		.4byte	.LFB9
+ 1813 003c 0C000000 		.4byte	.LFE9
+ 1814 0040 00000000 		.4byte	.LFB10
+ 1815 0044 0C000000 		.4byte	.LFE10
+ 1816 0048 00000000 		.4byte	.LFB11
+ 1817 004c 0C000000 		.4byte	.LFE11
+ 1818 0050 00000000 		.4byte	.LFB12
+ 1819 0054 18000000 		.4byte	.LFE12
+ 1820 0058 00000000 		.4byte	.LFB13
+ 1821 005c 0C000000 		.4byte	.LFE13
+ 1822 0060 00000000 		.4byte	.LFB14
+ 1823 0064 18000000 		.4byte	.LFE14
+ 1824 0068 00000000 		.4byte	.LFB15
+ 1825 006c 24000000 		.4byte	.LFE15
+ 1826 0070 00000000 		.4byte	.LFB16
+ 1827 0074 1C000000 		.4byte	.LFE16
+ 1828 0078 00000000 		.4byte	.LFB17
+ 1829 007c 24000000 		.4byte	.LFE17
+ 1830 0080 00000000 		.4byte	.LFB18
+ 1831 0084 1E000000 		.4byte	.LFE18
+ 1832 0088 00000000 		.4byte	.LFB19
+ 1833 008c 3C000000 		.4byte	.LFE19
+ 1834 0090 00000000 		.4byte	.LFB0
+ 1835 0094 28000000 		.4byte	.LFE0
+ 1836 0098 00000000 		.4byte	.LFB2
+ 1837 009c 1C000000 		.4byte	.LFE2
+ 1838 00a0 00000000 		.4byte	.LFB20
+ 1839 00a4 02000000 		.4byte	.LFE20
+ 1840 00a8 00000000 		.4byte	.LFB21
+ 1841 00ac 02000000 		.4byte	.LFE21
+ 1842 00b0 00000000 		.4byte	.LFB22
+ 1843 00b4 14000000 		.4byte	.LFE22
+ 1844 00b8 00000000 		.4byte	.LFB23
+ 1845 00bc 18000000 		.4byte	.LFE23
+ 1846 00c0 00000000 		.4byte	0
+ 1847 00c4 00000000 		.4byte	0
+ 1848              		.section	.debug_line,"",%progbits
+ 1849              	.Ldebug_line0:
+ 1850 0000 3A020000 		.section	.debug_str,"MS",%progbits,1
+ 1850      02005C00 
+ 1850      00000201 
+ 1850      FB0E0D00 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 54
+
+
+ 1850      01010101 
+ 1851              	.LASF29:
+ 1852 0000 53445F46 		.ascii	"SD_FIlesystem_SPI0_WriteTxData\000"
+ 1852      496C6573 
+ 1852      79737465 
+ 1852      6D5F5350 
+ 1852      49305F57 
+ 1853              	.LASF11:
+ 1854 001f 63686172 		.ascii	"char\000"
+ 1854      00
+ 1855              	.LASF24:
+ 1856 0024 53445F46 		.ascii	"SD_FIlesystem_SPI0_SetRxInterruptMode\000"
+ 1856      496C6573 
+ 1856      79737465 
+ 1856      6D5F5350 
+ 1856      49305F53 
+ 1857              	.LASF46:
+ 1858 004a 53445F46 		.ascii	"SD_FIlesystem_SPI0_DisableInt\000"
+ 1858      496C6573 
+ 1858      79737465 
+ 1858      6D5F5350 
+ 1858      49305F44 
+ 1859              	.LASF39:
+ 1860 0068 62756666 		.ascii	"buffer\000"
+ 1860      657200
+ 1861              	.LASF21:
+ 1862 006f 53445F46 		.ascii	"SD_FIlesystem_SPI0_DisableTxInt\000"
+ 1862      496C6573 
+ 1862      79737465 
+ 1862      6D5F5350 
+ 1862      49305F44 
+ 1863              	.LASF52:
+ 1864 008f 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1864      4320342E 
+ 1864      392E3320 
+ 1864      32303135 
+ 1864      30333033 
+ 1865 00c2 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1865      20726576 
+ 1865      6973696F 
+ 1865      6E203232 
+ 1865      31323230 
+ 1866 00f5 67202D73 		.ascii	"g -std=gnu11 -ffunction-sections -ffat-lto-objects\000"
+ 1866      74643D67 
+ 1866      6E753131 
+ 1866      202D6666 
+ 1866      756E6374 
+ 1867              	.LASF44:
+ 1868 0128 53445F46 		.ascii	"SD_FIlesystem_SPI0_Start\000"
+ 1868      496C6573 
+ 1868      79737465 
+ 1868      6D5F5350 
+ 1868      49305F53 
+ 1869              	.LASF3:
+ 1870 0141 73686F72 		.ascii	"short unsigned int\000"
+ 1870      7420756E 
+ 1870      7369676E 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 55
+
+
+ 1870      65642069 
+ 1870      6E7400
+ 1871              	.LASF33:
+ 1872 0154 53445F46 		.ascii	"SD_FIlesystem_SPI0_GetRxBufferSize\000"
+ 1872      496C6573 
+ 1872      79737465 
+ 1872      6D5F5350 
+ 1872      49305F47 
+ 1873              	.LASF42:
+ 1874 0177 53445F46 		.ascii	"SD_FIlesystem_SPI0_ClearFIFO\000"
+ 1874      496C6573 
+ 1874      79737465 
+ 1874      6D5F5350 
+ 1874      49305F43 
+ 1875              	.LASF25:
+ 1876 0194 696E7453 		.ascii	"intSrc\000"
+ 1876      726300
+ 1877              	.LASF48:
+ 1878 019b 53445F46 		.ascii	"SD_FIlesystem_SPI0_ReadStatus\000"
+ 1878      496C6573 
+ 1878      79737465 
+ 1878      6D5F5350 
+ 1878      49305F52 
+ 1879              	.LASF49:
+ 1880 01b9 53445F46 		.ascii	"SD_FIlesystem_SPI0_initVar\000"
+ 1880      496C6573 
+ 1880      79737465 
+ 1880      6D5F5350 
+ 1880      49305F69 
+ 1881              	.LASF32:
+ 1882 01d4 72784461 		.ascii	"rxData\000"
+ 1882      746100
+ 1883              	.LASF9:
+ 1884 01db 666C6F61 		.ascii	"float\000"
+ 1884      7400
+ 1885              	.LASF7:
+ 1886 01e1 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1886      206C6F6E 
+ 1886      6720756E 
+ 1886      7369676E 
+ 1886      65642069 
+ 1887              	.LASF37:
+ 1888 01f8 53445F46 		.ascii	"SD_FIlesystem_SPI0_ClearTxBuffer\000"
+ 1888      496C6573 
+ 1888      79737465 
+ 1888      6D5F5350 
+ 1888      49305F43 
+ 1889              	.LASF34:
+ 1890 0219 73697A65 		.ascii	"size\000"
+ 1890      00
+ 1891              	.LASF47:
+ 1892 021e 53445F46 		.ascii	"SD_FIlesystem_SPI0_SetInterruptMode\000"
+ 1892      496C6573 
+ 1892      79737465 
+ 1892      6D5F5350 
+ 1892      49305F53 
+ 1893              	.LASF38:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 56
+
+
+ 1894 0242 53445F46 		.ascii	"SD_FIlesystem_SPI0_PutArray\000"
+ 1894      496C6573 
+ 1894      79737465 
+ 1894      6D5F5350 
+ 1894      49305F50 
+ 1895              	.LASF5:
+ 1896 025e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1896      20756E73 
+ 1896      69676E65 
+ 1896      6420696E 
+ 1896      7400
+ 1897              	.LASF12:
+ 1898 0270 75696E74 		.ascii	"uint8\000"
+ 1898      3800
+ 1899              	.LASF22:
+ 1900 0276 53445F46 		.ascii	"SD_FIlesystem_SPI0_DisableRxInt\000"
+ 1900      496C6573 
+ 1900      79737465 
+ 1900      6D5F5350 
+ 1900      49305F44 
+ 1901              	.LASF43:
+ 1902 0296 53445F46 		.ascii	"SD_FIlesystem_SPI0_Init\000"
+ 1902      496C6573 
+ 1902      79737465 
+ 1902      6D5F5350 
+ 1902      49305F49 
+ 1903              	.LASF40:
+ 1904 02ae 62797465 		.ascii	"byteCount\000"
+ 1904      436F756E 
+ 1904      7400
+ 1905              	.LASF18:
+ 1906 02b8 656E6162 		.ascii	"enableInterrupts\000"
+ 1906      6C65496E 
+ 1906      74657272 
+ 1906      75707473 
+ 1906      00
+ 1907              	.LASF1:
+ 1908 02c9 756E7369 		.ascii	"unsigned char\000"
+ 1908      676E6564 
+ 1908      20636861 
+ 1908      7200
+ 1909              	.LASF10:
+ 1910 02d7 646F7562 		.ascii	"double\000"
+ 1910      6C6500
+ 1911              	.LASF51:
+ 1912 02de 53445F46 		.ascii	"SD_FIlesystem_SPI0_swStatusRx\000"
+ 1912      496C6573 
+ 1912      79737465 
+ 1912      6D5F5350 
+ 1912      49305F73 
+ 1913              	.LASF2:
+ 1914 02fc 73686F72 		.ascii	"short int\000"
+ 1914      7420696E 
+ 1914      7400
+ 1915              	.LASF50:
+ 1916 0306 53445F46 		.ascii	"SD_FIlesystem_SPI0_swStatusTx\000"
+ 1916      496C6573 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 57
+
+
+ 1916      79737465 
+ 1916      6D5F5350 
+ 1916      49305F73 
+ 1917              	.LASF31:
+ 1918 0324 53445F46 		.ascii	"SD_FIlesystem_SPI0_ReadRxData\000"
+ 1918      496C6573 
+ 1918      79737465 
+ 1918      6D5F5350 
+ 1918      49305F52 
+ 1919              	.LASF55:
+ 1920 0342 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1920      74657243 
+ 1920      72697469 
+ 1920      63616C53 
+ 1920      65637469 
+ 1921              	.LASF8:
+ 1922 0359 756E7369 		.ascii	"unsigned int\000"
+ 1922      676E6564 
+ 1922      20696E74 
+ 1922      00
+ 1923              	.LASF56:
+ 1924 0366 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1924      69744372 
+ 1924      69746963 
+ 1924      616C5365 
+ 1924      6374696F 
+ 1925              	.LASF36:
+ 1926 037c 53445F46 		.ascii	"SD_FIlesystem_SPI0_ClearRxBuffer\000"
+ 1926      496C6573 
+ 1926      79737465 
+ 1926      6D5F5350 
+ 1926      49305F43 
+ 1927              	.LASF41:
+ 1928 039d 62756649 		.ascii	"bufIndex\000"
+ 1928      6E646578 
+ 1928      00
+ 1929              	.LASF19:
+ 1930 03a6 53445F46 		.ascii	"SD_FIlesystem_SPI0_EnableTxInt\000"
+ 1930      496C6573 
+ 1930      79737465 
+ 1930      6D5F5350 
+ 1930      49305F45 
+ 1931              	.LASF13:
+ 1932 03c5 72656738 		.ascii	"reg8\000"
+ 1932      00
+ 1933              	.LASF27:
+ 1934 03ca 53445F46 		.ascii	"SD_FIlesystem_SPI0_ReadTxStatus\000"
+ 1934      496C6573 
+ 1934      79737465 
+ 1934      6D5F5350 
+ 1934      49305F52 
+ 1935              	.LASF15:
+ 1936 03ea 73697A65 		.ascii	"sizetype\000"
+ 1936      74797065 
+ 1936      00
+ 1937              	.LASF6:
+ 1938 03f3 6C6F6E67 		.ascii	"long long int\000"
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 58
+
+
+ 1938      206C6F6E 
+ 1938      6720696E 
+ 1938      7400
+ 1939              	.LASF17:
+ 1940 0401 53445F46 		.ascii	"SD_FIlesystem_SPI0_Stop\000"
+ 1940      496C6573 
+ 1940      79737465 
+ 1940      6D5F5350 
+ 1940      49305F53 
+ 1941              	.LASF30:
+ 1942 0419 74784461 		.ascii	"txData\000"
+ 1942      746100
+ 1943              	.LASF28:
+ 1944 0420 53445F46 		.ascii	"SD_FIlesystem_SPI0_ReadRxStatus\000"
+ 1944      496C6573 
+ 1944      79737465 
+ 1944      6D5F5350 
+ 1944      49305F52 
+ 1945              	.LASF53:
+ 1946 0440 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\SD_FIlesystem_SPI0.c\000"
+ 1946      6E657261 
+ 1946      7465645F 
+ 1946      536F7572 
+ 1946      63655C50 
+ 1947              	.LASF20:
+ 1948 046e 53445F46 		.ascii	"SD_FIlesystem_SPI0_EnableRxInt\000"
+ 1948      496C6573 
+ 1948      79737465 
+ 1948      6D5F5350 
+ 1948      49305F45 
+ 1949              	.LASF16:
+ 1950 048d 53445F46 		.ascii	"SD_FIlesystem_SPI0_Enable\000"
+ 1950      496C6573 
+ 1950      79737465 
+ 1950      6D5F5350 
+ 1950      49305F45 
+ 1951              	.LASF23:
+ 1952 04a7 53445F46 		.ascii	"SD_FIlesystem_SPI0_SetTxInterruptMode\000"
+ 1952      496C6573 
+ 1952      79737465 
+ 1952      6D5F5350 
+ 1952      49305F53 
+ 1953              	.LASF4:
+ 1954 04cd 6C6F6E67 		.ascii	"long int\000"
+ 1954      20696E74 
+ 1954      00
+ 1955              	.LASF26:
+ 1956 04d6 746D7053 		.ascii	"tmpStatus\000"
+ 1956      74617475 
+ 1956      7300
+ 1957              	.LASF14:
+ 1958 04e0 6C6F6E67 		.ascii	"long double\000"
+ 1958      20646F75 
+ 1958      626C6500 
+ 1959              	.LASF0:
+ 1960 04ec 7369676E 		.ascii	"signed char\000"
+ 1960      65642063 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccohLGUd.s 			page 59
+
+
+ 1960      68617200 
+ 1961              	.LASF45:
+ 1962 04f8 53445F46 		.ascii	"SD_FIlesystem_SPI0_EnableInt\000"
+ 1962      496C6573 
+ 1962      79737465 
+ 1962      6D5F5350 
+ 1962      49305F45 
+ 1963              	.LASF54:
+ 1964 0515 433A5C55 		.ascii	"C:\\Users\\User\\Documents\\MIT 6.115\\finalproject"
+ 1964      73657273 
+ 1964      5C557365 
+ 1964      725C446F 
+ 1964      63756D65 
+ 1965 0543 5C66696E 		.ascii	"\\finalproject\\GuitarHero.cydsn\000"
+ 1965      616C7072 
+ 1965      6F6A6563 
+ 1965      745C4775 
+ 1965      69746172 
+ 1966              	.LASF35:
+ 1967 0562 53445F46 		.ascii	"SD_FIlesystem_SPI0_GetTxBufferSize\000"
+ 1967      496C6573 
+ 1967      79737465 
+ 1967      6D5F5350 
+ 1967      49305F47 
+ 1968              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

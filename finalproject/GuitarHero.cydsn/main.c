@@ -11,15 +11,17 @@
  */
 #include <project.h>
 #include <math.h>
+#include <game_manager.h>
 #include <sprites.h>
 
 // Global constants
 const uint16 DAC_SETTLE_TIME_US = 0;
 
-// Sprites
+// Game data
 int n_sprites;
 uint8 indicator_countdown[5];
 struct Sprite sprites[1<<5];
+struct GameState game_state;
 
 // Global rendering variables
 int n_points;
@@ -62,6 +64,8 @@ void game_init() {
     for (int i = 0; i < 5; i++) {
         sprites[n_sprites++] = make_ellipse(i, 5, 0);
     }
+    
+    game_state = new_game();
 }
 
 /*
@@ -89,6 +93,8 @@ void update_render() {
             sprites[i + 1] = make_ellipse(i, 5, 0);
         }
     }
+    // Update sprites
+    n_sprites = create_sprites(&game_state, sprites + 6) + 6;
     // Convert to polyline
     new_n_points = sprites_to_polyline(n_sprites, sprites, new_points);
     // Convert to perspective
@@ -101,6 +107,11 @@ void update_render() {
  * Run the game at 20 FPS
  */
 CY_ISR(FPS_isr) {
+    tick(&game_state);
+    LCD_Position(0, 0);
+    LCD_PrintString("     ");
+    LCD_Position(0, 0);
+    LCD_PrintNumber(game_state.score);
     update_render();
 }
 
@@ -114,8 +125,8 @@ CY_ISR(BLE_Rx_isr) {
         if (mask & (1 << i))
             indicator_countdown[i] = 5;
     }
-    // TODO: Calculate scoring
-    LCD_PutChar(c);
+    // Calculate scoring
+    update_score(&game_state, mask);
 }
 
 int main() {

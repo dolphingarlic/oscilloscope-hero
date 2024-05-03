@@ -1,0 +1,928 @@
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"SD_FIlesystem_SPI0_PM.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.SD_FIlesystem_SPI0_SaveConfig,"ax",%progbits
+  19              		.align	2
+  20              		.global	SD_FIlesystem_SPI0_SaveConfig
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	SD_FIlesystem_SPI0_SaveConfig, %function
+  24              	SD_FIlesystem_SPI0_SaveConfig:
+  25              	.LFB0:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\SD_FIlesystem_SPI0_PM.c"
+   1:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * File Name: SD_FIlesystem_SPI0_PM.c
+   3:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Version 2.40
+   4:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+   5:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Description:
+   6:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  This file contains the setup, control and status commands to support
+   7:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  component operations in low power mode.
+   8:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+   9:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Note:
+  10:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+  11:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+  18:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** #include "SD_FIlesystem_SPI0_PVT.h"
+  19:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+  20:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** static SD_FIlesystem_SPI0_BACKUP_STRUCT SD_FIlesystem_SPI0_backup =
+  21:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** {
+  22:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     SD_FIlesystem_SPI0_DISABLED,
+  23:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     SD_FIlesystem_SPI0_BITCTR_INIT,
+  24:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     #if(CY_UDB_V0)
+  25:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****         SD_FIlesystem_SPI0_TX_INIT_INTERRUPTS_MASK,
+  26:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****         SD_FIlesystem_SPI0_RX_INIT_INTERRUPTS_MASK
+  27:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     #endif /* CY_UDB_V0 */
+  28:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** };
+  29:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+  30:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+  31:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** /*******************************************************************************
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Function Name: SD_FIlesystem_SPI0_SaveConfig
+  33:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** ********************************************************************************
+  34:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+  35:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Summary:
+  36:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  Saves SPIM configuration.
+  37:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+  38:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Parameters:
+  39:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  None.
+  40:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+  41:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Return:
+  42:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  None.
+  43:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+  44:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Global Variables:
+  45:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  SD_FIlesystem_SPI0_backup - modified when non-retention registers are saved.
+  46:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+  47:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Reentrant:
+  48:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  No.
+  49:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+  50:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *******************************************************************************/
+  51:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** void SD_FIlesystem_SPI0_SaveConfig(void) 
+  52:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** {
+  27              		.loc 1 52 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 7047     		bx	lr
+  33              		.cfi_endproc
+  34              	.LFE0:
+  35              		.size	SD_FIlesystem_SPI0_SaveConfig, .-SD_FIlesystem_SPI0_SaveConfig
+  36 0002 00BF     		.section	.text.SD_FIlesystem_SPI0_RestoreConfig,"ax",%progbits
+  37              		.align	2
+  38              		.global	SD_FIlesystem_SPI0_RestoreConfig
+  39              		.thumb
+  40              		.thumb_func
+  41              		.type	SD_FIlesystem_SPI0_RestoreConfig, %function
+  42              	SD_FIlesystem_SPI0_RestoreConfig:
+  43              	.LFB1:
+  53:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     /* Store Status Mask registers */
+  54:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     #if(CY_UDB_V0)
+  55:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****        SD_FIlesystem_SPI0_backup.cntrPeriod      = SD_FIlesystem_SPI0_COUNTER_PERIOD_REG;
+  56:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****        SD_FIlesystem_SPI0_backup.saveSrTxIntMask = SD_FIlesystem_SPI0_TX_STATUS_MASK_REG;
+  57:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****        SD_FIlesystem_SPI0_backup.saveSrRxIntMask = SD_FIlesystem_SPI0_RX_STATUS_MASK_REG;
+  58:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     #endif /* (CY_UDB_V0) */
+  59:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** }
+  60:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+  61:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+  62:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** /*******************************************************************************
+  63:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Function Name: SD_FIlesystem_SPI0_RestoreConfig
+  64:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** ********************************************************************************
+  65:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+  66:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Summary:
+  67:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  Restores SPIM configuration.
+  68:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+  69:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Parameters:
+  70:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  None.
+  71:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 3
+
+
+  72:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Return:
+  73:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  None.
+  74:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+  75:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Global Variables:
+  76:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  SD_FIlesystem_SPI0_backup - used when non-retention registers are restored.
+  77:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+  78:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Side Effects:
+  79:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  If this API is called without first calling SaveConfig then in the following
+  80:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  registers will be default values from Customizer:
+  81:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  SD_FIlesystem_SPI0_STATUS_MASK_REG and SD_FIlesystem_SPI0_COUNTER_PERIOD_REG.
+  82:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+  83:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *******************************************************************************/
+  84:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** void SD_FIlesystem_SPI0_RestoreConfig(void) 
+  85:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** {
+  44              		.loc 1 85 0
+  45              		.cfi_startproc
+  46              		@ args = 0, pretend = 0, frame = 0
+  47              		@ frame_needed = 0, uses_anonymous_args = 0
+  48              		@ link register save eliminated.
+  49 0000 7047     		bx	lr
+  50              		.cfi_endproc
+  51              	.LFE1:
+  52              		.size	SD_FIlesystem_SPI0_RestoreConfig, .-SD_FIlesystem_SPI0_RestoreConfig
+  53 0002 00BF     		.section	.text.SD_FIlesystem_SPI0_Sleep,"ax",%progbits
+  54              		.align	2
+  55              		.global	SD_FIlesystem_SPI0_Sleep
+  56              		.thumb
+  57              		.thumb_func
+  58              		.type	SD_FIlesystem_SPI0_Sleep, %function
+  59              	SD_FIlesystem_SPI0_Sleep:
+  60              	.LFB2:
+  86:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     /* Restore the data, saved by SaveConfig() function */
+  87:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     #if(CY_UDB_V0)
+  88:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****         SD_FIlesystem_SPI0_COUNTER_PERIOD_REG = SD_FIlesystem_SPI0_backup.cntrPeriod;
+  89:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****         SD_FIlesystem_SPI0_TX_STATUS_MASK_REG = ((uint8) SD_FIlesystem_SPI0_backup.saveSrTxIntMask)
+  90:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****         SD_FIlesystem_SPI0_RX_STATUS_MASK_REG = ((uint8) SD_FIlesystem_SPI0_backup.saveSrRxIntMask)
+  91:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     #endif /* (CY_UDB_V0) */
+  92:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** }
+  93:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+  94:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+  95:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** /*******************************************************************************
+  96:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Function Name: SD_FIlesystem_SPI0_Sleep
+  97:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** ********************************************************************************
+  98:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+  99:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Summary:
+ 100:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  Prepare SPIM Component goes to sleep.
+ 101:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+ 102:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Parameters:
+ 103:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  None.
+ 104:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+ 105:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Return:
+ 106:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  None.
+ 107:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+ 108:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Global Variables:
+ 109:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  SD_FIlesystem_SPI0_backup - modified when non-retention registers are saved.
+ 110:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+ 111:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Reentrant:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 4
+
+
+ 112:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  No.
+ 113:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+ 114:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *******************************************************************************/
+ 115:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** void SD_FIlesystem_SPI0_Sleep(void) 
+ 116:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** {
+  61              		.loc 1 116 0
+  62              		.cfi_startproc
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65              		.loc 1 116 0
+  66 0000 08B5     		push	{r3, lr}
+  67              		.cfi_def_cfa_offset 8
+  68              		.cfi_offset 3, -8
+  69              		.cfi_offset 14, -4
+ 117:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     /* Save components enable state */
+ 118:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     SD_FIlesystem_SPI0_backup.enableState = ((uint8) SD_FIlesystem_SPI0_IS_ENABLED);
+  70              		.loc 1 118 0
+  71 0002 044B     		ldr	r3, .L5
+  72 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  73 0006 C3F30013 		ubfx	r3, r3, #4, #1
+  74 000a 034A     		ldr	r2, .L5+4
+  75 000c 1370     		strb	r3, [r2]
+ 119:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+ 120:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     SD_FIlesystem_SPI0_Stop();
+  76              		.loc 1 120 0
+  77 000e FFF7FEFF 		bl	SD_FIlesystem_SPI0_Stop
+  78              	.LVL0:
+  79 0012 08BD     		pop	{r3, pc}
+  80              	.L6:
+  81              		.align	2
+  82              	.L5:
+  83 0014 97650040 		.word	1073767831
+  84 0018 00000000 		.word	.LANCHOR0
+  85              		.cfi_endproc
+  86              	.LFE2:
+  87              		.size	SD_FIlesystem_SPI0_Sleep, .-SD_FIlesystem_SPI0_Sleep
+  88              		.section	.text.SD_FIlesystem_SPI0_Wakeup,"ax",%progbits
+  89              		.align	2
+  90              		.global	SD_FIlesystem_SPI0_Wakeup
+  91              		.thumb
+  92              		.thumb_func
+  93              		.type	SD_FIlesystem_SPI0_Wakeup, %function
+  94              	SD_FIlesystem_SPI0_Wakeup:
+  95              	.LFB3:
+ 121:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     SD_FIlesystem_SPI0_SaveConfig();
+ 122:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** }
+ 123:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+ 124:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+ 125:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** /*******************************************************************************
+ 126:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Function Name: SD_FIlesystem_SPI0_Wakeup
+ 127:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** ********************************************************************************
+ 128:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+ 129:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Summary:
+ 130:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  Prepare SPIM Component to wake up.
+ 131:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+ 132:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Parameters:
+ 133:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  None.
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 5
+
+
+ 134:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+ 135:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Return:
+ 136:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  None.
+ 137:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+ 138:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Global Variables:
+ 139:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  SD_FIlesystem_SPI0_backup - used when non-retention registers are restored.
+ 140:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  SD_FIlesystem_SPI0_txBufferWrite - modified every function call - resets to
+ 141:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  zero.
+ 142:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  SD_FIlesystem_SPI0_txBufferRead - modified every function call - resets to
+ 143:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  zero.
+ 144:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  SD_FIlesystem_SPI0_rxBufferWrite - modified every function call - resets to
+ 145:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  zero.
+ 146:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  SD_FIlesystem_SPI0_rxBufferRead - modified every function call - resets to
+ 147:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  zero.
+ 148:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+ 149:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** * Reentrant:
+ 150:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *  No.
+ 151:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *
+ 152:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** *******************************************************************************/
+ 153:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** void SD_FIlesystem_SPI0_Wakeup(void) 
+ 154:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** {
+  96              		.loc 1 154 0
+  97              		.cfi_startproc
+  98              		@ args = 0, pretend = 0, frame = 0
+  99              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100 0000 08B5     		push	{r3, lr}
+ 101              		.cfi_def_cfa_offset 8
+ 102              		.cfi_offset 3, -8
+ 103              		.cfi_offset 14, -4
+ 155:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     SD_FIlesystem_SPI0_RestoreConfig();
+ 156:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+ 157:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     #if(SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED)
+ 158:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****         SD_FIlesystem_SPI0_rxBufferFull  = 0u;
+ 159:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****         SD_FIlesystem_SPI0_rxBufferRead  = 0u;
+ 160:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****         SD_FIlesystem_SPI0_rxBufferWrite = 0u;
+ 161:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     #endif /* (SD_FIlesystem_SPI0_RX_SOFTWARE_BUF_ENABLED) */
+ 162:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+ 163:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     #if(SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED)
+ 164:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****         SD_FIlesystem_SPI0_txBufferFull  = 0u;
+ 165:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****         SD_FIlesystem_SPI0_txBufferRead  = 0u;
+ 166:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****         SD_FIlesystem_SPI0_txBufferWrite = 0u;
+ 167:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     #endif /* (SD_FIlesystem_SPI0_TX_SOFTWARE_BUF_ENABLED) */
+ 168:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+ 169:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     /* Clear any data from the RX and TX FIFO */
+ 170:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     SD_FIlesystem_SPI0_ClearFIFO();
+ 104              		.loc 1 170 0
+ 105 0002 FFF7FEFF 		bl	SD_FIlesystem_SPI0_ClearFIFO
+ 106              	.LVL1:
+ 171:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c **** 
+ 172:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     /* Restore components block enable state */
+ 173:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     if(0u != SD_FIlesystem_SPI0_backup.enableState)
+ 107              		.loc 1 173 0
+ 108 0006 034B     		ldr	r3, .L10
+ 109 0008 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 110 000a 0BB1     		cbz	r3, .L7
+ 174:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****     {
+ 175:.\Generated_Source\PSoC5/SD_FIlesystem_SPI0_PM.c ****         SD_FIlesystem_SPI0_Enable();
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 6
+
+
+ 111              		.loc 1 175 0
+ 112 000c FFF7FEFF 		bl	SD_FIlesystem_SPI0_Enable
+ 113              	.LVL2:
+ 114              	.L7:
+ 115 0010 08BD     		pop	{r3, pc}
+ 116              	.L11:
+ 117 0012 00BF     		.align	2
+ 118              	.L10:
+ 119 0014 00000000 		.word	.LANCHOR0
+ 120              		.cfi_endproc
+ 121              	.LFE3:
+ 122              		.size	SD_FIlesystem_SPI0_Wakeup, .-SD_FIlesystem_SPI0_Wakeup
+ 123              		.data
+ 124              		.align	2
+ 125              		.set	.LANCHOR0,. + 0
+ 126              		.type	SD_FIlesystem_SPI0_backup, %object
+ 127              		.size	SD_FIlesystem_SPI0_backup, 2
+ 128              	SD_FIlesystem_SPI0_backup:
+ 129 0000 00       		.byte	0
+ 130 0001 0F       		.byte	15
+ 131 0002 0000     		.text
+ 132              	.Letext0:
+ 133              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 134              		.file 3 ".\\Generated_Source\\PSoC5\\SD_FIlesystem_SPI0.h"
+ 135              		.section	.debug_info,"",%progbits
+ 136              	.Ldebug_info0:
+ 137 0000 63010000 		.4byte	0x163
+ 138 0004 0400     		.2byte	0x4
+ 139 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 140 000a 04       		.byte	0x4
+ 141 000b 01       		.uleb128 0x1
+ 142 000c 1A000000 		.4byte	.LASF26
+ 143 0010 01       		.byte	0x1
+ 144 0011 2E010000 		.4byte	.LASF27
+ 145 0015 93020000 		.4byte	.LASF28
+ 146 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 147 001d 00000000 		.4byte	0
+ 148 0021 00000000 		.4byte	.Ldebug_line0
+ 149 0025 02       		.uleb128 0x2
+ 150 0026 01       		.byte	0x1
+ 151 0027 06       		.byte	0x6
+ 152 0028 50020000 		.4byte	.LASF0
+ 153 002c 02       		.uleb128 0x2
+ 154 002d 01       		.byte	0x1
+ 155 002e 08       		.byte	0x8
+ 156 002f 03010000 		.4byte	.LASF1
+ 157 0033 02       		.uleb128 0x2
+ 158 0034 02       		.byte	0x2
+ 159 0035 05       		.byte	0x5
+ 160 0036 2C020000 		.4byte	.LASF2
+ 161 003a 02       		.uleb128 0x2
+ 162 003b 02       		.byte	0x2
+ 163 003c 07       		.byte	0x7
+ 164 003d B3000000 		.4byte	.LASF3
+ 165 0041 02       		.uleb128 0x2
+ 166 0042 04       		.byte	0x4
+ 167 0043 05       		.byte	0x5
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 7
+
+
+ 168 0044 36020000 		.4byte	.LASF4
+ 169 0048 02       		.uleb128 0x2
+ 170 0049 04       		.byte	0x4
+ 171 004a 07       		.byte	0x7
+ 172 004b 16010000 		.4byte	.LASF5
+ 173 004f 02       		.uleb128 0x2
+ 174 0050 08       		.byte	0x8
+ 175 0051 05       		.byte	0x5
+ 176 0052 06020000 		.4byte	.LASF6
+ 177 0056 02       		.uleb128 0x2
+ 178 0057 08       		.byte	0x8
+ 179 0058 07       		.byte	0x7
+ 180 0059 CC010000 		.4byte	.LASF7
+ 181 005d 03       		.uleb128 0x3
+ 182 005e 04       		.byte	0x4
+ 183 005f 05       		.byte	0x5
+ 184 0060 696E7400 		.ascii	"int\000"
+ 185 0064 02       		.uleb128 0x2
+ 186 0065 04       		.byte	0x4
+ 187 0066 07       		.byte	0x7
+ 188 0067 BF010000 		.4byte	.LASF8
+ 189 006b 04       		.uleb128 0x4
+ 190 006c 28010000 		.4byte	.LASF12
+ 191 0070 02       		.byte	0x2
+ 192 0071 9201     		.2byte	0x192
+ 193 0073 2C000000 		.4byte	0x2c
+ 194 0077 02       		.uleb128 0x2
+ 195 0078 04       		.byte	0x4
+ 196 0079 04       		.byte	0x4
+ 197 007a FD000000 		.4byte	.LASF9
+ 198 007e 02       		.uleb128 0x2
+ 199 007f 08       		.byte	0x8
+ 200 0080 04       		.byte	0x4
+ 201 0081 A1010000 		.4byte	.LASF10
+ 202 0085 02       		.uleb128 0x2
+ 203 0086 01       		.byte	0x1
+ 204 0087 08       		.byte	0x8
+ 205 0088 3F020000 		.4byte	.LASF11
+ 206 008c 04       		.uleb128 0x4
+ 207 008d 11010000 		.4byte	.LASF13
+ 208 0091 02       		.byte	0x2
+ 209 0092 3C02     		.2byte	0x23c
+ 210 0094 98000000 		.4byte	0x98
+ 211 0098 05       		.uleb128 0x5
+ 212 0099 6B000000 		.4byte	0x6b
+ 213 009d 02       		.uleb128 0x2
+ 214 009e 08       		.byte	0x8
+ 215 009f 04       		.byte	0x4
+ 216 00a0 44020000 		.4byte	.LASF14
+ 217 00a4 02       		.uleb128 0x2
+ 218 00a5 04       		.byte	0x4
+ 219 00a6 07       		.byte	0x7
+ 220 00a7 FD010000 		.4byte	.LASF15
+ 221 00ab 06       		.uleb128 0x6
+ 222 00ac 02       		.byte	0x2
+ 223 00ad 03       		.byte	0x3
+ 224 00ae 46       		.byte	0x46
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 8
+
+
+ 225 00af CC000000 		.4byte	0xcc
+ 226 00b3 07       		.uleb128 0x7
+ 227 00b4 B3010000 		.4byte	.LASF16
+ 228 00b8 03       		.byte	0x3
+ 229 00b9 48       		.byte	0x48
+ 230 00ba 6B000000 		.4byte	0x6b
+ 231 00be 00       		.byte	0
+ 232 00bf 07       		.uleb128 0x7
+ 233 00c0 A8010000 		.4byte	.LASF17
+ 234 00c4 03       		.byte	0x3
+ 235 00c5 49       		.byte	0x49
+ 236 00c6 6B000000 		.4byte	0x6b
+ 237 00ca 01       		.byte	0x1
+ 238 00cb 00       		.byte	0
+ 239 00cc 08       		.uleb128 0x8
+ 240 00cd 80010000 		.4byte	.LASF18
+ 241 00d1 03       		.byte	0x3
+ 242 00d2 4F       		.byte	0x4f
+ 243 00d3 AB000000 		.4byte	0xab
+ 244 00d7 09       		.uleb128 0x9
+ 245 00d8 75020000 		.4byte	.LASF19
+ 246 00dc 01       		.byte	0x1
+ 247 00dd 33       		.byte	0x33
+ 248 00de 00000000 		.4byte	.LFB0
+ 249 00e2 02000000 		.4byte	.LFE0-.LFB0
+ 250 00e6 01       		.uleb128 0x1
+ 251 00e7 9C       		.byte	0x9c
+ 252 00e8 09       		.uleb128 0x9
+ 253 00e9 5F010000 		.4byte	.LASF20
+ 254 00ed 01       		.byte	0x1
+ 255 00ee 54       		.byte	0x54
+ 256 00ef 00000000 		.4byte	.LFB1
+ 257 00f3 02000000 		.4byte	.LFE1-.LFB1
+ 258 00f7 01       		.uleb128 0x1
+ 259 00f8 9C       		.byte	0x9c
+ 260 00f9 0A       		.uleb128 0xa
+ 261 00fa 5C020000 		.4byte	.LASF21
+ 262 00fe 01       		.byte	0x1
+ 263 00ff 73       		.byte	0x73
+ 264 0100 00000000 		.4byte	.LFB2
+ 265 0104 1C000000 		.4byte	.LFE2-.LFB2
+ 266 0108 01       		.uleb128 0x1
+ 267 0109 9C       		.byte	0x9c
+ 268 010a 18010000 		.4byte	0x118
+ 269 010e 0B       		.uleb128 0xb
+ 270 010f 12000000 		.4byte	.LVL0
+ 271 0113 51010000 		.4byte	0x151
+ 272 0117 00       		.byte	0
+ 273 0118 0A       		.uleb128 0xa
+ 274 0119 E3000000 		.4byte	.LASF22
+ 275 011d 01       		.byte	0x1
+ 276 011e 99       		.byte	0x99
+ 277 011f 00000000 		.4byte	.LFB3
+ 278 0123 18000000 		.4byte	.LFE3-.LFB3
+ 279 0127 01       		.uleb128 0x1
+ 280 0128 9C       		.byte	0x9c
+ 281 0129 40010000 		.4byte	0x140
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 9
+
+
+ 282 012d 0B       		.uleb128 0xb
+ 283 012e 06000000 		.4byte	.LVL1
+ 284 0132 58010000 		.4byte	0x158
+ 285 0136 0B       		.uleb128 0xb
+ 286 0137 10000000 		.4byte	.LVL2
+ 287 013b 5F010000 		.4byte	0x15f
+ 288 013f 00       		.byte	0
+ 289 0140 0C       		.uleb128 0xc
+ 290 0141 00000000 		.4byte	.LASF29
+ 291 0145 01       		.byte	0x1
+ 292 0146 14       		.byte	0x14
+ 293 0147 CC000000 		.4byte	0xcc
+ 294 014b 05       		.uleb128 0x5
+ 295 014c 03       		.byte	0x3
+ 296 014d 00000000 		.4byte	SD_FIlesystem_SPI0_backup
+ 297 0151 0D       		.uleb128 0xd
+ 298 0152 14020000 		.4byte	.LASF23
+ 299 0156 03       		.byte	0x3
+ 300 0157 59       		.byte	0x59
+ 301 0158 0D       		.uleb128 0xd
+ 302 0159 C6000000 		.4byte	.LASF24
+ 303 015d 03       		.byte	0x3
+ 304 015e 71       		.byte	0x71
+ 305 015f 0D       		.uleb128 0xd
+ 306 0160 E3010000 		.4byte	.LASF25
+ 307 0164 03       		.byte	0x3
+ 308 0165 57       		.byte	0x57
+ 309 0166 00       		.byte	0
+ 310              		.section	.debug_abbrev,"",%progbits
+ 311              	.Ldebug_abbrev0:
+ 312 0000 01       		.uleb128 0x1
+ 313 0001 11       		.uleb128 0x11
+ 314 0002 01       		.byte	0x1
+ 315 0003 25       		.uleb128 0x25
+ 316 0004 0E       		.uleb128 0xe
+ 317 0005 13       		.uleb128 0x13
+ 318 0006 0B       		.uleb128 0xb
+ 319 0007 03       		.uleb128 0x3
+ 320 0008 0E       		.uleb128 0xe
+ 321 0009 1B       		.uleb128 0x1b
+ 322 000a 0E       		.uleb128 0xe
+ 323 000b 55       		.uleb128 0x55
+ 324 000c 17       		.uleb128 0x17
+ 325 000d 11       		.uleb128 0x11
+ 326 000e 01       		.uleb128 0x1
+ 327 000f 10       		.uleb128 0x10
+ 328 0010 17       		.uleb128 0x17
+ 329 0011 00       		.byte	0
+ 330 0012 00       		.byte	0
+ 331 0013 02       		.uleb128 0x2
+ 332 0014 24       		.uleb128 0x24
+ 333 0015 00       		.byte	0
+ 334 0016 0B       		.uleb128 0xb
+ 335 0017 0B       		.uleb128 0xb
+ 336 0018 3E       		.uleb128 0x3e
+ 337 0019 0B       		.uleb128 0xb
+ 338 001a 03       		.uleb128 0x3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 10
+
+
+ 339 001b 0E       		.uleb128 0xe
+ 340 001c 00       		.byte	0
+ 341 001d 00       		.byte	0
+ 342 001e 03       		.uleb128 0x3
+ 343 001f 24       		.uleb128 0x24
+ 344 0020 00       		.byte	0
+ 345 0021 0B       		.uleb128 0xb
+ 346 0022 0B       		.uleb128 0xb
+ 347 0023 3E       		.uleb128 0x3e
+ 348 0024 0B       		.uleb128 0xb
+ 349 0025 03       		.uleb128 0x3
+ 350 0026 08       		.uleb128 0x8
+ 351 0027 00       		.byte	0
+ 352 0028 00       		.byte	0
+ 353 0029 04       		.uleb128 0x4
+ 354 002a 16       		.uleb128 0x16
+ 355 002b 00       		.byte	0
+ 356 002c 03       		.uleb128 0x3
+ 357 002d 0E       		.uleb128 0xe
+ 358 002e 3A       		.uleb128 0x3a
+ 359 002f 0B       		.uleb128 0xb
+ 360 0030 3B       		.uleb128 0x3b
+ 361 0031 05       		.uleb128 0x5
+ 362 0032 49       		.uleb128 0x49
+ 363 0033 13       		.uleb128 0x13
+ 364 0034 00       		.byte	0
+ 365 0035 00       		.byte	0
+ 366 0036 05       		.uleb128 0x5
+ 367 0037 35       		.uleb128 0x35
+ 368 0038 00       		.byte	0
+ 369 0039 49       		.uleb128 0x49
+ 370 003a 13       		.uleb128 0x13
+ 371 003b 00       		.byte	0
+ 372 003c 00       		.byte	0
+ 373 003d 06       		.uleb128 0x6
+ 374 003e 13       		.uleb128 0x13
+ 375 003f 01       		.byte	0x1
+ 376 0040 0B       		.uleb128 0xb
+ 377 0041 0B       		.uleb128 0xb
+ 378 0042 3A       		.uleb128 0x3a
+ 379 0043 0B       		.uleb128 0xb
+ 380 0044 3B       		.uleb128 0x3b
+ 381 0045 0B       		.uleb128 0xb
+ 382 0046 01       		.uleb128 0x1
+ 383 0047 13       		.uleb128 0x13
+ 384 0048 00       		.byte	0
+ 385 0049 00       		.byte	0
+ 386 004a 07       		.uleb128 0x7
+ 387 004b 0D       		.uleb128 0xd
+ 388 004c 00       		.byte	0
+ 389 004d 03       		.uleb128 0x3
+ 390 004e 0E       		.uleb128 0xe
+ 391 004f 3A       		.uleb128 0x3a
+ 392 0050 0B       		.uleb128 0xb
+ 393 0051 3B       		.uleb128 0x3b
+ 394 0052 0B       		.uleb128 0xb
+ 395 0053 49       		.uleb128 0x49
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 11
+
+
+ 396 0054 13       		.uleb128 0x13
+ 397 0055 38       		.uleb128 0x38
+ 398 0056 0B       		.uleb128 0xb
+ 399 0057 00       		.byte	0
+ 400 0058 00       		.byte	0
+ 401 0059 08       		.uleb128 0x8
+ 402 005a 16       		.uleb128 0x16
+ 403 005b 00       		.byte	0
+ 404 005c 03       		.uleb128 0x3
+ 405 005d 0E       		.uleb128 0xe
+ 406 005e 3A       		.uleb128 0x3a
+ 407 005f 0B       		.uleb128 0xb
+ 408 0060 3B       		.uleb128 0x3b
+ 409 0061 0B       		.uleb128 0xb
+ 410 0062 49       		.uleb128 0x49
+ 411 0063 13       		.uleb128 0x13
+ 412 0064 00       		.byte	0
+ 413 0065 00       		.byte	0
+ 414 0066 09       		.uleb128 0x9
+ 415 0067 2E       		.uleb128 0x2e
+ 416 0068 00       		.byte	0
+ 417 0069 3F       		.uleb128 0x3f
+ 418 006a 19       		.uleb128 0x19
+ 419 006b 03       		.uleb128 0x3
+ 420 006c 0E       		.uleb128 0xe
+ 421 006d 3A       		.uleb128 0x3a
+ 422 006e 0B       		.uleb128 0xb
+ 423 006f 3B       		.uleb128 0x3b
+ 424 0070 0B       		.uleb128 0xb
+ 425 0071 27       		.uleb128 0x27
+ 426 0072 19       		.uleb128 0x19
+ 427 0073 11       		.uleb128 0x11
+ 428 0074 01       		.uleb128 0x1
+ 429 0075 12       		.uleb128 0x12
+ 430 0076 06       		.uleb128 0x6
+ 431 0077 40       		.uleb128 0x40
+ 432 0078 18       		.uleb128 0x18
+ 433 0079 9742     		.uleb128 0x2117
+ 434 007b 19       		.uleb128 0x19
+ 435 007c 00       		.byte	0
+ 436 007d 00       		.byte	0
+ 437 007e 0A       		.uleb128 0xa
+ 438 007f 2E       		.uleb128 0x2e
+ 439 0080 01       		.byte	0x1
+ 440 0081 3F       		.uleb128 0x3f
+ 441 0082 19       		.uleb128 0x19
+ 442 0083 03       		.uleb128 0x3
+ 443 0084 0E       		.uleb128 0xe
+ 444 0085 3A       		.uleb128 0x3a
+ 445 0086 0B       		.uleb128 0xb
+ 446 0087 3B       		.uleb128 0x3b
+ 447 0088 0B       		.uleb128 0xb
+ 448 0089 27       		.uleb128 0x27
+ 449 008a 19       		.uleb128 0x19
+ 450 008b 11       		.uleb128 0x11
+ 451 008c 01       		.uleb128 0x1
+ 452 008d 12       		.uleb128 0x12
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 12
+
+
+ 453 008e 06       		.uleb128 0x6
+ 454 008f 40       		.uleb128 0x40
+ 455 0090 18       		.uleb128 0x18
+ 456 0091 9742     		.uleb128 0x2117
+ 457 0093 19       		.uleb128 0x19
+ 458 0094 01       		.uleb128 0x1
+ 459 0095 13       		.uleb128 0x13
+ 460 0096 00       		.byte	0
+ 461 0097 00       		.byte	0
+ 462 0098 0B       		.uleb128 0xb
+ 463 0099 898201   		.uleb128 0x4109
+ 464 009c 00       		.byte	0
+ 465 009d 11       		.uleb128 0x11
+ 466 009e 01       		.uleb128 0x1
+ 467 009f 31       		.uleb128 0x31
+ 468 00a0 13       		.uleb128 0x13
+ 469 00a1 00       		.byte	0
+ 470 00a2 00       		.byte	0
+ 471 00a3 0C       		.uleb128 0xc
+ 472 00a4 34       		.uleb128 0x34
+ 473 00a5 00       		.byte	0
+ 474 00a6 03       		.uleb128 0x3
+ 475 00a7 0E       		.uleb128 0xe
+ 476 00a8 3A       		.uleb128 0x3a
+ 477 00a9 0B       		.uleb128 0xb
+ 478 00aa 3B       		.uleb128 0x3b
+ 479 00ab 0B       		.uleb128 0xb
+ 480 00ac 49       		.uleb128 0x49
+ 481 00ad 13       		.uleb128 0x13
+ 482 00ae 02       		.uleb128 0x2
+ 483 00af 18       		.uleb128 0x18
+ 484 00b0 00       		.byte	0
+ 485 00b1 00       		.byte	0
+ 486 00b2 0D       		.uleb128 0xd
+ 487 00b3 2E       		.uleb128 0x2e
+ 488 00b4 00       		.byte	0
+ 489 00b5 3F       		.uleb128 0x3f
+ 490 00b6 19       		.uleb128 0x19
+ 491 00b7 03       		.uleb128 0x3
+ 492 00b8 0E       		.uleb128 0xe
+ 493 00b9 3A       		.uleb128 0x3a
+ 494 00ba 0B       		.uleb128 0xb
+ 495 00bb 3B       		.uleb128 0x3b
+ 496 00bc 0B       		.uleb128 0xb
+ 497 00bd 27       		.uleb128 0x27
+ 498 00be 19       		.uleb128 0x19
+ 499 00bf 3C       		.uleb128 0x3c
+ 500 00c0 19       		.uleb128 0x19
+ 501 00c1 00       		.byte	0
+ 502 00c2 00       		.byte	0
+ 503 00c3 00       		.byte	0
+ 504              		.section	.debug_aranges,"",%progbits
+ 505 0000 34000000 		.4byte	0x34
+ 506 0004 0200     		.2byte	0x2
+ 507 0006 00000000 		.4byte	.Ldebug_info0
+ 508 000a 04       		.byte	0x4
+ 509 000b 00       		.byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 13
+
+
+ 510 000c 0000     		.2byte	0
+ 511 000e 0000     		.2byte	0
+ 512 0010 00000000 		.4byte	.LFB0
+ 513 0014 02000000 		.4byte	.LFE0-.LFB0
+ 514 0018 00000000 		.4byte	.LFB1
+ 515 001c 02000000 		.4byte	.LFE1-.LFB1
+ 516 0020 00000000 		.4byte	.LFB2
+ 517 0024 1C000000 		.4byte	.LFE2-.LFB2
+ 518 0028 00000000 		.4byte	.LFB3
+ 519 002c 18000000 		.4byte	.LFE3-.LFB3
+ 520 0030 00000000 		.4byte	0
+ 521 0034 00000000 		.4byte	0
+ 522              		.section	.debug_ranges,"",%progbits
+ 523              	.Ldebug_ranges0:
+ 524 0000 00000000 		.4byte	.LFB0
+ 525 0004 02000000 		.4byte	.LFE0
+ 526 0008 00000000 		.4byte	.LFB1
+ 527 000c 02000000 		.4byte	.LFE1
+ 528 0010 00000000 		.4byte	.LFB2
+ 529 0014 1C000000 		.4byte	.LFE2
+ 530 0018 00000000 		.4byte	.LFB3
+ 531 001c 18000000 		.4byte	.LFE3
+ 532 0020 00000000 		.4byte	0
+ 533 0024 00000000 		.4byte	0
+ 534              		.section	.debug_line,"",%progbits
+ 535              	.Ldebug_line0:
+ 536 0000 B9000000 		.section	.debug_str,"MS",%progbits,1
+ 536      02006C00 
+ 536      00000201 
+ 536      FB0E0D00 
+ 536      01010101 
+ 537              	.LASF29:
+ 538 0000 53445F46 		.ascii	"SD_FIlesystem_SPI0_backup\000"
+ 538      496C6573 
+ 538      79737465 
+ 538      6D5F5350 
+ 538      49305F62 
+ 539              	.LASF26:
+ 540 001a 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 540      4320342E 
+ 540      392E3320 
+ 540      32303135 
+ 540      30333033 
+ 541 004d 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 541      20726576 
+ 541      6973696F 
+ 541      6E203232 
+ 541      31323230 
+ 542 0080 67202D73 		.ascii	"g -std=gnu11 -ffunction-sections -ffat-lto-objects\000"
+ 542      74643D67 
+ 542      6E753131 
+ 542      202D6666 
+ 542      756E6374 
+ 543              	.LASF3:
+ 544 00b3 73686F72 		.ascii	"short unsigned int\000"
+ 544      7420756E 
+ 544      7369676E 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 14
+
+
+ 544      65642069 
+ 544      6E7400
+ 545              	.LASF24:
+ 546 00c6 53445F46 		.ascii	"SD_FIlesystem_SPI0_ClearFIFO\000"
+ 546      496C6573 
+ 546      79737465 
+ 546      6D5F5350 
+ 546      49305F43 
+ 547              	.LASF22:
+ 548 00e3 53445F46 		.ascii	"SD_FIlesystem_SPI0_Wakeup\000"
+ 548      496C6573 
+ 548      79737465 
+ 548      6D5F5350 
+ 548      49305F57 
+ 549              	.LASF9:
+ 550 00fd 666C6F61 		.ascii	"float\000"
+ 550      7400
+ 551              	.LASF1:
+ 552 0103 756E7369 		.ascii	"unsigned char\000"
+ 552      676E6564 
+ 552      20636861 
+ 552      7200
+ 553              	.LASF13:
+ 554 0111 72656738 		.ascii	"reg8\000"
+ 554      00
+ 555              	.LASF5:
+ 556 0116 6C6F6E67 		.ascii	"long unsigned int\000"
+ 556      20756E73 
+ 556      69676E65 
+ 556      6420696E 
+ 556      7400
+ 557              	.LASF12:
+ 558 0128 75696E74 		.ascii	"uint8\000"
+ 558      3800
+ 559              	.LASF27:
+ 560 012e 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\SD_FIlesystem_SPI0_PM.c"
+ 560      6E657261 
+ 560      7465645F 
+ 560      536F7572 
+ 560      63655C50 
+ 561 015e 00       		.ascii	"\000"
+ 562              	.LASF20:
+ 563 015f 53445F46 		.ascii	"SD_FIlesystem_SPI0_RestoreConfig\000"
+ 563      496C6573 
+ 563      79737465 
+ 563      6D5F5350 
+ 563      49305F52 
+ 564              	.LASF18:
+ 565 0180 53445F46 		.ascii	"SD_FIlesystem_SPI0_BACKUP_STRUCT\000"
+ 565      496C6573 
+ 565      79737465 
+ 565      6D5F5350 
+ 565      49305F42 
+ 566              	.LASF10:
+ 567 01a1 646F7562 		.ascii	"double\000"
+ 567      6C6500
+ 568              	.LASF17:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 15
+
+
+ 569 01a8 636E7472 		.ascii	"cntrPeriod\000"
+ 569      50657269 
+ 569      6F6400
+ 570              	.LASF16:
+ 571 01b3 656E6162 		.ascii	"enableState\000"
+ 571      6C655374 
+ 571      61746500 
+ 572              	.LASF8:
+ 573 01bf 756E7369 		.ascii	"unsigned int\000"
+ 573      676E6564 
+ 573      20696E74 
+ 573      00
+ 574              	.LASF7:
+ 575 01cc 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 575      206C6F6E 
+ 575      6720756E 
+ 575      7369676E 
+ 575      65642069 
+ 576              	.LASF25:
+ 577 01e3 53445F46 		.ascii	"SD_FIlesystem_SPI0_Enable\000"
+ 577      496C6573 
+ 577      79737465 
+ 577      6D5F5350 
+ 577      49305F45 
+ 578              	.LASF15:
+ 579 01fd 73697A65 		.ascii	"sizetype\000"
+ 579      74797065 
+ 579      00
+ 580              	.LASF6:
+ 581 0206 6C6F6E67 		.ascii	"long long int\000"
+ 581      206C6F6E 
+ 581      6720696E 
+ 581      7400
+ 582              	.LASF23:
+ 583 0214 53445F46 		.ascii	"SD_FIlesystem_SPI0_Stop\000"
+ 583      496C6573 
+ 583      79737465 
+ 583      6D5F5350 
+ 583      49305F53 
+ 584              	.LASF2:
+ 585 022c 73686F72 		.ascii	"short int\000"
+ 585      7420696E 
+ 585      7400
+ 586              	.LASF4:
+ 587 0236 6C6F6E67 		.ascii	"long int\000"
+ 587      20696E74 
+ 587      00
+ 588              	.LASF11:
+ 589 023f 63686172 		.ascii	"char\000"
+ 589      00
+ 590              	.LASF14:
+ 591 0244 6C6F6E67 		.ascii	"long double\000"
+ 591      20646F75 
+ 591      626C6500 
+ 592              	.LASF0:
+ 593 0250 7369676E 		.ascii	"signed char\000"
+ 593      65642063 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccl7qese.s 			page 16
+
+
+ 593      68617200 
+ 594              	.LASF21:
+ 595 025c 53445F46 		.ascii	"SD_FIlesystem_SPI0_Sleep\000"
+ 595      496C6573 
+ 595      79737465 
+ 595      6D5F5350 
+ 595      49305F53 
+ 596              	.LASF19:
+ 597 0275 53445F46 		.ascii	"SD_FIlesystem_SPI0_SaveConfig\000"
+ 597      496C6573 
+ 597      79737465 
+ 597      6D5F5350 
+ 597      49305F53 
+ 598              	.LASF28:
+ 599 0293 433A5C55 		.ascii	"C:\\Users\\User\\Documents\\MIT 6.115\\finalproject"
+ 599      73657273 
+ 599      5C557365 
+ 599      725C446F 
+ 599      63756D65 
+ 600 02c1 5C66696E 		.ascii	"\\finalproject\\GuitarHero.cydsn\000"
+ 600      616C7072 
+ 600      6F6A6563 
+ 600      745C4775 
+ 600      69746172 
+ 601              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

@@ -1,10 +1,10 @@
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/CortexM3/ARM_GCC_493/Debug/CyBootAsmGnu.o : C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevicegnu.inc C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cyfittergnu.inc 
+C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/CortexM3/ARM_GCC_493/Debug/CyBootAsmGnu.o : C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevicegnu.inc C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cyfittergnu.inc 
 
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
+C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
 
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevicegnu.inc : 
+C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevicegnu.inc : 
 
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc : 
+C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc : 
 
-C:/Users/student/Desktop/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cyfittergnu.inc : 
+C:/Users/User/Documents/MIT\ 6.115/finalproject/finalproject/GuitarHero.cydsn/Generated_Source/PSoC5/cyfittergnu.inc : 
 

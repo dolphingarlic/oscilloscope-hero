@@ -18,9 +18,6 @@ static const float PI = 3.14159265358979323846;
 static struct Point sprite_vertices[4][128];
 static int sprite_n[4];
 
-/*
- * Initializes the vertices to be shared between sprites
- */
 void init_sprites() {
     // Fretboard
     {
@@ -119,9 +116,6 @@ void init_sprites() {
     }
 }
 
-/*
- * Creates a fretboard instance
- */
 struct Sprite make_fretboard() {
     return (struct Sprite) {
         .n = sprite_n[FRETBOARD], .x = 0, .y = 0,
@@ -129,9 +123,6 @@ struct Sprite make_fretboard() {
     };
 }
 
-/*
- * Creates a barline instance at the specified y offset
- */
 struct Sprite make_barline(int y) {
     return (struct Sprite) {
         .n = sprite_n[BARLINE], .x = 0, .y = y,
@@ -139,9 +130,6 @@ struct Sprite make_barline(int y) {
     };
 }
 
-/*
- * Creates an ellipse instance in the specified track and location
- */
 struct Sprite make_ellipse(uint8 track, int y, uint8 filled) {
     enum SpriteType tp = (filled ? FILLED_ELLIPSE : OPEN_ELLIPSE);
     return (struct Sprite) {
@@ -150,9 +138,6 @@ struct Sprite make_ellipse(uint8 track, int y, uint8 filled) {
     };
 }
 
-/*
- * Converts a list of sprites into a polyline that the scope can render.
- */
 int sprites_to_polyline(int n_sprites, struct Sprite *sprites, struct Point *points) {
     // For now, naively convert to points
     int n_points = 0;
@@ -171,16 +156,6 @@ int sprites_to_polyline(int n_sprites, struct Sprite *sprites, struct Point *poi
     return n_points;
 }
 
-/*
- * Mutates a list of points from an orthographic view to a perspective view.
- *
- * Matrix coefficients calculated using OpenCV by taking the perspective transform
- * [(0, 0), (0, 255), (255, 255), (255, 0)] -> [(0, 0), (84, 255), (171, 255), (255, 0)]
- * which yields
- * [1   0.96551724  0
- *  0   2.93103448  0
- *  0   0.00757268  1]
- */
 void ortho_to_perspective(int n_points, struct Point *points) {
     for (int i = 0; i < n_points; i++) {
         float scaled_x = points[i].x + 0.96551724 * points[i].y;

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 1
 
 
    1              		.syntax unified
@@ -56,14 +56,11 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
   18:.\sprites.c   **** static struct Point sprite_vertices[4][128];
   19:.\sprites.c   **** static int sprite_n[4];
   20:.\sprites.c   **** 
-  21:.\sprites.c   **** /*
-  22:.\sprites.c   ****  * Initializes the vertices to be shared between sprites
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 2
+  21:.\sprites.c   **** void init_sprites() {
+  36              		.loc 1 21 0
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 2
 
 
-  23:.\sprites.c   ****  */
-  24:.\sprites.c   **** void init_sprites() {
-  36              		.loc 1 24 0
   37              		.cfi_startproc
   38              		@ args = 0, pretend = 0, frame = 0
   39              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -80,29 +77,29 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
   50              	.LVL0:
   51              	.LBB2:
   52              	.LBB3:
-  25:.\sprites.c   ****     // Fretboard
-  26:.\sprites.c   ****     {
-  27:.\sprites.c   ****         const int resolution = 16;
-  28:.\sprites.c   ****         int n = 0;
-  29:.\sprites.c   ****         // Bottom edge
-  30:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
-  53              		.loc 1 30 0
+  22:.\sprites.c   ****     // Fretboard
+  23:.\sprites.c   ****     {
+  24:.\sprites.c   ****         const int resolution = 16;
+  25:.\sprites.c   ****         int n = 0;
+  26:.\sprites.c   ****         // Bottom edge
+  27:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
+  53              		.loc 1 27 0
   54 0004 0023     		movs	r3, #0
   55              	.LBE3:
-  28:.\sprites.c   ****         // Bottom edge
-  56              		.loc 1 28 0
+  25:.\sprites.c   ****         // Bottom edge
+  56              		.loc 1 25 0
   57 0006 1C46     		mov	r4, r3
   58              	.LBB4:
-  59              		.loc 1 30 0
+  59              		.loc 1 27 0
   60 0008 11E0     		b	.L2
   61              	.LVL1:
   62              	.L4:
-  31:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
-  63              		.loc 1 31 0 discriminator 3
+  28:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+  63              		.loc 1 28 0 discriminator 3
   64 000a 601C     		adds	r0, r4, #1
   65              	.LVL2:
-  32:.\sprites.c   ****                 .x = UINT8_MAX * i / resolution,
-  66              		.loc 1 32 0 discriminator 3
+  29:.\sprites.c   ****                 .x = UINT8_MAX * i / resolution,
+  66              		.loc 1 29 0 discriminator 3
   67 000c C3EB0321 		rsb	r1, r3, r3, lsl #8
   68 0010 0A46     		mov	r2, r1
   69 0012 0029     		cmp	r1, #0
@@ -110,27 +107,27 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
   71 0016 01F10F02 		add	r2, r1, #15
   72              	.L3:
   73 001a 1111     		asrs	r1, r2, #4
-  31:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
-  74              		.loc 1 31 0 discriminator 3
+  28:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+  74              		.loc 1 28 0 discriminator 3
   75 001c BA4A     		ldr	r2, .L28+8
   76 001e 02F81410 		strb	r1, [r2, r4, lsl #1]
   77 0022 02EB4404 		add	r4, r2, r4, lsl #1
   78 0026 0022     		movs	r2, #0
   79 0028 6270     		strb	r2, [r4, #1]
-  30:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 3
-
-
-  80              		.loc 1 30 0 discriminator 3
+  27:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+  80              		.loc 1 27 0 discriminator 3
   81 002a 0133     		adds	r3, r3, #1
   82              	.LVL3:
-  31:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
-  83              		.loc 1 31 0 discriminator 3
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 3
+
+
+  28:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+  83              		.loc 1 28 0 discriminator 3
   84 002c 0446     		mov	r4, r0
   85              	.LVL4:
   86              	.L2:
-  30:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
-  87              		.loc 1 30 0 discriminator 1
+  27:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+  87              		.loc 1 27 0 discriminator 1
   88 002e 0F2B     		cmp	r3, #15
   89 0030 EBDD     		ble	.L4
   90 0032 0022     		movs	r2, #0
@@ -139,18 +136,18 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
   93              	.L7:
   94              	.LBE4:
   95              	.LBB5:
-  33:.\sprites.c   ****                 .y = 0
-  34:.\sprites.c   ****             };
-  35:.\sprites.c   ****         }
-  36:.\sprites.c   ****         // Right edge
-  37:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
-  38:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
-  96              		.loc 1 38 0 discriminator 3
+  30:.\sprites.c   ****                 .y = 0
+  31:.\sprites.c   ****             };
+  32:.\sprites.c   ****         }
+  33:.\sprites.c   ****         // Right edge
+  34:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
+  35:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+  96              		.loc 1 35 0 discriminator 3
   97 0036 601C     		adds	r0, r4, #1
   98              	.LVL6:
-  39:.\sprites.c   ****                 .x = UINT8_MAX,
-  40:.\sprites.c   ****                 .y = UINT8_MAX * i * i / resolution / resolution
-  99              		.loc 1 40 0 discriminator 3
+  36:.\sprites.c   ****                 .x = UINT8_MAX,
+  37:.\sprites.c   ****                 .y = UINT8_MAX * i * i / resolution / resolution
+  99              		.loc 1 37 0 discriminator 3
  100 0038 02FB02F3 		mul	r3, r2, r2
  101 003c C3EB0323 		rsb	r3, r3, r3, lsl #8
  102 0040 1946     		mov	r1, r3
@@ -159,70 +156,70 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  105 0046 03F1FF01 		add	r1, r3, #255
  106              	.L6:
  107 004a 0912     		asrs	r1, r1, #8
-  38:.\sprites.c   ****                 .x = UINT8_MAX,
- 108              		.loc 1 38 0 discriminator 3
+  35:.\sprites.c   ****                 .x = UINT8_MAX,
+ 108              		.loc 1 35 0 discriminator 3
  109 004c AE4B     		ldr	r3, .L28+8
  110 004e FF25     		movs	r5, #255
  111 0050 03F81450 		strb	r5, [r3, r4, lsl #1]
  112 0054 03EB4404 		add	r4, r3, r4, lsl #1
  113 0058 6170     		strb	r1, [r4, #1]
-  37:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
- 114              		.loc 1 37 0 discriminator 3
+  34:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+ 114              		.loc 1 34 0 discriminator 3
  115 005a 0132     		adds	r2, r2, #1
  116              	.LVL7:
-  38:.\sprites.c   ****                 .x = UINT8_MAX,
- 117              		.loc 1 38 0 discriminator 3
+  35:.\sprites.c   ****                 .x = UINT8_MAX,
+ 117              		.loc 1 35 0 discriminator 3
  118 005c 0446     		mov	r4, r0
  119              	.LVL8:
  120              	.L5:
-  37:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
- 121              		.loc 1 37 0 discriminator 1
+  34:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+ 121              		.loc 1 34 0 discriminator 1
  122 005e 0F2A     		cmp	r2, #15
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 4
-
-
  123 0060 E9DD     		ble	.L7
  124 0062 0023     		movs	r3, #0
  125 0064 12E0     		b	.L8
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 4
+
+
  126              	.LVL9:
  127              	.L10:
  128              	.LBE5:
  129              	.LBB6:
-  41:.\sprites.c   ****             };
-  42:.\sprites.c   ****         }
-  43:.\sprites.c   ****         // Top edge
-  44:.\sprites.c   ****         for (int i = 0; i < resolution; i += 2) {
-  45:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
- 130              		.loc 1 45 0 discriminator 3
+  38:.\sprites.c   ****             };
+  39:.\sprites.c   ****         }
+  40:.\sprites.c   ****         // Top edge
+  41:.\sprites.c   ****         for (int i = 0; i < resolution; i += 2) {
+  42:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+ 130              		.loc 1 42 0 discriminator 3
  131 0066 601C     		adds	r0, r4, #1
  132              	.LVL10:
-  46:.\sprites.c   ****                 .x = UINT8_MAX - UINT8_MAX * i / resolution,
- 133              		.loc 1 46 0 discriminator 3
+  43:.\sprites.c   ****                 .x = UINT8_MAX - UINT8_MAX * i / resolution,
+ 133              		.loc 1 43 0 discriminator 3
  134 0068 C3EB0322 		rsb	r2, r3, r3, lsl #8
  135 006c 1146     		mov	r1, r2
  136 006e 002A     		cmp	r2, #0
  137 0070 01DA     		bge	.L9
  138 0072 02F10F01 		add	r1, r2, #15
  139              	.L9:
-  45:.\sprites.c   ****                 .x = UINT8_MAX - UINT8_MAX * i / resolution,
- 140              		.loc 1 45 0 discriminator 3
+  42:.\sprites.c   ****                 .x = UINT8_MAX - UINT8_MAX * i / resolution,
+ 140              		.loc 1 42 0 discriminator 3
  141 0076 A44A     		ldr	r2, .L28+8
  142 0078 6FEA2111 		mvn	r1, r1, asr #4
  143 007c 02F81410 		strb	r1, [r2, r4, lsl #1]
  144 0080 02EB4404 		add	r4, r2, r4, lsl #1
  145 0084 FF22     		movs	r2, #255
  146 0086 6270     		strb	r2, [r4, #1]
-  44:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
- 147              		.loc 1 44 0 discriminator 3
+  41:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+ 147              		.loc 1 41 0 discriminator 3
  148 0088 0233     		adds	r3, r3, #2
  149              	.LVL11:
-  45:.\sprites.c   ****                 .x = UINT8_MAX - UINT8_MAX * i / resolution,
- 150              		.loc 1 45 0 discriminator 3
+  42:.\sprites.c   ****                 .x = UINT8_MAX - UINT8_MAX * i / resolution,
+ 150              		.loc 1 42 0 discriminator 3
  151 008a 0446     		mov	r4, r0
  152              	.LVL12:
  153              	.L8:
-  44:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
- 154              		.loc 1 44 0 discriminator 1
+  41:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+ 154              		.loc 1 41 0 discriminator 1
  155 008c 0F2B     		cmp	r3, #15
  156 008e EADD     		ble	.L10
  157 0090 0025     		movs	r5, #0
@@ -231,21 +228,21 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  160              	.L12:
  161              	.LBE6:
  162              	.LBB7:
-  47:.\sprites.c   ****                 .y = UINT8_MAX
-  48:.\sprites.c   ****             };
-  49:.\sprites.c   ****         }
-  50:.\sprites.c   ****         // Left edge
-  51:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
-  52:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
- 163              		.loc 1 52 0 discriminator 3
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 5
-
-
+  44:.\sprites.c   ****                 .y = UINT8_MAX
+  45:.\sprites.c   ****             };
+  46:.\sprites.c   ****         }
+  47:.\sprites.c   ****         // Left edge
+  48:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
+  49:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+ 163              		.loc 1 49 0 discriminator 3
  164 0094 661C     		adds	r6, r4, #1
  165              	.LVL14:
-  53:.\sprites.c   ****                 .x = 0,
-  54:.\sprites.c   ****                 .y = UINT8_MAX - UINT8_MAX * sqrt(i) / sqrt(resolution)
- 166              		.loc 1 54 0 discriminator 3
+  50:.\sprites.c   ****                 .x = 0,
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 5
+
+
+  51:.\sprites.c   ****                 .y = UINT8_MAX - UINT8_MAX * sqrt(i) / sqrt(resolution)
+ 166              		.loc 1 51 0 discriminator 3
  167 0096 2846     		mov	r0, r5
  168 0098 FFF7FEFF 		bl	__aeabi_i2d
  169              	.LVL15:
@@ -265,8 +262,8 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  183 00b8 D1E90001 		ldrd	r0, [r1]
  184 00bc FFF7FEFF 		bl	__aeabi_dsub
  185              	.LVL19:
-  52:.\sprites.c   ****                 .x = 0,
- 186              		.loc 1 52 0 discriminator 3
+  49:.\sprites.c   ****                 .x = 0,
+ 186              		.loc 1 49 0 discriminator 3
  187 00c0 914B     		ldr	r3, .L28+8
  188 00c2 0022     		movs	r2, #0
  189 00c4 03F81420 		strb	r2, [r3, r4, lsl #1]
@@ -274,60 +271,60 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  191 00cc FFF7FEFF 		bl	__aeabi_d2uiz
  192              	.LVL20:
  193 00d0 6070     		strb	r0, [r4, #1]
-  51:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
- 194              		.loc 1 51 0 discriminator 3
+  48:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+ 194              		.loc 1 48 0 discriminator 3
  195 00d2 0135     		adds	r5, r5, #1
  196              	.LVL21:
-  52:.\sprites.c   ****                 .x = 0,
- 197              		.loc 1 52 0 discriminator 3
+  49:.\sprites.c   ****                 .x = 0,
+ 197              		.loc 1 49 0 discriminator 3
  198 00d4 3446     		mov	r4, r6
  199              	.LVL22:
  200              	.L11:
-  51:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
- 201              		.loc 1 51 0 discriminator 1
+  48:.\sprites.c   ****             sprite_vertices[FRETBOARD][n++] = (struct Point) {
+ 201              		.loc 1 48 0 discriminator 1
  202 00d6 0F2D     		cmp	r5, #15
  203 00d8 DCDD     		ble	.L12
  204              	.LBE7:
-  55:.\sprites.c   ****             };
-  56:.\sprites.c   ****         }
-  57:.\sprites.c   ****         // Complete the polygon
-  58:.\sprites.c   ****         sprite_vertices[FRETBOARD][n++] = (struct Point) { .x = 0, .y = 0 };
- 205              		.loc 1 58 0
+  52:.\sprites.c   ****             };
+  53:.\sprites.c   ****         }
+  54:.\sprites.c   ****         // Complete the polygon
+  55:.\sprites.c   ****         sprite_vertices[FRETBOARD][n++] = (struct Point) { .x = 0, .y = 0 };
+ 205              		.loc 1 55 0
  206 00da 611C     		adds	r1, r4, #1
  207              	.LVL23:
  208 00dc 8A4A     		ldr	r2, .L28+8
  209 00de 0023     		movs	r3, #0
  210 00e0 02F81430 		strb	r3, [r2, r4, lsl #1]
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 6
-
-
  211 00e4 02EB4404 		add	r4, r2, r4, lsl #1
  212 00e8 6370     		strb	r3, [r4, #1]
-  59:.\sprites.c   ****         sprite_n[FRETBOARD] = n;
- 213              		.loc 1 59 0
+  56:.\sprites.c   ****         sprite_n[FRETBOARD] = n;
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 6
+
+
+ 213              		.loc 1 56 0
  214 00ea C2F80014 		str	r1, [r2, #1024]
  215              	.LVL24:
  216              	.LBE2:
  217              	.LBB8:
  218              	.LBB9:
-  60:.\sprites.c   ****     }
-  61:.\sprites.c   ****     
-  62:.\sprites.c   ****     // Barline
-  63:.\sprites.c   ****     {
-  64:.\sprites.c   ****         const int resolution = 8;
-  65:.\sprites.c   ****         int n = 0;
-  66:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
- 219              		.loc 1 66 0
+  57:.\sprites.c   ****     }
+  58:.\sprites.c   ****     
+  59:.\sprites.c   ****     // Barline
+  60:.\sprites.c   ****     {
+  61:.\sprites.c   ****         const int resolution = 8;
+  62:.\sprites.c   ****         int n = 0;
+  63:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
+ 219              		.loc 1 63 0
  220 00ee 1A46     		mov	r2, r3
  221 00f0 11E0     		b	.L13
  222              	.LVL25:
  223              	.L15:
-  67:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
- 224              		.loc 1 67 0 discriminator 3
+  64:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
+ 224              		.loc 1 64 0 discriminator 3
  225 00f2 5C1C     		adds	r4, r3, #1
  226              	.LVL26:
-  68:.\sprites.c   ****                 .x = UINT8_MAX * i / resolution,
- 227              		.loc 1 68 0 discriminator 3
+  65:.\sprites.c   ****                 .x = UINT8_MAX * i / resolution,
+ 227              		.loc 1 65 0 discriminator 3
  228 00f4 C2EB0220 		rsb	r0, r2, r2, lsl #8
  229 00f8 0146     		mov	r1, r0
  230 00fa 0028     		cmp	r0, #0
@@ -335,55 +332,55 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  232 00fe C11D     		adds	r1, r0, #7
  233              	.L14:
  234 0100 C810     		asrs	r0, r1, #3
-  67:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
- 235              		.loc 1 67 0 discriminator 3
+  64:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
+ 235              		.loc 1 64 0 discriminator 3
  236 0102 8149     		ldr	r1, .L28+8
  237 0104 8033     		adds	r3, r3, #128
  238 0106 01F81300 		strb	r0, [r1, r3, lsl #1]
  239 010a 01EB4303 		add	r3, r1, r3, lsl #1
  240 010e 0021     		movs	r1, #0
  241 0110 5970     		strb	r1, [r3, #1]
-  66:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
- 242              		.loc 1 66 0 discriminator 3
+  63:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
+ 242              		.loc 1 63 0 discriminator 3
  243 0112 0132     		adds	r2, r2, #1
  244              	.LVL27:
-  67:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
- 245              		.loc 1 67 0 discriminator 3
+  64:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
+ 245              		.loc 1 64 0 discriminator 3
  246 0114 2346     		mov	r3, r4
  247              	.LVL28:
  248              	.L13:
-  66:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
- 249              		.loc 1 66 0 discriminator 1
+  63:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
+ 249              		.loc 1 63 0 discriminator 1
  250 0116 072A     		cmp	r2, #7
  251 0118 EBDD     		ble	.L15
  252 011a 0022     		movs	r2, #0
  253              	.LVL29:
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 7
-
-
  254 011c 12E0     		b	.L16
  255              	.LVL30:
  256              	.L18:
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 7
+
+
  257              	.LBE9:
  258              	.LBB10:
-  69:.\sprites.c   ****                 .y = 0
-  70:.\sprites.c   ****             };
-  71:.\sprites.c   ****         }
-  72:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
-  73:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
- 259              		.loc 1 73 0 discriminator 3
+  66:.\sprites.c   ****                 .y = 0
+  67:.\sprites.c   ****             };
+  68:.\sprites.c   ****         }
+  69:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
+  70:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
+ 259              		.loc 1 70 0 discriminator 3
  260 011e 5C1C     		adds	r4, r3, #1
  261              	.LVL31:
-  74:.\sprites.c   ****                 .x = UINT8_MAX - UINT8_MAX * i / resolution,
- 262              		.loc 1 74 0 discriminator 3
+  71:.\sprites.c   ****                 .x = UINT8_MAX - UINT8_MAX * i / resolution,
+ 262              		.loc 1 71 0 discriminator 3
  263 0120 C2EB0221 		rsb	r1, r2, r2, lsl #8
  264 0124 0846     		mov	r0, r1
  265 0126 0029     		cmp	r1, #0
  266 0128 00DA     		bge	.L17
  267 012a C81D     		adds	r0, r1, #7
  268              	.L17:
-  73:.\sprites.c   ****                 .x = UINT8_MAX - UINT8_MAX * i / resolution,
- 269              		.loc 1 73 0 discriminator 3
+  70:.\sprites.c   ****                 .x = UINT8_MAX - UINT8_MAX * i / resolution,
+ 269              		.loc 1 70 0 discriminator 3
  270 012c 7649     		ldr	r1, .L28+8
  271 012e 8033     		adds	r3, r3, #128
  272 0130 6FEAE000 		mvn	r0, r0, asr #3
@@ -391,25 +388,25 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  274 0138 01EB4303 		add	r3, r1, r3, lsl #1
  275 013c 0021     		movs	r1, #0
  276 013e 5970     		strb	r1, [r3, #1]
-  72:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
- 277              		.loc 1 72 0 discriminator 3
+  69:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
+ 277              		.loc 1 69 0 discriminator 3
  278 0140 0132     		adds	r2, r2, #1
  279              	.LVL32:
-  73:.\sprites.c   ****                 .x = UINT8_MAX - UINT8_MAX * i / resolution,
- 280              		.loc 1 73 0 discriminator 3
+  70:.\sprites.c   ****                 .x = UINT8_MAX - UINT8_MAX * i / resolution,
+ 280              		.loc 1 70 0 discriminator 3
  281 0142 2346     		mov	r3, r4
  282              	.LVL33:
  283              	.L16:
-  72:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
- 284              		.loc 1 72 0 discriminator 1
+  69:.\sprites.c   ****             sprite_vertices[BARLINE][n++] = (struct Point) {
+ 284              		.loc 1 69 0 discriminator 1
  285 0144 072A     		cmp	r2, #7
  286 0146 EADD     		ble	.L18
  287              	.LBE10:
-  75:.\sprites.c   ****                 .y = 0
-  76:.\sprites.c   ****             };
-  77:.\sprites.c   ****         }
-  78:.\sprites.c   ****         sprite_vertices[BARLINE][n++] = (struct Point) { .x = 0, .y = 0 };        
- 288              		.loc 1 78 0
+  72:.\sprites.c   ****                 .y = 0
+  73:.\sprites.c   ****             };
+  74:.\sprites.c   ****         }
+  75:.\sprites.c   ****         sprite_vertices[BARLINE][n++] = (struct Point) { .x = 0, .y = 0 };        
+ 288              		.loc 1 75 0
  289 0148 591C     		adds	r1, r3, #1
  290              	.LVL34:
  291 014a 6F4A     		ldr	r2, .L28+8
@@ -418,36 +415,36 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  294 014e 0024     		movs	r4, #0
  295 0150 02F81340 		strb	r4, [r2, r3, lsl #1]
  296 0154 02EB4303 		add	r3, r2, r3, lsl #1
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 8
-
-
  297 0158 5C70     		strb	r4, [r3, #1]
-  79:.\sprites.c   ****         sprite_n[BARLINE] = n;
- 298              		.loc 1 79 0
+  76:.\sprites.c   ****         sprite_n[BARLINE] = n;
+ 298              		.loc 1 76 0
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 8
+
+
  299 015a C2F80414 		str	r1, [r2, #1028]
  300              	.LVL36:
  301              	.LBE8:
  302              	.LBB11:
  303              	.LBB12:
-  80:.\sprites.c   ****     }
-  81:.\sprites.c   ****     
-  82:.\sprites.c   ****     // Ellipses
-  83:.\sprites.c   ****     {
-  84:.\sprites.c   ****         const int resolution = 10;
-  85:.\sprites.c   ****         const int width = 20, height = 5;
-  86:.\sprites.c   ****         int n = 0;
-  87:.\sprites.c   ****         
-  88:.\sprites.c   ****         // Top half
-  89:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
- 304              		.loc 1 89 0
+  77:.\sprites.c   ****     }
+  78:.\sprites.c   ****     
+  79:.\sprites.c   ****     // Ellipses
+  80:.\sprites.c   ****     {
+  81:.\sprites.c   ****         const int resolution = 10;
+  82:.\sprites.c   ****         const int width = 20, height = 5;
+  83:.\sprites.c   ****         int n = 0;
+  84:.\sprites.c   ****         
+  85:.\sprites.c   ****         // Top half
+  86:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
+ 304              		.loc 1 86 0
  305 015e 2546     		mov	r5, r4
  306              	.LVL37:
  307 0160 56E0     		b	.L19
  308              	.LVL38:
  309              	.L21:
-  90:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
-  91:.\sprites.c   ****                 .x = (uint8)(width * (-cos(i * PI / resolution) + 1)),
- 310              		.loc 1 91 0
+  87:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
+  88:.\sprites.c   ****                 .x = (uint8)(width * (-cos(i * PI / resolution) + 1)),
+ 310              		.loc 1 88 0
  311 0162 2846     		mov	r0, r5
  312 0164 FFF7FEFF 		bl	__aeabi_i2f
  313              	.LVL39:
@@ -476,14 +473,14 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  336 0194 FFF7FEFF 		bl	__aeabi_d2uiz
  337              	.LVL46:
  338 0198 5FFA80F8 		uxtb	r8, r0
-  92:.\sprites.c   ****                 .y = (uint8)(height * (sin(i * PI / resolution) + 1))
- 339              		.loc 1 92 0
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 9
-
-
+  89:.\sprites.c   ****                 .y = (uint8)(height * (sin(i * PI / resolution) + 1))
+ 339              		.loc 1 89 0
  340 019c 3046     		mov	r0, r6
  341 019e 3946     		mov	r1, r7
  342 01a0 FFF7FEFF 		bl	sin
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 9
+
+
  343              	.LVL47:
  344 01a4 0646     		mov	r6, r0
  345 01a6 0F46     		mov	r7, r1
@@ -497,21 +494,21 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  353              	.LVL49:
  354 01b8 FFF7FEFF 		bl	__aeabi_d2uiz
  355              	.LVL50:
-  90:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
- 356              		.loc 1 90 0
+  87:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
+ 356              		.loc 1 87 0
  357 01bc 524B     		ldr	r3, .L28+8
  358 01be 04F58072 		add	r2, r4, #256
  359 01c2 03F81280 		strb	r8, [r3, r2, lsl #1]
  360 01c6 03EB4203 		add	r3, r3, r2, lsl #1
  361 01ca 5870     		strb	r0, [r3, #1]
-  93:.\sprites.c   ****             };
-  94:.\sprites.c   ****             sprite_vertices[FILLED_ELLIPSE][n++] = (struct Point) {
- 362              		.loc 1 94 0
+  90:.\sprites.c   ****             };
+  91:.\sprites.c   ****             sprite_vertices[FILLED_ELLIPSE][n++] = (struct Point) {
+ 362              		.loc 1 91 0
  363 01cc 04F10109 		add	r9, r4, #1
  364              	.LVL51:
-  95:.\sprites.c   ****                 .x = (uint8)(width * (-cos(i * PI / resolution) + 1)),
-  96:.\sprites.c   ****                 .y = (uint8)(height * (sin(i * PI / resolution) * (i & 1 ? -1 : 1) + 1))
- 365              		.loc 1 96 0
+  92:.\sprites.c   ****                 .x = (uint8)(width * (-cos(i * PI / resolution) + 1)),
+  93:.\sprites.c   ****                 .y = (uint8)(height * (sin(i * PI / resolution) * (i & 1 ? -1 : 1) + 1))
+ 365              		.loc 1 93 0
  366 01d0 15F0010F 		tst	r5, #1
  367 01d4 02D0     		beq	.L25
  368 01d6 0020     		movs	r0, #0
@@ -521,7 +518,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  372 01dc 0020     		movs	r0, #0
  373 01de 4E49     		ldr	r1, .L28+24
  374              	.L20:
- 375              		.loc 1 96 0 is_stmt 0 discriminator 4
+ 375              		.loc 1 93 0 is_stmt 0 discriminator 4
  376 01e0 3246     		mov	r2, r6
  377 01e2 3B46     		mov	r3, r7
  378 01e4 FFF7FEFF 		bl	__aeabi_dmul
@@ -536,27 +533,27 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  387              	.LVL54:
  388 01f8 FFF7FEFF 		bl	__aeabi_d2uiz
  389              	.LVL55:
-  94:.\sprites.c   ****                 .x = (uint8)(width * (-cos(i * PI / resolution) + 1)),
- 390              		.loc 1 94 0 is_stmt 1 discriminator 4
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 10
-
-
+  91:.\sprites.c   ****                 .x = (uint8)(width * (-cos(i * PI / resolution) + 1)),
+ 390              		.loc 1 91 0 is_stmt 1 discriminator 4
  391 01fc 424B     		ldr	r3, .L28+8
  392 01fe 04F5C074 		add	r4, r4, #384
  393 0202 03F81480 		strb	r8, [r3, r4, lsl #1]
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 10
+
+
  394 0206 03EB4403 		add	r3, r3, r4, lsl #1
  395 020a 5870     		strb	r0, [r3, #1]
-  89:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
- 396              		.loc 1 89 0 discriminator 4
+  86:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
+ 396              		.loc 1 86 0 discriminator 4
  397 020c 0135     		adds	r5, r5, #1
  398              	.LVL56:
-  94:.\sprites.c   ****                 .x = (uint8)(width * (-cos(i * PI / resolution) + 1)),
- 399              		.loc 1 94 0 discriminator 4
+  91:.\sprites.c   ****                 .x = (uint8)(width * (-cos(i * PI / resolution) + 1)),
+ 399              		.loc 1 91 0 discriminator 4
  400 020e 4C46     		mov	r4, r9
  401              	.LVL57:
  402              	.L19:
-  89:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
- 403              		.loc 1 89 0 discriminator 2
+  86:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
+ 403              		.loc 1 86 0 discriminator 2
  404 0210 092D     		cmp	r5, #9
  405 0212 A6DD     		ble	.L21
  406 0214 0025     		movs	r5, #0
@@ -566,13 +563,13 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  410              	.L24:
  411              	.LBE12:
  412              	.LBB13:
-  97:.\sprites.c   ****             };
-  98:.\sprites.c   ****         }
-  99:.\sprites.c   ****         // Bottom half
- 100:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
- 101:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
- 102:.\sprites.c   ****                 .x = (uint8)(width * (cos(i * PI / resolution) + 1)),
- 413              		.loc 1 102 0
+  94:.\sprites.c   ****             };
+  95:.\sprites.c   ****         }
+  96:.\sprites.c   ****         // Bottom half
+  97:.\sprites.c   ****         for (int i = 0; i < resolution; i++) {
+  98:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
+  99:.\sprites.c   ****                 .x = (uint8)(width * (cos(i * PI / resolution) + 1)),
+ 413              		.loc 1 99 0
  414 0218 2846     		mov	r0, r5
  415 021a FFF7FEFF 		bl	__aeabi_i2f
  416              	.LVL60:
@@ -598,12 +595,12 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  436              	.LVL66:
  437 0246 FFF7FEFF 		bl	__aeabi_d2uiz
  438              	.LVL67:
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 11
-
-
  439 024a 5FFA80F8 		uxtb	r8, r0
- 103:.\sprites.c   ****                 .y = (uint8)(height * (-sin(i * PI / resolution) + 1))
- 440              		.loc 1 103 0
+ 100:.\sprites.c   ****                 .y = (uint8)(height * (-sin(i * PI / resolution) + 1))
+ 440              		.loc 1 100 0
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 11
+
+
  441 024e 3046     		mov	r0, r6
  442 0250 3946     		mov	r1, r7
  443 0252 FFF7FEFF 		bl	sin
@@ -622,21 +619,21 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  456              	.LVL70:
  457 026e FFF7FEFF 		bl	__aeabi_d2uiz
  458              	.LVL71:
- 101:.\sprites.c   ****                 .x = (uint8)(width * (cos(i * PI / resolution) + 1)),
- 459              		.loc 1 101 0
+  98:.\sprites.c   ****                 .x = (uint8)(width * (cos(i * PI / resolution) + 1)),
+ 459              		.loc 1 98 0
  460 0272 254B     		ldr	r3, .L28+8
  461 0274 04F58072 		add	r2, r4, #256
  462 0278 03F81280 		strb	r8, [r3, r2, lsl #1]
  463 027c 03EB4203 		add	r3, r3, r2, lsl #1
  464 0280 5870     		strb	r0, [r3, #1]
- 104:.\sprites.c   ****             };
- 105:.\sprites.c   ****             sprite_vertices[FILLED_ELLIPSE][n++] = (struct Point) {
- 465              		.loc 1 105 0
+ 101:.\sprites.c   ****             };
+ 102:.\sprites.c   ****             sprite_vertices[FILLED_ELLIPSE][n++] = (struct Point) {
+ 465              		.loc 1 102 0
  466 0282 671C     		adds	r7, r4, #1
  467              	.LVL72:
- 106:.\sprites.c   ****                 .x = (uint8)(width * (cos(i * PI / resolution) + 1)),
- 107:.\sprites.c   ****                 .y = (uint8)(height * (-sin(i * PI / resolution) * (i & 1 ? -1 : 1) + 1))
- 468              		.loc 1 107 0
+ 103:.\sprites.c   ****                 .x = (uint8)(width * (cos(i * PI / resolution) + 1)),
+ 104:.\sprites.c   ****                 .y = (uint8)(height * (-sin(i * PI / resolution) * (i & 1 ? -1 : 1) + 1))
+ 468              		.loc 1 104 0
  469 0284 09F10049 		add	r9, r9, #-2147483648
  470 0288 15F0010F 		tst	r5, #1
  471 028c 02D0     		beq	.L26
@@ -647,7 +644,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  476 0294 0022     		movs	r2, #0
  477 0296 204B     		ldr	r3, .L28+24
  478              	.L23:
- 479              		.loc 1 107 0 is_stmt 0 discriminator 4
+ 479              		.loc 1 104 0 is_stmt 0 discriminator 4
  480 0298 3046     		mov	r0, r6
  481 029a 4946     		mov	r1, r9
  482 029c FFF7FEFF 		bl	__aeabi_dmul
@@ -658,39 +655,39 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  487              	.LVL74:
  488 02a8 0022     		movs	r2, #0
  489 02aa 1D4B     		ldr	r3, .L28+32
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 12
-
-
  490 02ac FFF7FEFF 		bl	__aeabi_dmul
  491              	.LVL75:
  492 02b0 FFF7FEFF 		bl	__aeabi_d2uiz
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 12
+
+
  493              	.LVL76:
- 105:.\sprites.c   ****                 .x = (uint8)(width * (cos(i * PI / resolution) + 1)),
- 494              		.loc 1 105 0 is_stmt 1 discriminator 4
+ 102:.\sprites.c   ****                 .x = (uint8)(width * (cos(i * PI / resolution) + 1)),
+ 494              		.loc 1 102 0 is_stmt 1 discriminator 4
  495 02b4 144B     		ldr	r3, .L28+8
  496 02b6 04F5C074 		add	r4, r4, #384
  497 02ba 03F81480 		strb	r8, [r3, r4, lsl #1]
  498 02be 03EB4403 		add	r3, r3, r4, lsl #1
  499 02c2 5870     		strb	r0, [r3, #1]
- 100:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
- 500              		.loc 1 100 0 discriminator 4
+  97:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
+ 500              		.loc 1 97 0 discriminator 4
  501 02c4 0135     		adds	r5, r5, #1
  502              	.LVL77:
- 105:.\sprites.c   ****                 .x = (uint8)(width * (cos(i * PI / resolution) + 1)),
- 503              		.loc 1 105 0 discriminator 4
+ 102:.\sprites.c   ****                 .x = (uint8)(width * (cos(i * PI / resolution) + 1)),
+ 503              		.loc 1 102 0 discriminator 4
  504 02c6 3C46     		mov	r4, r7
  505              	.LVL78:
  506              	.L22:
- 100:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
- 507              		.loc 1 100 0 discriminator 2
+  97:.\sprites.c   ****             sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
+ 507              		.loc 1 97 0 discriminator 2
  508 02c8 092D     		cmp	r5, #9
  509 02ca A5DD     		ble	.L24
  510              	.LBE13:
- 108:.\sprites.c   ****             };
- 109:.\sprites.c   ****         }
- 110:.\sprites.c   ****         // Complete the polygon
- 111:.\sprites.c   ****         sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
- 511              		.loc 1 111 0
+ 105:.\sprites.c   ****             };
+ 106:.\sprites.c   ****         }
+ 107:.\sprites.c   ****         // Complete the polygon
+ 108:.\sprites.c   ****         sprite_vertices[OPEN_ELLIPSE][n] = (struct Point) {
+ 511              		.loc 1 108 0
  512 02cc 0E4B     		ldr	r3, .L28+8
  513 02ce 04F58072 		add	r2, r4, #256
  514 02d2 0020     		movs	r0, #0
@@ -698,32 +695,32 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  516 02d8 03EB4202 		add	r2, r3, r2, lsl #1
  517 02dc 0521     		movs	r1, #5
  518 02de 5170     		strb	r1, [r2, #1]
- 112:.\sprites.c   ****             .x = 0, .y = (uint8)(height)
- 113:.\sprites.c   ****         };
- 114:.\sprites.c   ****         sprite_vertices[FILLED_ELLIPSE][n++] = (struct Point) {
- 519              		.loc 1 114 0
+ 109:.\sprites.c   ****             .x = 0, .y = (uint8)(height)
+ 110:.\sprites.c   ****         };
+ 111:.\sprites.c   ****         sprite_vertices[FILLED_ELLIPSE][n++] = (struct Point) {
+ 519              		.loc 1 111 0
  520 02e0 621C     		adds	r2, r4, #1
  521              	.LVL79:
  522 02e2 04F5C074 		add	r4, r4, #384
  523 02e6 03F81400 		strb	r0, [r3, r4, lsl #1]
  524 02ea 03EB4404 		add	r4, r3, r4, lsl #1
  525 02ee 6170     		strb	r1, [r4, #1]
- 115:.\sprites.c   ****             .x = 0, .y = (uint8)(height)
- 116:.\sprites.c   ****         };
- 117:.\sprites.c   ****         sprite_n[OPEN_ELLIPSE] = n;
- 526              		.loc 1 117 0
+ 112:.\sprites.c   ****             .x = 0, .y = (uint8)(height)
+ 113:.\sprites.c   ****         };
+ 114:.\sprites.c   ****         sprite_n[OPEN_ELLIPSE] = n;
+ 526              		.loc 1 114 0
  527 02f0 C3F80824 		str	r2, [r3, #1032]
- 118:.\sprites.c   ****         sprite_n[FILLED_ELLIPSE] = n;
- 528              		.loc 1 118 0
+ 115:.\sprites.c   ****         sprite_n[FILLED_ELLIPSE] = n;
+ 528              		.loc 1 115 0
  529 02f4 C3F80C24 		str	r2, [r3, #1036]
  530 02f8 BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
  531              	.LVL80:
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 13
-
-
  532              	.L29:
  533 02fc AFF30080 		.align	3
  534              	.L28:
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 13
+
+
  535 0300 00000000 		.word	0
  536 0304 00E06F40 		.word	1081073664
  537 0308 00000000 		.word	.LANCHOR0
@@ -746,47 +743,44 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  554              		.type	make_fretboard, %function
  555              	make_fretboard:
  556              	.LFB1:
- 119:.\sprites.c   ****     }
- 120:.\sprites.c   **** }
- 121:.\sprites.c   **** 
- 122:.\sprites.c   **** /*
- 123:.\sprites.c   ****  * Creates a fretboard instance
- 124:.\sprites.c   ****  */
- 125:.\sprites.c   **** struct Sprite make_fretboard() {
- 557              		.loc 1 125 0
+ 116:.\sprites.c   ****     }
+ 117:.\sprites.c   **** }
+ 118:.\sprites.c   **** 
+ 119:.\sprites.c   **** struct Sprite make_fretboard() {
+ 557              		.loc 1 119 0
  558              		.cfi_startproc
  559              		@ args = 0, pretend = 0, frame = 0
  560              		@ frame_needed = 0, uses_anonymous_args = 0
  561              		@ link register save eliminated.
  562              	.LVL81:
- 126:.\sprites.c   ****     return (struct Sprite) {
- 127:.\sprites.c   ****         .n = sprite_n[FRETBOARD], .x = 0, .y = 0,
- 563              		.loc 1 127 0
+ 120:.\sprites.c   ****     return (struct Sprite) {
+ 121:.\sprites.c   ****         .n = sprite_n[FRETBOARD], .x = 0, .y = 0,
+ 563              		.loc 1 121 0
  564 0000 044A     		ldr	r2, .L31
  565 0002 D2F80014 		ldr	r1, [r2, #1024]
- 126:.\sprites.c   ****     return (struct Sprite) {
- 566              		.loc 1 126 0
+ 120:.\sprites.c   ****     return (struct Sprite) {
+ 566              		.loc 1 120 0
  567 0006 0160     		str	r1, [r0]
  568 0008 0021     		movs	r1, #0
  569 000a 4160     		str	r1, [r0, #4]
  570 000c 8160     		str	r1, [r0, #8]
  571 000e C260     		str	r2, [r0, #12]
- 128:.\sprites.c   ****         .vertices = sprite_vertices[FRETBOARD]
- 129:.\sprites.c   ****     };
- 130:.\sprites.c   **** }
- 572              		.loc 1 130 0
+ 122:.\sprites.c   ****         .vertices = sprite_vertices[FRETBOARD]
+ 123:.\sprites.c   ****     };
+ 124:.\sprites.c   **** }
+ 572              		.loc 1 124 0
  573 0010 7047     		bx	lr
  574              	.L32:
  575 0012 00BF     		.align	2
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 14
-
-
  576              	.L31:
  577 0014 00000000 		.word	.LANCHOR0
  578              		.cfi_endproc
  579              	.LFE1:
  580              		.size	make_fretboard, .-make_fretboard
  581              		.section	.text.make_barline,"ax",%progbits
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 14
+
+
  582              		.align	2
  583              		.global	make_barline
  584              		.thumb
@@ -794,12 +788,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  586              		.type	make_barline, %function
  587              	make_barline:
  588              	.LFB2:
- 131:.\sprites.c   **** 
- 132:.\sprites.c   **** /*
- 133:.\sprites.c   ****  * Creates a barline instance at the specified y offset
- 134:.\sprites.c   ****  */
- 135:.\sprites.c   **** struct Sprite make_barline(int y) {
- 589              		.loc 1 135 0
+ 125:.\sprites.c   **** 
+ 126:.\sprites.c   **** struct Sprite make_barline(int y) {
+ 589              		.loc 1 126 0
  590              		.cfi_startproc
  591              		@ args = 0, pretend = 0, frame = 0
  592              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -808,23 +799,23 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  595 0000 10B4     		push	{r4}
  596              		.cfi_def_cfa_offset 4
  597              		.cfi_offset 4, -4
- 136:.\sprites.c   ****     return (struct Sprite) {
- 137:.\sprites.c   ****         .n = sprite_n[BARLINE], .x = 0, .y = y,
- 598              		.loc 1 137 0
+ 127:.\sprites.c   ****     return (struct Sprite) {
+ 128:.\sprites.c   ****         .n = sprite_n[BARLINE], .x = 0, .y = y,
+ 598              		.loc 1 128 0
  599 0002 064A     		ldr	r2, .L35
  600 0004 D2F80444 		ldr	r4, [r2, #1028]
- 136:.\sprites.c   ****     return (struct Sprite) {
- 601              		.loc 1 136 0
+ 127:.\sprites.c   ****     return (struct Sprite) {
+ 601              		.loc 1 127 0
  602 0008 0460     		str	r4, [r0]
  603 000a 0024     		movs	r4, #0
  604 000c 4460     		str	r4, [r0, #4]
  605 000e 8160     		str	r1, [r0, #8]
  606 0010 02F58072 		add	r2, r2, #256
  607 0014 C260     		str	r2, [r0, #12]
- 138:.\sprites.c   ****         .vertices = sprite_vertices[BARLINE]
- 139:.\sprites.c   ****     };
- 140:.\sprites.c   **** }
- 608              		.loc 1 140 0
+ 129:.\sprites.c   ****         .vertices = sprite_vertices[BARLINE]
+ 130:.\sprites.c   ****     };
+ 131:.\sprites.c   **** }
+ 608              		.loc 1 131 0
  609 0016 5DF8044B 		ldr	r4, [sp], #4
  610              		.cfi_restore 4
  611              		.cfi_def_cfa_offset 0
@@ -838,21 +829,18 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  619              		.size	make_barline, .-make_barline
  620              		.section	.text.make_ellipse,"ax",%progbits
  621              		.align	2
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 15
-
-
  622              		.global	make_ellipse
  623              		.thumb
  624              		.thumb_func
  625              		.type	make_ellipse, %function
  626              	make_ellipse:
  627              	.LFB3:
- 141:.\sprites.c   **** 
- 142:.\sprites.c   **** /*
- 143:.\sprites.c   ****  * Creates an ellipse instance in the specified track and location
- 144:.\sprites.c   ****  */
- 145:.\sprites.c   **** struct Sprite make_ellipse(uint8 track, int y, uint8 filled) {
- 628              		.loc 1 145 0
+ 132:.\sprites.c   **** 
+ 133:.\sprites.c   **** struct Sprite make_ellipse(uint8 track, int y, uint8 filled) {
+ 628              		.loc 1 133 0
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 15
+
+
  629              		.cfi_startproc
  630              		@ args = 0, pretend = 0, frame = 0
  631              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -862,8 +850,8 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  635              		.cfi_def_cfa_offset 8
  636              		.cfi_offset 4, -8
  637              		.cfi_offset 5, -4
- 146:.\sprites.c   ****     enum SpriteType tp = (filled ? FILLED_ELLIPSE : OPEN_ELLIPSE);
- 638              		.loc 1 146 0
+ 134:.\sprites.c   ****     enum SpriteType tp = (filled ? FILLED_ELLIPSE : OPEN_ELLIPSE);
+ 638              		.loc 1 134 0
  639 0002 0BB1     		cbz	r3, .L39
  640 0004 0324     		movs	r4, #3
  641 0006 00E0     		b	.L38
@@ -871,9 +859,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  643 0008 0224     		movs	r4, #2
  644              	.L38:
  645              	.LVL84:
- 147:.\sprites.c   ****     return (struct Sprite) {
- 148:.\sprites.c   ****         .n = sprite_n[tp], .x = 48 * track + 10, .y = y,
- 646              		.loc 1 148 0 discriminator 4
+ 135:.\sprites.c   ****     return (struct Sprite) {
+ 136:.\sprites.c   ****         .n = sprite_n[tp], .x = 48 * track + 10, .y = y,
+ 646              		.loc 1 136 0 discriminator 4
  647 000a 084B     		ldr	r3, .L41
  648              	.LVL85:
  649 000c 03EB8405 		add	r5, r3, r4, lsl #2
@@ -882,25 +870,22 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  652              	.LVL86:
  653 0018 0901     		lsls	r1, r1, #4
  654 001a 0A31     		adds	r1, r1, #10
- 149:.\sprites.c   ****         .vertices = sprite_vertices[tp],
- 655              		.loc 1 149 0 discriminator 4
+ 137:.\sprites.c   ****         .vertices = sprite_vertices[tp],
+ 655              		.loc 1 137 0 discriminator 4
  656 001c 03EB0423 		add	r3, r3, r4, lsl #8
- 147:.\sprites.c   ****     return (struct Sprite) {
- 657              		.loc 1 147 0 discriminator 4
+ 135:.\sprites.c   ****     return (struct Sprite) {
+ 657              		.loc 1 135 0 discriminator 4
  658 0020 0560     		str	r5, [r0]
  659 0022 4160     		str	r1, [r0, #4]
  660 0024 8260     		str	r2, [r0, #8]
  661 0026 C360     		str	r3, [r0, #12]
- 150:.\sprites.c   ****     };
- 151:.\sprites.c   **** }
- 662              		.loc 1 151 0 discriminator 4
+ 138:.\sprites.c   ****     };
+ 139:.\sprites.c   **** }
+ 662              		.loc 1 139 0 discriminator 4
  663 0028 30BC     		pop	{r4, r5}
  664              		.cfi_restore 5
  665              		.cfi_restore 4
  666              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 16
-
-
  667              	.LVL87:
  668 002a 7047     		bx	lr
  669              	.L42:
@@ -913,17 +898,17 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  676              		.section	.text.sprites_to_polyline,"ax",%progbits
  677              		.align	2
  678              		.global	sprites_to_polyline
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 16
+
+
  679              		.thumb
  680              		.thumb_func
  681              		.type	sprites_to_polyline, %function
  682              	sprites_to_polyline:
  683              	.LFB4:
- 152:.\sprites.c   **** 
- 153:.\sprites.c   **** /*
- 154:.\sprites.c   ****  * Converts a list of sprites into a polyline that the scope can render.
- 155:.\sprites.c   ****  */
- 156:.\sprites.c   **** int sprites_to_polyline(int n_sprites, struct Sprite *sprites, struct Point *points) {
- 684              		.loc 1 156 0
+ 140:.\sprites.c   **** 
+ 141:.\sprites.c   **** int sprites_to_polyline(int n_sprites, struct Sprite *sprites, struct Point *points) {
+ 684              		.loc 1 141 0
  685              		.cfi_startproc
  686              		@ args = 0, pretend = 0, frame = 0
  687              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -939,63 +924,63 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  697 0004 8446     		mov	ip, r0
  698              	.LVL89:
  699              	.LBB14:
- 157:.\sprites.c   ****     // For now, naively convert to points
- 158:.\sprites.c   ****     int n_points = 0;
- 159:.\sprites.c   ****     for (int i = 0; i < n_sprites; i++) {
- 700              		.loc 1 159 0
+ 142:.\sprites.c   ****     // For now, naively convert to points
+ 143:.\sprites.c   ****     int n_points = 0;
+ 144:.\sprites.c   ****     for (int i = 0; i < n_sprites; i++) {
+ 700              		.loc 1 144 0
  701 0006 4FF0000E 		mov	lr, #0
  702              	.LBE14:
- 158:.\sprites.c   ****     for (int i = 0; i < n_sprites; i++) {
- 703              		.loc 1 158 0
+ 143:.\sprites.c   ****     for (int i = 0; i < n_sprites; i++) {
+ 703              		.loc 1 143 0
  704 000a 7046     		mov	r0, lr
  705              	.LVL90:
  706              	.LBB19:
- 707              		.loc 1 159 0
+ 707              		.loc 1 144 0
  708 000c 2EE0     		b	.L44
  709              	.LVL91:
  710              	.L49:
  711              	.LBB15:
  712              	.LBB16:
- 160:.\sprites.c   ****         // TODO: precompute whether to even show the sprite
- 161:.\sprites.c   ****         for (int j = 0; j < sprites[i].n; j++) {
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 17
-
-
- 162:.\sprites.c   ****             int x = sprites[i].vertices[j].x + sprites[i].x;
- 713              		.loc 1 162 0
+ 145:.\sprites.c   ****         // TODO: precompute whether to even show the sprite
+ 146:.\sprites.c   ****         for (int j = 0; j < sprites[i].n; j++) {
+ 147:.\sprites.c   ****             int x = sprites[i].vertices[j].x + sprites[i].x;
+ 713              		.loc 1 147 0
  714 000e F368     		ldr	r3, [r6, #12]
  715 0010 03EB4508 		add	r8, r3, r5, lsl #1
  716 0014 13F81540 		ldrb	r4, [r3, r5, lsl #1]	@ zero_extendqisi2
  717 0018 7768     		ldr	r7, [r6, #4]
  718              	.LVL92:
- 163:.\sprites.c   ****             int y = sprites[i].vertices[j].y + sprites[i].y;
- 719              		.loc 1 163 0
+ 148:.\sprites.c   ****             int y = sprites[i].vertices[j].y + sprites[i].y;
+ 719              		.loc 1 148 0
  720 001a 98F80180 		ldrb	r8, [r8, #1]	@ zero_extendqisi2
  721 001e B368     		ldr	r3, [r6, #8]
  722 0020 4344     		add	r3, r3, r8
  723              	.LVL93:
- 164:.\sprites.c   ****             // Clip if overflow (i.e. out of bounds)
- 165:.\sprites.c   ****             points[n_points++] = (struct Point) {
- 724              		.loc 1 165 0
+ 149:.\sprites.c   ****             // Clip if overflow (i.e. out of bounds)
+ 150:.\sprites.c   ****             points[n_points++] = (struct Point) {
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 17
+
+
+ 724              		.loc 1 150 0
  725 0022 461C     		adds	r6, r0, #1
  726              	.LVL94:
  727 0024 4000     		lsls	r0, r0, #1
  728 0026 02EB0008 		add	r8, r2, r0
- 166:.\sprites.c   ****                 .x = (uint8)(x < 0 ? 0 : x > UINT8_MAX ? UINT8_MAX : x),
- 729              		.loc 1 166 0
+ 151:.\sprites.c   ****                 .x = (uint8)(x < 0 ? 0 : x > UINT8_MAX ? UINT8_MAX : x),
+ 729              		.loc 1 151 0
  730 002a E419     		adds	r4, r4, r7
  731              	.LVL95:
  732 002c 05D4     		bmi	.L51
- 733              		.loc 1 166 0 is_stmt 0 discriminator 1
+ 733              		.loc 1 151 0 is_stmt 0 discriminator 1
  734 002e FF2C     		cmp	r4, #255
  735 0030 01DC     		bgt	.L52
- 736              		.loc 1 166 0 discriminator 3
+ 736              		.loc 1 151 0 discriminator 3
  737 0032 E4B2     		uxtb	r4, r4
  738              	.LVL96:
  739 0034 02E0     		b	.L45
  740              	.LVL97:
  741              	.L52:
- 742              		.loc 1 166 0
+ 742              		.loc 1 151 0
  743 0036 FF24     		movs	r4, #255
  744              	.LVL98:
  745 0038 00E0     		b	.L45
@@ -1004,23 +989,20 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  748 003a 0024     		movs	r4, #0
  749              	.LVL100:
  750              	.L45:
- 167:.\sprites.c   ****                 .y = (uint8)(y < 0 ? 0 : y > UINT8_MAX ? UINT8_MAX : y)
- 751              		.loc 1 167 0 is_stmt 1
+ 152:.\sprites.c   ****                 .y = (uint8)(y < 0 ? 0 : y > UINT8_MAX ? UINT8_MAX : y)
+ 751              		.loc 1 152 0 is_stmt 1
  752 003c 002B     		cmp	r3, #0
  753 003e 05DB     		blt	.L53
- 754              		.loc 1 167 0 is_stmt 0 discriminator 1
+ 754              		.loc 1 152 0 is_stmt 0 discriminator 1
  755 0040 FF2B     		cmp	r3, #255
  756 0042 01DC     		bgt	.L54
- 757              		.loc 1 167 0 discriminator 3
+ 757              		.loc 1 152 0 discriminator 3
  758 0044 DBB2     		uxtb	r3, r3
  759              	.LVL101:
  760 0046 02E0     		b	.L47
  761              	.LVL102:
  762              	.L54:
- 763              		.loc 1 167 0
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 18
-
-
+ 763              		.loc 1 152 0
  764 0048 FF23     		movs	r3, #255
  765              	.LVL103:
  766 004a 00E0     		b	.L47
@@ -1029,19 +1011,22 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  769 004c 0023     		movs	r3, #0
  770              	.LVL105:
  771              	.L47:
- 165:.\sprites.c   ****                 .x = (uint8)(x < 0 ? 0 : x > UINT8_MAX ? UINT8_MAX : x),
- 772              		.loc 1 165 0 is_stmt 1 discriminator 2
+ 150:.\sprites.c   ****                 .x = (uint8)(x < 0 ? 0 : x > UINT8_MAX ? UINT8_MAX : x),
+ 772              		.loc 1 150 0 is_stmt 1 discriminator 2
  773 004e 1454     		strb	r4, [r2, r0]
  774              	.LVL106:
  775 0050 88F80130 		strb	r3, [r8, #1]
  776              	.LBE16:
- 161:.\sprites.c   ****             int x = sprites[i].vertices[j].x + sprites[i].x;
- 777              		.loc 1 161 0 discriminator 2
+ 146:.\sprites.c   ****             int x = sprites[i].vertices[j].x + sprites[i].x;
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 18
+
+
+ 777              		.loc 1 146 0 discriminator 2
  778 0054 0135     		adds	r5, r5, #1
  779              	.LVL107:
  780              	.LBB17:
- 165:.\sprites.c   ****                 .x = (uint8)(x < 0 ? 0 : x > UINT8_MAX ? UINT8_MAX : x),
- 781              		.loc 1 165 0 discriminator 2
+ 150:.\sprites.c   ****                 .x = (uint8)(x < 0 ? 0 : x > UINT8_MAX ? UINT8_MAX : x),
+ 781              		.loc 1 150 0 discriminator 2
  782 0056 3046     		mov	r0, r6
  783 0058 00E0     		b	.L50
  784              	.LVL108:
@@ -1052,35 +1037,32 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  789              	.L50:
  790              	.LVL109:
  791              	.LBB18:
- 161:.\sprites.c   ****             int x = sprites[i].vertices[j].x + sprites[i].x;
- 792              		.loc 1 161 0 discriminator 1
+ 146:.\sprites.c   ****             int x = sprites[i].vertices[j].x + sprites[i].x;
+ 792              		.loc 1 146 0 discriminator 1
  793 005c 4FEA0E13 		lsl	r3, lr, #4
  794 0060 CE18     		adds	r6, r1, r3
  795 0062 CB58     		ldr	r3, [r1, r3]
  796 0064 AB42     		cmp	r3, r5
  797 0066 D2DC     		bgt	.L49
  798              	.LBE18:
- 159:.\sprites.c   ****         // TODO: precompute whether to even show the sprite
- 799              		.loc 1 159 0 discriminator 2
+ 144:.\sprites.c   ****         // TODO: precompute whether to even show the sprite
+ 799              		.loc 1 144 0 discriminator 2
  800 0068 0EF1010E 		add	lr, lr, #1
  801              	.LVL110:
  802              	.L44:
- 159:.\sprites.c   ****         // TODO: precompute whether to even show the sprite
- 803              		.loc 1 159 0 is_stmt 0 discriminator 1
+ 144:.\sprites.c   ****         // TODO: precompute whether to even show the sprite
+ 803              		.loc 1 144 0 is_stmt 0 discriminator 1
  804 006c E645     		cmp	lr, ip
  805 006e F4DB     		blt	.L55
  806              	.LBE19:
- 168:.\sprites.c   ****             };
- 169:.\sprites.c   ****         }
- 170:.\sprites.c   ****     }
- 171:.\sprites.c   ****     return n_points;
- 172:.\sprites.c   **** }
- 807              		.loc 1 172 0 is_stmt 1
+ 153:.\sprites.c   ****             };
+ 154:.\sprites.c   ****         }
+ 155:.\sprites.c   ****     }
+ 156:.\sprites.c   ****     return n_points;
+ 157:.\sprites.c   **** }
+ 807              		.loc 1 157 0 is_stmt 1
  808 0070 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
  809              		.cfi_endproc
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 19
-
-
  810              	.LFE4:
  811              		.size	sprites_to_polyline, .-sprites_to_polyline
  812              		.global	__aeabi_d2f
@@ -1093,19 +1075,12 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  819              		.type	ortho_to_perspective, %function
  820              	ortho_to_perspective:
  821              	.LFB5:
- 173:.\sprites.c   **** 
- 174:.\sprites.c   **** /*
- 175:.\sprites.c   ****  * Mutates a list of points from an orthographic view to a perspective view.
- 176:.\sprites.c   ****  *
- 177:.\sprites.c   ****  * Matrix coefficients calculated using OpenCV by taking the perspective transform
- 178:.\sprites.c   ****  * [(0, 0), (0, 255), (255, 255), (255, 0)] -> [(0, 0), (84, 255), (171, 255), (255, 0)]
- 179:.\sprites.c   ****  * which yields
- 180:.\sprites.c   ****  * [1   0.96551724  0
- 181:.\sprites.c   ****  *  0   2.93103448  0
- 182:.\sprites.c   ****  *  0   0.00757268  1]
- 183:.\sprites.c   ****  */
- 184:.\sprites.c   **** void ortho_to_perspective(int n_points, struct Point *points) {
- 822              		.loc 1 184 0
+ 158:.\sprites.c   **** 
+ 159:.\sprites.c   **** void ortho_to_perspective(int n_points, struct Point *points) {
+ 822              		.loc 1 159 0
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 19
+
+
  823              		.cfi_startproc
  824              		@ args = 0, pretend = 0, frame = 8
  825              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1127,20 +1102,17 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  841 0008 0D46     		mov	r5, r1
  842              	.LVL112:
  843              	.LBB20:
- 185:.\sprites.c   ****     for (int i = 0; i < n_points; i++) {
- 844              		.loc 1 185 0
+ 160:.\sprites.c   ****     for (int i = 0; i < n_points; i++) {
+ 844              		.loc 1 160 0
  845 000a 0024     		movs	r4, #0
  846 000c 43E0     		b	.L58
  847              	.LVL113:
  848              	.L59:
  849              	.LBB21:
- 186:.\sprites.c   ****         float scaled_x = points[i].x + 0.96551724 * points[i].y;
- 850              		.loc 1 186 0 discriminator 3
+ 161:.\sprites.c   ****         float scaled_x = points[i].x + 0.96551724 * points[i].y;
+ 850              		.loc 1 161 0 discriminator 3
  851 000e 05EB4408 		add	r8, r5, r4, lsl #1
  852 0012 15F81490 		ldrb	r9, [r5, r4, lsl #1]	@ zero_extendqisi2
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 20
-
-
  853 0016 98F80100 		ldrb	r0, [r8, #1]	@ zero_extendqisi2
  854 001a FFF7FEFF 		bl	__aeabi_i2d
  855              	.LVL114:
@@ -1161,11 +1133,14 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  870              	.LVL118:
  871 0042 8346     		mov	fp, r0
  872              	.LVL119:
- 187:.\sprites.c   ****         float scaled_y = 2.93103448 * points[i].y;
- 873              		.loc 1 187 0 discriminator 3
+ 162:.\sprites.c   ****         float scaled_y = 2.93103448 * points[i].y;
+ 873              		.loc 1 162 0 discriminator 3
  874 0044 3046     		mov	r0, r6
  875              	.LVL120:
  876 0046 3946     		mov	r1, r7
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 20
+
+
  877 0048 17A3     		adr	r3, .L61+8
  878 004a D3E90023 		ldrd	r2, [r3]
  879 004e FFF7FEFF 		bl	__aeabi_dmul
@@ -1174,8 +1149,8 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  882              	.LVL122:
  883 0056 8146     		mov	r9, r0
  884              	.LVL123:
- 188:.\sprites.c   ****         float scaling = 1 + 0.00757268 * points[i].y;
- 885              		.loc 1 188 0 discriminator 3
+ 163:.\sprites.c   ****         float scaling = 1 + 0.00757268 * points[i].y;
+ 885              		.loc 1 163 0 discriminator 3
  886 0058 3046     		mov	r0, r6
  887              	.LVL124:
  888 005a 3946     		mov	r1, r7
@@ -1191,21 +1166,18 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  898              	.LVL127:
  899 0072 0646     		mov	r6, r0
  900              	.LVL128:
- 189:.\sprites.c   ****         points[i].x = (uint8)(scaled_x / scaling);
- 901              		.loc 1 189 0 discriminator 3
+ 164:.\sprites.c   ****         points[i].x = (uint8)(scaled_x / scaling);
+ 901              		.loc 1 164 0 discriminator 3
  902 0074 5846     		mov	r0, fp
  903              	.LVL129:
  904 0076 3146     		mov	r1, r6
  905 0078 FFF7FEFF 		bl	__aeabi_fdiv
  906              	.LVL130:
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 21
-
-
  907 007c FFF7FEFF 		bl	__aeabi_f2uiz
  908              	.LVL131:
  909 0080 05F81400 		strb	r0, [r5, r4, lsl #1]
- 190:.\sprites.c   ****         points[i].y = (uint8)(scaled_y / scaling);
- 910              		.loc 1 190 0 discriminator 3
+ 165:.\sprites.c   ****         points[i].y = (uint8)(scaled_y / scaling);
+ 910              		.loc 1 165 0 discriminator 3
  911 0084 4846     		mov	r0, r9
  912 0086 3146     		mov	r1, r6
  913 0088 FFF7FEFF 		bl	__aeabi_fdiv
@@ -1214,19 +1186,22 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  916              	.LVL133:
  917 0090 88F80100 		strb	r0, [r8, #1]
  918              	.LBE21:
- 185:.\sprites.c   ****         float scaled_x = points[i].x + 0.96551724 * points[i].y;
- 919              		.loc 1 185 0 discriminator 3
+ 160:.\sprites.c   ****         float scaled_x = points[i].x + 0.96551724 * points[i].y;
+ 919              		.loc 1 160 0 discriminator 3
  920 0094 0134     		adds	r4, r4, #1
  921              	.LVL134:
  922              	.L58:
- 185:.\sprites.c   ****         float scaled_x = points[i].x + 0.96551724 * points[i].y;
- 923              		.loc 1 185 0 is_stmt 0 discriminator 1
+ 160:.\sprites.c   ****         float scaled_x = points[i].x + 0.96551724 * points[i].y;
+ 923              		.loc 1 160 0 is_stmt 0 discriminator 1
  924 0096 5445     		cmp	r4, r10
  925 0098 B9DB     		blt	.L59
  926              	.LBE20:
- 191:.\sprites.c   ****     }
- 192:.\sprites.c   **** }
- 927              		.loc 1 192 0 is_stmt 1
+ 166:.\sprites.c   ****     }
+ 167:.\sprites.c   **** }
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 21
+
+
+ 927              		.loc 1 167 0 is_stmt 1
  928 009a 03B0     		add	sp, sp, #12
  929              		.cfi_def_cfa_offset 36
  930              		@ sp needed
@@ -1258,9 +1233,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  952      00000000 
  953              		.type	sprite_n, %object
  954              		.size	sprite_n, 16
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 22
-
-
  955              	sprite_n:
  956 0400 00000000 		.space	16
  956      00000000 
@@ -1281,11 +1253,14 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  969 000c 16000000 		.4byte	.LASF39
  970 0010 01       		.byte	0x1
  971 0011 73010000 		.4byte	.LASF40
- 972 0015 78020000 		.4byte	.LASF41
+ 972 0015 83020000 		.4byte	.LASF41
  973 0019 60000000 		.4byte	.Ldebug_ranges0+0x60
  974 001d 00000000 		.4byte	0
  975 0021 00000000 		.4byte	.Ldebug_line0
  976 0025 02       		.uleb128 0x2
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 22
+
+
  977 0026 01       		.byte	0x1
  978 0027 06       		.byte	0x6
  979 0028 42020000 		.4byte	.LASF0
@@ -1318,9 +1293,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1006 0058 07       		.byte	0x7
  1007 0059 9F010000 		.4byte	.LASF7
  1008 005d 03       		.uleb128 0x3
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 23
-
-
  1009 005e 04       		.byte	0x4
  1010 005f 05       		.byte	0x5
  1011 0060 696E7400 		.ascii	"int\000"
@@ -1346,21 +1318,24 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1031 0087 08       		.byte	0x8
  1032 0088 F6010000 		.4byte	.LASF11
  1033 008c 05       		.uleb128 0x5
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 23
+
+
  1034 008d 09010000 		.4byte	.LASF16
  1035 0091 02       		.byte	0x2
  1036 0092 02       		.byte	0x2
- 1037 0093 0F       		.byte	0xf
+ 1037 0093 12       		.byte	0x12
  1038 0094 AD000000 		.4byte	0xad
  1039 0098 06       		.uleb128 0x6
  1040 0099 7800     		.ascii	"x\000"
  1041 009b 02       		.byte	0x2
- 1042 009c 10       		.byte	0x10
+ 1042 009c 13       		.byte	0x13
  1043 009d 6B000000 		.4byte	0x6b
  1044 00a1 00       		.byte	0
  1045 00a2 06       		.uleb128 0x6
  1046 00a3 7900     		.ascii	"y\000"
  1047 00a5 02       		.byte	0x2
- 1048 00a6 11       		.byte	0x11
+ 1048 00a6 14       		.byte	0x14
  1049 00a7 6B000000 		.4byte	0x6b
  1050 00ab 01       		.byte	0x1
  1051 00ac 00       		.byte	0
@@ -1368,7 +1343,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1053 00ae 7F010000 		.4byte	.LASF43
  1054 00b2 01       		.byte	0x1
  1055 00b3 02       		.byte	0x2
- 1056 00b4 14       		.byte	0x14
+ 1056 00b4 17       		.byte	0x17
  1057 00b5 D2000000 		.4byte	0xd2
  1058 00b9 08       		.uleb128 0x8
  1059 00ba 0F010000 		.4byte	.LASF12
@@ -1378,9 +1353,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1063 00c4 01       		.sleb128 1
  1064 00c5 08       		.uleb128 0x8
  1065 00c6 00000000 		.4byte	.LASF14
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 24
-
-
  1066 00ca 02       		.sleb128 2
  1067 00cb 08       		.uleb128 0x8
  1068 00cc FA000000 		.4byte	.LASF15
@@ -1390,30 +1362,33 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1072 00d3 C6010000 		.4byte	.LASF17
  1073 00d7 10       		.byte	0x10
  1074 00d8 02       		.byte	0x2
- 1075 00d9 1B       		.byte	0x1b
+ 1075 00d9 1E       		.byte	0x1e
  1076 00da 09010000 		.4byte	0x109
  1077 00de 06       		.uleb128 0x6
  1078 00df 6E00     		.ascii	"n\000"
  1079 00e1 02       		.byte	0x2
- 1080 00e2 1C       		.byte	0x1c
+ 1080 00e2 1F       		.byte	0x1f
  1081 00e3 5D000000 		.4byte	0x5d
  1082 00e7 00       		.byte	0
  1083 00e8 06       		.uleb128 0x6
  1084 00e9 7800     		.ascii	"x\000"
  1085 00eb 02       		.byte	0x2
- 1086 00ec 1C       		.byte	0x1c
+ 1086 00ec 1F       		.byte	0x1f
  1087 00ed 5D000000 		.4byte	0x5d
  1088 00f1 04       		.byte	0x4
  1089 00f2 06       		.uleb128 0x6
  1090 00f3 7900     		.ascii	"y\000"
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 24
+
+
  1091 00f5 02       		.byte	0x2
- 1092 00f6 1C       		.byte	0x1c
+ 1092 00f6 1F       		.byte	0x1f
  1093 00f7 5D000000 		.4byte	0x5d
  1094 00fb 08       		.byte	0x8
  1095 00fc 09       		.uleb128 0x9
  1096 00fd E3000000 		.4byte	.LASF18
  1097 0101 02       		.byte	0x2
- 1098 0102 1D       		.byte	0x1d
+ 1098 0102 20       		.byte	0x20
  1099 0103 09010000 		.4byte	0x109
  1100 0107 0C       		.byte	0xc
  1101 0108 00       		.byte	0
@@ -1431,29 +1406,26 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1113 011d 0B       		.uleb128 0xb
  1114 011e D6000000 		.4byte	.LASF44
  1115 0122 01       		.byte	0x1
- 1116 0123 18       		.byte	0x18
+ 1116 0123 15       		.byte	0x15
  1117 0124 00000000 		.4byte	.LFB0
  1118 0128 28030000 		.4byte	.LFE0-.LFB0
  1119 012c 01       		.uleb128 0x1
  1120 012d 9C       		.byte	0x9c
  1121 012e B1020000 		.4byte	0x2b1
  1122 0132 0C       		.uleb128 0xc
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 25
-
-
  1123 0133 04000000 		.4byte	.LBB2
  1124 0137 EA000000 		.4byte	.LBE2-.LBB2
  1125 013b C6010000 		.4byte	0x1c6
  1126 013f 0D       		.uleb128 0xd
  1127 0140 1A020000 		.4byte	.LASF21
  1128 0144 01       		.byte	0x1
- 1129 0145 1B       		.byte	0x1b
+ 1129 0145 18       		.byte	0x18
  1130 0146 B1020000 		.4byte	0x2b1
  1131 014a 10       		.byte	0x10
  1132 014b 0E       		.uleb128 0xe
  1133 014c 6E00     		.ascii	"n\000"
  1134 014e 01       		.byte	0x1
- 1135 014f 1C       		.byte	0x1c
+ 1135 014f 19       		.byte	0x19
  1136 0150 5D000000 		.4byte	0x5d
  1137 0154 00000000 		.4byte	.LLST0
  1138 0158 0F       		.uleb128 0xf
@@ -1462,10 +1434,13 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1141 0161 0E       		.uleb128 0xe
  1142 0162 6900     		.ascii	"i\000"
  1143 0164 01       		.byte	0x1
- 1144 0165 1E       		.byte	0x1e
+ 1144 0165 1B       		.byte	0x1b
  1145 0166 5D000000 		.4byte	0x5d
  1146 016a 91000000 		.4byte	.LLST1
  1147 016e 00       		.byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 25
+
+
  1148 016f 0C       		.uleb128 0xc
  1149 0170 36000000 		.4byte	.LBB5
  1150 0174 30000000 		.4byte	.LBE5-.LBB5
@@ -1473,7 +1448,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1152 017c 0E       		.uleb128 0xe
  1153 017d 6900     		.ascii	"i\000"
  1154 017f 01       		.byte	0x1
- 1155 0180 25       		.byte	0x25
+ 1155 0180 22       		.byte	0x22
  1156 0181 5D000000 		.4byte	0x5d
  1157 0185 B0000000 		.4byte	.LLST2
  1158 0189 00       		.byte	0
@@ -1484,7 +1459,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1163 0197 0E       		.uleb128 0xe
  1164 0198 6900     		.ascii	"i\000"
  1165 019a 01       		.byte	0x1
- 1166 019b 2C       		.byte	0x2c
+ 1166 019b 29       		.byte	0x29
  1167 019c 5D000000 		.4byte	0x5d
  1168 01a0 C3000000 		.4byte	.LLST3
  1169 01a4 00       		.byte	0
@@ -1494,13 +1469,10 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1173 01ae 0E       		.uleb128 0xe
  1174 01af 6900     		.ascii	"i\000"
  1175 01b1 01       		.byte	0x1
- 1176 01b2 33       		.byte	0x33
+ 1176 01b2 30       		.byte	0x30
  1177 01b3 5D000000 		.4byte	0x5d
  1178 01b7 D6000000 		.4byte	.LLST4
  1179 01bb 11       		.uleb128 0x11
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 26
-
-
  1180 01bc A0000000 		.4byte	.LVL16
  1181 01c0 BD040000 		.4byte	0x4bd
  1182 01c4 00       		.byte	0
@@ -1512,13 +1484,13 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1188 01d3 0D       		.uleb128 0xd
  1189 01d4 1A020000 		.4byte	.LASF21
  1190 01d8 01       		.byte	0x1
- 1191 01d9 40       		.byte	0x40
+ 1191 01d9 3D       		.byte	0x3d
  1192 01da B1020000 		.4byte	0x2b1
  1193 01de 08       		.byte	0x8
  1194 01df 0E       		.uleb128 0xe
  1195 01e0 6E00     		.ascii	"n\000"
  1196 01e2 01       		.byte	0x1
- 1197 01e3 41       		.byte	0x41
+ 1197 01e3 3E       		.byte	0x3e
  1198 01e4 5D000000 		.4byte	0x5d
  1199 01e8 E9000000 		.4byte	.LLST5
  1200 01ec 0C       		.uleb128 0xc
@@ -1526,9 +1498,12 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1202 01f1 30000000 		.4byte	.LBE9-.LBB9
  1203 01f5 07020000 		.4byte	0x207
  1204 01f9 0E       		.uleb128 0xe
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 26
+
+
  1205 01fa 6900     		.ascii	"i\000"
  1206 01fc 01       		.byte	0x1
- 1207 01fd 42       		.byte	0x42
+ 1207 01fd 3F       		.byte	0x3f
  1208 01fe 5D000000 		.4byte	0x5d
  1209 0202 3F010000 		.4byte	.LLST6
  1210 0206 00       		.byte	0
@@ -1538,7 +1513,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1214 0210 0E       		.uleb128 0xe
  1215 0211 6900     		.ascii	"i\000"
  1216 0213 01       		.byte	0x1
- 1217 0214 48       		.byte	0x48
+ 1217 0214 45       		.byte	0x45
  1218 0215 5D000000 		.4byte	0x5d
  1219 0219 5E010000 		.4byte	.LLST7
  1220 021d 00       		.byte	0
@@ -1549,28 +1524,25 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1225 0228 0D       		.uleb128 0xd
  1226 0229 1A020000 		.4byte	.LASF21
  1227 022d 01       		.byte	0x1
- 1228 022e 54       		.byte	0x54
+ 1228 022e 51       		.byte	0x51
  1229 022f B1020000 		.4byte	0x2b1
  1230 0233 0A       		.byte	0xa
  1231 0234 0D       		.uleb128 0xd
  1232 0235 FB010000 		.4byte	.LASF22
  1233 0239 01       		.byte	0x1
- 1234 023a 55       		.byte	0x55
+ 1234 023a 52       		.byte	0x52
  1235 023b B1020000 		.4byte	0x2b1
  1236 023f 14       		.byte	0x14
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 27
-
-
  1237 0240 0D       		.uleb128 0xd
  1238 0241 46010000 		.4byte	.LASF23
  1239 0245 01       		.byte	0x1
- 1240 0246 55       		.byte	0x55
+ 1240 0246 52       		.byte	0x52
  1241 0247 B1020000 		.4byte	0x2b1
  1242 024b 05       		.byte	0x5
  1243 024c 0E       		.uleb128 0xe
  1244 024d 6E00     		.ascii	"n\000"
  1245 024f 01       		.byte	0x1
- 1246 0250 56       		.byte	0x56
+ 1246 0250 53       		.byte	0x53
  1247 0251 5D000000 		.4byte	0x5d
  1248 0255 71010000 		.4byte	.LLST8
  1249 0259 0C       		.uleb128 0xc
@@ -1580,12 +1552,15 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1253 0266 0E       		.uleb128 0xe
  1254 0267 6900     		.ascii	"i\000"
  1255 0269 01       		.byte	0x1
- 1256 026a 59       		.byte	0x59
+ 1256 026a 56       		.byte	0x56
  1257 026b 5D000000 		.4byte	0x5d
  1258 026f C7010000 		.4byte	.LLST9
  1259 0273 11       		.uleb128 0x11
  1260 0274 80010000 		.4byte	.LVL43
  1261 0278 D2040000 		.4byte	0x4d2
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 27
+
+
  1262 027c 11       		.uleb128 0x11
  1263 027d A4010000 		.4byte	.LVL47
  1264 0281 E7040000 		.4byte	0x4e7
@@ -1596,7 +1571,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1269 028f 0E       		.uleb128 0xe
  1270 0290 6900     		.ascii	"i\000"
  1271 0292 01       		.byte	0x1
- 1272 0293 64       		.byte	0x64
+ 1272 0293 61       		.byte	0x61
  1273 0294 5D000000 		.4byte	0x5d
  1274 0298 E6010000 		.4byte	.LLST10
  1275 029c 11       		.uleb128 0x11
@@ -1613,19 +1588,16 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1286 02b6 13       		.uleb128 0x13
  1287 02b7 0B020000 		.4byte	.LASF45
  1288 02bb 01       		.byte	0x1
- 1289 02bc 7D       		.byte	0x7d
+ 1289 02bc 77       		.byte	0x77
  1290 02bd D2000000 		.4byte	0xd2
  1291 02c1 00000000 		.4byte	.LFB1
  1292 02c5 18000000 		.4byte	.LFE1-.LFB1
  1293 02c9 01       		.uleb128 0x1
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 28
-
-
  1294 02ca 9C       		.byte	0x9c
  1295 02cb 14       		.uleb128 0x14
  1296 02cc C9000000 		.4byte	.LASF24
  1297 02d0 01       		.byte	0x1
- 1298 02d1 87       		.byte	0x87
+ 1298 02d1 7E       		.byte	0x7e
  1299 02d2 D2000000 		.4byte	0xd2
  1300 02d6 00000000 		.4byte	.LFB2
  1301 02da 20000000 		.4byte	.LFE2-.LFB2
@@ -1635,7 +1607,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1305 02e4 15       		.uleb128 0x15
  1306 02e5 7900     		.ascii	"y\000"
  1307 02e7 01       		.byte	0x1
- 1308 02e8 87       		.byte	0x87
+ 1308 02e8 7E       		.byte	0x7e
  1309 02e9 5D000000 		.4byte	0x5d
  1310 02ed 01       		.uleb128 0x1
  1311 02ee 51       		.byte	0x51
@@ -1643,46 +1615,46 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1313 02f0 14       		.uleb128 0x14
  1314 02f1 6B020000 		.4byte	.LASF25
  1315 02f5 01       		.byte	0x1
- 1316 02f6 91       		.byte	0x91
+ 1316 02f6 85       		.byte	0x85
  1317 02f7 D2000000 		.4byte	0xd2
  1318 02fb 00000000 		.4byte	.LFB3
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 28
+
+
  1319 02ff 30000000 		.4byte	.LFE3-.LFB3
  1320 0303 01       		.uleb128 0x1
  1321 0304 9C       		.byte	0x9c
  1322 0305 41030000 		.4byte	0x341
  1323 0309 16       		.uleb128 0x16
- 1324 030a BC020000 		.4byte	.LASF26
+ 1324 030a 78020000 		.4byte	.LASF26
  1325 030e 01       		.byte	0x1
- 1326 030f 91       		.byte	0x91
+ 1326 030f 85       		.byte	0x85
  1327 0310 6B000000 		.4byte	0x6b
  1328 0314 F9010000 		.4byte	.LLST11
  1329 0318 15       		.uleb128 0x15
  1330 0319 7900     		.ascii	"y\000"
  1331 031b 01       		.byte	0x1
- 1332 031c 91       		.byte	0x91
+ 1332 031c 85       		.byte	0x85
  1333 031d 5D000000 		.4byte	0x5d
  1334 0321 01       		.uleb128 0x1
  1335 0322 52       		.byte	0x52
  1336 0323 16       		.uleb128 0x16
  1337 0324 4D010000 		.4byte	.LASF27
  1338 0328 01       		.byte	0x1
- 1339 0329 91       		.byte	0x91
+ 1339 0329 85       		.byte	0x85
  1340 032a 6B000000 		.4byte	0x6b
  1341 032e 1A020000 		.4byte	.LLST12
  1342 0332 0E       		.uleb128 0xe
  1343 0333 747000   		.ascii	"tp\000"
  1344 0336 01       		.byte	0x1
- 1345 0337 92       		.byte	0x92
+ 1345 0337 86       		.byte	0x86
  1346 0338 AD000000 		.4byte	0xad
  1347 033c 3B020000 		.4byte	.LLST13
  1348 0340 00       		.byte	0
  1349 0341 14       		.uleb128 0x14
  1350 0342 57020000 		.4byte	.LASF28
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 29
-
-
  1351 0346 01       		.byte	0x1
- 1352 0347 9C       		.byte	0x9c
+ 1352 0347 8D       		.byte	0x8d
  1353 0348 5D000000 		.4byte	0x5d
  1354 034c 00000000 		.4byte	.LFB4
  1355 0350 74000000 		.4byte	.LFE4-.LFB4
@@ -1692,27 +1664,30 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1359 035a 16       		.uleb128 0x16
  1360 035b 62010000 		.4byte	.LASF29
  1361 035f 01       		.byte	0x1
- 1362 0360 9C       		.byte	0x9c
+ 1362 0360 8D       		.byte	0x8d
  1363 0361 5D000000 		.4byte	0x5d
  1364 0365 4E020000 		.4byte	.LLST14
  1365 0369 17       		.uleb128 0x17
  1366 036a EC000000 		.4byte	.LASF30
  1367 036e 01       		.byte	0x1
- 1368 036f 9C       		.byte	0x9c
+ 1368 036f 8D       		.byte	0x8d
  1369 0370 D9030000 		.4byte	0x3d9
  1370 0374 01       		.uleb128 0x1
  1371 0375 51       		.byte	0x51
  1372 0376 17       		.uleb128 0x17
  1373 0377 AF000000 		.4byte	.LASF31
  1374 037b 01       		.byte	0x1
- 1375 037c 9C       		.byte	0x9c
+ 1375 037c 8D       		.byte	0x8d
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 29
+
+
  1376 037d 09010000 		.4byte	0x109
  1377 0381 01       		.uleb128 0x1
  1378 0382 52       		.byte	0x52
  1379 0383 18       		.uleb128 0x18
  1380 0384 0D000000 		.4byte	.LASF32
  1381 0388 01       		.byte	0x1
- 1382 0389 9E       		.byte	0x9e
+ 1382 0389 8F       		.byte	0x8f
  1383 038a 5D000000 		.4byte	0x5d
  1384 038e 6C020000 		.4byte	.LLST15
  1385 0392 19       		.uleb128 0x19
@@ -1720,7 +1695,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1387 0397 0E       		.uleb128 0xe
  1388 0398 6900     		.ascii	"i\000"
  1389 039a 01       		.byte	0x1
- 1390 039b 9F       		.byte	0x9f
+ 1390 039b 90       		.byte	0x90
  1391 039c 5D000000 		.4byte	0x5d
  1392 03a0 A1020000 		.4byte	.LLST16
  1393 03a4 19       		.uleb128 0x19
@@ -1728,7 +1703,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1395 03a9 0E       		.uleb128 0xe
  1396 03aa 6A00     		.ascii	"j\000"
  1397 03ac 01       		.byte	0x1
- 1398 03ad A1       		.byte	0xa1
+ 1398 03ad 92       		.byte	0x92
  1399 03ae 5D000000 		.4byte	0x5d
  1400 03b2 C0020000 		.4byte	.LLST17
  1401 03b6 19       		.uleb128 0x19
@@ -1736,16 +1711,13 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1403 03bb 0E       		.uleb128 0xe
  1404 03bc 7800     		.ascii	"x\000"
  1405 03be 01       		.byte	0x1
- 1406 03bf A2       		.byte	0xa2
+ 1406 03bf 93       		.byte	0x93
  1407 03c0 5D000000 		.4byte	0x5d
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 30
-
-
  1408 03c4 DE020000 		.4byte	.LLST18
  1409 03c8 0E       		.uleb128 0xe
  1410 03c9 7900     		.ascii	"y\000"
  1411 03cb 01       		.byte	0x1
- 1412 03cc A3       		.byte	0xa3
+ 1412 03cc 94       		.byte	0x94
  1413 03cd 5D000000 		.4byte	0x5d
  1414 03d1 7D030000 		.4byte	.LLST19
  1415 03d5 00       		.byte	0
@@ -1758,7 +1730,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1422 03df 1A       		.uleb128 0x1a
  1423 03e0 31010000 		.4byte	.LASF46
  1424 03e4 01       		.byte	0x1
- 1425 03e5 B8       		.byte	0xb8
+ 1425 03e5 9F       		.byte	0x9f
  1426 03e6 00000000 		.4byte	.LFB5
  1427 03ea BC000000 		.4byte	.LFE5-.LFB5
  1428 03ee 01       		.uleb128 0x1
@@ -1766,14 +1738,17 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1430 03f0 61040000 		.4byte	0x461
  1431 03f4 16       		.uleb128 0x16
  1432 03f5 0D000000 		.4byte	.LASF32
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 30
+
+
  1433 03f9 01       		.byte	0x1
- 1434 03fa B8       		.byte	0xb8
+ 1434 03fa 9F       		.byte	0x9f
  1435 03fb 5D000000 		.4byte	0x5d
  1436 03ff 2A040000 		.4byte	.LLST20
  1437 0403 16       		.uleb128 0x16
  1438 0404 AF000000 		.4byte	.LASF31
  1439 0408 01       		.byte	0x1
- 1440 0409 B8       		.byte	0xb8
+ 1440 0409 9F       		.byte	0x9f
  1441 040a 09010000 		.4byte	0x109
  1442 040e 56040000 		.4byte	.LLST21
  1443 0412 10       		.uleb128 0x10
@@ -1782,7 +1757,7 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1446 041b 0E       		.uleb128 0xe
  1447 041c 6900     		.ascii	"i\000"
  1448 041e 01       		.byte	0x1
- 1449 041f B9       		.byte	0xb9
+ 1449 041f A0       		.byte	0xa0
  1450 0420 5D000000 		.4byte	0x5d
  1451 0424 82040000 		.4byte	.LLST22
  1452 0428 10       		.uleb128 0x10
@@ -1791,22 +1766,19 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1455 0431 18       		.uleb128 0x18
  1456 0432 D6010000 		.4byte	.LASF33
  1457 0436 01       		.byte	0x1
- 1458 0437 BA       		.byte	0xba
+ 1458 0437 A1       		.byte	0xa1
  1459 0438 77000000 		.4byte	0x77
  1460 043c A1040000 		.4byte	.LLST23
  1461 0440 18       		.uleb128 0x18
  1462 0441 DF010000 		.4byte	.LASF34
  1463 0445 01       		.byte	0x1
- 1464 0446 BB       		.byte	0xbb
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 31
-
-
+ 1464 0446 A2       		.byte	0xa2
  1465 0447 77000000 		.4byte	0x77
  1466 044b BF040000 		.4byte	.LLST24
  1467 044f 18       		.uleb128 0x18
  1468 0450 97010000 		.4byte	.LASF35
  1469 0454 01       		.byte	0x1
- 1470 0455 BC       		.byte	0xbc
+ 1470 0455 A3       		.byte	0xa3
  1471 0456 77000000 		.4byte	0x77
  1472 045a DD040000 		.4byte	.LLST25
  1473 045e 00       		.byte	0
@@ -1826,6 +1798,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1487 047a 8B040000 		.4byte	0x48b
  1488 047e 1D       		.uleb128 0x1d
  1489 047f 16010000 		.4byte	0x116
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 31
+
+
  1490 0483 03       		.byte	0x3
  1491 0484 1D       		.uleb128 0x1d
  1492 0485 16010000 		.4byte	0x116
@@ -1855,12 +1830,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1516 04b8 03       		.byte	0x3
  1517 04b9 00040000 		.4byte	sprite_n
  1518 04bd 1F       		.uleb128 0x1f
- 1519 04be C2020000 		.4byte	.LASF38
+ 1519 04be 7E020000 		.4byte	.LASF38
  1520 04c2 04       		.byte	0x4
  1521 04c3 86       		.byte	0x86
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 32
-
-
  1522 04c4 7E000000 		.4byte	0x7e
  1523 04c8 D2040000 		.4byte	0x4d2
  1524 04cc 20       		.uleb128 0x20
@@ -1886,6 +1858,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1544 04f8 00       		.byte	0
  1545              		.section	.debug_abbrev,"",%progbits
  1546              	.Ldebug_abbrev0:
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 32
+
+
  1547 0000 01       		.uleb128 0x1
  1548 0001 11       		.uleb128 0x11
  1549 0002 01       		.byte	0x1
@@ -1918,9 +1893,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1576 001d 00       		.byte	0
  1577 001e 03       		.uleb128 0x3
  1578 001f 24       		.uleb128 0x24
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 33
-
-
  1579 0020 00       		.byte	0
  1580 0021 0B       		.uleb128 0xb
  1581 0022 0B       		.uleb128 0xb
@@ -1946,6 +1918,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1601 0036 05       		.uleb128 0x5
  1602 0037 13       		.uleb128 0x13
  1603 0038 01       		.byte	0x1
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 33
+
+
  1604 0039 03       		.uleb128 0x3
  1605 003a 0E       		.uleb128 0xe
  1606 003b 0B       		.uleb128 0xb
@@ -1978,9 +1953,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1633 0056 01       		.byte	0x1
  1634 0057 03       		.uleb128 0x3
  1635 0058 0E       		.uleb128 0xe
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 34
-
-
  1636 0059 0B       		.uleb128 0xb
  1637 005a 0B       		.uleb128 0xb
  1638 005b 3A       		.uleb128 0x3a
@@ -2006,6 +1978,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1658 006f 03       		.uleb128 0x3
  1659 0070 0E       		.uleb128 0xe
  1660 0071 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 34
+
+
  1661 0072 0B       		.uleb128 0xb
  1662 0073 3B       		.uleb128 0x3b
  1663 0074 0B       		.uleb128 0xb
@@ -2038,9 +2013,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1690 008f 11       		.uleb128 0x11
  1691 0090 01       		.uleb128 0x1
  1692 0091 12       		.uleb128 0x12
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 35
-
-
  1693 0092 06       		.uleb128 0x6
  1694 0093 40       		.uleb128 0x40
  1695 0094 18       		.uleb128 0x18
@@ -2066,6 +2038,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1715 00a9 00       		.byte	0
  1716 00aa 03       		.uleb128 0x3
  1717 00ab 0E       		.uleb128 0xe
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 35
+
+
  1718 00ac 3A       		.uleb128 0x3a
  1719 00ad 0B       		.uleb128 0xb
  1720 00ae 3B       		.uleb128 0x3b
@@ -2098,9 +2073,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1747 00c9 17       		.uleb128 0x17
  1748 00ca 01       		.uleb128 0x1
  1749 00cb 13       		.uleb128 0x13
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 36
-
-
  1750 00cc 00       		.byte	0
  1751 00cd 00       		.byte	0
  1752 00ce 10       		.uleb128 0x10
@@ -2126,6 +2098,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1772 00e4 00       		.byte	0
  1773 00e5 49       		.uleb128 0x49
  1774 00e6 13       		.uleb128 0x13
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 36
+
+
  1775 00e7 00       		.byte	0
  1776 00e8 00       		.byte	0
  1777 00e9 13       		.uleb128 0x13
@@ -2158,9 +2133,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1804 0105 19       		.uleb128 0x19
  1805 0106 03       		.uleb128 0x3
  1806 0107 0E       		.uleb128 0xe
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 37
-
-
  1807 0108 3A       		.uleb128 0x3a
  1808 0109 0B       		.uleb128 0xb
  1809 010a 3B       		.uleb128 0x3b
@@ -2186,6 +2158,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1829 011f 00       		.byte	0
  1830 0120 03       		.uleb128 0x3
  1831 0121 08       		.uleb128 0x8
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 37
+
+
  1832 0122 3A       		.uleb128 0x3a
  1833 0123 0B       		.uleb128 0xb
  1834 0124 3B       		.uleb128 0x3b
@@ -2218,9 +2193,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1861 013f 0E       		.uleb128 0xe
  1862 0140 3A       		.uleb128 0x3a
  1863 0141 0B       		.uleb128 0xb
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 38
-
-
  1864 0142 3B       		.uleb128 0x3b
  1865 0143 0B       		.uleb128 0xb
  1866 0144 49       		.uleb128 0x49
@@ -2246,6 +2218,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1886 0158 00       		.byte	0
  1887 0159 19       		.uleb128 0x19
  1888 015a 0B       		.uleb128 0xb
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 38
+
+
  1889 015b 01       		.byte	0x1
  1890 015c 55       		.uleb128 0x55
  1891 015d 17       		.uleb128 0x17
@@ -2278,9 +2253,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1918 0179 00       		.byte	0
  1919 017a 1B       		.uleb128 0x1b
  1920 017b 34       		.uleb128 0x34
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 39
-
-
  1921 017c 00       		.byte	0
  1922 017d 03       		.uleb128 0x3
  1923 017e 08       		.uleb128 0x8
@@ -2306,6 +2278,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1943 0192 1D       		.uleb128 0x1d
  1944 0193 21       		.uleb128 0x21
  1945 0194 00       		.byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 39
+
+
  1946 0195 49       		.uleb128 0x49
  1947 0196 13       		.uleb128 0x13
  1948 0197 2F       		.uleb128 0x2f
@@ -2338,9 +2313,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  1975 01b2 0B       		.uleb128 0xb
  1976 01b3 3B       		.uleb128 0x3b
  1977 01b4 0B       		.uleb128 0xb
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 40
-
-
  1978 01b5 27       		.uleb128 0x27
  1979 01b6 19       		.uleb128 0x19
  1980 01b7 49       		.uleb128 0x49
@@ -2366,6 +2338,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2000 01cb 03       		.uleb128 0x3
  2001 01cc 08       		.uleb128 0x8
  2002 01cd 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 40
+
+
  2003 01ce 0B       		.uleb128 0xb
  2004 01cf 3B       		.uleb128 0x3b
  2005 01d0 0B       		.uleb128 0xb
@@ -2398,9 +2373,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2032 01eb 19       		.uleb128 0x19
  2033 01ec 00       		.byte	0
  2034 01ed 00       		.byte	0
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 41
-
-
  2035 01ee 00       		.byte	0
  2036              		.section	.debug_loc,"",%progbits
  2037              	.Ldebug_loc0:
@@ -2426,6 +2398,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2057 0031 5E000000 		.4byte	.LVL8
  2058 0035 0100     		.2byte	0x1
  2059 0037 50       		.byte	0x50
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 41
+
+
  2060 0038 5E000000 		.4byte	.LVL8
  2061 003c 68000000 		.4byte	.LVL10
  2062 0040 0100     		.2byte	0x1
@@ -2458,9 +2433,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2089 0089 00000000 		.4byte	0
  2090 008d 00000000 		.4byte	0
  2091              	.LLST1:
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 42
-
-
  2092 0091 04000000 		.4byte	.LVL0
  2093 0095 0A000000 		.4byte	.LVL1
  2094 0099 0200     		.2byte	0x2
@@ -2486,6 +2458,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2114 00cd 53       		.byte	0x53
  2115 00ce 00000000 		.4byte	0
  2116 00d2 00000000 		.4byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 42
+
+
  2117              	.LLST4:
  2118 00d6 94000000 		.4byte	.LVL13
  2119 00da 60010000 		.4byte	.LVL37
@@ -2518,9 +2493,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2146 0121 44010000 		.4byte	.LVL33
  2147 0125 4A010000 		.4byte	.LVL34
  2148 0129 0100     		.2byte	0x1
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 43
-
-
  2149 012b 53       		.byte	0x53
  2150 012c 4A010000 		.4byte	.LVL34
  2151 0130 62010000 		.4byte	.LVL38
@@ -2546,6 +2518,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2171 0166 0100     		.2byte	0x1
  2172 0168 52       		.byte	0x52
  2173 0169 00000000 		.4byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 43
+
+
  2174 016d 00000000 		.4byte	0
  2175              	.LLST8:
  2176 0171 5E010000 		.4byte	.LVL36
@@ -2578,9 +2553,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2203 01bc 0100     		.2byte	0x1
  2204 01be 52       		.byte	0x52
  2205 01bf 00000000 		.4byte	0
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 44
-
-
  2206 01c3 00000000 		.4byte	0
  2207              	.LLST9:
  2208 01c7 5E010000 		.4byte	.LVL36
@@ -2606,6 +2578,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2228 01fd 18000000 		.4byte	.LVL86
  2229 0201 0100     		.2byte	0x1
  2230 0203 51       		.byte	0x51
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 44
+
+
  2231 0204 18000000 		.4byte	.LVL86
  2232 0208 30000000 		.4byte	.LFE3
  2233 020c 0400     		.2byte	0x4
@@ -2638,9 +2613,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2260 024a 00000000 		.4byte	0
  2261              	.LLST14:
  2262 024e 00000000 		.4byte	.LVL88
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 45
-
-
  2263 0252 0C000000 		.4byte	.LVL90
  2264 0256 0100     		.2byte	0x1
  2265 0258 50       		.byte	0x50
@@ -2666,6 +2638,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2285 028d 56       		.byte	0x56
  2286 028e 5A000000 		.4byte	.LVL108
  2287 0292 74000000 		.4byte	.LFE4
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 45
+
+
  2288 0296 0100     		.2byte	0x1
  2289 0298 50       		.byte	0x50
  2290 0299 00000000 		.4byte	0
@@ -2698,9 +2673,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2317 02e2 2C000000 		.4byte	.LVL95
  2318 02e6 0600     		.2byte	0x6
  2319 02e8 74       		.byte	0x74
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 46
-
-
  2320 02e9 00       		.sleb128 0
  2321 02ea 77       		.byte	0x77
  2322 02eb 00       		.sleb128 0
@@ -2726,6 +2698,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2342 030d 22       		.byte	0x22
  2343 030e 23       		.byte	0x23
  2344 030f 0C       		.uleb128 0xc
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 46
+
+
  2345 0310 06       		.byte	0x6
  2346 0311 22       		.byte	0x22
  2347 0312 94       		.byte	0x94
@@ -2758,9 +2733,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2374 033b 23       		.byte	0x23
  2375 033c 0C       		.uleb128 0xc
  2376 033d 06       		.byte	0x6
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 47
-
-
  2377 033e 22       		.byte	0x22
  2378 033f 94       		.byte	0x94
  2379 0340 01       		.byte	0x1
@@ -2786,6 +2758,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2399 0362 00       		.sleb128 0
  2400 0363 34       		.byte	0x34
  2401 0364 24       		.byte	0x24
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 47
+
+
  2402 0365 71       		.byte	0x71
  2403 0366 00       		.sleb128 0
  2404 0367 22       		.byte	0x22
@@ -2818,9 +2793,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2431 0395 24       		.byte	0x24
  2432 0396 7E       		.byte	0x7e
  2433 0397 00       		.sleb128 0
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 48
-
-
  2434 0398 34       		.byte	0x34
  2435 0399 24       		.byte	0x24
  2436 039a 71       		.byte	0x71
@@ -2846,6 +2818,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2456 03ae 22       		.byte	0x22
  2457 03af 23       		.byte	0x23
  2458 03b0 08       		.uleb128 0x8
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 48
+
+
  2459 03b1 06       		.byte	0x6
  2460 03b2 22       		.byte	0x22
  2461 03b3 9F       		.byte	0x9f
@@ -2878,9 +2853,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2488 03dc 08       		.byte	0x8
  2489 03dd FF       		.byte	0xff
  2490 03de 1A       		.byte	0x1a
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 49
-
-
  2491 03df 7E       		.byte	0x7e
  2492 03e0 00       		.sleb128 0
  2493 03e1 34       		.byte	0x34
@@ -2906,6 +2878,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2513 0403 24       		.byte	0x24
  2514 0404 7E       		.byte	0x7e
  2515 0405 00       		.sleb128 0
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 49
+
+
  2516 0406 34       		.byte	0x34
  2517 0407 24       		.byte	0x24
  2518 0408 71       		.byte	0x71
@@ -2938,9 +2913,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2545 0426 00000000 		.4byte	0
  2546              	.LLST20:
  2547 042a 00000000 		.4byte	.LVL111
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 50
-
-
  2548 042e 0E000000 		.4byte	.LVL113
  2549 0432 0100     		.2byte	0x1
  2550 0434 50       		.byte	0x50
@@ -2966,6 +2938,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2570 0465 A0000000 		.4byte	.LVL135
  2571 0469 0100     		.2byte	0x1
  2572 046b 55       		.byte	0x55
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 50
+
+
  2573 046c A0000000 		.4byte	.LVL135
  2574 0470 BC000000 		.4byte	.LFE5
  2575 0474 0400     		.2byte	0x4
@@ -2998,9 +2973,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2602 04b6 5B       		.byte	0x5b
  2603 04b7 00000000 		.4byte	0
  2604 04bb 00000000 		.4byte	0
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 51
-
-
  2605              	.LLST24:
  2606 04bf 58000000 		.4byte	.LVL123
  2607 04c3 5A000000 		.4byte	.LVL124
@@ -3026,6 +2998,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2627              		.section	.debug_aranges,"",%progbits
  2628 0000 44000000 		.4byte	0x44
  2629 0004 0200     		.2byte	0x2
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 51
+
+
  2630 0006 00000000 		.4byte	.Ldebug_info0
  2631 000a 04       		.byte	0x4
  2632 000b 00       		.byte	0
@@ -3058,9 +3033,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2659 0020 0C000000 		.4byte	.LBB19
  2660 0024 70000000 		.4byte	.LBE19
  2661 0028 00000000 		.4byte	0
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 52
-
-
  2662 002c 00000000 		.4byte	0
  2663 0030 0E000000 		.4byte	.LBB15
  2664 0034 5A000000 		.4byte	.LBE15
@@ -3086,6 +3058,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2684 0084 74000000 		.4byte	.LFE4
  2685 0088 00000000 		.4byte	.LFB5
  2686 008c BC000000 		.4byte	.LFE5
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 52
+
+
  2687 0090 00000000 		.4byte	0
  2688 0094 00000000 		.4byte	0
  2689              		.section	.debug_line,"",%progbits
@@ -3118,9 +3093,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2699 007c 67202D73 		.ascii	"g -std=gnu11 -ffunction-sections -ffat-lto-objects\000"
  2699      74643D67 
  2699      6E753131 
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 53
-
-
  2699      202D6666 
  2699      756E6374 
  2700              	.LASF31:
@@ -3146,6 +3118,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2709 00e3 76657274 		.ascii	"vertices\000"
  2709      69636573 
  2709      00
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 53
+
+
  2710              	.LASF30:
  2711 00ec 73707269 		.ascii	"sprites\000"
  2711      74657300 
@@ -3178,9 +3153,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2725      6F5F746F 
  2725      5F706572 
  2725      73706563 
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 54
-
-
  2725      74697665 
  2726              	.LASF23:
  2727 0146 68656967 		.ascii	"height\000"
@@ -3206,6 +3178,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2737      732E6300 
  2738              	.LASF43:
  2739 017f 53707269 		.ascii	"SpriteType\000"
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 54
+
+
  2739      74655479 
  2739      706500
  2740              	.LASF8:
@@ -3238,9 +3213,6 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2753 01d6 7363616C 		.ascii	"scaled_x\000"
  2753      65645F78 
  2753      00
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 55
-
-
  2754              	.LASF34:
  2755 01df 7363616C 		.ascii	"scaled_y\000"
  2755      65645F79 
@@ -3266,6 +3238,9 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2765      74626F61 
  2765      726400
  2766              	.LASF21:
+ARM GAS  C:\Users\User\AppData\Local\Temp\cckxID0h.s 			page 55
+
+
  2767 021a 7265736F 		.ascii	"resolution\000"
  2767      6C757469 
  2767      6F6E00
@@ -3298,25 +3273,22 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 1
  2781 026b 6D616B65 		.ascii	"make_ellipse\000"
  2781      5F656C6C 
  2781      69707365 
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccYePPc8.s 			page 56
-
-
  2781      00
- 2782              	.LASF41:
- 2783 0278 433A5C55 		.ascii	"C:\\Users\\student\\Desktop\\finalproject\\finalpro"
- 2783      73657273 
- 2783      5C737475 
- 2783      64656E74 
- 2783      5C446573 
- 2784 02a6 6A656374 		.ascii	"ject\\GuitarHero.cydsn\000"
- 2784      5C477569 
- 2784      74617248 
- 2784      65726F2E 
- 2784      63796473 
- 2785              	.LASF26:
- 2786 02bc 74726163 		.ascii	"track\000"
- 2786      6B00
- 2787              	.LASF38:
- 2788 02c2 73717274 		.ascii	"sqrt\000"
- 2788      00
+ 2782              	.LASF26:
+ 2783 0278 74726163 		.ascii	"track\000"
+ 2783      6B00
+ 2784              	.LASF38:
+ 2785 027e 73717274 		.ascii	"sqrt\000"
+ 2785      00
+ 2786              	.LASF41:
+ 2787 0283 433A5C55 		.ascii	"C:\\Users\\User\\Documents\\MIT 6.115\\finalproject"
+ 2787      73657273 
+ 2787      5C557365 
+ 2787      725C446F 
+ 2787      63756D65 
+ 2788 02b1 5C66696E 		.ascii	"\\finalproject\\GuitarHero.cydsn\000"
+ 2788      616C7072 
+ 2788      6F6A6563 
+ 2788      745C4775 
+ 2788      69746172 
  2789              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

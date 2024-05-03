@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\student\AppData\Local\Temp\ccK0MUSY.s 			page 1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
 
 
    1              		.syntax unified
@@ -18,41 +18,2752 @@ ARM GAS  C:\Users\student\AppData\Local\Temp\ccK0MUSY.s 			page 1
   15              		.text
   16              	.Ltext0:
   17              		.cfi_sections	.debug_frame
-  18              	.Letext0:
-  19              		.section	.debug_line,"",%progbits
-  20              	.Ldebug_line0:
-  21              		.section	.debug_str,"MS",%progbits,1
-  22              	.LASF0:
-  23 0000 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
-  23      4320342E 
-  23      392E3320 
-  23      32303135 
-  23      30333033 
-  24 0033 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
-  24      20726576 
-  24      6973696F 
-  24      6E203232 
-  24      31323230 
-  25 0066 67202D73 		.ascii	"g -std=gnu11 -ffunction-sections -ffat-lto-objects\000"
-  25      74643D67 
-  25      6E753131 
-  25      202D6666 
-  25      756E6374 
-  26              	.LASF1:
-  27 0099 2E5C6761 		.ascii	".\\game_manager.c\000"
-  27      6D655F6D 
-  27      616E6167 
-  27      65722E63 
-  27      00
-  28              	.LASF2:
-  29 00aa 433A5C55 		.ascii	"C:\\Users\\student\\Desktop\\finalproject\\finalpro"
-  29      73657273 
-  29      5C737475 
-  29      64656E74 
-  29      5C446573 
-  30 00d8 6A656374 		.ascii	"ject\\GuitarHero.cydsn\000"
-  30      5C477569 
-  30      74617248 
-  30      65726F2E 
-  30      63796473 
-  31              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+  18              		.global	__aeabi_fsub
+  19              		.global	__aeabi_fmul
+  20              		.global	__aeabi_fdiv
+  21              		.global	__aeabi_f2iz
+  22              		.section	.text.obj_pos,"ax",%progbits
+  23              		.align	2
+  24              		.thumb
+  25              		.thumb_func
+  26              		.type	obj_pos, %function
+  27              	obj_pos:
+  28              	.LFB1:
+  29              		.file 1 ".\\game_manager.c"
+   1:.\game_manager.c **** /* ========================================
+   2:.\game_manager.c ****  *
+   3:.\game_manager.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\game_manager.c ****  * All Rights Reserved
+   5:.\game_manager.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\game_manager.c ****  *
+   7:.\game_manager.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\game_manager.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\game_manager.c ****  *
+  10:.\game_manager.c ****  * ========================================
+  11:.\game_manager.c **** */
+  12:.\game_manager.c **** 
+  13:.\game_manager.c **** #include <game_manager.h>
+  14:.\game_manager.c **** 
+  15:.\game_manager.c **** static struct Note notes[1000];
+  16:.\game_manager.c **** static float barlines[1000];
+  17:.\game_manager.c **** 
+  18:.\game_manager.c **** struct GameState new_game() {
+  19:.\game_manager.c ****     // Approximates the Tetris theme w/o audio
+  20:.\game_manager.c ****     notes[0] = (struct Note) { .track = 4, .time = 2, .played = 0 };
+  21:.\game_manager.c ****     notes[1] = (struct Note) { .track = 1, .time = 2.5, .played = 0 };
+  22:.\game_manager.c ****     notes[2] = (struct Note) { .track = 2, .time = 2.75, .played = 0 };
+  23:.\game_manager.c ****     notes[3] = (struct Note) { .track = 3, .time = 3, .played = 0 };
+  24:.\game_manager.c ****     notes[4] = (struct Note) { .track = 2, .time = 3.5, .played = 0 };
+  25:.\game_manager.c ****     notes[5] = (struct Note) { .track = 1, .time = 3.75, .played = 0 };
+  26:.\game_manager.c ****     notes[6] = (struct Note) { .track = 0, .time = 4, .played = 0 };
+  27:.\game_manager.c ****     notes[7] = (struct Note) { .track = 0, .time = 4.5, .played = 0 };
+  28:.\game_manager.c ****     notes[8] = (struct Note) { .track = 2, .time = 4.75, .played = 0 };
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 2
+
+
+  29:.\game_manager.c ****     notes[9] = (struct Note) { .track = 4, .time = 5, .played = 0 };
+  30:.\game_manager.c ****     notes[10] = (struct Note) { .track = 3, .time = 5.5, .played = 0 };
+  31:.\game_manager.c ****     notes[11] = (struct Note) { .track = 2, .time = 5.75, .played = 0 };
+  32:.\game_manager.c ****     notes[12] = (struct Note) { .track = 1, .time = 6, .played = 0 };
+  33:.\game_manager.c ****     notes[13] = (struct Note) { .track = 2, .time = 6.75, .played = 0 };
+  34:.\game_manager.c ****     notes[14] = (struct Note) { .track = 3, .time = 7, .played = 0 };
+  35:.\game_manager.c ****     notes[15] = (struct Note) { .track = 4, .time = 7.5, .played = 0 };
+  36:.\game_manager.c ****     notes[16] = (struct Note) { .track = 2, .time = 8, .played = 0 };
+  37:.\game_manager.c ****     notes[17] = (struct Note) { .track = 0, .time = 8.5, .played = 0 };
+  38:.\game_manager.c ****     notes[18] = (struct Note) { .track = 0, .time = 9, .played = 0 };
+  39:.\game_manager.c ****     
+  40:.\game_manager.c ****     for (int i = 0; i < 9; i++)
+  41:.\game_manager.c ****         barlines[i] = i + 2;
+  42:.\game_manager.c ****     
+  43:.\game_manager.c ****     return (struct GameState) {
+  44:.\game_manager.c ****         .song = (struct Song) { .tempo = 120, .duration = 12 },
+  45:.\game_manager.c ****         .time = 0,
+  46:.\game_manager.c ****         .score = 0,
+  47:.\game_manager.c ****         .n_notes = 19,
+  48:.\game_manager.c ****         .notes = notes,
+  49:.\game_manager.c ****         .notes_window = {0, 0},
+  50:.\game_manager.c ****         .n_barlines = 9,
+  51:.\game_manager.c ****         .barlines = barlines,
+  52:.\game_manager.c ****         .barlines_window = {0, 0}
+  53:.\game_manager.c ****     };
+  54:.\game_manager.c **** }
+  55:.\game_manager.c **** 
+  56:.\game_manager.c **** static int obj_pos(struct GameState *state, float obj_time) {
+  30              		.loc 1 56 0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              	.LVL0:
+  35 0000 10B5     		push	{r4, lr}
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 4, -8
+  38              		.cfi_offset 14, -4
+  39 0002 0446     		mov	r4, r0
+  57:.\game_manager.c ****     return (int)((256 / 2) * 60 * (obj_time - state->time) / state->song.tempo) + 5;
+  40              		.loc 1 57 0
+  41 0004 0846     		mov	r0, r1
+  42              	.LVL1:
+  43 0006 A168     		ldr	r1, [r4, #8]	@ float
+  44              	.LVL2:
+  45 0008 FFF7FEFF 		bl	__aeabi_fsub
+  46              	.LVL3:
+  47 000c 0449     		ldr	r1, .L3
+  48 000e FFF7FEFF 		bl	__aeabi_fmul
+  49              	.LVL4:
+  50 0012 2168     		ldr	r1, [r4]	@ float
+  51 0014 FFF7FEFF 		bl	__aeabi_fdiv
+  52              	.LVL5:
+  53 0018 FFF7FEFF 		bl	__aeabi_f2iz
+  54              	.LVL6:
+  58:.\game_manager.c **** }
+  55              		.loc 1 58 0
+  56 001c 0530     		adds	r0, r0, #5
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 3
+
+
+  57 001e 10BD     		pop	{r4, pc}
+  58              	.LVL7:
+  59              	.L4:
+  60              		.align	2
+  61              	.L3:
+  62 0020 0000F045 		.word	1173356544
+  63              		.cfi_endproc
+  64              	.LFE1:
+  65              		.size	obj_pos, .-obj_pos
+  66              		.global	__aeabi_i2f
+  67              		.section	.text.new_game,"ax",%progbits
+  68              		.align	2
+  69              		.global	new_game
+  70              		.thumb
+  71              		.thumb_func
+  72              		.type	new_game, %function
+  73              	new_game:
+  74              	.LFB0:
+  18:.\game_manager.c ****     // Approximates the Tetris theme w/o audio
+  75              		.loc 1 18 0
+  76              		.cfi_startproc
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79              	.LVL8:
+  80 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  81              		.cfi_def_cfa_offset 24
+  82              		.cfi_offset 3, -24
+  83              		.cfi_offset 4, -20
+  84              		.cfi_offset 5, -16
+  85              		.cfi_offset 6, -12
+  86              		.cfi_offset 7, -8
+  87              		.cfi_offset 14, -4
+  88 0002 0646     		mov	r6, r0
+  20:.\game_manager.c ****     notes[1] = (struct Note) { .track = 1, .time = 2.5, .played = 0 };
+  89              		.loc 1 20 0
+  90 0004 524B     		ldr	r3, .L9
+  91 0006 534D     		ldr	r5, .L9+4
+  92 0008 95E80700 		ldmia	r5, {r0, r1, r2}
+  93              	.LVL9:
+  94 000c 83E80700 		stmia	r3, {r0, r1, r2}
+  21:.\game_manager.c ****     notes[2] = (struct Note) { .track = 2, .time = 2.75, .played = 0 };
+  95              		.loc 1 21 0
+  96 0010 03F10C04 		add	r4, r3, #12
+  97 0014 05F10C02 		add	r2, r5, #12
+  98 0018 07CA     		ldmia	r2, {r0, r1, r2}
+  99 001a 84E80700 		stmia	r4, {r0, r1, r2}
+  22:.\game_manager.c ****     notes[3] = (struct Note) { .track = 3, .time = 3, .played = 0 };
+ 100              		.loc 1 22 0
+ 101 001e 03F11804 		add	r4, r3, #24
+ 102 0022 05F11802 		add	r2, r5, #24
+ 103 0026 07CA     		ldmia	r2, {r0, r1, r2}
+ 104 0028 84E80700 		stmia	r4, {r0, r1, r2}
+  23:.\game_manager.c ****     notes[4] = (struct Note) { .track = 2, .time = 3.5, .played = 0 };
+ 105              		.loc 1 23 0
+ 106 002c 03F12404 		add	r4, r3, #36
+ 107 0030 05F12402 		add	r2, r5, #36
+ 108 0034 07CA     		ldmia	r2, {r0, r1, r2}
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 4
+
+
+ 109 0036 84E80700 		stmia	r4, {r0, r1, r2}
+  24:.\game_manager.c ****     notes[5] = (struct Note) { .track = 1, .time = 3.75, .played = 0 };
+ 110              		.loc 1 24 0
+ 111 003a 03F13004 		add	r4, r3, #48
+ 112 003e 05F13002 		add	r2, r5, #48
+ 113 0042 07CA     		ldmia	r2, {r0, r1, r2}
+ 114 0044 84E80700 		stmia	r4, {r0, r1, r2}
+  25:.\game_manager.c ****     notes[6] = (struct Note) { .track = 0, .time = 4, .played = 0 };
+ 115              		.loc 1 25 0
+ 116 0048 03F13C04 		add	r4, r3, #60
+ 117 004c 05F13C02 		add	r2, r5, #60
+ 118 0050 07CA     		ldmia	r2, {r0, r1, r2}
+ 119 0052 84E80700 		stmia	r4, {r0, r1, r2}
+  26:.\game_manager.c ****     notes[7] = (struct Note) { .track = 0, .time = 4.5, .played = 0 };
+ 120              		.loc 1 26 0
+ 121 0056 0024     		movs	r4, #0
+ 122 0058 83F84840 		strb	r4, [r3, #72]
+ 123 005c 4FF08142 		mov	r2, #1082130432
+ 124 0060 DA64     		str	r2, [r3, #76]	@ float
+ 125 0062 83F85040 		strb	r4, [r3, #80]
+  27:.\game_manager.c ****     notes[8] = (struct Note) { .track = 2, .time = 4.75, .played = 0 };
+ 126              		.loc 1 27 0
+ 127 0066 83F85440 		strb	r4, [r3, #84]
+ 128 006a 3B4A     		ldr	r2, .L9+8
+ 129 006c 9A65     		str	r2, [r3, #88]	@ float
+ 130 006e 83F85C40 		strb	r4, [r3, #92]
+  28:.\game_manager.c ****     notes[9] = (struct Note) { .track = 4, .time = 5, .played = 0 };
+ 131              		.loc 1 28 0
+ 132 0072 03F16007 		add	r7, r3, #96
+ 133 0076 05F14802 		add	r2, r5, #72
+ 134 007a 07CA     		ldmia	r2, {r0, r1, r2}
+ 135 007c 87E80700 		stmia	r7, {r0, r1, r2}
+  29:.\game_manager.c ****     notes[10] = (struct Note) { .track = 3, .time = 5.5, .played = 0 };
+ 136              		.loc 1 29 0
+ 137 0080 03F16C07 		add	r7, r3, #108
+ 138 0084 05F15402 		add	r2, r5, #84
+ 139 0088 07CA     		ldmia	r2, {r0, r1, r2}
+ 140 008a 87E80700 		stmia	r7, {r0, r1, r2}
+  30:.\game_manager.c ****     notes[11] = (struct Note) { .track = 2, .time = 5.75, .played = 0 };
+ 141              		.loc 1 30 0
+ 142 008e 03F17807 		add	r7, r3, #120
+ 143 0092 05F16002 		add	r2, r5, #96
+ 144 0096 07CA     		ldmia	r2, {r0, r1, r2}
+ 145 0098 87E80700 		stmia	r7, {r0, r1, r2}
+  31:.\game_manager.c ****     notes[12] = (struct Note) { .track = 1, .time = 6, .played = 0 };
+ 146              		.loc 1 31 0
+ 147 009c 03F18407 		add	r7, r3, #132
+ 148 00a0 05F16C02 		add	r2, r5, #108
+ 149 00a4 07CA     		ldmia	r2, {r0, r1, r2}
+ 150 00a6 87E80700 		stmia	r7, {r0, r1, r2}
+  32:.\game_manager.c ****     notes[13] = (struct Note) { .track = 2, .time = 6.75, .played = 0 };
+ 151              		.loc 1 32 0
+ 152 00aa 03F19007 		add	r7, r3, #144
+ 153 00ae 05F17802 		add	r2, r5, #120
+ 154 00b2 07CA     		ldmia	r2, {r0, r1, r2}
+ 155 00b4 87E80700 		stmia	r7, {r0, r1, r2}
+  33:.\game_manager.c ****     notes[14] = (struct Note) { .track = 3, .time = 7, .played = 0 };
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 5
+
+
+ 156              		.loc 1 33 0
+ 157 00b8 03F19C07 		add	r7, r3, #156
+ 158 00bc 05F18402 		add	r2, r5, #132
+ 159 00c0 07CA     		ldmia	r2, {r0, r1, r2}
+ 160 00c2 87E80700 		stmia	r7, {r0, r1, r2}
+  34:.\game_manager.c ****     notes[15] = (struct Note) { .track = 4, .time = 7.5, .played = 0 };
+ 161              		.loc 1 34 0
+ 162 00c6 03F1A807 		add	r7, r3, #168
+ 163 00ca 05F19002 		add	r2, r5, #144
+ 164 00ce 07CA     		ldmia	r2, {r0, r1, r2}
+ 165 00d0 87E80700 		stmia	r7, {r0, r1, r2}
+  35:.\game_manager.c ****     notes[16] = (struct Note) { .track = 2, .time = 8, .played = 0 };
+ 166              		.loc 1 35 0
+ 167 00d4 03F1B407 		add	r7, r3, #180
+ 168 00d8 05F19C02 		add	r2, r5, #156
+ 169 00dc 07CA     		ldmia	r2, {r0, r1, r2}
+ 170 00de 87E80700 		stmia	r7, {r0, r1, r2}
+  36:.\game_manager.c ****     notes[17] = (struct Note) { .track = 0, .time = 8.5, .played = 0 };
+ 171              		.loc 1 36 0
+ 172 00e2 03F1C007 		add	r7, r3, #192
+ 173 00e6 A835     		adds	r5, r5, #168
+ 174 00e8 95E80700 		ldmia	r5, {r0, r1, r2}
+ 175 00ec 87E80700 		stmia	r7, {r0, r1, r2}
+  37:.\game_manager.c ****     notes[18] = (struct Note) { .track = 0, .time = 9, .played = 0 };
+ 176              		.loc 1 37 0
+ 177 00f0 83F8CC40 		strb	r4, [r3, #204]
+ 178 00f4 194A     		ldr	r2, .L9+12
+ 179 00f6 C3F8D020 		str	r2, [r3, #208]	@ float
+ 180 00fa 83F8D440 		strb	r4, [r3, #212]
+  38:.\game_manager.c ****     
+ 181              		.loc 1 38 0
+ 182 00fe 83F8D840 		strb	r4, [r3, #216]
+ 183 0102 174A     		ldr	r2, .L9+16
+ 184 0104 C3F8DC20 		str	r2, [r3, #220]	@ float
+ 185 0108 83F8E040 		strb	r4, [r3, #224]
+ 186              	.LVL10:
+ 187              	.LBB2:
+  40:.\game_manager.c ****         barlines[i] = i + 2;
+ 188              		.loc 1 40 0
+ 189 010c 08E0     		b	.L6
+ 190              	.LVL11:
+ 191              	.L7:
+  41:.\game_manager.c ****     
+ 192              		.loc 1 41 0 discriminator 3
+ 193 010e 154D     		ldr	r5, .L9+20
+ 194 0110 05EB8405 		add	r5, r5, r4, lsl #2
+ 195 0114 A01C     		adds	r0, r4, #2
+ 196 0116 FFF7FEFF 		bl	__aeabi_i2f
+ 197              	.LVL12:
+ 198 011a C5F8F00C 		str	r0, [r5, #3312]	@ float
+  40:.\game_manager.c ****         barlines[i] = i + 2;
+ 199              		.loc 1 40 0 discriminator 3
+ 200 011e 0134     		adds	r4, r4, #1
+ 201              	.LVL13:
+ 202              	.L6:
+  40:.\game_manager.c ****         barlines[i] = i + 2;
+ 203              		.loc 1 40 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 6
+
+
+ 204 0120 082C     		cmp	r4, #8
+ 205 0122 F4DD     		ble	.L7
+ 206              	.LBE2:
+  43:.\game_manager.c ****         .song = (struct Song) { .tempo = 120, .duration = 12 },
+ 207              		.loc 1 43 0 is_stmt 1
+ 208 0124 104B     		ldr	r3, .L9+24
+ 209 0126 3360     		str	r3, [r6]	@ float
+ 210 0128 104B     		ldr	r3, .L9+28
+ 211 012a 7360     		str	r3, [r6, #4]	@ float
+ 212 012c 0023     		movs	r3, #0
+ 213 012e B360     		str	r3, [r6, #8]	@ float
+ 214 0130 0023     		movs	r3, #0
+ 215 0132 F360     		str	r3, [r6, #12]
+ 216 0134 1322     		movs	r2, #19
+ 217 0136 3261     		str	r2, [r6, #16]
+ 218 0138 054A     		ldr	r2, .L9
+ 219 013a 7261     		str	r2, [r6, #20]
+ 220 013c 0922     		movs	r2, #9
+ 221 013e B261     		str	r2, [r6, #24]
+ 222 0140 0B4A     		ldr	r2, .L9+32
+ 223 0142 F261     		str	r2, [r6, #28]
+ 224 0144 3362     		str	r3, [r6, #32]
+ 225 0146 7362     		str	r3, [r6, #36]
+ 226 0148 B362     		str	r3, [r6, #40]
+ 227 014a F362     		str	r3, [r6, #44]
+  54:.\game_manager.c **** 
+ 228              		.loc 1 54 0
+ 229 014c 3046     		mov	r0, r6
+ 230 014e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 231              	.LVL14:
+ 232              	.L10:
+ 233              		.align	2
+ 234              	.L9:
+ 235 0150 00000000 		.word	.LANCHOR0
+ 236 0154 00000000 		.word	.LANCHOR1
+ 237 0158 00009040 		.word	1083179008
+ 238 015c 00000841 		.word	1091043328
+ 239 0160 00001041 		.word	1091567616
+ 240 0164 F0210000 		.word	.LANCHOR2
+ 241 0168 0000F042 		.word	1123024896
+ 242 016c 00004041 		.word	1094713344
+ 243 0170 E02E0000 		.word	.LANCHOR2+3312
+ 244              		.cfi_endproc
+ 245              	.LFE0:
+ 246              		.size	new_game, .-new_game
+ 247              		.global	__aeabi_fcmpgt
+ 248              		.global	__aeabi_f2d
+ 249              		.global	__aeabi_dadd
+ 250              		.global	__aeabi_d2f
+ 251              		.section	.text.tick,"ax",%progbits
+ 252              		.align	2
+ 253              		.global	tick
+ 254              		.thumb
+ 255              		.thumb_func
+ 256              		.type	tick, %function
+ 257              	tick:
+ 258              	.LFB2:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 7
+
+
+  59:.\game_manager.c **** 
+  60:.\game_manager.c **** void tick(struct GameState *state) {
+ 259              		.loc 1 60 0
+ 260              		.cfi_startproc
+ 261              		@ args = 0, pretend = 0, frame = 0
+ 262              		@ frame_needed = 0, uses_anonymous_args = 0
+ 263              	.LVL15:
+ 264 0000 70B5     		push	{r4, r5, r6, lr}
+ 265              		.cfi_def_cfa_offset 16
+ 266              		.cfi_offset 4, -16
+ 267              		.cfi_offset 5, -12
+ 268              		.cfi_offset 6, -8
+ 269              		.cfi_offset 14, -4
+ 270 0002 0446     		mov	r4, r0
+  61:.\game_manager.c ****     if (state->time > state->song.duration) return;
+ 271              		.loc 1 61 0
+ 272 0004 8568     		ldr	r5, [r0, #8]	@ float
+ 273 0006 2846     		mov	r0, r5
+ 274              	.LVL16:
+ 275 0008 6168     		ldr	r1, [r4, #4]	@ float
+ 276 000a FFF7FEFF 		bl	__aeabi_fcmpgt
+ 277              	.LVL17:
+ 278 000e 0028     		cmp	r0, #0
+ 279 0010 4DD1     		bne	.L11
+  62:.\game_manager.c ****     state->time += 0.05;
+ 280              		.loc 1 62 0
+ 281 0012 2846     		mov	r0, r5
+ 282 0014 FFF7FEFF 		bl	__aeabi_f2d
+ 283              	.LVL18:
+ 284 0018 25A3     		adr	r3, .L22
+ 285 001a D3E90023 		ldrd	r2, [r3]
+ 286 001e FFF7FEFF 		bl	__aeabi_dadd
+ 287              	.LVL19:
+ 288 0022 FFF7FEFF 		bl	__aeabi_d2f
+ 289              	.LVL20:
+ 290 0026 A060     		str	r0, [r4, #8]	@ float
+  63:.\game_manager.c ****     // Update sliding windows
+  64:.\game_manager.c ****     while (state->notes_window.r < state->n_notes) {
+ 291              		.loc 1 64 0
+ 292 0028 0CE0     		b	.L13
+ 293              	.L15:
+ 294              	.LBB3:
+  65:.\game_manager.c ****         int y = obj_pos(state, state->notes[state->notes_window.r].time);
+ 295              		.loc 1 65 0
+ 296 002a 6269     		ldr	r2, [r4, #20]
+ 297 002c 05EB4503 		add	r3, r5, r5, lsl #1
+ 298 0030 9B00     		lsls	r3, r3, #2
+ 299 0032 1344     		add	r3, r3, r2
+ 300 0034 2046     		mov	r0, r4
+ 301 0036 5968     		ldr	r1, [r3, #4]	@ float
+ 302 0038 FFF7FEFF 		bl	obj_pos
+ 303              	.LVL21:
+  66:.\game_manager.c ****         if (y < UINT8_MAX) state->notes_window.r++;
+ 304              		.loc 1 66 0
+ 305 003c FE28     		cmp	r0, #254
+ 306 003e 14DC     		bgt	.L14
+ 307              		.loc 1 66 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 8
+
+
+ 308 0040 0135     		adds	r5, r5, #1
+ 309 0042 6562     		str	r5, [r4, #36]
+ 310              	.LVL22:
+ 311              	.L13:
+ 312              	.LBE3:
+  64:.\game_manager.c ****         int y = obj_pos(state, state->notes[state->notes_window.r].time);
+ 313              		.loc 1 64 0 is_stmt 1
+ 314 0044 656A     		ldr	r5, [r4, #36]
+ 315 0046 2369     		ldr	r3, [r4, #16]
+ 316 0048 9D42     		cmp	r5, r3
+ 317 004a EEDB     		blt	.L15
+ 318 004c 0DE0     		b	.L14
+ 319              	.L17:
+ 320              	.LBB4:
+  67:.\game_manager.c ****         else break;
+  68:.\game_manager.c ****     }
+  69:.\game_manager.c ****     while (state->notes_window.l < state->notes_window.r) {
+  70:.\game_manager.c ****         int y = obj_pos(state, state->notes[state->notes_window.l].time);
+ 321              		.loc 1 70 0
+ 322 004e 6269     		ldr	r2, [r4, #20]
+ 323 0050 06EB4603 		add	r3, r6, r6, lsl #1
+ 324 0054 9B00     		lsls	r3, r3, #2
+ 325 0056 1344     		add	r3, r3, r2
+ 326 0058 2046     		mov	r0, r4
+ 327 005a 5968     		ldr	r1, [r3, #4]	@ float
+ 328 005c FFF7FEFF 		bl	obj_pos
+ 329              	.LVL23:
+  71:.\game_manager.c ****         if (y < -10) state->notes_window.l++;
+ 330              		.loc 1 71 0
+ 331 0060 10F10A0F 		cmn	r0, #10
+ 332 0064 10DA     		bge	.L16
+ 333              		.loc 1 71 0 is_stmt 0 discriminator 1
+ 334 0066 0136     		adds	r6, r6, #1
+ 335 0068 2662     		str	r6, [r4, #32]
+ 336              	.LVL24:
+ 337              	.L14:
+ 338              	.LBE4:
+  69:.\game_manager.c ****         int y = obj_pos(state, state->notes[state->notes_window.l].time);
+ 339              		.loc 1 69 0 is_stmt 1
+ 340 006a 266A     		ldr	r6, [r4, #32]
+ 341 006c B542     		cmp	r5, r6
+ 342 006e EEDC     		bgt	.L17
+ 343 0070 0AE0     		b	.L16
+ 344              	.L19:
+ 345              	.LBB5:
+  72:.\game_manager.c ****         else break;
+  73:.\game_manager.c ****     }
+  74:.\game_manager.c ****     while (state->barlines_window.r < state->n_barlines) {
+  75:.\game_manager.c ****         int y = obj_pos(state, state->barlines[state->barlines_window.r]) + 5;
+ 346              		.loc 1 75 0
+ 347 0072 E369     		ldr	r3, [r4, #28]
+ 348 0074 2046     		mov	r0, r4
+ 349 0076 53F82510 		ldr	r1, [r3, r5, lsl #2]	@ float
+ 350 007a FFF7FEFF 		bl	obj_pos
+ 351              	.LVL25:
+ 352 007e 0530     		adds	r0, r0, #5
+ 353              	.LVL26:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 9
+
+
+  76:.\game_manager.c ****         if (y < UINT8_MAX) state->barlines_window.r++;
+ 354              		.loc 1 76 0
+ 355 0080 FE28     		cmp	r0, #254
+ 356 0082 11DC     		bgt	.L18
+ 357              		.loc 1 76 0 is_stmt 0 discriminator 1
+ 358 0084 0135     		adds	r5, r5, #1
+ 359 0086 E562     		str	r5, [r4, #44]
+ 360              	.LVL27:
+ 361              	.L16:
+ 362              	.LBE5:
+  74:.\game_manager.c ****         int y = obj_pos(state, state->barlines[state->barlines_window.r]) + 5;
+ 363              		.loc 1 74 0 is_stmt 1
+ 364 0088 E56A     		ldr	r5, [r4, #44]
+ 365 008a A369     		ldr	r3, [r4, #24]
+ 366 008c 9D42     		cmp	r5, r3
+ 367 008e F0DB     		blt	.L19
+ 368 0090 0AE0     		b	.L18
+ 369              	.L20:
+ 370              	.LBB6:
+  77:.\game_manager.c ****         else break;
+  78:.\game_manager.c ****     }
+  79:.\game_manager.c ****     while (state->barlines_window.l < state->barlines_window.r) {
+  80:.\game_manager.c ****         int y = obj_pos(state, state->barlines[state->barlines_window.l]) + 5;
+ 371              		.loc 1 80 0
+ 372 0092 E369     		ldr	r3, [r4, #28]
+ 373 0094 2046     		mov	r0, r4
+ 374 0096 53F82610 		ldr	r1, [r3, r6, lsl #2]	@ float
+ 375 009a FFF7FEFF 		bl	obj_pos
+ 376              	.LVL28:
+  81:.\game_manager.c ****         if (y < 0) state->barlines_window.l++;
+ 377              		.loc 1 81 0
+ 378 009e 10F1050F 		cmn	r0, #5
+ 379 00a2 04D5     		bpl	.L11
+ 380              		.loc 1 81 0 is_stmt 0 discriminator 1
+ 381 00a4 0136     		adds	r6, r6, #1
+ 382 00a6 A662     		str	r6, [r4, #40]
+ 383              	.LVL29:
+ 384              	.L18:
+ 385              	.LBE6:
+  79:.\game_manager.c ****         int y = obj_pos(state, state->barlines[state->barlines_window.l]) + 5;
+ 386              		.loc 1 79 0 is_stmt 1
+ 387 00a8 A66A     		ldr	r6, [r4, #40]
+ 388 00aa B542     		cmp	r5, r6
+ 389 00ac F1DC     		bgt	.L20
+ 390              	.L11:
+ 391 00ae 70BD     		pop	{r4, r5, r6, pc}
+ 392              	.LVL30:
+ 393              	.L23:
+ 394              		.align	3
+ 395              	.L22:
+ 396 00b0 9A999999 		.word	-1717986918
+ 397 00b4 9999A93F 		.word	1068079513
+ 398              		.cfi_endproc
+ 399              	.LFE2:
+ 400              		.size	tick, .-tick
+ 401              		.global	__aeabi_fcmplt
+ 402              		.section	.text.update_score,"ax",%progbits
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 10
+
+
+ 403              		.align	2
+ 404              		.global	update_score
+ 405              		.thumb
+ 406              		.thumb_func
+ 407              		.type	update_score, %function
+ 408              	update_score:
+ 409              	.LFB3:
+  82:.\game_manager.c ****         else break;
+  83:.\game_manager.c ****     }
+  84:.\game_manager.c **** }
+  85:.\game_manager.c **** 
+  86:.\game_manager.c **** void update_score(struct GameState *state, uint8 mask) {
+ 410              		.loc 1 86 0
+ 411              		.cfi_startproc
+ 412              		@ args = 0, pretend = 0, frame = 8
+ 413              		@ frame_needed = 0, uses_anonymous_args = 0
+ 414              	.LVL31:
+ 415 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 416              		.cfi_def_cfa_offset 36
+ 417              		.cfi_offset 4, -36
+ 418              		.cfi_offset 5, -32
+ 419              		.cfi_offset 6, -28
+ 420              		.cfi_offset 7, -24
+ 421              		.cfi_offset 8, -20
+ 422              		.cfi_offset 9, -16
+ 423              		.cfi_offset 10, -12
+ 424              		.cfi_offset 11, -8
+ 425              		.cfi_offset 14, -4
+ 426 0004 83B0     		sub	sp, sp, #12
+ 427              		.cfi_def_cfa_offset 48
+ 428 0006 0546     		mov	r5, r0
+ 429 0008 8A46     		mov	r10, r1
+  87:.\game_manager.c ****     int new_score = state->score;
+ 430              		.loc 1 87 0
+ 431 000a D0F80CB0 		ldr	fp, [r0, #12]
+ 432              	.LVL32:
+ 433              	.LBB7:
+  88:.\game_manager.c ****     for (int i = 0; i < 5; i++) {
+ 434              		.loc 1 88 0
+ 435 000e 0026     		movs	r6, #0
+ 436 0010 4DE0     		b	.L25
+ 437              	.LVL33:
+ 438              	.L35:
+  89:.\game_manager.c ****         if (mask & (1 << i)) {
+ 439              		.loc 1 89 0
+ 440 0012 4AFA06F3 		asr	r3, r10, r6
+ 441 0016 13F0010F 		tst	r3, #1
+ 442 001a 47D0     		beq	.L26
+ 443              	.LVL34:
+ 444              	.LBB8:
+ 445              	.LBB9:
+  90:.\game_manager.c ****             uint8 hit = 0;
+  91:.\game_manager.c ****             // Realistically, we only need to check up to 10 notes
+  92:.\game_manager.c ****             for (int j = state->notes_window.l; j < state->notes_window.r && j < state->notes_windo
+ 446              		.loc 1 92 0
+ 447 001c D5F82080 		ldr	r8, [r5, #32]
+ 448              	.LVL35:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 11
+
+
+ 449 0020 4446     		mov	r4, r8
+ 450 0022 38E0     		b	.L27
+ 451              	.LVL36:
+ 452              	.L33:
+ 453              	.LBB10:
+  93:.\game_manager.c ****                 if (state->notes[j].track != i || state->notes[j].played)
+ 454              		.loc 1 93 0
+ 455 0024 6A69     		ldr	r2, [r5, #20]
+ 456 0026 04EB4403 		add	r3, r4, r4, lsl #1
+ 457 002a 9B00     		lsls	r3, r3, #2
+ 458 002c D718     		adds	r7, r2, r3
+ 459 002e D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
+ 460 0030 B342     		cmp	r3, r6
+ 461 0032 2FD1     		bne	.L28
+ 462              		.loc 1 93 0 is_stmt 0 discriminator 1
+ 463 0034 3B7A     		ldrb	r3, [r7, #8]	@ zero_extendqisi2
+ 464 0036 6BBB     		cbnz	r3, .L28
+  94:.\game_manager.c ****                     continue;
+  95:.\game_manager.c ****                 // Calculate the score and break if non-zero
+  96:.\game_manager.c ****                 float delta = state->notes[j].time - state->time;
+ 465              		.loc 1 96 0 is_stmt 1
+ 466 0038 7868     		ldr	r0, [r7, #4]	@ float
+ 467 003a A968     		ldr	r1, [r5, #8]	@ float
+ 468 003c FFF7FEFF 		bl	__aeabi_fsub
+ 469              	.LVL37:
+ 470 0040 8146     		mov	r9, r0
+ 471              	.LVL38:
+  97:.\game_manager.c ****                 if (delta < 0) delta = -delta;
+ 472              		.loc 1 97 0
+ 473 0042 0021     		movs	r1, #0
+ 474 0044 FFF7FEFF 		bl	__aeabi_fcmplt
+ 475              	.LVL39:
+ 476 0048 08B1     		cbz	r0, .L29
+ 477              		.loc 1 97 0 is_stmt 0 discriminator 1
+ 478 004a 09F10049 		add	r9, r9, #-2147483648
+ 479              	.LVL40:
+ 480              	.L29:
+  98:.\game_manager.c ****                 float max_delta = 10 * 2 * state->song.tempo / 60 / 256;
+ 481              		.loc 1 98 0 is_stmt 1
+ 482 004e 2868     		ldr	r0, [r5]	@ float
+ 483 0050 1A49     		ldr	r1, .L40
+ 484 0052 FFF7FEFF 		bl	__aeabi_fmul
+ 485              	.LVL41:
+ 486 0056 1A49     		ldr	r1, .L40+4
+ 487 0058 FFF7FEFF 		bl	__aeabi_fdiv
+ 488              	.LVL42:
+ 489 005c 4FF06E51 		mov	r1, #998244352
+ 490 0060 FFF7FEFF 		bl	__aeabi_fmul
+ 491              	.LVL43:
+ 492 0064 0190     		str	r0, [sp, #4]	@ float
+ 493              	.LVL44:
+  99:.\game_manager.c ****                 if (delta < max_delta) {
+ 494              		.loc 1 99 0
+ 495 0066 4846     		mov	r0, r9
+ 496              	.LVL45:
+ 497 0068 0199     		ldr	r1, [sp, #4]	@ float
+ 498 006a FFF7FEFF 		bl	__aeabi_fcmplt
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 12
+
+
+ 499              	.LVL46:
+ 500 006e 88B1     		cbz	r0, .L28
+ 100:.\game_manager.c ****                     new_score += (int)(100 * (1 - delta / max_delta));
+ 501              		.loc 1 100 0
+ 502 0070 4846     		mov	r0, r9
+ 503 0072 0199     		ldr	r1, [sp, #4]	@ float
+ 504 0074 FFF7FEFF 		bl	__aeabi_fdiv
+ 505              	.LVL47:
+ 506 0078 0146     		mov	r1, r0
+ 507 007a 4FF07E50 		mov	r0, #1065353216
+ 508 007e FFF7FEFF 		bl	__aeabi_fsub
+ 509              	.LVL48:
+ 510 0082 1049     		ldr	r1, .L40+8
+ 511 0084 FFF7FEFF 		bl	__aeabi_fmul
+ 512              	.LVL49:
+ 513 0088 FFF7FEFF 		bl	__aeabi_f2iz
+ 514              	.LVL50:
+ 515 008c 8344     		add	fp, fp, r0
+ 516              	.LVL51:
+ 101:.\game_manager.c ****                     state->notes[j].played = 1;
+ 517              		.loc 1 101 0
+ 518 008e 0123     		movs	r3, #1
+ 519 0090 3B72     		strb	r3, [r7, #8]
+ 520              	.LVL52:
+ 102:.\game_manager.c ****                     hit = 1;
+ 103:.\game_manager.c ****                     break;
+ 521              		.loc 1 103 0
+ 522 0092 0AE0     		b	.L32
+ 523              	.LVL53:
+ 524              	.L28:
+ 525              	.LBE10:
+  92:.\game_manager.c ****                 if (state->notes[j].track != i || state->notes[j].played)
+ 526              		.loc 1 92 0 discriminator 2
+ 527 0094 0134     		adds	r4, r4, #1
+ 528              	.LVL54:
+ 529              	.L27:
+  92:.\game_manager.c ****                 if (state->notes[j].track != i || state->notes[j].played)
+ 530              		.loc 1 92 0 is_stmt 0 discriminator 1
+ 531 0096 6B6A     		ldr	r3, [r5, #36]
+ 532 0098 A342     		cmp	r3, r4
+ 533 009a 05DD     		ble	.L36
+  92:.\game_manager.c ****                 if (state->notes[j].track != i || state->notes[j].played)
+ 534              		.loc 1 92 0 discriminator 3
+ 535 009c 08F10A03 		add	r3, r8, #10
+ 536 00a0 A342     		cmp	r3, r4
+ 537 00a2 BFDC     		bgt	.L33
+ 538              	.LBE9:
+  90:.\game_manager.c ****             // Realistically, we only need to check up to 10 notes
+ 539              		.loc 1 90 0 is_stmt 1
+ 540 00a4 0023     		movs	r3, #0
+ 541              	.LBB11:
+ 542 00a6 00E0     		b	.L32
+ 543              	.L36:
+ 544              	.LBE11:
+ 545 00a8 0023     		movs	r3, #0
+ 546              	.LVL55:
+ 547              	.L32:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 13
+
+
+ 104:.\game_manager.c ****                 }
+ 105:.\game_manager.c ****             }
+ 106:.\game_manager.c ****             // Check that every note is hit to prevent spamming
+ 107:.\game_manager.c ****             if (hit == 0) return;
+ 548              		.loc 1 107 0
+ 549 00aa 23B1     		cbz	r3, .L24
+ 550              	.LVL56:
+ 551              	.L26:
+ 552              	.LBE8:
+  88:.\game_manager.c ****         if (mask & (1 << i)) {
+ 553              		.loc 1 88 0 discriminator 2
+ 554 00ac 0136     		adds	r6, r6, #1
+ 555              	.LVL57:
+ 556              	.L25:
+  88:.\game_manager.c ****         if (mask & (1 << i)) {
+ 557              		.loc 1 88 0 is_stmt 0 discriminator 1
+ 558 00ae 042E     		cmp	r6, #4
+ 559 00b0 AFDD     		ble	.L35
+ 560              	.LBE7:
+ 108:.\game_manager.c ****         }
+ 109:.\game_manager.c ****     }
+ 110:.\game_manager.c ****     state->score = new_score;
+ 561              		.loc 1 110 0 is_stmt 1
+ 562 00b2 C5F80CB0 		str	fp, [r5, #12]
+ 563              	.L24:
+ 111:.\game_manager.c **** }
+ 564              		.loc 1 111 0
+ 565 00b6 03B0     		add	sp, sp, #12
+ 566              		.cfi_def_cfa_offset 36
+ 567              		@ sp needed
+ 568 00b8 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 569              	.LVL58:
+ 570              	.L41:
+ 571              		.align	2
+ 572              	.L40:
+ 573 00bc 0000A041 		.word	1101004800
+ 574 00c0 00007042 		.word	1114636288
+ 575 00c4 0000C842 		.word	1120403456
+ 576              		.cfi_endproc
+ 577              	.LFE3:
+ 578              		.size	update_score, .-update_score
+ 579              		.section	.text.create_sprites,"ax",%progbits
+ 580              		.align	2
+ 581              		.global	create_sprites
+ 582              		.thumb
+ 583              		.thumb_func
+ 584              		.type	create_sprites, %function
+ 585              	create_sprites:
+ 586              	.LFB4:
+ 112:.\game_manager.c **** 
+ 113:.\game_manager.c **** int create_sprites(struct GameState *state, struct Sprite *sprites) {
+ 587              		.loc 1 113 0
+ 588              		.cfi_startproc
+ 589              		@ args = 0, pretend = 0, frame = 24
+ 590              		@ frame_needed = 0, uses_anonymous_args = 0
+ 591              	.LVL59:
+ 592 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 14
+
+
+ 593              		.cfi_def_cfa_offset 36
+ 594              		.cfi_offset 4, -36
+ 595              		.cfi_offset 5, -32
+ 596              		.cfi_offset 6, -28
+ 597              		.cfi_offset 7, -24
+ 598              		.cfi_offset 8, -20
+ 599              		.cfi_offset 9, -16
+ 600              		.cfi_offset 10, -12
+ 601              		.cfi_offset 11, -8
+ 602              		.cfi_offset 14, -4
+ 603 0004 87B0     		sub	sp, sp, #28
+ 604              		.cfi_def_cfa_offset 64
+ 605 0006 0546     		mov	r5, r0
+ 606 0008 8B46     		mov	fp, r1
+ 607              	.LVL60:
+ 608              	.LBB12:
+ 114:.\game_manager.c ****     // Recall that the fretboard holds 8 beats, and tempo is in BPM
+ 115:.\game_manager.c ****     int n = 0;
+ 116:.\game_manager.c ****     for (int i = state->notes_window.l; i < state->notes_window.r; i++) {
+ 609              		.loc 1 116 0
+ 610 000a 076A     		ldr	r7, [r0, #32]
+ 611              	.LVL61:
+ 612              	.LBE12:
+ 115:.\game_manager.c ****     for (int i = state->notes_window.l; i < state->notes_window.r; i++) {
+ 613              		.loc 1 115 0
+ 614 000c 0024     		movs	r4, #0
+ 615              	.LBB15:
+ 616              		.loc 1 116 0
+ 617 000e 1FE0     		b	.L43
+ 618              	.LVL62:
+ 619              	.L44:
+ 620              	.LBB13:
+ 117:.\game_manager.c ****         // +5 because the target indicators are offset by +5
+ 118:.\game_manager.c ****         int y = obj_pos(state, state->notes[i].time);
+ 621              		.loc 1 118 0 discriminator 3
+ 622 0010 D5F814A0 		ldr	r10, [r5, #20]
+ 623 0014 07EB4708 		add	r8, r7, r7, lsl #1
+ 624 0018 4FEA8808 		lsl	r8, r8, #2
+ 625 001c 0AEB0809 		add	r9, r10, r8
+ 626 0020 2846     		mov	r0, r5
+ 627 0022 D9F80410 		ldr	r1, [r9, #4]	@ float
+ 628 0026 FFF7FEFF 		bl	obj_pos
+ 629              	.LVL63:
+ 630 002a 0246     		mov	r2, r0
+ 631              	.LVL64:
+ 119:.\game_manager.c ****         sprites[n++] = make_ellipse(state->notes[i].track, y, state->notes[i].played);
+ 632              		.loc 1 119 0 discriminator 3
+ 633 002c 631C     		adds	r3, r4, #1
+ 634 002e 0193     		str	r3, [sp, #4]
+ 635              	.LVL65:
+ 636 0030 0BEB0414 		add	r4, fp, r4, lsl #4
+ 637 0034 02AE     		add	r6, sp, #8
+ 638 0036 3046     		mov	r0, r6
+ 639              	.LVL66:
+ 640 0038 1AF80810 		ldrb	r1, [r10, r8]	@ zero_extendqisi2
+ 641 003c 99F80830 		ldrb	r3, [r9, #8]	@ zero_extendqisi2
+ 642              	.LVL67:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 15
+
+
+ 643 0040 FFF7FEFF 		bl	make_ellipse
+ 644              	.LVL68:
+ 645 0044 96E80F00 		ldmia	r6, {r0, r1, r2, r3}
+ 646 0048 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 647              	.LBE13:
+ 116:.\game_manager.c ****         // +5 because the target indicators are offset by +5
+ 648              		.loc 1 116 0 discriminator 3
+ 649 004c 0137     		adds	r7, r7, #1
+ 650              	.LVL69:
+ 651              	.LBB14:
+ 652              		.loc 1 119 0 discriminator 3
+ 653 004e 019C     		ldr	r4, [sp, #4]
+ 654              	.LVL70:
+ 655              	.L43:
+ 656              	.LBE14:
+ 116:.\game_manager.c ****         // +5 because the target indicators are offset by +5
+ 657              		.loc 1 116 0 discriminator 1
+ 658 0050 6B6A     		ldr	r3, [r5, #36]
+ 659 0052 BB42     		cmp	r3, r7
+ 660 0054 DCDC     		bgt	.L44
+ 661              	.LBE15:
+ 662              	.LBB16:
+ 120:.\game_manager.c ****     }
+ 121:.\game_manager.c ****     for (int i = state->barlines_window.l; i < state->barlines_window.r; i++) {
+ 663              		.loc 1 121 0
+ 664 0056 AF6A     		ldr	r7, [r5, #40]
+ 665              	.LVL71:
+ 666 0058 14E0     		b	.L45
+ 667              	.L46:
+ 668              	.LBB17:
+ 122:.\game_manager.c ****         // +10 because of the aforementioned offset, plus half the height of an ellipse
+ 123:.\game_manager.c ****         int y = obj_pos(state, state->barlines[i]) + 5;
+ 669              		.loc 1 123 0 discriminator 3
+ 670 005a EB69     		ldr	r3, [r5, #28]
+ 671 005c 2846     		mov	r0, r5
+ 672 005e 53F82710 		ldr	r1, [r3, r7, lsl #2]	@ float
+ 673 0062 FFF7FEFF 		bl	obj_pos
+ 674              	.LVL72:
+ 675 0066 411D     		adds	r1, r0, #5
+ 676              	.LVL73:
+ 124:.\game_manager.c ****         sprites[n++] = make_barline(y);
+ 677              		.loc 1 124 0 discriminator 3
+ 678 0068 04F10108 		add	r8, r4, #1
+ 679              	.LVL74:
+ 680 006c 0BEB0414 		add	r4, fp, r4, lsl #4
+ 681 0070 02AE     		add	r6, sp, #8
+ 682 0072 3046     		mov	r0, r6
+ 683 0074 FFF7FEFF 		bl	make_barline
+ 684              	.LVL75:
+ 685 0078 96E80F00 		ldmia	r6, {r0, r1, r2, r3}
+ 686 007c 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 687              	.LBE17:
+ 121:.\game_manager.c ****         // +10 because of the aforementioned offset, plus half the height of an ellipse
+ 688              		.loc 1 121 0 discriminator 3
+ 689 0080 0137     		adds	r7, r7, #1
+ 690              	.LVL76:
+ 691              	.LBB18:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 16
+
+
+ 692              		.loc 1 124 0 discriminator 3
+ 693 0082 4446     		mov	r4, r8
+ 694              	.LVL77:
+ 695              	.L45:
+ 696              	.LBE18:
+ 121:.\game_manager.c ****         // +10 because of the aforementioned offset, plus half the height of an ellipse
+ 697              		.loc 1 121 0 discriminator 1
+ 698 0084 EB6A     		ldr	r3, [r5, #44]
+ 699 0086 BB42     		cmp	r3, r7
+ 700 0088 E7DC     		bgt	.L46
+ 701              	.LBE16:
+ 125:.\game_manager.c ****     }
+ 126:.\game_manager.c ****     return n;
+ 127:.\game_manager.c **** }
+ 702              		.loc 1 127 0
+ 703 008a 2046     		mov	r0, r4
+ 704 008c 07B0     		add	sp, sp, #28
+ 705              		.cfi_def_cfa_offset 36
+ 706              		@ sp needed
+ 707 008e BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 708              		.cfi_endproc
+ 709              	.LFE4:
+ 710              		.size	create_sprites, .-create_sprites
+ 711 0092 00BF     		.section	.rodata
+ 712              		.align	2
+ 713              		.set	.LANCHOR1,. + 0
+ 714              	.LC0:
+ 715 0000 04       		.byte	4
+ 716 0001 000000   		.space	3
+ 717 0004 00000040 		.word	1073741824
+ 718 0008 00       		.byte	0
+ 719 0009 000000   		.space	3
+ 720              	.LC1:
+ 721 000c 01       		.byte	1
+ 722 000d 000000   		.space	3
+ 723 0010 00002040 		.word	1075838976
+ 724 0014 00       		.byte	0
+ 725 0015 000000   		.space	3
+ 726              	.LC2:
+ 727 0018 02       		.byte	2
+ 728 0019 000000   		.space	3
+ 729 001c 00003040 		.word	1076887552
+ 730 0020 00       		.byte	0
+ 731 0021 000000   		.space	3
+ 732              	.LC3:
+ 733 0024 03       		.byte	3
+ 734 0025 000000   		.space	3
+ 735 0028 00004040 		.word	1077936128
+ 736 002c 00       		.byte	0
+ 737 002d 000000   		.space	3
+ 738              	.LC4:
+ 739 0030 02       		.byte	2
+ 740 0031 000000   		.space	3
+ 741 0034 00006040 		.word	1080033280
+ 742 0038 00       		.byte	0
+ 743 0039 000000   		.space	3
+ 744              	.LC5:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 17
+
+
+ 745 003c 01       		.byte	1
+ 746 003d 000000   		.space	3
+ 747 0040 00007040 		.word	1081081856
+ 748 0044 00       		.byte	0
+ 749 0045 000000   		.space	3
+ 750              	.LC6:
+ 751 0048 02       		.byte	2
+ 752 0049 000000   		.space	3
+ 753 004c 00009840 		.word	1083703296
+ 754 0050 00       		.byte	0
+ 755 0051 000000   		.space	3
+ 756              	.LC7:
+ 757 0054 04       		.byte	4
+ 758 0055 000000   		.space	3
+ 759 0058 0000A040 		.word	1084227584
+ 760 005c 00       		.byte	0
+ 761 005d 000000   		.space	3
+ 762              	.LC8:
+ 763 0060 03       		.byte	3
+ 764 0061 000000   		.space	3
+ 765 0064 0000B040 		.word	1085276160
+ 766 0068 00       		.byte	0
+ 767 0069 000000   		.space	3
+ 768              	.LC9:
+ 769 006c 02       		.byte	2
+ 770 006d 000000   		.space	3
+ 771 0070 0000B840 		.word	1085800448
+ 772 0074 00       		.byte	0
+ 773 0075 000000   		.space	3
+ 774              	.LC10:
+ 775 0078 01       		.byte	1
+ 776 0079 000000   		.space	3
+ 777 007c 0000C040 		.word	1086324736
+ 778 0080 00       		.byte	0
+ 779 0081 000000   		.space	3
+ 780              	.LC11:
+ 781 0084 02       		.byte	2
+ 782 0085 000000   		.space	3
+ 783 0088 0000D840 		.word	1087897600
+ 784 008c 00       		.byte	0
+ 785 008d 000000   		.space	3
+ 786              	.LC12:
+ 787 0090 03       		.byte	3
+ 788 0091 000000   		.space	3
+ 789 0094 0000E040 		.word	1088421888
+ 790 0098 00       		.byte	0
+ 791 0099 000000   		.space	3
+ 792              	.LC13:
+ 793 009c 04       		.byte	4
+ 794 009d 000000   		.space	3
+ 795 00a0 0000F040 		.word	1089470464
+ 796 00a4 00       		.byte	0
+ 797 00a5 000000   		.space	3
+ 798              	.LC14:
+ 799 00a8 02       		.byte	2
+ 800 00a9 000000   		.space	3
+ 801 00ac 00000041 		.word	1090519040
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 18
+
+
+ 802 00b0 00       		.byte	0
+ 803 00b1 000000   		.space	3
+ 804              		.bss
+ 805              		.align	2
+ 806              		.set	.LANCHOR0,. + 0
+ 807              		.set	.LANCHOR2,. + 8688
+ 808              		.type	notes, %object
+ 809              		.size	notes, 12000
+ 810              	notes:
+ 811 0000 00000000 		.space	12000
+ 811      00000000 
+ 811      00000000 
+ 811      00000000 
+ 811      00000000 
+ 812              		.type	barlines, %object
+ 813              		.size	barlines, 4000
+ 814              	barlines:
+ 815 2ee0 00000000 		.space	4000
+ 815      00000000 
+ 815      00000000 
+ 815      00000000 
+ 815      00000000 
+ 816              		.text
+ 817              	.Letext0:
+ 818              		.file 2 "./sprites.h"
+ 819              		.file 3 "./game_manager.h"
+ 820              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 821              		.section	.debug_info,"",%progbits
+ 822              	.Ldebug_info0:
+ 823 0000 2D050000 		.4byte	0x52d
+ 824 0004 0400     		.2byte	0x4
+ 825 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 826 000a 04       		.byte	0x4
+ 827 000b 01       		.uleb128 0x1
+ 828 000c 00020000 		.4byte	.LASF43
+ 829 0010 01       		.byte	0x1
+ 830 0011 AF000000 		.4byte	.LASF44
+ 831 0015 4E000000 		.4byte	.LASF45
+ 832 0019 60000000 		.4byte	.Ldebug_ranges0+0x60
+ 833 001d 00000000 		.4byte	0
+ 834 0021 00000000 		.4byte	.Ldebug_line0
+ 835 0025 02       		.uleb128 0x2
+ 836 0026 04       		.byte	0x4
+ 837 0027 04       		.byte	0x4
+ 838 0028 D0000000 		.4byte	.LASF0
+ 839 002c 02       		.uleb128 0x2
+ 840 002d 01       		.byte	0x1
+ 841 002e 06       		.byte	0x6
+ 842 002f 48010000 		.4byte	.LASF1
+ 843 0033 02       		.uleb128 0x2
+ 844 0034 01       		.byte	0x1
+ 845 0035 08       		.byte	0x8
+ 846 0036 32010000 		.4byte	.LASF2
+ 847 003a 02       		.uleb128 0x2
+ 848 003b 02       		.byte	0x2
+ 849 003c 05       		.byte	0x5
+ 850 003d 06000000 		.4byte	.LASF3
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 19
+
+
+ 851 0041 02       		.uleb128 0x2
+ 852 0042 02       		.byte	0x2
+ 853 0043 07       		.byte	0x7
+ 854 0044 8E010000 		.4byte	.LASF4
+ 855 0048 02       		.uleb128 0x2
+ 856 0049 04       		.byte	0x4
+ 857 004a 05       		.byte	0x5
+ 858 004b F3000000 		.4byte	.LASF5
+ 859 004f 02       		.uleb128 0x2
+ 860 0050 04       		.byte	0x4
+ 861 0051 07       		.byte	0x7
+ 862 0052 C5010000 		.4byte	.LASF6
+ 863 0056 02       		.uleb128 0x2
+ 864 0057 08       		.byte	0x8
+ 865 0058 05       		.byte	0x5
+ 866 0059 D6000000 		.4byte	.LASF7
+ 867 005d 02       		.uleb128 0x2
+ 868 005e 08       		.byte	0x8
+ 869 005f 07       		.byte	0x7
+ 870 0060 5A010000 		.4byte	.LASF8
+ 871 0064 03       		.uleb128 0x3
+ 872 0065 04       		.byte	0x4
+ 873 0066 05       		.byte	0x5
+ 874 0067 696E7400 		.ascii	"int\000"
+ 875 006b 02       		.uleb128 0x2
+ 876 006c 04       		.byte	0x4
+ 877 006d 07       		.byte	0x7
+ 878 006e 77010000 		.4byte	.LASF9
+ 879 0072 04       		.uleb128 0x4
+ 880 0073 C0000000 		.4byte	.LASF46
+ 881 0077 04       		.byte	0x4
+ 882 0078 9201     		.2byte	0x192
+ 883 007a 33000000 		.4byte	0x33
+ 884 007e 02       		.uleb128 0x2
+ 885 007f 08       		.byte	0x8
+ 886 0080 04       		.byte	0x4
+ 887 0081 D7010000 		.4byte	.LASF10
+ 888 0085 02       		.uleb128 0x2
+ 889 0086 01       		.byte	0x1
+ 890 0087 08       		.byte	0x8
+ 891 0088 A1010000 		.4byte	.LASF11
+ 892 008c 05       		.uleb128 0x5
+ 893 008d 71010000 		.4byte	.LASF12
+ 894 0091 02       		.byte	0x2
+ 895 0092 02       		.byte	0x2
+ 896 0093 12       		.byte	0x12
+ 897 0094 AD000000 		.4byte	0xad
+ 898 0098 06       		.uleb128 0x6
+ 899 0099 7800     		.ascii	"x\000"
+ 900 009b 02       		.byte	0x2
+ 901 009c 13       		.byte	0x13
+ 902 009d 72000000 		.4byte	0x72
+ 903 00a1 00       		.byte	0
+ 904 00a2 06       		.uleb128 0x6
+ 905 00a3 7900     		.ascii	"y\000"
+ 906 00a5 02       		.byte	0x2
+ 907 00a6 14       		.byte	0x14
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 20
+
+
+ 908 00a7 72000000 		.4byte	0x72
+ 909 00ab 01       		.byte	0x1
+ 910 00ac 00       		.byte	0
+ 911 00ad 05       		.uleb128 0x5
+ 912 00ae DE010000 		.4byte	.LASF13
+ 913 00b2 10       		.byte	0x10
+ 914 00b3 02       		.byte	0x2
+ 915 00b4 1E       		.byte	0x1e
+ 916 00b5 E4000000 		.4byte	0xe4
+ 917 00b9 06       		.uleb128 0x6
+ 918 00ba 6E00     		.ascii	"n\000"
+ 919 00bc 02       		.byte	0x2
+ 920 00bd 1F       		.byte	0x1f
+ 921 00be 64000000 		.4byte	0x64
+ 922 00c2 00       		.byte	0
+ 923 00c3 06       		.uleb128 0x6
+ 924 00c4 7800     		.ascii	"x\000"
+ 925 00c6 02       		.byte	0x2
+ 926 00c7 1F       		.byte	0x1f
+ 927 00c8 64000000 		.4byte	0x64
+ 928 00cc 04       		.byte	0x4
+ 929 00cd 06       		.uleb128 0x6
+ 930 00ce 7900     		.ascii	"y\000"
+ 931 00d0 02       		.byte	0x2
+ 932 00d1 1F       		.byte	0x1f
+ 933 00d2 64000000 		.4byte	0x64
+ 934 00d6 08       		.byte	0x8
+ 935 00d7 07       		.uleb128 0x7
+ 936 00d8 1D000000 		.4byte	.LASF14
+ 937 00dc 02       		.byte	0x2
+ 938 00dd 20       		.byte	0x20
+ 939 00de E4000000 		.4byte	0xe4
+ 940 00e2 0C       		.byte	0xc
+ 941 00e3 00       		.byte	0
+ 942 00e4 08       		.uleb128 0x8
+ 943 00e5 04       		.byte	0x4
+ 944 00e6 8C000000 		.4byte	0x8c
+ 945 00ea 05       		.uleb128 0x5
+ 946 00eb 26000000 		.4byte	.LASF15
+ 947 00ef 08       		.byte	0x8
+ 948 00f0 03       		.byte	0x3
+ 949 00f1 13       		.byte	0x13
+ 950 00f2 0F010000 		.4byte	0x10f
+ 951 00f6 07       		.uleb128 0x7
+ 952 00f7 2B000000 		.4byte	.LASF16
+ 953 00fb 03       		.byte	0x3
+ 954 00fc 15       		.byte	0x15
+ 955 00fd 25000000 		.4byte	0x25
+ 956 0101 00       		.byte	0
+ 957 0102 07       		.uleb128 0x7
+ 958 0103 BC010000 		.4byte	.LASF17
+ 959 0107 03       		.byte	0x3
+ 960 0108 17       		.byte	0x17
+ 961 0109 25000000 		.4byte	0x25
+ 962 010d 04       		.byte	0x4
+ 963 010e 00       		.byte	0
+ 964 010f 05       		.uleb128 0x5
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 21
+
+
+ 965 0110 10010000 		.4byte	.LASF18
+ 966 0114 0C       		.byte	0xc
+ 967 0115 03       		.byte	0x3
+ 968 0116 1A       		.byte	0x1a
+ 969 0117 40010000 		.4byte	0x140
+ 970 011b 07       		.uleb128 0x7
+ 971 011c 0A010000 		.4byte	.LASF19
+ 972 0120 03       		.byte	0x3
+ 973 0121 1B       		.byte	0x1b
+ 974 0122 72000000 		.4byte	0x72
+ 975 0126 00       		.byte	0
+ 976 0127 07       		.uleb128 0x7
+ 977 0128 89010000 		.4byte	.LASF20
+ 978 012c 03       		.byte	0x3
+ 979 012d 1C       		.byte	0x1c
+ 980 012e 25000000 		.4byte	0x25
+ 981 0132 04       		.byte	0x4
+ 982 0133 07       		.uleb128 0x7
+ 983 0134 99020000 		.4byte	.LASF21
+ 984 0138 03       		.byte	0x3
+ 985 0139 1D       		.byte	0x1d
+ 986 013a 72000000 		.4byte	0x72
+ 987 013e 08       		.byte	0x8
+ 988 013f 00       		.byte	0
+ 989 0140 05       		.uleb128 0x5
+ 990 0141 A0020000 		.4byte	.LASF22
+ 991 0145 08       		.byte	0x8
+ 992 0146 03       		.byte	0x3
+ 993 0147 2B       		.byte	0x2b
+ 994 0148 61010000 		.4byte	0x161
+ 995 014c 06       		.uleb128 0x6
+ 996 014d 6C00     		.ascii	"l\000"
+ 997 014f 03       		.byte	0x3
+ 998 0150 2C       		.byte	0x2c
+ 999 0151 64000000 		.4byte	0x64
+ 1000 0155 00       		.byte	0
+ 1001 0156 06       		.uleb128 0x6
+ 1002 0157 7200     		.ascii	"r\000"
+ 1003 0159 03       		.byte	0x3
+ 1004 015a 2D       		.byte	0x2d
+ 1005 015b 64000000 		.4byte	0x64
+ 1006 015f 04       		.byte	0x4
+ 1007 0160 00       		.byte	0
+ 1008 0161 05       		.uleb128 0x5
+ 1009 0162 C6000000 		.4byte	.LASF23
+ 1010 0166 30       		.byte	0x30
+ 1011 0167 03       		.byte	0x3
+ 1012 0168 20       		.byte	0x20
+ 1013 0169 DA010000 		.4byte	0x1da
+ 1014 016d 07       		.uleb128 0x7
+ 1015 016e FB010000 		.4byte	.LASF24
+ 1016 0172 03       		.byte	0x3
+ 1017 0173 22       		.byte	0x22
+ 1018 0174 EA000000 		.4byte	0xea
+ 1019 0178 00       		.byte	0
+ 1020 0179 07       		.uleb128 0x7
+ 1021 017a 89010000 		.4byte	.LASF20
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 22
+
+
+ 1022 017e 03       		.byte	0x3
+ 1023 017f 23       		.byte	0x23
+ 1024 0180 25000000 		.4byte	0x25
+ 1025 0184 08       		.byte	0x8
+ 1026 0185 07       		.uleb128 0x7
+ 1027 0186 54010000 		.4byte	.LASF25
+ 1028 018a 03       		.byte	0x3
+ 1029 018b 24       		.byte	0x24
+ 1030 018c 64000000 		.4byte	0x64
+ 1031 0190 0C       		.byte	0xc
+ 1032 0191 07       		.uleb128 0x7
+ 1033 0192 02010000 		.4byte	.LASF26
+ 1034 0196 03       		.byte	0x3
+ 1035 0197 26       		.byte	0x26
+ 1036 0198 64000000 		.4byte	0x64
+ 1037 019c 10       		.byte	0x10
+ 1038 019d 07       		.uleb128 0x7
+ 1039 019e FC000000 		.4byte	.LASF27
+ 1040 01a2 03       		.byte	0x3
+ 1041 01a3 27       		.byte	0x27
+ 1042 01a4 DA010000 		.4byte	0x1da
+ 1043 01a8 14       		.byte	0x14
+ 1044 01a9 07       		.uleb128 0x7
+ 1045 01aa 9B000000 		.4byte	.LASF28
+ 1046 01ae 03       		.byte	0x3
+ 1047 01af 28       		.byte	0x28
+ 1048 01b0 64000000 		.4byte	0x64
+ 1049 01b4 18       		.byte	0x18
+ 1050 01b5 07       		.uleb128 0x7
+ 1051 01b6 B3010000 		.4byte	.LASF29
+ 1052 01ba 03       		.byte	0x3
+ 1053 01bb 29       		.byte	0x29
+ 1054 01bc E0010000 		.4byte	0x1e0
+ 1055 01c0 1C       		.byte	0x1c
+ 1056 01c1 07       		.uleb128 0x7
+ 1057 01c2 37000000 		.4byte	.LASF30
+ 1058 01c6 03       		.byte	0x3
+ 1059 01c7 2E       		.byte	0x2e
+ 1060 01c8 40010000 		.4byte	0x140
+ 1061 01cc 20       		.byte	0x20
+ 1062 01cd 07       		.uleb128 0x7
+ 1063 01ce 15010000 		.4byte	.LASF31
+ 1064 01d2 03       		.byte	0x3
+ 1065 01d3 2E       		.byte	0x2e
+ 1066 01d4 40010000 		.4byte	0x140
+ 1067 01d8 28       		.byte	0x28
+ 1068 01d9 00       		.byte	0
+ 1069 01da 08       		.uleb128 0x8
+ 1070 01db 04       		.byte	0x4
+ 1071 01dc 0F010000 		.4byte	0x10f
+ 1072 01e0 08       		.uleb128 0x8
+ 1073 01e1 04       		.byte	0x4
+ 1074 01e2 25000000 		.4byte	0x25
+ 1075 01e6 09       		.uleb128 0x9
+ 1076 01e7 40010000 		.4byte	.LASF47
+ 1077 01eb 01       		.byte	0x1
+ 1078 01ec 38       		.byte	0x38
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 23
+
+
+ 1079 01ed 64000000 		.4byte	0x64
+ 1080 01f1 00000000 		.4byte	.LFB1
+ 1081 01f5 24000000 		.4byte	.LFE1-.LFB1
+ 1082 01f9 01       		.uleb128 0x1
+ 1083 01fa 9C       		.byte	0x9c
+ 1084 01fb 1E020000 		.4byte	0x21e
+ 1085 01ff 0A       		.uleb128 0xa
+ 1086 0200 00000000 		.4byte	.LASF32
+ 1087 0204 01       		.byte	0x1
+ 1088 0205 38       		.byte	0x38
+ 1089 0206 1E020000 		.4byte	0x21e
+ 1090 020a 00000000 		.4byte	.LLST0
+ 1091 020e 0A       		.uleb128 0xa
+ 1092 020f AD020000 		.4byte	.LASF33
+ 1093 0213 01       		.byte	0x1
+ 1094 0214 38       		.byte	0x38
+ 1095 0215 25000000 		.4byte	0x25
+ 1096 0219 2C000000 		.4byte	.LLST1
+ 1097 021d 00       		.byte	0
+ 1098 021e 08       		.uleb128 0x8
+ 1099 021f 04       		.byte	0x4
+ 1100 0220 61010000 		.4byte	0x161
+ 1101 0224 0B       		.uleb128 0xb
+ 1102 0225 A6000000 		.4byte	.LASF34
+ 1103 0229 01       		.byte	0x1
+ 1104 022a 12       		.byte	0x12
+ 1105 022b 61010000 		.4byte	0x161
+ 1106 022f 00000000 		.4byte	.LFB0
+ 1107 0233 74010000 		.4byte	.LFE0-.LFB0
+ 1108 0237 01       		.uleb128 0x1
+ 1109 0238 9C       		.byte	0x9c
+ 1110 0239 55020000 		.4byte	0x255
+ 1111 023d 0C       		.uleb128 0xc
+ 1112 023e 0C010000 		.4byte	.LBB2
+ 1113 0242 18000000 		.4byte	.LBE2-.LBB2
+ 1114 0246 0D       		.uleb128 0xd
+ 1115 0247 6900     		.ascii	"i\000"
+ 1116 0249 01       		.byte	0x1
+ 1117 024a 28       		.byte	0x28
+ 1118 024b 64000000 		.4byte	0x64
+ 1119 024f 5A000000 		.4byte	.LLST2
+ 1120 0253 00       		.byte	0
+ 1121 0254 00       		.byte	0
+ 1122 0255 0E       		.uleb128 0xe
+ 1123 0256 84010000 		.4byte	.LASF35
+ 1124 025a 01       		.byte	0x1
+ 1125 025b 3C       		.byte	0x3c
+ 1126 025c 00000000 		.4byte	.LFB2
+ 1127 0260 B8000000 		.4byte	.LFE2-.LFB2
+ 1128 0264 01       		.uleb128 0x1
+ 1129 0265 9C       		.byte	0x9c
+ 1130 0266 22030000 		.4byte	0x322
+ 1131 026a 0A       		.uleb128 0xa
+ 1132 026b 00000000 		.4byte	.LASF32
+ 1133 026f 01       		.byte	0x1
+ 1134 0270 3C       		.byte	0x3c
+ 1135 0271 1E020000 		.4byte	0x21e
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 24
+
+
+ 1136 0275 79000000 		.4byte	.LLST3
+ 1137 0279 0F       		.uleb128 0xf
+ 1138 027a 2A000000 		.4byte	.LBB3
+ 1139 027e 1A000000 		.4byte	.LBE3-.LBB3
+ 1140 0282 A4020000 		.4byte	0x2a4
+ 1141 0286 0D       		.uleb128 0xd
+ 1142 0287 7900     		.ascii	"y\000"
+ 1143 0289 01       		.byte	0x1
+ 1144 028a 41       		.byte	0x41
+ 1145 028b 64000000 		.4byte	0x64
+ 1146 028f A5000000 		.4byte	.LLST4
+ 1147 0293 10       		.uleb128 0x10
+ 1148 0294 3C000000 		.4byte	.LVL21
+ 1149 0298 E6010000 		.4byte	0x1e6
+ 1150 029c 11       		.uleb128 0x11
+ 1151 029d 01       		.uleb128 0x1
+ 1152 029e 50       		.byte	0x50
+ 1153 029f 02       		.uleb128 0x2
+ 1154 02a0 74       		.byte	0x74
+ 1155 02a1 00       		.sleb128 0
+ 1156 02a2 00       		.byte	0
+ 1157 02a3 00       		.byte	0
+ 1158 02a4 0F       		.uleb128 0xf
+ 1159 02a5 4E000000 		.4byte	.LBB4
+ 1160 02a9 1C000000 		.4byte	.LBE4-.LBB4
+ 1161 02ad CF020000 		.4byte	0x2cf
+ 1162 02b1 0D       		.uleb128 0xd
+ 1163 02b2 7900     		.ascii	"y\000"
+ 1164 02b4 01       		.byte	0x1
+ 1165 02b5 46       		.byte	0x46
+ 1166 02b6 64000000 		.4byte	0x64
+ 1167 02ba B8000000 		.4byte	.LLST5
+ 1168 02be 10       		.uleb128 0x10
+ 1169 02bf 60000000 		.4byte	.LVL23
+ 1170 02c3 E6010000 		.4byte	0x1e6
+ 1171 02c7 11       		.uleb128 0x11
+ 1172 02c8 01       		.uleb128 0x1
+ 1173 02c9 50       		.byte	0x50
+ 1174 02ca 02       		.uleb128 0x2
+ 1175 02cb 74       		.byte	0x74
+ 1176 02cc 00       		.sleb128 0
+ 1177 02cd 00       		.byte	0
+ 1178 02ce 00       		.byte	0
+ 1179 02cf 0F       		.uleb128 0xf
+ 1180 02d0 72000000 		.4byte	.LBB5
+ 1181 02d4 16000000 		.4byte	.LBE5-.LBB5
+ 1182 02d8 FA020000 		.4byte	0x2fa
+ 1183 02dc 0D       		.uleb128 0xd
+ 1184 02dd 7900     		.ascii	"y\000"
+ 1185 02df 01       		.byte	0x1
+ 1186 02e0 4B       		.byte	0x4b
+ 1187 02e1 64000000 		.4byte	0x64
+ 1188 02e5 CB000000 		.4byte	.LLST6
+ 1189 02e9 10       		.uleb128 0x10
+ 1190 02ea 7E000000 		.4byte	.LVL25
+ 1191 02ee E6010000 		.4byte	0x1e6
+ 1192 02f2 11       		.uleb128 0x11
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 25
+
+
+ 1193 02f3 01       		.uleb128 0x1
+ 1194 02f4 50       		.byte	0x50
+ 1195 02f5 02       		.uleb128 0x2
+ 1196 02f6 74       		.byte	0x74
+ 1197 02f7 00       		.sleb128 0
+ 1198 02f8 00       		.byte	0
+ 1199 02f9 00       		.byte	0
+ 1200 02fa 0C       		.uleb128 0xc
+ 1201 02fb 92000000 		.4byte	.LBB6
+ 1202 02ff 16000000 		.4byte	.LBE6-.LBB6
+ 1203 0303 0D       		.uleb128 0xd
+ 1204 0304 7900     		.ascii	"y\000"
+ 1205 0306 01       		.byte	0x1
+ 1206 0307 50       		.byte	0x50
+ 1207 0308 64000000 		.4byte	0x64
+ 1208 030c DE000000 		.4byte	.LLST7
+ 1209 0310 10       		.uleb128 0x10
+ 1210 0311 9E000000 		.4byte	.LVL28
+ 1211 0315 E6010000 		.4byte	0x1e6
+ 1212 0319 11       		.uleb128 0x11
+ 1213 031a 01       		.uleb128 0x1
+ 1214 031b 50       		.byte	0x50
+ 1215 031c 02       		.uleb128 0x2
+ 1216 031d 74       		.byte	0x74
+ 1217 031e 00       		.sleb128 0
+ 1218 031f 00       		.byte	0
+ 1219 0320 00       		.byte	0
+ 1220 0321 00       		.byte	0
+ 1221 0322 0E       		.uleb128 0xe
+ 1222 0323 10000000 		.4byte	.LASF36
+ 1223 0327 01       		.byte	0x1
+ 1224 0328 56       		.byte	0x56
+ 1225 0329 00000000 		.4byte	.LFB3
+ 1226 032d C8000000 		.4byte	.LFE3-.LFB3
+ 1227 0331 01       		.uleb128 0x1
+ 1228 0332 9C       		.byte	0x9c
+ 1229 0333 D0030000 		.4byte	0x3d0
+ 1230 0337 0A       		.uleb128 0xa
+ 1231 0338 00000000 		.4byte	.LASF32
+ 1232 033c 01       		.byte	0x1
+ 1233 033d 56       		.byte	0x56
+ 1234 033e 1E020000 		.4byte	0x21e
+ 1235 0342 F3000000 		.4byte	.LLST8
+ 1236 0346 0A       		.uleb128 0xa
+ 1237 0347 E5010000 		.4byte	.LASF37
+ 1238 034b 01       		.byte	0x1
+ 1239 034c 56       		.byte	0x56
+ 1240 034d 72000000 		.4byte	0x72
+ 1241 0351 1F010000 		.4byte	.LLST9
+ 1242 0355 12       		.uleb128 0x12
+ 1243 0356 44000000 		.4byte	.LASF38
+ 1244 035a 01       		.byte	0x1
+ 1245 035b 57       		.byte	0x57
+ 1246 035c 64000000 		.4byte	0x64
+ 1247 0360 40010000 		.4byte	.LLST10
+ 1248 0364 0C       		.uleb128 0xc
+ 1249 0365 0E000000 		.4byte	.LBB7
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 26
+
+
+ 1250 0369 A4000000 		.4byte	.LBE7-.LBB7
+ 1251 036d 0D       		.uleb128 0xd
+ 1252 036e 6900     		.ascii	"i\000"
+ 1253 0370 01       		.byte	0x1
+ 1254 0371 58       		.byte	0x58
+ 1255 0372 64000000 		.4byte	0x64
+ 1256 0376 53010000 		.4byte	.LLST11
+ 1257 037a 0C       		.uleb128 0xc
+ 1258 037b 1C000000 		.4byte	.LBB8
+ 1259 037f 90000000 		.4byte	.LBE8-.LBB8
+ 1260 0383 0D       		.uleb128 0xd
+ 1261 0384 68697400 		.ascii	"hit\000"
+ 1262 0388 01       		.byte	0x1
+ 1263 0389 5A       		.byte	0x5a
+ 1264 038a 72000000 		.4byte	0x72
+ 1265 038e 72010000 		.4byte	.LLST12
+ 1266 0392 13       		.uleb128 0x13
+ 1267 0393 00000000 		.4byte	.Ldebug_ranges0+0
+ 1268 0397 0D       		.uleb128 0xd
+ 1269 0398 6A00     		.ascii	"j\000"
+ 1270 039a 01       		.byte	0x1
+ 1271 039b 5C       		.byte	0x5c
+ 1272 039c 64000000 		.4byte	0x64
+ 1273 03a0 A9010000 		.4byte	.LLST13
+ 1274 03a4 0C       		.uleb128 0xc
+ 1275 03a5 24000000 		.4byte	.LBB10
+ 1276 03a9 70000000 		.4byte	.LBE10-.LBB10
+ 1277 03ad 12       		.uleb128 0x12
+ 1278 03ae 31000000 		.4byte	.LASF39
+ 1279 03b2 01       		.byte	0x1
+ 1280 03b3 60       		.byte	0x60
+ 1281 03b4 25000000 		.4byte	0x25
+ 1282 03b8 C7010000 		.4byte	.LLST14
+ 1283 03bc 12       		.uleb128 0x12
+ 1284 03bd B6020000 		.4byte	.LASF40
+ 1285 03c1 01       		.byte	0x1
+ 1286 03c2 62       		.byte	0x62
+ 1287 03c3 25000000 		.4byte	0x25
+ 1288 03c7 E5010000 		.4byte	.LLST15
+ 1289 03cb 00       		.byte	0
+ 1290 03cc 00       		.byte	0
+ 1291 03cd 00       		.byte	0
+ 1292 03ce 00       		.byte	0
+ 1293 03cf 00       		.byte	0
+ 1294 03d0 14       		.uleb128 0x14
+ 1295 03d1 E4000000 		.4byte	.LASF48
+ 1296 03d5 01       		.byte	0x1
+ 1297 03d6 71       		.byte	0x71
+ 1298 03d7 64000000 		.4byte	0x64
+ 1299 03db 00000000 		.4byte	.LFB4
+ 1300 03df 92000000 		.4byte	.LFE4-.LFB4
+ 1301 03e3 01       		.uleb128 0x1
+ 1302 03e4 9C       		.byte	0x9c
+ 1303 03e5 AF040000 		.4byte	0x4af
+ 1304 03e9 0A       		.uleb128 0xa
+ 1305 03ea 00000000 		.4byte	.LASF32
+ 1306 03ee 01       		.byte	0x1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 27
+
+
+ 1307 03ef 71       		.byte	0x71
+ 1308 03f0 1E020000 		.4byte	0x21e
+ 1309 03f4 04020000 		.4byte	.LLST16
+ 1310 03f8 0A       		.uleb128 0xa
+ 1311 03f9 EA010000 		.4byte	.LASF41
+ 1312 03fd 01       		.byte	0x1
+ 1313 03fe 71       		.byte	0x71
+ 1314 03ff AF040000 		.4byte	0x4af
+ 1315 0403 22020000 		.4byte	.LLST17
+ 1316 0407 0D       		.uleb128 0xd
+ 1317 0408 6E00     		.ascii	"n\000"
+ 1318 040a 01       		.byte	0x1
+ 1319 040b 73       		.byte	0x73
+ 1320 040c 64000000 		.4byte	0x64
+ 1321 0410 40020000 		.4byte	.LLST18
+ 1322 0414 15       		.uleb128 0x15
+ 1323 0415 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 1324 0419 62040000 		.4byte	0x462
+ 1325 041d 0D       		.uleb128 0xd
+ 1326 041e 6900     		.ascii	"i\000"
+ 1327 0420 01       		.byte	0x1
+ 1328 0421 74       		.byte	0x74
+ 1329 0422 64000000 		.4byte	0x64
+ 1330 0426 97020000 		.4byte	.LLST19
+ 1331 042a 13       		.uleb128 0x13
+ 1332 042b 30000000 		.4byte	.Ldebug_ranges0+0x30
+ 1333 042f 0D       		.uleb128 0xd
+ 1334 0430 7900     		.ascii	"y\000"
+ 1335 0432 01       		.byte	0x1
+ 1336 0433 76       		.byte	0x76
+ 1337 0434 64000000 		.4byte	0x64
+ 1338 0438 AA020000 		.4byte	.LLST20
+ 1339 043c 16       		.uleb128 0x16
+ 1340 043d 2A000000 		.4byte	.LVL63
+ 1341 0441 E6010000 		.4byte	0x1e6
+ 1342 0445 50040000 		.4byte	0x450
+ 1343 0449 11       		.uleb128 0x11
+ 1344 044a 01       		.uleb128 0x1
+ 1345 044b 50       		.byte	0x50
+ 1346 044c 02       		.uleb128 0x2
+ 1347 044d 75       		.byte	0x75
+ 1348 044e 00       		.sleb128 0
+ 1349 044f 00       		.byte	0
+ 1350 0450 10       		.uleb128 0x10
+ 1351 0451 44000000 		.4byte	.LVL68
+ 1352 0455 00050000 		.4byte	0x500
+ 1353 0459 11       		.uleb128 0x11
+ 1354 045a 01       		.uleb128 0x1
+ 1355 045b 50       		.byte	0x50
+ 1356 045c 02       		.uleb128 0x2
+ 1357 045d 76       		.byte	0x76
+ 1358 045e 00       		.sleb128 0
+ 1359 045f 00       		.byte	0
+ 1360 0460 00       		.byte	0
+ 1361 0461 00       		.byte	0
+ 1362 0462 0C       		.uleb128 0xc
+ 1363 0463 56000000 		.4byte	.LBB16
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 28
+
+
+ 1364 0467 34000000 		.4byte	.LBE16-.LBB16
+ 1365 046b 17       		.uleb128 0x17
+ 1366 046c 6900     		.ascii	"i\000"
+ 1367 046e 01       		.byte	0x1
+ 1368 046f 79       		.byte	0x79
+ 1369 0470 64000000 		.4byte	0x64
+ 1370 0474 01       		.uleb128 0x1
+ 1371 0475 57       		.byte	0x57
+ 1372 0476 13       		.uleb128 0x13
+ 1373 0477 48000000 		.4byte	.Ldebug_ranges0+0x48
+ 1374 047b 0D       		.uleb128 0xd
+ 1375 047c 7900     		.ascii	"y\000"
+ 1376 047e 01       		.byte	0x1
+ 1377 047f 7B       		.byte	0x7b
+ 1378 0480 64000000 		.4byte	0x64
+ 1379 0484 C8020000 		.4byte	.LLST21
+ 1380 0488 16       		.uleb128 0x16
+ 1381 0489 66000000 		.4byte	.LVL72
+ 1382 048d E6010000 		.4byte	0x1e6
+ 1383 0491 9C040000 		.4byte	0x49c
+ 1384 0495 11       		.uleb128 0x11
+ 1385 0496 01       		.uleb128 0x1
+ 1386 0497 50       		.byte	0x50
+ 1387 0498 02       		.uleb128 0x2
+ 1388 0499 75       		.byte	0x75
+ 1389 049a 00       		.sleb128 0
+ 1390 049b 00       		.byte	0
+ 1391 049c 10       		.uleb128 0x10
+ 1392 049d 78000000 		.4byte	.LVL75
+ 1393 04a1 1F050000 		.4byte	0x51f
+ 1394 04a5 11       		.uleb128 0x11
+ 1395 04a6 01       		.uleb128 0x1
+ 1396 04a7 50       		.byte	0x50
+ 1397 04a8 02       		.uleb128 0x2
+ 1398 04a9 76       		.byte	0x76
+ 1399 04aa 00       		.sleb128 0
+ 1400 04ab 00       		.byte	0
+ 1401 04ac 00       		.byte	0
+ 1402 04ad 00       		.byte	0
+ 1403 04ae 00       		.byte	0
+ 1404 04af 08       		.uleb128 0x8
+ 1405 04b0 04       		.byte	0x4
+ 1406 04b1 AD000000 		.4byte	0xad
+ 1407 04b5 18       		.uleb128 0x18
+ 1408 04b6 0F010000 		.4byte	0x10f
+ 1409 04ba C6040000 		.4byte	0x4c6
+ 1410 04be 19       		.uleb128 0x19
+ 1411 04bf C6040000 		.4byte	0x4c6
+ 1412 04c3 E703     		.2byte	0x3e7
+ 1413 04c5 00       		.byte	0
+ 1414 04c6 02       		.uleb128 0x2
+ 1415 04c7 04       		.byte	0x4
+ 1416 04c8 07       		.byte	0x7
+ 1417 04c9 F2010000 		.4byte	.LASF42
+ 1418 04cd 1A       		.uleb128 0x1a
+ 1419 04ce FC000000 		.4byte	.LASF27
+ 1420 04d2 01       		.byte	0x1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 29
+
+
+ 1421 04d3 0F       		.byte	0xf
+ 1422 04d4 B5040000 		.4byte	0x4b5
+ 1423 04d8 05       		.uleb128 0x5
+ 1424 04d9 03       		.byte	0x3
+ 1425 04da 00000000 		.4byte	notes
+ 1426 04de 18       		.uleb128 0x18
+ 1427 04df 25000000 		.4byte	0x25
+ 1428 04e3 EF040000 		.4byte	0x4ef
+ 1429 04e7 19       		.uleb128 0x19
+ 1430 04e8 C6040000 		.4byte	0x4c6
+ 1431 04ec E703     		.2byte	0x3e7
+ 1432 04ee 00       		.byte	0
+ 1433 04ef 1A       		.uleb128 0x1a
+ 1434 04f0 B3010000 		.4byte	.LASF29
+ 1435 04f4 01       		.byte	0x1
+ 1436 04f5 10       		.byte	0x10
+ 1437 04f6 DE040000 		.4byte	0x4de
+ 1438 04fa 05       		.uleb128 0x5
+ 1439 04fb 03       		.byte	0x3
+ 1440 04fc E02E0000 		.4byte	barlines
+ 1441 0500 1B       		.uleb128 0x1b
+ 1442 0501 A6010000 		.4byte	.LASF49
+ 1443 0505 02       		.byte	0x2
+ 1444 0506 35       		.byte	0x35
+ 1445 0507 AD000000 		.4byte	0xad
+ 1446 050b 1F050000 		.4byte	0x51f
+ 1447 050f 1C       		.uleb128 0x1c
+ 1448 0510 72000000 		.4byte	0x72
+ 1449 0514 1C       		.uleb128 0x1c
+ 1450 0515 64000000 		.4byte	0x64
+ 1451 0519 1C       		.uleb128 0x1c
+ 1452 051a 72000000 		.4byte	0x72
+ 1453 051e 00       		.byte	0
+ 1454 051f 1D       		.uleb128 0x1d
+ 1455 0520 25010000 		.4byte	.LASF50
+ 1456 0524 02       		.byte	0x2
+ 1457 0525 30       		.byte	0x30
+ 1458 0526 AD000000 		.4byte	0xad
+ 1459 052a 1C       		.uleb128 0x1c
+ 1460 052b 64000000 		.4byte	0x64
+ 1461 052f 00       		.byte	0
+ 1462 0530 00       		.byte	0
+ 1463              		.section	.debug_abbrev,"",%progbits
+ 1464              	.Ldebug_abbrev0:
+ 1465 0000 01       		.uleb128 0x1
+ 1466 0001 11       		.uleb128 0x11
+ 1467 0002 01       		.byte	0x1
+ 1468 0003 25       		.uleb128 0x25
+ 1469 0004 0E       		.uleb128 0xe
+ 1470 0005 13       		.uleb128 0x13
+ 1471 0006 0B       		.uleb128 0xb
+ 1472 0007 03       		.uleb128 0x3
+ 1473 0008 0E       		.uleb128 0xe
+ 1474 0009 1B       		.uleb128 0x1b
+ 1475 000a 0E       		.uleb128 0xe
+ 1476 000b 55       		.uleb128 0x55
+ 1477 000c 17       		.uleb128 0x17
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 30
+
+
+ 1478 000d 11       		.uleb128 0x11
+ 1479 000e 01       		.uleb128 0x1
+ 1480 000f 10       		.uleb128 0x10
+ 1481 0010 17       		.uleb128 0x17
+ 1482 0011 00       		.byte	0
+ 1483 0012 00       		.byte	0
+ 1484 0013 02       		.uleb128 0x2
+ 1485 0014 24       		.uleb128 0x24
+ 1486 0015 00       		.byte	0
+ 1487 0016 0B       		.uleb128 0xb
+ 1488 0017 0B       		.uleb128 0xb
+ 1489 0018 3E       		.uleb128 0x3e
+ 1490 0019 0B       		.uleb128 0xb
+ 1491 001a 03       		.uleb128 0x3
+ 1492 001b 0E       		.uleb128 0xe
+ 1493 001c 00       		.byte	0
+ 1494 001d 00       		.byte	0
+ 1495 001e 03       		.uleb128 0x3
+ 1496 001f 24       		.uleb128 0x24
+ 1497 0020 00       		.byte	0
+ 1498 0021 0B       		.uleb128 0xb
+ 1499 0022 0B       		.uleb128 0xb
+ 1500 0023 3E       		.uleb128 0x3e
+ 1501 0024 0B       		.uleb128 0xb
+ 1502 0025 03       		.uleb128 0x3
+ 1503 0026 08       		.uleb128 0x8
+ 1504 0027 00       		.byte	0
+ 1505 0028 00       		.byte	0
+ 1506 0029 04       		.uleb128 0x4
+ 1507 002a 16       		.uleb128 0x16
+ 1508 002b 00       		.byte	0
+ 1509 002c 03       		.uleb128 0x3
+ 1510 002d 0E       		.uleb128 0xe
+ 1511 002e 3A       		.uleb128 0x3a
+ 1512 002f 0B       		.uleb128 0xb
+ 1513 0030 3B       		.uleb128 0x3b
+ 1514 0031 05       		.uleb128 0x5
+ 1515 0032 49       		.uleb128 0x49
+ 1516 0033 13       		.uleb128 0x13
+ 1517 0034 00       		.byte	0
+ 1518 0035 00       		.byte	0
+ 1519 0036 05       		.uleb128 0x5
+ 1520 0037 13       		.uleb128 0x13
+ 1521 0038 01       		.byte	0x1
+ 1522 0039 03       		.uleb128 0x3
+ 1523 003a 0E       		.uleb128 0xe
+ 1524 003b 0B       		.uleb128 0xb
+ 1525 003c 0B       		.uleb128 0xb
+ 1526 003d 3A       		.uleb128 0x3a
+ 1527 003e 0B       		.uleb128 0xb
+ 1528 003f 3B       		.uleb128 0x3b
+ 1529 0040 0B       		.uleb128 0xb
+ 1530 0041 01       		.uleb128 0x1
+ 1531 0042 13       		.uleb128 0x13
+ 1532 0043 00       		.byte	0
+ 1533 0044 00       		.byte	0
+ 1534 0045 06       		.uleb128 0x6
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 31
+
+
+ 1535 0046 0D       		.uleb128 0xd
+ 1536 0047 00       		.byte	0
+ 1537 0048 03       		.uleb128 0x3
+ 1538 0049 08       		.uleb128 0x8
+ 1539 004a 3A       		.uleb128 0x3a
+ 1540 004b 0B       		.uleb128 0xb
+ 1541 004c 3B       		.uleb128 0x3b
+ 1542 004d 0B       		.uleb128 0xb
+ 1543 004e 49       		.uleb128 0x49
+ 1544 004f 13       		.uleb128 0x13
+ 1545 0050 38       		.uleb128 0x38
+ 1546 0051 0B       		.uleb128 0xb
+ 1547 0052 00       		.byte	0
+ 1548 0053 00       		.byte	0
+ 1549 0054 07       		.uleb128 0x7
+ 1550 0055 0D       		.uleb128 0xd
+ 1551 0056 00       		.byte	0
+ 1552 0057 03       		.uleb128 0x3
+ 1553 0058 0E       		.uleb128 0xe
+ 1554 0059 3A       		.uleb128 0x3a
+ 1555 005a 0B       		.uleb128 0xb
+ 1556 005b 3B       		.uleb128 0x3b
+ 1557 005c 0B       		.uleb128 0xb
+ 1558 005d 49       		.uleb128 0x49
+ 1559 005e 13       		.uleb128 0x13
+ 1560 005f 38       		.uleb128 0x38
+ 1561 0060 0B       		.uleb128 0xb
+ 1562 0061 00       		.byte	0
+ 1563 0062 00       		.byte	0
+ 1564 0063 08       		.uleb128 0x8
+ 1565 0064 0F       		.uleb128 0xf
+ 1566 0065 00       		.byte	0
+ 1567 0066 0B       		.uleb128 0xb
+ 1568 0067 0B       		.uleb128 0xb
+ 1569 0068 49       		.uleb128 0x49
+ 1570 0069 13       		.uleb128 0x13
+ 1571 006a 00       		.byte	0
+ 1572 006b 00       		.byte	0
+ 1573 006c 09       		.uleb128 0x9
+ 1574 006d 2E       		.uleb128 0x2e
+ 1575 006e 01       		.byte	0x1
+ 1576 006f 03       		.uleb128 0x3
+ 1577 0070 0E       		.uleb128 0xe
+ 1578 0071 3A       		.uleb128 0x3a
+ 1579 0072 0B       		.uleb128 0xb
+ 1580 0073 3B       		.uleb128 0x3b
+ 1581 0074 0B       		.uleb128 0xb
+ 1582 0075 27       		.uleb128 0x27
+ 1583 0076 19       		.uleb128 0x19
+ 1584 0077 49       		.uleb128 0x49
+ 1585 0078 13       		.uleb128 0x13
+ 1586 0079 11       		.uleb128 0x11
+ 1587 007a 01       		.uleb128 0x1
+ 1588 007b 12       		.uleb128 0x12
+ 1589 007c 06       		.uleb128 0x6
+ 1590 007d 40       		.uleb128 0x40
+ 1591 007e 18       		.uleb128 0x18
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 32
+
+
+ 1592 007f 9642     		.uleb128 0x2116
+ 1593 0081 19       		.uleb128 0x19
+ 1594 0082 01       		.uleb128 0x1
+ 1595 0083 13       		.uleb128 0x13
+ 1596 0084 00       		.byte	0
+ 1597 0085 00       		.byte	0
+ 1598 0086 0A       		.uleb128 0xa
+ 1599 0087 05       		.uleb128 0x5
+ 1600 0088 00       		.byte	0
+ 1601 0089 03       		.uleb128 0x3
+ 1602 008a 0E       		.uleb128 0xe
+ 1603 008b 3A       		.uleb128 0x3a
+ 1604 008c 0B       		.uleb128 0xb
+ 1605 008d 3B       		.uleb128 0x3b
+ 1606 008e 0B       		.uleb128 0xb
+ 1607 008f 49       		.uleb128 0x49
+ 1608 0090 13       		.uleb128 0x13
+ 1609 0091 02       		.uleb128 0x2
+ 1610 0092 17       		.uleb128 0x17
+ 1611 0093 00       		.byte	0
+ 1612 0094 00       		.byte	0
+ 1613 0095 0B       		.uleb128 0xb
+ 1614 0096 2E       		.uleb128 0x2e
+ 1615 0097 01       		.byte	0x1
+ 1616 0098 3F       		.uleb128 0x3f
+ 1617 0099 19       		.uleb128 0x19
+ 1618 009a 03       		.uleb128 0x3
+ 1619 009b 0E       		.uleb128 0xe
+ 1620 009c 3A       		.uleb128 0x3a
+ 1621 009d 0B       		.uleb128 0xb
+ 1622 009e 3B       		.uleb128 0x3b
+ 1623 009f 0B       		.uleb128 0xb
+ 1624 00a0 49       		.uleb128 0x49
+ 1625 00a1 13       		.uleb128 0x13
+ 1626 00a2 11       		.uleb128 0x11
+ 1627 00a3 01       		.uleb128 0x1
+ 1628 00a4 12       		.uleb128 0x12
+ 1629 00a5 06       		.uleb128 0x6
+ 1630 00a6 40       		.uleb128 0x40
+ 1631 00a7 18       		.uleb128 0x18
+ 1632 00a8 9642     		.uleb128 0x2116
+ 1633 00aa 19       		.uleb128 0x19
+ 1634 00ab 01       		.uleb128 0x1
+ 1635 00ac 13       		.uleb128 0x13
+ 1636 00ad 00       		.byte	0
+ 1637 00ae 00       		.byte	0
+ 1638 00af 0C       		.uleb128 0xc
+ 1639 00b0 0B       		.uleb128 0xb
+ 1640 00b1 01       		.byte	0x1
+ 1641 00b2 11       		.uleb128 0x11
+ 1642 00b3 01       		.uleb128 0x1
+ 1643 00b4 12       		.uleb128 0x12
+ 1644 00b5 06       		.uleb128 0x6
+ 1645 00b6 00       		.byte	0
+ 1646 00b7 00       		.byte	0
+ 1647 00b8 0D       		.uleb128 0xd
+ 1648 00b9 34       		.uleb128 0x34
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 33
+
+
+ 1649 00ba 00       		.byte	0
+ 1650 00bb 03       		.uleb128 0x3
+ 1651 00bc 08       		.uleb128 0x8
+ 1652 00bd 3A       		.uleb128 0x3a
+ 1653 00be 0B       		.uleb128 0xb
+ 1654 00bf 3B       		.uleb128 0x3b
+ 1655 00c0 0B       		.uleb128 0xb
+ 1656 00c1 49       		.uleb128 0x49
+ 1657 00c2 13       		.uleb128 0x13
+ 1658 00c3 02       		.uleb128 0x2
+ 1659 00c4 17       		.uleb128 0x17
+ 1660 00c5 00       		.byte	0
+ 1661 00c6 00       		.byte	0
+ 1662 00c7 0E       		.uleb128 0xe
+ 1663 00c8 2E       		.uleb128 0x2e
+ 1664 00c9 01       		.byte	0x1
+ 1665 00ca 3F       		.uleb128 0x3f
+ 1666 00cb 19       		.uleb128 0x19
+ 1667 00cc 03       		.uleb128 0x3
+ 1668 00cd 0E       		.uleb128 0xe
+ 1669 00ce 3A       		.uleb128 0x3a
+ 1670 00cf 0B       		.uleb128 0xb
+ 1671 00d0 3B       		.uleb128 0x3b
+ 1672 00d1 0B       		.uleb128 0xb
+ 1673 00d2 27       		.uleb128 0x27
+ 1674 00d3 19       		.uleb128 0x19
+ 1675 00d4 11       		.uleb128 0x11
+ 1676 00d5 01       		.uleb128 0x1
+ 1677 00d6 12       		.uleb128 0x12
+ 1678 00d7 06       		.uleb128 0x6
+ 1679 00d8 40       		.uleb128 0x40
+ 1680 00d9 18       		.uleb128 0x18
+ 1681 00da 9642     		.uleb128 0x2116
+ 1682 00dc 19       		.uleb128 0x19
+ 1683 00dd 01       		.uleb128 0x1
+ 1684 00de 13       		.uleb128 0x13
+ 1685 00df 00       		.byte	0
+ 1686 00e0 00       		.byte	0
+ 1687 00e1 0F       		.uleb128 0xf
+ 1688 00e2 0B       		.uleb128 0xb
+ 1689 00e3 01       		.byte	0x1
+ 1690 00e4 11       		.uleb128 0x11
+ 1691 00e5 01       		.uleb128 0x1
+ 1692 00e6 12       		.uleb128 0x12
+ 1693 00e7 06       		.uleb128 0x6
+ 1694 00e8 01       		.uleb128 0x1
+ 1695 00e9 13       		.uleb128 0x13
+ 1696 00ea 00       		.byte	0
+ 1697 00eb 00       		.byte	0
+ 1698 00ec 10       		.uleb128 0x10
+ 1699 00ed 898201   		.uleb128 0x4109
+ 1700 00f0 01       		.byte	0x1
+ 1701 00f1 11       		.uleb128 0x11
+ 1702 00f2 01       		.uleb128 0x1
+ 1703 00f3 31       		.uleb128 0x31
+ 1704 00f4 13       		.uleb128 0x13
+ 1705 00f5 00       		.byte	0
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 34
+
+
+ 1706 00f6 00       		.byte	0
+ 1707 00f7 11       		.uleb128 0x11
+ 1708 00f8 8A8201   		.uleb128 0x410a
+ 1709 00fb 00       		.byte	0
+ 1710 00fc 02       		.uleb128 0x2
+ 1711 00fd 18       		.uleb128 0x18
+ 1712 00fe 9142     		.uleb128 0x2111
+ 1713 0100 18       		.uleb128 0x18
+ 1714 0101 00       		.byte	0
+ 1715 0102 00       		.byte	0
+ 1716 0103 12       		.uleb128 0x12
+ 1717 0104 34       		.uleb128 0x34
+ 1718 0105 00       		.byte	0
+ 1719 0106 03       		.uleb128 0x3
+ 1720 0107 0E       		.uleb128 0xe
+ 1721 0108 3A       		.uleb128 0x3a
+ 1722 0109 0B       		.uleb128 0xb
+ 1723 010a 3B       		.uleb128 0x3b
+ 1724 010b 0B       		.uleb128 0xb
+ 1725 010c 49       		.uleb128 0x49
+ 1726 010d 13       		.uleb128 0x13
+ 1727 010e 02       		.uleb128 0x2
+ 1728 010f 17       		.uleb128 0x17
+ 1729 0110 00       		.byte	0
+ 1730 0111 00       		.byte	0
+ 1731 0112 13       		.uleb128 0x13
+ 1732 0113 0B       		.uleb128 0xb
+ 1733 0114 01       		.byte	0x1
+ 1734 0115 55       		.uleb128 0x55
+ 1735 0116 17       		.uleb128 0x17
+ 1736 0117 00       		.byte	0
+ 1737 0118 00       		.byte	0
+ 1738 0119 14       		.uleb128 0x14
+ 1739 011a 2E       		.uleb128 0x2e
+ 1740 011b 01       		.byte	0x1
+ 1741 011c 3F       		.uleb128 0x3f
+ 1742 011d 19       		.uleb128 0x19
+ 1743 011e 03       		.uleb128 0x3
+ 1744 011f 0E       		.uleb128 0xe
+ 1745 0120 3A       		.uleb128 0x3a
+ 1746 0121 0B       		.uleb128 0xb
+ 1747 0122 3B       		.uleb128 0x3b
+ 1748 0123 0B       		.uleb128 0xb
+ 1749 0124 27       		.uleb128 0x27
+ 1750 0125 19       		.uleb128 0x19
+ 1751 0126 49       		.uleb128 0x49
+ 1752 0127 13       		.uleb128 0x13
+ 1753 0128 11       		.uleb128 0x11
+ 1754 0129 01       		.uleb128 0x1
+ 1755 012a 12       		.uleb128 0x12
+ 1756 012b 06       		.uleb128 0x6
+ 1757 012c 40       		.uleb128 0x40
+ 1758 012d 18       		.uleb128 0x18
+ 1759 012e 9742     		.uleb128 0x2117
+ 1760 0130 19       		.uleb128 0x19
+ 1761 0131 01       		.uleb128 0x1
+ 1762 0132 13       		.uleb128 0x13
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 35
+
+
+ 1763 0133 00       		.byte	0
+ 1764 0134 00       		.byte	0
+ 1765 0135 15       		.uleb128 0x15
+ 1766 0136 0B       		.uleb128 0xb
+ 1767 0137 01       		.byte	0x1
+ 1768 0138 55       		.uleb128 0x55
+ 1769 0139 17       		.uleb128 0x17
+ 1770 013a 01       		.uleb128 0x1
+ 1771 013b 13       		.uleb128 0x13
+ 1772 013c 00       		.byte	0
+ 1773 013d 00       		.byte	0
+ 1774 013e 16       		.uleb128 0x16
+ 1775 013f 898201   		.uleb128 0x4109
+ 1776 0142 01       		.byte	0x1
+ 1777 0143 11       		.uleb128 0x11
+ 1778 0144 01       		.uleb128 0x1
+ 1779 0145 31       		.uleb128 0x31
+ 1780 0146 13       		.uleb128 0x13
+ 1781 0147 01       		.uleb128 0x1
+ 1782 0148 13       		.uleb128 0x13
+ 1783 0149 00       		.byte	0
+ 1784 014a 00       		.byte	0
+ 1785 014b 17       		.uleb128 0x17
+ 1786 014c 34       		.uleb128 0x34
+ 1787 014d 00       		.byte	0
+ 1788 014e 03       		.uleb128 0x3
+ 1789 014f 08       		.uleb128 0x8
+ 1790 0150 3A       		.uleb128 0x3a
+ 1791 0151 0B       		.uleb128 0xb
+ 1792 0152 3B       		.uleb128 0x3b
+ 1793 0153 0B       		.uleb128 0xb
+ 1794 0154 49       		.uleb128 0x49
+ 1795 0155 13       		.uleb128 0x13
+ 1796 0156 02       		.uleb128 0x2
+ 1797 0157 18       		.uleb128 0x18
+ 1798 0158 00       		.byte	0
+ 1799 0159 00       		.byte	0
+ 1800 015a 18       		.uleb128 0x18
+ 1801 015b 01       		.uleb128 0x1
+ 1802 015c 01       		.byte	0x1
+ 1803 015d 49       		.uleb128 0x49
+ 1804 015e 13       		.uleb128 0x13
+ 1805 015f 01       		.uleb128 0x1
+ 1806 0160 13       		.uleb128 0x13
+ 1807 0161 00       		.byte	0
+ 1808 0162 00       		.byte	0
+ 1809 0163 19       		.uleb128 0x19
+ 1810 0164 21       		.uleb128 0x21
+ 1811 0165 00       		.byte	0
+ 1812 0166 49       		.uleb128 0x49
+ 1813 0167 13       		.uleb128 0x13
+ 1814 0168 2F       		.uleb128 0x2f
+ 1815 0169 05       		.uleb128 0x5
+ 1816 016a 00       		.byte	0
+ 1817 016b 00       		.byte	0
+ 1818 016c 1A       		.uleb128 0x1a
+ 1819 016d 34       		.uleb128 0x34
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 36
+
+
+ 1820 016e 00       		.byte	0
+ 1821 016f 03       		.uleb128 0x3
+ 1822 0170 0E       		.uleb128 0xe
+ 1823 0171 3A       		.uleb128 0x3a
+ 1824 0172 0B       		.uleb128 0xb
+ 1825 0173 3B       		.uleb128 0x3b
+ 1826 0174 0B       		.uleb128 0xb
+ 1827 0175 49       		.uleb128 0x49
+ 1828 0176 13       		.uleb128 0x13
+ 1829 0177 02       		.uleb128 0x2
+ 1830 0178 18       		.uleb128 0x18
+ 1831 0179 00       		.byte	0
+ 1832 017a 00       		.byte	0
+ 1833 017b 1B       		.uleb128 0x1b
+ 1834 017c 2E       		.uleb128 0x2e
+ 1835 017d 01       		.byte	0x1
+ 1836 017e 3F       		.uleb128 0x3f
+ 1837 017f 19       		.uleb128 0x19
+ 1838 0180 03       		.uleb128 0x3
+ 1839 0181 0E       		.uleb128 0xe
+ 1840 0182 3A       		.uleb128 0x3a
+ 1841 0183 0B       		.uleb128 0xb
+ 1842 0184 3B       		.uleb128 0x3b
+ 1843 0185 0B       		.uleb128 0xb
+ 1844 0186 27       		.uleb128 0x27
+ 1845 0187 19       		.uleb128 0x19
+ 1846 0188 49       		.uleb128 0x49
+ 1847 0189 13       		.uleb128 0x13
+ 1848 018a 3C       		.uleb128 0x3c
+ 1849 018b 19       		.uleb128 0x19
+ 1850 018c 01       		.uleb128 0x1
+ 1851 018d 13       		.uleb128 0x13
+ 1852 018e 00       		.byte	0
+ 1853 018f 00       		.byte	0
+ 1854 0190 1C       		.uleb128 0x1c
+ 1855 0191 05       		.uleb128 0x5
+ 1856 0192 00       		.byte	0
+ 1857 0193 49       		.uleb128 0x49
+ 1858 0194 13       		.uleb128 0x13
+ 1859 0195 00       		.byte	0
+ 1860 0196 00       		.byte	0
+ 1861 0197 1D       		.uleb128 0x1d
+ 1862 0198 2E       		.uleb128 0x2e
+ 1863 0199 01       		.byte	0x1
+ 1864 019a 3F       		.uleb128 0x3f
+ 1865 019b 19       		.uleb128 0x19
+ 1866 019c 03       		.uleb128 0x3
+ 1867 019d 0E       		.uleb128 0xe
+ 1868 019e 3A       		.uleb128 0x3a
+ 1869 019f 0B       		.uleb128 0xb
+ 1870 01a0 3B       		.uleb128 0x3b
+ 1871 01a1 0B       		.uleb128 0xb
+ 1872 01a2 27       		.uleb128 0x27
+ 1873 01a3 19       		.uleb128 0x19
+ 1874 01a4 49       		.uleb128 0x49
+ 1875 01a5 13       		.uleb128 0x13
+ 1876 01a6 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 37
+
+
+ 1877 01a7 19       		.uleb128 0x19
+ 1878 01a8 00       		.byte	0
+ 1879 01a9 00       		.byte	0
+ 1880 01aa 00       		.byte	0
+ 1881              		.section	.debug_loc,"",%progbits
+ 1882              	.Ldebug_loc0:
+ 1883              	.LLST0:
+ 1884 0000 00000000 		.4byte	.LVL0
+ 1885 0004 06000000 		.4byte	.LVL1
+ 1886 0008 0100     		.2byte	0x1
+ 1887 000a 50       		.byte	0x50
+ 1888 000b 06000000 		.4byte	.LVL1
+ 1889 000f 20000000 		.4byte	.LVL7
+ 1890 0013 0100     		.2byte	0x1
+ 1891 0015 54       		.byte	0x54
+ 1892 0016 20000000 		.4byte	.LVL7
+ 1893 001a 24000000 		.4byte	.LFE1
+ 1894 001e 0400     		.2byte	0x4
+ 1895 0020 F3       		.byte	0xf3
+ 1896 0021 01       		.uleb128 0x1
+ 1897 0022 50       		.byte	0x50
+ 1898 0023 9F       		.byte	0x9f
+ 1899 0024 00000000 		.4byte	0
+ 1900 0028 00000000 		.4byte	0
+ 1901              	.LLST1:
+ 1902 002c 00000000 		.4byte	.LVL0
+ 1903 0030 08000000 		.4byte	.LVL2
+ 1904 0034 0100     		.2byte	0x1
+ 1905 0036 51       		.byte	0x51
+ 1906 0037 08000000 		.4byte	.LVL2
+ 1907 003b 0B000000 		.4byte	.LVL3-1
+ 1908 003f 0100     		.2byte	0x1
+ 1909 0041 50       		.byte	0x50
+ 1910 0042 0B000000 		.4byte	.LVL3-1
+ 1911 0046 24000000 		.4byte	.LFE1
+ 1912 004a 0600     		.2byte	0x6
+ 1913 004c F3       		.byte	0xf3
+ 1914 004d 03       		.uleb128 0x3
+ 1915 004e F5       		.byte	0xf5
+ 1916 004f 01       		.uleb128 0x1
+ 1917 0050 25       		.uleb128 0x25
+ 1918 0051 9F       		.byte	0x9f
+ 1919 0052 00000000 		.4byte	0
+ 1920 0056 00000000 		.4byte	0
+ 1921              	.LLST2:
+ 1922 005a 0C010000 		.4byte	.LVL10
+ 1923 005e 0E010000 		.4byte	.LVL11
+ 1924 0062 0200     		.2byte	0x2
+ 1925 0064 30       		.byte	0x30
+ 1926 0065 9F       		.byte	0x9f
+ 1927 0066 0E010000 		.4byte	.LVL11
+ 1928 006a 50010000 		.4byte	.LVL14
+ 1929 006e 0100     		.2byte	0x1
+ 1930 0070 54       		.byte	0x54
+ 1931 0071 00000000 		.4byte	0
+ 1932 0075 00000000 		.4byte	0
+ 1933              	.LLST3:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 38
+
+
+ 1934 0079 00000000 		.4byte	.LVL15
+ 1935 007d 08000000 		.4byte	.LVL16
+ 1936 0081 0100     		.2byte	0x1
+ 1937 0083 50       		.byte	0x50
+ 1938 0084 08000000 		.4byte	.LVL16
+ 1939 0088 B0000000 		.4byte	.LVL30
+ 1940 008c 0100     		.2byte	0x1
+ 1941 008e 54       		.byte	0x54
+ 1942 008f B0000000 		.4byte	.LVL30
+ 1943 0093 B8000000 		.4byte	.LFE2
+ 1944 0097 0400     		.2byte	0x4
+ 1945 0099 F3       		.byte	0xf3
+ 1946 009a 01       		.uleb128 0x1
+ 1947 009b 50       		.byte	0x50
+ 1948 009c 9F       		.byte	0x9f
+ 1949 009d 00000000 		.4byte	0
+ 1950 00a1 00000000 		.4byte	0
+ 1951              	.LLST4:
+ 1952 00a5 3C000000 		.4byte	.LVL21
+ 1953 00a9 44000000 		.4byte	.LVL22
+ 1954 00ad 0100     		.2byte	0x1
+ 1955 00af 50       		.byte	0x50
+ 1956 00b0 00000000 		.4byte	0
+ 1957 00b4 00000000 		.4byte	0
+ 1958              	.LLST5:
+ 1959 00b8 60000000 		.4byte	.LVL23
+ 1960 00bc 6A000000 		.4byte	.LVL24
+ 1961 00c0 0100     		.2byte	0x1
+ 1962 00c2 50       		.byte	0x50
+ 1963 00c3 00000000 		.4byte	0
+ 1964 00c7 00000000 		.4byte	0
+ 1965              	.LLST6:
+ 1966 00cb 80000000 		.4byte	.LVL26
+ 1967 00cf 88000000 		.4byte	.LVL27
+ 1968 00d3 0100     		.2byte	0x1
+ 1969 00d5 50       		.byte	0x50
+ 1970 00d6 00000000 		.4byte	0
+ 1971 00da 00000000 		.4byte	0
+ 1972              	.LLST7:
+ 1973 00de 9E000000 		.4byte	.LVL28
+ 1974 00e2 A8000000 		.4byte	.LVL29
+ 1975 00e6 0300     		.2byte	0x3
+ 1976 00e8 70       		.byte	0x70
+ 1977 00e9 05       		.sleb128 5
+ 1978 00ea 9F       		.byte	0x9f
+ 1979 00eb 00000000 		.4byte	0
+ 1980 00ef 00000000 		.4byte	0
+ 1981              	.LLST8:
+ 1982 00f3 00000000 		.4byte	.LVL31
+ 1983 00f7 12000000 		.4byte	.LVL33
+ 1984 00fb 0100     		.2byte	0x1
+ 1985 00fd 50       		.byte	0x50
+ 1986 00fe 12000000 		.4byte	.LVL33
+ 1987 0102 BC000000 		.4byte	.LVL58
+ 1988 0106 0100     		.2byte	0x1
+ 1989 0108 55       		.byte	0x55
+ 1990 0109 BC000000 		.4byte	.LVL58
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 39
+
+
+ 1991 010d C8000000 		.4byte	.LFE3
+ 1992 0111 0400     		.2byte	0x4
+ 1993 0113 F3       		.byte	0xf3
+ 1994 0114 01       		.uleb128 0x1
+ 1995 0115 50       		.byte	0x50
+ 1996 0116 9F       		.byte	0x9f
+ 1997 0117 00000000 		.4byte	0
+ 1998 011b 00000000 		.4byte	0
+ 1999              	.LLST9:
+ 2000 011f 00000000 		.4byte	.LVL31
+ 2001 0123 12000000 		.4byte	.LVL33
+ 2002 0127 0100     		.2byte	0x1
+ 2003 0129 51       		.byte	0x51
+ 2004 012a 12000000 		.4byte	.LVL33
+ 2005 012e C8000000 		.4byte	.LFE3
+ 2006 0132 0400     		.2byte	0x4
+ 2007 0134 F3       		.byte	0xf3
+ 2008 0135 01       		.uleb128 0x1
+ 2009 0136 51       		.byte	0x51
+ 2010 0137 9F       		.byte	0x9f
+ 2011 0138 00000000 		.4byte	0
+ 2012 013c 00000000 		.4byte	0
+ 2013              	.LLST10:
+ 2014 0140 0E000000 		.4byte	.LVL32
+ 2015 0144 BC000000 		.4byte	.LVL58
+ 2016 0148 0100     		.2byte	0x1
+ 2017 014a 5B       		.byte	0x5b
+ 2018 014b 00000000 		.4byte	0
+ 2019 014f 00000000 		.4byte	0
+ 2020              	.LLST11:
+ 2021 0153 0E000000 		.4byte	.LVL32
+ 2022 0157 12000000 		.4byte	.LVL33
+ 2023 015b 0200     		.2byte	0x2
+ 2024 015d 30       		.byte	0x30
+ 2025 015e 9F       		.byte	0x9f
+ 2026 015f 12000000 		.4byte	.LVL33
+ 2027 0163 BC000000 		.4byte	.LVL58
+ 2028 0167 0100     		.2byte	0x1
+ 2029 0169 56       		.byte	0x56
+ 2030 016a 00000000 		.4byte	0
+ 2031 016e 00000000 		.4byte	0
+ 2032              	.LLST12:
+ 2033 0172 1C000000 		.4byte	.LVL34
+ 2034 0176 92000000 		.4byte	.LVL52
+ 2035 017a 0200     		.2byte	0x2
+ 2036 017c 30       		.byte	0x30
+ 2037 017d 9F       		.byte	0x9f
+ 2038 017e 92000000 		.4byte	.LVL52
+ 2039 0182 94000000 		.4byte	.LVL53
+ 2040 0186 0200     		.2byte	0x2
+ 2041 0188 31       		.byte	0x31
+ 2042 0189 9F       		.byte	0x9f
+ 2043 018a 94000000 		.4byte	.LVL53
+ 2044 018e AA000000 		.4byte	.LVL55
+ 2045 0192 0200     		.2byte	0x2
+ 2046 0194 30       		.byte	0x30
+ 2047 0195 9F       		.byte	0x9f
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 40
+
+
+ 2048 0196 AA000000 		.4byte	.LVL55
+ 2049 019a AC000000 		.4byte	.LVL56
+ 2050 019e 0100     		.2byte	0x1
+ 2051 01a0 53       		.byte	0x53
+ 2052 01a1 00000000 		.4byte	0
+ 2053 01a5 00000000 		.4byte	0
+ 2054              	.LLST13:
+ 2055 01a9 20000000 		.4byte	.LVL35
+ 2056 01ad 24000000 		.4byte	.LVL36
+ 2057 01b1 0100     		.2byte	0x1
+ 2058 01b3 58       		.byte	0x58
+ 2059 01b4 24000000 		.4byte	.LVL36
+ 2060 01b8 AC000000 		.4byte	.LVL56
+ 2061 01bc 0100     		.2byte	0x1
+ 2062 01be 54       		.byte	0x54
+ 2063 01bf 00000000 		.4byte	0
+ 2064 01c3 00000000 		.4byte	0
+ 2065              	.LLST14:
+ 2066 01c7 42000000 		.4byte	.LVL38
+ 2067 01cb 47000000 		.4byte	.LVL39-1
+ 2068 01cf 0100     		.2byte	0x1
+ 2069 01d1 50       		.byte	0x50
+ 2070 01d2 47000000 		.4byte	.LVL39-1
+ 2071 01d6 94000000 		.4byte	.LVL53
+ 2072 01da 0100     		.2byte	0x1
+ 2073 01dc 59       		.byte	0x59
+ 2074 01dd 00000000 		.4byte	0
+ 2075 01e1 00000000 		.4byte	0
+ 2076              	.LLST15:
+ 2077 01e5 66000000 		.4byte	.LVL44
+ 2078 01e9 68000000 		.4byte	.LVL45
+ 2079 01ed 0100     		.2byte	0x1
+ 2080 01ef 50       		.byte	0x50
+ 2081 01f0 68000000 		.4byte	.LVL45
+ 2082 01f4 94000000 		.4byte	.LVL53
+ 2083 01f8 0200     		.2byte	0x2
+ 2084 01fa 91       		.byte	0x91
+ 2085 01fb 54       		.sleb128 -44
+ 2086 01fc 00000000 		.4byte	0
+ 2087 0200 00000000 		.4byte	0
+ 2088              	.LLST16:
+ 2089 0204 00000000 		.4byte	.LVL59
+ 2090 0208 10000000 		.4byte	.LVL62
+ 2091 020c 0100     		.2byte	0x1
+ 2092 020e 50       		.byte	0x50
+ 2093 020f 10000000 		.4byte	.LVL62
+ 2094 0213 92000000 		.4byte	.LFE4
+ 2095 0217 0100     		.2byte	0x1
+ 2096 0219 55       		.byte	0x55
+ 2097 021a 00000000 		.4byte	0
+ 2098 021e 00000000 		.4byte	0
+ 2099              	.LLST17:
+ 2100 0222 00000000 		.4byte	.LVL59
+ 2101 0226 10000000 		.4byte	.LVL62
+ 2102 022a 0100     		.2byte	0x1
+ 2103 022c 51       		.byte	0x51
+ 2104 022d 10000000 		.4byte	.LVL62
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 41
+
+
+ 2105 0231 92000000 		.4byte	.LFE4
+ 2106 0235 0100     		.2byte	0x1
+ 2107 0237 5B       		.byte	0x5b
+ 2108 0238 00000000 		.4byte	0
+ 2109 023c 00000000 		.4byte	0
+ 2110              	.LLST18:
+ 2111 0240 0A000000 		.4byte	.LVL60
+ 2112 0244 10000000 		.4byte	.LVL62
+ 2113 0248 0200     		.2byte	0x2
+ 2114 024a 30       		.byte	0x30
+ 2115 024b 9F       		.byte	0x9f
+ 2116 024c 10000000 		.4byte	.LVL62
+ 2117 0250 30000000 		.4byte	.LVL65
+ 2118 0254 0100     		.2byte	0x1
+ 2119 0256 54       		.byte	0x54
+ 2120 0257 30000000 		.4byte	.LVL65
+ 2121 025b 40000000 		.4byte	.LVL67
+ 2122 025f 0100     		.2byte	0x1
+ 2123 0261 53       		.byte	0x53
+ 2124 0262 40000000 		.4byte	.LVL67
+ 2125 0266 50000000 		.4byte	.LVL70
+ 2126 026a 0200     		.2byte	0x2
+ 2127 026c 91       		.byte	0x91
+ 2128 026d 44       		.sleb128 -60
+ 2129 026e 50000000 		.4byte	.LVL70
+ 2130 0272 6C000000 		.4byte	.LVL74
+ 2131 0276 0100     		.2byte	0x1
+ 2132 0278 54       		.byte	0x54
+ 2133 0279 6C000000 		.4byte	.LVL74
+ 2134 027d 84000000 		.4byte	.LVL77
+ 2135 0281 0100     		.2byte	0x1
+ 2136 0283 58       		.byte	0x58
+ 2137 0284 84000000 		.4byte	.LVL77
+ 2138 0288 92000000 		.4byte	.LFE4
+ 2139 028c 0100     		.2byte	0x1
+ 2140 028e 54       		.byte	0x54
+ 2141 028f 00000000 		.4byte	0
+ 2142 0293 00000000 		.4byte	0
+ 2143              	.LLST19:
+ 2144 0297 0C000000 		.4byte	.LVL61
+ 2145 029b 58000000 		.4byte	.LVL71
+ 2146 029f 0100     		.2byte	0x1
+ 2147 02a1 57       		.byte	0x57
+ 2148 02a2 00000000 		.4byte	0
+ 2149 02a6 00000000 		.4byte	0
+ 2150              	.LLST20:
+ 2151 02aa 2C000000 		.4byte	.LVL64
+ 2152 02ae 38000000 		.4byte	.LVL66
+ 2153 02b2 0100     		.2byte	0x1
+ 2154 02b4 50       		.byte	0x50
+ 2155 02b5 38000000 		.4byte	.LVL66
+ 2156 02b9 43000000 		.4byte	.LVL68-1
+ 2157 02bd 0100     		.2byte	0x1
+ 2158 02bf 52       		.byte	0x52
+ 2159 02c0 00000000 		.4byte	0
+ 2160 02c4 00000000 		.4byte	0
+ 2161              	.LLST21:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 42
+
+
+ 2162 02c8 68000000 		.4byte	.LVL73
+ 2163 02cc 77000000 		.4byte	.LVL75-1
+ 2164 02d0 0100     		.2byte	0x1
+ 2165 02d2 51       		.byte	0x51
+ 2166 02d3 00000000 		.4byte	0
+ 2167 02d7 00000000 		.4byte	0
+ 2168              		.section	.debug_aranges,"",%progbits
+ 2169 0000 3C000000 		.4byte	0x3c
+ 2170 0004 0200     		.2byte	0x2
+ 2171 0006 00000000 		.4byte	.Ldebug_info0
+ 2172 000a 04       		.byte	0x4
+ 2173 000b 00       		.byte	0
+ 2174 000c 0000     		.2byte	0
+ 2175 000e 0000     		.2byte	0
+ 2176 0010 00000000 		.4byte	.LFB1
+ 2177 0014 24000000 		.4byte	.LFE1-.LFB1
+ 2178 0018 00000000 		.4byte	.LFB0
+ 2179 001c 74010000 		.4byte	.LFE0-.LFB0
+ 2180 0020 00000000 		.4byte	.LFB2
+ 2181 0024 B8000000 		.4byte	.LFE2-.LFB2
+ 2182 0028 00000000 		.4byte	.LFB3
+ 2183 002c C8000000 		.4byte	.LFE3-.LFB3
+ 2184 0030 00000000 		.4byte	.LFB4
+ 2185 0034 92000000 		.4byte	.LFE4-.LFB4
+ 2186 0038 00000000 		.4byte	0
+ 2187 003c 00000000 		.4byte	0
+ 2188              		.section	.debug_ranges,"",%progbits
+ 2189              	.Ldebug_ranges0:
+ 2190 0000 1C000000 		.4byte	.LBB9
+ 2191 0004 A4000000 		.4byte	.LBE9
+ 2192 0008 A6000000 		.4byte	.LBB11
+ 2193 000c A8000000 		.4byte	.LBE11
+ 2194 0010 00000000 		.4byte	0
+ 2195 0014 00000000 		.4byte	0
+ 2196 0018 0A000000 		.4byte	.LBB12
+ 2197 001c 0C000000 		.4byte	.LBE12
+ 2198 0020 0E000000 		.4byte	.LBB15
+ 2199 0024 56000000 		.4byte	.LBE15
+ 2200 0028 00000000 		.4byte	0
+ 2201 002c 00000000 		.4byte	0
+ 2202 0030 10000000 		.4byte	.LBB13
+ 2203 0034 4C000000 		.4byte	.LBE13
+ 2204 0038 4E000000 		.4byte	.LBB14
+ 2205 003c 50000000 		.4byte	.LBE14
+ 2206 0040 00000000 		.4byte	0
+ 2207 0044 00000000 		.4byte	0
+ 2208 0048 5A000000 		.4byte	.LBB17
+ 2209 004c 80000000 		.4byte	.LBE17
+ 2210 0050 82000000 		.4byte	.LBB18
+ 2211 0054 84000000 		.4byte	.LBE18
+ 2212 0058 00000000 		.4byte	0
+ 2213 005c 00000000 		.4byte	0
+ 2214 0060 00000000 		.4byte	.LFB1
+ 2215 0064 24000000 		.4byte	.LFE1
+ 2216 0068 00000000 		.4byte	.LFB0
+ 2217 006c 74010000 		.4byte	.LFE0
+ 2218 0070 00000000 		.4byte	.LFB2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 43
+
+
+ 2219 0074 B8000000 		.4byte	.LFE2
+ 2220 0078 00000000 		.4byte	.LFB3
+ 2221 007c C8000000 		.4byte	.LFE3
+ 2222 0080 00000000 		.4byte	.LFB4
+ 2223 0084 92000000 		.4byte	.LFE4
+ 2224 0088 00000000 		.4byte	0
+ 2225 008c 00000000 		.4byte	0
+ 2226              		.section	.debug_line,"",%progbits
+ 2227              	.Ldebug_line0:
+ 2228 0000 92010000 		.section	.debug_str,"MS",%progbits,1
+ 2228      02006E00 
+ 2228      00000201 
+ 2228      FB0E0D00 
+ 2228      01010101 
+ 2229              	.LASF32:
+ 2230 0000 73746174 		.ascii	"state\000"
+ 2230      6500
+ 2231              	.LASF3:
+ 2232 0006 73686F72 		.ascii	"short int\000"
+ 2232      7420696E 
+ 2232      7400
+ 2233              	.LASF36:
+ 2234 0010 75706461 		.ascii	"update_score\000"
+ 2234      74655F73 
+ 2234      636F7265 
+ 2234      00
+ 2235              	.LASF14:
+ 2236 001d 76657274 		.ascii	"vertices\000"
+ 2236      69636573 
+ 2236      00
+ 2237              	.LASF15:
+ 2238 0026 536F6E67 		.ascii	"Song\000"
+ 2238      00
+ 2239              	.LASF16:
+ 2240 002b 74656D70 		.ascii	"tempo\000"
+ 2240      6F00
+ 2241              	.LASF39:
+ 2242 0031 64656C74 		.ascii	"delta\000"
+ 2242      6100
+ 2243              	.LASF30:
+ 2244 0037 6E6F7465 		.ascii	"notes_window\000"
+ 2244      735F7769 
+ 2244      6E646F77 
+ 2244      00
+ 2245              	.LASF38:
+ 2246 0044 6E65775F 		.ascii	"new_score\000"
+ 2246      73636F72 
+ 2246      6500
+ 2247              	.LASF45:
+ 2248 004e 433A5C55 		.ascii	"C:\\Users\\User\\Documents\\MIT 6.115\\finalproject"
+ 2248      73657273 
+ 2248      5C557365 
+ 2248      725C446F 
+ 2248      63756D65 
+ 2249 007c 5C66696E 		.ascii	"\\finalproject\\GuitarHero.cydsn\000"
+ 2249      616C7072 
+ 2249      6F6A6563 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 44
+
+
+ 2249      745C4775 
+ 2249      69746172 
+ 2250              	.LASF28:
+ 2251 009b 6E5F6261 		.ascii	"n_barlines\000"
+ 2251      726C696E 
+ 2251      657300
+ 2252              	.LASF34:
+ 2253 00a6 6E65775F 		.ascii	"new_game\000"
+ 2253      67616D65 
+ 2253      00
+ 2254              	.LASF44:
+ 2255 00af 2E5C6761 		.ascii	".\\game_manager.c\000"
+ 2255      6D655F6D 
+ 2255      616E6167 
+ 2255      65722E63 
+ 2255      00
+ 2256              	.LASF46:
+ 2257 00c0 75696E74 		.ascii	"uint8\000"
+ 2257      3800
+ 2258              	.LASF23:
+ 2259 00c6 47616D65 		.ascii	"GameState\000"
+ 2259      53746174 
+ 2259      6500
+ 2260              	.LASF0:
+ 2261 00d0 666C6F61 		.ascii	"float\000"
+ 2261      7400
+ 2262              	.LASF7:
+ 2263 00d6 6C6F6E67 		.ascii	"long long int\000"
+ 2263      206C6F6E 
+ 2263      6720696E 
+ 2263      7400
+ 2264              	.LASF48:
+ 2265 00e4 63726561 		.ascii	"create_sprites\000"
+ 2265      74655F73 
+ 2265      70726974 
+ 2265      657300
+ 2266              	.LASF5:
+ 2267 00f3 6C6F6E67 		.ascii	"long int\000"
+ 2267      20696E74 
+ 2267      00
+ 2268              	.LASF27:
+ 2269 00fc 6E6F7465 		.ascii	"notes\000"
+ 2269      7300
+ 2270              	.LASF26:
+ 2271 0102 6E5F6E6F 		.ascii	"n_notes\000"
+ 2271      74657300 
+ 2272              	.LASF19:
+ 2273 010a 74726163 		.ascii	"track\000"
+ 2273      6B00
+ 2274              	.LASF18:
+ 2275 0110 4E6F7465 		.ascii	"Note\000"
+ 2275      00
+ 2276              	.LASF31:
+ 2277 0115 6261726C 		.ascii	"barlines_window\000"
+ 2277      696E6573 
+ 2277      5F77696E 
+ 2277      646F7700 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 45
+
+
+ 2278              	.LASF50:
+ 2279 0125 6D616B65 		.ascii	"make_barline\000"
+ 2279      5F626172 
+ 2279      6C696E65 
+ 2279      00
+ 2280              	.LASF2:
+ 2281 0132 756E7369 		.ascii	"unsigned char\000"
+ 2281      676E6564 
+ 2281      20636861 
+ 2281      7200
+ 2282              	.LASF47:
+ 2283 0140 6F626A5F 		.ascii	"obj_pos\000"
+ 2283      706F7300 
+ 2284              	.LASF1:
+ 2285 0148 7369676E 		.ascii	"signed char\000"
+ 2285      65642063 
+ 2285      68617200 
+ 2286              	.LASF25:
+ 2287 0154 73636F72 		.ascii	"score\000"
+ 2287      6500
+ 2288              	.LASF8:
+ 2289 015a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2289      206C6F6E 
+ 2289      6720756E 
+ 2289      7369676E 
+ 2289      65642069 
+ 2290              	.LASF12:
+ 2291 0171 506F696E 		.ascii	"Point\000"
+ 2291      7400
+ 2292              	.LASF9:
+ 2293 0177 756E7369 		.ascii	"unsigned int\000"
+ 2293      676E6564 
+ 2293      20696E74 
+ 2293      00
+ 2294              	.LASF35:
+ 2295 0184 7469636B 		.ascii	"tick\000"
+ 2295      00
+ 2296              	.LASF20:
+ 2297 0189 74696D65 		.ascii	"time\000"
+ 2297      00
+ 2298              	.LASF4:
+ 2299 018e 73686F72 		.ascii	"short unsigned int\000"
+ 2299      7420756E 
+ 2299      7369676E 
+ 2299      65642069 
+ 2299      6E7400
+ 2300              	.LASF11:
+ 2301 01a1 63686172 		.ascii	"char\000"
+ 2301      00
+ 2302              	.LASF49:
+ 2303 01a6 6D616B65 		.ascii	"make_ellipse\000"
+ 2303      5F656C6C 
+ 2303      69707365 
+ 2303      00
+ 2304              	.LASF29:
+ 2305 01b3 6261726C 		.ascii	"barlines\000"
+ 2305      696E6573 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 46
+
+
+ 2305      00
+ 2306              	.LASF17:
+ 2307 01bc 64757261 		.ascii	"duration\000"
+ 2307      74696F6E 
+ 2307      00
+ 2308              	.LASF6:
+ 2309 01c5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2309      20756E73 
+ 2309      69676E65 
+ 2309      6420696E 
+ 2309      7400
+ 2310              	.LASF10:
+ 2311 01d7 646F7562 		.ascii	"double\000"
+ 2311      6C6500
+ 2312              	.LASF13:
+ 2313 01de 53707269 		.ascii	"Sprite\000"
+ 2313      746500
+ 2314              	.LASF37:
+ 2315 01e5 6D61736B 		.ascii	"mask\000"
+ 2315      00
+ 2316              	.LASF41:
+ 2317 01ea 73707269 		.ascii	"sprites\000"
+ 2317      74657300 
+ 2318              	.LASF42:
+ 2319 01f2 73697A65 		.ascii	"sizetype\000"
+ 2319      74797065 
+ 2319      00
+ 2320              	.LASF24:
+ 2321 01fb 736F6E67 		.ascii	"song\000"
+ 2321      00
+ 2322              	.LASF43:
+ 2323 0200 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 2323      4320342E 
+ 2323      392E3320 
+ 2323      32303135 
+ 2323      30333033 
+ 2324 0233 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 2324      20726576 
+ 2324      6973696F 
+ 2324      6E203232 
+ 2324      31323230 
+ 2325 0266 67202D73 		.ascii	"g -std=gnu11 -ffunction-sections -ffat-lto-objects\000"
+ 2325      74643D67 
+ 2325      6E753131 
+ 2325      202D6666 
+ 2325      756E6374 
+ 2326              	.LASF21:
+ 2327 0299 706C6179 		.ascii	"played\000"
+ 2327      656400
+ 2328              	.LASF22:
+ 2329 02a0 52656E64 		.ascii	"RenderWindow\000"
+ 2329      65725769 
+ 2329      6E646F77 
+ 2329      00
+ 2330              	.LASF33:
+ 2331 02ad 6F626A5F 		.ascii	"obj_time\000"
+ 2331      74696D65 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 47
+
+
+ 2331      00
+ 2332              	.LASF40:
+ 2333 02b6 6D61785F 		.ascii	"max_delta\000"
+ 2333      64656C74 
+ 2333      6100
+ 2334              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
