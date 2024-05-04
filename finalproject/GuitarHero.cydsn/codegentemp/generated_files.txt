@@ -46,11 +46,44 @@
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD.c" value="ARM_C_FILE;LCD" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD.h" value="NONE;LCD" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD_PM.c" value="ARM_C_FILE;LCD" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Audio_isr.c" value="ARM_C_FILE;Audio_isr" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Audio_isr.h" value="NONE;Audio_isr" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Audio_out_aliases.h" value="NONE;Audio_out" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Audio_out.c" value="ARM_C_FILE;Audio_out" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Audio_out.h" value="NONE;Audio_out" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Audio_Clock.c" value="ARM_C_FILE;Audio_Clock" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Audio_Clock.h" value="NONE;Audio_Clock" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS.h" value="NONE;SD_FS" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_ConfigMMC_SPI.c" value="ARM_C_FILE;SD_FS" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_MMC_HW_SPI.c" value="ARM_C_FILE;SD_FS" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_PM.c" value="ARM_C_FILE;SD_FS" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Audio_DAC.c" value="ARM_C_FILE;Audio_DAC" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Audio_DAC.h" value="NONE;Audio_DAC" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Audio_DAC_PM.c" value="ARM_C_FILE;Audio_DAC" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_IntClock.c" value="ARM_C_FILE;BLE_UART_IntClock" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_IntClock.h" value="NONE;BLE_UART_IntClock" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD_LCDPort_aliases.h" value="NONE;LCD_LCDPort" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD_LCDPort.c" value="ARM_C_FILE;LCD_LCDPort" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD_LCDPort.h" value="NONE;LCD_LCDPort" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_SPI0.c" value="ARM_C_FILE;SD_FS_SPI0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_SPI0.h" value="NONE;SD_FS_SPI0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_SPI0_PM.c" value="ARM_C_FILE;SD_FS_SPI0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_SPI0_INT.c" value="ARM_C_FILE;SD_FS_SPI0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_SPI0_PVT.h" value="NONE;SD_FS_SPI0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_mosi0_aliases.h" value="NONE;SD_FS_mosi0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_mosi0.c" value="ARM_C_FILE;SD_FS_mosi0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_mosi0.h" value="NONE;SD_FS_mosi0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_Clock_1.c" value="ARM_C_FILE;SD_FS_Clock_1" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_Clock_1.h" value="NONE;SD_FS_Clock_1" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_miso0_aliases.h" value="NONE;SD_FS_miso0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_miso0.c" value="ARM_C_FILE;SD_FS_miso0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_miso0.h" value="NONE;SD_FS_miso0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_sclk0_aliases.h" value="NONE;SD_FS_sclk0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_sclk0.c" value="ARM_C_FILE;SD_FS_sclk0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_sclk0.h" value="NONE;SD_FS_sclk0" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_SPI0_CS_aliases.h" value="NONE;SD_FS_SPI0_CS" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_SPI0_CS.c" value="ARM_C_FILE;SD_FS_SPI0_CS" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\SD_FS_SPI0_CS.h" value="NONE;SD_FS_SPI0_CS" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cycodeshareimport.ld" value="NONE;" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cycodeshareexport.ld" value="NONE;" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\cycodeshareimport.scat" value="NONE;" />

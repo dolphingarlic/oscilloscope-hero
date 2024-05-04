@@ -1,0 +1,943 @@
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"Audio_DAC_BuffAmp.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.Audio_DAC_BuffAmp_Enable,"ax",%progbits
+  19              		.align	2
+  20              		.global	Audio_DAC_BuffAmp_Enable
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	Audio_DAC_BuffAmp_Enable, %function
+  24              	Audio_DAC_BuffAmp_Enable:
+  25              	.LFB1:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\Audio_DAC_BuffAmp.c"
+   1:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * File Name: Audio_DAC_BuffAmp.c
+   3:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Version 1.90
+   4:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+   5:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Description:
+   6:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  This file provides the source code to the API for OpAmp (Analog Buffer) 
+   7:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  Component.
+   8:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+   9:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Note:
+  10:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+  11:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+  18:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** #include "Audio_DAC_BuffAmp.h"
+  19:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+  20:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** uint8 Audio_DAC_BuffAmp_initVar = 0u;
+  21:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+  22:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+  23:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** /*******************************************************************************   
+  24:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Function Name: Audio_DAC_BuffAmp_Init
+  25:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** ********************************************************************************
+  26:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+  27:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Summary:
+  28:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  Initialize component's parameters to the parameters set by user in the 
+  29:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  customizer of the component placed onto schematic. Usually called in 
+  30:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  Audio_DAC_BuffAmp_Start().
+  31:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Parameters:
+  33:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  void
+  34:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+  35:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Return:
+  36:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  void
+  37:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+  38:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *******************************************************************************/
+  39:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** void Audio_DAC_BuffAmp_Init(void) 
+  40:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** {
+  41:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     Audio_DAC_BuffAmp_SetPower(Audio_DAC_BuffAmp_DEFAULT_POWER);
+  42:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** }
+  43:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+  44:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+  45:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** /*******************************************************************************   
+  46:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Function Name: Audio_DAC_BuffAmp_Enable
+  47:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** ********************************************************************************
+  48:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+  49:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Summary:
+  50:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  Enables the OpAmp block operation
+  51:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+  52:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Parameters:
+  53:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  void
+  54:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+  55:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Return:
+  56:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  void
+  57:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+  58:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *******************************************************************************/
+  59:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** void Audio_DAC_BuffAmp_Enable(void) 
+  60:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** {
+  27              		.loc 1 60 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  61:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     /* Enable negative charge pumps in ANIF */
+  62:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     Audio_DAC_BuffAmp_PUMP_CR1_REG  |= (Audio_DAC_BuffAmp_PUMP_CR1_CLKSEL | Audio_DAC_BuffAmp_PUMP_
+  32              		.loc 1 62 0
+  33 0000 084A     		ldr	r2, .L2
+  34 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  35 0004 43F06003 		orr	r3, r3, #96
+  36 0008 1370     		strb	r3, [r2]
+  63:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+  64:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     /* Enable power to buffer in active mode */
+  65:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     Audio_DAC_BuffAmp_PM_ACT_CFG_REG |= Audio_DAC_BuffAmp_ACT_PWR_EN;
+  37              		.loc 1 65 0
+  38 000a A2F5A652 		sub	r2, r2, #5312
+  39 000e 133A     		subs	r2, r2, #19
+  40 0010 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  41 0012 43F00803 		orr	r3, r3, #8
+  42 0016 1370     		strb	r3, [r2]
+  66:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+  67:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     /* Enable power to buffer in alternative active mode */
+  68:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     Audio_DAC_BuffAmp_PM_STBY_CFG_REG |= Audio_DAC_BuffAmp_STBY_PWR_EN;
+  43              		.loc 1 68 0
+  44 0018 1032     		adds	r2, r2, #16
+  45 001a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  46 001c 43F00803 		orr	r3, r3, #8
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 3
+
+
+  47 0020 1370     		strb	r3, [r2]
+  48 0022 7047     		bx	lr
+  49              	.L3:
+  50              		.align	2
+  51              	.L2:
+  52 0024 77580040 		.word	1073764471
+  53              		.cfi_endproc
+  54              	.LFE1:
+  55              		.size	Audio_DAC_BuffAmp_Enable, .-Audio_DAC_BuffAmp_Enable
+  56              		.section	.text.Audio_DAC_BuffAmp_Stop,"ax",%progbits
+  57              		.align	2
+  58              		.global	Audio_DAC_BuffAmp_Stop
+  59              		.thumb
+  60              		.thumb_func
+  61              		.type	Audio_DAC_BuffAmp_Stop, %function
+  62              	Audio_DAC_BuffAmp_Stop:
+  63              	.LFB3:
+  69:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** }
+  70:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+  71:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+  72:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** /*******************************************************************************
+  73:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Function Name:   Audio_DAC_BuffAmp_Start
+  74:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** ********************************************************************************
+  75:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+  76:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Summary:
+  77:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  The start function initializes the Analog Buffer with the default values and 
+  78:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  sets the power to the given level. A power level of 0, is same as 
+  79:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  executing the stop function.
+  80:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+  81:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Parameters:
+  82:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  void
+  83:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+  84:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Return:
+  85:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  void
+  86:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+  87:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Global variables:
+  88:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  Audio_DAC_BuffAmp_initVar: Used to check the initial configuration, modified 
+  89:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  when this function is called for the first time.
+  90:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+  91:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *******************************************************************************/
+  92:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** void Audio_DAC_BuffAmp_Start(void) 
+  93:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** {
+  94:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     if(Audio_DAC_BuffAmp_initVar == 0u)
+  95:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     {
+  96:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****         Audio_DAC_BuffAmp_initVar = 1u;
+  97:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****         Audio_DAC_BuffAmp_Init();
+  98:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     }
+  99:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+ 100:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     Audio_DAC_BuffAmp_Enable();
+ 101:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** }
+ 102:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+ 103:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+ 104:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** /*******************************************************************************
+ 105:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Function Name: Audio_DAC_BuffAmp_Stop
+ 106:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** ********************************************************************************
+ 107:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+ 108:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Summary:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 4
+
+
+ 109:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  Powers down amplifier to lowest power state.
+ 110:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+ 111:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Parameters:
+ 112:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  void
+ 113:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+ 114:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Return:
+ 115:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  void
+ 116:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+ 117:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *******************************************************************************/
+ 118:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** void Audio_DAC_BuffAmp_Stop(void) 
+ 119:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** {
+  64              		.loc 1 119 0
+  65              		.cfi_startproc
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68              		@ link register save eliminated.
+ 120:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     /* Disable power to buffer in active mode template */
+ 121:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     Audio_DAC_BuffAmp_PM_ACT_CFG_REG &= (uint8)(~Audio_DAC_BuffAmp_ACT_PWR_EN);
+  69              		.loc 1 121 0
+  70 0000 094B     		ldr	r3, .L6
+  71 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+  72 0004 02F0F702 		and	r2, r2, #247
+  73 0008 1A70     		strb	r2, [r3]
+ 122:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+ 123:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     /* Disable power to buffer in alternative active mode template */
+ 124:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     Audio_DAC_BuffAmp_PM_STBY_CFG_REG &= (uint8)(~Audio_DAC_BuffAmp_STBY_PWR_EN);
+  74              		.loc 1 124 0
+  75 000a 0849     		ldr	r1, .L6+4
+  76 000c 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+  77 000e 02F0F702 		and	r2, r2, #247
+  78 0012 0A70     		strb	r2, [r1]
+ 125:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     
+ 126:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     /* Disable negative charge pumps for ANIF only if all ABuf is turned OFF */
+ 127:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     if(Audio_DAC_BuffAmp_PM_ACT_CFG_REG == 0u)
+  79              		.loc 1 127 0
+  80 0014 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  81 0016 13F0FF0F 		tst	r3, #255
+  82 001a 04D1     		bne	.L4
+ 128:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     {
+ 129:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****         Audio_DAC_BuffAmp_PUMP_CR1_REG &= (uint8)(~(Audio_DAC_BuffAmp_PUMP_CR1_CLKSEL | Audio_DAC_B
+  83              		.loc 1 129 0
+  84 001c 044A     		ldr	r2, .L6+8
+  85 001e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  86 0020 03F09F03 		and	r3, r3, #159
+  87 0024 1370     		strb	r3, [r2]
+  88              	.L4:
+  89 0026 7047     		bx	lr
+  90              	.L7:
+  91              		.align	2
+  92              	.L6:
+  93 0028 A4430040 		.word	1073759140
+  94 002c B4430040 		.word	1073759156
+  95 0030 77580040 		.word	1073764471
+  96              		.cfi_endproc
+  97              	.LFE3:
+  98              		.size	Audio_DAC_BuffAmp_Stop, .-Audio_DAC_BuffAmp_Stop
+  99              		.section	.text.Audio_DAC_BuffAmp_SetPower,"ax",%progbits
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 5
+
+
+ 100              		.align	2
+ 101              		.global	Audio_DAC_BuffAmp_SetPower
+ 102              		.thumb
+ 103              		.thumb_func
+ 104              		.type	Audio_DAC_BuffAmp_SetPower, %function
+ 105              	Audio_DAC_BuffAmp_SetPower:
+ 106              	.LFB4:
+ 130:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     }
+ 131:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** }
+ 132:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+ 133:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** 
+ 134:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** /*******************************************************************************
+ 135:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Function Name: Audio_DAC_BuffAmp_SetPower
+ 136:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** ********************************************************************************
+ 137:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+ 138:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Summary:
+ 139:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  Sets power level of Analog buffer.
+ 140:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+ 141:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Parameters: 
+ 142:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  power: PSoC3: Sets power level between low (1) and high power (3).
+ 143:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *         PSoC5: Sets power level High (0)
+ 144:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+ 145:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** * Return:
+ 146:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *  void
+ 147:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** *
+ 148:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** **********************************************************************************/
+ 149:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** void Audio_DAC_BuffAmp_SetPower(uint8 power) 
+ 150:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** {
+ 107              		.loc 1 150 0
+ 108              		.cfi_startproc
+ 109              		@ args = 0, pretend = 0, frame = 0
+ 110              		@ frame_needed = 0, uses_anonymous_args = 0
+ 111              		@ link register save eliminated.
+ 112              	.LVL0:
+ 151:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     #if (CY_PSOC3 || CY_PSOC5LP)
+ 152:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****         Audio_DAC_BuffAmp_CR_REG &= (uint8)(~Audio_DAC_BuffAmp_PWR_MASK);
+ 113              		.loc 1 152 0
+ 114 0000 054B     		ldr	r3, .L9
+ 115 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 116 0004 02F0FC02 		and	r2, r2, #252
+ 117 0008 1A70     		strb	r2, [r3]
+ 153:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****         Audio_DAC_BuffAmp_CR_REG |= power & Audio_DAC_BuffAmp_PWR_MASK;      /* Set device power */
+ 118              		.loc 1 153 0
+ 119 000a 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 120 000c 00F00300 		and	r0, r0, #3
+ 121              	.LVL1:
+ 122 0010 1043     		orrs	r0, r0, r2
+ 123 0012 1870     		strb	r0, [r3]
+ 124 0014 7047     		bx	lr
+ 125              	.L10:
+ 126 0016 00BF     		.align	2
+ 127              	.L9:
+ 128 0018 5E580040 		.word	1073764446
+ 129              		.cfi_endproc
+ 130              	.LFE4:
+ 131              		.size	Audio_DAC_BuffAmp_SetPower, .-Audio_DAC_BuffAmp_SetPower
+ 132              		.section	.text.Audio_DAC_BuffAmp_Init,"ax",%progbits
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 6
+
+
+ 133              		.align	2
+ 134              		.global	Audio_DAC_BuffAmp_Init
+ 135              		.thumb
+ 136              		.thumb_func
+ 137              		.type	Audio_DAC_BuffAmp_Init, %function
+ 138              	Audio_DAC_BuffAmp_Init:
+ 139              	.LFB0:
+  40:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     Audio_DAC_BuffAmp_SetPower(Audio_DAC_BuffAmp_DEFAULT_POWER);
+ 140              		.loc 1 40 0
+ 141              		.cfi_startproc
+ 142              		@ args = 0, pretend = 0, frame = 0
+ 143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 144 0000 08B5     		push	{r3, lr}
+ 145              		.cfi_def_cfa_offset 8
+ 146              		.cfi_offset 3, -8
+ 147              		.cfi_offset 14, -4
+  41:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** }
+ 148              		.loc 1 41 0
+ 149 0002 0220     		movs	r0, #2
+ 150 0004 FFF7FEFF 		bl	Audio_DAC_BuffAmp_SetPower
+ 151              	.LVL2:
+ 152 0008 08BD     		pop	{r3, pc}
+ 153              		.cfi_endproc
+ 154              	.LFE0:
+ 155              		.size	Audio_DAC_BuffAmp_Init, .-Audio_DAC_BuffAmp_Init
+ 156 000a 00BF     		.section	.text.Audio_DAC_BuffAmp_Start,"ax",%progbits
+ 157              		.align	2
+ 158              		.global	Audio_DAC_BuffAmp_Start
+ 159              		.thumb
+ 160              		.thumb_func
+ 161              		.type	Audio_DAC_BuffAmp_Start, %function
+ 162              	Audio_DAC_BuffAmp_Start:
+ 163              	.LFB2:
+  93:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     if(Audio_DAC_BuffAmp_initVar == 0u)
+ 164              		.loc 1 93 0
+ 165              		.cfi_startproc
+ 166              		@ args = 0, pretend = 0, frame = 0
+ 167              		@ frame_needed = 0, uses_anonymous_args = 0
+ 168 0000 08B5     		push	{r3, lr}
+ 169              		.cfi_def_cfa_offset 8
+ 170              		.cfi_offset 3, -8
+ 171              		.cfi_offset 14, -4
+  94:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     {
+ 172              		.loc 1 94 0
+ 173 0002 054B     		ldr	r3, .L16
+ 174 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 175 0006 23B9     		cbnz	r3, .L14
+  96:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****         Audio_DAC_BuffAmp_Init();
+ 176              		.loc 1 96 0
+ 177 0008 0122     		movs	r2, #1
+ 178 000a 034B     		ldr	r3, .L16
+ 179 000c 1A70     		strb	r2, [r3]
+  97:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c ****     }
+ 180              		.loc 1 97 0
+ 181 000e FFF7FEFF 		bl	Audio_DAC_BuffAmp_Init
+ 182              	.LVL3:
+ 183              	.L14:
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 7
+
+
+ 100:.\Generated_Source\PSoC5/Audio_DAC_BuffAmp.c **** }
+ 184              		.loc 1 100 0
+ 185 0012 FFF7FEFF 		bl	Audio_DAC_BuffAmp_Enable
+ 186              	.LVL4:
+ 187 0016 08BD     		pop	{r3, pc}
+ 188              	.L17:
+ 189              		.align	2
+ 190              	.L16:
+ 191 0018 00000000 		.word	.LANCHOR0
+ 192              		.cfi_endproc
+ 193              	.LFE2:
+ 194              		.size	Audio_DAC_BuffAmp_Start, .-Audio_DAC_BuffAmp_Start
+ 195              		.global	Audio_DAC_BuffAmp_initVar
+ 196              		.bss
+ 197              		.set	.LANCHOR0,. + 0
+ 198              		.type	Audio_DAC_BuffAmp_initVar, %object
+ 199              		.size	Audio_DAC_BuffAmp_initVar, 1
+ 200              	Audio_DAC_BuffAmp_initVar:
+ 201 0000 00       		.space	1
+ 202              		.text
+ 203              	.Letext0:
+ 204              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 205              		.section	.debug_info,"",%progbits
+ 206              	.Ldebug_info0:
+ 207 0000 4D010000 		.4byte	0x14d
+ 208 0004 0400     		.2byte	0x4
+ 209 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 210 000a 04       		.byte	0x4
+ 211 000b 01       		.uleb128 0x1
+ 212 000c 7A000000 		.4byte	.LASF21
+ 213 0010 01       		.byte	0x1
+ 214 0011 21010000 		.4byte	.LASF22
+ 215 0015 02020000 		.4byte	.LASF23
+ 216 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 217 001d 00000000 		.4byte	0
+ 218 0021 00000000 		.4byte	.Ldebug_line0
+ 219 0025 02       		.uleb128 0x2
+ 220 0026 01       		.byte	0x1
+ 221 0027 06       		.byte	0x6
+ 222 0028 9D010000 		.4byte	.LASF0
+ 223 002c 02       		.uleb128 0x2
+ 224 002d 01       		.byte	0x1
+ 225 002e 08       		.byte	0x8
+ 226 002f 13010000 		.4byte	.LASF1
+ 227 0033 02       		.uleb128 0x2
+ 228 0034 02       		.byte	0x2
+ 229 0035 05       		.byte	0x5
+ 230 0036 5C010000 		.4byte	.LASF2
+ 231 003a 02       		.uleb128 0x2
+ 232 003b 02       		.byte	0x2
+ 233 003c 07       		.byte	0x7
+ 234 003d 0E000000 		.4byte	.LASF3
+ 235 0041 02       		.uleb128 0x2
+ 236 0042 04       		.byte	0x4
+ 237 0043 05       		.byte	0x5
+ 238 0044 53010000 		.4byte	.LASF4
+ 239 0048 02       		.uleb128 0x2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 8
+
+
+ 240 0049 04       		.byte	0x4
+ 241 004a 07       		.byte	0x7
+ 242 004b 4B000000 		.4byte	.LASF5
+ 243 004f 02       		.uleb128 0x2
+ 244 0050 08       		.byte	0x8
+ 245 0051 05       		.byte	0x5
+ 246 0052 00000000 		.4byte	.LASF6
+ 247 0056 02       		.uleb128 0x2
+ 248 0057 08       		.byte	0x8
+ 249 0058 07       		.byte	0x7
+ 250 0059 5D000000 		.4byte	.LASF7
+ 251 005d 03       		.uleb128 0x3
+ 252 005e 04       		.byte	0x4
+ 253 005f 05       		.byte	0x5
+ 254 0060 696E7400 		.ascii	"int\000"
+ 255 0064 02       		.uleb128 0x2
+ 256 0065 04       		.byte	0x4
+ 257 0066 07       		.byte	0x7
+ 258 0067 21000000 		.4byte	.LASF8
+ 259 006b 04       		.uleb128 0x4
+ 260 006c 45000000 		.4byte	.LASF12
+ 261 0070 02       		.byte	0x2
+ 262 0071 9201     		.2byte	0x192
+ 263 0073 2C000000 		.4byte	0x2c
+ 264 0077 02       		.uleb128 0x2
+ 265 0078 04       		.byte	0x4
+ 266 0079 04       		.byte	0x4
+ 267 007a 74000000 		.4byte	.LASF9
+ 268 007e 02       		.uleb128 0x2
+ 269 007f 08       		.byte	0x8
+ 270 0080 04       		.byte	0x4
+ 271 0081 66010000 		.4byte	.LASF10
+ 272 0085 02       		.uleb128 0x2
+ 273 0086 01       		.byte	0x1
+ 274 0087 08       		.byte	0x8
+ 275 0088 4E010000 		.4byte	.LASF11
+ 276 008c 04       		.uleb128 0x4
+ 277 008d 4F020000 		.4byte	.LASF13
+ 278 0091 02       		.byte	0x2
+ 279 0092 3C02     		.2byte	0x23c
+ 280 0094 98000000 		.4byte	0x98
+ 281 0098 05       		.uleb128 0x5
+ 282 0099 6B000000 		.4byte	0x6b
+ 283 009d 02       		.uleb128 0x2
+ 284 009e 08       		.byte	0x8
+ 285 009f 04       		.byte	0x4
+ 286 00a0 C3010000 		.4byte	.LASF14
+ 287 00a4 02       		.uleb128 0x2
+ 288 00a5 04       		.byte	0x4
+ 289 00a6 07       		.byte	0x7
+ 290 00a7 54020000 		.4byte	.LASF15
+ 291 00ab 06       		.uleb128 0x6
+ 292 00ac 84010000 		.4byte	.LASF16
+ 293 00b0 01       		.byte	0x1
+ 294 00b1 3B       		.byte	0x3b
+ 295 00b2 00000000 		.4byte	.LFB1
+ 296 00b6 28000000 		.4byte	.LFE1-.LFB1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 9
+
+
+ 297 00ba 01       		.uleb128 0x1
+ 298 00bb 9C       		.byte	0x9c
+ 299 00bc 06       		.uleb128 0x6
+ 300 00bd 2E000000 		.4byte	.LASF17
+ 301 00c1 01       		.byte	0x1
+ 302 00c2 76       		.byte	0x76
+ 303 00c3 00000000 		.4byte	.LFB3
+ 304 00c7 34000000 		.4byte	.LFE3-.LFB3
+ 305 00cb 01       		.uleb128 0x1
+ 306 00cc 9C       		.byte	0x9c
+ 307 00cd 07       		.uleb128 0x7
+ 308 00ce E7010000 		.4byte	.LASF18
+ 309 00d2 01       		.byte	0x1
+ 310 00d3 95       		.byte	0x95
+ 311 00d4 00000000 		.4byte	.LFB4
+ 312 00d8 1C000000 		.4byte	.LFE4-.LFB4
+ 313 00dc 01       		.uleb128 0x1
+ 314 00dd 9C       		.byte	0x9c
+ 315 00de F2000000 		.4byte	0xf2
+ 316 00e2 08       		.uleb128 0x8
+ 317 00e3 5D020000 		.4byte	.LASF24
+ 318 00e7 01       		.byte	0x1
+ 319 00e8 95       		.byte	0x95
+ 320 00e9 6B000000 		.4byte	0x6b
+ 321 00ed 00000000 		.4byte	.LLST0
+ 322 00f1 00       		.byte	0
+ 323 00f2 07       		.uleb128 0x7
+ 324 00f3 6D010000 		.4byte	.LASF19
+ 325 00f7 01       		.byte	0x1
+ 326 00f8 27       		.byte	0x27
+ 327 00f9 00000000 		.4byte	.LFB0
+ 328 00fd 0A000000 		.4byte	.LFE0-.LFB0
+ 329 0101 01       		.uleb128 0x1
+ 330 0102 9C       		.byte	0x9c
+ 331 0103 17010000 		.4byte	0x117
+ 332 0107 09       		.uleb128 0x9
+ 333 0108 08000000 		.4byte	.LVL2
+ 334 010c CD000000 		.4byte	0xcd
+ 335 0110 0A       		.uleb128 0xa
+ 336 0111 01       		.uleb128 0x1
+ 337 0112 50       		.byte	0x50
+ 338 0113 01       		.uleb128 0x1
+ 339 0114 32       		.byte	0x32
+ 340 0115 00       		.byte	0
+ 341 0116 00       		.byte	0
+ 342 0117 07       		.uleb128 0x7
+ 343 0118 CF010000 		.4byte	.LASF20
+ 344 011c 01       		.byte	0x1
+ 345 011d 5C       		.byte	0x5c
+ 346 011e 00000000 		.4byte	.LFB2
+ 347 0122 1C000000 		.4byte	.LFE2-.LFB2
+ 348 0126 01       		.uleb128 0x1
+ 349 0127 9C       		.byte	0x9c
+ 350 0128 3F010000 		.4byte	0x13f
+ 351 012c 0B       		.uleb128 0xb
+ 352 012d 12000000 		.4byte	.LVL3
+ 353 0131 F2000000 		.4byte	0xf2
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 10
+
+
+ 354 0135 0B       		.uleb128 0xb
+ 355 0136 16000000 		.4byte	.LVL4
+ 356 013a AB000000 		.4byte	0xab
+ 357 013e 00       		.byte	0
+ 358 013f 0C       		.uleb128 0xc
+ 359 0140 A9010000 		.4byte	.LASF25
+ 360 0144 01       		.byte	0x1
+ 361 0145 14       		.byte	0x14
+ 362 0146 6B000000 		.4byte	0x6b
+ 363 014a 05       		.uleb128 0x5
+ 364 014b 03       		.byte	0x3
+ 365 014c 00000000 		.4byte	Audio_DAC_BuffAmp_initVar
+ 366 0150 00       		.byte	0
+ 367              		.section	.debug_abbrev,"",%progbits
+ 368              	.Ldebug_abbrev0:
+ 369 0000 01       		.uleb128 0x1
+ 370 0001 11       		.uleb128 0x11
+ 371 0002 01       		.byte	0x1
+ 372 0003 25       		.uleb128 0x25
+ 373 0004 0E       		.uleb128 0xe
+ 374 0005 13       		.uleb128 0x13
+ 375 0006 0B       		.uleb128 0xb
+ 376 0007 03       		.uleb128 0x3
+ 377 0008 0E       		.uleb128 0xe
+ 378 0009 1B       		.uleb128 0x1b
+ 379 000a 0E       		.uleb128 0xe
+ 380 000b 55       		.uleb128 0x55
+ 381 000c 17       		.uleb128 0x17
+ 382 000d 11       		.uleb128 0x11
+ 383 000e 01       		.uleb128 0x1
+ 384 000f 10       		.uleb128 0x10
+ 385 0010 17       		.uleb128 0x17
+ 386 0011 00       		.byte	0
+ 387 0012 00       		.byte	0
+ 388 0013 02       		.uleb128 0x2
+ 389 0014 24       		.uleb128 0x24
+ 390 0015 00       		.byte	0
+ 391 0016 0B       		.uleb128 0xb
+ 392 0017 0B       		.uleb128 0xb
+ 393 0018 3E       		.uleb128 0x3e
+ 394 0019 0B       		.uleb128 0xb
+ 395 001a 03       		.uleb128 0x3
+ 396 001b 0E       		.uleb128 0xe
+ 397 001c 00       		.byte	0
+ 398 001d 00       		.byte	0
+ 399 001e 03       		.uleb128 0x3
+ 400 001f 24       		.uleb128 0x24
+ 401 0020 00       		.byte	0
+ 402 0021 0B       		.uleb128 0xb
+ 403 0022 0B       		.uleb128 0xb
+ 404 0023 3E       		.uleb128 0x3e
+ 405 0024 0B       		.uleb128 0xb
+ 406 0025 03       		.uleb128 0x3
+ 407 0026 08       		.uleb128 0x8
+ 408 0027 00       		.byte	0
+ 409 0028 00       		.byte	0
+ 410 0029 04       		.uleb128 0x4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 11
+
+
+ 411 002a 16       		.uleb128 0x16
+ 412 002b 00       		.byte	0
+ 413 002c 03       		.uleb128 0x3
+ 414 002d 0E       		.uleb128 0xe
+ 415 002e 3A       		.uleb128 0x3a
+ 416 002f 0B       		.uleb128 0xb
+ 417 0030 3B       		.uleb128 0x3b
+ 418 0031 05       		.uleb128 0x5
+ 419 0032 49       		.uleb128 0x49
+ 420 0033 13       		.uleb128 0x13
+ 421 0034 00       		.byte	0
+ 422 0035 00       		.byte	0
+ 423 0036 05       		.uleb128 0x5
+ 424 0037 35       		.uleb128 0x35
+ 425 0038 00       		.byte	0
+ 426 0039 49       		.uleb128 0x49
+ 427 003a 13       		.uleb128 0x13
+ 428 003b 00       		.byte	0
+ 429 003c 00       		.byte	0
+ 430 003d 06       		.uleb128 0x6
+ 431 003e 2E       		.uleb128 0x2e
+ 432 003f 00       		.byte	0
+ 433 0040 3F       		.uleb128 0x3f
+ 434 0041 19       		.uleb128 0x19
+ 435 0042 03       		.uleb128 0x3
+ 436 0043 0E       		.uleb128 0xe
+ 437 0044 3A       		.uleb128 0x3a
+ 438 0045 0B       		.uleb128 0xb
+ 439 0046 3B       		.uleb128 0x3b
+ 440 0047 0B       		.uleb128 0xb
+ 441 0048 27       		.uleb128 0x27
+ 442 0049 19       		.uleb128 0x19
+ 443 004a 11       		.uleb128 0x11
+ 444 004b 01       		.uleb128 0x1
+ 445 004c 12       		.uleb128 0x12
+ 446 004d 06       		.uleb128 0x6
+ 447 004e 40       		.uleb128 0x40
+ 448 004f 18       		.uleb128 0x18
+ 449 0050 9742     		.uleb128 0x2117
+ 450 0052 19       		.uleb128 0x19
+ 451 0053 00       		.byte	0
+ 452 0054 00       		.byte	0
+ 453 0055 07       		.uleb128 0x7
+ 454 0056 2E       		.uleb128 0x2e
+ 455 0057 01       		.byte	0x1
+ 456 0058 3F       		.uleb128 0x3f
+ 457 0059 19       		.uleb128 0x19
+ 458 005a 03       		.uleb128 0x3
+ 459 005b 0E       		.uleb128 0xe
+ 460 005c 3A       		.uleb128 0x3a
+ 461 005d 0B       		.uleb128 0xb
+ 462 005e 3B       		.uleb128 0x3b
+ 463 005f 0B       		.uleb128 0xb
+ 464 0060 27       		.uleb128 0x27
+ 465 0061 19       		.uleb128 0x19
+ 466 0062 11       		.uleb128 0x11
+ 467 0063 01       		.uleb128 0x1
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 12
+
+
+ 468 0064 12       		.uleb128 0x12
+ 469 0065 06       		.uleb128 0x6
+ 470 0066 40       		.uleb128 0x40
+ 471 0067 18       		.uleb128 0x18
+ 472 0068 9742     		.uleb128 0x2117
+ 473 006a 19       		.uleb128 0x19
+ 474 006b 01       		.uleb128 0x1
+ 475 006c 13       		.uleb128 0x13
+ 476 006d 00       		.byte	0
+ 477 006e 00       		.byte	0
+ 478 006f 08       		.uleb128 0x8
+ 479 0070 05       		.uleb128 0x5
+ 480 0071 00       		.byte	0
+ 481 0072 03       		.uleb128 0x3
+ 482 0073 0E       		.uleb128 0xe
+ 483 0074 3A       		.uleb128 0x3a
+ 484 0075 0B       		.uleb128 0xb
+ 485 0076 3B       		.uleb128 0x3b
+ 486 0077 0B       		.uleb128 0xb
+ 487 0078 49       		.uleb128 0x49
+ 488 0079 13       		.uleb128 0x13
+ 489 007a 02       		.uleb128 0x2
+ 490 007b 17       		.uleb128 0x17
+ 491 007c 00       		.byte	0
+ 492 007d 00       		.byte	0
+ 493 007e 09       		.uleb128 0x9
+ 494 007f 898201   		.uleb128 0x4109
+ 495 0082 01       		.byte	0x1
+ 496 0083 11       		.uleb128 0x11
+ 497 0084 01       		.uleb128 0x1
+ 498 0085 31       		.uleb128 0x31
+ 499 0086 13       		.uleb128 0x13
+ 500 0087 00       		.byte	0
+ 501 0088 00       		.byte	0
+ 502 0089 0A       		.uleb128 0xa
+ 503 008a 8A8201   		.uleb128 0x410a
+ 504 008d 00       		.byte	0
+ 505 008e 02       		.uleb128 0x2
+ 506 008f 18       		.uleb128 0x18
+ 507 0090 9142     		.uleb128 0x2111
+ 508 0092 18       		.uleb128 0x18
+ 509 0093 00       		.byte	0
+ 510 0094 00       		.byte	0
+ 511 0095 0B       		.uleb128 0xb
+ 512 0096 898201   		.uleb128 0x4109
+ 513 0099 00       		.byte	0
+ 514 009a 11       		.uleb128 0x11
+ 515 009b 01       		.uleb128 0x1
+ 516 009c 31       		.uleb128 0x31
+ 517 009d 13       		.uleb128 0x13
+ 518 009e 00       		.byte	0
+ 519 009f 00       		.byte	0
+ 520 00a0 0C       		.uleb128 0xc
+ 521 00a1 34       		.uleb128 0x34
+ 522 00a2 00       		.byte	0
+ 523 00a3 03       		.uleb128 0x3
+ 524 00a4 0E       		.uleb128 0xe
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 13
+
+
+ 525 00a5 3A       		.uleb128 0x3a
+ 526 00a6 0B       		.uleb128 0xb
+ 527 00a7 3B       		.uleb128 0x3b
+ 528 00a8 0B       		.uleb128 0xb
+ 529 00a9 49       		.uleb128 0x49
+ 530 00aa 13       		.uleb128 0x13
+ 531 00ab 3F       		.uleb128 0x3f
+ 532 00ac 19       		.uleb128 0x19
+ 533 00ad 02       		.uleb128 0x2
+ 534 00ae 18       		.uleb128 0x18
+ 535 00af 00       		.byte	0
+ 536 00b0 00       		.byte	0
+ 537 00b1 00       		.byte	0
+ 538              		.section	.debug_loc,"",%progbits
+ 539              	.Ldebug_loc0:
+ 540              	.LLST0:
+ 541 0000 00000000 		.4byte	.LVL0
+ 542 0004 10000000 		.4byte	.LVL1
+ 543 0008 0100     		.2byte	0x1
+ 544 000a 50       		.byte	0x50
+ 545 000b 10000000 		.4byte	.LVL1
+ 546 000f 1C000000 		.4byte	.LFE4
+ 547 0013 0400     		.2byte	0x4
+ 548 0015 F3       		.byte	0xf3
+ 549 0016 01       		.uleb128 0x1
+ 550 0017 50       		.byte	0x50
+ 551 0018 9F       		.byte	0x9f
+ 552 0019 00000000 		.4byte	0
+ 553 001d 00000000 		.4byte	0
+ 554              		.section	.debug_aranges,"",%progbits
+ 555 0000 3C000000 		.4byte	0x3c
+ 556 0004 0200     		.2byte	0x2
+ 557 0006 00000000 		.4byte	.Ldebug_info0
+ 558 000a 04       		.byte	0x4
+ 559 000b 00       		.byte	0
+ 560 000c 0000     		.2byte	0
+ 561 000e 0000     		.2byte	0
+ 562 0010 00000000 		.4byte	.LFB1
+ 563 0014 28000000 		.4byte	.LFE1-.LFB1
+ 564 0018 00000000 		.4byte	.LFB3
+ 565 001c 34000000 		.4byte	.LFE3-.LFB3
+ 566 0020 00000000 		.4byte	.LFB4
+ 567 0024 1C000000 		.4byte	.LFE4-.LFB4
+ 568 0028 00000000 		.4byte	.LFB0
+ 569 002c 0A000000 		.4byte	.LFE0-.LFB0
+ 570 0030 00000000 		.4byte	.LFB2
+ 571 0034 1C000000 		.4byte	.LFE2-.LFB2
+ 572 0038 00000000 		.4byte	0
+ 573 003c 00000000 		.4byte	0
+ 574              		.section	.debug_ranges,"",%progbits
+ 575              	.Ldebug_ranges0:
+ 576 0000 00000000 		.4byte	.LFB1
+ 577 0004 28000000 		.4byte	.LFE1
+ 578 0008 00000000 		.4byte	.LFB3
+ 579 000c 34000000 		.4byte	.LFE3
+ 580 0010 00000000 		.4byte	.LFB4
+ 581 0014 1C000000 		.4byte	.LFE4
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 14
+
+
+ 582 0018 00000000 		.4byte	.LFB0
+ 583 001c 0A000000 		.4byte	.LFE0
+ 584 0020 00000000 		.4byte	.LFB2
+ 585 0024 1C000000 		.4byte	.LFE2
+ 586 0028 00000000 		.4byte	0
+ 587 002c 00000000 		.4byte	0
+ 588              		.section	.debug_line,"",%progbits
+ 589              	.Ldebug_line0:
+ 590 0000 B2000000 		.section	.debug_str,"MS",%progbits,1
+ 590      02005000 
+ 590      00000201 
+ 590      FB0E0D00 
+ 590      01010101 
+ 591              	.LASF6:
+ 592 0000 6C6F6E67 		.ascii	"long long int\000"
+ 592      206C6F6E 
+ 592      6720696E 
+ 592      7400
+ 593              	.LASF3:
+ 594 000e 73686F72 		.ascii	"short unsigned int\000"
+ 594      7420756E 
+ 594      7369676E 
+ 594      65642069 
+ 594      6E7400
+ 595              	.LASF8:
+ 596 0021 756E7369 		.ascii	"unsigned int\000"
+ 596      676E6564 
+ 596      20696E74 
+ 596      00
+ 597              	.LASF17:
+ 598 002e 41756469 		.ascii	"Audio_DAC_BuffAmp_Stop\000"
+ 598      6F5F4441 
+ 598      435F4275 
+ 598      6666416D 
+ 598      705F5374 
+ 599              	.LASF12:
+ 600 0045 75696E74 		.ascii	"uint8\000"
+ 600      3800
+ 601              	.LASF5:
+ 602 004b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 602      20756E73 
+ 602      69676E65 
+ 602      6420696E 
+ 602      7400
+ 603              	.LASF7:
+ 604 005d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 604      206C6F6E 
+ 604      6720756E 
+ 604      7369676E 
+ 604      65642069 
+ 605              	.LASF9:
+ 606 0074 666C6F61 		.ascii	"float\000"
+ 606      7400
+ 607              	.LASF21:
+ 608 007a 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 608      4320342E 
+ 608      392E3320 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 15
+
+
+ 608      32303135 
+ 608      30333033 
+ 609 00ad 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 609      20726576 
+ 609      6973696F 
+ 609      6E203232 
+ 609      31323230 
+ 610 00e0 67202D73 		.ascii	"g -std=gnu11 -ffunction-sections -ffat-lto-objects\000"
+ 610      74643D67 
+ 610      6E753131 
+ 610      202D6666 
+ 610      756E6374 
+ 611              	.LASF1:
+ 612 0113 756E7369 		.ascii	"unsigned char\000"
+ 612      676E6564 
+ 612      20636861 
+ 612      7200
+ 613              	.LASF22:
+ 614 0121 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Audio_DAC_BuffAmp.c\000"
+ 614      6E657261 
+ 614      7465645F 
+ 614      536F7572 
+ 614      63655C50 
+ 615              	.LASF11:
+ 616 014e 63686172 		.ascii	"char\000"
+ 616      00
+ 617              	.LASF4:
+ 618 0153 6C6F6E67 		.ascii	"long int\000"
+ 618      20696E74 
+ 618      00
+ 619              	.LASF2:
+ 620 015c 73686F72 		.ascii	"short int\000"
+ 620      7420696E 
+ 620      7400
+ 621              	.LASF10:
+ 622 0166 646F7562 		.ascii	"double\000"
+ 622      6C6500
+ 623              	.LASF19:
+ 624 016d 41756469 		.ascii	"Audio_DAC_BuffAmp_Init\000"
+ 624      6F5F4441 
+ 624      435F4275 
+ 624      6666416D 
+ 624      705F496E 
+ 625              	.LASF16:
+ 626 0184 41756469 		.ascii	"Audio_DAC_BuffAmp_Enable\000"
+ 626      6F5F4441 
+ 626      435F4275 
+ 626      6666416D 
+ 626      705F456E 
+ 627              	.LASF0:
+ 628 019d 7369676E 		.ascii	"signed char\000"
+ 628      65642063 
+ 628      68617200 
+ 629              	.LASF25:
+ 630 01a9 41756469 		.ascii	"Audio_DAC_BuffAmp_initVar\000"
+ 630      6F5F4441 
+ 630      435F4275 
+ARM GAS  C:\Users\User\AppData\Local\Temp\ccQP7etz.s 			page 16
+
+
+ 630      6666416D 
+ 630      705F696E 
+ 631              	.LASF14:
+ 632 01c3 6C6F6E67 		.ascii	"long double\000"
+ 632      20646F75 
+ 632      626C6500 
+ 633              	.LASF20:
+ 634 01cf 41756469 		.ascii	"Audio_DAC_BuffAmp_Start\000"
+ 634      6F5F4441 
+ 634      435F4275 
+ 634      6666416D 
+ 634      705F5374 
+ 635              	.LASF18:
+ 636 01e7 41756469 		.ascii	"Audio_DAC_BuffAmp_SetPower\000"
+ 636      6F5F4441 
+ 636      435F4275 
+ 636      6666416D 
+ 636      705F5365 
+ 637              	.LASF23:
+ 638 0202 433A5C55 		.ascii	"C:\\Users\\User\\Documents\\MIT 6.115\\finalproject"
+ 638      73657273 
+ 638      5C557365 
+ 638      725C446F 
+ 638      63756D65 
+ 639 0230 5C66696E 		.ascii	"\\finalproject\\GuitarHero.cydsn\000"
+ 639      616C7072 
+ 639      6F6A6563 
+ 639      745C4775 
+ 639      69746172 
+ 640              	.LASF13:
+ 641 024f 72656738 		.ascii	"reg8\000"
+ 641      00
+ 642              	.LASF15:
+ 643 0254 73697A65 		.ascii	"sizetype\000"
+ 643      74797065 
+ 643      00
+ 644              	.LASF24:
+ 645 025d 706F7765 		.ascii	"power\000"
+ 645      7200
+ 646              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

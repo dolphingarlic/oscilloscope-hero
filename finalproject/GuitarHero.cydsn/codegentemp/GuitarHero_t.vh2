@@ -1,5 +1,5 @@
 -- Project:   C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\GuitarHero.cyprj
--- Generated: 05/02/2024 22:07:33
+-- Generated: 05/04/2024 14:27:17
 -- PSoC Creator  3.3 CP3
 
 ENTITY GuitarHero IS
@@ -11,7 +11,11 @@ ENTITY GuitarHero IS
         \LCD:LCDPort(3)_PAD\ : OUT std_ulogic;
         \LCD:LCDPort(4)_PAD\ : OUT std_ulogic;
         \LCD:LCDPort(5)_PAD\ : OUT std_ulogic;
-        \LCD:LCDPort(6)_PAD\ : OUT std_ulogic);
+        \LCD:LCDPort(6)_PAD\ : OUT std_ulogic;
+        \SD_FS:mosi0(0)_PAD\ : OUT std_ulogic;
+        \SD_FS:miso0(0)_PAD\ : IN std_ulogic;
+        \SD_FS:sclk0(0)_PAD\ : OUT std_ulogic;
+        \SD_FS:SPI0_CS(0)_PAD\ : OUT std_ulogic);
     ATTRIBUTE voltage_VDDABUF OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VUSB OF __DEFAULT__ : ENTITY IS 5e0;
@@ -23,6 +27,7 @@ ENTITY GuitarHero IS
 END GuitarHero;
 
 ARCHITECTURE __DEFAULT__ OF GuitarHero IS
+    SIGNAL Audio_out(0)__PA : bit;
     SIGNAL BLE_Rx(0)__PA : bit;
     SIGNAL ClockBlock_100k : bit;
     SIGNAL ClockBlock_1k : bit;
@@ -36,17 +41,20 @@ ARCHITECTURE __DEFAULT__ OF GuitarHero IS
     SIGNAL ClockBlock_PLL_OUT : bit;
     SIGNAL ClockBlock_XTAL : bit;
     SIGNAL ClockBlock_XTAL_32KHZ : bit;
-    SIGNAL Net_145 : bit;
-    SIGNAL Net_61 : bit;
-    ATTRIBUTE global_signal OF Net_61 : SIGNAL IS true;
-    SIGNAL Net_61_local : bit;
-    SIGNAL Net_87 : bit;
+    SIGNAL Net_237 : bit;
+    SIGNAL Net_239 : bit;
+    SIGNAL Net_251 : bit;
+    ATTRIBUTE global_signal OF Net_251 : SIGNAL IS true;
+    SIGNAL Net_251_local : bit;
+    SIGNAL Net_253 : bit;
+    ATTRIBUTE global_signal OF Net_253 : SIGNAL IS true;
+    SIGNAL Net_253_local : bit;
     SIGNAL \BLE_UART:BUART:pollcount_0\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:pollcount_0\ : SIGNAL IS "U(1,5,A)0";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:pollcount_0\ : SIGNAL IS "U(0,5,A)2";
     SIGNAL \BLE_UART:BUART:pollcount_1\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:pollcount_1\ : SIGNAL IS "U(0,4,A)0";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:pollcount_1\ : SIGNAL IS "U(0,5,A)0";
     SIGNAL \BLE_UART:BUART:rx_bitclk_enable\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_bitclk_enable\ : SIGNAL IS "U(1,5,B)0";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_bitclk_enable\ : SIGNAL IS "U(0,5,A)3";
     SIGNAL \BLE_UART:BUART:rx_count7_tc\ : bit;
     SIGNAL \BLE_UART:BUART:rx_count_0\ : bit;
     SIGNAL \BLE_UART:BUART:rx_count_1\ : bit;
@@ -56,31 +64,31 @@ ARCHITECTURE __DEFAULT__ OF GuitarHero IS
     SIGNAL \BLE_UART:BUART:rx_count_5\ : bit;
     SIGNAL \BLE_UART:BUART:rx_count_6\ : bit;
     SIGNAL \BLE_UART:BUART:rx_counter_load\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_counter_load\ : SIGNAL IS "U(0,5,A)1";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_counter_load\ : SIGNAL IS "U(1,5,A)3";
     SIGNAL \BLE_UART:BUART:rx_fifofull\ : bit;
     SIGNAL \BLE_UART:BUART:rx_fifonotempty\ : bit;
     SIGNAL \BLE_UART:BUART:rx_last\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_last\ : SIGNAL IS "U(0,5,B)1";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_last\ : SIGNAL IS "U(0,4,A)3";
     SIGNAL \BLE_UART:BUART:rx_load_fifo\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_load_fifo\ : SIGNAL IS "U(0,4,B)2";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_load_fifo\ : SIGNAL IS "U(0,5,B)2";
     SIGNAL \BLE_UART:BUART:rx_postpoll\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_postpoll\ : SIGNAL IS "U(0,4,A)1";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_postpoll\ : SIGNAL IS "U(0,5,A)1";
     SIGNAL \BLE_UART:BUART:rx_state_0\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_state_0\ : SIGNAL IS "U(0,5,A)0";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_state_0\ : SIGNAL IS "U(0,4,A)0";
     SIGNAL \BLE_UART:BUART:rx_state_1\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_state_1\ : SIGNAL IS "U(0,4,B)3";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_state_1\ : SIGNAL IS "U(1,5,B)3";
     SIGNAL \BLE_UART:BUART:rx_state_2\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_state_2\ : SIGNAL IS "U(0,5,B)0";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_state_2\ : SIGNAL IS "U(0,4,B)0";
     SIGNAL \BLE_UART:BUART:rx_state_3\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_state_3\ : SIGNAL IS "U(0,5,A)2";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_state_3\ : SIGNAL IS "U(0,4,B)3";
     SIGNAL \BLE_UART:BUART:rx_state_stop1_reg\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_state_stop1_reg\ : SIGNAL IS "U(0,4,B)0";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_state_stop1_reg\ : SIGNAL IS "U(1,5,B)0";
     SIGNAL \BLE_UART:BUART:rx_status_3\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_status_3\ : SIGNAL IS "U(0,5,B)2";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_status_3\ : SIGNAL IS "U(1,4,B)1";
     SIGNAL \BLE_UART:BUART:rx_status_4\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_status_4\ : SIGNAL IS "U(0,4,A)2";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_status_4\ : SIGNAL IS "U(1,5,B)2";
     SIGNAL \BLE_UART:BUART:rx_status_5\ : bit;
-    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_status_5\ : SIGNAL IS "U(0,4,B)1";
+    ATTRIBUTE placement_force OF \BLE_UART:BUART:rx_status_5\ : SIGNAL IS "U(1,5,B)1";
     SIGNAL \BLE_UART:Net_9\ : bit;
     ATTRIBUTE udbclken_assigned OF \BLE_UART:Net_9\ : SIGNAL IS "True";
     ATTRIBUTE global_signal OF \BLE_UART:Net_9\ : SIGNAL IS true;
@@ -92,6 +100,64 @@ ARCHITECTURE __DEFAULT__ OF GuitarHero IS
     SIGNAL \\\LCD:LCDPort(4)\\__PA\ : bit;
     SIGNAL \\\LCD:LCDPort(5)\\__PA\ : bit;
     SIGNAL \\\LCD:LCDPort(6)\\__PA\ : bit;
+    SIGNAL \SD_FS:Net_10\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:Net_10\ : SIGNAL IS "U(2,1,B)2";
+    SIGNAL \SD_FS:Net_16\ : bit;
+    SIGNAL \SD_FS:Net_19\ : bit;
+    ATTRIBUTE udbclken_assigned OF \SD_FS:Net_19\ : SIGNAL IS "True";
+    ATTRIBUTE global_signal OF \SD_FS:Net_19\ : SIGNAL IS true;
+    SIGNAL \SD_FS:Net_19_local\ : bit;
+    SIGNAL \SD_FS:Net_1\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:Net_1\ : SIGNAL IS "U(3,1,A)2";
+    SIGNAL \SD_FS:Net_22\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:Net_22\ : SIGNAL IS "U(2,1,A)1";
+    SIGNAL \SD_FS:SPI0:BSPIM:cnt_enable\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:cnt_enable\ : SIGNAL IS "U(1,4,A)1";
+    SIGNAL \SD_FS:SPI0:BSPIM:cnt_tc\ : bit;
+    SIGNAL \SD_FS:SPI0:BSPIM:count_0\ : bit;
+    SIGNAL \SD_FS:SPI0:BSPIM:count_1\ : bit;
+    SIGNAL \SD_FS:SPI0:BSPIM:count_2\ : bit;
+    SIGNAL \SD_FS:SPI0:BSPIM:count_3\ : bit;
+    SIGNAL \SD_FS:SPI0:BSPIM:count_4\ : bit;
+    SIGNAL \SD_FS:SPI0:BSPIM:count_5\ : bit;
+    SIGNAL \SD_FS:SPI0:BSPIM:count_6\ : bit;
+    SIGNAL \SD_FS:SPI0:BSPIM:ld_ident\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:ld_ident\ : SIGNAL IS "U(3,1,A)1";
+    SIGNAL \SD_FS:SPI0:BSPIM:load_cond\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:load_cond\ : SIGNAL IS "U(2,1,A)0";
+    SIGNAL \SD_FS:SPI0:BSPIM:load_rx_data\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:load_rx_data\ : SIGNAL IS "U(3,3,A)1";
+    SIGNAL \SD_FS:SPI0:BSPIM:mosi_from_dp\ : bit;
+    SIGNAL \SD_FS:SPI0:BSPIM:mosi_from_dp_reg\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:mosi_from_dp_reg\ : SIGNAL IS "U(2,1,B)1";
+    SIGNAL \SD_FS:SPI0:BSPIM:mosi_hs_reg\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:mosi_hs_reg\ : SIGNAL IS "U(2,1,B)0";
+    SIGNAL \SD_FS:SPI0:BSPIM:mosi_pre_reg\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:mosi_pre_reg\ : SIGNAL IS "U(3,3,B)1";
+    SIGNAL \SD_FS:SPI0:BSPIM:mosi_pre_reg_split\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:mosi_pre_reg_split\ : SIGNAL IS "U(3,1,B)0";
+    SIGNAL \SD_FS:SPI0:BSPIM:mosi_pre_reg_split_1\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:mosi_pre_reg_split_1\ : SIGNAL IS "U(3,3,A)0";
+    SIGNAL \SD_FS:SPI0:BSPIM:rx_status_4\ : bit;
+    SIGNAL \SD_FS:SPI0:BSPIM:rx_status_5\ : bit;
+    SIGNAL \SD_FS:SPI0:BSPIM:rx_status_6\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:rx_status_6\ : SIGNAL IS "U(3,3,A)2";
+    SIGNAL \SD_FS:SPI0:BSPIM:state_0\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:state_0\ : SIGNAL IS "U(3,3,B)0";
+    SIGNAL \SD_FS:SPI0:BSPIM:state_1\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:state_1\ : SIGNAL IS "U(3,3,B)2";
+    SIGNAL \SD_FS:SPI0:BSPIM:state_2\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:state_2\ : SIGNAL IS "U(3,1,A)0";
+    SIGNAL \SD_FS:SPI0:BSPIM:tx_status_0\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:tx_status_0\ : SIGNAL IS "U(3,3,B)3";
+    SIGNAL \SD_FS:SPI0:BSPIM:tx_status_1\ : bit;
+    SIGNAL \SD_FS:SPI0:BSPIM:tx_status_2\ : bit;
+    SIGNAL \SD_FS:SPI0:BSPIM:tx_status_4\ : bit;
+    ATTRIBUTE placement_force OF \SD_FS:SPI0:BSPIM:tx_status_4\ : SIGNAL IS "U(2,1,A)2";
+    SIGNAL \\\SD_FS:SPI0_CS(0)\\__PA\ : bit;
+    SIGNAL \\\SD_FS:miso0(0)\\__PA\ : bit;
+    SIGNAL \\\SD_FS:mosi0(0)\\__PA\ : bit;
+    SIGNAL \\\SD_FS:sclk0(0)\\__PA\ : bit;
     SIGNAL __ONE__ : bit;
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
@@ -102,6 +168,8 @@ ARCHITECTURE __DEFAULT__ OF GuitarHero IS
     SIGNAL y_out(0)__PA : bit;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:mosi_pre_reg_split\ : LABEL IS "macrocell1";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:mosi_pre_reg_split\ : LABEL IS "U(3,1)";
     ATTRIBUTE Location OF ClockBlock : LABEL IS "F(Clock,0)";
     ATTRIBUTE lib_model OF x_out(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF x_out(0) : LABEL IS "P4[0]";
@@ -123,45 +191,98 @@ ARCHITECTURE __DEFAULT__ OF GuitarHero IS
     ATTRIBUTE Location OF \LCD:LCDPort(5)\ : LABEL IS "P2[5]";
     ATTRIBUTE lib_model OF \LCD:LCDPort(6)\ : LABEL IS "iocell10";
     ATTRIBUTE Location OF \LCD:LCDPort(6)\ : LABEL IS "P2[6]";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_counter_load\ : LABEL IS "macrocell1";
-    ATTRIBUTE Location OF \BLE_UART:BUART:rx_counter_load\ : LABEL IS "U(0,5)";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_postpoll\ : LABEL IS "macrocell2";
-    ATTRIBUTE Location OF \BLE_UART:BUART:rx_postpoll\ : LABEL IS "U(0,4)";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_status_4\ : LABEL IS "macrocell3";
-    ATTRIBUTE Location OF \BLE_UART:BUART:rx_status_4\ : LABEL IS "U(0,4)";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_status_5\ : LABEL IS "macrocell4";
-    ATTRIBUTE Location OF \BLE_UART:BUART:rx_status_5\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF Audio_out(0) : LABEL IS "iocell11";
+    ATTRIBUTE Location OF Audio_out(0) : LABEL IS "P0[7]";
+    ATTRIBUTE lib_model OF \SD_FS:mosi0(0)\ : LABEL IS "iocell12";
+    ATTRIBUTE Location OF \SD_FS:mosi0(0)\ : LABEL IS "P3[5]";
+    ATTRIBUTE lib_model OF \SD_FS:miso0(0)\ : LABEL IS "iocell13";
+    ATTRIBUTE Location OF \SD_FS:miso0(0)\ : LABEL IS "P3[4]";
+    ATTRIBUTE lib_model OF \SD_FS:sclk0(0)\ : LABEL IS "iocell14";
+    ATTRIBUTE Location OF \SD_FS:sclk0(0)\ : LABEL IS "P3[3]";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0_CS(0)\ : LABEL IS "iocell15";
+    ATTRIBUTE Location OF \SD_FS:SPI0_CS(0)\ : LABEL IS "P3[6]";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_counter_load\ : LABEL IS "macrocell2";
+    ATTRIBUTE Location OF \BLE_UART:BUART:rx_counter_load\ : LABEL IS "U(1,5)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_postpoll\ : LABEL IS "macrocell3";
+    ATTRIBUTE Location OF \BLE_UART:BUART:rx_postpoll\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_status_4\ : LABEL IS "macrocell4";
+    ATTRIBUTE Location OF \BLE_UART:BUART:rx_status_4\ : LABEL IS "U(1,5)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_status_5\ : LABEL IS "macrocell5";
+    ATTRIBUTE Location OF \BLE_UART:BUART:rx_status_5\ : LABEL IS "U(1,5)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:load_rx_data\ : LABEL IS "macrocell6";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:load_rx_data\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \SD_FS:Net_10\ : LABEL IS "macrocell7";
+    ATTRIBUTE Location OF \SD_FS:Net_10\ : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:tx_status_0\ : LABEL IS "macrocell8";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:tx_status_0\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:tx_status_4\ : LABEL IS "macrocell9";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:tx_status_4\ : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:rx_status_6\ : LABEL IS "macrocell10";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:rx_status_6\ : LABEL IS "U(3,3)";
     ATTRIBUTE Location OF \x_DAC:viDAC8\ : LABEL IS "F(VIDAC,2)";
     ATTRIBUTE Location OF \y_DAC:viDAC8\ : LABEL IS "F(VIDAC,3)";
-    ATTRIBUTE Location OF FPS_isr : LABEL IS "[IntrContainer=(0)][IntrId=(1)]";
+    ATTRIBUTE Location OF FPS_isr : LABEL IS "[IntrContainer=(0)][IntrId=(2)]";
     ATTRIBUTE lib_model OF \BLE_UART:BUART:sRX:RxShifter:u0\ : LABEL IS "datapathcell1";
-    ATTRIBUTE Location OF \BLE_UART:BUART:sRX:RxShifter:u0\ : LABEL IS "U(0,4)";
-    ATTRIBUTE Location OF \BLE_UART:BUART:sRX:RxBitCounter\ : LABEL IS "U(0,5)";
+    ATTRIBUTE Location OF \BLE_UART:BUART:sRX:RxShifter:u0\ : LABEL IS "U(1,5)";
+    ATTRIBUTE Location OF \BLE_UART:BUART:sRX:RxBitCounter\ : LABEL IS "U(0,4)";
     ATTRIBUTE lib_model OF \BLE_UART:BUART:sRX:RxSts\ : LABEL IS "statusicell1";
-    ATTRIBUTE Location OF \BLE_UART:BUART:sRX:RxSts\ : LABEL IS "U(0,4)";
-    ATTRIBUTE Location OF BLE_Rx_isr : LABEL IS "[IntrContainer=(0)][IntrId=(0)]";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_state_1\ : LABEL IS "macrocell5";
-    ATTRIBUTE Location OF \BLE_UART:BUART:rx_state_1\ : LABEL IS "U(0,4)";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_state_0\ : LABEL IS "macrocell6";
-    ATTRIBUTE Location OF \BLE_UART:BUART:rx_state_0\ : LABEL IS "U(0,5)";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_load_fifo\ : LABEL IS "macrocell7";
-    ATTRIBUTE Location OF \BLE_UART:BUART:rx_load_fifo\ : LABEL IS "U(0,4)";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_state_3\ : LABEL IS "macrocell8";
-    ATTRIBUTE Location OF \BLE_UART:BUART:rx_state_3\ : LABEL IS "U(0,5)";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_state_2\ : LABEL IS "macrocell9";
-    ATTRIBUTE Location OF \BLE_UART:BUART:rx_state_2\ : LABEL IS "U(0,5)";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_bitclk_enable\ : LABEL IS "macrocell10";
-    ATTRIBUTE Location OF \BLE_UART:BUART:rx_bitclk_enable\ : LABEL IS "U(1,5)";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_state_stop1_reg\ : LABEL IS "macrocell11";
-    ATTRIBUTE Location OF \BLE_UART:BUART:rx_state_stop1_reg\ : LABEL IS "U(0,4)";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:pollcount_1\ : LABEL IS "macrocell12";
-    ATTRIBUTE Location OF \BLE_UART:BUART:pollcount_1\ : LABEL IS "U(0,4)";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:pollcount_0\ : LABEL IS "macrocell13";
-    ATTRIBUTE Location OF \BLE_UART:BUART:pollcount_0\ : LABEL IS "U(1,5)";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_status_3\ : LABEL IS "macrocell14";
-    ATTRIBUTE Location OF \BLE_UART:BUART:rx_status_3\ : LABEL IS "U(0,5)";
-    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_last\ : LABEL IS "macrocell15";
-    ATTRIBUTE Location OF \BLE_UART:BUART:rx_last\ : LABEL IS "U(0,5)";
+    ATTRIBUTE Location OF \BLE_UART:BUART:sRX:RxSts\ : LABEL IS "U(1,5)";
+    ATTRIBUTE Location OF BLE_Rx_isr : LABEL IS "[IntrContainer=(0)][IntrId=(1)]";
+    ATTRIBUTE Location OF Audio_isr : LABEL IS "[IntrContainer=(0)][IntrId=(0)]";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:BitCounter\ : LABEL IS "U(2,3)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:TxStsReg\ : LABEL IS "statusicell2";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:TxStsReg\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:RxStsReg\ : LABEL IS "statusicell3";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:RxStsReg\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:sR8:Dp:u0\ : LABEL IS "datapathcell2";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:sR8:Dp:u0\ : LABEL IS "U(3,3)";
+    ATTRIBUTE Location OF \Audio_DAC:viDAC8\ : LABEL IS "F(VIDAC,0)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_state_1\ : LABEL IS "macrocell11";
+    ATTRIBUTE Location OF \BLE_UART:BUART:rx_state_1\ : LABEL IS "U(1,5)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_state_0\ : LABEL IS "macrocell12";
+    ATTRIBUTE Location OF \BLE_UART:BUART:rx_state_0\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_load_fifo\ : LABEL IS "macrocell13";
+    ATTRIBUTE Location OF \BLE_UART:BUART:rx_load_fifo\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_state_3\ : LABEL IS "macrocell14";
+    ATTRIBUTE Location OF \BLE_UART:BUART:rx_state_3\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_state_2\ : LABEL IS "macrocell15";
+    ATTRIBUTE Location OF \BLE_UART:BUART:rx_state_2\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_bitclk_enable\ : LABEL IS "macrocell16";
+    ATTRIBUTE Location OF \BLE_UART:BUART:rx_bitclk_enable\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_state_stop1_reg\ : LABEL IS "macrocell17";
+    ATTRIBUTE Location OF \BLE_UART:BUART:rx_state_stop1_reg\ : LABEL IS "U(1,5)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:pollcount_1\ : LABEL IS "macrocell18";
+    ATTRIBUTE Location OF \BLE_UART:BUART:pollcount_1\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:pollcount_0\ : LABEL IS "macrocell19";
+    ATTRIBUTE Location OF \BLE_UART:BUART:pollcount_0\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:mosi_pre_reg_split_1\ : LABEL IS "macrocell20";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:mosi_pre_reg_split_1\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_status_3\ : LABEL IS "macrocell21";
+    ATTRIBUTE Location OF \BLE_UART:BUART:rx_status_3\ : LABEL IS "U(1,4)";
+    ATTRIBUTE lib_model OF \BLE_UART:BUART:rx_last\ : LABEL IS "macrocell22";
+    ATTRIBUTE Location OF \BLE_UART:BUART:rx_last\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:state_2\ : LABEL IS "macrocell23";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:state_2\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:state_1\ : LABEL IS "macrocell24";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:state_1\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:state_0\ : LABEL IS "macrocell25";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:state_0\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \SD_FS:Net_1\ : LABEL IS "macrocell26";
+    ATTRIBUTE Location OF \SD_FS:Net_1\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:mosi_hs_reg\ : LABEL IS "macrocell27";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:mosi_hs_reg\ : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:mosi_pre_reg\ : LABEL IS "macrocell28";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:mosi_pre_reg\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:load_cond\ : LABEL IS "macrocell29";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:load_cond\ : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:mosi_from_dp_reg\ : LABEL IS "macrocell30";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:mosi_from_dp_reg\ : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:ld_ident\ : LABEL IS "macrocell31";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:ld_ident\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \SD_FS:SPI0:BSPIM:cnt_enable\ : LABEL IS "macrocell32";
+    ATTRIBUTE Location OF \SD_FS:SPI0:BSPIM:cnt_enable\ : LABEL IS "U(1,4)";
+    ATTRIBUTE lib_model OF \SD_FS:Net_22\ : LABEL IS "macrocell33";
+    ATTRIBUTE Location OF \SD_FS:Net_22\ : LABEL IS "U(2,1)";
     COMPONENT clockblockcell
         PORT (
             dclk_0 : OUT std_ulogic;
@@ -467,6 +588,24 @@ ARCHITECTURE __DEFAULT__ OF GuitarHero IS
     END COMPONENT;
 BEGIN
 
+    \SD_FS:SPI0:BSPIM:mosi_pre_reg_split\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * !main_2 * main_3 * main_4) + (!main_0 * main_1 * !main_2 * main_3 * main_5) + (!main_0 * main_1 * !main_2 * main_3 * main_6) + (!main_0 * main_1 * !main_2 * main_3 * main_7) + (!main_0 * main_1 * !main_2 * main_3 * !main_8) + (main_0 * main_1 * !main_2 * main_9) + (main_1 * !main_2 * !main_4 * !main_5 * !main_6 * !main_7 * main_8 * main_9) + (main_1 * main_2 * main_3 * !main_4 * !main_5 * !main_6 * !main_7 * !main_8 * !main_10)",
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:mosi_pre_reg_split\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\,
+            main_3 => \SD_FS:SPI0:BSPIM:mosi_from_dp\,
+            main_4 => \SD_FS:SPI0:BSPIM:count_4\,
+            main_5 => \SD_FS:SPI0:BSPIM:count_3\,
+            main_6 => \SD_FS:SPI0:BSPIM:count_2\,
+            main_7 => \SD_FS:SPI0:BSPIM:count_1\,
+            main_8 => \SD_FS:SPI0:BSPIM:count_0\,
+            main_9 => \SD_FS:SPI0:BSPIM:mosi_pre_reg\,
+            main_10 => \SD_FS:SPI0:BSPIM:ld_ident\);
+
     ClockBlock:clockblockcell
         PORT MAP(
             imo => ClockBlock_IMO,
@@ -482,10 +621,14 @@ BEGIN
             clk_bus => ClockBlock_BUS_CLK_local,
             dsi_clkin_div => open,
             dsi_glb_div => open,
-            dclk_glb_0 => \BLE_UART:Net_9\,
-            dclk_0 => \BLE_UART:Net_9_local\,
-            dclk_glb_1 => Net_61,
-            dclk_1 => Net_61_local);
+            dclk_glb_0 => \SD_FS:Net_19\,
+            dclk_0 => \SD_FS:Net_19_local\,
+            dclk_glb_1 => \BLE_UART:Net_9\,
+            dclk_1 => \BLE_UART:Net_9_local\,
+            dclk_glb_2 => Net_251,
+            dclk_2 => Net_251_local,
+            dclk_glb_3 => Net_253,
+            dclk_3 => Net_253_local);
 
     x_out:logicalport
         GENERIC MAP(
@@ -748,7 +891,7 @@ BEGIN
         PORT MAP(
             pa_out => BLE_Rx(0)__PA,
             oe => open,
-            fb => Net_87,
+            fb => Net_239,
             pad_in => BLE_Rx(0)_PAD,
             in_clock => ClockBlock_BUS_CLK,
             in_clock_en => '1',
@@ -961,6 +1104,460 @@ BEGIN
             out_clock_en => '1',
             out_reset => '0');
 
+    Audio_out:logicalport
+        GENERIC MAP(
+            drive_mode => "000",
+            ibuf_enabled => "0",
+            id => "b2ad504c-6072-4943-9e55-b844be38c81b",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "A",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "10",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    Audio_out(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "Audio_out",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000010")
+        PORT MAP(
+            pa_out => Audio_out(0)__PA,
+            oe => open,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \SD_FS:mosi0\:logicalport
+        GENERIC MAP(
+            drive_mode => "110",
+            ibuf_enabled => "1",
+            id => "a3c0aaa0-dc77-4bab-a158-5e63bc9c5c34/ed092b9b-d398-4703-be89-cebf998501f6",
+            init_dr_st => "0",
+            input_buffer_sel => "",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "1",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "",
+            ovt_needed => "",
+            ovt_slew_control => "",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "O",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "0",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "10",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    \SD_FS:mosi0(0)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\SD_FS:mosi0\",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+        PORT MAP(
+            pa_out => \\\SD_FS:mosi0(0)\\__PA\,
+            oe => open,
+            pin_input => \SD_FS:Net_10\,
+            pad_out => \SD_FS:mosi0(0)_PAD\,
+            pad_in => \SD_FS:mosi0(0)_PAD\,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \SD_FS:miso0\:logicalport
+        GENERIC MAP(
+            drive_mode => "001",
+            ibuf_enabled => "1",
+            id => "a3c0aaa0-dc77-4bab-a158-5e63bc9c5c34/1425177d-0d0e-4468-8bcc-e638e5509a9b",
+            init_dr_st => "0",
+            input_buffer_sel => "",
+            input_clk_en => 0,
+            input_sync => "0",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "",
+            ovt_needed => "",
+            ovt_slew_control => "",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "0",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    \SD_FS:miso0(0)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\SD_FS:miso0\",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+        PORT MAP(
+            pa_out => \\\SD_FS:miso0(0)\\__PA\,
+            oe => open,
+            fb => \SD_FS:Net_16\,
+            pad_in => \SD_FS:miso0(0)_PAD\,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \SD_FS:sclk0\:logicalport
+        GENERIC MAP(
+            drive_mode => "110",
+            ibuf_enabled => "1",
+            id => "a3c0aaa0-dc77-4bab-a158-5e63bc9c5c34/ae249072-87dc-41aa-9405-888517aefa28",
+            init_dr_st => "0",
+            input_buffer_sel => "",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "1",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "",
+            ovt_needed => "",
+            ovt_slew_control => "",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "O",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "0",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "10",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    \SD_FS:sclk0(0)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\SD_FS:sclk0\",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+        PORT MAP(
+            pa_out => \\\SD_FS:sclk0(0)\\__PA\,
+            oe => open,
+            pin_input => \SD_FS:Net_22\,
+            pad_out => \SD_FS:sclk0(0)_PAD\,
+            pad_in => \SD_FS:sclk0(0)_PAD\,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    \SD_FS:SPI0_CS\:logicalport
+        GENERIC MAP(
+            drive_mode => "110",
+            ibuf_enabled => "1",
+            id => "a3c0aaa0-dc77-4bab-a158-5e63bc9c5c34/6df85302-e45f-45fb-97de-4bdf3128e07b",
+            init_dr_st => "0",
+            input_buffer_sel => "",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "",
+            ovt_needed => "",
+            ovt_slew_control => "",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "O",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "0",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "10",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    \SD_FS:SPI0_CS(0)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\SD_FS:SPI0_CS\",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => \\\SD_FS:SPI0_CS(0)\\__PA\,
+            oe => open,
+            pad_in => \SD_FS:SPI0_CS(0)_PAD\,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
     \BLE_UART:BUART:rx_counter_load\:macrocell
         GENERIC MAP(
             eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3)",
@@ -979,7 +1576,7 @@ BEGIN
         PORT MAP(
             q => \BLE_UART:BUART:rx_postpoll\,
             main_0 => \BLE_UART:BUART:pollcount_1\,
-            main_1 => Net_87,
+            main_1 => Net_239,
             main_2 => \BLE_UART:BUART:pollcount_0\);
 
     \BLE_UART:BUART:rx_status_4\:macrocell
@@ -999,6 +1596,63 @@ BEGIN
             q => \BLE_UART:BUART:rx_status_5\,
             main_0 => \BLE_UART:BUART:rx_fifonotempty\,
             main_1 => \BLE_UART:BUART:rx_state_stop1_reg\);
+
+    \SD_FS:SPI0:BSPIM:load_rx_data\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3 * main_4)",
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:load_rx_data\,
+            main_0 => \SD_FS:SPI0:BSPIM:count_4\,
+            main_1 => \SD_FS:SPI0:BSPIM:count_3\,
+            main_2 => \SD_FS:SPI0:BSPIM:count_2\,
+            main_3 => \SD_FS:SPI0:BSPIM:count_1\,
+            main_4 => \SD_FS:SPI0:BSPIM:count_0\);
+
+    \SD_FS:Net_10\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_3 * main_4) + (main_1 * !main_3 * main_4) + (!main_2 * !main_3 * main_4)",
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:Net_10\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\,
+            main_3 => \SD_FS:Net_1\,
+            main_4 => \SD_FS:SPI0:BSPIM:mosi_hs_reg\);
+
+    \SD_FS:SPI0:BSPIM:tx_status_0\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1 * main_2)",
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:tx_status_0\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\);
+
+    \SD_FS:SPI0:BSPIM:tx_status_4\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * !main_2)",
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:tx_status_4\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\);
+
+    \SD_FS:SPI0:BSPIM:rx_status_6\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * !main_2 * !main_3 * main_4 * main_5)",
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:rx_status_6\,
+            main_0 => \SD_FS:SPI0:BSPIM:count_4\,
+            main_1 => \SD_FS:SPI0:BSPIM:count_3\,
+            main_2 => \SD_FS:SPI0:BSPIM:count_2\,
+            main_3 => \SD_FS:SPI0:BSPIM:count_1\,
+            main_4 => \SD_FS:SPI0:BSPIM:count_0\,
+            main_5 => \SD_FS:SPI0:BSPIM:rx_status_4\);
 
     \x_DAC:viDAC8\:vidaccell
         GENERIC MAP(
@@ -1024,7 +1678,7 @@ BEGIN
         GENERIC MAP(
             int_type => "00")
         PORT MAP(
-            interrupt => Net_61_local,
+            interrupt => Net_253_local,
             clock => ClockBlock_BUS_CLK);
 
     \BLE_UART:BUART:sRX:RxShifter:u0\:datapathcell
@@ -1106,14 +1760,128 @@ BEGIN
             status_2 => open,
             status_1 => open,
             status_0 => open,
-            interrupt => Net_145);
+            interrupt => Net_237);
 
     BLE_Rx_isr:interrupt
         GENERIC MAP(
             int_type => "10")
         PORT MAP(
-            interrupt => Net_145,
+            interrupt => Net_237,
             clock => ClockBlock_BUS_CLK);
+
+    Audio_isr:interrupt
+        GENERIC MAP(
+            int_type => "00")
+        PORT MAP(
+            interrupt => Net_251_local,
+            clock => ClockBlock_BUS_CLK);
+
+    \SD_FS:SPI0:BSPIM:BitCounter\:count7cell
+        GENERIC MAP(
+            cy_alt_mode => 0,
+            cy_init_value => "0000000",
+            cy_period => "0001111",
+            cy_route_en => 1,
+            cy_route_ld => 0,
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            clock => \SD_FS:Net_19\,
+            load => open,
+            enable => \SD_FS:SPI0:BSPIM:cnt_enable\,
+            count_6 => \SD_FS:SPI0:BSPIM:count_6\,
+            count_5 => \SD_FS:SPI0:BSPIM:count_5\,
+            count_4 => \SD_FS:SPI0:BSPIM:count_4\,
+            count_3 => \SD_FS:SPI0:BSPIM:count_3\,
+            count_2 => \SD_FS:SPI0:BSPIM:count_2\,
+            count_1 => \SD_FS:SPI0:BSPIM:count_1\,
+            count_0 => \SD_FS:SPI0:BSPIM:count_0\,
+            tc => \SD_FS:SPI0:BSPIM:cnt_tc\);
+
+    \SD_FS:SPI0:BSPIM:TxStsReg\:statusicell
+        GENERIC MAP(
+            cy_force_order => 1,
+            cy_int_mask => "0000000",
+            cy_md_select => "0001001",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            clock => \SD_FS:Net_19\,
+            status_6 => open,
+            status_5 => open,
+            status_4 => \SD_FS:SPI0:BSPIM:tx_status_4\,
+            status_3 => \SD_FS:SPI0:BSPIM:load_rx_data\,
+            status_2 => \SD_FS:SPI0:BSPIM:tx_status_2\,
+            status_1 => \SD_FS:SPI0:BSPIM:tx_status_1\,
+            status_0 => \SD_FS:SPI0:BSPIM:tx_status_0\);
+
+    \SD_FS:SPI0:BSPIM:RxStsReg\:statusicell
+        GENERIC MAP(
+            cy_force_order => 1,
+            cy_int_mask => "0000000",
+            cy_md_select => "1000000",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            clock => \SD_FS:Net_19\,
+            status_6 => \SD_FS:SPI0:BSPIM:rx_status_6\,
+            status_5 => \SD_FS:SPI0:BSPIM:rx_status_5\,
+            status_4 => \SD_FS:SPI0:BSPIM:rx_status_4\,
+            status_3 => open,
+            status_2 => open,
+            status_1 => open,
+            status_0 => open);
+
+    \SD_FS:SPI0:BSPIM:sR8:Dp:u0\:datapathcell
+        GENERIC MAP(
+            a0_init => "00000000",
+            a1_init => "00000000",
+            ce0_sync => 1,
+            ce1_sync => 1,
+            cl0_sync => 1,
+            cl1_sync => 1,
+            cmsb_sync => 1,
+            co_msb_sync => 1,
+            cy_dpconfig => "0000000000000000000000001100000000000001010000000001000100010000000000011100000000010001000000000000000101000000000000010100000011111111000000001111111111111111000000000010001000001000111100000000000000000100",
+            d0_init => "00000000",
+            d1_init => "00000000",
+            f0_blk_sync => 1,
+            f0_bus_sync => 1,
+            f1_blk_sync => 1,
+            f1_bus_sync => 1,
+            ff0_sync => 1,
+            ff1_sync => 1,
+            ov_msb_sync => 1,
+            so_sync => 1,
+            z0_sync => 1,
+            z1_sync => 1,
+            uses_p_in => '0',
+            uses_p_out => '0',
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            clock => \SD_FS:Net_19\,
+            cs_addr_2 => \SD_FS:SPI0:BSPIM:state_2\,
+            cs_addr_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            cs_addr_0 => \SD_FS:SPI0:BSPIM:state_0\,
+            route_si => \SD_FS:Net_16\,
+            f1_load => \SD_FS:SPI0:BSPIM:load_rx_data\,
+            so_comb => \SD_FS:SPI0:BSPIM:mosi_from_dp\,
+            f0_bus_stat_comb => \SD_FS:SPI0:BSPIM:tx_status_2\,
+            f0_blk_stat_comb => \SD_FS:SPI0:BSPIM:tx_status_1\,
+            f1_bus_stat_comb => \SD_FS:SPI0:BSPIM:rx_status_5\,
+            f1_blk_stat_comb => \SD_FS:SPI0:BSPIM:rx_status_4\,
+            busclk => ClockBlock_BUS_CLK);
+
+    \Audio_DAC:viDAC8\:vidaccell
+        GENERIC MAP(
+            cy_registers => "",
+            is_all_if_any => 0,
+            reg_data => 0)
+        PORT MAP(
+            reset => open,
+            idir => open,
+            ioff => open);
 
     \BLE_UART:BUART:rx_state_1\:macrocell
         GENERIC MAP(
@@ -1141,7 +1909,7 @@ BEGIN
             main_6 => \BLE_UART:BUART:rx_count_5\,
             main_7 => \BLE_UART:BUART:rx_count_4\,
             main_8 => \BLE_UART:BUART:pollcount_1\,
-            main_9 => Net_87,
+            main_9 => Net_239,
             main_10 => \BLE_UART:BUART:pollcount_0\);
 
     \BLE_UART:BUART:rx_load_fifo\:macrocell
@@ -1194,7 +1962,7 @@ BEGIN
             main_5 => \BLE_UART:BUART:rx_count_6\,
             main_6 => \BLE_UART:BUART:rx_count_5\,
             main_7 => \BLE_UART:BUART:rx_count_4\,
-            main_8 => Net_87,
+            main_8 => Net_239,
             main_9 => \BLE_UART:BUART:rx_last\);
 
     \BLE_UART:BUART:rx_bitclk_enable\:macrocell
@@ -1233,7 +2001,7 @@ BEGIN
             main_0 => \BLE_UART:BUART:rx_count_2\,
             main_1 => \BLE_UART:BUART:rx_count_1\,
             main_2 => \BLE_UART:BUART:pollcount_1\,
-            main_3 => Net_87,
+            main_3 => Net_239,
             main_4 => \BLE_UART:BUART:pollcount_0\);
 
     \BLE_UART:BUART:pollcount_0\:macrocell
@@ -1246,8 +2014,25 @@ BEGIN
             clock_0 => \BLE_UART:Net_9\,
             main_0 => \BLE_UART:BUART:rx_count_2\,
             main_1 => \BLE_UART:BUART:rx_count_1\,
-            main_2 => Net_87,
+            main_2 => Net_239,
             main_3 => \BLE_UART:BUART:pollcount_0\);
+
+    \SD_FS:SPI0:BSPIM:mosi_pre_reg_split_1\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * !main_4 * !main_5 * !main_6 * !main_7 * !main_9) + (!main_0 * !main_2) + (!main_0 * !main_8) + (main_0 * !main_1 * main_2) + (main_0 * !main_3) + (main_1 * !main_2)",
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:mosi_pre_reg_split_1\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\,
+            main_3 => \SD_FS:SPI0:BSPIM:mosi_from_dp\,
+            main_4 => \SD_FS:SPI0:BSPIM:count_4\,
+            main_5 => \SD_FS:SPI0:BSPIM:count_3\,
+            main_6 => \SD_FS:SPI0:BSPIM:count_2\,
+            main_7 => \SD_FS:SPI0:BSPIM:count_0\,
+            main_8 => \SD_FS:SPI0:BSPIM:mosi_pre_reg\,
+            main_9 => \SD_FS:SPI0:BSPIM:ld_ident\);
 
     \BLE_UART:BUART:rx_status_3\:macrocell
         GENERIC MAP(
@@ -1263,7 +2048,7 @@ BEGIN
             main_3 => \BLE_UART:BUART:rx_state_3\,
             main_4 => \BLE_UART:BUART:rx_state_2\,
             main_5 => \BLE_UART:BUART:pollcount_1\,
-            main_6 => Net_87,
+            main_6 => Net_239,
             main_7 => \BLE_UART:BUART:pollcount_0\);
 
     \BLE_UART:BUART:rx_last\:macrocell
@@ -1274,6 +2059,174 @@ BEGIN
         PORT MAP(
             q => \BLE_UART:BUART:rx_last\,
             clock_0 => \BLE_UART:Net_9\,
-            main_0 => Net_87);
+            main_0 => Net_239);
+
+    \SD_FS:SPI0:BSPIM:state_2\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * main_2) + (main_0 * main_1 * main_2) + (main_1 * main_2 * !main_3 * !main_4 * !main_5 * main_6 * !main_7 * !main_9) + (main_1 * main_2 * !main_3 * !main_4 * main_5 * main_6 * !main_7 * !main_8)",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:state_2\,
+            clock_0 => \SD_FS:Net_19\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\,
+            main_3 => \SD_FS:SPI0:BSPIM:count_4\,
+            main_4 => \SD_FS:SPI0:BSPIM:count_3\,
+            main_5 => \SD_FS:SPI0:BSPIM:count_2\,
+            main_6 => \SD_FS:SPI0:BSPIM:count_1\,
+            main_7 => \SD_FS:SPI0:BSPIM:count_0\,
+            main_8 => \SD_FS:SPI0:BSPIM:tx_status_1\,
+            main_9 => \SD_FS:SPI0:BSPIM:ld_ident\);
+
+    \SD_FS:SPI0:BSPIM:state_1\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * !main_2) + (!main_0 * main_1 * main_2 * !main_3 * !main_4 * !main_5 * main_6 * !main_7 * !main_9) + (!main_0 * main_1 * main_2 * !main_3 * !main_4 * main_5 * main_6 * !main_7 * !main_8) + (main_0 * !main_1 * main_2)",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:state_1\,
+            clock_0 => \SD_FS:Net_19\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\,
+            main_3 => \SD_FS:SPI0:BSPIM:count_4\,
+            main_4 => \SD_FS:SPI0:BSPIM:count_3\,
+            main_5 => \SD_FS:SPI0:BSPIM:count_2\,
+            main_6 => \SD_FS:SPI0:BSPIM:count_1\,
+            main_7 => \SD_FS:SPI0:BSPIM:count_0\,
+            main_8 => \SD_FS:SPI0:BSPIM:tx_status_1\,
+            main_9 => \SD_FS:SPI0:BSPIM:ld_ident\);
+
+    \SD_FS:SPI0:BSPIM:state_0\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * main_2) + (!main_0 * !main_1 * main_8) + (!main_0 * main_2 * !main_3 * !main_4 * !main_5 * main_6 * !main_7 * !main_9)",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:state_0\,
+            clock_0 => \SD_FS:Net_19\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\,
+            main_3 => \SD_FS:SPI0:BSPIM:count_4\,
+            main_4 => \SD_FS:SPI0:BSPIM:count_3\,
+            main_5 => \SD_FS:SPI0:BSPIM:count_2\,
+            main_6 => \SD_FS:SPI0:BSPIM:count_1\,
+            main_7 => \SD_FS:SPI0:BSPIM:count_0\,
+            main_8 => \SD_FS:SPI0:BSPIM:tx_status_1\,
+            main_9 => \SD_FS:SPI0:BSPIM:ld_ident\);
+
+    \SD_FS:Net_1\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * main_2) + (main_0 * !main_2 * !main_3) + (main_1 * !main_3)",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:Net_1\,
+            clock_0 => \SD_FS:Net_19\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\,
+            main_3 => \SD_FS:Net_1\);
+
+    \SD_FS:SPI0:BSPIM:mosi_hs_reg\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * main_2 * main_5) + (main_0 * main_1 * main_2 * main_3) + (!main_1 * main_4) + (!main_2 * main_4)",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:mosi_hs_reg\,
+            clock_0 => \SD_FS:Net_19\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\,
+            main_3 => \SD_FS:SPI0:BSPIM:mosi_from_dp\,
+            main_4 => \SD_FS:SPI0:BSPIM:mosi_hs_reg\,
+            main_5 => \SD_FS:SPI0:BSPIM:mosi_from_dp_reg\);
+
+    \SD_FS:SPI0:BSPIM:mosi_pre_reg\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1)",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:mosi_pre_reg\,
+            clock_0 => \SD_FS:Net_19\,
+            main_0 => \SD_FS:SPI0:BSPIM:mosi_pre_reg_split\,
+            main_1 => \SD_FS:SPI0:BSPIM:mosi_pre_reg_split_1\);
+
+    \SD_FS:SPI0:BSPIM:load_cond\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_3 * !main_4 * !main_5 * !main_6 * !main_7 * main_8) + (main_0 * !main_1 * !main_2 * !main_8) + (main_1 * !main_3 * !main_4 * !main_5 * !main_6 * !main_7 * main_8) + (main_2 * !main_3 * !main_4 * !main_5 * !main_6 * !main_7 * main_8)",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:load_cond\,
+            clock_0 => \SD_FS:Net_19\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\,
+            main_3 => \SD_FS:SPI0:BSPIM:count_4\,
+            main_4 => \SD_FS:SPI0:BSPIM:count_3\,
+            main_5 => \SD_FS:SPI0:BSPIM:count_2\,
+            main_6 => \SD_FS:SPI0:BSPIM:count_1\,
+            main_7 => \SD_FS:SPI0:BSPIM:count_0\,
+            main_8 => \SD_FS:SPI0:BSPIM:load_cond\);
+
+    \SD_FS:SPI0:BSPIM:mosi_from_dp_reg\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:mosi_from_dp_reg\,
+            clock_0 => \SD_FS:Net_19\,
+            main_0 => \SD_FS:SPI0:BSPIM:mosi_from_dp\);
+
+    \SD_FS:SPI0:BSPIM:ld_ident\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * !main_2 * !main_3 * !main_4 * !main_5 * !main_6 * main_7 * main_8) + (main_0 * !main_1 * !main_2 * !main_8)",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:ld_ident\,
+            clock_0 => \SD_FS:Net_19\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\,
+            main_3 => \SD_FS:SPI0:BSPIM:count_4\,
+            main_4 => \SD_FS:SPI0:BSPIM:count_3\,
+            main_5 => \SD_FS:SPI0:BSPIM:count_2\,
+            main_6 => \SD_FS:SPI0:BSPIM:count_1\,
+            main_7 => \SD_FS:SPI0:BSPIM:count_0\,
+            main_8 => \SD_FS:SPI0:BSPIM:ld_ident\);
+
+    \SD_FS:SPI0:BSPIM:cnt_enable\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * !main_1 * !main_2 * main_3) + (main_0 * !main_1 * main_2 * main_3) + (main_0 * main_1 * !main_2 * !main_3)",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:SPI0:BSPIM:cnt_enable\,
+            clock_0 => \SD_FS:Net_19\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\,
+            main_3 => \SD_FS:SPI0:BSPIM:cnt_enable\);
+
+    \SD_FS:Net_22\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * main_1 * main_3) + (main_0 * !main_2) + (main_1 * !main_2)",
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            q => \SD_FS:Net_22\,
+            clock_0 => \SD_FS:Net_19\,
+            main_0 => \SD_FS:SPI0:BSPIM:state_2\,
+            main_1 => \SD_FS:SPI0:BSPIM:state_1\,
+            main_2 => \SD_FS:SPI0:BSPIM:state_0\,
+            main_3 => \SD_FS:Net_22\);
 
 END __DEFAULT__;

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
   26:.\game_manager.c ****     notes[6] = (struct Note) { .track = 0, .time = 4, .played = 0 };
   27:.\game_manager.c ****     notes[7] = (struct Note) { .track = 0, .time = 4.5, .played = 0 };
   28:.\game_manager.c ****     notes[8] = (struct Note) { .track = 2, .time = 4.75, .played = 0 };
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 2
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 2
 
 
   29:.\game_manager.c ****     notes[9] = (struct Note) { .track = 4, .time = 5, .played = 0 };
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
   58:.\game_manager.c **** }
   55              		.loc 1 58 0
   56 001c 0530     		adds	r0, r0, #5
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 3
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 3
 
 
   57 001e 10BD     		pop	{r4, pc}
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  106 002c 03F12404 		add	r4, r3, #36
  107 0030 05F12402 		add	r2, r5, #36
  108 0034 07CA     		ldmia	r2, {r0, r1, r2}
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 4
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 4
 
 
  109 0036 84E80700 		stmia	r4, {r0, r1, r2}
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  154 00b2 07CA     		ldmia	r2, {r0, r1, r2}
  155 00b4 87E80700 		stmia	r7, {r0, r1, r2}
   33:.\game_manager.c ****     notes[14] = (struct Note) { .track = 3, .time = 7, .played = 0 };
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 5
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 5
 
 
  156              		.loc 1 33 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  202              	.L6:
   40:.\game_manager.c ****         barlines[i] = i + 2;
  203              		.loc 1 40 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 6
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 6
 
 
  204 0120 082C     		cmp	r4, #8
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  256              		.type	tick, %function
  257              	tick:
  258              	.LFB2:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 7
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 7
 
 
   59:.\game_manager.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  305 003c FE28     		cmp	r0, #254
  306 003e 14DC     		bgt	.L14
  307              		.loc 1 66 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 8
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 8
 
 
  308 0040 0135     		adds	r5, r5, #1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  351              	.LVL25:
  352 007e 0530     		adds	r0, r0, #5
  353              	.LVL26:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 9
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 9
 
 
   76:.\game_manager.c ****         if (y < UINT8_MAX) state->barlines_window.r++;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  400              		.size	tick, .-tick
  401              		.global	__aeabi_fcmplt
  402              		.section	.text.update_score,"ax",%progbits
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 10
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 10
 
 
  403              		.align	2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  446              		.loc 1 92 0
  447 001c D5F82080 		ldr	r8, [r5, #32]
  448              	.LVL35:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 11
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 11
 
 
  449 0020 4446     		mov	r4, r8
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  496              	.LVL45:
  497 0068 0199     		ldr	r1, [sp, #4]	@ float
  498 006a FFF7FEFF 		bl	__aeabi_fcmplt
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 12
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 12
 
 
  499              	.LVL46:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  545 00a8 0023     		movs	r3, #0
  546              	.LVL55:
  547              	.L32:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 13
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 13
 
 
  104:.\game_manager.c ****                 }
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  590              		@ frame_needed = 0, uses_anonymous_args = 0
  591              	.LVL59:
  592 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 14
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 14
 
 
  593              		.cfi_def_cfa_offset 36
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  640 0038 1AF80810 		ldrb	r1, [r10, r8]	@ zero_extendqisi2
  641 003c 99F80830 		ldrb	r3, [r9, #8]	@ zero_extendqisi2
  642              	.LVL67:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 15
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 15
 
 
  643 0040 FFF7FEFF 		bl	make_ellipse
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  689 0080 0137     		adds	r7, r7, #1
  690              	.LVL76:
  691              	.LBB18:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 16
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 16
 
 
  692              		.loc 1 124 0 discriminator 3
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  742 0038 00       		.byte	0
  743 0039 000000   		.space	3
  744              	.LC5:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 17
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 17
 
 
  745 003c 01       		.byte	1
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  799 00a8 02       		.byte	2
  800 00a9 000000   		.space	3
  801 00ac 00000041 		.word	1090519040
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 18
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 18
 
 
  802 00b0 00       		.byte	0
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  848 003b 02       		.byte	0x2
  849 003c 05       		.byte	0x5
  850 003d 06000000 		.4byte	.LASF3
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 19
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 19
 
 
  851 0041 02       		.uleb128 0x2
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  905 00a3 7900     		.ascii	"y\000"
  906 00a5 02       		.byte	0x2
  907 00a6 14       		.byte	0x14
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 20
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 20
 
 
  908 00a7 72000000 		.4byte	0x72
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  962 010d 04       		.byte	0x4
  963 010e 00       		.byte	0
  964 010f 05       		.uleb128 0x5
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 21
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 21
 
 
  965 0110 10010000 		.4byte	.LASF18
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1019 0178 00       		.byte	0
  1020 0179 07       		.uleb128 0x7
  1021 017a 89010000 		.4byte	.LASF20
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 22
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 22
 
 
  1022 017e 03       		.byte	0x3
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1076 01e7 40010000 		.4byte	.LASF47
  1077 01eb 01       		.byte	0x1
  1078 01ec 38       		.byte	0x38
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 23
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 23
 
 
  1079 01ed 64000000 		.4byte	0x64
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1133 026f 01       		.byte	0x1
  1134 0270 3C       		.byte	0x3c
  1135 0271 1E020000 		.4byte	0x21e
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 24
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 24
 
 
  1136 0275 79000000 		.4byte	.LLST3
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1190 02ea 7E000000 		.4byte	.LVL25
  1191 02ee E6010000 		.4byte	0x1e6
  1192 02f2 11       		.uleb128 0x11
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 25
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 25
 
 
  1193 02f3 01       		.uleb128 0x1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1247 0360 40010000 		.4byte	.LLST10
  1248 0364 0C       		.uleb128 0xc
  1249 0365 0E000000 		.4byte	.LBB7
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 26
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 26
 
 
  1250 0369 A4000000 		.4byte	.LBE7-.LBB7
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1304 03e9 0A       		.uleb128 0xa
  1305 03ea 00000000 		.4byte	.LASF32
  1306 03ee 01       		.byte	0x1
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 27
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 27
 
 
  1307 03ef 71       		.byte	0x71
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1361 0461 00       		.byte	0
  1362 0462 0C       		.uleb128 0xc
  1363 0463 56000000 		.4byte	.LBB16
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 28
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 28
 
 
  1364 0467 34000000 		.4byte	.LBE16-.LBB16
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1418 04cd 1A       		.uleb128 0x1a
  1419 04ce FC000000 		.4byte	.LASF27
  1420 04d2 01       		.byte	0x1
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 29
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 29
 
 
  1421 04d3 0F       		.byte	0xf
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1475 000a 0E       		.uleb128 0xe
  1476 000b 55       		.uleb128 0x55
  1477 000c 17       		.uleb128 0x17
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 30
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 30
 
 
  1478 000d 11       		.uleb128 0x11
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1532 0043 00       		.byte	0
  1533 0044 00       		.byte	0
  1534 0045 06       		.uleb128 0x6
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 31
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 31
 
 
  1535 0046 0D       		.uleb128 0xd
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1589 007c 06       		.uleb128 0x6
  1590 007d 40       		.uleb128 0x40
  1591 007e 18       		.uleb128 0x18
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 32
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 32
 
 
  1592 007f 9642     		.uleb128 0x2116
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1646 00b7 00       		.byte	0
  1647 00b8 0D       		.uleb128 0xd
  1648 00b9 34       		.uleb128 0x34
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 33
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 33
 
 
  1649 00ba 00       		.byte	0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1703 00f3 31       		.uleb128 0x31
  1704 00f4 13       		.uleb128 0x13
  1705 00f5 00       		.byte	0
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 34
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 34
 
 
  1706 00f6 00       		.byte	0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1760 0130 19       		.uleb128 0x19
  1761 0131 01       		.uleb128 0x1
  1762 0132 13       		.uleb128 0x13
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 35
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 35
 
 
  1763 0133 00       		.byte	0
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1817 016b 00       		.byte	0
  1818 016c 1A       		.uleb128 0x1a
  1819 016d 34       		.uleb128 0x34
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 36
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 36
 
 
  1820 016e 00       		.byte	0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1874 01a4 49       		.uleb128 0x49
  1875 01a5 13       		.uleb128 0x13
  1876 01a6 3C       		.uleb128 0x3c
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 37
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 37
 
 
  1877 01a7 19       		.uleb128 0x19
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1931 0071 00000000 		.4byte	0
  1932 0075 00000000 		.4byte	0
  1933              	.LLST3:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 38
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 38
 
 
  1934 0079 00000000 		.4byte	.LVL15
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  1988 0106 0100     		.2byte	0x1
  1989 0108 55       		.byte	0x55
  1990 0109 BC000000 		.4byte	.LVL58
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 39
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 39
 
 
  1991 010d C8000000 		.4byte	.LFE3
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  2045 0192 0200     		.2byte	0x2
  2046 0194 30       		.byte	0x30
  2047 0195 9F       		.byte	0x9f
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 40
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 40
 
 
  2048 0196 AA000000 		.4byte	.LVL55
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  2102 022a 0100     		.2byte	0x1
  2103 022c 51       		.byte	0x51
  2104 022d 10000000 		.4byte	.LVL62
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 41
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 41
 
 
  2105 0231 92000000 		.4byte	.LFE4
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  2159 02c0 00000000 		.4byte	0
  2160 02c4 00000000 		.4byte	0
  2161              	.LLST21:
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 42
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 42
 
 
  2162 02c8 68000000 		.4byte	.LVL73
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  2216 0068 00000000 		.4byte	.LFB0
  2217 006c 74010000 		.4byte	.LFE0
  2218 0070 00000000 		.4byte	.LFB2
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 43
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 43
 
 
  2219 0074 B8000000 		.4byte	.LFE2
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  2249 007c 5C66696E 		.ascii	"\\finalproject\\GuitarHero.cydsn\000"
  2249      616C7072 
  2249      6F6A6563 
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 44
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 44
 
 
  2249      745C4775 
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  2277      696E6573 
  2277      5F77696E 
  2277      646F7700 
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 45
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 45
 
 
  2278              	.LASF50:
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  2304              	.LASF29:
  2305 01b3 6261726C 		.ascii	"barlines\000"
  2305      696E6573 
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 46
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 46
 
 
  2305      00
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 1
  2330              	.LASF33:
  2331 02ad 6F626A5F 		.ascii	"obj_time\000"
  2331      74696D65 
-ARM GAS  C:\Users\User\AppData\Local\Temp\ccNQABEu.s 			page 47
+ARM GAS  C:\Users\User\AppData\Local\Temp\cc32i98i.s 			page 47
 
 
  2331      00

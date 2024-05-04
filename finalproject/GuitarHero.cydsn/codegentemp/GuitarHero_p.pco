@@ -1,36 +1,65 @@
 dont_use_io iocell 1 0
 dont_use_io iocell 1 1
 dont_use_io iocell 1 3
-set_location "\BLE_UART:BUART:rx_status_4\" macrocell 0 4 0 2
-set_location "\BLE_UART:BUART:rx_state_2\" macrocell 0 5 1 0
-set_location "\BLE_UART:BUART:sRX:RxBitCounter\" count7cell 0 5 7 
-set_location "\BLE_UART:BUART:sRX:RxShifter:u0\" datapathcell 0 4 2 
-set_location "\BLE_UART:BUART:rx_counter_load\" macrocell 0 5 0 1
-set_location "\BLE_UART:BUART:rx_state_1\" macrocell 0 4 1 3
-set_location "\BLE_UART:BUART:rx_state_3\" macrocell 0 5 0 2
-set_location "\BLE_UART:BUART:rx_bitclk_enable\" macrocell 1 5 1 0
-set_location "\BLE_UART:BUART:rx_state_0\" macrocell 0 5 0 0
-set_location "\BLE_UART:BUART:rx_postpoll\" macrocell 0 4 0 1
-set_location "\BLE_UART:BUART:pollcount_1\" macrocell 0 4 0 0
-set_location "\BLE_UART:BUART:rx_status_5\" macrocell 0 4 1 1
-set_location "\BLE_UART:BUART:sRX:RxSts\" statusicell 0 4 4 
-set_location "\BLE_UART:BUART:rx_state_stop1_reg\" macrocell 0 4 1 0
-set_location "\BLE_UART:BUART:rx_load_fifo\" macrocell 0 4 1 2
-set_location "\BLE_UART:BUART:rx_last\" macrocell 0 5 1 1
-set_location "\BLE_UART:BUART:pollcount_0\" macrocell 1 5 0 0
-set_location "\BLE_UART:BUART:rx_status_3\" macrocell 0 5 1 2
+set_location "\SD_FS:SPI0:BSPIM:mosi_pre_reg_split\" macrocell 3 1 1 0
+set_location "\SD_FS:SPI0:BSPIM:RxStsReg\" statusicell 3 1 4 
+set_location "\SD_FS:SPI0:BSPIM:BitCounter\" count7cell 2 3 7 
+set_location "\SD_FS:SPI0:BSPIM:rx_status_6\" macrocell 3 3 0 2
+set_location "\BLE_UART:BUART:sRX:RxShifter:u0\" datapathcell 1 5 2 
+set_location "\SD_FS:SPI0:BSPIM:ld_ident\" macrocell 3 1 0 1
+set_location "\BLE_UART:BUART:rx_counter_load\" macrocell 1 5 0 3
+set_location "\BLE_UART:BUART:rx_state_1\" macrocell 1 5 1 3
+set_location "\BLE_UART:BUART:pollcount_0\" macrocell 0 5 0 2
+set_location "\BLE_UART:BUART:rx_bitclk_enable\" macrocell 0 5 0 3
+set_location "\SD_FS:SPI0:BSPIM:TxStsReg\" statusicell 3 3 4 
+set_location "\BLE_UART:BUART:rx_status_3\" macrocell 1 4 1 1
+set_location "\SD_FS:SPI0:BSPIM:load_rx_data\" macrocell 3 3 0 1
+set_location "\SD_FS:SPI0:BSPIM:state_2\" macrocell 3 1 0 0
+set_location "\BLE_UART:BUART:rx_load_fifo\" macrocell 0 5 1 2
+set_location "\SD_FS:SPI0:BSPIM:state_1\" macrocell 3 3 1 2
+set_location "\BLE_UART:BUART:rx_status_4\" macrocell 1 5 1 2
+set_location "\SD_FS:SPI0:BSPIM:tx_status_0\" macrocell 3 3 1 3
+set_location "\BLE_UART:BUART:rx_state_2\" macrocell 0 4 1 0
+set_location "\BLE_UART:BUART:rx_last\" macrocell 0 4 0 3
+set_location "\BLE_UART:BUART:rx_postpoll\" macrocell 0 5 0 1
+set_location "\SD_FS:Net_22\" macrocell 2 1 0 1
+set_location "\BLE_UART:BUART:sRX:RxBitCounter\" count7cell 0 4 7 
+set_location "\BLE_UART:BUART:sRX:RxSts\" statusicell 1 5 4 
+set_location "\SD_FS:SPI0:BSPIM:mosi_pre_reg\" macrocell 3 3 1 1
+set_location "\SD_FS:SPI0:BSPIM:mosi_pre_reg_split_1\" macrocell 3 3 0 0
+set_location "\SD_FS:Net_10\" macrocell 2 1 1 2
+set_location "\SD_FS:SPI0:BSPIM:tx_status_4\" macrocell 2 1 0 2
+set_location "\SD_FS:SPI0:BSPIM:state_0\" macrocell 3 3 1 0
+set_location "\SD_FS:SPI0:BSPIM:mosi_hs_reg\" macrocell 2 1 1 0
+set_location "\BLE_UART:BUART:rx_state_0\" macrocell 0 4 0 0
+set_location "\BLE_UART:BUART:rx_state_3\" macrocell 0 4 1 3
+set_location "\SD_FS:SPI0:BSPIM:cnt_enable\" macrocell 1 4 0 1
+set_location "\BLE_UART:BUART:rx_status_5\" macrocell 1 5 1 1
+set_location "\BLE_UART:BUART:pollcount_1\" macrocell 0 5 0 0
+set_location "\SD_FS:Net_1\" macrocell 3 1 0 2
+set_location "\SD_FS:SPI0:BSPIM:mosi_from_dp_reg\" macrocell 2 1 1 1
+set_location "\SD_FS:SPI0:BSPIM:sR8:Dp:u0\" datapathcell 3 3 2 
+set_location "\BLE_UART:BUART:rx_state_stop1_reg\" macrocell 1 5 1 0
+set_location "\SD_FS:SPI0:BSPIM:load_cond\" macrocell 2 1 0 0
 set_io "\LCD:LCDPort(4)\" iocell 2 4
-set_location "FPS_isr" interrupt -1 -1 1
+set_io "\SD_FS:miso0(0)\" iocell 3 4
+set_location "Audio_isr" interrupt -1 -1 0
+set_location "FPS_isr" interrupt -1 -1 2
 set_io "BLE_Rx(0)" iocell 6 6
+set_io "\SD_FS:mosi0(0)\" iocell 3 5
 set_location "\x_DAC:viDAC8\" vidaccell -1 -1 2
 set_location "\y_DAC:viDAC8\" vidaccell -1 -1 3
-set_location "BLE_Rx_isr" interrupt -1 -1 0
+set_location "\Audio_DAC:viDAC8\" vidaccell -1 -1 0
+set_location "BLE_Rx_isr" interrupt -1 -1 1
+set_location "ClockBlock" clockblockcell -1 -1 0
 set_io "\LCD:LCDPort(6)\" iocell 2 6
 set_io "\LCD:LCDPort(5)\" iocell 2 5
 set_io "\LCD:LCDPort(2)\" iocell 2 2
-set_location "ClockBlock" clockblockcell -1 -1 0
+set_io "\SD_FS:sclk0(0)\" iocell 3 3
 set_io "\LCD:LCDPort(1)\" iocell 2 1
 set_io "x_out(0)" iocell 4 0
 set_io "y_out(0)" iocell 4 1
 set_io "\LCD:LCDPort(0)\" iocell 2 0
+set_io "Audio_out(0)" iocell 0 7
+set_io "\SD_FS:SPI0_CS(0)\" iocell 3 6
 set_io "\LCD:LCDPort(3)\" iocell 2 3
