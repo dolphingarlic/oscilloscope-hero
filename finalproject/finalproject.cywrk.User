@@ -6,14 +6,14 @@
 <CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
 <userData>
 <dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
-<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Datasheet">
 <TreeKeys>
 <v>Source</v>
 <v>Components</v>
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="finalproject\GuitarHero">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="finalproject\GuitarHero\Source Files\game_manager.c">
 <ExpandedNodeIds>
 <v>finalproject</v>
 <v>finalproject\GuitarHero</v>
@@ -85,6 +85,10 @@
 <v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_Clock</v>
 <v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_Clock\FPS_Clock.c</v>
 <v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_Clock\FPS_Clock.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_Counter</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_Counter\FPS_Counter.c</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_Counter\FPS_Counter.h</v>
+<v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_Counter\FPS_Counter_PM.c</v>
 <v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_isr</v>
 <v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_isr\FPS_isr.c</v>
 <v>finalproject\GuitarHero\Generated_Source\PSoC5\FPS_isr\FPS_isr.h</v>
@@ -258,6 +262,8 @@
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_Clock.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_Counter.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_Counter_PM.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_isr.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\game_manager.lst</v>
 <v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD.lst</v>
@@ -292,6 +298,52 @@
 <VisibleNodeIds>
 <v>finalproject</v>
 <v>finalproject\GuitarHero</v>
+<v>finalproject\GuitarHero\CortexM3</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\Audio_Clock.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\Audio_DAC.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\Audio_DAC_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\Audio_isr.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\Audio_out.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_Rx_isr.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_BOOT.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_INT.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_IntClock.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\BLE_UART_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_Clock.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_Counter.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_Counter_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\FPS_isr.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\game_manager.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\LCD_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\SD_FS_Clock_1.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\SD_FS_ConfigMMC_SPI.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\SD_FS_miso0.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\SD_FS_MMC_HW_SPI.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\SD_FS_mosi0.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\SD_FS_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\SD_FS_sclk0.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\SD_FS_SPI0.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\SD_FS_SPI0_CS.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\SD_FS_SPI0_INT.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\SD_FS_SPI0_PM.lst</v>
+<v>finalproject\GuitarHero\CortexM3\ARM_GCC_493\Debug\Listing Files\sprites.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -308,9 +360,11 @@
 <v>finalproject\GuitarHero\System Reference Guides</v>
 <v>finalproject\GuitarHero\System Reference Guides\cy_boot_v5_40</v>
 <v>finalproject\GuitarHero\CharLCD_v2_20.pdf</v>
+<v>finalproject\GuitarHero\Counter_v3_0.pdf</v>
 <v>finalproject\GuitarHero\cy_clock_v2_20</v>
 <v>finalproject\GuitarHero\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
-<v>finalproject\GuitarHero\cy_constant_v1_0.pdf</v>
+<v>finalproject\GuitarHero\cy_constant_v1_0</v>
+<v>finalproject\GuitarHero\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
 <v>finalproject\GuitarHero\cy_isr_v1_70</v>
 <v>finalproject\GuitarHero\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
 <v>finalproject\GuitarHero\cy_pins_v2_20</v>
@@ -328,9 +382,11 @@
 <v>finalproject\GuitarHero\System Reference Guides</v>
 <v>finalproject\GuitarHero\System Reference Guides\cy_boot_v5_40</v>
 <v>finalproject\GuitarHero\CharLCD_v2_20.pdf</v>
+<v>finalproject\GuitarHero\Counter_v3_0.pdf</v>
 <v>finalproject\GuitarHero\cy_clock_v2_20</v>
 <v>finalproject\GuitarHero\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
-<v>finalproject\GuitarHero\cy_constant_v1_0.pdf</v>
+<v>finalproject\GuitarHero\cy_constant_v1_0</v>
+<v>finalproject\GuitarHero\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
 <v>finalproject\GuitarHero\cy_isr_v1_70</v>
 <v>finalproject\GuitarHero\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
 <v>finalproject\GuitarHero\cy_pins_v2_20</v>
@@ -351,8 +407,6 @@
 <name v=".\GuitarHero.cydsn\main.c" />
 <name v=".\GuitarHero.cydsn\GuitarHero.cydwr" />
 <name v=".\GuitarHero.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\GuitarHero.cydsn\Generated_Source\PSoC5\SD_FS_ConfigMMC_SPI.c" />
-<name v=".\GuitarHero.cydsn\Generated_Source\PSoC5\SD_FS.h" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

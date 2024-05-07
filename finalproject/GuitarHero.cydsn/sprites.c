@@ -21,7 +21,7 @@ static int sprite_n[4];
 void init_sprites() {
     // Fretboard
     {
-        const int resolution = 16;
+        const int resolution = 12;
         int n = 0;
         // Bottom edge
         for (int i = 0; i < resolution; i++) {
@@ -78,7 +78,7 @@ void init_sprites() {
     
     // Ellipses
     {
-        const int resolution = 10;
+        const int resolution = 8;
         const int width = 20, height = 5;
         int n = 0;
         

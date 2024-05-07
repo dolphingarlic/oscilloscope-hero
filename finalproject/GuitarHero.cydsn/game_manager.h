@@ -49,7 +49,7 @@ struct GameState {
 /*
  * Starts a new game
  */
-struct GameState new_game();
+struct GameState new_game(char *song_name);
 
 /*
  * Updates the state of the game at 20 FPS

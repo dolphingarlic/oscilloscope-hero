@@ -32,8 +32,6 @@
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_DAC.c" value="ARM_C_FILE;y_DAC" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_DAC.h" value="NONE;y_DAC" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\y_DAC_PM.c" value="ARM_C_FILE;y_DAC" />
-  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_Clock.c" value="ARM_C_FILE;FPS_Clock" />
-  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_Clock.h" value="NONE;FPS_Clock" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_isr.c" value="ARM_C_FILE;FPS_isr" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_isr.h" value="NONE;FPS_isr" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART.c" value="ARM_C_FILE;BLE_UART" />
@@ -60,6 +58,11 @@
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Audio_DAC.c" value="ARM_C_FILE;Audio_DAC" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Audio_DAC.h" value="NONE;Audio_DAC" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\Audio_DAC_PM.c" value="ARM_C_FILE;Audio_DAC" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_Clock.c" value="ARM_C_FILE;FPS_Clock" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_Clock.h" value="NONE;FPS_Clock" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_Counter.c" value="ARM_C_FILE;FPS_Counter" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_Counter.h" value="NONE;FPS_Counter" />
+  <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\FPS_Counter_PM.c" value="ARM_C_FILE;FPS_Counter" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_IntClock.c" value="ARM_C_FILE;BLE_UART_IntClock" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\BLE_UART_IntClock.h" value="NONE;BLE_UART_IntClock" />
   <file name="C:\Users\User\Documents\MIT 6.115\finalproject\finalproject\GuitarHero.cydsn\codegentemp\LCD_LCDPort_aliases.h" value="NONE;LCD_LCDPort" />

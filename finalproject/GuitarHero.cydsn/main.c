@@ -29,7 +29,7 @@ int new_n_points;
 struct Point new_points[1<<10];
 
 // File I/O stuff
-#define N_BUFFERS 4
+#define N_BUFFERS 2
 #define BUFFER_LEN 4096
 FS_FILE *audio_file;
 int buffer_len[N_BUFFERS];
@@ -48,7 +48,6 @@ CY_ISR_PROTO(Audio_isr);
 void hw_init() {
     x_DAC_Start();
     y_DAC_Start();
-    Audio_DAC_Start();
     
     LCD_Start();
     LCD_ClearDisplay();
@@ -56,6 +55,8 @@ void hw_init() {
     
     BLE_UART_Init();
     BLE_UART_Start();
+    
+    FPS_Counter_Start();
 
     FPS_isr_StartEx(FPS_isr);
     BLE_Rx_isr_StartEx(BLE_Rx_isr);
@@ -76,7 +77,10 @@ void game_init() {
         sprites[n_sprites++] = make_ellipse(i, 5, 0);
     }
     
-    game_state = new_game();
+    game_state = new_game("feelgood.txt");
+    LCD_Position(0, 0);
+    LCD_PrintString("Duration: ");
+    LCD_PrintNumber((int)game_state.song.duration);
 }
 
 /*
@@ -91,6 +95,7 @@ void audio_init() {
         }
         fill_buffer = 0, play_buffer = 0, play_idx = 0;
         audio_done = 0;
+        Audio_DAC_Start();
         Audio_isr_StartEx(Audio_isr);
     }
 }
@@ -164,8 +169,10 @@ CY_ISR(Audio_isr) {
         if (play_buffer == N_BUFFERS)
             play_buffer = 0;
         // Stop playing when we reach the end of the file
-        if (play_buffer == fill_buffer && audio_done)
+        if (play_buffer == fill_buffer && audio_done) {
             Audio_isr_Stop();
+            Audio_DAC_Stop();
+        }
     }
 }
 

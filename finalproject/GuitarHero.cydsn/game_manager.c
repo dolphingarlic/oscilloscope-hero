@@ -11,50 +11,73 @@
 */
 
 #include <game_manager.h>
+#include <FS.h>
+#include <stdlib.h>
 
 static struct Note notes[1000];
 static float barlines[1000];
 
-struct GameState new_game() {
-    // Approximates the Tetris theme w/o audio
-    notes[0] = (struct Note) { .track = 4, .time = 2, .played = 0 };
-    notes[1] = (struct Note) { .track = 1, .time = 2.5, .played = 0 };
-    notes[2] = (struct Note) { .track = 2, .time = 2.75, .played = 0 };
-    notes[3] = (struct Note) { .track = 3, .time = 3, .played = 0 };
-    notes[4] = (struct Note) { .track = 2, .time = 3.5, .played = 0 };
-    notes[5] = (struct Note) { .track = 1, .time = 3.75, .played = 0 };
-    notes[6] = (struct Note) { .track = 0, .time = 4, .played = 0 };
-    notes[7] = (struct Note) { .track = 0, .time = 4.5, .played = 0 };
-    notes[8] = (struct Note) { .track = 2, .time = 4.75, .played = 0 };
-    notes[9] = (struct Note) { .track = 4, .time = 5, .played = 0 };
-    notes[10] = (struct Note) { .track = 3, .time = 5.5, .played = 0 };
-    notes[11] = (struct Note) { .track = 2, .time = 5.75, .played = 0 };
-    notes[12] = (struct Note) { .track = 1, .time = 6, .played = 0 };
-    notes[13] = (struct Note) { .track = 2, .time = 6.75, .played = 0 };
-    notes[14] = (struct Note) { .track = 3, .time = 7, .played = 0 };
-    notes[15] = (struct Note) { .track = 4, .time = 7.5, .played = 0 };
-    notes[16] = (struct Note) { .track = 2, .time = 8, .played = 0 };
-    notes[17] = (struct Note) { .track = 0, .time = 8.5, .played = 0 };
-    notes[18] = (struct Note) { .track = 0, .time = 9, .played = 0 };
+struct GameState new_game(char *song_name) {
+    int n_notes = 0;
+    float tempo = 0;
+    float duration = 0;
+    // Parse the notes from a chart file
+    FS_FILE *chart_file = FS_FOpen(song_name, "r");
+    if (chart_file) {
+        int buffer_len;
+        int float_len = 0;
+        char buffer[512], curr_float[10];
+        uint8 parse_mode = 0;
+        while ((buffer_len = FS_Read(chart_file, buffer, sizeof(buffer)))) {
+            for (int i = 0; i < buffer_len; i++) {
+                switch (parse_mode) {
+                    case 2: // Track
+                        notes[n_notes].track = buffer[i] - '0';
+                        notes[n_notes].played = 0;
+                    case 3: // Whitespace
+                        parse_mode++;
+                        break;
+                    case 4: // Note time
+                    case 0: // Tempo
+                    case 1: // Song duration
+                        if (buffer[i] == '\n') {
+                            if (parse_mode == 4) {
+                                notes[n_notes++].time = atof(curr_float);
+                                parse_mode -= 3;
+                            } else if (parse_mode == 0) {
+                                tempo = atof(curr_float);
+                            } else if (parse_mode == 1)
+                                duration = atof(curr_float);
+                            parse_mode++;
+                            // Reset the float buffer
+                            float_len = 0;
+                            for (int j = 0; j < 10; j++)
+                                curr_float[j] = 0;
+                        } else {
+                            curr_float[float_len++] = buffer[i];
+                        }
+                }
+            }
+        }
+    }
     
-    for (int i = 0; i < 9; i++)
-        barlines[i] = i + 2;
+    // TODO: Generate barlines too
     
     return (struct GameState) {
-        .song = (struct Song) { .tempo = 120, .duration = 12 },
+        .song = (struct Song) { .tempo = tempo, .duration = duration },
         .time = 0,
         .score = 0,
-        .n_notes = 19,
+        .n_notes = n_notes,
         .notes = notes,
         .notes_window = {0, 0},
-        .n_barlines = 9,
+        .n_barlines = 0,
         .barlines = barlines,
         .barlines_window = {0, 0}
     };
 }
 
 static int obj_pos(struct GameState *state, float obj_time) {
-    return (int)((256 / 2) * 60 * (obj_time - state->time) / state->song.tempo) + 5;
+    return (int)(256 * 60 * (obj_time - state->time) / state->song.tempo) + 5;
 }
 
 void tick(struct GameState *state) {

@@ -1,6 +1,6 @@
 // ======================================================================
 // GuitarHero.v generated from TopDesign.cysch
-// 05/04/2024 at 14:27
+// 05/06/2024 at 21:09
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -194,6 +194,19 @@ module VDAC8_v1_90_1 (
 
 endmodule
 
+// Component: cy_constant_v1_0
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v"
+`else
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v"
+`endif
+
 // Component: cy_virtualmux_v1_0
 `ifdef CY_BLK_DIR
 `undef CY_BLK_DIR
@@ -319,19 +332,6 @@ module UART_v2_50_2 (
 
 
 endmodule
-
-// Component: cy_constant_v1_0
-`ifdef CY_BLK_DIR
-`undef CY_BLK_DIR
-`endif
-
-`ifdef WARP
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v"
-`else
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v"
-`endif
 
 // CharLCD_v2_20(ConversionRoutines=true, CUSTOM0=0,E,8,8,8,E,0, CUSTOM1=0,A,A,4,4,4,0, CUSTOM2=0,E,A,E,8,8,0, CUSTOM3=0,E,A,C,A,A,0, CUSTOM4=0,E,8,C,8,E,0, CUSTOM5=0,E,8,E,2,E,0, CUSTOM6=0,E,8,E,2,E,0, CUSTOM7=0,4,4,4,0,4,0, CustomCharacterSet=0, TypeReplacementString=uint8, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMPONENT_NAME=CharLCD_v2_20, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=LCD, CY_INSTANCE_SHORT_NAME=LCD, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=20, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.3 CP3, INSTANCE_NAME=LCD, )
 module CharLCD_v2_20_3 ;
@@ -899,14 +899,119 @@ module VDAC8_v1_90_6 (
 
 endmodule
 
+// Component: OneTerminal
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v"
+`else
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v"
+`endif
+
+// Counter_v3_0(CaptureMode=0, CaptureModeSoftware=0, ClockMode=0, CompareMode=1, CompareModeSoftware=0, CompareStatusEdgeSense=true, CompareValue=5, CONTROL3=1, ControlRegRemoved=0, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, EnableMode=0, FF16=true, FF8=false, FixedFunction=true, FixedFunctionUsed=1, InitCounterValue=0, InterruptOnCapture=false, InterruptOnCompare=false, InterruptOnOverUnderFlow=false, InterruptOnTC=false, Period=50000, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, ReloadOnCapture=false, ReloadOnCompare=false, ReloadOnOverUnder=true, ReloadOnReset=true, Resolution=16, RunMode=0, UDB16=false, UDB24=false, UDB32=false, UDB8=false, UDBControlReg=false, UseInterrupt=true, VerilogSectionReplacementString=sC16, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMPONENT_NAME=Counter_v3_0, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=FPS_Counter, CY_INSTANCE_SHORT_NAME=FPS_Counter, CY_MAJOR_VERSION=3, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.3 CP3, INSTANCE_NAME=FPS_Counter, )
+module Counter_v3_0_7 (
+    clock,
+    comp,
+    tc,
+    reset,
+    interrupt,
+    enable,
+    capture,
+    upCnt,
+    downCnt,
+    up_ndown,
+    count);
+    input       clock;
+    output      comp;
+    output      tc;
+    input       reset;
+    output      interrupt;
+    input       enable;
+    input       capture;
+    input       upCnt;
+    input       downCnt;
+    input       up_ndown;
+    input       count;
+
+    parameter CaptureMode = 0;
+    parameter ClockMode = 0;
+    parameter CompareMode = 1;
+    parameter CompareStatusEdgeSense = 1;
+    parameter EnableMode = 0;
+    parameter ReloadOnCapture = 0;
+    parameter ReloadOnCompare = 0;
+    parameter ReloadOnOverUnder = 1;
+    parameter ReloadOnReset = 1;
+    parameter Resolution = 16;
+    parameter RunMode = 0;
+    parameter UseInterrupt = 1;
+
+          wire  Net_47;
+          wire  Net_102;
+          wire  Net_95;
+          wire  Net_82;
+          wire  Net_91;
+          wire  Net_89;
+          wire  Net_49;
+          wire  Net_48;
+          wire  Net_42;
+          wire  Net_43;
+
+    cy_psoc3_timer_v1_0 CounterHW (
+        .timer_reset(reset),
+        .capture(capture),
+        .enable(Net_91),
+        .kill(Net_82),
+        .clock(clock),
+        .tc(Net_48),
+        .compare(Net_47),
+        .interrupt(Net_42));
+
+	// int_vm (cy_virtualmux_v1_0)
+	assign interrupt = Net_42;
+
+	// TC_vm (cy_virtualmux_v1_0)
+	assign tc = Net_48;
+
+    ZeroTerminal ZeroTerminal_1 (
+        .z(Net_82));
+
+	// VirtualMux_1 (cy_virtualmux_v1_0)
+	assign Net_89 = up_ndown;
+
+    ZeroTerminal ZeroTerminal_2 (
+        .z(Net_95));
+
+	// vmEnableMode (cy_virtualmux_v1_0)
+	assign Net_91 = enable;
+
+    OneTerminal OneTerminal_1 (
+        .o(Net_102));
+
+
+
+endmodule
+
 // top
 module top ;
 
+          wire  Net_374;
+          wire  Net_373;
+          wire  Net_372;
+          wire  Net_371;
+          wire  Net_370;
+          wire  Net_369;
+          wire  Net_368;
+          wire  Net_367;
+          wire  Net_377;
           wire [7:0] Net_278;
           wire  Net_277;
-          wire  Net_287;
+          wire  Net_376;
     electrical  Net_226;
-          wire  Net_251;
           wire  Net_249;
           wire  Net_248;
           wire  Net_247;
@@ -920,14 +1025,16 @@ module top ;
           wire  Net_242;
           wire  Net_241;
           wire  Net_240;
-          wire  Net_254;
-          wire  Net_253;
+          wire  Net_365;
           wire [7:0] Net_13;
           wire  Net_12;
     electrical  Net_9;
           wire [7:0] Net_8;
           wire  Net_7;
     electrical  Net_4;
+          wire  Net_326;
+          wire  Net_307;
+          wire  Net_251;
 
 	wire [0:0] tmpOE__x_out_net;
 	wire [0:0] tmpFB_0__x_out_net;
@@ -1098,23 +1205,13 @@ module top ;
     defparam y_DAC.Strobe_Mode = 0;
 
 
-	cy_clock_v1_0
-		#(.id("bde0f039-eb5b-47ca-bd4d-9a5145c147cb"),
-		  .source_clock_id(""),
-		  .divisor(0),
-		  .period("50000000000000"),
-		  .is_direct(0),
-		  .is_digital(1))
-		FPS_Clock
-		 (.clock_out(Net_253));
-
-
-
 	cy_isr_v1_0
-		#(.int_type(2'b00))
+		#(.int_type(2'b10))
 		FPS_isr
-		 (.int_signal(Net_253));
+		 (.int_signal(Net_365));
 
+
+    assign Net_326 = 1'h0;
 
     UART_v2_50_2 BLE_UART (
         .cts_n(1'b0),
@@ -1316,7 +1413,7 @@ module top ;
 		#(.id("42070e4c-e69a-41aa-b94d-245f5a71a866"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("20000000000"),
+		  .period("22675736961.4512"),
 		  .is_direct(0),
 		  .is_digital(1))
 		Audio_Clock
@@ -1332,6 +1429,43 @@ module top ;
     defparam Audio_DAC.Data_Source = 0;
     defparam Audio_DAC.Initial_Value = 100;
     defparam Audio_DAC.Strobe_Mode = 0;
+
+
+	cy_clock_v1_0
+		#(.id("bb809f27-8e46-4db3-8d92-b283c674d020"),
+		  .source_clock_id(""),
+		  .divisor(0),
+		  .period("1000000000"),
+		  .is_direct(0),
+		  .is_digital(1))
+		FPS_Clock
+		 (.clock_out(Net_307));
+
+
+    Counter_v3_0_7 FPS_Counter (
+        .reset(Net_326),
+        .tc(Net_365),
+        .comp(Net_367),
+        .clock(Net_307),
+        .interrupt(Net_368),
+        .enable(1'b0),
+        .capture(1'b0),
+        .upCnt(1'b0),
+        .downCnt(1'b0),
+        .up_ndown(1'b1),
+        .count(1'b0));
+    defparam FPS_Counter.CaptureMode = 0;
+    defparam FPS_Counter.ClockMode = 0;
+    defparam FPS_Counter.CompareMode = 1;
+    defparam FPS_Counter.CompareStatusEdgeSense = 1;
+    defparam FPS_Counter.EnableMode = 0;
+    defparam FPS_Counter.ReloadOnCapture = 0;
+    defparam FPS_Counter.ReloadOnCompare = 0;
+    defparam FPS_Counter.ReloadOnOverUnder = 1;
+    defparam FPS_Counter.ReloadOnReset = 1;
+    defparam FPS_Counter.Resolution = 16;
+    defparam FPS_Counter.RunMode = 0;
+    defparam FPS_Counter.UseInterrupt = 1;
 
 
 

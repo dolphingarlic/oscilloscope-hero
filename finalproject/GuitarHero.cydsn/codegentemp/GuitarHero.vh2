@@ -2,7 +2,7 @@
 --	Conversion of GuitarHero.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sat May 04 14:27:13 2024
+--	Mon May 06 21:09:02 2024
 --
 
 USE cypress.cypress.all;
@@ -34,7 +34,8 @@ SIGNAL \y_DAC:Net_83\ : bit;
 SIGNAL \y_DAC:Net_81\ : bit;
 SIGNAL \y_DAC:Net_82\ : bit;
 TERMINAL \y_DAC:Net_77\ : bit;
-SIGNAL Net_253 : bit;
+SIGNAL Net_365 : bit;
+SIGNAL Net_326 : bit;
 SIGNAL \BLE_UART:Net_9\ : bit;
 SIGNAL \BLE_UART:Net_61\ : bit;
 SIGNAL \BLE_UART:BUART:clock_op\ : bit;
@@ -467,6 +468,16 @@ SIGNAL \Audio_DAC:Net_83\ : bit;
 SIGNAL \Audio_DAC:Net_81\ : bit;
 SIGNAL \Audio_DAC:Net_82\ : bit;
 TERMINAL \Audio_DAC:Net_77\ : bit;
+SIGNAL Net_307 : bit;
+SIGNAL \FPS_Counter:Net_82\ : bit;
+SIGNAL \FPS_Counter:Net_91\ : bit;
+SIGNAL \FPS_Counter:Net_48\ : bit;
+SIGNAL \FPS_Counter:Net_47\ : bit;
+SIGNAL \FPS_Counter:Net_42\ : bit;
+SIGNAL Net_368 : bit;
+SIGNAL \FPS_Counter:Net_89\ : bit;
+SIGNAL \FPS_Counter:Net_95\ : bit;
+SIGNAL \FPS_Counter:Net_102\ : bit;
 SIGNAL \BLE_UART:BUART:reset_reg\\D\ : bit;
 SIGNAL \BLE_UART:BUART:rx_state_1\\D\ : bit;
 SIGNAL \BLE_UART:BUART:rx_state_0\\D\ : bit;
@@ -823,19 +834,9 @@ y_out:cy_psoc3_pins_v1_10
 		iout=>\y_DAC:Net_77\);
 \y_DAC:cy_analog_noconnect_1\:cy_analog_noconnect_v1_0
 	PORT MAP(noconnect=>\y_DAC:Net_77\);
-FPS_Clock:cy_clock_v1_0
-	GENERIC MAP(cy_registers=>"",
-		id=>"bde0f039-eb5b-47ca-bd4d-9a5145c147cb",
-		source_clock_id=>"",
-		divisor=>0,
-		period=>"50000000000000",
-		is_direct=>'0',
-		is_digital=>'1')
-	PORT MAP(clock_out=>Net_253,
-		dig_domain_out=>open);
 FPS_isr:cy_isr_v1_0
-	GENERIC MAP(int_type=>"00")
-	PORT MAP(int_signal=>Net_253);
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>Net_365);
 \BLE_UART:IntClock\:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358",
@@ -1186,7 +1187,7 @@ Audio_Clock:cy_clock_v1_0
 		id=>"42070e4c-e69a-41aa-b94d-245f5a71a866",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"20000000000",
+		period=>"22675736961.4512",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>Net_251,
@@ -1618,6 +1619,26 @@ Audio_Clock:cy_clock_v1_0
 		iout=>\Audio_DAC:Net_77\);
 \Audio_DAC:cy_analog_noconnect_1\:cy_analog_noconnect_v1_0
 	PORT MAP(noconnect=>\Audio_DAC:Net_77\);
+FPS_Clock:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"bb809f27-8e46-4db3-8d92-b283c674d020",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"1000000000",
+		is_direct=>'0',
+		is_digital=>'1')
+	PORT MAP(clock_out=>Net_307,
+		dig_domain_out=>open);
+\FPS_Counter:CounterHW\:cy_psoc3_timer_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(clock=>Net_307,
+		kill=>zero,
+		enable=>zero,
+		capture=>zero,
+		timer_reset=>zero,
+		tc=>Net_365,
+		compare=>\FPS_Counter:Net_47\,
+		interrupt=>\FPS_Counter:Net_42\);
 \BLE_UART:BUART:reset_reg\:cy_dff
 	PORT MAP(d=>zero,
 		clk=>\BLE_UART:BUART:clock_op\,
