@@ -13,6 +13,7 @@
 #include <game_manager.h>
 #include <FS.h>
 #include <stdlib.h>
+#include <string.h>
 
 static struct Note notes[1000];
 static float barlines[1000];
@@ -22,7 +23,10 @@ struct GameState new_game(char *song_name) {
     float tempo = 0;
     float duration = 0;
     // Parse the notes from a chart file
-    FS_FILE *chart_file = FS_FOpen(song_name, "r");
+    char chart_filename[14];
+    strcpy(chart_filename, song_name);
+    strcat(chart_filename, ".txt");
+    FS_FILE *chart_file = FS_FOpen(chart_filename, "r");
     if (chart_file) {
         int buffer_len;
         int float_len = 0;
@@ -59,6 +63,7 @@ struct GameState new_game(char *song_name) {
                 }
             }
         }
+        FS_FClose(chart_file);
     }
     
     // TODO: Generate barlines too
