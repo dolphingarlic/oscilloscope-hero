@@ -1,14 +1,14 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
+ * Copyright Andi Qu, 2024
  * All Rights Reserved
  * UNPUBLISHED, LICENSED SOFTWARE.
  *
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * WHICH IS THE PROPERTY OF ANDI QU.
  *
  * ========================================
-*/
+ */
 
 #include <game_manager.h>
 #include <FS.h>
