@@ -144,8 +144,6 @@ void load_songs() {
                 }
             }
         }
-        // Account for newline at the end
-        n_songs--;
         FS_FClose(config_file);
     }
 }
