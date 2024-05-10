@@ -15,6 +15,7 @@
 #include <math.h>
 #include <game_manager.h>
 #include <sprites.h>
+#include <stdlib.h>
 
 // Game data
 int n_sprites;
@@ -195,8 +196,13 @@ void game_over() {
  */
 void draw_points() {   
     for (int i = 0; i < n_points; i++) {
-        x_DAC_SetValue(points[i].x);
-        y_DAC_SetValue(points[i].y);
+        if (rand() & 1) {
+            x_DAC_SetValue(points[i].x);
+            y_DAC_SetValue(points[i].y);
+        } else {
+            y_DAC_SetValue(points[i].y);
+            x_DAC_SetValue(points[i].x);
+        }
     }
 }
 
@@ -229,11 +235,11 @@ void update_render() {
 CY_ISR(FPS_isr) {
     if (game_status == PLAYING) {
         tick(&game_state);
-        update_render();
         // Display the score
         LCD_Position(0, 7);
         LCD_PrintNumber(game_state.score);
     }
+    update_render();
 }
 
 /*
