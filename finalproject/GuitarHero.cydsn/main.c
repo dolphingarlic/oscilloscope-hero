@@ -20,7 +20,7 @@
 // Game data
 int n_sprites;
 uint8 indicator_countdown[5];
-struct Sprite sprites[1<<5];
+struct Sprite sprites[1<<8];
 struct GameState game_state;
 enum { SONG_SELECT, PLAYING, GAME_OVER } game_status;
 
